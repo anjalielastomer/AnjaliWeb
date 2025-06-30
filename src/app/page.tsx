@@ -6,6 +6,7 @@ import FeaturedProducts from "@/components/FeaturedProducts";
 import Footer from "@/components/Footer";
 import FeaturedProjects from "@/components/FeaturedProject";
 import BusinessSection from "@/components/BusinessSection";
+import VideoSection from "@/components/VideoSection";
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
       <FeaturedProducts />
       <BusinessSection />
       <FeaturedProjects />
+      <VideoSection />
       <Footer />
     </main>
   );
