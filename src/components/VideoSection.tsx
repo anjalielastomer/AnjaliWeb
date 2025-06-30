@@ -1,0 +1,71 @@
+"use client"
+import Image from "next/image";
+import { useState } from "react";
+
+const VideoSection: React.FC = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayClick = () => {
+    setIsPlaying(true);
+  };
+
+  return (
+    <section className="bg-rose-50 py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+      <h2 className="text-2xl sm:text-3xl font-semibold font-raleway text-center text-slate-900">
+        See Us in{" "}
+        <span className="text-orange-500">
+          Action
+        </span>
+      </h2>
+      <p className="mt-3 max-w-xl text-center text-slate-700 text-base sm:text-lg tracking-wide">
+        Discover how we're shaping the future of railway infrastructure
+      </p>
+
+      <div className="mt-10 relative w-full max-w-4xl rounded-lg overflow-hidden shadow-lg">
+        {!isPlaying ? (
+          <>
+            <Image
+              src="/videoimg.png"
+              alt="Railway construction site showing multiple cranes and train engines during the day with clear blue sky"
+              width={1280}
+              height={720}
+              className="w-full h-auto rounded-lg object-cover brightness-75"
+              priority
+            />
+            <button
+              aria-label="Play video"
+              onClick={handlePlayClick}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-4 focus:ring-orange-400 rounded-full p-5 shadow-lg transition cursor-pointer"
+            >
+              <svg
+                className="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+            </button>
+          </>
+        ) : (
+          <div className="relative pt-[56.25%] h-0">
+            {/* TODO : Add Video  */}
+            <iframe
+              className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+              src="https://www.youtube.com/embed/"
+              title="Example Railway Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default VideoSection;
+
