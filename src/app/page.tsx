@@ -8,6 +8,7 @@ import FeaturedProjects from "@/components/FeaturedProject";
 import BusinessSection from "@/components/BusinessSection";
 import VideoSection from "@/components/VideoSection";
 import Client from "@/components/Client";
+import LatestInsights from "@/components/LatestInsights";
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
       <FeaturedProducts />
       <BusinessSection />
       <FeaturedProjects />
+      <LatestInsights />
       <VideoSection />
       <Client />
       <Footer />
