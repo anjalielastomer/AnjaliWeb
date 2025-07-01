@@ -19,9 +19,10 @@ const App: React.FC = () => {
       <FeaturedProducts />
       <BusinessSection />
       <FeaturedProjects />
+      <Client />
       <LatestInsights />
       <VideoSection />
-      <Client />
+      
       <Footer />
     </main>
   );
