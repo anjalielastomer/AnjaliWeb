@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Raleway, Montserrat } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -27,7 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${raleway.variable} ${montserrat.variable}`}>
+        <Navbar />
         {children}
+
+        <Footer />
       </body>
     </html>
   );

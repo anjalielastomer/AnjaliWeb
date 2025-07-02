@@ -1,12 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 const AboutUs: React.FC = () => {
   return (
     <div className="w-full flex justify-between gap-20 h-screen bg-white px-5 py-10 font-raleway -mt-32 z-40 relative">
       <div className="w-[30%] max-w-xs md:max-w-sm lg:max-w-md ml-10 flex flex-col h-full">
         <div className="flex-1 rounded-xl overflow-hidden">
           <Image
-            src="/aboutimg1.png"
+            src="/aboutus/aboutimg1.png"
             alt="High-speed train"
             width={600}
             height={400}
@@ -15,7 +16,7 @@ const AboutUs: React.FC = () => {
         </div>
         <div className="flex-1 rounded-xl overflow-hidden mt-4">
           <Image
-            src="/aboutimg2.png"
+            src="/aboutus/aboutimg2.png"
             alt="Metro in manufacturing"
             width={600}
             height={400}
@@ -31,7 +32,7 @@ const AboutUs: React.FC = () => {
         <span className="text-2xl text-textblue font-light mb-4 font-monte ">
           Unified in Shaping Railway&apos;s Future
         </span>
-        
+
         <div className='flex w-full gap-7 my-10 font-monte'>
           <div className='w-[50%] text-justify'>
             <h1 className="text-lg font-bold text-textblue mb-6 flex gap-3 font-monte">
@@ -68,10 +69,10 @@ const AboutUs: React.FC = () => {
             </p>
           </div>
         </div>
-        <button className="text-textblue transition-colors pr-7 py-3 text-3xl font-light flex items-center gap-2 font-raleway">
-                      <span className="text-textorange">Learn</span><span className="text-textblue"> more</span>
-                      <Image src='/arrow.svg' alt='arrow' width={27} height={27}/>
-                    </button>
+        <Link href={"/about-us"} className="text-textblue transition-colors pr-7 py-3 text-3xl font-light flex items-center gap-2 font-raleway">
+          <span className="text-textorange">Learn</span><span className="text-textblue"> more</span>
+          <Image src='/arrow.svg' alt='arrow' width={27} height={27} />
+        </Link>
       </div>
     </div>
   );
