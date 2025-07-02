@@ -13,7 +13,6 @@ import LatestInsights from "@/components/LatestInsights";
 const App: React.FC = () => {
   return (
     <main className="bg-bgcolour max-w-screen">
-      <Navbar />
       <Hero />
       <AboutUs />
       <FeaturedProducts />
@@ -22,8 +21,7 @@ const App: React.FC = () => {
       <Client />
       <LatestInsights />
       <VideoSection />
-      
-      <Footer />
+    
     </main>
   );
 };
