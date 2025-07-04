@@ -2,10 +2,10 @@ import Image from 'next/image';
 
 const AboutSec2 = () => {
   return (
-    <div className="bg-[#FFF8F2] min-h-screen px-6 sm:px-12 lg:px-24 font-sans text-[#1A202C] flex flex-col justify-end mb-20">
+    <div className="bg-[#FFF8F2] min-h-screen px-6 sm:px-12 lg:px-24 font-sans text-[#1A202C] flex flex-col justify-end py-20">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
         {/* Image Section */}
-        <div className="flex-shrink-0 w-full lg:w-1/2 rounded-lg overflow-hidden shadow-lg ring-1 ring-slate-200 bg-white">
+        <div className="flex-shrink-0 w-full lg:w-1/2 rounded-lg overflow-hidden  bg-white">
           <Image
             src="/aboutus/aboutimg1.png"
             alt="Modern train inside a large industrial train manufacturing plant with equipment and machinery"

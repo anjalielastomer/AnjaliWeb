@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 const AboutSec1 = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-white min-h-screen  pt-12">
+    <div className="flex flex-col justify-center md:flex-row bg-white min-h-screen  pt-12">
       {/* Left Side */}
-      <div className="w-full md:w-1/2 p-8 flex flex-col">
+      <div className="w-full md:w-1/2 p-4  flex flex-col">
         <h1 className="text-6xl font-bold text-[#152f5d] leading-relaxed gap-10">
           Unified in <br />
           <span className="mt-4 text-orange-500">Shaping</span> <br />
@@ -36,18 +36,18 @@ const AboutSec1 = () => {
       </div>
 
       {/* Right Side */}
-      <div className="w-full md:w-1/2 p-8 flex flex-col justify-center relative">
+      <div className="w-fit p-4  flex flex-col justify-center relative">
         <div className="max-w-lg mx-auto">
           <div className="flex items-center justify-start gap-2 mb-6">
-            <h2 className="text-[#152f5d] font-semibold text-xl">About</h2>
-            <span className="text-orange-500 font-semibold text-xl">Us</span>
+            <h2 className="text-[#152f5d] font-semibold text-2xl">About</h2>
+            <span className="text-orange-500 font-semibold text-2xl">Us</span>
           </div>
 
-          <p className="text-gray-700 text-base leading-relaxed mb-8">
+          <p className="text-gray-700 text-lg leading-loose my-20">
             Over the previous 15 years, Anjali Elastomers, which was founded in 2009, has developed from a maker of rail components to a top supplier of entire railway infrastructure.
           </p>
 
-          <div className="overflow-hidden rounded-lg shadow-lg">
+          <div className="overflow-hidden rounded-lg mt-20 shadow-lg">
             <img
               src="/aboutus/aboutimg2.png"
               alt="Modern orange commuter train inside a spacious maintenance facility with advanced equipment and industrial lighting"
