@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero: React.FC = () => {
   return (
-    <section className="w-full flex font-raleway font-bold min-h-fit overflow-x-hidden mb-20 pl-5">
+    <section className="w-full flex font-raleway font-bold min-h-fit overflow-x-hidden mb-20 pl-5 pt-20">
       {/* Hero TextContent */}
       <div className="h-full flex flex-col justify-center p-4 w-[80%] ml-5 mt-20">
         <h1 className="font-raleway text-7xl text-textblue w-full">
