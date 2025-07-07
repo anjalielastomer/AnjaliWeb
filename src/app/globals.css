@@ -3,6 +3,13 @@
   --textblue: #193055; 
   --textorange:#FB7602;
   --bgcolour:#FFF5EF;
+  --bgwhite: #FFFFFF;
+  /*Dynamic colour rendering for navbar ekhan theke hobe*/
+  --navbar-bg: var(--bg-colour);
+  --navbar-text: var(--text-blue);
+  --navbar-logo: var(--text-blue);
+  --navbar-accent: var(--text-orange);
+  --navbar-hover: var(--text-orange);  
 }
 
 .text-textorange {

@@ -1,8 +1,11 @@
+
 import Image from 'next/image';
+import React, { useEffect } from 'react';
 
 const AboutSec1 = () => {
+ 
   return (
-    <div className="flex flex-col justify-center md:flex-row bg-white min-h-screen  pt-12">
+    <div className="flex flex-col justify-center md:flex-row bg-white min-h-screen  pt-20">
       {/* Left Side */}
       <div className="w-full md:w-1/2 p-4  flex flex-col">
         <h1 className="text-6xl font-bold text-[#152f5d] leading-relaxed gap-10">
