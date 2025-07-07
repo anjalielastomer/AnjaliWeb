@@ -3,8 +3,25 @@
   --textblue: #193055; 
   --textorange:#FB7602;
   --bgcolour:#FFF5EF;
+  --bgwhite: #FFFFFF;
+  --textcolour : #1A202C;
+
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  20% { opacity: 0.3; }
+  30% { opacity: 1; }
+  35% { opacity: 0.1; }
+  40% { opacity: 1; }
+  45% { opacity: 0.5; }
+  50% { opacity: 1; }
+  55% { opacity: 0.2; }
+  60% { opacity: 1; }
 }
 
+.animate-flicker {
+  animation: flicker 2s infinite;
+}
 .text-textorange {
   color: var(--textorange);
 }

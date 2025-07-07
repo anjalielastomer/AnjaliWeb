@@ -31,7 +31,6 @@ export default function RootLayout({
       <body className={`${raleway.variable} ${montserrat.variable}`}>
         <Navbar />
         {children}
-
         <Footer />
       </body>
     </html>

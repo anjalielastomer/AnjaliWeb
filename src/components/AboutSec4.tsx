@@ -41,7 +41,13 @@ export default function AboutSec4() {
 
         <Link href={"#"} className="text-textblue transition-colors pr-7 py-3 text-3xl font-light flex items-center gap-2 font-raleway">
           <span className="text-textorange">Learn</span><span className="text-textblue"> more</span>
-          <Image src='/arrow.svg' alt='arrow' width={27} height={27} />
+          <Image 
+            src='/arrow.svg' 
+            alt='arrow' 
+            width={27} 
+            height={27} 
+            className="animate-flicker"
+          />
         </Link>
       </div>
 
