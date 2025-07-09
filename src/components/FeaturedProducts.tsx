@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-
+import Image from 'next/image';
 interface Product {
   id: number;
   name: string;
@@ -120,11 +120,10 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 
 const FeaturedProducts: React.FC = () => {
   return (
-    <section className="bg-[#FFF6F0] py-12 px-4 sm:px-6 md:px-8">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-gray-900 max-w-full mx-auto">
-        <span>Featured </span>
-        <span className="text-orange-500">Products</span>
-      </h2>
+    <section className="bg-[#FFF6F0] py-12 px-4 sm:px-6 md:px-20">
+       <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3">
+          Featured <span className='text-textorange'>Products</span>
+        </h1>
 
 
       <div className="relative overflow-hidden w-full">
@@ -137,10 +136,10 @@ const FeaturedProducts: React.FC = () => {
           {products.map(({ id, name, image, rating, reviewCount, description }) => (
             <article
               key={id}
-              className="bg-white w-96 sm:w-80 rounded-lg shadow-sm overflow-hidden flex-shrink-0 flex flex-col"
+              className="bg-white w-96 sm:w-80 rounded-2xl shadow-sm overflow-hidden flex-shrink-0 flex flex-col"
             >
               <div className="flex justify-center h-80 md:h-60 flex-col items-center relative">
-                <img
+                <Image
                   src={image}
                   alt={name}
                   width={400}
@@ -153,19 +152,19 @@ const FeaturedProducts: React.FC = () => {
                 </h3>
               </div>
 
-              <div className="p-4 flex flex-col flex-grow">
-                <div className="flex items-center space-x-1 mb-2">
+              <div className="pt-4 flex flex-col flex-grow">
+                <div className="px-4 flex items-center space-x-1 mb-2">
                   <StarRating rating={rating} />
                   <span className="text-gray-600 text-sm">({reviewCount})</span>
                 </div>
 
-                <p className="text-gray-700 flex-grow text-sm leading-relaxed mb-5">
+                <p className="px-4 text-gray-700 flex-grow text-sm leading-relaxed mb-5">
                   {description}
                 </p>
 
                 <button
                   type="button"
-                  className="mt-auto rounded border border-orange-500 px-4 py-2 font-semibold text-orange-600 active:bg-orange-100 transition-colors duration-600 hover:bg-orange-500 hover:text-white"
+                  className="w-full mt-auto rounded-2xl border border-orange-500 px-4 py-3 font-semibold text-orange-600 active:bg-orange-100 transition-colors duration-600 hover:bg-orange-500 hover:text-white"
                   aria-label={`Explore product ${name}`}
                   onClick={() => alert(`Exploring product: ${name}`)}
                 >
@@ -192,29 +191,11 @@ const FeaturedProducts: React.FC = () => {
 
 
 
-      <div className="max-w-full mx-auto mt-12 text-center">
-        <button
-          type="button"
-          className="inline-flex items-center text-orange-500 font-semibold text-lg hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 rounded"
-          aria-label="Explore all products"
-          onClick={() => alert('Explore all products')}
-        >
-          <span>Explore All</span>
-          <svg
-            className="w-5 h-5 ml-1"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
-        </button>
+      <div className="w-full flex justify-center items-center mt-10">
+       <button className=" text-textblue transition-colors px-14 py-3 rounded-2xl text-3xl font-light flex items-center gap-2">
+                   <span className="text-textorange">Explore</span><span className="text-textblue"> All</span>
+                   <Image src='/arrow.svg' alt='arrow' width={27} height={27}/>
+                 </button>
       </div>
     </section>
   );

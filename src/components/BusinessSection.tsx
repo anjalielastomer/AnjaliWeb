@@ -12,7 +12,7 @@ export default function IndiaBusinessSection() {
   const [activeTab, setActiveTab] = useState("bridge");
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16">
+    <section className="w-full bg-white px-20 py-16">
       {/* Tabs */}
       <nav className="flex gap-4 mb-12">
         {tabs.map((tab) => (
