@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null); // NEW for mobile dropdown
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -46,7 +46,6 @@ const Navbar: React.FC = () => {
         accentColor: 'var(--textorange)'
       };
     }
-
     if (isScrolled) {
       return {
         backgroundColor: 'var(--bgwhite)',
@@ -55,7 +54,6 @@ const Navbar: React.FC = () => {
         accentColor: 'var(--textorange)'
       };
     }
-
     return {
       backgroundColor: 'var(--bgcolour)',
       textColor: 'var(--bg-white)',
@@ -72,7 +70,7 @@ const Navbar: React.FC = () => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-    setOpenDropdown(null); // close all mobile dropdowns
+    setOpenDropdown(null);
   };
 
   const toggleDropdown = (label: string) => {
@@ -92,7 +90,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center px-4 md:px-10 py-4">
           {/* Logo */}
           <div
-            className="text-xl md:text-2xl font-bold font-raleway"
+            className="text-xl md:text-2xl font-bold font-raleway cursor-pointer"
             style={{ color: styles.logoColor }}
           >
             Anjali <span style={{ color: styles.accentColor }}>Elastomer</span>
@@ -103,30 +101,44 @@ const Navbar: React.FC = () => {
             {navItems.map(({ label, href, subItems }) => (
               <li
                 key={label}
-                className="relative text-base lg:text-lg font-light group"
+                className="relative text-base lg:text-lg font-light"
               >
-                <Link
-                  href={href}
-                  className="transition-colors duration-200 hover:opacity-80"
-                  style={{ color: styles.textColor }}
-                >
-                  {label}
-                </Link>
-
-                {/* Desktop Dropdown */}
-                {subItems && (
-                  <ul className="absolute left-0 mt-2 w-52 bg-white rounded shadow-lg border border-gray-200 z-50 opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transform transition-all duration-300 ease-out">
-                    {subItems.map(({ label: subLabel, href: subHref }) => (
-                      <li key={subLabel}>
-                        <Link
-                          href={subHref}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        >
-                          {subLabel}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                {subItems ? (
+                  <>
+                    <button
+                      onClick={() => toggleDropdown(label)}
+                      className="flex items-center space-x-1 transition-colors duration-200 hover:opacity-80"
+                      style={{ color: styles.textColor }}
+                    >
+                      <span>{label}</span>
+                      <span className="text-xs">
+                        {openDropdown === label ? '▲' : '▼'}
+                      </span>
+                    </button>
+                    {openDropdown === label && (
+                      <ul className="absolute left-0 mt-2 w-52 bg-white rounded shadow-lg border border-gray-200 z-50">
+                        {subItems.map(({ label: subLabel, href: subHref }) => (
+                          <li key={subLabel}>
+                            <Link
+                              href={subHref}
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                              onClick={() => setOpenDropdown(null)}
+                            >
+                              {subLabel}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    href={href}
+                    className="transition-colors duration-200 hover:opacity-80"
+                    style={{ color: styles.textColor }}
+                  >
+                    {label}
+                  </Link>
                 )}
               </li>
             ))}
