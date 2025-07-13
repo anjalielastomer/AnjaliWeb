@@ -49,17 +49,17 @@ const ProductsPage: React.FC = () => {
   }, [selectedSegment]);
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen pt-20" style={{ backgroundColor: 'var(--bgwhite)' }}>
       <div className="container mx-auto px-4 py-8">
         {/* Main Header */}
         <div className="mb-8">
           <div className="flex justify-end mb-6">
-            <h1 className="text-4xl font-bold text-textblue">
-              Our <span className='text-textorange'>Products</span>
+            <h1 className="text-4xl font-bold" style={{ color: 'var(--textblue)' }}>
+              Our <span style={{ color: 'var(--textorange)' }}>Products</span>
             </h1>
           </div>
           {/* Horizontal Bar */}
-          <div className="w-full h-px bg-gray-300 mb-8"></div>
+          <div className="w-full h-px mb-8" style={{ backgroundColor: 'var(--textblue)', opacity: '0.3' }}></div>
         </div>
 
         {/* Breadcrumb and Product Count Section */}
@@ -67,15 +67,21 @@ const ProductsPage: React.FC = () => {
           <div>
             {/* Dynamic Breadcrumb */}
             <nav className="flex" aria-label="Breadcrumb">
-              <ol className="flex items-center space-x-2 text-sm text-gray-500">
+              <ol className="flex items-center space-x-2 text-sm" style={{ color: 'var(--textcolour)' }}>
                 <li>
-                  <Link href="/" className="hover:text-orange-500 transition-colors">
+                  <Link 
+                    href="/" 
+                    className="transition-colors"
+                    style={{ color: 'var(--textcolour)' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--textorange)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--textcolour)'}
+                  >
                     Products
                   </Link>
                 </li>
                 <li className="flex items-center">
                   <span className="mx-2">&gt;</span>
-                  <span className="text-gray-700">
+                  <span style={{ color: 'var(--textblue)' }}>
                     {getSegmentDisplayName(selectedSegment)}
                   </span>
                 </li>
@@ -83,7 +89,7 @@ const ProductsPage: React.FC = () => {
             </nav>
           </div>
           
-          <div className="text-gray-500 text-sm">
+          <div className="text-sm" style={{ color: 'var(--textcolour)' }}>
             {getProductCount} Products
           </div>
         </div>
