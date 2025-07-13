@@ -23,12 +23,13 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
         return (
           <svg
             key={i}
-            className="w-4 h-4 text-orange-500 flex-shrink-0"
+            className="w-4 h-4 flex-shrink-0"
             fill={fill}
             stroke="currentColor"
             strokeWidth={1}
             viewBox="0 0 24 24"
             aria-hidden="true"
+            style={{ color: 'var(--textorange)' }}
           >
             {isHalfStar ? (
               <>
@@ -62,7 +63,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { name, image, rating, reviewCount, description } = product;
 
   return (
-    <article className="bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow duration-300">
+    <article 
+      className="rounded-2xl shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-shadow duration-300"
+      style={{ backgroundColor: 'var(--bgwhite)' }}
+    >
       <div className="flex justify-center h-60 flex-col items-center relative">
         <Image
           src={image}
@@ -76,24 +80,37 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </h3>
       </div>
 
-      <div className="pt-4 flex flex-col flex-grow">
+      <div className="pt-4 flex flex-col flex-grow min-h-0">
         <div className="px-4 flex items-center space-x-1 mb-2">
           <StarRating rating={rating} />
-          <span className="text-gray-600 text-sm">({reviewCount})</span>
+          <span className="text-sm" style={{ color: 'var(--textcolour)' }}>({reviewCount})</span>
         </div>
 
-        <p className="px-4 text-gray-700 flex-grow text-sm leading-relaxed mb-5">
+        <p className="px-4 flex-grow text-sm leading-relaxed mb-5 line-clamp-3" style={{ color: 'var(--textcolour)' }}>
           {description}
         </p>
-
+        
         <button
           type="button"
-          className="w-full mt-auto rounded-2xl border border-orange-500 px-4 py-3 font-semibold text-orange-600 active:bg-orange-100 transition-colors duration-600 hover:bg-orange-500 hover:text-white"
+          className="w-full rounded-2xl border px-4 py-3 font-semibold transition-colors duration-600 hover:text-white"
+          style={{ 
+            color: 'var(--textorange)', 
+            borderColor: 'var(--textorange)' 
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = 'var(--textorange)';
+            e.currentTarget.style.color = 'white';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'transparent';
+            e.currentTarget.style.color = 'var(--textorange)';
+          }}
           aria-label={`Explore product ${name}`}
           onClick={() => alert(`Exploring product: ${name}`)}
         >
           Explore Product
         </button>
+        
       </div>
     </article>
   );
