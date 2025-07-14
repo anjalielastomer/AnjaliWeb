@@ -40,3 +40,46 @@
 .font-raleway {
   font-family: var(--font-raleway), sans-serif;
 }
+
+
+@keyframes bgIconAnimation {
+  0%, 100% {
+    background-color: #142859; /* Deep Blue */
+  }
+  50% {
+    background-color: #FFA500; /* Orange */
+  }
+}
+
+@keyframes iconColorAnimation {
+  0%, 100% {
+    filter: brightness(1) invert(0);
+  }
+  50% {
+    filter: brightness(0) invert(1); /* Invert color for contrast */
+  }
+}
+
+.animate-bgIcon {
+  animation: bgIconAnimation 2s infinite ease-in-out;
+}
+
+.animate-iconColor {
+  animation: iconColorAnimation 2s infinite ease-in-out;
+}
+
+@keyframes slideX {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-slideX {
+  animation: slideX 20s ease-in-out infinite alternate;
+}
