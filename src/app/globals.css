@@ -40,3 +40,38 @@
 .font-raleway {
   font-family: var(--font-raleway), sans-serif;
 }
+
+/* Enquiry Modal Styles */
+.enquiry-input:focus {
+  outline: none;
+  border-color: var(--textorange);
+  box-shadow: 0 0 0 2px rgba(251, 118, 2, 0.2);
+}
+
+.enquiry-submit-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.enquiry-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Modal backdrop animation */
+.modal-backdrop {
+  backdrop-filter: blur(4px);
+}
