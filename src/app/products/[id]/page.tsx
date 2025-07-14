@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import ProductCard from '@/components/ProductCard';
+import EnquiryModal from '@/components/EnquiryModal';
+import BuyNowModal from '@/components/BuyNowModal';
 
 // Product interface
 interface Product {
@@ -29,6 +31,8 @@ const SingleProductPage: React.FC = () => {
   // State for selected image
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [activeTab, setActiveTab] = useState('description');
+  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
+  const [isBuyNowOpen, setIsBuyNowOpen] = useState(false);
 
   // Mock product data - replace with actual data fetching
   const product: Product = {
@@ -413,12 +417,14 @@ const SingleProductPage: React.FC = () => {
             {/* Action Buttons */}
             <div className="space-y-3">
               <button 
+                onClick={() => setIsEnquiryOpen(true)}
                 className="w-full py-3 px-6 rounded-lg text-white font-medium transition-opacity hover:opacity-90"
                 style={{ backgroundColor: 'var(--textorange)' }}
               >
                 Enquire Now
               </button>
               <button 
+                onClick={() => setIsBuyNowOpen(true)}
                 className="w-full py-3 px-6 rounded-lg font-medium border transition-colors"
                 style={{ 
                   color: 'var(--textorange)', 
@@ -603,6 +609,21 @@ const SingleProductPage: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Enquiry Modal */}
+      <EnquiryModal 
+        isOpen={isEnquiryOpen}
+        onClose={() => setIsEnquiryOpen(false)}
+        productName={product.name}
+      />
+
+      {/* Buy Now Modal */}
+      <BuyNowModal 
+        isOpen={isBuyNowOpen}
+        onClose={() => setIsBuyNowOpen(false)}
+        productName={product.name}
+        productPrice={product.price}
+      />
     </div>
   );
 };
