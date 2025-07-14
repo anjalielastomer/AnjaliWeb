@@ -62,7 +62,7 @@ const Production1 = () => {
                 <div className="lg:pt-40 flex flex-col gap-5">
                     {/* Header Section */}
                     <div className="mb-8">
-                        <h2 className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px]">
+                        <h2 className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px] max-w-[1440px] mx-auto">
                             Turnout and <span className="text-orange-500 font-semibold text-2xl sm:text-3xl lg:text-[36px]">Track Devices</span>
                         </h2>
                     </div>

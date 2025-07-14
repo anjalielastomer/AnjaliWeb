@@ -6,14 +6,17 @@ export default function AboutSec5() {
     <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20 flex flex-col md:flex-row items-center gap-10 md:gap-16">
       {/* Left Text Content */}
       <div className="flex-1 max-w-xl font-raleway">
-        <h2 className="text-6xl font-bold text-textblue leading-tight mb-6">
+        <h2 className="text-4xl md:text-6xl font-bold text-textblue leading-tight md:mb-6 text-center md:text-left">
           Remarkable
         </h2>
-        <div className="flex items-center justify-between my-14">
-          <h3 className="text-6xl font-bold text-orange-600">Projects</h3>
+        <div className="flex flex-col md:flex-row items-center justify-between md:mb-10">
+          <h3 className="text-4xl md:text-6xl font-bold text-orange-600">Projects</h3>
 
-          <Link href={"#"} className="text-textblue transition-colors py-3 text-3xl font-light flex items-center gap-2 font-raleway">
-            <span className="text-textorange">Explore</span><span className="text-textblue"> All</span>
+          <Link href={"#"} className="group text-textblue transition-colors py-3 text-3xl font-light flex items-center gap-2 font-raleway">
+            <span>
+              <span className="text-[#FB7602] group-hover:text-[#193055] group-hover:font-medium transition-all duration-300">Explore</span>
+              <span className="text-[#193055] group-hover:text-[#FB7602] group-hover:font-medium transition-all duration-300"> All</span>
+            </span>
             <Image src='/arrow.svg' alt='arrow' width={27} height={27} />
           </Link>
         </div>
@@ -39,7 +42,7 @@ export default function AboutSec5() {
       </div>
 
       {/* Right Image Content */}
-      <div className="flex-1 max-w-md md:max-w-lg rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-200">
+      <div className="md:flex-1 max-w-lg w-full rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
         <Image
           src="/aboutus/bridge.png"
           alt="View of Chenab Rail Bridge, a tall steel arch bridge spanning dramatic mist-covered mountains and valleys"
