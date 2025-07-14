@@ -41,37 +41,45 @@
   font-family: var(--font-raleway), sans-serif;
 }
 
-/* Enquiry Modal Styles */
-.enquiry-input:focus {
-  outline: none;
-  border-color: var(--textorange);
-  box-shadow: 0 0 0 2px rgba(251, 118, 2, 0.2);
-}
-
-.enquiry-submit-btn:hover:not(:disabled) {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-.enquiry-submit-btn:active:not(:disabled) {
-  transform: translateY(0);
-}
-
-/* Loading spinner animation */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
+@keyframes bgIconAnimation {
+  0%, 100% {
+    background-color: #142859; /* Deep Blue */
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    background-color: #FFA500; /* Orange */
   }
 }
 
-.animate-spin {
-  animation: spin 1s linear infinite;
+@keyframes iconColorAnimation {
+  0%, 100% {
+    filter: brightness(1) invert(0);
+  }
+  50% {
+    filter: brightness(0) invert(1); /* Invert color for contrast */
+  }
 }
 
-/* Modal backdrop animation */
-.modal-backdrop {
-  backdrop-filter: blur(4px);
+.animate-bgIcon {
+  animation: bgIconAnimation 2s infinite ease-in-out;
 }
+
+.animate-iconColor {
+  animation: iconColorAnimation 2s infinite ease-in-out;
+}
+
+@keyframes slideX {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-slideX {
+  animation: slideX 20s ease-in-out infinite alternate;
+}
+

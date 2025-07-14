@@ -10,13 +10,13 @@ const AboutSec1 = () => {
       <div className="flex flex-col justify-center md:flex-row bg-white min-h-screen pt-20 relative z-10">
         {/* Left Side */}
         <div className="w-full md:w-1/2 p-4 flex flex-col">
-          <h1 className="text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8">
+          <h1 className="text-4xl sm:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8">
             Unified in <br />
             <span className="mt-4 text-orange-500">Shaping</span> <br />
             Railway&apos;s <span className="mt-4 text-orange-500">Future</span>
           </h1>
 
-          <div className="mt-16 flex flex-col md:flex-row gap-12 mb-12">
+          <div className="md:mt-16 flex flex-col md:flex-row gap-12 mb-12">
             <StatItem
               number="175"
               unit="KMS TRACKS"
@@ -43,18 +43,18 @@ const AboutSec1 = () => {
         </div>
 
         <div className="w-fit p-4  flex flex-col justify-center relative">
-          <div className="max-w-lg mx-auto">
-            <div className="flex items-center justify-start gap-2 mb-6">
-              <h2 className="text-[#152f5d] font-semibold text-2xl">About</h2>
-              <span className="text-orange-500 font-semibold text-2xl">Us</span>
+          <div className="max-w-lg mx-auto pt-8 lg:pt-0">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-6 text-2xl md:text-2xl">
+              <h2 className="text-[#152f5d] font-semibold">About</h2>
+              <span className="text-orange-500 font-semibold">Us</span>
             </div>
 
-            <p className="text-gray-700 text-lg leading-loose my-20">
+            <p className="text-gray-700 text-lg leading-loose my-10 lg:my-20">
               Over the previous 15 years, Anjali Elastomers, which was founded in 2009, has developed from a maker of rail components to a top supplier of entire railway infrastructure.
             </p>
             
             <div className="mt-auto -mb-32 relative z-40">
-              <div className="overflow-hidden rounded-lg shadow-lg">
+              <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
                 <img
                   src="/aboutus/aboutimg2.png"
                   alt="Modern orange commuter train inside a spacious maintenance facility with advanced equipment and industrial lighting"
@@ -69,9 +69,9 @@ const AboutSec1 = () => {
     {/* Sec2 - Higher z-index and negative margin to overlap Sec1 */}
       <div className="bg-[#FFF8F2] min-h-screen px-6 sm:px-12 lg:px-24 font-sans text-[#1A202C] flex flex-col justify-end py-20 relative z-5 -mt-32">
         <div className="pt-40">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
+          <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-10">
           {/* Image Section */}
-          <div className="flex-shrink-0 w-full lg:w-1/2 rounded-lg overflow-hidden  bg-white">
+          <div className="flex-shrink-0 w-full lg:w-1/2 rounded-lg overflow-hidden bg-white shadow-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
             <Image
               src="/aboutus/aboutimg1.png"
               alt="Modern train inside a large industrial train manufacturing plant with equipment and machinery"
@@ -107,7 +107,7 @@ const AboutSec1 = () => {
 
 
         {/* Stats Section */}
-        <div className="flex flex-col max-w-2xl ml-auto sm:flex-row items-center justify-between border-t border-dashed border-[#E4C3A3] pt-8 space-y-8 sm:space-y-0 sm:space-x-8 text-[#595959]">
+        <div className="flex flex-col max-w-2xl ml-auto sm:flex-row items-center justify-between pt-8 space-y-8 sm:space-y-0 sm:space-x-8 text-[#595959]">
           <StatItem
             number="15"
             unit="YEARS OF EXPERIENCE"
