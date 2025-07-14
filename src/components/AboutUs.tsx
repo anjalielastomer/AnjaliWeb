@@ -1,11 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
 const AboutUs: React.FC = () => {
   return (
-    <div className="w-full flex justify-between gap-20 h-screen bg-white px-5 py-10 font-raleway -mt-32 z-40 relative">
-      <div className="w-[30%] max-w-xs md:max-w-sm lg:max-w-md ml-10 flex flex-col h-full">
-        <div className="flex-1 rounded-xl overflow-hidden">
+    <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-10 bg-white px-5 py-10 font-raleway -mt-20 z-40 relative">
+      <div className="w-full max-w-md flex flex-col h-full items-center">
+        <div className="flex-1 rounded-xl overflow-hidden w-full">
           <Image
             src="/aboutus/aboutimg1.png"
             alt="High-speed train"
@@ -14,7 +15,7 @@ const AboutUs: React.FC = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="flex-1 rounded-xl overflow-hidden mt-4">
+        <div className="flex-1 rounded-xl overflow-hidden mt-12 w-full">
           <Image
             src="/aboutus/aboutimg2.png"
             alt="Metro in manufacturing"
@@ -25,16 +26,16 @@ const AboutUs: React.FC = () => {
         </div>
       </div>
 
-      <div className="w-[70%] flex flex-col h-full text-left">
-        <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3">
-          About <span className='text-textorange'>Us</span>
-        </h1>
-        <span className="text-2xl text-textblue font-light mb-4 font-monte ">
+      <div className="w-full max-w-2xl flex flex-col h-full text-center md:text-left ">
+        <h1 className="text-4xl font-bold text-textblue mb-2 flex gap-3 justify-center md:justify-start text-center md:text-left w-full">
+  About <span className='text-textorange'>Us</span>
+</h1>
+        <span className="text-2xl text-textblue font-light mb-2 font-monte text-center  md:text-left ">
           Unified in Shaping Railway&apos;s Future
         </span>
 
-        <div className='flex w-full gap-7 my-10 font-monte'>
-          <div className='w-[50%] text-justify'>
+        <div className='flex flex-col md:flex-row w-full gap-7 mt-5 mb-10 font-monte'>
+          <div className='w-full md:w-1/2 text-justify'>
             <h1 className="text-lg font-bold text-textblue mb-6 flex gap-3 font-monte">
               Our <span className='text-textorange'>Story</span>
             </h1>
@@ -42,7 +43,7 @@ const AboutUs: React.FC = () => {
               Over the previous 15 years, Anjali Elastomers, which was founded in 2009, has developed from a maker of rail components to a top supplier of entire railway infrastructure.
             </p>
           </div>
-          <div className='w-[50%] text-justify'>
+          <div className='w-full md:w-1/2 text-justify'>
             <h1 className="text-lg font-bold text-textblue mb-6 flex gap-3 font-monte">
               Integrated  <span className='text-textorange'>Capabilities</span>
             </h1>
@@ -51,8 +52,8 @@ const AboutUs: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className='flex w-full gap-7 mt-10 mb-7 font-monte'>
-          <div className='w-[50%]'>
+        <div className='flex flex-col md:flex-row w-full gap-7 mt-10 mb-7 font-monte'>
+          <div className='w-full md:w-1/2'>
             <h1 className="text-lg font-bold text-textblue mb-6 flex gap-3 font-monte">
               Manufacturing  <span className='text-textorange'>Excellence</span>
             </h1>
@@ -60,7 +61,7 @@ const AboutUs: React.FC = () => {
               We manufacture a variety of railway track goods at our four cutting-edge production plants in Eastern India. Our plants incorporate state-of-art Technology to mobilise Good Manufacturing Practices.
             </p>
           </div>
-          <div className='w-[50%]'>
+          <div className='w-full md:w-1/2'>
             <h1 className="text-lg font-bold text-textblue mb-6 flex gap-3 font-monte">
               Key Projects &  <span className='text-textorange'>Achievements</span>
             </h1>

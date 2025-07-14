@@ -11,13 +11,13 @@ const VideoSection: React.FC = () => {
 
   return (
     <section className="bg-rose-50 py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-      <h2 className="text-2xl sm:text-3xl font-semibold font-raleway text-center text-slate-900">
+      <h2 className="text-2xl sm:text-3xl font-bold font-raleway text-center text-textblue">
         See Us in{" "}
         <span className="text-orange-500">
           Action
         </span>
       </h2>
-      <p className="mt-3 max-w-xl text-center text-slate-700 text-base sm:text-lg tracking-wide">
+      <p className="mt-3 max-w-xl text-center text-slate-700 text-base sm:text-lg tracking-wide font-monte md:text-nowrap text-wrap">
         Discover how we're shaping the future of railway infrastructure
       </p>
 

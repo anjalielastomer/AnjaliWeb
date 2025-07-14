@@ -3,7 +3,7 @@ import React from "react";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#122957] text-gray-300 pt-8 pb-6 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="max-w-none 2xl:max-w-[1600px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Branding and Description */}
         <div>
           <h2 className="text-white text-xl font-semibold mb-3">
@@ -170,7 +170,7 @@ const Footer: React.FC = () => {
 
       <hr className="border-gray-700 my-6 max-w-7xl mx-auto" />
 
-      <div className="text-center text-gray-400 text-sm max-w-7xl mx-auto">
+      <div className="max-w-none 2xl:max-w-[1600px] mx-auto text-center text-gray-400 text-sm ">
         © 2025 Anjali Elastomer Ltd. All rights reserved.
       </div>
     </footer>

@@ -43,11 +43,10 @@ const InsightCard: React.FC<InsightCardProps> = ({
 const LatestInsights: React.FC = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h2 className="text-center text-3xl sm:text-4xl font-semibold tracking-tight">
-        <span className="text-slate-900">Latest </span>
-        <span className="text-orange-500">Insights</span>
-      </h2>
-      <p className="mt-3 max-w-md mx-auto text-center text-sm sm:text-base text-slate-800">
+      <h1 className="text-3xl sm:text-4xl font-bold text-textblue mb-8 text-center font-raleway">
+						Latest <span className="text-textorange">Insights</span>
+					</h1>
+      <p className="mt-3 max-w-md mx-auto text-center text-sm sm:text-base text-slate-800 font-monte">
         Stay updated with industry trends and innovations
       </p>
 
