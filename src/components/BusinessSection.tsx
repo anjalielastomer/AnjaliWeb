@@ -12,14 +12,14 @@ export default function IndiaBusinessSection() {
   const [activeTab, setActiveTab] = useState("bridge");
 
   return (
-    <section className="w-full bg-white px-20 py-16">
-      {/* Tabs */}
-      <nav className="flex gap-4 mb-12">
+    <section className="w-full min-h-fit py-20 flex justify-center items-center bg-white">
+      <div className="w-full max-w-7xl flex flex-col mx-auto">
+      <nav className="flex gap-4 mb-12 px-5 md:px-0 ">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors duration-300
+            className={`px-5 py-1 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-colors duration-300
               ${activeTab === tab.id
                 ? "bg-orange-500 text-white"
                 : "border border-orange-500 text-orange-500 hover:bg-orange-50"
@@ -32,26 +32,32 @@ export default function IndiaBusinessSection() {
 
       <div className="flex flex-col lg:flex-row gap-12">
         {/* Left - India Map */}
-        <div className="flex-shrink-0">
-          <div className="w-[320px] sm:w-[400px] lg:w-[480px]">
-            <Image
-              src="/indiahigh.png"
-              alt="Map of India highlighting selected states with icons representing business locations"
-              width={480}
-              height={600}
-              className="object-contain"
-              priority
-            />
-          </div>
-        </div>
+        <div className="flex-shrink-0 flex justify-center items-center">
+  <div className="w-[320px] sm:w-[400px] lg:w-[480px]">
+    <Image
+      src={
+        activeTab === "bridge"
+          ? "/map1.svg"
+          : activeTab === "track"
+          ? "/map2.svg"
+          : "/map3.svg"
+      }
+      alt="Map of India highlighting selected states with icons representing business locations"
+      width={480}
+      height={600}
+      className="object-contain"
+      priority
+    />
+  </div>
+</div>
 
         {/* Right - Content */}
-        <div className="flex flex-col justify-start flex-1">
-          <h2 className="text-3xl font-semibold font-raleway text-gray-900 mb-3">
+        <div className="flex flex-col px-5 md:px-0 justify-start flex-1">
+          <h2 className="text-3xl font-semibold font-raleway text-textblue mb-3">
             <span>Busin</span>
             <span className="text-orange-500">ess</span>
           </h2>
-          <h3 className="text-xl font-raleway text-gray-900 mb-6">
+          <h3 className="text-xl font-raleway text-textblue mb-6">
             Building Pan-India Presence
           </h3>
           <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-3xl mb-12">
@@ -84,6 +90,7 @@ export default function IndiaBusinessSection() {
           </div>
         </div>
       </div>
+      </div>
     </section>
   );
 }
@@ -101,7 +108,7 @@ function StatItem({
     <div className="flex gap-2 items-start">
       <div className="text-orange-500 font-bold text-4xl w-28 break-words  text-center">
         {number}
-        <div className="uppercase text-xs font-semibold text-right text-gray-700 mb-1 break-words ">
+        <div className="uppercase text-xs font-semibold text-gray-700 mb-1 break-words ">
           {unit}
         </div>
       </div>

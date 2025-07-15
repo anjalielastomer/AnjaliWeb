@@ -120,15 +120,14 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 
 const FeaturedProducts: React.FC = () => {
   return (
-    <section className="bg-[#FFF6F0] py-12 px-4 sm:px-6 md:px-20">
-       <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3">
-          Featured <span className='text-textorange'>Products</span>
-        </h1>
+    <section className="bg-[#FFF6F0] 2xl:mx-7 mx-auto my-20 px-5 md:px-0 flex flex-col items-center">
+      <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3  w-full">
+        Featured <span className='text-textorange'>Products</span>
+      </h1>
 
-
-      <div className="relative overflow-hidden w-full">
+      <div className="relative overflow-hidden w-full flex justify-center">
         <div
-          className="flex gap-6 py-2 w-max"
+          className="flex gap-6 py-2 w-max justify-center"
           style={{
             animation: 'scroll-bounce 6s linear infinite alternate',
           }}
@@ -145,7 +144,6 @@ const FeaturedProducts: React.FC = () => {
                   width={400}
                   height={240}
                   className="object-cover h-full"
-
                 />
                 <h3 className="absolute bottom-1 left-6 font-semibold z-10 text-white px-2 py-1 rounded-sm w-full text-left">
                   {name}
@@ -177,25 +175,23 @@ const FeaturedProducts: React.FC = () => {
 
         {/* 👇 CSS for back and forth animation */}
         <style jsx>{`
-    @keyframes scroll-bounce {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(calc(-100% + 100vw));
-      }
-    }
-  `}</style>
+          @keyframes scroll-bounce {
+            0% {
+              transform: translateX(0%);
+            }
+            100% {
+              transform: translateX(calc(-100% + 100vw));
+            }
+          }
+        `}</style>
       </div>
 
-
-
-
       <div className="w-full flex justify-center items-center mt-10">
-       <button className=" text-textblue transition-colors px-14 py-3 rounded-2xl text-3xl font-light flex items-center gap-2">
-                   <span className="text-textorange">Explore</span><span className="text-textblue"> All</span>
-                   <Image src='/arrow.svg' alt='arrow' width={27} height={27}/>
-                 </button>
+        <button className="text-textblue transition-colors px-14 py-3 rounded-2xl text-3xl font-light flex items-center gap-2">
+          <span className="text-textorange">Explore</span>
+          <span className="text-textblue"> All</span>
+          <Image src='/arrow.svg' alt='arrow' width={27} height={27}/>
+        </button>
       </div>
     </section>
   );
