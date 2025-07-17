@@ -1,12 +1,12 @@
 import React from "react";
-
+import Image from "next/image";
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#122957] text-gray-300 pt-8 pb-6 px-6">
-      <div className="max-w-none 2xl:max-w-[1600px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <footer className="bg-[#122957] text-gray-300 pt-8 pb-6 px-6 relative z-20 font-monte text-lg font-normal bottom-0">
+      <div className=" max-w-4xl 2xl:max-w-[1600px] px-4 md:px-7 py-4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-32">
         {/* Branding and Description */}
         <div>
-          <h2 className="text-white text-xl font-semibold mb-3">
+          <h2 className="text-white text-xl font-semibold mb-3 font-raleway">
             Anjali <span className="text-[#EF6C00]">Elastomer</span>
           </h2>
           <p className="mb-4 max-w-xs leading-relaxed">
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
 
         {/* Products */}
         <div>
-          <h3 className="text-[#EF6C00] underline mb-3 font-medium cursor-default">
+          <h3 className="text-[#EF6C00] underline mb-3 font-medium cursor-default font-raleway">
             Products
           </h3>
           <ul className="space-y-2">
@@ -94,7 +94,7 @@ const Footer: React.FC = () => {
 
         {/* Company */}
         <div>
-          <h3 className="text-[#EF6C00] underline mb-3 font-medium cursor-default">
+          <h3 className="text-[#EF6C00] underline mb-3 font-medium cursor-default font-raleway">
             Company
           </h3>
           <ul className="space-y-2">
@@ -107,61 +107,20 @@ const Footer: React.FC = () => {
 
         {/* Contact Us */}
         <div>
-          <h3 className="text-[#EF6C00] underline mb-3 font-medium cursor-default">
+          <h3 className="text-[#EF6C00] underline mb-3 font-medium cursor-default font-raleway">
             Contact Us
           </h3>
           <ul className="space-y-3">
             <li className="flex items-center space-x-2">
-              <svg
-                className="w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                role="img"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
-              </svg>
-              <span>+91 98765 43210</span>
+              <Image src="/phone.svg" alt="Phone" width={20} height={20} />
+              <span>Phone : +91 98765 43210</span>
             </li>
             <li className="flex items-center space-x-2">
-              <svg
-                className="w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                role="img"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M4 4h16v16H4z" stroke="none"></path>
-                <path d="M22 6L12 13 2 6" />
-              </svg>
+             <Image src="/email.svg" alt="Phone" width={20} height={20} />
               <span>info@anjalielastomer.com</span>
             </li>
             <li className="flex items-center space-x-2">
-              <svg
-                className="w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                role="img"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
+               <Image src="/map.svg" alt="Phone" width={20} height={20} />
               <span>Howrah, West Bengal, India</span>
             </li>
           </ul>
