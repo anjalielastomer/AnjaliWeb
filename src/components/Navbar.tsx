@@ -56,13 +56,20 @@ const Navbar: React.FC = () => {
     }
     return {
       backgroundColor: 'var(--bgcolour)',
-      textColor: 'var(--bg-white)',
+      textColor: 'var(--bg-black)',
       logoColor: 'var(--bg-white)',
       accentColor: 'var(--textorange)'
     };
   };
 
   const styles = getNavbarStyle();
+  
+  const getTextColor = () => {
+    if (styles.textColor === 'var(--text-blue)') return 'text-[#152f5d]';
+    if (styles.textColor === 'var(--bg-white)') return 'text-white';
+    if (styles.textColor === 'var(--textorange)') return 'text-[#FB7602]';
+    return 'text-black';
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -82,7 +89,6 @@ const Navbar: React.FC = () => {
       className="w-full font-raleway transition-all duration-300 fixed top-0 left-0 z-50"
       style={{
         backgroundColor: styles.backgroundColor,
-        color: styles.textColor,
         boxShadow: isScrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none'
       }}
     >
@@ -90,55 +96,39 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center px-4 md:px-10 py-4">
           {/* Logo */}
           <div
-            className="text-xl md:text-2xl font-bold font-raleway cursor-pointer"
-            style={{ color: styles.logoColor }}
+            className={`text-xl md:text-2xl font-bold font-raleway cursor-pointer ${getTextColor()}`}
           >
-            Anjali <span style={{ color: styles.accentColor }}>Elastomer</span>
+            Anjali <span className="text-[#FB7602]">Elastomer</span>
           </div>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex space-x-8 lg:space-x-12 text-xl lg:text-2xl font-light relative">
+          <ul className="hidden md:flex space-x-8 lg:space-x-12 text-xl lg:text-2xl font-normal relative">
             {navItems.map(({ label, href, subItems }) => (
               <li
                 key={label}
-                className="relative text-base lg:text-lg font-light"
+                className={`relative text-base lg:text-lg font-normal ${subItems ? 'group' : ''}`}
               >
-                {subItems ? (
-                  <>
-                    <button
-                      onClick={() => toggleDropdown(label)}
-                      className="flex items-center space-x-1 transition-colors duration-200 hover:opacity-80"
-                      style={{ color: styles.textColor }}
-                    >
-                      <span>{label}</span>
-                      <span className="text-xs">
-                        {openDropdown === label ? '▲' : '▼'}
-                      </span>
-                    </button>
-                    {openDropdown === label && (
-                      <ul className="absolute left-0 mt-2 w-52 bg-white rounded shadow-lg border border-gray-200 z-50">
-                        {subItems.map(({ label: subLabel, href: subHref }) => (
-                          <li key={subLabel}>
-                            <Link
-                              href={subHref}
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                              onClick={() => setOpenDropdown(null)}
-                            >
-                              {subLabel}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    href={href}
-                    className="transition-colors duration-200 hover:opacity-80"
-                    style={{ color: styles.textColor }}
-                  >
-                    {label}
-                  </Link>
+                <Link
+                  href={href}
+                  className={`relative font-normal ${getTextColor()} hover:text-[#FB7602] transition-colors duration-200
+          after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-300`}
+                >
+                  {label}
+                </Link>
+
+                {subItems && (
+                  <ul className="absolute left-0 mt-2 w-52 bg-white rounded shadow-lg border border-gray-200 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                    {subItems.map(({ label: subLabel, href: subHref }) => (
+                      <li key={subLabel}>
+                        <Link
+                          href={subHref}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          {subLabel}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 )}
               </li>
             ))}
@@ -151,18 +141,15 @@ const Navbar: React.FC = () => {
             aria-label="Toggle menu"
           >
             <span
-              className={`block w-6 h-0.5 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''
-                }`}
+              className={`block w-6 h-0.5 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}
               style={{ backgroundColor: isScrolled ? '#152f5d' : 'black' }}
             />
             <span
-              className={`block w-6 h-0.5 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''
-                }`}
+              className={`block w-6 h-0.5 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}
               style={{ backgroundColor: isScrolled ? '#152f5d' : 'black' }}
             />
             <span
-              className={`block w-6 h-0.5 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''
-                }`}
+              className={`block w-6 h-0.5 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}
               style={{ backgroundColor: isScrolled ? '#152f5d' : 'black' }}
             />
           </button>
@@ -170,8 +157,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Dropdown Menu */}
         <div
-          className={`md:hidden absolute top-full left-0 w-full transition-all duration-300 overflow-hidden backdrop-blur-lg ${isMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
-            }`}
+          className={`md:hidden absolute top-full left-0 w-full transition-all duration-300 overflow-hidden backdrop-blur-lg ${isMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
           style={{
             backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' :
               (pathname === '/' ? 'rgba(255, 107, 53, 0.15)' : 'rgba(255, 255, 255, 0.9)'),
@@ -189,8 +175,7 @@ const Navbar: React.FC = () => {
                   <>
                     <button
                       onClick={() => toggleDropdown(label)}
-                      className="w-full text-left py-2 px-4 text-lg font-light flex justify-between items-center transition-colors duration-200 hover:opacity-80"
-                      style={{ color: styles.textColor }}
+                      className={`w-full text-left py-2 px-4 text-lg font-light flex justify-between items-center transition-colors duration-200 ${getTextColor()} hover:text-[#FB7602]`}
                     >
                       {label}
                       <span>{openDropdown === label ? '▲' : '▼'}</span>
@@ -214,8 +199,7 @@ const Navbar: React.FC = () => {
                 ) : (
                   <Link
                     href={href}
-                    className="block py-2 px-4 text-lg font-light transition-colors duration-200 hover:opacity-80 rounded hover:bg-white hover:bg-opacity-20"
-                    style={{ color: styles.textColor }}
+                    className={`block py-2 px-4 text-lg font-light transition-colors duration-200 ${getTextColor()} hover:text-[#FB7602] hover:opacity-80 rounded hover:bg-white hover:bg-opacity-20`}
                     onClick={closeMenu}
                   >
                     {label}

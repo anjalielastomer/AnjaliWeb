@@ -17,7 +17,8 @@ export default function AboutSec5() {
               <span className="text-[#FB7602] group-hover:text-[#193055] group-hover:font-medium transition-all duration-300">Explore</span>
               <span className="text-[#193055] group-hover:text-[#FB7602] group-hover:font-medium transition-all duration-300"> All</span>
             </span>
-            <Image src='/arrow.svg' alt='arrow' width={27} height={27} />
+            <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
+            <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
           </Link>
         </div>
         <div className="space-y-4 text-slate-700 text-base md:text-lg leading-relaxed">
