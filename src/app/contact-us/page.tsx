@@ -22,7 +22,7 @@ const page = () => {
                         <Image src="/phone.svg" alt="Phone" width={28} height={28} />
                     </div>
                     <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Phone</h2>
-                    <p className="text-textblue text-base font-monte mb-1">+1 (555) 123-4567</p>
+                    <p className="text-textblue text-[14px] font-monte mb-1">+1 (555) 123-4567</p>
                     <span className="text-[#2D3A4A] text-xs font-monte opacity-80">Mon-Fri 8AM-6PM EST</span>
                 </div>
                 {/* Card2 */}
@@ -31,7 +31,7 @@ const page = () => {
                         <Image src="/email.svg" alt="Phone" width={28} height={28} />
                     </div>
                     <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Email</h2>
-                    <p className="text-textblue text-base font-monte mb-1">info@railtechmaterials.com</p>
+                    <p className="text-textblue text-[14px] font-monte mb-1">info@railtechmaterials.com</p>
                     <span className="text-[#2D3A4A] text-xs font-monte opacity-80">sales@railtechmaterials.com</span>
                 </div>
                 {/* Card3 */}
@@ -40,7 +40,7 @@ const page = () => {
                         <Image src="/map.svg" alt="Phone" width={28} height={28} />
                     </div>
                     <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Location</h2>
-                    <p className="text-textblue text-base font-monte mb-1">J8H5+MF, Bhatta Nagar, Liluah,</p>
+                    <p className="text-textblue text-[14px] font-monte mb-1">J8H5+MF, Bhatta Nagar, Liluah,</p>
                     <span className="text-[#2D3A4A] text-xs font-monte opacity-80">Howrah, Chakpara, West Bengal 711203</span>
                 </div>
             </div>
@@ -161,38 +161,38 @@ const page = () => {
                 {/* Card1 */}
                 <div className="w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col items-start shadow-sm">
                     <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
-                        <Image src="/phone.svg" alt="Phone" width={28} height={28} />
+                        <Image src="/contactus/hand.svg" alt="Phone" width={28} height={28} />
                     </div>
-                    <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Phone</h2>
-                    <p className="text-textblue text-base font-monte mb-1">+1 (555) 123-4567</p>
-                    <span className="text-[#2D3A4A] text-xs font-monte opacity-80">Mon-Fri 8AM-6PM EST</span>
+                    <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Sales</h2>
+                    <p className="text-textblue text-[14px] font-monte mb-1">Product inquiries and quotes</p>
+                    <span className="text-textblue text-xs font-monte font-medium">sales@railtechmaterials.com</span>
                 </div>
                 {/* Card2 */}
                 <div className="w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col items-start shadow-sm">
                     <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
-                        <Image src="/email.svg" alt="Phone" width={28} height={28} />
+                        <Image src="/contactus/headphone.svg" alt="Phone" width={28} height={28} />
                     </div>
-                    <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Email</h2>
-                    <p className="text-textblue text-base font-monte mb-1">info@railtechmaterials.com</p>
-                    <span className="text-[#2D3A4A] text-xs font-monte opacity-80">sales@railtechmaterials.com</span>
+                    <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Technical support</h2>
+                    <p className="text-textblue text-[14px] font-monte mb-1">Product specifications and guidance</p>
+                    <span className="text-textblue text-xs font-monte font-medium">support@railtechmaterials.com</span>
                 </div>
                 {/* Card3 */}
                 <div className="w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col items-start shadow-sm">
                     <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
-                        <Image src="/map.svg" alt="Phone" width={28} height={28} />
+                        <Image src="/contactus/truck.svg" alt="Phone" width={28} height={28} />
                     </div>
-                    <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Location</h2>
-                    <p className="text-textblue text-base font-monte mb-1">J8H5+MF, Bhatta Nagar, Liluah,</p>
-                    <span className="text-[#2D3A4A] text-xs font-monte opacity-80">Howrah, Chakpara, West Bengal 711203</span>
+                    <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Procurement</h2>
+                    <p className="text-textblue text-[14px] font-monte mb-1">Large orders and contracts</p>
+                    <span className="text-textblue text-xs font-monte font-medium">procurement@railtechmaterials.com</span>
                 </div>
                 {/* Card4 */}
                 <div className="w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col items-start shadow-sm">
                     <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
-                        <Image src="/map.svg" alt="Phone" width={28} height={28} />
+                        <Image src="/contactus/quality.svg" alt="Phone" width={28} height={28} />
                     </div>
-                    <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Location</h2>
-                    <p className="text-textblue text-base font-monte mb-1">J8H5+MF, Bhatta Nagar, Liluah,</p>
-                    <span className="text-[#2D3A4A] text-xs font-monte opacity-80">Howrah, Chakpara, West Bengal 711203</span>
+                    <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Quality Assurance</h2>
+                    <p className="text-textblue text-[14px] font-monte mb-1">Certifications and compliance</p>
+                    <span className="text-textblue text-xs font-monte font-medium">quality@railtechmaterials.com</span>
                 </div>
             </div>
         </div>
