@@ -3,7 +3,7 @@ import Image from "next/image";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#122957] text-gray-300 pt-8 pb-6 px-6 relative z-20 font-monte text-lg font-normal bottom-0">
-      <div className=" max-w-4xl 2xl:max-w-[1600px] px-4 md:px-7 py-4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-32">
+      <div className=" max-w-7xl 2xl:max-w-[1600px] px-4 md:px-7 py-4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-32">
         {/* Branding and Description */}
         <div>
           <h2 className="text-white text-xl font-semibold mb-3 font-raleway">
@@ -113,7 +113,7 @@ const Footer: React.FC = () => {
           <ul className="space-y-3">
             <li className="flex items-center space-x-2">
               <Image src="/phone.svg" alt="Phone" width={20} height={20} />
-              <span>Phone : +91 98765 43210</span>
+              <span>+91 98765 43210</span>
             </li>
             <li className="flex items-center space-x-2">
              <Image src="/email.svg" alt="Phone" width={20} height={20} />

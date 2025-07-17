@@ -21,7 +21,7 @@ const App: React.FC = () => {
       <FeaturedProjects />
       <Client />
       <LatestInsights />
-      <VideoSection />
+      <VideoSection bgColor="bg-white" />
     </main>
   );
 };

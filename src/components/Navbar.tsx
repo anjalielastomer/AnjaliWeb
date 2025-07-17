@@ -20,8 +20,15 @@ const Navbar: React.FC = () => {
         { label: "Production Facilities", href: "/about-us/production-facilities" },
       ]
     },
-    { label: "Products", href: "/products" },
-    { label: "Business", href: "#" },
+    { label: "Products", href: "/products" , },
+    { label: "Business", 
+      href: "/business", 
+      subItems: [
+        { label: "Pandrol", href: "/business/pandrol" },
+        { label: "Railway", href: "/business/railway" },
+        { label: "Turnout", href: "/business/turnout" },
+      ]
+    },
     { label: "Projects", href: "#" },
     { label: "Career", href: "/career" },
     { label: "Contact Us", href: "/contact-us" },
@@ -92,7 +99,7 @@ const Navbar: React.FC = () => {
         boxShadow: isScrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none'
       }}
     >
-      <div className="max-w-4xl 2xl:max-w-[1600px] mx-auto">
+      <div className="max-w-none 2xl:max-w-[1600px] mx-auto">
         <div className="flex justify-between items-center px-4 md:px-10 py-4">
           {/* Logo */}
           <div
