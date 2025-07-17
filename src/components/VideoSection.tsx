@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
+
 interface VideoSectionProps {
   bgColor?: string; // optional, defaults to white
 }
@@ -14,7 +15,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({ bgColor = "bg-white" }) => 
   };
 
   return (
-    <section className={`${bgColor} py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center`}>
+    <section className={`${bgColor} bg-rose-50 py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center`}>
       <h2 className="text-2xl sm:text-3xl font-bold font-raleway text-center text-textblue">
         See Us in <span className="text-orange-500">Action</span>
       </h2>
