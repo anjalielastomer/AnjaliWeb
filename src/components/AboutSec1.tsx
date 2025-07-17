@@ -42,9 +42,9 @@ const AboutSec1 = () => {
 
         <div className="w-fit p-4 flex flex-col justify-center relative">
           <div className="max-w-lg mx-auto pt-8 lg:pt-0">
-            <div className="flex items-center justify-center md:justify-start gap-2 mb-6 text-2xl md:text-2xl">
-              <h2 className="text-[#152f5d] font-semibold">About</h2>
-              <span className="text-orange-500 font-semibold">Us</span>
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-6 text-2xl md:text-4xl font-raleway">
+              <h2 className="text-[#152f5d] font-bold">About</h2>
+              <span className="text-orange-500 font-bold">Us</span>
             </div>
 
             <p className="text-gray-700 text-lg leading-loose my-10 lg:my-20">

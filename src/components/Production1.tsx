@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 
 const Production1 = () => {
     return (
-        <div className="relative">
+        <div className="relative font-monte">
             {/* Sec1 */}
             <div className="flex flex-col justify-center lg:flex-row bg-white min-h-screen pt-20 relative z-10">
                 {/* Left Side */}
@@ -33,12 +33,12 @@ const Production1 = () => {
 
                 <div className="w-full lg:w-fit p-4 px-6 sm:px-8 lg:px-12 flex flex-col justify-center relative">
                     <div className="max-w-lg mx-auto lg:mx-0">
-                        <div className="flex items-center justify-start gap-2 mb-6">
-                            <h2 className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px]">Steel</h2>
-                            <span className="text-orange-500 font-semibold text-2xl sm:text-3xl lg:text-[36px]">Fabrication</span>
+                        <div className="flex items-center justify-start gap-2 mb-6 font-raleway">
+                            <h2 className="text-[#152f5d] font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Steel</h2>
+                            <span className="text-orange-500 font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Fabrication</span>
                         </div>
 
-                        <p className='text-base sm:text-lg lg:text-[20px] font-[500]'>Precision Steel Fabrication, <span className='text-orange-500'>Engineered</span> for Elastomer Excellence</p>
+                        <p className='text-base sm:text-lg lg:text-[20px] font-[500] font-monte md:mt-10'>Precision Steel Fabrication, <span className='text-orange-500'>Engineered</span> for Elastomer Excellence</p>
 
                         <p className="text-gray-700 text-base sm:text-lg leading-loose my-8 lg:my-20">
                             At the heart of every high-performance elastomer product lies a backbone of precision-engineered steel. Our in-house steel fabrication facility ensures strength, consistency, and quality you can rely on — every time.
@@ -58,11 +58,11 @@ const Production1 = () => {
             </div>
 
             {/* Sec2 */}
-            <div className="bg-[#FFF8F2] min-h-screen px-6 sm:px-12 lg:px-24 font-sans text-[#1A202C] flex flex-col justify-end py-20 relative z-5 lg:-mt-32">
+            <div className="bg-[#FFF8F2] min-h-screen px-6 sm:px-12 lg:px-24 font-monte text-[#1A202C] flex flex-col justify-end py-20 relative z-5 lg:-mt-32">
                 <div className="lg:pt-40 flex flex-col gap-5">
                     {/* Header Section */}
                     <div className="mb-8">
-                        <h2 className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px] max-w-[1440px] mx-auto">
+                        <h2 className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px] max-w-[1440px] mx-auto font-raleway">
                             Turnout and <span className="text-orange-500 font-semibold">Track Devices</span>
                         </h2>
                     </div>
@@ -135,7 +135,7 @@ function StatItem({
 
     return (
         <div className="flex gap-4 sm:gap-8 items-start py-4" ref={ref}>
-            <div className="text-orange-500 font-bold text-3xl sm:text-4xl lg:text-5xl w-20 sm:w-32 break-words text-center">
+            <div className="text-orange-500 font-bold text-3xl sm:text-4xl lg:text-5xl w-20 sm:w-32  text-center">
                 <div className="flex items-center justify-end gap-2">
                     {animatedNumber}
                     <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />

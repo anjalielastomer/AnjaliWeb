@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Production3 = () => {
     return (
-        <section className="flex flex-col md:flex-row items-center md:items-start mx-auto px-4 sm:px-6 md:px-12 lg:px-24 py-8 sm:py-12 lg:py-20 bg-[#FFF4E6] relative justify-center overflow-hidden">
+        <section className="flex flex-col md:flex-row items-center md:items-start mx-auto px-4 sm:px-6 md:px-12 lg:px-24 py-8 sm:py-12 lg:py-20 bg-[#FFF4E6] relative justify-center overflow-hidden font-monte">
             {/* Left side image */}
             <div className="w-full md:w-fit flex justify-center md:justify-start mb-6 sm:mb-8 md:mb-0">
                 <div className="w-[350px] h-[350px] sm:w-[360px] sm:h-[360px] md:w-[420px] md:h-[420px] lg:w-[480px] lg:h-[480px] rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
@@ -20,7 +20,7 @@ const Production3 = () => {
 
             {/* Right side content */}
             <div className="w-full md:w-1/2 md:pl-10 lg:pl-16 text-gray-900 flex flex-col gap-6 sm:gap-8">
-                <h2 className="text-[#152f5d] font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight">
+                <h2 className="text-[#152f5d] font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight font-raleway">
                     Rail Fastening and Sleeper <span className="text-orange-500">Manufacturing</span>
                 </h2>
 
