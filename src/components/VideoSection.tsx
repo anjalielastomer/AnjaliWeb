@@ -2,7 +2,11 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const VideoSection: React.FC = () => {
+interface props{
+  background:string
+}
+
+const VideoSection: React.FC<props> = ({background="#fff1f2"}) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handlePlayClick = () => {
@@ -10,7 +14,7 @@ const VideoSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-rose-50 py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+    <section style={{background:background}} className="bg-rose-50 py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
       <h2 className="text-2xl sm:text-3xl font-bold font-raleway text-center text-textblue">
         See Us in{" "}
         <span className="text-orange-500">
