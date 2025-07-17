@@ -44,13 +44,8 @@ export default function AboutSec4() {
             <span className="text-[#FB7602] group-hover:text-[#193055] group-hover:font-medium transition-all duration-300">Learn</span>
             <span className="text-[#193055] group-hover:text-[#FB7602] group-hover:font-medium transition-all duration-300"> more</span>
           </span>
-          <Image
-            src='/arrow.svg'
-            alt='arrow'
-            width={27}
-            height={27}
-            className="animate-flicker"
-          />
+          <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
+          <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
         </Link>
       </div>
 

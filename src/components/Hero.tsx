@@ -19,15 +19,15 @@ const Hero: React.FC = () => {
             <span className="text-textblue">Roads</span>
           </span>
         </h1>
-
-        <div className="mt-10 flex flex-col md:flex-row items-center w-full gap-4 md:gap-6">
-          <button className="bg-textorange text-white px-14 py-3 rounded-2xl text-lg font-light transition-colors whitespace-nowrap">
+               <div className="mt-10 flex flex-col md:flex-row items-center w-full gap-4 md:gap-6">
+          <button className="bg-textorange text-white px-14 py-3 rounded-2xl text-lg font-light transition-colors whitespace-nowrap  hover:font-normal">
             Explore Products
           </button>
-          <button className="border border-orange-500 text-textblue transition-colors px-14 py-3 rounded-2xl text-lg font-light flex items-center gap-2">
+          <button className="group border border-orange-500 text-textblue transition-colors px-14 py-3 rounded-2xl text-lg font-light flex items-center gap-2 hover:font-normal">
             <span className="text-textblue">Learn</span>
             <span className="text-textorange"> more</span>
-            <Image src="/arrow.svg" alt="arrow" width={27} height={27} />
+            <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden"/>
+            <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block"/>
           </button>
         </div>
       </div>
