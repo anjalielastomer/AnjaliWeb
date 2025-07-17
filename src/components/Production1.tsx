@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import React, { useEffect } from 'react';
+"use client";
+import Image from "next/image";
+import React, { useEffect, useState, useRef } from "react";
 
 const Production1 = () => {
-
     return (
         <div className="relative">
             {/* Sec1 */}
@@ -18,12 +18,12 @@ const Production1 = () => {
                     <div className="mt-8 lg:mt-16 flex flex-col gap-8 lg:gap-12 mb-12">
                         <div className="flex flex-col sm:flex-row gap-8 sm:gap-12">
                             <StatItem
-                                number="175"
+                                number={175}
                                 unit="KMS TRACKS"
                                 description="Our Projects include critical rail link connectivity projects and several metro projects. For linking mobility with daily lives."
                             />
                             <StatItem
-                                number="60"
+                                number={60}
                                 unit="BRIDGES"
                                 description="Our Projects brought forward mobility and connectivity connecting lands surfaces, hilly terrains, water bodies and cities."
                             />
@@ -57,13 +57,13 @@ const Production1 = () => {
                 </div>
             </div>
 
-            {/* Sec2 - Higher z-index and negative margin to overlap Sec1 on desktop */}
+            {/* Sec2 */}
             <div className="bg-[#FFF8F2] min-h-screen px-6 sm:px-12 lg:px-24 font-sans text-[#1A202C] flex flex-col justify-end py-20 relative z-5 lg:-mt-32">
                 <div className="lg:pt-40 flex flex-col gap-5">
                     {/* Header Section */}
                     <div className="mb-8">
                         <h2 className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px] max-w-[1440px] mx-auto">
-                            Turnout and <span className="text-orange-500 font-semibold text-2xl sm:text-3xl lg:text-[36px]">Track Devices</span>
+                            Turnout and <span className="text-orange-500 font-semibold">Track Devices</span>
                         </h2>
                     </div>
 
@@ -103,12 +103,12 @@ const Production1 = () => {
                     {/* Stats Section */}
                     <div className="flex flex-col max-w-4xl ml-auto sm:flex-row items-center justify-between pt-8 space-y-8 sm:space-y-0 sm:space-x-8 text-[#595959]">
                         <StatItem
-                            number="15"
+                            number={15}
                             unit="YEARS OF EXPERIENCE"
                             description="Our extensive history in manufacturing world-class items fosters security and safety as the first priority towards our GMP."
                         />
                         <StatItem
-                            number="4"
+                            number={4}
                             unit="MANUFACTURING PLANTS"
                             description="We operate across 4 plants in the India. Providing us the brand-width to accommodate bespoke and turn-key solutions."
                         />
@@ -125,22 +125,20 @@ function StatItem({
     unit,
     description,
 }: {
-    number: string | number;
+    number: number;
     unit: string;
     description: string;
 }) {
+    const ref = useRef<HTMLDivElement | null>(null);
+    const isVisible = useOnScreen(ref);
+    const animatedNumber = useCountUp(number, isVisible, 2000);
+
     return (
-        <div className="flex gap-4 sm:gap-8 items-start py-4">
+        <div className="flex gap-4 sm:gap-8 items-start py-4" ref={ref}>
             <div className="text-orange-500 font-bold text-3xl sm:text-4xl lg:text-5xl w-20 sm:w-32 break-words text-center">
                 <div className="flex items-center justify-end gap-2">
-                    {number}
-                    <Image
-                        src='/arrow.svg'
-                        alt='arrow'
-                        width={27}
-                        height={27}
-                        className="animate-flicker w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"
-                    />
+                    {animatedNumber}
+                    <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />
                 </div>
                 <div className="uppercase text-xs sm:text-sm font-semibold text-right text-gray-700 mt-2 mb-2">
                     {unit}
@@ -151,4 +149,51 @@ function StatItem({
             </div>
         </div>
     );
+}
+
+// Custom Hook for count-up animation
+function useCountUp(target: number, start: boolean, duration = 2000) {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        if (!start) return;
+
+        let startTime: number | null = null;
+
+        const step = (timestamp: number) => {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            const percentage = Math.min(progress / duration, 1);
+            setCount(Math.floor(percentage * target));
+            if (progress < duration) {
+                requestAnimationFrame(step);
+            } else {
+                setCount(target);
+            }
+        };
+
+        requestAnimationFrame(step);
+
+        return () => cancelAnimationFrame(step as any);
+    }, [target, duration, start]);
+
+    return count;
+}
+
+// Hook to detect when element is visible
+function useOnScreen(ref: React.RefObject<Element>, rootMargin = "0px") {
+    const [isIntersecting, setIntersecting] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => setIntersecting(entry.isIntersecting),
+            { rootMargin }
+        );
+        if (ref.current) observer.observe(ref.current);
+        return () => {
+            if (ref.current) observer.unobserve(ref.current);
+        };
+    }, [ref, rootMargin]);
+
+    return isIntersecting;
 }
