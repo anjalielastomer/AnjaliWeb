@@ -4,7 +4,7 @@ const page = () => {
   return (
     <div className="w-full min-h-screen mt-24">
         {/* Section 1*/}
-      <div className="w-full  min-h-screen flex justify-center py-10">
+      <div className="w-full  min-h-fit flex justify-center py-10">
         <div className=" flex gap-10">
         <div className="w-[50%] flex flex-col">
             <h1 className="font-raleway font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-textblue w-full text-center md:text-left">
@@ -34,7 +34,7 @@ const page = () => {
         </div>
       </div>
         {/* Section 2 */}
-        <div className="w-full min-h-screen flex flex-col items-center bg-[#FFF5EF] gap-10 py-20">
+        <div className="w-full min-h-fit flex flex-col items-center bg-[#FFF5EF] gap-10 py-20">
             <span className="text-textblue font-bold text-4xl  font-raleway">Why Join <span className="text-textorange">Our Company</span>?</span>
            <span className="text-textblue font-monte font-medium text-lg mt-5 max-w-4xl text-wrap text-center">We&apos;re not just building railway infrastructure - we&apos;re building careers, communities, and the future of Rail-Road transportation services and systems.</span>
            <div className="grid grid-cols-3 gap-7 my-5">
@@ -79,7 +79,7 @@ const page = () => {
            </div>
             </div>
         {/* Section 3 */}
-        <div className="w-full min-h-screen flex justify-center pt-20 gap-10">
+        <div className="w-full min-h-fit flex justify-center pt-20 gap-10">
             <div className="flex flex-col items-center gap-10">
                
                 
