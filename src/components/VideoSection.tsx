@@ -1,12 +1,13 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { useState } from "react";
 
-interface props{
-  background?:string
+
+interface VideoSectionProps {
+  bgColor?: string; // optional, defaults to white
 }
 
-const VideoSection: React.FC<props> = ({background="#fff1f2"}) => {
+const VideoSection: React.FC<VideoSectionProps> = ({ bgColor = "bg-white" }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handlePlayClick = () => {
@@ -14,12 +15,9 @@ const VideoSection: React.FC<props> = ({background="#fff1f2"}) => {
   };
 
   return (
-    <section style={{background:background}} className="bg-rose-50 py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+    <section className={`${bgColor} bg-rose-50 py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center`}>
       <h2 className="text-2xl sm:text-3xl font-bold font-raleway text-center text-textblue">
-        See Us in{" "}
-        <span className="text-orange-500">
-          Action
-        </span>
+        See Us in <span className="text-orange-500">Action</span>
       </h2>
       <p className="mt-3 max-w-xl text-center text-slate-700 text-base sm:text-lg tracking-wide font-monte md:text-nowrap text-wrap">
         Discover how we're shaping the future of railway infrastructure
@@ -56,7 +54,6 @@ const VideoSection: React.FC<props> = ({background="#fff1f2"}) => {
           </>
         ) : (
           <div className="relative pt-[56.25%] h-0">
-            {/* TODO : Add Video  */}
             <iframe
               className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
               src="https://www.youtube.com/embed/"
@@ -72,4 +69,3 @@ const VideoSection: React.FC<props> = ({background="#fff1f2"}) => {
 };
 
 export default VideoSection;
-

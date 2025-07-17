@@ -10,7 +10,7 @@ const Page = () => {
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
       {/* Section 1: Hero */}
-      <div className="flex bg-[url('/business/line.svg')] bg-right-top justify-center xl:justify-between mx-auto max-w-[90%] flex-wrap mb-20">
+      <div className="flex bg-right-top justify-center xl:justify-between mx-auto max-w-[90%] flex-wrap mb-20">
         <div className="min-h-auto flex flex-col p-6 gap-8 md:gap-15 md:w-[60%] xl:pt-20 md:pt-0">
           <h1 className="font-raleway font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-[85.5px] text-textblue w-full text-center md:text-left">
             <span className="text-textblue block mt-3 md:mt-5 lg:mt-8">
@@ -61,19 +61,17 @@ const Page = () => {
           </div>
           <div className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24 ">
             <h1 className="text-lg sm:text-xl md:text-2xl font-medium text-[#193055] mb-4 font-monte text-center md:text-left leading-relaxed font-montserrat  tracking-normal">
-              We are experts in providing{" "}
-              <span className="text-textorange font-bold">
-                Turn key Bridge <br /> 
-              </span>
-              projects:
+              We specialize in executing {" "} <span className='text-textorange'>Comprehension</span>
+              <br />
+              <span className='text-textorange'>Track Construction</span> capabilities:
             </h1>
 
             <ul className="list-disc list-inside space-y-2 text-textblue text-base sm:text-lg md:text-base font-medium font-monte">
-              <li>Concrete Bridges</li>
-              <li>Steel Bridges</li>
+              <li>Ballasted and Ballastless track construction</li>
+              <li>Track renewals and Gauge conversion</li>
               <li>Composite Bridges</li>
-              <li>Rail Cum Road Bridges</li>
-              <li>Viaduct</li>
+              <li>Railway depots, sidings, and yards</li>
+              <li>Metro rail and light rail projects</li>
             </ul>
           </div>
         </div>
@@ -97,24 +95,19 @@ const Page = () => {
             <br />
             <br />
             <br />
-            <ul className="list-disc list-inside space-y-2 text-textblue text-base sm:text-xl md:text-xl font-medium font-monte">
-              <li>Cantelever Erection Crawler Cranes</li>
-              <li>Mobile Heavy Lift Cranes up to 130 Tons</li>
-              <li>Transit Mixer</li>
-              <li>CNC Profile Cutting & Drilling Machine</li>
-              <li>SAW, TIG, MIG, CO<sub>2</sub> Welding Machines</li>
-              <li>Backhoe Loader</li>
-              <li>Electro-slag Welding Machine</li>
-              <li>Batching Plants</li>
-              <li>Pick and Carry Crane</li>
-              <li>Spray Metalizing and Shot blasting Facility</li>
-              <li>Painting Booth/Covered Painting Area</li>
+            <ul className="list-disc list-inside [&>li]:marker:text-textorange space-y-2 text-textblue text-base sm:text-xl md:text-xl font-medium font-monte">
+                <li>Mobile Flash Butt Welding Machine</li>
+                <li>Boom Placer Concrete Pump</li>
+                <li>Booted Block Machine</li>
+                <li>Track Master</li>
+                <li>Concrete Mixer</li>
+                <li>Batching Plant</li>
             </ul>
           </div>
           <div>
             <Image
               className="mt-2 w-full lg:mt-45"
-              src="/business/bridge-4.svg"
+              src="/business/track-3.svg"
               alt="Side view of railway bridge"
               width={554}
               height={721}
@@ -130,7 +123,7 @@ const Page = () => {
           <div className="flex items-center justify-center">
             <Image
               className="rounded-lg shadow-md"
-              src="/business/bridge-5.svg"
+              src="/business/track-4.svg"
               alt="Train crossing a river on a bridge"
               width={496}
               height={574}
@@ -138,19 +131,24 @@ const Page = () => {
           </div>
           <div className="flex flex-col justify-center px-4 md:px-6 md:w-[55%]">
             <h2 className="text-xl md:text-5xl font-bold text-[#193055] mb-6 font-raleway">
-              Capabilities & <span className='text-textorange'>Geography</span>
+              Track-Work & <span className='text-textorange'>Systems</span>
             </h2>
             <p className="w-146 text-sm md:text-base text-[#193055] leading-loose font-monte">
-              Our bridges span the length and width of India, strengthening connections and facilitating the flow of life throughout the country. We have successfully constructed bridges in tough mountain terrains and over running rivers, such as the Rishikesh Bridge. This demonstrates our capacity to handle demanding situations.
-              <br /><br />
-              We, as one of the most advanced steel bridge building companies, have the potential to fabricate and erect 50,000 tons of structural steel per year at our cutting-edge fabrication facilities located in West Bengal. These bridge building facilities, which occupy more than 20,000 square meters and have a total area of 89,000 square meters, are outfitted with EOT cranes and advanced machinery. We perform full-scale design, control/trial assemblies, and testing on various structures and components in-house. Its shot-blasting facilities ensure that produced components have a flawless surface and are anti-corrosive.
+                Our ability to manage large-scale, complicated projects across multiple geographic locations displays our dedication to quality and ability to deliver on difficult tasks.
+                <br /><br />
+                In addition, we execute mobile flash butt welding with four equipment capable of executing 30,000 welds each year. We want to make considerable contributions to railway station upgrading projects under the Indian Railway’s Amrit Bharat initiative, with a focus on putting Ballast-less track in platforms.
             </p>
+            <br /><br />
+            <ul className="list-disc list-inside [&>li]:marker:text-textorange space-y-2 text-textblue text-base sm:text-xl md:text-xl font-medium font-monte">
+            <li>Pandrol Booted Block System From Spain</li>
+            <li>Pandrol Fastening System for Metro Railway</li>
+          </ul>
           </div>
         </div>
       </div>
 
       {/* Section 6: Video */}
-      <div className='bg-white'><VideoSection background='white' /></div>
+      <div className='bg-white'><VideoSection bgColor='bg-white' /></div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
+import VideoSection from '@/components/VideoSection';
 const page = () => {
   return (
     <div
@@ -83,6 +84,7 @@ const page = () => {
           </div>
         </div>
       </div>
+      <VideoSection bgColor="bg-white" />
     </div>
   );
 }
