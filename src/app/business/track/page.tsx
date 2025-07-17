@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import VideoSection from '@/components/VideoSection';
+import { CardComponent } from '../bridges/page';
 
 const Page = () => {
   return (
@@ -12,17 +13,14 @@ const Page = () => {
       <div className="flex bg-[url('/business/line.svg')] bg-right-top justify-center xl:justify-between mx-auto max-w-[90%] flex-wrap mb-20">
         <div className="min-h-auto flex flex-col p-6 gap-8 md:gap-15 md:w-[60%] xl:pt-20 md:pt-0">
           <h1 className="font-raleway font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-[85.5px] text-textblue w-full text-center md:text-left">
-            <span className="whitespace-nowrap text-nowrap mt-3 md:mt-5 lg:mt-8">
-              <span className="text-textblue">Bridges</span>
+            <span className="text-textblue block mt-3 md:mt-5 lg:mt-8">
+              Track
             </span>
-            <span className="text-textorange block mt-3 md:mt-5 lg:mt-8">
-              Shaping
-            </span>
-            <span className="text-textblue mt-3 md:mt-5 lg:mt-8 block">
-              Railway's
-              <span className="text-textorange mt-3 md:mt-5 lg:mt-8">
+            <span className="text-textorange mt-3 md:mt-5 lg:mt-8 block">
+              Working
+              <span className="text-textblue mt-3 md:mt-5 lg:mt-8">
                 {" "}
-                Future
+                Future <span className='text-textorange'>System</span>
               </span>
             </span>
           </h1>
@@ -39,7 +37,7 @@ const Page = () => {
         <div className="">
           <Image
             className="mt-2 lg:mt-45"
-            src="/business/bridges-1.svg"
+            src="/business/track-1.svg"
             alt="Railway bridge structure"
             width={554}
             height={833}
@@ -54,7 +52,7 @@ const Page = () => {
           <div className='w-124 h-164 ml-26 -mt-4'>
             <Image
               className=" w-full "
-              src="/business/bridge-2.svg"
+              src="/business/track-2.svg"
               alt="Train on a coastal bridge"
               width={496}
               height={641}
@@ -82,7 +80,7 @@ const Page = () => {
       </div>
 
       {/* Section 3: Icon Stats */}
-      <div className='min-w-full  flex justify-center gap-16'>
+      <div className='min-w-full  flex justify-around gap-16'>
         {cardData.map((data, idx) => (
           <CardComponent key={idx} data={data} />
         ))}
@@ -157,26 +155,7 @@ const Page = () => {
   );
 };
 
-export const CardComponent=({data}:{data:CardProps})=>{
-  return(
-    <div className='min-w-96 border bg-white border-[#FB7602] min-h-62 p-12 -mt-6 rounded-lg'>
-      <div className="w-full flex justify-center items-center mb-4">
-        <div className="w-12 h-12 rounded-full bg-[#FF6A00] flex justify-center items-center">
-          <Image src="/business/bridges-3.svg" alt="Bridge Icon" width={24} height={24} />
-        </div>
-      </div>
-      <div className='flex text-center flex-col text-textblue tracking-[2%] font-raleway text-lg'>
-        <div><span className='text-textorange font-bold'>{data.text.text1}</span> {data.text.text2}</div>
-        <div> {data.text?.text3}</div>
-      </div>
-      <div className='flex justify-center items-center'>
-        <div className='w-75 text-center font-montserrat text-textblue font-normal text-base'>
-          Fabricated and constructed nearly 750,000 metric tons of steel structures, demonstrating capability and dedication to quality.
-        </div>
-      </div>
-    </div>
-  )
-}
+
 
 
 
@@ -195,26 +174,18 @@ interface CardProps {
 const cardData: CardProps[] = [
   {
     text:{
-        text1: "750000",
-        text2: "MT + Steel Structures",
-        text3:"Fabricated & Erected"
+        text1: "250",
+        text2: "+ KM Track constructed"
       },
     description:
-      "Fabricated and constructed nearly 750,000 metric tons of steel structures, demonstrating capability and dedication to quality.",
+      "Effectively completed more than 250 kilometers of railway rails, exhibiting vast experience and capability.",
   },
   {
     text:{
-      text1:"80m",
-      text2:"Erection Above the",
-      text3:"Ground Level"
+      text1:"Ballastless",
+      text2:"Mainline sector"
     },
-    description:"Excelled in erecting structures up to 80 meters above ground level and managing complicated and difficult tasks with precision."
-  },{
-    text:{
-      text1:"60+",
-      text2:"Major Bridges",
-    },
-    description:"We have completed the building of more than 60 significant bridges, demonstrating our extensive expertise and engineering brilliance."
+    description:"Recognized as the broadest ballastless track building company in India's mainline railway industry."
   }
 ];
 

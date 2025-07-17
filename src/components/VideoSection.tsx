@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 interface props{
-  background:string
+  background?:string
 }
 
 const VideoSection: React.FC<props> = ({background="#fff1f2"}) => {
