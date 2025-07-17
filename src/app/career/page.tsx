@@ -39,37 +39,37 @@ const page = () => {
            <span className="text-textblue font-monte font-medium text-lg mt-5 max-w-4xl text-wrap text-center">We&apos;re not just building railway infrastructure - we&apos;re building careers, communities, and the future of Rail-Road transportation services and systems.</span>
            <div className="grid grid-cols-3 gap-7 my-5">
             {/*card */}
-            <div className="w-full flex flex-col items-center text-center max-w-sm my-3">
+            <div className="w-full flex flex-col items-center text-center max-w-sm my-3 mx-7">
             <Image src="/career/career1.png" alt="Career Growth" width={100} height={100} className="mb-3"/>
             <span className="text-textblue font-bold text-lg flex ">Innovation-<span className="text-textorange">Driven</span></span>
             <span className="text-textblue font-monte font-medium text-sm mt-2">Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.</span>
             </div>
             {/*card */}
-            <div className="w-full flex flex-col items-center text-center max-w-sm my-3">
+            <div className="w-full flex flex-col items-center text-center max-w-sm my-3 mx-7">
             <Image src="/career/career1.png" alt="Career Growth" width={100} height={100} className="mb-3"/>
             <span className="text-textblue font-bold text-lg flex ">Innovation-<span className="text-textorange">Driven</span></span>
             <span className="text-textblue font-monte font-medium text-sm mt-2">Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.</span>
             </div>
             {/*card */}
-            <div className="w-full flex flex-col items-center text-center max-w-sm my-3">
+            <div className="w-full flex flex-col items-center text-center max-w-sm my-3 mx-7">
             <Image src="/career/career1.png" alt="Career Growth" width={100} height={100} className="mb-3"/>
             <span className="text-textblue font-bold text-lg flex ">Innovation-<span className="text-textorange">Driven</span></span>
             <span className="text-textblue font-monte font-medium text-sm mt-2">Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.</span>
             </div>
             {/*card */}
-            <div className="w-full flex flex-col items-center text-center max-w-sm my-3">
+            <div className="w-full flex flex-col items-center text-center max-w-sm my-3 mx-7">
             <Image src="/career/career1.png" alt="Career Growth" width={100} height={100} className="mb-3"/>
             <span className="text-textblue font-bold text-lg flex ">Innovation-<span className="text-textorange">Driven</span></span>
             <span className="text-textblue font-monte font-medium text-sm mt-2">Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.</span>
             </div>
             {/*card */}
-            <div className="w-full flex flex-col items-center text-center max-w-sm my-3">
+            <div className="w-full flex flex-col items-center text-center max-w-sm my-3 mx-7">
             <Image src="/career/career1.png" alt="Career Growth" width={100} height={100} className="mb-3"/>
             <span className="text-textblue font-bold text-lg flex ">Innovation-<span className="text-textorange">Driven</span></span>
             <span className="text-textblue font-monte font-medium text-sm mt-2">Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.</span>
             </div>
             {/*card */}
-            <div className="w-full flex flex-col items-center text-center max-w-sm my-3">
+            <div className="w-full flex flex-col items-center text-center max-w-sm my-3 mx-7">
             <Image src="/career/career1.png" alt="Career Growth" width={100} height={100} className="mb-3"/>
             <span className="text-textblue font-bold text-lg flex ">Innovation-<span className="text-textorange">Driven</span></span>
             <span className="text-textblue font-monte font-medium text-sm mt-2">Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.</span>
@@ -101,7 +101,7 @@ const page = () => {
                         type="text"
                         placeholder=""
                         required
-                        className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none focus:border-textorange text-sm"
+                        className="w-full bg-white hover:bg-[#FFF5EF] border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none focus:border-textorange hover:border-textorange text-sm"
                       />
                     </div>
                     <div>
@@ -110,7 +110,7 @@ const page = () => {
                         type="text"
                         placeholder=""
                         required
-                        className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none focus:border-textorange text-sm"
+                        className="w-full bg-white hover:bg-[#FFF5EF] border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none focus:border-textorange hover:border-textorange text-sm"
                       />
                     </div>
                     <div>
@@ -119,7 +119,7 @@ const page = () => {
                         type="email"
                         placeholder=""
                         required
-                        className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none focus:border-textorange text-sm"
+                        className="w-full bg-white hover:bg-[#FFF5EF] border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none focus:border-textorange hover:border-textorange text-sm"
                       />
                     </div>
                     <div>
@@ -127,19 +127,19 @@ const page = () => {
                       <input
                         type="text"
                         placeholder=""
-                        className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none focus:border-textorange text-sm"
+                        className="w-full bg-white hover:bg-[#FFF5EF] border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none focus:border-textorange hover:border-textorange text-sm"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-[#222] mb-1">
                         Upload your CV (in PDF)*
                       </label>
-                      <div className="w-full h-20 border border-[#E6E6E6] rounded-xl bg-[#FAFAFA] flex flex-col items-center justify-center text-center cursor-pointer relative">
+                      <div className="w-full h-20 border border-[#E6E6E6] rounded-xl bg-white hover:bg-[#FFF5EF] text-white hover:text-[#FB7602] flex flex-col items-center justify-center text-center cursor-pointer relative hover:border-textorange">
   <input
     type="file"
     accept="application/pdf"
     required
-    className="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
+    className="opacity-0 absolute inset-0 w-full h-full cursor-pointer bg-white hover:bg-[#FFF5EF]"
   />
   <svg className="mx-auto mb-1" width="24" height="24" fill="none" stroke="#D1D5DB" strokeWidth="2" viewBox="0 0 24 24">
     <path d="M12 16V4M8 12l4 4 4-4" strokeLinecap="round" strokeLinejoin="round"/>
@@ -150,7 +150,7 @@ const page = () => {
                     </div>
                     <button
                       type="submit"
-                      className="w-full border border-textorange text-textorange  py-2 rounded-full bg-white hover:bg-textorange hover:text-white transition mt-2 text-base"
+                      className="w-full border border-textorange text-[#FB7602] hover:text-white py-2 rounded-full bg-white hover:bg-[#FB7602]  transition mt-2 text-base"
                     >
                       Submit CV
                     </button>
