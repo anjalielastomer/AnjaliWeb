@@ -20,8 +20,15 @@ const Navbar: React.FC = () => {
         { label: "Production Facilities", href: "/about-us/production-facilities" },
       ]
     },
-    { label: "Products", href: "/products" },
-    { label: "Business", href: "/business" },
+    { label: "Products", href: "/products" , },
+    { label: "Business", 
+      href: "/business", 
+      subItems: [
+        { label: "Pandrol", href: "/business/pandrol" },
+        { label: "Railway", href: "/business/railway" },
+        { label: "Turnout", href: "/business/turnout" },
+      ]
+    },
     { label: "Projects", href: "#" },
     { label: "Career", href: "/career" },
     { label: "Contact Us", href: "/contact-us" },
