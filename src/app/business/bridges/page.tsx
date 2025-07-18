@@ -82,7 +82,7 @@ const Page = () => {
       </div>
 
       {/* Section 3: Icon Stats */}
-      <div className='min-w-full   lg:flex flex flex-col justify-center gap-16'>
+      <div className='min-w-full   lg:flex lg:flex-row flex-col justify-center gap-16'>
         {cardData.map((data, idx) => (
           <CardComponent key={idx} data={data} />
         ))}
@@ -157,20 +157,24 @@ const Page = () => {
   );
 };
 
-export const CardComponent=({data}:{data:CardProps})=>{
-  return(
-    <div className='min-w-96 border bg-white border-[#FB7602] min-h-62 p-12 lg:-mt-6 mt-8 rounded-lg'>
-      <div className="w-full flex justify-center items-center mb-4">
+export const CardComponent = ({ data }: { data: CardProps }) => {
+  return (
+    <div className='w-full max-w-sm md:max-w-xs lg:max-w-sm xl:max-w-md min-h-64 md:min-h-48 lg:min-h-56 border bg-white border-[#FB7602] p-6 md:p-8 lg:p-12 lg:-mt-6 mt-8 md:mt-0 rounded-lg flex flex-col'>
+      <div className="w-full flex justify-center items-center mb-4 flex-shrink-0">
         <div className="w-12 h-12 rounded-full bg-[#FF6A00] flex justify-center items-center">
           <Image src="/business/bridges-3.svg" alt="Bridge Icon" width={24} height={24} />
         </div>
       </div>
-      <div className='flex text-center flex-col text-textblue tracking-[2%] font-raleway text-lg'>
-        <div><span className='text-textorange font-bold'>{data.text.text1}</span> {data.text.text2}</div>
-        <div> {data.text?.text3}</div>
+      
+      <div className='flex text-center flex-col text-textblue tracking-[2%] font-raleway text-lg mb-4 flex-shrink-0'>
+        <div>
+          <span className='text-textorange font-bold'>{data.text.text1}</span> {data.text.text2}
+        </div>
+        <div>{data.text?.text3}</div>
       </div>
-      <div className='flex justify-center items-center'>
-        <div className='w-75 text-center font-montserrat text-textblue font-normal text-base'>
+      
+      <div className='flex justify-center items-center flex-1'>
+        <div className='max-w-xs text-center font-montserrat text-textblue font-normal text-base'>
           Fabricated and constructed nearly 750,000 metric tons of steel structures, demonstrating capability and dedication to quality.
         </div>
       </div>
