@@ -30,9 +30,9 @@ const InsightCard: React.FC<InsightCardProps> = ({
         />
       </div>
       <div className="p-5 flex flex-col flex-grow">
-        <h3 className="text-orange-500 font-semibold text-lg mb-2">{title}</h3>
-        <p className="text-gray-700 flex-grow leading-relaxed">{description}</p>
-        <p className="flex justify-between mt-4 text-gray-500 text-sm">
+        <h3 className="text-textorange font-semibold text-lg mb-2">{title}</h3>
+        <p className="text-textblue flex-grow leading-relaxed">{description}</p>
+        <p className="flex justify-between mt-4 text-textblue text-sm">
           {date} &bull; {readTime} read
           <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />
         </p>
@@ -48,7 +48,7 @@ const LatestInsights: React.FC = () => {
         <h1 className="text-3xl sm:text-4xl font-bold text-textblue mb-8 text-center font-raleway">
           Latest <span className="text-textorange">Insights</span>
         </h1>
-        <p className="mt-3 max-w-md mx-auto text-center text-sm sm:text-base text-slate-800 font-monte">
+        <p className="mt-3 max-w-md mx-auto text-center text-sm sm:text-base text-textblue font-monte">
           Stay updated with industry trends and innovations
         </p>
 
