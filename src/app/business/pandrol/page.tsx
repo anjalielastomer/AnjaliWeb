@@ -1,48 +1,71 @@
-import React from 'react'
-import Image from 'next/image';
-import VideoSection from '@/components/VideoSection';
-const page = () => {
+"use client";
+
+import React, { useState } from "react";
+import Image from "next/image";
+import VideoSection from "@/components/VideoSection";
+
+const Page = () => {
+  const [content] = useState({
+    title: {
+      main: "Pandrol",
+      orange: "Fastenings",
+      blue: "&",
+      track: "Track",
+      trackOrange: "Solutions",
+    },
+    paragraph: `We have launched an exclusive joint venture with Pandrol Limited,
+    the world's leader in high-speed elastic rail fastening and noise
+    vibration solutions. This company manufactures Pandrol Fasteners in
+    India. We are committed to providing our customers with high-quality
+    solutions, which includes introducing one of Pandrol's most
+    innovative elastic fastening systems to the Indian market. We are
+    dedicated to providing excellence to our consumers.`,
+    offeringsTitle: `We are offering Fastening System solutions for:`,
+    offerings: [
+      "Heavy Haul Fastening Systems",
+      "High Speed Rail Fastening Systems",
+      "Metro Rail Fastening Systems",
+      "LRT Fastening System",
+      "Mainline Ballasted Track Fastening Systems",
+      "Noise & Vibration Solution",
+    ],
+    images: {
+      train1: "/business/train.svg",
+      train2: "/business/train2.svg",
+    },
+  });
+
   return (
     <div
-      className="min-h-screen pt-22"
+      className="min-h-screen pt-16 md:pt-22"
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
-      <div className="flex justify-center xl:justify-between mx-auto max-w-[90%] flex-wrap mb-20">
-        <div className="min-h-auto flex flex-col   p-6 gap-8 md:gap-15 md:w-[60%] xl:pt-20 md:pt-0 ">
-          <h1 className="font-raleway font-semibold  text-4xl sm:text-5xl md:text-6xl lg:text-[85.5px] text-textblue w-full text-center md:text-left">
-            <span className="whitespace-nowrap text-nowrap mt-3 md:mt-5 lg:mt-8">
-              Pandrol
+      {/* Header Section */}
+      <div className="flex flex-col xl:flex-row justify-center xl:justify-between mx-auto max-w-[90%] xl:max-w-[90%] mb-16 md:mb-20">
+        <div className="flex flex-col p-4 md:p-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20">
+          <h1 className="font-raleway font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[85.5px] text-textblue w-full text-center xl:text-left leading-tight">
+            <span className="block">{content.title.main}</span>
+            <span className="text-textorange block mt-2 md:mt-3 lg:mt-5">
+              {content.title.orange}{" "}
+              <span className="text-textblue">{content.title.blue}</span>
             </span>
-            <span className="text-textorange block mt-3 md:mt-5 lg:mt-8">
-              Fastenings
-              <span className="text-textblue mt-3 md:mt-5 lg:mt-8 my-6 sm:my-8 md:my-10">
-                {" "}
-                &
-              </span>
-            </span>
-            <span className="text-textblue mt-3 md:mt-5 lg:mt-8 block">
-              Track
-              <span className="text-textorange mt-3 md:mt-5 lg:mt-8 ">
-                {" "}
-                Solutions
+            <span className="text-textblue block mt-2 md:mt-3 lg:mt-5">
+              {content.title.track}{" "}
+              <span className="text-textorange">
+                {content.title.trackOrange}
               </span>
             </span>
           </h1>
 
-          <p className="text-sm text-center xl:text-left  md:text-base text-[#193055] md:w-[40rem] mb-4 md:mb-12 leading-loose font-monte">
-            We have launched an exclusive joint venture with Pandrol Limited,
-            the world's leader in high-speed elastic rail fastening and noise
-            vibration solutions. This company manufactures Pandrol Fasteners in
-            India. We are committed to providing our customers with high-quality
-            solutions, which includes introducing one of Pandrol's most
-            innovative elastic fastening systems to the Indian market. We are
-            dedicated to providing excellence to our consumers
+          <p className="text-sm md:text-base text-[#193055] text-center xl:text-left max-w-full xl:max-w-[40rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte px-2 md:px-0">
+            {content.paragraph}
           </p>
         </div>
-        <div className="">
+
+        <div className="flex justify-center xl:justify-end mb-6 xl:mb-0">
           <Image
-            className="mt-2 lg:mt-45 "
-            src="/business/train.svg"
+            className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-auto xl:mt-45"
+            src={content.images.train1}
             alt="Modern train"
             height={833}
             width={454}
@@ -51,42 +74,45 @@ const page = () => {
         </div>
       </div>
 
+      {/* Offerings Section */}
       <div className="bg-[#fff5ef] h-auto">
-        <div className="flex justify-center xl:justify-between mx-auto max-w-[80%] flex-wrap  mt-0 md:mt-[-168px] pb-20">
-          <div>
+        <div className="flex flex-col xl:flex-row justify-center xl:justify-between mx-auto max-w-[90%] xl:max-w-[80%] flex-wrap mt-0 xl:mt-[-168px] pb-16 md:pb-20">
+          <div className="flex justify-center xl:justify-start mb-8 xl:mb-0">
             <Image
-              className="mt-2 w-full lg:mt-45"
-              src="/business/train2.svg"
+              className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[496px] h-auto xl:mt-45"
+              src={content.images.train2}
               alt="Modern train"
               height={647}
               width={496}
               priority
             />
           </div>
-          <div className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24">
-            <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-[#193055] mb-4 font-monte text-center md:text-left leading-relaxed">
+
+          <div className="flex flex-col justify-center px-4 md:px-6 xl:px-10 mt-0 xl:mt-16 lg:mt-24">
+            <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-[#193055] mb-6 md:mb-8 font-monte text-center xl:text-left leading-relaxed">
               We are offering{" "}
               <span className="text-textorange font-bold">
                 Fastening System
               </span>{" "}
-              solutions <br className="hidden sm:block" />
-              for:
+              solutions <br className="hidden md:block" /> for:
             </h1>
 
-            <ul className="list-disc list-inside space-y-2 text-textblue text-base sm:text-lg md:text-base font-medium font-monte">
-              <li>Heavy Haul Fastening Systems</li>
-              <li>High Speed Rail Fastening Systems</li>
-              <li>Metro Rail Fastening Systems</li>
-              <li>LRT Fastening System</li>
-              <li>Mainline Ballasted Track Fastening Systems</li>
-              <li>Noise & Vibration Solution</li>
-            </ul>
+            <div className="space-y-2 md:space-y-4 text-textblue text-sm sm:text-base md:text-lg xl:text-base font-medium font-monte text-center xl:text-left">
+              {content.offerings.map((item, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-textorange rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-textblue text-lg">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Video Section */}
       <VideoSection bgColor="bg-white" />
     </div>
   );
-}
+};
 
-export default page
+export default Page;

@@ -36,7 +36,6 @@ const Footer: React.FC = () => {
               </svg>
             </a>
 
-
             <a
               href="https://twitter.com/yourusername" // <-- change this to your real Twitter handle
               target="_blank"
@@ -53,7 +52,6 @@ const Footer: React.FC = () => {
                 <path d="M23.954 4.569c-.885.392-1.83.656-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.949.564-2.003.974-3.127 1.195-.897-.959-2.178-1.559-3.594-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124-4.087-.205-7.713-2.164-10.141-5.144-.424.722-.666 1.561-.666 2.475 0 1.708.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.06c0 2.385 1.693 4.374 3.946 4.827-.413.112-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.376 4.604 3.415-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 14.002-7.496 14.002-13.986 0-.21 0-.42-.016-.63.962-.689 1.8-1.56 2.46-2.548l-.047-.02z" />
               </svg>
             </a>
-
 
             <a
               href="https://facebook.com"
@@ -115,12 +113,12 @@ const Footer: React.FC = () => {
               <Image src="/phone.svg" alt="Phone" width={20} height={20} />
               <span>+91 98765 43210</span>
             </li>
-            <li className="flex items-center space-x-2">
-             <Image src="/email.svg" alt="Phone" width={20} height={20} />
-              <span>info@anjalielastomer.com</span>
+            <li className="flex items-center space-x-2 ">
+              <Image src="/email.svg" alt="Phone" width={20} height={20} />
+              <span className="">info@anjalielastomer.com</span>
             </li>
             <li className="flex items-center space-x-2">
-               <Image src="/map.svg" alt="Phone" width={20} height={20} />
+              <Image src="/map.svg" alt="Phone" width={20} height={20} />
               <span>Howrah, West Bengal, India</span>
             </li>
           </ul>
