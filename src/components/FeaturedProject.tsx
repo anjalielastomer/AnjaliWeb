@@ -7,6 +7,7 @@ interface Project {
   description: string;
   status: string;
   imageUrl: string;
+  imageNewUrl: string;
 }
 
 const projects: Project[] = [
@@ -16,6 +17,7 @@ const projects: Project[] = [
     description: "Supply of premium rail pads for India's first high-speed rail corridor.",
     status: 'Completed 2023',
     imageUrl: '/Projects 1.png',
+    imageNewUrl: '/projectNew1.jpg',
   },
   {
     id: 2,
@@ -23,6 +25,7 @@ const projects: Project[] = [
     description: 'Comprehensive elastomeric Solutions for metro rail expansion project.',
     status: 'Ongoing',
     imageUrl: '/Projects 2.png',
+    imageNewUrl: '/projectNew2.jpg',
   },
   {
     id: 3,
@@ -30,6 +33,7 @@ const projects: Project[] = [
     description: 'Heavy-duty bearing pads for dedicated freight corridor infrastructure.',
     status: 'Completed 2022',
     imageUrl: '/Projects 3.png',
+    imageNewUrl: '/projectNew3.jpg',
   },
   {
     id: 4,
@@ -37,6 +41,7 @@ const projects: Project[] = [
     description: 'Supply of premium rail pads for 33.5 km underground metro line.',
     status: 'Completed 2023',
     imageUrl: '/Projects 4.png',
+    imageNewUrl: '/projectNew4.jpg',
   },
   {
     id: 5,
@@ -44,6 +49,7 @@ const projects: Project[] = [
     description: 'Advanced fastening systems for rapid rail transit system.',
     status: 'Ongoing',
     imageUrl: '/Projects 5.png',
+    imageNewUrl: '/projectNew5.jpg',
   },
   {
     id: 6,
@@ -51,6 +57,7 @@ const projects: Project[] = [
     description: 'Complete elastomeric solution package for 160 km network.',
     status: 'Completed 2022',
     imageUrl: '/Projects 6.png',
+    imageNewUrl: '/projectNew6.jpg',
   },
 ];
 
@@ -121,26 +128,35 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="group cursor-pointer flex-shrink-0 w-80 sm:w-96">
       <div className="relative w-full h-[365px] overflow-hidden rounded-[12px]">
-        {/* Image */}
         <div className="relative w-full h-full">
           <Image
             src={project.imageUrl}
             alt={project.title}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className="object-cover transition-opacity duration-500 ease-in-out opacity-100 group-hover:opacity-0"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
+
+          {project.imageNewUrl && (
+            <Image
+              src={project.imageNewUrl}
+              alt={`${project.title} New`}
+              fill
+              className="object-cover transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          )}
         </div>
 
         {/* Content Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-95 backdrop-blur-sm p-4 group-hover:bg-orange-500 transition-colors duration-300">
-          <h3 className="text-orange-500 font-monte font-semibold text-[15px] mb-2 leading-snug group-hover:text-white transition-colors duration-300">
+        <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-95 backdrop-blur-sm p-4 group-hover:bg-[var(--textorange)] transition-colors duration-300">
+          <h3 className="text-[var(--textorange)] font-monte font-semibold text-[15px] mb-2 leading-snug group-hover:text-white transition-colors duration-300">
             {project.title}
           </h3>
           <p className="text-[#505050] font-raleway text-[14px] leading-snug mb-3 group-hover:text-white transition-colors duration-300">
             {project.description}
           </p>
-          <p className="flex justify-between text-[#7A7A7A] font-raleway text-[13px] group-hover:text-white transition-colors duration-300">
+          <p className="flex justify-between text-textblue font-raleway text-[13px] group-hover:text-white transition-colors duration-300">
             {project.status}
             <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink group-hover:hidden" />
             <Image src="/send-white.png" alt="send" width={25} height={4} className="animate-blink hidden group-hover:block" />
@@ -148,7 +164,7 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
 
         {/* Project Number Badge */}
-        <div className="absolute bottom-28 right-4 bg-orange-500 text-white font-monte text-lg font-bold rounded-full w-12 h-12 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-white group-hover:text-orange-500 transition-all duration-300 z-20">
+        <div className="absolute bottom-28 right-4 bg-[var(--textorange)] text-white font-monte text-lg font-bold rounded-full w-12 h-12 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-white group-hover:text-[var(--textorange)] transition-all duration-300 z-20">
           {`0${project.id}`}
         </div>
       </div>

@@ -11,8 +11,8 @@ const AboutSec1 = () => {
         <div className="w-full md:w-1/2 p-4 flex flex-col">
           <h1 className="text-4xl sm:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8">
             Unified in <br />
-            <span className="mt-4 text-orange-500">Shaping</span> <br />
-            Railway&apos;s <span className="mt-4 text-orange-500">Future</span>
+            <span className="mt-4 text-textorange">Shaping</span> <br />
+            Railway&apos;s <span className="mt-4 text-textorange">Future</span>
           </h1>
 
           <div className="md:mt-16 flex flex-col md:flex-row gap-12 mb-12">
@@ -44,10 +44,10 @@ const AboutSec1 = () => {
           <div className="max-w-lg mx-auto pt-8 lg:pt-0">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-6 text-2xl md:text-4xl font-raleway">
               <h2 className="text-[#152f5d] font-bold">About</h2>
-              <span className="text-orange-500 font-bold">Us</span>
+              <span className="text-textorange font-bold">Us</span>
             </div>
 
-            <p className="text-gray-700 text-lg leading-loose my-10 lg:my-20">
+            <p className="text-textblue text-lg leading-loose my-10 lg:my-20">
               Over the previous 15 years, Anjali Elastomers, which was founded in 2009, has developed from a maker of rail components to a top supplier of entire railway infrastructure.
             </p>
 
@@ -132,17 +132,17 @@ function StatItem({
 
   return (
     <div className="flex gap-8 items-start py-4" ref={ref}>
-      <div className="text-orange-500 font-bold text-5xl w-24 break-words text-center">
+      <div className="text-textorange font-bold text-5xl w-24 break-words text-center">
         <div className="flex items-baseline justify-center gap-2">
           {animatedNumber}
           <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />
         </div>
-        <div className="uppercase text-sm font-semibold text-right text-gray-700 mt-2 mb-2 break-words">
+        <div className="uppercase text-sm font-semibold text-right text-textblue mt-2 mb-2 break-words">
           {unit}
         </div>
       </div>
       <div className="border-l-2 border-gray-400 pl-6 flex-1">
-        <p className="text-base text-gray-700 text-justify leading-relaxed">{description}</p>
+        <p className="text-base text-textblue text-justify leading-relaxed">{description}</p>
       </div>
     </div>
   );

@@ -23,10 +23,10 @@ const page = () => {
       {/* Heading */}
       <div className='w-full text-center'>
         <h1 className='text-[40px] md:text-[60px] lg:text-[84px] font-extrabold font-raleway leading-tight'>
-          Our <span className='text-[#FB7602]'>Leadership</span>
+          Our <span className='text-[var(--textorange)]'>Leadership</span>
         </h1>
         <p className='text-[16px] md:text-[18px] lg:text-[20px] font-[500] font-monte mt-2'>
-          The Invisible <span className='text-[#FB7602]'>Force</span> behind our <span className='text-[#FB7602]'>Competent</span> Team
+          The Invisible <span className='text-[var(--textorange)]'>Force</span> behind our <span className='text-[var(--textorange)]'>Competent</span> Team
         </p>
       </div>
 

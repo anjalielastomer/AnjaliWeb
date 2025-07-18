@@ -1,0 +1,274 @@
+[
+  {
+    "id": 1,
+    "name": "Air Spring",
+    "description": "Enclosed pressurised air in a predefined chamber called air spring, made up of rubber and textile",
+    "image": "/featuredproductsimg1.png",
+    "rating": 5,
+    "reviewCount": 156,
+    "category": "suspension",
+    "segment": "railway-metro-coach-products",
+    "price": "$2,499",
+    "inStock": true,
+    "keyFeatures": [
+      "Superior ride comfort and stability",
+      "High-quality rubber and textile construction",
+      "Excellent vibration damping properties",
+      "Long service life and durability",
+      "Compatible with metro and railway coaches",
+      "Easy installation and maintenance",
+      "Temperature resistant design (-40°C to +70°C)",
+      "Proven performance in harsh environments",
+      "Cost-effective suspension solution",
+      "ISO certified quality standards",
+      "Customizable for different load capacities",
+      "Environmentally friendly materials"
+    ],
+    "longDescription": "The Air Spring Suspension System represents the pinnacle of railway and metro coach suspension technology. This advanced system utilizes enclosed pressurized air within a precisely engineered chamber, constructed from high-grade rubber and textile materials.\n\nDesigned specifically for railway and metro applications, these air springs provide superior ride comfort, excellent vibration isolation, and exceptional durability. The system effectively dampens vibrations and shocks, ensuring passenger comfort while protecting sensitive onboard equipment. With proven performance across various climate conditions and operational environments, this suspension system has become the preferred choice for metro operators worldwide.",
+    "images": [
+      "/featuredproductsimg1.png",
+      "/featuredproductsimg2.png",
+      "/featuredproductsimg3.png",
+      "/featuredproductsimg4.png"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Axile Brake Disc",
+    "description": "The brake pad or shoe with the friction lining is pushed against the rotating drill.",
+    "image": "/featuredproductsimg2.png",
+    "rating": 4,
+    "reviewCount": 174,
+    "category": "brake",
+    "segment": "brake-shoe-brake-pad-products",
+    "price": "$1,899",
+    "inStock": true,
+    "keyFeatures": [
+      "High-performance brake disc technology",
+      "Superior stopping power and control",
+      "Heat-resistant material construction",
+      "Long-lasting friction surface",
+      "Compatible with various brake systems",
+      "Reduced brake fade under heavy use",
+      "Precise manufacturing tolerances",
+      "Corrosion-resistant coating",
+      "Easy installation and replacement",
+      "Meets international safety standards"
+    ],
+    "longDescription": "The Axile Brake Disc is engineered for maximum braking performance in railway and metro applications. Featuring advanced friction material technology, this brake disc provides consistent and reliable stopping power under all operating conditions.\n\nManufactured using high-grade materials and precision engineering processes, the brake disc offers exceptional durability and performance. The friction lining is specially formulated to provide optimal grip while minimizing wear, ensuring long service life and reduced maintenance costs.",
+    "images": [
+      "/featuredproductsimg2.png",
+      "/featuredproductsimg1.png",
+      "/featuredproductsimg4.png"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Bolts & Nuts",
+    "description": "A fastener is used for joining, holding or assembling of a single or multiple components.",
+    "image": "/featuredproductsimg3.png",
+    "rating": 3,
+    "reviewCount": 43,
+    "category": "fasteners",
+    "segment": "other-products"
+  },
+  {
+    "id": 4,
+    "name": "Brake Shoe Pad",
+    "description": "Durable brake shoe pad designed for high-performance rail braking systems.",
+    "image": "/featuredproductsimg4.png",
+    "rating": 5,
+    "reviewCount": 193,
+    "category": "brake",
+    "segment": "brake-shoe-brake-pad-products",
+    "price": "$1,299",
+    "inStock": false,
+    "keyFeatures": [
+      "High friction material for effective braking",
+      "Low wear rate for extended service life",
+      "Noise reduction technology",
+      "Easy to install and replace"
+    ],
+    "longDescription": "This brake shoe pad is engineered for modern rail systems, offering reliable stopping power and minimal maintenance. Its advanced friction material ensures safety and longevity even under heavy use.",
+    "images": [
+      "/featuredproductsimg4.png",
+      "/featuredproductsimg2.png"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Railway Coupling",
+    "description": "Robust coupling system for secure railway coach connections.",
+    "image": "/featuredproductsimg1.png",
+    "rating": 4.5,
+    "reviewCount": 89,
+    "category": "fasteners",
+    "segment": "railway-metro-coach-products",
+    "price": "$3,100",
+    "inStock": true,
+    "keyFeatures": [
+      "Heavy-duty steel construction",
+      "Quick connect/disconnect mechanism",
+      "Corrosion-resistant coating"
+    ],
+    "longDescription": "Designed for both metro and long-distance trains, this coupling system provides a secure and efficient connection between coaches, ensuring safety and operational flexibility.",
+    "images": [
+      "/featuredproductsimg1.png"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Track Fastener",
+    "description": "Specialized fastener for reliable railway track installation.",
+    "image": "/featuredproductsimg3.png",
+    "rating": 4,
+    "reviewCount": 67,
+    "category": "fasteners",
+    "segment": "railway-metro-track-products",
+    "price": "$499",
+    "inStock": true,
+    "keyFeatures": [
+      "Vibration dampening design",
+      "Weather-resistant materials",
+      "Compatible with standard rail profiles"
+    ],
+    "longDescription": "This track fastener is built to withstand harsh environments and heavy loads, providing a stable and secure hold for railway tracks.",
+    "images": [
+      "/featuredproductsimg3.png",
+      "/featuredproductsimg1.png"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Steel Cast Bearing",
+    "description": "Industrial-grade bearing for smooth and efficient rail operations.",
+    "image": "/featuredproductsimg2.png",
+    "rating": 5,
+    "reviewCount": 234,
+    "category": "engine",
+    "segment": "steel-casting-products",
+    "price": "$2,050",
+    "inStock": false,
+    "keyFeatures": [
+      "Precision-machined surfaces",
+      "High load capacity",
+      "Low maintenance requirements",
+      "Long operational life"
+    ],
+    "longDescription": "This steel cast bearing is designed for heavy-duty applications, ensuring minimal friction and maximum durability in rail and industrial settings.",
+    "images": [
+      "/featuredproductsimg2.png",
+      "/featuredproductsimg3.png",
+      "/featuredproductsimg4.png"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Rolling Mill Roller",
+    "description": "Precision roller for rolling mill and metal forming operations.",
+    "image": "/featuredproductsimg4.png",
+    "rating": 4.5,
+    "reviewCount": 145,
+    "category": "transmission",
+    "segment": "rolling-mill-products",
+    "price": "$4,800",
+    "inStock": true,
+    "keyFeatures": [
+      "Hardened alloy surface",
+      "Uniform pressure distribution",
+      "Customizable sizes available"
+    ],
+    "longDescription": "Engineered for high-precision rolling mills, this roller ensures consistent results and long service life, even under continuous operation.",
+    "images": [
+      "/featuredproductsimg4.png"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Metro Suspension System",
+    "description": "Advanced suspension for metro coaches, enhancing ride comfort.",
+    "image": "/featuredproductsimg1.png",
+    "rating": 4,
+    "reviewCount": 98,
+    "category": "suspension",
+    "segment": "railway-metro-coach-products",
+    "price": "$2,800",
+    "inStock": true,
+    "keyFeatures": [
+      "Superior shock absorption",
+      "Low maintenance design",
+      "Optimized for urban rail systems"
+    ],
+    "longDescription": "This metro suspension system is tailored for city transit, providing a smooth and stable ride for passengers and reducing wear on rolling stock.",
+    "images": [
+      "/featuredproductsimg1.png",
+      "/featuredproductsimg2.png"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Track Rail Clamp",
+    "description": "Heavy-duty rail clamp for track installation and maintenance.",
+    "image": "/featuredproductsimg2.png",
+    "rating": 5,
+    "reviewCount": 287,
+    "category": "track",
+    "segment": "railway-metro-track-products",
+    "price": "$650",
+    "inStock": false,
+    "keyFeatures": [
+      "Secure grip on rail base",
+      "Easy to install and remove",
+      "Suitable for temporary and permanent use"
+    ],
+    "longDescription": "This rail clamp is ideal for both construction and maintenance, offering a reliable hold and quick deployment for various track types.",
+    "images": [
+      "/featuredproductsimg2.png",
+      "/featuredproductsimg4.png",
+      "/featuredproductsimg1.png"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Steel Cast Wheel",
+    "description": "Precision steel cast wheel for railway applications.",
+    "image": "/featuredproductsimg3.png",
+    "rating": 4,
+    "reviewCount": 156,
+    "category": "wheel",
+    "segment": "steel-casting-products",
+    "price": "$1,750",
+    "inStock": true,
+    "keyFeatures": [
+      "Balanced for high-speed operation",
+      "Wear-resistant tread",
+      "Low noise profile"
+    ],
+    "longDescription": "This steel cast wheel is manufactured for high-speed rail and metro systems, ensuring safety, durability, and quiet operation.",
+    "images": [
+      "/featuredproductsimg3.png",
+      "/featuredproductsimg2.png"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Rolling Mill Guide",
+    "description": "Guide system for rolling mill operations and maintenance.",
+    "image": "/featuredproductsimg4.png",
+    "rating": 4.5,
+    "reviewCount": 123,
+    "category": "guide",
+    "segment": "rolling-mill-products",
+    "price": "$3,600",
+    "inStock": false,
+    "keyFeatures": [
+      "Precision alignment",
+      "Reduces material waste",
+      "Easy to adjust and maintain"
+    ],
+    "longDescription": "This rolling mill guide system ensures precise material flow and reduces downtime, making it essential for efficient mill operations.",
+    "images": [
+      "/featuredproductsimg4.png"
+    ]
+  }
+]   

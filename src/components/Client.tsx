@@ -45,7 +45,7 @@ const OurClients = () => {
 										style={{ objectFit: "contain" }}
 									/>
 								</div>
-								<p className="mt-2 text-[10px] sm:text-xs md:text-xs lg:text-xs text-center font-monte text-[#193055]">
+								<p className="mt-2 text-[10px] sm:text-xs md:text-xs lg:text-xs text-center font-monte text-textblue">
 									{client.name}
 								</p>
 							</div>
