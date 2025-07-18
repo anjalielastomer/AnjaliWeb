@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
     { label: "Products", href: "/products", },
     {
       label: "Business",
-      href: "/business",
+      href: "",
       subItems: [
         { label: "Bridges", href: "/business/bridges" },
         { label: "Track Work", href: "/business/track" },
@@ -37,9 +37,9 @@ const Navbar: React.FC = () => {
     },
     {
       label: "Projects",
-      href: "#",
+      href: "",
       subItems: [
-        { label: "Our Projects", href: "#" },
+        { label: "Our Projects", href: "" },
         { label: "Our Articles", href: "/article" },
       ]
     },
