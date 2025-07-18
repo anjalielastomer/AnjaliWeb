@@ -13,10 +13,10 @@ const articles = new Array(10).fill({
 
 const ArticlesPage = () => {
   return (
-    <div className="w-full min-h-fit bg-white justify-center font-monte flex gap-10 mt-20 px-14 pb-20 ">
-        <div className="flex flex-col">
+    <div className="w-full min-h-fit bg-white justify-center font-monte flex flex-col md:flex-row gap-10 mt-20 px-7 md:px-14 pb-20 ">
+        <div className="flex flex-col items-center md:items-start">
       {/* Header Section */}
-      <h1 className="text-7xl font-bold text-textblue mb-2 leading-snug flex flex-col gap-5 font-raleway">
+      <h1 className="text-3xl md:text-7xl font-bold text-textblue mb-2 leading-snug flex flex-row md:flex-col gap-5 font-raleway ">
         Our <span className="text-textorange">Articles</span>
       </h1>
 
@@ -43,17 +43,17 @@ const ArticlesPage = () => {
 
       {/* Latest Insights */}
       <div className="mt-16">
-        <h2 className="text-2xl font-bold text-textblue">
+        <h2 className="text-2xl font-bold text-textblue md:text-left text-center">
           Latest <span className="text-textorange">Insights</span>
         </h2>
-        <p className="text-sm text-gray-600 mt-2">
+        <p className="text-sm text-textblue mt-7 md:text-left text-center">
           Stay updated with industry trends and innovations
         </p>
       </div>
       </div>
       {/* Scrollable Articles List */}
       <div className="">
-        <div className="flex-1 max-h-[600px] overflow-y-auto pr-3 custom-scrollbar mt-5">
+        <div className="flex-1 max-h-[995px] overflow-y-auto pr-3 custom-scrollbar mt-5">
           <div className="flex flex-col gap-6">
             {articles.map((article, index) => (
               <div
@@ -82,7 +82,7 @@ const ArticlesPage = () => {
                   </div>
                   <div className="flex items-center justify-between mt-4">
                     <p className="text-sm text-gray-700 font-medium">{article.author}</p>
-                    <Link href={`/article/${article.id}`}><FiArrowUpRight className="text-textorange text-xl" /></Link>
+                    <Link href={`/article/${index + 1}`}><FiArrowUpRight className="text-textorange text-xl" /></Link>
                   </div>
                 </div>
               </div>
