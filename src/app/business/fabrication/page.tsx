@@ -43,7 +43,7 @@ const Page = () => {
 
       {/* Section 2: Turnkey Projects */}
       <div className="bg-[#fff5ef] h-auto">
-              <div className="flex flex-col lg:flex-row flex-col-reverse items-center justify-between mx-auto max-w-[93%] gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40">
+              <div className="flex lg:flex-row flex-col-reverse items-center justify-between mx-auto max-w-[93%] gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40">
                 <div className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28 xl:ml-20">
                   <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164">
                     <Image
