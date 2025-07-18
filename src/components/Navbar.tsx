@@ -23,20 +23,23 @@ const Navbar: React.FC = () => {
     { label: "Products", href: "/products", },
     {
       label: "Business",
-      href: "/business",
+      href: "",
       subItems: [
-        { label: "Pandrol", href: "/business/pandrol" },
-        { label: "Railway", href: "/business/railway" },
-        { label: "Turnout", href: "/business/turnout" },
-        { label: "Bridge", href: "/business/bridges" },
-        { label: "Track", href: "/business/track" },
+        { label: "Bridges", href: "/business/bridges" },
+        { label: "Track Work", href: "/business/track" },
+        { label: "Turnout & Track", href: "/business/turnout" },
+        
+        { label: "Railway Fastening & Sleeper Systems", href: "/business/railway" },
+        { label: "Pandrol Fastening & Solutions", href: "/business/pandrol" },
+        
+        
       ]
     },
     {
       label: "Projects",
-      href: "#",
+      href: "",
       subItems: [
-        { label: "Our Projects", href: "#" },
+        { label: "Our Projects", href: "" },
         { label: "Our Articles", href: "/article" },
       ]
     },
@@ -124,19 +127,20 @@ const Navbar: React.FC = () => {
             {navItems.map(({ label, href, subItems }) => (
               <li
                 key={label}
-                className={`relative text-base lg:text-lg font-normal ${subItems ? 'group' : ''}`}
+                className={`relative text-base text-nowrap uppercase lg:text-lg font-normal ${subItems ? 'group' : ''}`}
               >
                 <Link
                   href={href}
-                  className={`relative font-normal ${getTextColor()} hover:text-textblue transition-colors duration-200
+                  className={` relative font-normal ${getTextColor()} hover:text-textblue transition-colors duration-200
           hover:font-bold hover:text-lg
-          after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-300`}
+          after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-300 text-nowrap`}
                 >
                   {label}
                 </Link>
 
                 {subItems && (
-                  <ul className="absolute left-0 mt-3 w-96 bg-white rounded-xl shadow-xl border border-gray-100 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 grid grid-rows-2 grid-flow-col gap-x-8 gap-y-4 p-6">
+                  <ul className="absolute left-0 lg:left-[-200px] xl:left-[-300px] 2xl:left-[-400px] mt-3 min-w-[900px] bg-white  shadow-xl border-t-4 border-[#FB7602] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 grid grid-rows-2 grid-flow-col gap-x-8 gap-y-4 p-6 whitespace-nowrap overflow-x-auto max-w-screen-xl">
+
                     {subItems.map(({ label: subLabel, href: subHref }) => (
                       <li
                         key={subLabel}
