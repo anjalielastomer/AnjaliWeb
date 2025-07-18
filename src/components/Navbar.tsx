@@ -20,19 +20,25 @@ const Navbar: React.FC = () => {
         { label: "Production Facilities", href: "/about-us/production-facilities" },
       ]
     },
-    { label: "Products", href: "/products" , },
-    { label: "Business", 
-      href: "/business", 
+    { label: "Products", href: "/products", },
+    {
+      label: "Business",
+      href: "/business",
       subItems: [
         { label: "Pandrol", href: "/business/pandrol" },
         { label: "Railway", href: "/business/railway" },
         { label: "Turnout", href: "/business/turnout" },
-        {label:"Bridge",href:"/business/bridges"},
-        {label:"Track",href:"/business/track"},
+        { label: "Bridge", href: "/business/bridges" },
+        { label: "Track", href: "/business/track" },
       ]
     },
-    { label: "Projects", href: "#" },
-    { label: "Articles", href: "/article" },
+    { label: "Projects", 
+      href: "#",
+      subItems: [
+        { label: "Our Projects", href: "#" },
+        { label: "Our Articles", href: "/article" },
+      ]
+    },
     { label: "Career", href: "/career" },
     { label: "Contact Us", href: "/contact-us" },
   ];
@@ -73,7 +79,7 @@ const Navbar: React.FC = () => {
   };
 
   const styles = getNavbarStyle();
-  
+
   const getTextColor = () => {
     if (styles.textColor === 'var(--text-blue)') return 'text-[#152f5d]';
     if (styles.textColor === 'var(--bg-white)') return 'text-white';
@@ -120,19 +126,26 @@ const Navbar: React.FC = () => {
               >
                 <Link
                   href={href}
-                  className={`relative font-normal ${getTextColor()} hover:text-[#FB7602] transition-colors duration-200
+                  className={`relative font-normal ${getTextColor()} hover:text-textblue transition-colors duration-200
           after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-300`}
                 >
                   {label}
                 </Link>
 
                 {subItems && (
-                  <ul className="absolute left-0 mt-2 w-52 bg-white rounded shadow-lg border border-gray-200 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                  <ul className="absolute left-0 mt-3 w-96 bg-white rounded-xl shadow-xl border border-gray-100 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 grid grid-rows-2 grid-flow-col gap-x-8 gap-y-4 p-6">
                     {subItems.map(({ label: subLabel, href: subHref }) => (
-                      <li key={subLabel}>
+                      <li
+                        key={subLabel}
+                        className="flex items-center gap-3 group/link"
+                      >
+                        {/* Custom bullet */}
+                        <span className="w-2.5 h-2.5 border-2 border-[#FB7602] rounded-full flex-shrink-0"></span>
+
+                        {/* Link */}
                         <Link
                           href={subHref}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="text-[#152f5d] text-[15px] font-medium group-hover/link:text-textblue hover:[text-shadow:0_0_0.5px_#152f5d] hover:underline hover:decoration-[1px] hover:underline-offset-4 transition-colors duration-300"
                         >
                           {subLabel}
                         </Link>

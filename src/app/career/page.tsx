@@ -87,7 +87,7 @@ const page = () => {
         alt="Career Opportunities"
         width={500}
         height={500}
-        className="w-full max-w-[500px] h-auto rounded-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.3)] transition-shadow duration-300"
+        className="w-full max-w-[500px] h-auto rounded-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
       />
     </div>
   </div>

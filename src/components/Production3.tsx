@@ -19,13 +19,13 @@ const Production3 = () => {
             </div>
 
             {/* Right side content */}
-            <div className="w-full md:w-1/2 md:pl-10 lg:pl-16 text-gray-900 flex flex-col gap-6 sm:gap-8">
+            <div className="w-full md:w-1/2 md:pl-10 lg:pl-16 text-textblue flex flex-col gap-6 sm:gap-8">
                 <h2 className="text-[#152f5d] font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight font-raleway">
-                    Rail Fastening and Sleeper <span className="text-orange-500">Manufacturing</span>
+                    Rail Fastening and Sleeper <span className="text-textorange">Manufacturing</span>
                 </h2>
 
                 <p className="text-base sm:text-lg lg:text-[20px] text-gray-700">
-                    Where Strength Meets Precision in <span className='text-orange-500'>Rail</span> Infrastructure
+                    Where Strength Meets Precision in <span className='text-textorange'>Rail</span> Infrastructure
                 </p>
 
                 <div className="flex flex-col gap-4">

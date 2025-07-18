@@ -7,8 +7,8 @@ const AboutSec3 = () => {
       <div className="md:flex-1 max-w-xl">
         <p className="text-sm md:text-xl font-medium text-[#142859] mb-4">
           We have made significant contributions to several rail link projects of{' '}
-          <span className="text-orange-500 font-semibold">National</span> &{' '}
-          <span className="text-orange-500 font-semibold">International</span> importance
+          <span className="text-textorange font-semibold">National</span> &{' '}
+          <span className="text-textorange font-semibold">International</span> importance
         </p>
 
         <p className="text-sm md:text-base text-[#142859] mb-12 leading-relaxed">
@@ -87,7 +87,7 @@ function InlineFeatureCard({
     <div className="flex flex-col items-start gap-4">
       <div className="flex w-full justify-between items-center">
         <h3 className="text-lg font-semibold text-[#142859]">
-          {title} <span className="text-orange-500">{highlight}</span>
+          {title} <span className="text-textorange">{highlight}</span>
         </h3>
         <div className="bg-[#142859] p-2 rounded-full animate-bgIcon">
           <Image
