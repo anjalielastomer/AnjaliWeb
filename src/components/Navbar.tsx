@@ -132,7 +132,7 @@ const Navbar: React.FC = () => {
                       <li key={subLabel}>
                         <Link
                           href={subHref}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 text-wrap"
                         >
                           {subLabel}
                         </Link>
