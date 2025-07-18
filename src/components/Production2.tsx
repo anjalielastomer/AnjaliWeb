@@ -2,10 +2,10 @@ import Image from 'next/image';
 
 const Production2 = () => {
   return (
-    <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 flex flex-col md:flex-row items-center md:items-start gap-12">
+    <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 flex flex-col md:flex-row items-center md:items-start gap-12 font-monte">
       {/* Left Content */}
       <div className="md:flex-1 max-w-xl">
-        <h2 className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px]">
+        <h2 className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px] font-raleway">
           Pandrol <span className="text-orange-500">Fastening</span>
         </h2>
 

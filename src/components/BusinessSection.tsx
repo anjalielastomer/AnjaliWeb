@@ -20,10 +20,9 @@ export default function IndiaBusinessSection() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`px-5 py-1 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-colors duration-300
-                ${
-                  activeTab === tab.id
-                    ? "bg-orange-500 text-white"
-                    : "border border-orange-500 text-orange-500 hover:bg-orange-50"
+                ${activeTab === tab.id
+                  ? "bg-orange-500 text-white"
+                  : "border border-orange-500 text-orange-500 hover:bg-orange-50"
                 }`}
             >
               {tab.label}
@@ -40,8 +39,8 @@ export default function IndiaBusinessSection() {
                   activeTab === "bridge"
                     ? "/map1.svg"
                     : activeTab === "track"
-                    ? "/map2.svg"
-                    : "/map3.svg"
+                      ? "/map2.svg"
+                      : "/map3.svg"
                 }
                 alt="Map of India highlighting selected states with icons representing business locations"
                 width={480}
@@ -111,12 +110,15 @@ function StatItem({
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const isVisible = useOnScreen(ref);
-  const animatedNumber = useCountUp(number, isVisible, 2000); 
+  const animatedNumber = useCountUp(number, isVisible, 2000);
 
   return (
     <div className="flex gap-2 items-start" ref={ref}>
-      <div className="text-orange-500 font-bold text-4xl w-28 break-words text-center">
-        {animatedNumber}
+      <div className="text-orange-500 font-bold text-4xl w-28 break-words text-right">
+        <div className="flex items-baseline-last justify-end gap-2">
+          {animatedNumber}
+          <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />
+        </div>
         <div className="uppercase text-xs font-semibold text-gray-700 mb-1 break-words">
           {unit}
         </div>
@@ -133,7 +135,7 @@ function useCountUp(target: number, start: boolean, duration = 2000) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!start) return; 
+    if (!start) return;
 
     let startTime: number | null = null;
 

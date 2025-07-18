@@ -11,7 +11,7 @@ type LeadershipCardProps = {
 
 const LeadershipCard: React.FC<LeadershipCardProps> = ({ image, name, title, company }) => {
   return (
-    <div className="image-box group flex w-full max-w-sm md:max-w-md lg:max-w-lg items-center justify-center flex-col gap-6 rounded-2xl overflow-hidden shadow-md shadow-orange-500 transition-all duration-300 hover:bg-orange-500">
+    <div className="image-box group flex w-full max-w-sm md:max-w-md lg:max-w-lg items-center justify-center flex-col gap-6 rounded-2xl overflow-hidden shadow-md shadow-[#FB7602] transition-all duration-300 hover:bg-[#FB7602]">
       <Image
         src={image}
         width={580}
@@ -24,7 +24,7 @@ const LeadershipCard: React.FC<LeadershipCardProps> = ({ image, name, title, com
           {name}
         </h1>
         <div className='text-[16px] md:text-[18px] pb-8 md:pb-12 lg:pb-20 transition-colors duration-300'>
-          <p className='text-orange-500 group-hover:text-black'>{title}</p>
+          <p className='text-[#FB7602] group-hover:text-black'>{title}</p>
           <p className='group-hover:text-white'>{company}</p>
         </div>
       </div>

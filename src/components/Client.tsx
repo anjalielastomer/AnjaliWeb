@@ -23,29 +23,29 @@ const clients = [
 const OurClients = () => {
 	return (
 		<section
-  className="relative bg-cover bg-center bg-no-repeat py-20 pb-32 min-h-[700px] flex items-center justify-center"
-  style={{ backgroundImage: "url('/clients/vandebharat.png')" }}
->
+			className="relative bg-cover bg-center bg-no-repeat py-20 pb-32 min-h-[860px] flex items-center justify-center"
+			style={{ backgroundImage: "url('/train-bg.gif')" }}
+		>
 			{/* Blurred white box overlay */}
 			<div className="absolute inset-0 flex items-center justify-center ">
-				<div className="w-[95vw] max-w-6xl rounded-3xl backdrop-blur-md shadow-2xl p-0 my-10 md:my-0 py-5 sm:p-10 flex flex-col items-center relative z-10 overflow-hidden">
-            		<h1 className="text-3xl sm:text-4xl font-bold text-textblue mb-8 text-center font-raleway">
+				<div className="w-[95vw] max-w-6xl rounded-3xl bg-[#ffffff]/30 backdrop-blur-lg shadow-2xl p-0 my-10 md:my-0 py-5 sm:p-10 flex flex-col items-center relative z-10 overflow-hidden">
+					<h1 className="text-3xl sm:text-4xl font-bold text-textblue mb-8 text-center font-raleway">
 						Our <span className="text-textorange">Clients</span>
 					</h1>
 
 					<div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 sm:gap-8 w-full">
 						{clients.map((client, index) => (
 							<div key={index} className="flex flex-col items-center">
-								<div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-2xl flex items-center justify-center shadow-md p-2">
+								<div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-2xl flex items-center justify-center shadow-md p-2 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] opacity-90 hover:opacity-100">
 									<Image
 										src={client.logo}
 										alt={client.name}
-										width={80}
-										height={80}
+										width={104}
+										height={104}
 										style={{ objectFit: "contain" }}
 									/>
 								</div>
-								<p className="mt-2 text-[10px] sm:text-xs md:text-xs lg:text-xs text-center font-monte text-gray-700">
+								<p className="mt-2 text-[10px] sm:text-xs md:text-xs lg:text-xs text-center font-monte text-[#193055]">
 									{client.name}
 								</p>
 							</div>

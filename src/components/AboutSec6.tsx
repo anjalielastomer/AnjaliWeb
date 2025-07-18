@@ -20,7 +20,7 @@ const Production4 = () => {
             To be a premier railway infrastructure provider, offering sustainable and creative solutions to all stakeholders.
           </p>
         </div>
-
+    
         {/* Right Box - Quality Assurance */}
         <div className="group flex flex-col gap-6 md:gap-8 max-w-lg bg-white/20 backdrop-blur-md rounded-xl px-8 py-8 sm:px-10 sm:py-10 md:px-12 md:py-12 shadow-lg transition duration-300 hover:bg-[#FB7602] hover:shadow-2xl
         md:absolute md:bottom-[10%] md:right-[10%] mt-6 md:mt-0">
