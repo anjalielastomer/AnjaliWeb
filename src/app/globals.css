@@ -132,10 +132,10 @@
 }
 /* globals.css */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
+  width: 17px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #FFEDD5;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #ff6b00;
