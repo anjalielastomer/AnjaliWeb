@@ -86,7 +86,7 @@ const Page = () => {
       </div>
 
       {/* Section 3: Icon Stats */}
-      <div className='min-w-full md:w-fit flex md:flex-row lg:flex lg:flex-row justify-center lg:justify-around flex-col lg:mt-0 mt-8 gap-16 md:gap-4 lg:gap-16'>
+      <div className='min-w-full md:w-fit flex md:flex-row lg:flex lg:flex-row justify-center items-center lg:justify-around flex-col lg:mt-0  mt-8 gap-16 md:gap-4 lg:gap-16'>
         {cardData.map((data, idx) => (
           <CardComponent key={idx} data={data} />
         ))}
