@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { Product } from '@/app/products/page';
 
 interface ProductCardProps {
@@ -60,7 +61,13 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const { name, image, rating, reviewCount, description } = product;
+  const { id, name, image, rating, reviewCount, description } = product;
+  const router = useRouter();
+
+  const handleExploreProduct = () => {
+    const productId = id || 1; // Fallback to 1 if id is not available
+    router.push(`/products/${productId}`);
+  };
 
   return (
     <article 
@@ -106,7 +113,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             e.currentTarget.style.color = 'var(--textorange)';
           }}
           aria-label={`Explore product ${name}`}
-          onClick={() => alert(`Exploring product: ${name}`)}
+          onClick={handleExploreProduct}
         >
           Explore Product
         </button>
