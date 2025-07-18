@@ -10,7 +10,7 @@ export default function AboutSec5() {
           Remarkable
         </h2>
         <div className="flex flex-col md:flex-row items-center justify-between md:mb-10">
-          <h3 className="text-4xl md:text-6xl font-bold text-orange-600">Projects</h3>
+          <h3 className="text-4xl md:text-6xl font-bold text-textorange">Projects</h3>
 
           <Link href={"#"} className="group text-textblue transition-colors py-3 text-3xl font-light flex items-center gap-2 font-raleway">
             <span>

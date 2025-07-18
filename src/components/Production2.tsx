@@ -6,17 +6,17 @@ const Production2 = () => {
       {/* Left Content */}
       <div className="md:flex-1 max-w-xl">
         <h2 className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px] font-raleway">
-          Pandrol <span className="text-orange-500">Fastening</span>
+          Pandrol <span className="text-[var(--textorange)]">Fastening</span>
         </h2>
 
-        <p className="text-base sm:text-lg lg:text-[20px] text-gray-700 mt-4">
-          Precision Engineering for <span className="text-orange-500">Permanent</span> Way Solutions
+        <p className="text-base sm:text-lg lg:text-[20px] text-textblue mt-4">
+          Precision Engineering for <span className="text-[var(--textorange)]">Permanent</span> Way Solutions
         </p>
 
-        <p className="text-gray-700 text-base sm:text-lg leading-loose mt-6">
+        <p className="text-textblue text-base sm:text-lg leading-loose mt-6">
           Our advanced facility specializes in the manufacturing of rail fastening systems compatible with Pandrol-type technologies, ensuring high clamping force, electrical insulation, and long-term track stability. Designed for mainline, metro, and industrial rail applications, our systems integrate seamlessly with concrete and wooden sleepers, providing high fatigue resistance and minimal maintenance over life cycles.
         </p>
-        <p className="text-gray-700 text-base sm:text-lg leading-loose mt-6">
+        <p className="text-textblue text-base sm:text-lg leading-loose mt-6">
           We ensure every fastening component is made with precision metallurgy and tight tolerances — for consistent performance on every kilometer of track.
         </p>
       </div>

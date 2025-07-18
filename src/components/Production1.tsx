@@ -11,7 +11,7 @@ const Production1 = () => {
                 <div className="w-full lg:w-1/2 p-4 px-6 sm:px-8 lg:px-2 flex flex-col">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8">
                         State-of-Art<br />
-                        <span className="mt-4 text-orange-500">Production</span> <br />
+                        <span className="mt-4 text-textorange">Production</span> <br />
                         Facilities
                     </h1>
 
@@ -35,12 +35,12 @@ const Production1 = () => {
                     <div className="max-w-lg mx-auto lg:mx-0">
                         <div className="flex items-center justify-start gap-2 mb-6 font-raleway">
                             <h2 className="text-[#152f5d] font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Steel</h2>
-                            <span className="text-orange-500 font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Fabrication</span>
+                            <span className="text-textorange font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Fabrication</span>
                         </div>
 
-                        <p className='text-base sm:text-lg lg:text-[20px] font-[500] font-monte md:mt-10'>Precision Steel Fabrication, <span className='text-orange-500'>Engineered</span> for Elastomer Excellence</p>
+                        <p className='text-base sm:text-lg lg:text-[20px] font-[500] font-monte md:mt-10'>Precision Steel Fabrication, <span className='text-textorange'>Engineered</span> for Elastomer Excellence</p>
 
-                        <p className="text-gray-700 text-base sm:text-lg leading-loose my-8 lg:my-20">
+                        <p className="text-textblue text-base sm:text-lg leading-loose my-8 lg:my-20">
                             At the heart of every high-performance elastomer product lies a backbone of precision-engineered steel. Our in-house steel fabrication facility ensures strength, consistency, and quality you can rely on — every time.
                         </p>
 
@@ -63,7 +63,7 @@ const Production1 = () => {
                     {/* Header Section */}
                     <div className="mb-8">
                         <h2 className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px] max-w-[1440px] mx-auto font-raleway">
-                            Turnout and <span className="text-orange-500 font-semibold">Track Devices</span>
+                            Turnout and <span className="text-textorange font-semibold">Track Devices</span>
                         </h2>
                     </div>
 
@@ -87,12 +87,12 @@ const Production1 = () => {
                             {/* Subtitle */}
                             <div>
                                 <h3 className='text-base sm:text-lg lg:text-[20px] font-[600] text-[#152f5d] mb-6'>
-                                    Engineering Mobility with <span className='text-orange-500'>Unmatched</span> Accuracy
+                                    Engineering Mobility with <span className='text-textorange'>Unmatched</span> Accuracy
                                 </h3>
                             </div>
 
                             {/* Description */}
-                            <div className="space-y-4 text-base sm:text-lg leading-relaxed text-gray-700">
+                            <div className="space-y-4 text-base sm:text-lg leading-relaxed text-textblue">
                                 <p className="text-justify">
                                     Our specialized facility for Turnout and Track Device manufacturing delivers high-performance railway components that meet global standards. Backed by advanced CNC machining, in-house forging, and precision welding capabilities, we design and manufacture turnout systems that ensure smooth switching, minimal wear, and long-term reliability in dynamic rail environments.
                                 </p>
@@ -135,17 +135,17 @@ function StatItem({
 
     return (
         <div className="flex gap-4 sm:gap-8 items-start py-4" ref={ref}>
-            <div className="text-orange-500 font-bold text-3xl sm:text-4xl lg:text-5xl w-20 sm:w-32  text-center">
+            <div className="text-textorange font-bold text-3xl sm:text-4xl lg:text-5xl w-20 sm:w-32  text-center">
                 <div className="flex items-center justify-end gap-2">
                     {animatedNumber}
                     <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />
                 </div>
-                <div className="uppercase text-xs sm:text-sm font-semibold text-right text-gray-700 mt-2 mb-2">
+                <div className="uppercase text-xs sm:text-sm font-semibold text-right text-textblue mt-2 mb-2">
                     {unit}
                 </div>
             </div>
             <div className="border-l-2 border-gray-400 pl-4 sm:pl-6 flex-1">
-                <p className="text-sm sm:text-base text-gray-700 text-justify leading-relaxed">{description}</p>
+                <p className="text-sm sm:text-base text-textblue text-justify leading-relaxed">{description}</p>
             </div>
         </div>
     );

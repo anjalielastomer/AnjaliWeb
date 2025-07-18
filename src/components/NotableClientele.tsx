@@ -34,11 +34,11 @@ const logos = [
 const NotableClientele: React.FC = () => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-12 text-center overflow-hidden">
-      <h2 className="text-3xl font-semibold text-gray-900 mb-6">
+      <h2 className="text-3xl font-semibold text-textblue mb-6">
         Our Notable{' '}
-        <span className="text-orange-500">Clientele</span>
+        <span className="text-textorange">Clientele</span>
       </h2>
-      <p className="max-w-3xl mx-auto text-blue-900 mb-10 leading-relaxed">
+      <p className="max-w-3xl mx-auto text-lg text-blue-900 mb-10 leading-relaxed">
         Our clients in India include some of the country's most distinguished organisations. We are a significant exporter of track goods to Bangladesh and Sri Lanka Railways. Using high-quality materials, we offer professional and dependable services.
       </p>
 

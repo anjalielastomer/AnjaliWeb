@@ -14,7 +14,7 @@ const page = () => {
                 <span className="flex justify-end text-textblue text-4xl font-raleway font-bold pr-24">
                     Contact <span className="text-textorange ml-2">Us</span>
                 </span>
-                <hr className="w-full border-t-2 border-[#E6E6E6] mt-2 mb-8" />
+                <hr className="w-full border-t-2 border-[#E5E7EB] mt-2 mb-8" />
             </div>
             <div className="w-full flex justify-center">
             <div className="w-fit grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-20 ">
@@ -25,7 +25,7 @@ const page = () => {
                     </div>
                     <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Phone</h2>
                     <p className="text-textblue text-[14px] font-monte mb-1">+1 (555) 123-4567</p>
-                    <span className="text-[#2D3A4A] text-xs font-monte opacity-80">Mon-Fri 8AM-6PM EST</span>
+                    <span className="text-textblue text-xs font-monte opacity-80">Mon-Fri 8AM-6PM EST</span>
                 </div>
                 {/* Card2 */}
                 <div className="w-[180px] md:w-[384px] px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
@@ -34,7 +34,7 @@ const page = () => {
                     </div>
                     <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Email</h2>
                     <p className="text-textblue text-[12px] md:text-[14px] font-monte mb-1">info@railtechmaterials.com</p>
-                    <span className="text-[#2D3A4A] text-xs font-monte opacity-80">sales@railtechmaterials.com</span>
+                    <span className="text-textblue text-xs font-monte opacity-80">sales@railtechmaterials.com</span>
                 </div>
                 {/* Card3 */}
                 <div className="w-[200px] md:w-[384px] mx-28 md:mx-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
@@ -43,113 +43,107 @@ const page = () => {
                     </div>
                     <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Location</h2>
                     <p className="text-textblue text-[14px] font-monte mb-1">J8H5+MF, Bhatta Nagar, Liluah,</p>
-                    <span className="text-[#2D3A4A] text-xs font-monte opacity-80">Howrah, Chakpara, West Bengal 711203</span>
+                    <span className="text-textblue text-xs font-monte opacity-80">Howrah, Chakpara, West Bengal 711203</span>
                 </div>
             </div>
             </div>
         </div>
         {/* Section 2 */}
-        <div className="w-full flex flex-col items-center bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
-  <h2 className="text-textblue text-3xl sm:text-4xl font-raleway font-bold text-center mb-2">
-    Send Us a <span className="text-textorange">Message</span>
-  </h2>
-  <p className="text-[#2D3A4A] text-sm sm:text-base font-monte text-center mb-10 max-w-xl">
-    Have a project in mind? Need technical specifications? Our team of railroad materials experts is ready to assist you.
-  </p>
-  <form className="bg-white rounded-xl shadow-md px-5 md:px-10 py-8 w-full max-w-2xl flex flex-col gap-5 sm:gap-6">
-    {/* First Name & Last Name */}
-    <div className="flex flex-col md:flex-row gap-4 sm:gap-6">
-      <div className="w-full flex flex-col gap-2">
-        <label className="text-sm font-semibold text-[#222]">First Name *</label>
-        <input
-          type="text"
-          className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange"
-          required
-        />
-      </div>
-      <div className="w-full flex flex-col gap-2">
-        <label className="text-sm font-semibold text-[#222]">Last Name *</label>
-        <input
-          type="text"
-          className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange"
-          required
-        />
-      </div>
-    </div>
-
-    {/* Email & Phone */}
-    <div className="flex flex-col md:flex-row gap-4 sm:gap-6">
-      <div className="w-full flex flex-col gap-2">
-        <label className="text-sm font-semibold text-[#222]">Email *</label>
-        <input
-          type="email"
-          className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange"
-          required
-        />
-      </div>
-      <div className="w-full flex flex-col gap-2">
-        <label className="text-sm font-semibold text-[#222]">Phone</label>
-        <input
-          type="text"
-          className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange"
-        />
-      </div>
-    </div>
-
-    {/* Company */}
-    <div className="flex flex-col gap-2">
-      <label className="text-sm font-semibold text-[#222]">Company</label>
-      <input
-        type="text"
-        className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange"
-      />
-    </div>
-
-    {/* Project Type */}
-    <div className="flex flex-col gap-2">
-      <label className="text-sm font-semibold text-[#222]">Project Type</label>
-      <select
-        className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange text-gray-500"
-        defaultValue=""
-      >
-        <option value="" disabled>Select Project Type</option>
-        <option value="type1">Type 1</option>
-        <option value="type2">Type 2</option>
-        <option value="type3">Type 3</option>
-      </select>
-    </div>
-
-    {/* Message */}
-    <div className="flex flex-col gap-2">
-      <label className="text-sm font-semibold text-[#222]">Message *</label>
-      <textarea
-        className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange min-h-[100px]"
-        placeholder="Tell us about your project requirements..."
-        required
-      />
-    </div>
-
-    {/* Submit Button */}
-    <div className="flex justify-center mt-2">
-      <button
-        type="submit"
-        className="flex items-center gap-2 bg-textorange text-white font-semibold px-8 py-2 rounded-md shadow hover:bg-[#ff9000] transition"
-      >
-        <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-          <path d="M2 21l21-9-21-9v7l15 2-15 2v7z" fill="white" />
-        </svg>
-        Send Message
-      </button>
-    </div>
-  </form>
-</div>
+        <div className="w-full flex flex-col items-center bg-bgcolour py-20">
+            <h2 className="text-textblue text-4xl font-raleway font-bold text-center mb-2">
+                Send Us a <span className="text-textorange">Message</span>
+            </h2>
+            <p className="text-textblue text-base font-monte text-center mb-10 max-w-xl">
+                Have a project in mind? Need technical specifications? Our team of railroad materials experts is ready to assist you.
+            </p>
+            <form className="group bg-white rounded-xl shadow-lg hover:shadow-[0_0_10px_rgba(255,165,0,0.4)] transition-shadow duration-300 px-10 py-8 w-full max-w-2xl flex flex-col gap-6">
+                <div className="flex flex-col md:flex-row gap-6">
+                    <div className="flex-1 flex flex-col gap-2">
+                        <label className="text-sm font-semibold text-textblue">First Name *</label>
+                        <input
+                            type="text"
+                            className="border border-[#E5E7EB] rounded-md px-4 py-2 focus:outline-none focus:border-textorange group-hover:bg-[var(--bgcolour)]"
+                            placeholder=""
+                            required
+                        />
+                    </div>
+                    <div className="flex-1 flex flex-col gap-2">
+                        <label className="text-sm font-semibold text-textblue">Last Name *</label>
+                        <input
+                            type="text"
+                            className="border border-[#E5E7EB] rounded-md px-4 py-2 focus:outline-none focus:border-textorange group-hover:bg-[var(--bgcolour)]"
+                            placeholder=""
+                            required
+                        />
+                    </div>
+                </div>
+                <div className="flex flex-col md:flex-row gap-6">
+                    <div className="flex-1 flex flex-col gap-2">
+                        <label className="text-sm font-semibold text-textblue">Email *</label>
+                        <input
+                            type="email"
+                            className="border border-[#E5E7EB] rounded-md px-4 py-2 focus:outline-none focus:border-textorange group-hover:bg-[var(--bgcolour)]"
+                            placeholder=""
+                            required
+                        />
+                    </div>
+                    <div className="flex-1 flex flex-col gap-2">
+                        <label className="text-sm font-semibold text-textblue">Phone</label>
+                        <input
+                            type="text"
+                            className="border border-[#E5E7EB] rounded-md px-4 py-2 focus:outline-none focus:border-textorange group-hover:bg-[var(--bgcolour)]"
+                            placeholder=""
+                        />
+                    </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label className="text-sm font-semibold text-textblue">Company</label>
+                    <input
+                        type="text"
+                        className="border border-[#E5E7EB] rounded-md px-4 py-2 focus:outline-none focus:border-textorange group-hover:bg-[var(--bgcolour)]"
+                        placeholder=""
+                    />
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label className="text-sm font-semibold text-textblue">Project Type</label>
+                    <select
+                        className="border border-[#E5E7EB] rounded-md px-4 py-2 focus:outline-none focus:border-textorange text-gray-500 group-hover:bg-[var(--bgcolour)]"
+                        defaultValue=""
+                    >
+                        <option value="" disabled>Select Project Type</option>
+                        <option value="type1">Type 1</option>
+                        <option value="type2">Type 2</option>
+                        <option value="type3">Type 3</option>
+                    </select>
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label className="text-sm font-semibold text-textblue">Message *</label>
+                    <textarea
+                        className="border border-[#E5E7EB] rounded-md px-4 py-2 focus:outline-none focus:border-textorange min-h-[100px] group-hover:bg-[var(--bgcolour)]"
+                        placeholder="Tell us about your project requirements..."
+                        required
+                    />
+                </div>
+                <div className="flex justify-center mt-2">
+                    <button
+                        type="submit"
+                        className="flex items-center gap-2 bg-textorange text-white font-semibold px-8 py-2 rounded-md shadow hover:bg-[#ff9000] transition"
+                    >
+                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+                            <path d="M2 21l21-9-21-9v7l15 2-15 2v7z" fill="white"/>
+                        </svg>
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
 
         {/* Section 3 */}
         <div className="w-full flex flex-col items-center py-20 pb-40 bg-white ">
       <h2 className="text-3xl md:text-4xl font-raleway font-bold text-center text-textblue mb-2">
         Visit Our <span className="text-textorange">Manufacturing</span> Units
       </h2>
-      <p className="text-[#2D3A4A] text-sm sm:text-base font-monte text-center mb-10 max-w-xl">
+      <p className="text-textblue text-sm sm:text-base font-monte text-center mb-10 max-w-xl">
         Our state-of-the-art manufacturing facility and headquarters
       </p>
  <div className="relative w-full md:w-[700px] lg:w-[1216px] h-[400px] md:h-[500px] lg:h-[428px] rounded-xl overflow-hidden">

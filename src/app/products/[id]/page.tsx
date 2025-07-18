@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation';
 import ProductCard from '@/components/ProductCard';
 import EnquiryModal from '@/components/EnquiryModal';
 import BuyNowModal from '@/components/BuyNowModal';
+import dummyProducts from '@/comstants/duumyProduct.json';
 
 // Product interface
 interface Product {
@@ -34,39 +35,23 @@ const SingleProductPage: React.FC = () => {
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const [isBuyNowOpen, setIsBuyNowOpen] = useState(false);
 
-  // Mock product data - replace with actual data fetching
-  const product: Product = {
-    id: 1,
-    name: 'Air Spring Suspension System (AKTAS, TURKEY)',
-    description: 'Enclosed pressurised air in a predefined chamber called air spring, made up of rubber and textile',
-    image: '/featuredproductsimg1.png',
-    rating: 5,
-    reviewCount: 195,
-    category: 'suspension',
-    segment: 'railway-metro-coach-products',
-    price: '$2,499',
-    inStock: true,
-    keyFeatures: [
-      'Superior ride comfort and stability',
-      'High-quality rubber and textile construction',
-      'Excellent vibration damping properties',
-      'Long service life and durability',
-      'Compatible with metro and railway coaches',
-      'Easy installation and maintenance',
-      'Temperature resistant design (-40°C to +70°C)',
-      'Proven performance in harsh environments',
-      'Cost-effective suspension solution',
-      'ISO certified quality standards',
-      'Customizable for different load capacities',
-      'Environmentally friendly materials'
+  // Find the product from dummy data based on ID
+  const product = dummyProducts.find(p => p.id === parseInt(productId)) || dummyProducts[0];
+  
+  // Fallback data for products without extended information
+  const fallbackProduct = {
+    ...product,
+    price: product.price || '$999',
+    inStock: product.inStock !== undefined ? product.inStock : true,
+    keyFeatures: product.keyFeatures || [
+      'High-quality construction',
+      'Durable materials',
+      'Easy installation',
+      'Cost-effective solution',
+      'Reliable performance'
     ],
-    longDescription: 'The Air Spring Suspension System from AKTAS, Turkey represents the pinnacle of railway and metro coach suspension technology. This advanced system utilizes enclosed pressurized air within a precisely engineered chamber, constructed from high-grade rubber and textile materials.\n\nDesigned specifically for railway and metro applications, these air springs provide superior ride comfort, excellent vibration isolation, and exceptional durability. The system effectively dampens vibrations and shocks, ensuring passenger comfort while protecting sensitive onboard equipment. With proven performance across various climate conditions and operational environments, this suspension system has become the preferred choice for metro operators worldwide.',
-    images: [
-      '/featuredproductsimg1.png',
-      '/featuredproductsimg2.png',
-      '/featuredproductsimg3.png',
-      '/featuredproductsimg4.png'
-    ]
+    longDescription: product.longDescription || `${product.description}\n\nThis product represents quality engineering and reliable performance in ${product.category} applications. Designed to meet industry standards and provide long-lasting service in demanding environments.`,
+    images: product.images || [product.image, product.image, product.image]
   };
 
   // Mock reviews data
@@ -194,49 +179,10 @@ const SingleProductPage: React.FC = () => {
     }
   ];
 
-  // Related products data
-  const relatedProducts: Product[] = [
-    {
-      id: 2,
-      name: 'Air Spring',
-      description: 'Enclosed pressurised air in a predefined chamber called air spring, made up of r...',
-      image: '/featuredproductsimg1.png',
-      rating: 5,
-      reviewCount: 156,
-      category: 'suspension',
-      segment: 'railway-metro-coach-products',
-    },
-    {
-      id: 3,
-      name: 'Axle Brake Disc',
-      description: 'The brake pad or shoe with the disc lining is pushed against the rot...',
-      image: '/featuredproductsimg2.png',
-      rating: 4,
-      reviewCount: 174,
-      category: 'braking',
-      segment: 'brake-shoe-brake-pad-products',
-    },
-    {
-      id: 4,
-      name: 'Bolts & Nuts',
-      description: 'A fastener is used for joining, holding or assembling of a single or multiple comp...',
-      image: '/featuredproductsimg3.png',
-      rating: 3,
-      reviewCount: 43,
-      category: 'hardware',
-      segment: 'other-products',
-    },
-    {
-      id: 5,
-      name: 'Brake Shoe Pad',
-      description: 'Found in disc brake systems, brake shoe pads are a flat piece of steel with a thi...',
-      image: '/featuredproductsimg1.png',
-      rating: 5,
-      reviewCount: 163,
-      category: 'braking',
-      segment: 'brake-shoe-brake-pad-products',
-    }
-  ];
+  // Related products data - exclude current product
+  const relatedProducts: Product[] = dummyProducts
+    .filter(p => p.id !== parseInt(productId) && p.segment === fallbackProduct.segment)
+    .slice(0, 4);
 
   // Function to get segment display name for breadcrumb
   const getSegmentDisplayName = (segment: string) => {
@@ -310,13 +256,13 @@ const SingleProductPage: React.FC = () => {
                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--textorange)'}
                   onMouseLeave={(e) => e.currentTarget.style.color = 'var(--textcolour)'}
                 >
-                  {getSegmentDisplayName(product.segment)}
+                  {getSegmentDisplayName(fallbackProduct.segment)}
                 </Link>
               </li>
               <li className="flex items-center">
                 <span className="mx-2">&gt;</span>
                 <span style={{ color: 'var(--textblue)' }}>
-                  Air Spring
+                  {fallbackProduct.name}
                 </span>
               </li>
             </ol>
@@ -333,8 +279,8 @@ const SingleProductPage: React.FC = () => {
               style={{ backgroundColor: 'var(--textorange)' }}
             >
               <Image
-                src={product.images?.[selectedImageIndex] || product.image}
-                alt={product.name}
+                src={fallbackProduct.images?.[selectedImageIndex] || fallbackProduct.image}
+                alt={fallbackProduct.name}
                 width={600}
                 height={600}
                 className="w-full h-full object-cover"
@@ -343,7 +289,7 @@ const SingleProductPage: React.FC = () => {
             
             {/* Thumbnail Images */}
             <div className="flex space-x-4">
-              {product.images?.map((image, index) => (
+              {fallbackProduct.images?.map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedImageIndex(index)}
@@ -356,7 +302,7 @@ const SingleProductPage: React.FC = () => {
                 >
                   <Image
                     src={image}
-                    alt={`${product.name} ${index + 1}`}
+                    alt={`${fallbackProduct.name} ${index + 1}`}
                     width={80}
                     height={80}
                     className="w-full h-full object-cover"
@@ -370,20 +316,20 @@ const SingleProductPage: React.FC = () => {
           <div className="space-y-6">
             <div>
               <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--textblue)' }}>
-                {product.name}
+                {fallbackProduct.name}
               </h2>
               
               {/* Rating and Stock */}
               <div className="flex items-center space-x-4 mb-4">
                 <div className="flex items-center space-x-2">
                   <div className="flex">
-                    {renderStars(product.rating)}
+                    {renderStars(fallbackProduct.rating)}
                   </div>
                   <span className="text-sm" style={{ color: 'var(--textcolour)' }}>
-                    ({product.reviewCount} reviews)
+                    ({fallbackProduct.reviewCount} reviews)
                   </span>
                 </div>
-                {product.inStock && (
+                {fallbackProduct.inStock && (
                   <span className="text-sm px-2 py-1 rounded" style={{ 
                     backgroundColor: 'var(--bgcolour)', 
                     color: 'var(--textorange)' 
@@ -392,9 +338,7 @@ const SingleProductPage: React.FC = () => {
                   </span>
                 )}
               </div>
-            </div>
-
-            {/* Key Features */}
+            </div>            {/* Key Features */}
             <div 
               className="p-4 rounded-lg"
               style={{ backgroundColor: 'var(--bgcolour)' }}
@@ -403,9 +347,9 @@ const SingleProductPage: React.FC = () => {
                 Key Features
               </h3>
               <div className="grid grid-cols-1 gap-2">
-                {product.keyFeatures?.map((feature, index) => (
+                {fallbackProduct.keyFeatures?.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <span className="text-green-500">✓</span>
+                    <span style={{ color: 'var(--textorange)' }}>✓</span>
                     <span className="text-sm" style={{ color: 'var(--textcolour)' }}>
                       {feature}
                     </span>
@@ -416,7 +360,7 @@ const SingleProductPage: React.FC = () => {
 
             {/* Action Buttons */}
             <div className="space-y-3">
-              <button 
+                            <button 
                 onClick={() => setIsEnquiryOpen(true)}
                 className="w-full py-3 px-6 rounded-lg text-white font-medium transition-opacity hover:opacity-90"
                 style={{ backgroundColor: 'var(--textorange)' }}
@@ -470,7 +414,7 @@ const SingleProductPage: React.FC = () => {
           <div className="prose max-w-none">
             {activeTab === 'description' && (
               <div className="space-y-4">
-                {product.longDescription?.split('\n\n').map((paragraph, index) => (
+                {fallbackProduct.longDescription?.split('\n\n').map((paragraph, index) => (
                   <p key={index} style={{ color: 'var(--textcolour)' }}>
                     {paragraph}
                   </p>
@@ -614,15 +558,15 @@ const SingleProductPage: React.FC = () => {
       <EnquiryModal 
         isOpen={isEnquiryOpen}
         onClose={() => setIsEnquiryOpen(false)}
-        productName={product.name}
+        productName={fallbackProduct.name}
       />
 
       {/* Buy Now Modal */}
       <BuyNowModal 
         isOpen={isBuyNowOpen}
         onClose={() => setIsBuyNowOpen(false)}
-        productName={product.name}
-        productPrice={product.price}
+        productName={fallbackProduct.name}
+        productPrice={fallbackProduct.price}
       />
     </div>
   );
