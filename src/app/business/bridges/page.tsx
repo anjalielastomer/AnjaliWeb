@@ -11,7 +11,7 @@ const Page = () => {
       {/* Section 1: Hero */}
       <div className="flex bg-right-top justify-center xl:justify-between mx-auto max-w-[90%] flex-wrap mb-20">
         <div className="min-h-auto flex flex-col p-6 gap-8 md:gap-15 md:w-[60%] xl:pt-20 md:pt-0">
-          <h1 className="font-raleway font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-[85.5px] text-textblue w-full text-center md:text-left">
+          <h1 className="font-raleway font-semibold text-6xl sm:text-5xl md:text-6xl lg:text-[85.5px] text-textblue w-full text-center md:text-left">
             <span className="whitespace-nowrap text-nowrap mt-3 md:mt-5 lg:mt-8">
               <span className="text-textblue">Bridges</span>
             </span>
@@ -51,18 +51,17 @@ const Page = () => {
       {/* Section 2: Turnkey Projects */}
       <div className="bg-[#fff5ef] h-auto">
         <div className="flex justify-center xl:justify-between mx-auto max-w-[93%] flex-wrap mt-0 md:mt-[-168px] pb-20">
-          <div className='w-124 h-164 ml-26 -mt-4'>
+          <div className='relative lg:w-124 lg:h-164 w-92 h-92  lg:ml-26 lg:-mt-4'>
             <Image
               className=" w-full "
               src="/business/bridge-2.svg"
               alt="Train on a coastal bridge"
-              width={496}
-              height={641}
+              fill={true}
               priority
             />
           </div>
           <div className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24 ">
-            <h1 className="text-lg sm:text-xl md:text-2xl font-medium text-[#193055] mb-4 font-monte text-center md:text-left leading-relaxed font-montserrat  tracking-normal">
+            <h1 className="text-2xl sm:text-xl md:text-2xl font-medium text-[#193055] mb-4 font-monte text-center md:text-left leading-relaxed font-montserrat  tracking-normal">
               We are experts in providing{" "}
               <span className="text-textorange font-bold">
                 Turn key Bridge <br /> 
@@ -70,7 +69,7 @@ const Page = () => {
               projects:
             </h1>
 
-            <ul  role='list' className="list-disc marker:text-textorange list-inside space-y-2 text-base sm:text-lg md:text-base font-medium font-monte">
+            <ul  role='list' className=" lg:pt-0 lg:pl-0 pl-2 pt-8 list-disc marker:text-textorange list-inside space-y-2 text-base sm:text-lg md:text-base font-medium font-monte">
               <li>Concrete Bridges</li>
               <li>Steel Bridges</li>
               <li>Composite Bridges</li>
@@ -83,7 +82,7 @@ const Page = () => {
       </div>
 
       {/* Section 3: Icon Stats */}
-      <div className='min-w-full  flex justify-center gap-16'>
+      <div className='min-w-full   lg:flex flex flex-col justify-center gap-16'>
         {cardData.map((data, idx) => (
           <CardComponent key={idx} data={data} />
         ))}
@@ -93,7 +92,7 @@ const Page = () => {
       <div className="bg-white h-auto">
         <div className="flex justify-center xl:justify-between mx-auto max-w-[80%] flex-wrap-reverse mt-0 pb-20">
           <div className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24">
-            <h1 className="text-lg sm:text-xl md:text-5xl font-bold text-[#193055] mb-4 font-monte text-center md:text-left leading-relaxed">
+            <h1 className="text-4xl sm:text-xl md:text-5xl font-bold text-[#193055] lg:mb-4 -mb-2 mt-4 lg:mt-0 font-monte text-center md:text-left leading-relaxed">
               <span className="text-textorange font-bold">Resources</span>{" "}
               Available
             </h1>
@@ -140,10 +139,10 @@ const Page = () => {
             />
           </div>
           <div className="flex flex-col justify-center px-4 md:px-6 md:w-[55%]">
-            <h2 className="text-xl md:text-5xl font-bold text-[#193055] mb-6 font-raleway">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#193055] mb-6 font-raleway">
               Capabilities & <span className='text-textorange'>Geography</span>
             </h2>
-            <p className="w-146 text-sm md:text-base text-[#193055] leading-loose font-monte">
+            <p className="lg:w-146 text-sm md:text-base text-[#193055] leading-loose font-monte">
               Our bridges span the length and width of India, strengthening connections and facilitating the flow of life throughout the country. We have successfully constructed bridges in tough mountain terrains and over running rivers, such as the Rishikesh Bridge. This demonstrates our capacity to handle demanding situations.
               <br /><br />
               We, as one of the most advanced steel bridge building companies, have the potential to fabricate and erect 50,000 tons of structural steel per year at our cutting-edge fabrication facilities located in West Bengal. These bridge building facilities, which occupy more than 20,000 square meters and have a total area of 89,000 square meters, are outfitted with EOT cranes and advanced machinery. We perform full-scale design, control/trial assemblies, and testing on various structures and components in-house. Its shot-blasting facilities ensure that produced components have a flawless surface and are anti-corrosive.
@@ -160,7 +159,7 @@ const Page = () => {
 
 export const CardComponent=({data}:{data:CardProps})=>{
   return(
-    <div className='min-w-96 border bg-white border-[#FB7602] min-h-62 p-12 -mt-6 rounded-lg'>
+    <div className='min-w-96 border bg-white border-[#FB7602] min-h-62 p-12 lg:-mt-6 mt-8 rounded-lg'>
       <div className="w-full flex justify-center items-center mb-4">
         <div className="w-12 h-12 rounded-full bg-[#FF6A00] flex justify-center items-center">
           <Image src="/business/bridges-3.svg" alt="Bridge Icon" width={24} height={24} />
