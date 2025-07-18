@@ -75,62 +75,135 @@
   {
     "id": 4,
     "name": "Brake Shoe Pad",
-    "description": "Found in disc brake systems, brake pads are a flat piece of steel with a thick friction material.",
+    "description": "Durable brake shoe pad designed for high-performance rail braking systems.",
     "image": "/featuredproductsimg4.png",
     "rating": 5,
     "reviewCount": 193,
     "category": "brake",
-    "segment": "brake-shoe-brake-pad-products"
+    "segment": "brake-shoe-brake-pad-products",
+    "price": "$1,299",
+    "inStock": false,
+    "keyFeatures": [
+      "High friction material for effective braking",
+      "Low wear rate for extended service life",
+      "Noise reduction technology",
+      "Easy to install and replace"
+    ],
+    "longDescription": "This brake shoe pad is engineered for modern rail systems, offering reliable stopping power and minimal maintenance. Its advanced friction material ensures safety and longevity even under heavy use.",
+    "images": [
+      "/featuredproductsimg4.png",
+      "/featuredproductsimg2.png"
+    ]
   },
   {
     "id": 5,
     "name": "Railway Coupling",
-    "description": "Heavy-duty coupling system for railway coaches and metro systems.",
+    "description": "Robust coupling system for secure railway coach connections.",
     "image": "/featuredproductsimg1.png",
     "rating": 4.5,
     "reviewCount": 89,
     "category": "fasteners",
-    "segment": "railway-metro-coach-products"
+    "segment": "railway-metro-coach-products",
+    "price": "$3,100",
+    "inStock": true,
+    "keyFeatures": [
+      "Heavy-duty steel construction",
+      "Quick connect/disconnect mechanism",
+      "Corrosion-resistant coating"
+    ],
+    "longDescription": "Designed for both metro and long-distance trains, this coupling system provides a secure and efficient connection between coaches, ensuring safety and operational flexibility.",
+    "images": [
+      "/featuredproductsimg1.png"
+    ]
   },
   {
     "id": 6,
     "name": "Track Fastener",
-    "description": "Specialized fastening system for railway track maintenance and installation.",
+    "description": "Specialized fastener for reliable railway track installation.",
     "image": "/featuredproductsimg3.png",
     "rating": 4,
     "reviewCount": 67,
     "category": "fasteners",
-    "segment": "railway-metro-track-products"
+    "segment": "railway-metro-track-products",
+    "price": "$499",
+    "inStock": true,
+    "keyFeatures": [
+      "Vibration dampening design",
+      "Weather-resistant materials",
+      "Compatible with standard rail profiles"
+    ],
+    "longDescription": "This track fastener is built to withstand harsh environments and heavy loads, providing a stable and secure hold for railway tracks.",
+    "images": [
+      "/featuredproductsimg3.png",
+      "/featuredproductsimg1.png"
+    ]
   },
   {
     "id": 7,
     "name": "Steel Cast Bearing",
-    "description": "High-quality steel cast bearing for industrial applications.",
+    "description": "Industrial-grade bearing for smooth and efficient rail operations.",
     "image": "/featuredproductsimg2.png",
     "rating": 5,
     "reviewCount": 234,
     "category": "engine",
-    "segment": "steel-casting-products"
+    "segment": "steel-casting-products",
+    "price": "$2,050",
+    "inStock": false,
+    "keyFeatures": [
+      "Precision-machined surfaces",
+      "High load capacity",
+      "Low maintenance requirements",
+      "Long operational life"
+    ],
+    "longDescription": "This steel cast bearing is designed for heavy-duty applications, ensuring minimal friction and maximum durability in rail and industrial settings.",
+    "images": [
+      "/featuredproductsimg2.png",
+      "/featuredproductsimg3.png",
+      "/featuredproductsimg4.png"
+    ]
   },
   {
     "id": 8,
     "name": "Rolling Mill Roller",
-    "description": "Precision-engineered roller for rolling mill operations.",
+    "description": "Precision roller for rolling mill and metal forming operations.",
     "image": "/featuredproductsimg4.png",
     "rating": 4.5,
     "reviewCount": 145,
     "category": "transmission",
-    "segment": "rolling-mill-products"
+    "segment": "rolling-mill-products",
+    "price": "$4,800",
+    "inStock": true,
+    "keyFeatures": [
+      "Hardened alloy surface",
+      "Uniform pressure distribution",
+      "Customizable sizes available"
+    ],
+    "longDescription": "Engineered for high-precision rolling mills, this roller ensures consistent results and long service life, even under continuous operation.",
+    "images": [
+      "/featuredproductsimg4.png"
+    ]
   },
   {
     "id": 9,
     "name": "Metro Suspension System",
-    "description": "Advanced suspension system for metro coach applications.",
+    "description": "Advanced suspension for metro coaches, enhancing ride comfort.",
     "image": "/featuredproductsimg1.png",
     "rating": 4,
     "reviewCount": 98,
     "category": "suspension",
-    "segment": "railway-metro-coach-products"
+    "segment": "railway-metro-coach-products",
+    "price": "$2,800",
+    "inStock": true,
+    "keyFeatures": [
+      "Superior shock absorption",
+      "Low maintenance design",
+      "Optimized for urban rail systems"
+    ],
+    "longDescription": "This metro suspension system is tailored for city transit, providing a smooth and stable ride for passengers and reducing wear on rolling stock.",
+    "images": [
+      "/featuredproductsimg1.png",
+      "/featuredproductsimg2.png"
+    ]
   },
   {
     "id": 10,
@@ -140,7 +213,20 @@
     "rating": 5,
     "reviewCount": 287,
     "category": "track",
-    "segment": "railway-metro-track-products"
+    "segment": "railway-metro-track-products",
+    "price": "$650",
+    "inStock": false,
+    "keyFeatures": [
+      "Secure grip on rail base",
+      "Easy to install and remove",
+      "Suitable for temporary and permanent use"
+    ],
+    "longDescription": "This rail clamp is ideal for both construction and maintenance, offering a reliable hold and quick deployment for various track types.",
+    "images": [
+      "/featuredproductsimg2.png",
+      "/featuredproductsimg4.png",
+      "/featuredproductsimg1.png"
+    ]
   },
   {
     "id": 11,
@@ -150,7 +236,19 @@
     "rating": 4,
     "reviewCount": 156,
     "category": "wheel",
-    "segment": "steel-casting-products"
+    "segment": "steel-casting-products",
+    "price": "$1,750",
+    "inStock": true,
+    "keyFeatures": [
+      "Balanced for high-speed operation",
+      "Wear-resistant tread",
+      "Low noise profile"
+    ],
+    "longDescription": "This steel cast wheel is manufactured for high-speed rail and metro systems, ensuring safety, durability, and quiet operation.",
+    "images": [
+      "/featuredproductsimg3.png",
+      "/featuredproductsimg2.png"
+    ]
   },
   {
     "id": 12,
@@ -160,6 +258,17 @@
     "rating": 4.5,
     "reviewCount": 123,
     "category": "guide",
-    "segment": "rolling-mill-products"
+    "segment": "rolling-mill-products",
+    "price": "$3,600",
+    "inStock": false,
+    "keyFeatures": [
+      "Precision alignment",
+      "Reduces material waste",
+      "Easy to adjust and maintain"
+    ],
+    "longDescription": "This rolling mill guide system ensures precise material flow and reduces downtime, making it essential for efficient mill operations.",
+    "images": [
+      "/featuredproductsimg4.png"
+    ]
   }
-]
+]   
