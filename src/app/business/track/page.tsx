@@ -26,12 +26,7 @@ const Page = () => {
           </h1>
 
           <p className="text-sm md:text-base text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-montserrat font-medium tracking-normal">
-            We are one of the leading Indian Railway contractors for building
-            superstructures. We undertake complex projects that require
-            high-level construction and engineering skills. Our expertise and
-            innovative methods have been honed over many years of experience
-            in this sector, and we are proud to be playing an important role
-            in shaping the future of railway infrastructure.
+            The permanent route is the foundation of railway infrastructure, and we specialize in railway track construction for a variety of projects. We specialize in ballasted and ballastless track construction, track renewals, gauge conversion, railway depots, sidings and yards, metro rail, and light rail projects. As one of India's fastest-growing ballastless track construction companies, we are now working on over 100 kilometers of mainline ballastless track. 
           </p>
         </div>
 
