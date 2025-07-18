@@ -82,6 +82,87 @@ const page = () => {
           </div>
         </div>
       </div>
+
+      <div className="flex mx-auto w-[90%] gap-10 flex-wrap mt-10">
+        <div className="flex-1">
+          <h1 className="text-lg sm:text-xl md:text-[32px] font-[500] text-[#193055] mb-4 font-monte text-center md:text-left leading-relaxed">
+            Innovations in{" "}
+            <span className="text-textorange font-bold">Rail Fastening</span>{" "}
+            <br />
+            solutions
+          </h1>
+          <div>
+            <p className="text-sm text-center xl:text-left font-[500]  md:text-base text-[#193055] md:w-[30rem] mb-4 md:mb-7 leading-loose font-monte">
+              We've been a prominent participant in railway track fasteners for
+              15 years, constantly pushing the boundaries of innovation. We are
+              also a market leader in bridge fastening systems in India. Our
+              innovative Zero Restraint Fastening System (ZRF) for steel bridge
+              sleepers overcomes the constraints of conventional techniques.
+              This ingenious solution has been employed in noteworthy projects
+              such as the Chenab Bridge, the world's tallest rail bridge, and
+              the Bogibeel Bridge in Northeast India.
+            </p>
+            <div className="space-y-2 mb-4 md:mb-7 w-[80%] md:w-auto mx-auto py-3">
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-textorange rounded-full mt-2 flex-shrink-0"></div>
+                <span className="text-textblue text-lg">
+                  High Tensile Bolts & Nuts
+                </span>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-textorange rounded-full mt-2 flex-shrink-0"></div>
+                <span className="text-textblue text-lg">Rail Screw Spikes</span>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-textorange rounded-full mt-2 flex-shrink-0"></div>
+                <span className="text-textblue text-lg">
+                  Zero Restraint Fastening System for Bridges
+                </span>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-textorange rounded-full mt-2 flex-shrink-0"></div>
+                <span className="text-textblue text-lg">
+                  Elastic Rail Clips
+                </span>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-textorange rounded-full mt-2 flex-shrink-0"></div>
+                <span className="text-textblue text-lg">Rail Pads</span>
+              </div>
+
+              
+            </div>
+            <p className="text-sm text-center xl:text-left  md:text-base text-[#193055] md:w-[30rem] mb-4 md:mb-12 leading-loose font-monte">
+              With a focus on quality and innovation, we are a trusted name in
+              railway track fasteners, track fittings, and fastenings.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div className="flex justify-between items-center px-10 gap-4 p-4 mb-11">
+            <button className="px-6 py-2 rounded-[16px] font-medium transition-colors bg-textorange text-white">
+              Fastenings
+            </button>
+
+            <button className="bg-white border border-textorange text-textorange hover:bg-orange-50 px-6 py-2 rounded-[16px] font-medium transition-colors">
+              Steel Sleepers
+            </button>
+          </div>
+          <div>
+            <Image
+              src={"/business/railfastening.svg"}
+              width={554}
+              height={721}
+              alt="Rail"
+            />
+          </div>
+        </div>
+      </div>
+
       <VideoSection bgColor="bg-bgcolour" />
     </div>
   );
