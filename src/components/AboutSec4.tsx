@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function AboutSec4() {
   return (
-    <section className="flex flex-col md:flex-row items-center md:items-start mx-auto px-6 py-12 bg-[#FFF4E6] relative justify-center overflow-hidden">
+    <section className="flex flex-col md:flex-row items-center md:items-start mx-auto px-6 py-12 bg-[#FFF4E6] relative justify-center overflow-hidden text-textblue">
       {/* Left side image */}
       <div className="w-full md:w-fit flex justify-center md:justify-start mb-6 sm:mb-8 md:mb-0">
         <div className="w-[350px] h-[350px] sm:w-[360px] sm:h-[360px] md:w-[420px] md:h-[420px] lg:w-[480px] lg:h-[480px] rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
@@ -22,20 +22,20 @@ export default function AboutSec4() {
       <div className="w-full md:w-1/2 md:pl-16 text-gray-900">
         <h2 className="text-3xl font-raleway sm:text-4xl font-semibold mb-10 text-textblue">
           Elevated{' '}
-          <span className="text-orange-500">
+          <span className="text-textorange">
             Technology
           </span>
         </h2>
 
-        <p className="text-base leading-relaxed mb-6 max-w-xl">
+        <p className="text-lg leading-relaxed mb-6 max-w-xl">
           Our company, a pioneer in rail infrastructure, specializes in innovative Turnkey bridge solutions. We develop ballastless tracks using cutting-edge innovation to provide improved stability, fewer maintenance, and an extended total track lifespan.
         </p>
 
-        <p className="text-base leading-relaxed mb-6 max-w-xl">
+        <p className="text-lg leading-relaxed mb-6 max-w-xl">
           The development of ballastless track systems has found widespread use in India's rail infrastructure, ushering in a new era of efficiency and durability.
         </p>
 
-        <p className="text-base leading-relaxed mb-8 max-w-xl">
+        <p className="text-lg leading-relaxed mb-8 max-w-xl">
           Our competence in ballastless track construction continues to set new benchmarks and contribute to the evolution of rail systems. As India modernizes its railroads, the use of ballastless track technology demonstrates the country's dedication to innovative solutions, creating a resilient and sustainable transportation network.
         </p>
 

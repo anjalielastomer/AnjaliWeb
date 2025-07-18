@@ -53,13 +53,13 @@ const page = () => {
             <p className="text-[#2D3A4A] text-base font-monte text-center mb-10 max-w-xl">
                 Have a project in mind? Need technical specifications? Our team of railroad materials experts is ready to assist you.
             </p>
-            <form className="bg-white rounded-xl shadow-md px-10 py-8 w-full max-w-2xl flex flex-col gap-6">
+            <form className="group bg-white rounded-xl shadow-lg hover:shadow-[0_0_10px_rgba(255,165,0,0.4)] transition-shadow duration-300 px-10 py-8 w-full max-w-2xl flex flex-col gap-6">
                 <div className="flex flex-col md:flex-row gap-6">
                     <div className="flex-1 flex flex-col gap-2">
                         <label className="text-sm font-semibold text-[#222]">First Name *</label>
                         <input
                             type="text"
-                            className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange"
+                            className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange group-hover:bg-[var(--bgcolour)]"
                             placeholder=""
                             required
                         />
@@ -68,7 +68,7 @@ const page = () => {
                         <label className="text-sm font-semibold text-[#222]">Last Name *</label>
                         <input
                             type="text"
-                            className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange"
+                            className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange group-hover:bg-[var(--bgcolour)]"
                             placeholder=""
                             required
                         />
@@ -79,7 +79,7 @@ const page = () => {
                         <label className="text-sm font-semibold text-[#222]">Email *</label>
                         <input
                             type="email"
-                            className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange"
+                            className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange group-hover:bg-[var(--bgcolour)]"
                             placeholder=""
                             required
                         />
@@ -88,7 +88,7 @@ const page = () => {
                         <label className="text-sm font-semibold text-[#222]">Phone</label>
                         <input
                             type="text"
-                            className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange"
+                            className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange group-hover:bg-[var(--bgcolour)]"
                             placeholder=""
                         />
                     </div>
@@ -97,14 +97,14 @@ const page = () => {
                     <label className="text-sm font-semibold text-[#222]">Company</label>
                     <input
                         type="text"
-                        className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange"
+                        className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange group-hover:bg-[var(--bgcolour)]"
                         placeholder=""
                     />
                 </div>
                 <div className="flex flex-col gap-2">
                     <label className="text-sm font-semibold text-[#222]">Project Type</label>
                     <select
-                        className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange text-gray-500"
+                        className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange text-gray-500 group-hover:bg-[var(--bgcolour)]"
                         defaultValue=""
                     >
                         <option value="" disabled>Select Project Type</option>
@@ -116,7 +116,7 @@ const page = () => {
                 <div className="flex flex-col gap-2">
                     <label className="text-sm font-semibold text-[#222]">Message *</label>
                     <textarea
-                        className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange min-h-[100px]"
+                        className="border border-[#E6E6E6] rounded-md px-4 py-2 focus:outline-none focus:border-textorange min-h-[100px] group-hover:bg-[var(--bgcolour)]"
                         placeholder="Tell us about your project requirements..."
                         required
                     />

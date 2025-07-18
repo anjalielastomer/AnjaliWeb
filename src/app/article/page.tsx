@@ -58,7 +58,7 @@ const ArticlesPage = () => {
             {articles.map((article, index) => (
               <div
                 key={index}
-                className="flex flex-col sm:flex-row bg-white rounded-xl overflow-hidden shadow hover:shadow-md transition"
+                className="flex flex-col sm:flex-row bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-[0_4px_8px_rgba(255,165,0,0.4)] transition-shadow duration-300 transition"
               >
                 <div className="w-full sm:w-1/3 h-48 sm:h-auto relative">
                   <Image
