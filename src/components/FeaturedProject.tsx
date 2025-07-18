@@ -156,7 +156,7 @@ function ProjectCard({ project }: { project: Project }) {
           <p className="text-[#505050] font-raleway text-[14px] leading-snug mb-3 group-hover:text-white transition-colors duration-300">
             {project.description}
           </p>
-          <p className="flex justify-between text-[#7A7A7A] font-raleway text-[13px] group-hover:text-white transition-colors duration-300">
+          <p className="flex justify-between text-textblue font-raleway text-[13px] group-hover:text-white transition-colors duration-300">
             {project.status}
             <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink group-hover:hidden" />
             <Image src="/send-white.png" alt="send" width={25} height={4} className="animate-blink hidden group-hover:block" />

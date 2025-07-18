@@ -21,8 +21,8 @@ export default function IndiaBusinessSection() {
               onClick={() => setActiveTab(tab.id)}
               className={`px-5 py-1 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-colors duration-300
                 ${activeTab === tab.id
-                  ? "bg-orange-500 text-white"
-                  : "border border-orange-500 text-orange-500 hover:bg-orange-50"
+                  ? "bg-textorange text-white"
+                  : "border border-orange-500 text-textorange hover:bg-orange-50"
                 }`}
             >
               {tab.label}
@@ -55,7 +55,7 @@ export default function IndiaBusinessSection() {
           <div className="flex flex-col px-5 md:px-0 justify-start flex-1">
             <h2 className="text-3xl font-semibold font-raleway text-textblue mb-3">
               <span>Busin</span>
-              <span className="text-orange-500">ess</span>
+              <span className="text-textorange">ess</span>
             </h2>
             <h3 className="text-xl font-raleway text-textblue mb-6">
               Building Pan-India Presence
@@ -114,7 +114,7 @@ function StatItem({
 
   return (
     <div className="flex gap-2 items-start" ref={ref}>
-      <div className="text-orange-500 font-bold text-4xl w-28 break-words text-right">
+      <div className="text-textorange font-bold text-4xl w-28 break-words text-right">
         <div className="flex items-baseline-last justify-end gap-2">
           {animatedNumber}
           <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />

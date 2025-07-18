@@ -77,7 +77,7 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
         return (
           <svg
             key={i}
-            className="w-4 h-4 text-orange-500 flex-shrink-0"
+            className="w-4 h-4 text-textorange flex-shrink-0"
             fill={isFilled ? 'currentColor' : 'none'}
             stroke="currentColor"
             strokeWidth={1}
@@ -98,7 +98,7 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 
 const FeaturedProducts: React.FC = () => {
   return (
-    <section className="bg-[#FFF6F0] 2xl:mx-7 mx-auto my-20 px-5 md:px-0 flex flex-col items-center">
+    <section className="bg-bgcolour 2xl:mx-7 mx-auto my-20 px-5 md:px-0 flex flex-col items-center">
       <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full">
         Featured <span className='text-textorange'>Products</span>
       </h1>
@@ -137,7 +137,7 @@ const FeaturedProducts: React.FC = () => {
 
                   <button
                     type="button"
-                    className="w-full mt-auto rounded-2xl border border-orange-500 px-4 py-3 font-semibold text-orange-600 active:bg-orange-100 transition-colors duration-600 hover:bg-orange-500 hover:text-white"
+                    className="w-full mt-auto rounded-2xl border border-orange-500 px-4 py-3 font-semibold text-textorange active:bg-orange-100 transition-colors duration-600 hover:bg-orange-500 hover:text-white"
                     aria-label={`Explore product ${name}`}
                     onClick={() => alert(`Exploring product: ${name}`)}
                   >
