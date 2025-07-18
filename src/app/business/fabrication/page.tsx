@@ -13,36 +13,30 @@ const Page = () => {
         <div className="min-h-auto flex flex-col p-6 gap-8 md:gap-15 md:w-[60%] xl:pt-20 md:pt-0">
           <h1 className="font-raleway font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-[85.5px] text-textblue w-full text-center md:text-left">
             <span className="whitespace-nowrap text-nowrap mt-3 md:mt-5 lg:mt-8">
-              <span className="text-textblue">Bridges</span>
+              <span className="text-textblue">Steel</span>
             </span>
             <span className="text-textorange block mt-3 md:mt-5 lg:mt-8">
-              Shaping
+              Fabrication
             </span>
             <span className="text-textblue mt-3 md:mt-5 lg:mt-8 block">
-              Railway's
+              Future
               <span className="text-textorange mt-3 md:mt-5 lg:mt-8">
                 {" "}
-                Future
+                Tech
               </span>
             </span>
           </h1>
 
-          <p className="text-sm text-center xl:text-left md:text-base text-[#193055] md:w-[40rem] mb-4 md:mb-12 leading-loose font-monte font-montserrat font-medium text-[18px] tracking-normal">
-            We are one of the leading Indian Railway contractors for building
-            superstructures. We undertake complex projects that require
-            high-level construction and engineering skills. Our expertise and
-            innovative methods have been honed over many years of experience
-            in this sector, and we are proud to be playing an important role
-            in shaping the future of railway infrastructure.
+          <p className="text-sm text-center xl:text-left md:text-base text-[#193055] md:w-[40rem] mb-4 md:mb-12 leading-loose font-monte font-montserrat font-medium tracking-normal">
+            We are India's foremost steel bridge fabricators, with cutting-edge facilities at our Howrah and Salap operations.  We have an annual capability to construct 50,000 tons of structural steel and can handle single parts up to 18 MT.  Our facilities extend over 20,000 square meters and have a total area of 89,000 square meters, complete with EOT cranes and modern machining machines.
           </p>
         </div>
-        <div className="">
+        <div className="relative lg:w-128 lg:h-180 w-full h-120">
           <Image
             className="mt-2 lg:mt-45"
-            src="/business/bridges-1.svg"
+            src="/business/fabric-1.svg"
             alt="Railway bridge structure"
-            width={554}
-            height={833}
+            fill={true}
             priority
           />
         </div>
@@ -50,74 +44,64 @@ const Page = () => {
 
       {/* Section 2: Turnkey Projects */}
       <div className="bg-[#fff5ef] h-auto">
-        <div className="flex justify-center xl:justify-between mx-auto max-w-[93%] flex-wrap mt-0 md:mt-[-168px] pb-20">
-          <div className='w-124 h-164 ml-26 -mt-4'>
+        <div className="flex justify-center xl:justify-between mx-auto max-w-[93%] flex-wrap mt-0 md:mt-[-168px] pb-40 pt-40">
+          <div className="lg:w-128 relative  lg:h-180 w-84 h-124 md:w-[496px] ml-0 md:ml-6">
             <Image
-              className=" w-full "
-              src="/business/bridge-2.svg"
-              alt="Train on a coastal bridge"
-              width={496}
-              height={641}
-              priority
+                className="w-full h-auto"
+                src="/business/fabric-2.svg"
+                alt="Train on a coastal bridge"
+                fill={true}
+                priority
             />
-          </div>
-          <div className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24 ">
-            <h1 className="text-lg sm:text-xl md:text-2xl font-medium text-[#193055] mb-4 font-monte text-center md:text-left leading-relaxed font-montserrat  tracking-normal">
-              We are experts in providing{" "}
-              <span className="text-textorange font-bold">
-                Turn key Bridge <br /> 
-              </span>
-              projects:
-            </h1>
+            </div>
+          <div className="flex flex-col justify-center lg:px-4 md:px-10 mt-10 md:mt-16 lg:mt-24 ">
+            <p className="text-lg  sm:text-xl lg:w-136 lg:h-60 md:text-2xl font-medium text-[#193055] font-monte text-center md:text-left leading-relaxed font-montserrat  tracking-normal">
+              We provide complete client satisfaction through our in-house physical and chemical structural steel fabrication testing facilities, as well as a dedicated Quality Control team. Key testing capabilities include:
+            </p>
 
-            <ul  role='list' className="list-disc marker:text-textorange list-inside space-y-2 text-base sm:text-lg md:text-base font-medium font-monte">
-              <li>Concrete Bridges</li>
-              <li>Steel Bridges</li>
-              <li>Composite Bridges</li>
-              <li>Rail Cum Road Bridges</li>
-              <li>Viaduct</li>
+            <ul  role='list' className="list-disc marker:text-textorange list-inside pl-2 pt-8 lg:p-0 space-y-2 text-sm sm:text-lg md:text-lg font-medium font-monte">
+                <li>Ultrasonic Testing Machine</li>
+                <li>Radiography Equipment</li>
+                <li>Magnetic Particle Testing Machine</li>
+                <li>RAM Testing Facility (1:4)</li>
+                <li>Ultrasonic Surface Finish Tester</li>
+                <li>Die-Penetrant Testing Facility</li>
+                <li>Digital Hardness Tester</li>
+                <li>Digital Height Gauge</li>
             </ul>
 
           </div>
         </div>
       </div>
 
-      {/* Section 3: Icon Stats */}
-      <div className='min-w-full  flex justify-center gap-16'>
-        {cardData.map((data, idx) => (
-          <CardComponent key={idx} data={data} />
-        ))}
-      </div>
-
       {/* Section 4: Resources Available */}
       <div className="bg-white h-auto">
         <div className="flex justify-center xl:justify-between mx-auto max-w-[80%] flex-wrap-reverse mt-0 pb-20">
           <div className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24">
-            <h1 className="text-lg sm:text-xl md:text-5xl font-bold text-[#193055] mb-4 font-monte text-center md:text-left leading-relaxed">
+            <h1 className="text-4xl sm:text-xl md:text-5xl font-bold text-[#193055] mb-4 font-monte text-center md:text-left leading-relaxed">
               <span className="text-textorange font-bold">Resources</span>{" "}
               Available
             </h1>
             <br />
             <br />
             <br />
-            <ul className="list-disc list-inside space-y-2 text-textblue text-base sm:text-xl md:text-xl font-medium font-monte">
-              <li>Cantelever Erection Crawler Cranes</li>
-              <li>Mobile Heavy Lift Cranes up to 130 Tons</li>
-              <li>Transit Mixer</li>
-              <li>CNC Profile Cutting & Drilling Machine</li>
-              <li>SAW, TIG, MIG, CO<sub>2</sub> Welding Machines</li>
-              <li>Backhoe Loader</li>
-              <li>Electro-slag Welding Machine</li>
-              <li>Batching Plants</li>
-              <li>Pick and Carry Crane</li>
-              <li>Spray Metalizing and Shot blasting Facility</li>
-              <li>Painting Booth/Covered Painting Area</li>
+            <ul className="list-disc list-inside space-y-2 text-textblue text-sm sm:text-xl md:text-xl font-medium font-monte">
+                <li>Plate Bending Machine</li>
+                <li>H/I Beam Straightening Line</li>
+                <li>CNC Profile Cutting Machine</li>
+                <li>CNC Drilling Machine</li>
+                <li>Hydraulic Presses up-to 700 Ton Capacity</li>
+                <li>Grit/Sand Blasting</li>
+                <li>SAW Machine</li>
+                <li>Spray Metalizing Facility</li>
+                <li>Painting Booth/Covered Painting Area</li>
+                <li>TIG, MIG, CO2 Welding Machines</li>
             </ul>
           </div>
           <div>
             <Image
               className="mt-2 w-full lg:mt-45"
-              src="/business/bridge-4.svg"
+              src="/business/fabric-3.svg"
               alt="Side view of railway bridge"
               width={554}
               height={721}
@@ -130,23 +114,20 @@ const Page = () => {
       {/* Section 5: Capabilities & Geography */}
       <div className="bg-[#fff5ef] py-16 md:py-24">
         <div className="flex justify-center xl:justify-between mx-auto max-w-[90%] flex-wrap gap-12">
-          <div className="flex items-center justify-center">
+          <div className=" relative flex items-center justify-center lg:w-496 lg:h-574  ">
             <Image
               className="rounded-lg shadow-md"
-              src="/business/bridge-5.svg"
+              src="/business/fabric-4.svg"
               alt="Train crossing a river on a bridge"
-              width={496}
-              height={574}
+              fill={true}
             />
           </div>
-          <div className="flex flex-col justify-center px-4 md:px-6 md:w-[55%]">
+          <div className="flex flex-col justify-center px-4 md:px-6 md:w-[55%] w-full">
             <h2 className="text-xl md:text-5xl font-bold text-[#193055] mb-6 font-raleway">
-              Capabilities & <span className='text-textorange'>Geography</span>
+              Certifications & <span className='text-textorange'>Quality</span>
             </h2>
-            <p className="w-146 text-sm md:text-base text-[#193055] leading-loose font-monte">
-              Our bridges span the length and width of India, strengthening connections and facilitating the flow of life throughout the country. We have successfully constructed bridges in tough mountain terrains and over running rivers, such as the Rishikesh Bridge. This demonstrates our capacity to handle demanding situations.
-              <br /><br />
-              We, as one of the most advanced steel bridge building companies, have the potential to fabricate and erect 50,000 tons of structural steel per year at our cutting-edge fabrication facilities located in West Bengal. These bridge building facilities, which occupy more than 20,000 square meters and have a total area of 89,000 square meters, are outfitted with EOT cranes and advanced machinery. We perform full-scale design, control/trial assemblies, and testing on various structures and components in-house. Its shot-blasting facilities ensure that produced components have a flawless surface and are anti-corrosive.
+            <p className="lg:w-146 w-full text-sm md:text-base text-[#193055] leading-loose font-monte">
+              We are an RDSO-approved, ISO 9001 recognized company with strong quality systems integrated into our manufacturing processes. Our certifications include ISO 9001: 14001 and 45001. Both in-process and final inspections are performed by professional quality engineers who follow Total Quality Management concepts.
             </p>
           </div>
         </div>
