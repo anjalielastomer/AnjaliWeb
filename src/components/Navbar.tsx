@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
     { label: "Home", href: "/" },
     {
       label: "About Us",
-      href: "/about-us",
+      href: "",
       subItems: [
         { label: "Profile", href: "/about-us" },
         { label: "Leadership", href: "/about-us/leadership" },
@@ -33,6 +33,7 @@ const Navbar: React.FC = () => {
       ]
     },
     { label: "Projects", href: "#" },
+    { label: "Articles", href: "/article" },
     { label: "Career", href: "/career" },
     { label: "Contact Us", href: "/contact-us" },
   ];

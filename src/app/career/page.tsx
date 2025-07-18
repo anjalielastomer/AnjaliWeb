@@ -1,85 +1,134 @@
 import React from "react";
 import Image from "next/image";
+
+const cardData = [
+  {
+    title: "Innovation",
+    highlight: "Driven",
+    description:
+      "Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.",
+    image: "/career/career1.png",
+  },
+  {
+    title: "Career",
+    highlight: "Growth",
+    description:
+      "Advance your career with comprehensive training programs, mentorship opportunities, and clear advancement paths.",
+    image: "/career/career1.png",
+  },
+  {
+    title: "Team",
+    highlight: "Excellence",
+    description:
+      "Collaborate with industry experts and passionate professionals in a supportive, inclusive work environment.",
+    image: "/career/career1.png",
+  },
+  {
+    title: "Comprehensive",
+    highlight: "Benefits",
+    description:
+      "Enjoy competitive salaries, health insurance, retirement plans, and performance bonuses.",
+    image: "/career/career1.png",
+  },
+  {
+    title: "Work-Life",
+    highlight: "Balance",
+    description:
+      "Flexible schedules, remote work options, and generous PTO to maintain a healthy work-life balance.",
+    image: "/career/career1.png",
+  },
+  {
+    title: "Global",
+    highlight: "Impact",
+    description:
+      "Contribute to projects that connect cities, countries, and continents, making a real difference in the world.",
+    image: "/career/career1.png",
+  },
+];
+
 const page = () => {
   return (
-    <div className="w-full min-h-screen mt-24">
+    <div className="w-full min-h-screen mt-24 font-monte">
         {/* Section 1*/}
-      <div className="w-full  min-h-fit flex justify-center py-10">
-        <div className=" flex gap-10">
-        <div className="w-[50%] flex flex-col">
-            <h1 className="font-raleway font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-textblue w-full text-center md:text-left">
-  <span className="whitespace-nowrap text-nowrap">
-    Interested in   </span>
-  <br />
-  <span className="text-textorange my-6 sm:my-8 md:my-10 flex gap-5">
-    Joining <span className="text-textblue block">our</span>
-  </span>
-  <span className="text-textblue flex gap-5">
-    Dynamic
-    <span className="text-textorange block">Team </span>
-    ?
-    
-     
-  </span>
-</h1>
-<div className="flex flex-col mt-20 gap-5">
-    <span className="text-textblue font-monte font-medium text-2xl">Looking for growth opportunities?</span>
-    <span className="text-textblue font-monte font-medium text-2xl flex gap-2">Drop us your <span className="text-textorange">CV</span> at <span className="text-textorange">careers@anjalielastomer.in</span> </span>
-</div>
-        </div>
-        <div className="w-[50%] flex flex-col gap-5">
-            <span className="text-textblue font-monte font-medium text-lg text-wrap max-w-2xl">Join our team of innovators creating cutting-edge rail-road solutions for the future of Logistics & Transportation Industry; thereby leveraging it’s full potential</span> 
-            <Image src="/career.svg" alt="Career Opportunities" width={500} height={500} className="" />
-        </div>
-        </div>
+      <div className="w-full min-h-fit flex justify-center py-10 px-4">
+  <div className="flex flex-col md:flex-row gap-10 max-w-7xl w-full">
+    {/* Left Section */}
+    <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+      <h1 className="font-raleway font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-textblue">
+        <span className="whitespace-nowrap">Interested in</span>
+        <br />
+        <span className="text-textorange my-6 sm:my-8 md:my-10 flex flex-wrap justify-center md:justify-start gap-2">
+          Joining <span className="text-textblue">our</span>
+        </span>
+        <span className="text-textblue flex flex-wrap justify-center md:justify-start gap-2">
+          Dynamic <span className="text-textorange">Team</span>?
+        </span>
+      </h1>
+
+      <div className="flex flex-col mt-10 sm:mt-16 md:mt-20 gap-5">
+        <span className="text-textblue font-monte font-medium text-lg sm:text-xl md:text-2xl">
+          Looking for growth opportunities?
+        </span>
+        <span className="text-textblue font-monte font-medium text-lg sm:text-xl md:text-2xl flex flex-wrap justify-center md:justify-start gap-2">
+          Drop us your <span className="text-textorange">CV</span> at
+          <span className="text-textorange">careers@anjalielastomer.in</span>
+        </span>
       </div>
+    </div>
+
+    {/* Right Section */}
+    <div className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-5">
+      <span className="text-textblue font-monte font-medium text-base sm:text-lg text-center md:text-left max-w-2xl">
+        Join our team of innovators creating cutting-edge rail-road solutions for the future of Logistics & Transportation Industry; thereby leveraging its full potential.
+      </span>
+      <Image
+        src="/career.svg"
+        alt="Career Opportunities"
+        width={500}
+        height={500}
+        className="w-full max-w-[500px] h-auto"
+      />
+    </div>
+  </div>
+</div>
+
         {/* Section 2 */}
-        <div className="w-full min-h-fit flex flex-col items-center bg-[#FFF5EF] gap-10 py-20">
-            <span className="text-textblue font-bold text-4xl  font-raleway">Why Join <span className="text-textorange">Our Company</span>?</span>
-           <span className="text-textblue font-monte font-medium text-lg mt-5 max-w-4xl text-wrap text-center">We&apos;re not just building railway infrastructure - we&apos;re building careers, communities, and the future of Rail-Road transportation services and systems.</span>
-           <div className="grid grid-cols-3 gap-7 my-5">
-            {/*card */}
-            <div className="w-full flex flex-col items-center text-center max-w-sm my-3 mx-7">
-            <Image src="/career/career1.png" alt="Career Growth" width={100} height={100} className="mb-3"/>
-            <span className="text-textblue font-bold text-lg flex ">Innovation-<span className="text-textorange">Driven</span></span>
-            <span className="text-textblue font-monte font-medium text-sm mt-2">Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.</span>
-            </div>
-            {/*card */}
-            <div className="w-full flex flex-col items-center text-center max-w-sm my-3 mx-7">
-            <Image src="/career/career1.png" alt="Career Growth" width={100} height={100} className="mb-3"/>
-            <span className="text-textblue font-bold text-lg flex ">Innovation-<span className="text-textorange">Driven</span></span>
-            <span className="text-textblue font-monte font-medium text-sm mt-2">Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.</span>
-            </div>
-            {/*card */}
-            <div className="w-full flex flex-col items-center text-center max-w-sm my-3 mx-7">
-            <Image src="/career/career1.png" alt="Career Growth" width={100} height={100} className="mb-3"/>
-            <span className="text-textblue font-bold text-lg flex ">Innovation-<span className="text-textorange">Driven</span></span>
-            <span className="text-textblue font-monte font-medium text-sm mt-2">Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.</span>
-            </div>
-            {/*card */}
-            <div className="w-full flex flex-col items-center text-center max-w-sm my-3 mx-7">
-            <Image src="/career/career1.png" alt="Career Growth" width={100} height={100} className="mb-3"/>
-            <span className="text-textblue font-bold text-lg flex ">Innovation-<span className="text-textorange">Driven</span></span>
-            <span className="text-textblue font-monte font-medium text-sm mt-2">Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.</span>
-            </div>
-            {/*card */}
-            <div className="w-full flex flex-col items-center text-center max-w-sm my-3 mx-7">
-            <Image src="/career/career1.png" alt="Career Growth" width={100} height={100} className="mb-3"/>
-            <span className="text-textblue font-bold text-lg flex ">Innovation-<span className="text-textorange">Driven</span></span>
-            <span className="text-textblue font-monte font-medium text-sm mt-2">Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.</span>
-            </div>
-            {/*card */}
-            <div className="w-full flex flex-col items-center text-center max-w-sm my-3 mx-7">
-            <Image src="/career/career1.png" alt="Career Growth" width={100} height={100} className="mb-3"/>
-            <span className="text-textblue font-bold text-lg flex ">Innovation-<span className="text-textorange">Driven</span></span>
-            <span className="text-textblue font-monte font-medium text-sm mt-2">Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.</span>
-            </div>
-            
-            
-           </div>
-            </div>
+        <div className="w-full min-h-fit flex flex-col items-center bg-[#FFF5EF] gap-10 py-16 px-4 sm:px-6 lg:px-8">
+  <span className="text-textblue font-bold text-3xl md:text-4xl font-raleway text-center">
+    Why Join <span className="text-textorange">Our Company</span>?
+  </span>
+
+  <span className="text-textblue font-monte font-medium text-sm sm:text-base md:text-lg mt-3 max-w-4xl text-center">
+    We&apos;re not just building railway infrastructure — we&apos;re building careers, communities, and the future of Rail-Road transportation services and systems.
+  </span>
+
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-7 mt-8 w-full max-w-6xl">
+    {cardData.map((card, index) => (
+      <div
+        key={index}
+        className="w-full flex flex-col items-center text-center max-w-sm my-3 md:mx-7 mx-3"
+      >
+        <Image
+          src={card.image}
+          alt={card.title}
+          width={80}
+          height={80}
+          className="mb-4"
+        />
+        <span className="text-textblue font-bold text-lg">
+          {card.title.split(" ")[0]}{" "}
+          <span className="text-textorange">{card.highlight}</span>
+        </span>
+        <span className="text-textblue font-monte font-medium text-sm mt-2">
+          {card.description}
+        </span>
+      </div>
+    ))}
+  </div>
+</div>
+
         {/* Section 3 */}
-        <div className="w-full min-h-fit flex justify-center pt-20 gap-10">
+        <div className="w-full min-h-fit flex flex-col-reverse md:flex-row justify-center pt-20 gap-10 md:px-0 px-7">
             <div className="flex flex-col items-center gap-10">
                
                 
