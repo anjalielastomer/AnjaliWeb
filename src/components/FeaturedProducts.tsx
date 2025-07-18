@@ -1,72 +1,8 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-  rating: number;
-  reviewCount: number;
-}
-
-const products: Product[] = [
-  {
-    id: 1,
-    name: 'Air Spring',
-    description:
-      'Enclosed pressurised air in a predefined chamber called air spring, made up of rubber and textile',
-    image: '/featuredproductsimg1.png',
-    rating: 5,
-    reviewCount: 156,
-  },
-  {
-    id: 2,
-    name: 'Axile Brake Disc',
-    description:
-      'The brake pad or shoe with the friction lining is pushed against the rotating drill.',
-    image: '/featuredproductsimg2.png',
-    rating: 4,
-    reviewCount: 174,
-  },
-  {
-    id: 3,
-    name: 'Bolts & Nuts',
-    description:
-      'A fastener is used for joining, holding or assembling of a single or multiple components.',
-    image: '/featuredproductsimg3.png',
-    rating: 3,
-    reviewCount: 43,
-  },
-  {
-    id: 4,
-    name: 'Brake Shoe Pad',
-    description:
-      'Found in disc brake systems, brake pads are a flat piece of steel with a thick friction material.',
-    image: '/featuredproductsimg4.png',
-    rating: 5,
-    reviewCount: 193,
-  },
-  {
-    id: 5,
-    name: 'Bolts & Nuts 2',
-    description:
-      'A fastener is used for joining, holding or assembling of a single or multiple components.',
-    image: '/featuredproductsimg3.png',
-    rating: 3,
-    reviewCount: 43,
-  },
-  {
-    id: 6,
-    name: 'Axile Brake Disc 2',
-    description:
-      'The brake pad or shoe with the friction lining is pushed against the rotating drill.',
-    image: '/featuredproductsimg2.png',
-    rating: 4,
-    reviewCount: 174,
-  },
-];
+import { useRouter } from 'next/navigation';
+import products from '@/comstants/duumyProduct.json';
 
 const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
   const totalStars = 5;
@@ -97,6 +33,7 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 };
 
 const FeaturedProducts: React.FC = () => {
+  const router = useRouter();
   return (
     <section className="bg-bgcolour 2xl:mx-7 mx-auto my-20 px-5 md:px-0 flex flex-col items-center">
       <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full">
@@ -137,9 +74,24 @@ const FeaturedProducts: React.FC = () => {
 
                   <button
                     type="button"
-                    className="w-full mt-auto rounded-2xl border border-orange-500 px-4 py-3 font-semibold text-textorange active:bg-orange-100 transition-colors duration-600 hover:bg-orange-500 hover:text-white"
+                    className="w-full mt-auto rounded-2xl border px-4 py-3 font-semibold transition-colors duration-600 hover:text-white"
+                    style={{
+                      color: 'var(--textorange)',
+                      borderColor: 'var(--textorange)'
+                    }}
                     aria-label={`Explore product ${name}`}
-                    onClick={() => alert(`Exploring product: ${name}`)}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.backgroundColor = 'var(--textorange)';
+                      e.currentTarget.style.color = 'white';
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                      e.currentTarget.style.color = 'var(--textorange)';
+                    }}
+                    onClick={() => {
+                      const productId = id || 1;
+                      router.push(`/products/${productId}`);
+                    }}
                   >
                     Explore Product
                   </button>
