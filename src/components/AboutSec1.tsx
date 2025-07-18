@@ -176,9 +176,7 @@ function useCountUp(target: number, start: boolean, duration = 2000) {
 
   return count;
 }
-
-// 👇 Hook to detect when element is visible on screen
-function useOnScreen(ref: React.RefObject<Element>, rootMargin = "0px") {
+function useOnScreen(ref: React.RefObject<Element | null>, rootMargin = "0px") {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
@@ -187,6 +185,7 @@ function useOnScreen(ref: React.RefObject<Element>, rootMargin = "0px") {
       { rootMargin }
     );
     if (ref.current) observer.observe(ref.current);
+
     return () => {
       if (ref.current) observer.unobserve(ref.current);
     };
@@ -194,3 +193,4 @@ function useOnScreen(ref: React.RefObject<Element>, rootMargin = "0px") {
 
   return isIntersecting;
 }
+
