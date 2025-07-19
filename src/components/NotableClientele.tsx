@@ -43,7 +43,7 @@ const NotableClientele: React.FC = () => {
       </p>
 
       <div className="relative w-full overflow-hidden">
-        <div className="flex gap-10 animate-slideX">
+        <div className="flex gap-10 animate-slideX py-10">
           {logos.map((logo, idx) => (
             <div
               key={idx}
@@ -54,7 +54,7 @@ const NotableClientele: React.FC = () => {
                 alt={`Logo ${idx + 1} of notable clientele`}
                 width={96}
                 height={96}
-                className="object-contain"
+                className="object-contain hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
                 priority={idx < 3}
               />
             </div>
