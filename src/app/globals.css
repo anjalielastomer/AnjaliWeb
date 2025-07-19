@@ -80,7 +80,7 @@
 }
 
 .animate-slideX {
-  animation: slideX 20s ease-in-out infinite alternate;
+  animation: slideX 50s ease-in-out infinite alternate;
 }
 
  /* Enquiry Modal Styles */
