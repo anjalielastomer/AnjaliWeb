@@ -12,14 +12,14 @@ export default function IndiaBusinessSection() {
   const [activeTab, setActiveTab] = useState("bridge");
 
   return (
-    <section className="w-full min-h-fit py-20 flex justify-center items-center bg-white">
+    <section className="w-full min-h-fit py-20 flex justify-center items-center bg-white font-monte">
       <div className="w-full max-w-7xl flex flex-col mx-auto">
-        <nav className="flex gap-4 mb-12 px-5 md:px-0 ">
+        <nav className="flex gap-4 mb-12 px-5 md:px-0 font-raleway font-normal">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-5 py-1 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-colors duration-300
+              className={`w-[100px] h-[30px] sm:w-[130px] sm:h-[30px] lg:w-[161px] lg:h-[42px] rounded-2xl text-xs md:text-sm lg:text-lg transition-colors duration-300
                 ${activeTab === tab.id
                   ? "bg-textorange text-white"
                   : "border border-orange-500 text-textorange hover:bg-orange-50"
@@ -57,10 +57,10 @@ export default function IndiaBusinessSection() {
               <span>Busin</span>
               <span className="text-textorange">ess</span>
             </h2>
-            <h3 className="text-xl font-raleway text-textblue mb-6">
+            <h3 className="text-[28px] font-monte font-medium text-textblue mb-6">
               Building Pan-India Presence
             </h3>
-            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-3xl mb-12">
+            <p className="text-sm font-medium text-textblue max-w-3xl mb-12 leading-relaxed lg:leading-[38px]">
               We here at Anjali Elastomers Ltd. believe in the power of
               innovation to change the way we interact, connect, and prosper.
               Since our beginnings, we have been at the vanguard of crafting
@@ -114,17 +114,17 @@ function StatItem({
 
   return (
     <div className="flex gap-2 items-start" ref={ref}>
-      <div className="text-textorange font-bold text-4xl w-28 break-words text-right">
+      <div className="text-textorange font-bold text-4xl w-36 break-words text-right">
         <div className="flex items-baseline-last justify-end gap-2">
           {animatedNumber}
           <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />
         </div>
-        <div className="uppercase text-xs font-semibold text-gray-700 mb-1 break-words">
+        <div className="uppercase text-sm font-semibold text-textblue mb-1">
           {unit}
         </div>
       </div>
       <div className="border-l-2 border-gray-400 pl-4 flex-1">
-        <p className="text-sm text-gray-700 text-justify">{description}</p>
+        <p className="text-xs font-medium text-textblue text-justify leading-7">{description}</p>
       </div>
     </div>
   );

@@ -16,10 +16,10 @@ const VideoSection: React.FC<VideoSectionProps> = ({ bgColor = "bg-white" }) => 
 
   return (
     <section className={`${bgColor} bg-rose-50 py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center`}>
-      <h2 className="text-2xl sm:text-3xl font-bold font-raleway text-center text-textblue">
-        See Us in <span className="text-orange-500">Action</span>
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-raleway text-center text-textblue">
+        See Us in <span className="text-[var(--textorange)]">Action</span>
       </h2>
-      <p className="mt-3 max-w-xl text-center text-slate-700 text-base sm:text-lg tracking-wide font-monte md:text-nowrap text-wrap">
+      <p className="mt-3 max-w-xl text-center text-textblue text-base sm:text-lg tracking-wide font-monte md:text-nowrap text-wrap">
         Discover how we're shaping the future of railway infrastructure
       </p>
 
@@ -37,7 +37,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({ bgColor = "bg-white" }) => 
             <button
               aria-label="Play video"
               onClick={handlePlayClick}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-4 focus:ring-orange-400 rounded-full p-5 shadow-lg transition cursor-pointer"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--textorange)] hover:bg-orange-600 focus:outline-none focus:ring-4 focus:ring-orange-400 rounded-full p-5 shadow-lg transition cursor-pointer"
             >
               <svg
                 className="w-8 h-8 text-white"
