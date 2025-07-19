@@ -65,14 +65,14 @@ export default function FeaturedProjects() {
   return (
     <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold font-monte text-textblue mb-6">
+        <h2 className="text-3xl sm:text-4xl font-bold font-raleway text-textblue mb-6">
           Featured <span className="text-textorange">Projects</span>
         </h2>
         <div className="flex flex-col lg:flex-row gap-3 lg:gap-4">
           {/* Fixed Text Box */}
           <div className="lg:w-1/5 flex flex-col justify-between">
             <div>
-              <p className="text-3xl font-raleway text-textblue mb-8 leading-relaxed">
+              <p className="text-[28px] font-medium text-textblue mb-8 leading-13">
                 Delivering <br />
                 Projects across <span className="text-textorange">India</span> and <br />
                 South-East <span className="text-textorange">Asia</span>
@@ -81,7 +81,7 @@ export default function FeaturedProjects() {
 
             <a
               href="#"
-              className="group text-textorange font-monte text-3xl font-medium flex items-center transition-all duration-300"
+              className="group text-textorange font-raleway text-[28px] font-normal flex items-center transition-all duration-300"
             >
               <span className="text-textorange">Explore</span>
               <span className="text-textblue ml-1">All</span>
@@ -150,13 +150,13 @@ function ProjectCard({ project }: { project: Project }) {
 
         {/* Content Overlay */}
         <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-95 backdrop-blur-sm p-4 group-hover:bg-[var(--textorange)] transition-colors duration-300">
-          <h3 className="text-[var(--textorange)] font-monte font-semibold text-[15px] mb-2 leading-snug group-hover:text-white transition-colors duration-300">
+          <h3 className="text-[var(--textorange)] font-monte font-medium text-lg mb-2 leading-snug group-hover:text-white transition-colors duration-300">
             {project.title}
           </h3>
-          <p className="text-[#505050] font-raleway text-[14px] leading-snug mb-3 group-hover:text-white transition-colors duration-300">
+          <p className="text-[#334155] text-base leading-snug mb-3 group-hover:text-white transition-colors duration-300">
             {project.description}
           </p>
-          <p className="flex justify-between text-textblue font-raleway text-[13px] group-hover:text-white transition-colors duration-300">
+          <p className="flex justify-between text-textblue font-raleway text-[#193055] opacity-75 text-[13px] group-hover:text-white transition-colors duration-300">
             {project.status}
             <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink group-hover:hidden" />
             <Image src="/send-white.png" alt="send" width={25} height={4} className="animate-blink hidden group-hover:block" />
@@ -164,7 +164,7 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
 
         {/* Project Number Badge */}
-        <div className="absolute bottom-28 right-4 bg-[var(--textorange)] text-white font-monte text-lg font-bold rounded-full w-12 h-12 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-white group-hover:text-[var(--textorange)] transition-all duration-300 z-20">
+        <div className="absolute bottom-31 right-4 bg-[var(--textorange)] text-white font-monte text-lg font-bold rounded-full w-12 h-12 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-white group-hover:text-[var(--textorange)] transition-all duration-300 z-20">
           {`0${project.id}`}
         </div>
       </div>

@@ -35,8 +35,8 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 const FeaturedProducts: React.FC = () => {
   const router = useRouter();
   return (
-    <section className="bg-bgcolour 2xl:mx-7 mx-auto my-20 px-5 md:px-0 flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full">
+    <section className="bg-bgcolour 2xl:mx-7 mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
+      <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
         Featured <span className='text-textorange'>Products</span>
       </h1>
 
@@ -57,7 +57,7 @@ const FeaturedProducts: React.FC = () => {
                     height={240}
                     className="object-cover h-full"
                   />
-                  <h3 className="absolute bottom-1 left-6 font-semibold z-10 text-white px-2 py-1 rounded-sm w-full text-left">
+                  <h3 className="absolute bottom-1 font-bold text-lg z-10 text-white px-4 py-1 rounded-sm w-full text-left">
                     {name}
                   </h3>
                 </div>
@@ -65,16 +65,16 @@ const FeaturedProducts: React.FC = () => {
                 <div className="pt-4 flex flex-col flex-grow">
                   <div className="px-4 flex items-center space-x-1 mb-2">
                     <StarRating rating={rating} />
-                    <span className="text-gray-600 text-sm">({reviewCount})</span>
+                    <span className="text-textblue text-sm">({reviewCount})</span>
                   </div>
 
-                  <p className="px-4 text-gray-700 flex-grow text-sm leading-relaxed mb-5">
+                  <p className="px-4 text-textblue flex-grow text-sm font-medium leading-relaxed mb-5">
                     {description}
                   </p>
 
                   <button
                     type="button"
-                    className="w-full mt-auto rounded-2xl border px-4 py-3 font-semibold transition-colors duration-600 hover:text-white"
+                    className="w-full mt-auto rounded-2xl border px-4 py-3 font-bold text-lg transition-colors duration-600 hover:text-white"
                     style={{
                       color: 'var(--textorange)',
                       borderColor: 'var(--textorange)'
@@ -103,7 +103,7 @@ const FeaturedProducts: React.FC = () => {
       </div>
 
       <div className="w-full flex justify-center items-center mt-10">
-        <button className="group text-textblue transition-colors px-14 py-3 rounded-2xl text-3xl font-light flex items-center gap-2">
+        <button className="group text-textblue transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway">
           <span className="text-textorange">Explore</span>
           <span className="text-textblue"> All</span>
           <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
