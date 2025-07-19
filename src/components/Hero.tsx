@@ -1,11 +1,53 @@
+'use client';
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 const Hero: React.FC = () => {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top, 
+    });
+  };
+
+  const handleMouseEnter = () => setIsHovering(true);
+  const handleMouseLeave = () => setIsHovering(false);
+
   return (
-    <section className="w-full flex flex-col  md:flex-row font-raleway font-bold md:min-h-screen md:overflow-x-hidden pl-0 md:pl-10 items-center">
+    <section className="relative w-full flex flex-col  md:flex-row font-raleway font-bold md:min-h-screen md:overflow-x-hidden pl-0 md:pl-10 items-center" 
+    onMouseMove={handleMouseMove} 
+    onMouseEnter={handleMouseEnter}
+    onMouseLeave={handleMouseLeave}>
+      <div
+        className="absolute inset-0 z-0 pointer-events-none transition-opacity duration-500 ease-out"
+        style={{
+          opacity: isHovering ? 1 : 0,
+          WebkitMaskImage: `radial-gradient(ellipse 100px 80px at ${mousePos.x}px ${mousePos.y}px, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.4) 80%, rgba(255,255,255,0) 100%)`,
+          WebkitMaskRepeat: "no-repeat",
+          WebkitMaskPosition: "center",
+          WebkitMaskSize: "cover",
+          maskImage: `radial-gradient(ellipse 100px 80px at ${mousePos.x}px ${mousePos.y}px, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.4) 80%, rgba(255,255,255,0) 100%)`,
+          maskRepeat: "no-repeat",
+          maskPosition: "center",
+          maskSize: "cover",
+          filter: "blur(6px)",
+        }}
+      >
+        <Image
+          src="/hero-map.png"
+          alt="Bg map"
+          fill
+          className="object-cover"
+        />
+      </div>
+
       {/* Hero TextContent */}
-      <div className="h-full flex flex-col items-center justify-center p-4 md:w-[60%] pt-20 md:pt-0">
+      <div className="h-full flex flex-col items-center justify-center p-4 md:w-[60%] pt-20 md:pt-0 z-10">
         <h1 className="font-raleway text-4xl sm:text-5xl md:text-6xl lg:text-[91px] font-extrabold text-textblue w-full text-center md:text-left">
           <span className="whitespace-nowrap text-nowrap">
             Engineered <span className="text-textorange">for</span>
@@ -32,7 +74,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
       {/* Hero ImageContent */}
-      <div className="w-full h-[700px] flex items-start justify-start overflow-hidden -mt-36 md:mt-0 ">
+      <div className="w-full h-[700px] flex items-start justify-start overflow-hidden -mt-36 md:mt-0 z-10">
         <Image
           src="/train.png"
           alt="Modern train"
