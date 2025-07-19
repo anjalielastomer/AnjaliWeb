@@ -70,9 +70,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   return (
-    <article 
+    <article
       className="rounded-2xl shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-shadow duration-300"
-      style={{ backgroundColor: 'var(--bgwhite)' }}
+      style={{ backgroundColor: "var(--bgwhite)" }}
     >
       <div className="flex justify-center h-60 flex-col items-center relative">
         <Image
@@ -82,7 +82,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           height={240}
           className="object-cover h-full w-full"
         />
-        <h3 className="absolute bottom-1 left-6 font-semibold z-10 text-white px-2 py-1 rounded-sm w-full text-left">
+        <h3 className="absolute text-[18px] font-[700] font-monte bottom-1 left-2 z-10 text-white px-2 py-1 rounded-sm w-full text-left">
           {name}
         </h3>
       </div>
@@ -90,34 +90,38 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <div className="pt-4 flex flex-col flex-grow min-h-0">
         <div className="px-4 flex items-center space-x-1 mb-2">
           <StarRating rating={rating} />
-          <span className="text-sm" style={{ color: 'var(--textcolour)' }}>({reviewCount})</span>
+          <span className="text-sm" style={{ color: "var(--textcolour)" }}>
+            ({reviewCount})
+          </span>
         </div>
 
-        <p className="px-4 flex-grow text-sm leading-relaxed mb-5 line-clamp-3" style={{ color: 'var(--textcolour)' }}>
+        <p
+          className="px-4 flex-grow font-[500] text-[#193055] text-sm leading-relaxed mb-5 line-clamp-3"
+          style={{ color: "var(--textcolour)" }}
+        >
           {description}
         </p>
-        
+
         <button
           type="button"
-          className="w-full rounded-2xl border px-4 py-3 font-semibold transition-colors duration-600 hover:text-white"
-          style={{ 
-            color: 'var(--textorange)', 
-            borderColor: 'var(--textorange)' 
+          className="w-full rounded-2xl border px-4 py-3 font-[700] font-monte text-[18px] leading-[28px] transition-colors duration-600 hover:text-white"
+          style={{
+            color: "var(--textorange)",
+            borderColor: "var(--textorange)",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--textorange)';
-            e.currentTarget.style.color = 'white';
+            e.currentTarget.style.backgroundColor = "var(--textorange)";
+            e.currentTarget.style.color = "white";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'transparent';
-            e.currentTarget.style.color = 'var(--textorange)';
+            e.currentTarget.style.backgroundColor = "transparent";
+            e.currentTarget.style.color = "var(--textorange)";
           }}
           aria-label={`Explore product ${name}`}
           onClick={handleExploreProduct}
         >
           Explore Product
         </button>
-        
       </div>
     </article>
   );
