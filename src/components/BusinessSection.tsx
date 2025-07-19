@@ -10,6 +10,32 @@ const tabs = [
 
 export default function IndiaBusinessSection() {
   const [activeTab, setActiveTab] = useState("bridge");
+  const tabIndexRef = useRef(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Automatically cycle through tabs
+  const changeTabAutomatically = () => {
+    tabIndexRef.current = (tabIndexRef.current + 1) % tabs.length;
+    setActiveTab(tabs[tabIndexRef.current].id);
+  };
+
+  // Setup auto-switch on mount
+  useEffect(() => {
+    intervalRef.current = setInterval(changeTabAutomatically, 5000); // every 5s
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
+
+  // Manual tab click resets timer
+  const handleManualTabChange = (id: string, index: number) => {
+    setActiveTab(id);
+    tabIndexRef.current = index;
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = setInterval(changeTabAutomatically, 5000);
+    }
+  };
 
   return (
     <section className="w-full min-h-fit py-20 flex justify-center items-center bg-white font-monte">
@@ -22,7 +48,7 @@ export default function IndiaBusinessSection() {
               className={`w-[100px] h-[30px] sm:w-[130px] sm:h-[30px] lg:w-[161px] lg:h-[42px] rounded-2xl text-xs md:text-sm lg:text-lg transition-colors duration-300
                 ${activeTab === tab.id
                   ? "bg-textorange text-white"
-                  : "border border-orange-500 text-textorange hover:bg-orange-50"
+                  : "border border-[var(--textorange)] text-textorange hover:bg-orange-50"
                 }`}
             >
               {tab.label}
@@ -39,8 +65,8 @@ export default function IndiaBusinessSection() {
                   activeTab === "bridge"
                     ? "/map1.svg"
                     : activeTab === "track"
-                      ? "/map2.svg"
-                      : "/map3.svg"
+                    ? "/map2.svg"
+                    : "/map3.svg"
                 }
                 alt="Map of India highlighting selected states with icons representing business locations"
                 width={480}
@@ -63,10 +89,10 @@ export default function IndiaBusinessSection() {
             <p className="text-sm font-medium text-textblue max-w-3xl mb-12 leading-relaxed lg:leading-[38px]">
               We here at Anjali Elastomers Ltd. believe in the power of
               innovation to change the way we interact, connect, and prosper.
-              Since our beginnings, we have been at the vanguard of crafting
-              the future of transportation infrastructure, motivated by a
-              rent-free pursuit of excellence and a dedication to create value
-              for all stakeholders.
+              Since our beginnings, we have been at the vanguard of crafting the
+              future of transportation infrastructure, motivated by a rent-free
+              pursuit of excellence and a dedication to create value for all
+              stakeholders.
             </p>
 
             {/* Stats Grid */}
@@ -117,7 +143,13 @@ function StatItem({
       <div className="text-textorange font-bold text-4xl w-36 break-words text-right">
         <div className="flex items-baseline-last justify-end gap-2">
           {animatedNumber}
-          <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />
+          <Image
+            src="/send.png"
+            alt="send"
+            width={25}
+            height={4}
+            className="animate-blink"
+          />
         </div>
         <div className="uppercase text-sm font-semibold text-textblue mb-1">
           {unit}
@@ -130,8 +162,8 @@ function StatItem({
   );
 }
 
-// 👇 Custom Hook for count-up animation
-function useCountUp(target: number, start: boolean, duration = 2000) {
+
+function useCountUp(target: number, start: boolean, duration = 1000) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -159,6 +191,7 @@ function useCountUp(target: number, start: boolean, duration = 2000) {
   return count;
 }
 
+
 function useOnScreen(ref: React.RefObject<Element | null>, rootMargin = "0px") {
   const [isIntersecting, setIntersecting] = useState(false);
 
@@ -179,4 +212,3 @@ function useOnScreen(ref: React.RefObject<Element | null>, rootMargin = "0px") {
 
   return isIntersecting;
 }
-
