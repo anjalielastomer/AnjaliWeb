@@ -49,63 +49,82 @@ const ProductsPage: React.FC = () => {
   }, [selectedSegment]);
 
   return (
-    <div className="min-h-screen pt-20" style={{ backgroundColor: 'var(--bgwhite)' }}>
+    <div
+      className="min-h-screen pt-20"
+      style={{ backgroundColor: "var(--bgwhite)" }}
+    >
       <div className="container mx-auto px-4 py-8">
         {/* Main Header */}
-        <div className="mb-8">
-          <div className="flex justify-end mb-6">
-            <h1 className="text-4xl font-bold" style={{ color: 'var(--textblue)' }}>
-              Our <span style={{ color: 'var(--textorange)' }}>Products</span>
+        <div className="mb-4">
+          <div className="flex lg:justify-end justify-center px-15 mb-6">
+            <h1
+              className="text-4xl font-bold"
+              style={{ color: "var(--textblue)" }}
+            >
+              Our <span style={{ color: "var(--textorange)" }}>Products</span>
             </h1>
           </div>
           {/* Horizontal Bar */}
-          <div className="w-full h-px mb-8" style={{ backgroundColor: 'var(--textblue)', opacity: '0.3' }}></div>
+          <div
+            className="w-full h-px mb-8"
+            style={{ backgroundColor: "var(--textblue)", opacity: "0.1" }}
+          ></div>
         </div>
 
         {/* Breadcrumb and Product Count Section */}
-        <div className="flex justify-between items-center mb-8">
-          <div>
-            {/* Dynamic Breadcrumb */}
-            <nav className="flex" aria-label="Breadcrumb">
-              <ol className="flex items-center space-x-2 text-sm" style={{ color: 'var(--textcolour)' }}>
-                <li>
-                  <Link 
-                    href="/" 
-                    className="transition-colors"
-                    style={{ color: 'var(--textcolour)' }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--textorange)'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--textcolour)'}
-                  >
-                    Products
-                  </Link>
-                </li>
-                <li className="flex items-center">
-                  <span className="mx-2">&gt;</span>
-                  <span style={{ color: 'var(--textblue)' }}>
-                    {getSegmentDisplayName(selectedSegment)}
-                  </span>
-                </li>
-              </ol>
-            </nav>
-          </div>
-          
-          <div className="text-sm" style={{ color: 'var(--textcolour)' }}>
-            {getProductCount} Products
-          </div>
-        </div>
-
-        <div className="flex gap-8">
-          <ProductFilter 
+        <div className='flex justify-center gap-10 flex-wrap'>
+          <ProductFilter
             selectedCategory={selectedCategory}
             selectedSegment={selectedSegment}
             onCategoryChange={setSelectedCategory}
             onSegmentChange={setSelectedSegment}
           />
-          
-          <ProductGrid 
-            selectedCategory={selectedCategory}
-            selectedSegment={selectedSegment}
-          />
+          <div className="flex gap- flex-col w-auto lg:w-[65%] ">
+            <div className="flex justify-between items-center mb-8">
+              <div>
+                {/* Dynamic Breadcrumb */}
+                <nav className="flex" aria-label="Breadcrumb">
+                  <ol
+                    className="flex items-center space-x-2 text-[18px] font-[500] font-monte"
+                    style={{ color: "var(--textcolour)" }}
+                  >
+                    <li>
+                      <Link
+                        href="/"
+                        className="transition-colors"
+                        style={{ color: "var(--textcolour)" }}
+                        onMouseEnter={(e) =>
+                          (e.currentTarget.style.color = "var(--textorange)")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.currentTarget.style.color = "var(--textcolour)")
+                        }
+                      >
+                        Products
+                      </Link>
+                    </li>
+                    <li className="flex items-center">
+                      <span className="mx-2">&gt;</span>
+                      <span style={{ color: "var(--textblue)" }}>
+                        {getSegmentDisplayName(selectedSegment)}
+                      </span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+
+              <div
+                className="text-[18px] font-[500] font-monte text-[#19305540] "
+                style={{ color: "var(--textcolour)" }}
+              >
+                {getProductCount} Products
+              </div>
+            </div>
+            <ProductGrid
+              selectedCategory={selectedCategory}
+              selectedSegment={selectedSegment}
+            />
+          </div>
         </div>
       </div>
     </div>
