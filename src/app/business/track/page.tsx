@@ -10,7 +10,7 @@ const Page = () => {
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
       {/* Section 1: Hero - Improved Flex Layout */}
-      <div className="flex flex-col lg:flex-row items-center justify-between mx-auto max-w-[90%] gap-8 lg:gap-12 mb-20 py-8 lg:py-16">
+      <div className="flex flex-col lg:flex-row items-center justify-between mx-auto max-w-[90%] gap-8 lg:gap-12 mb-20 py-8 lg:py-16 font-monte">
         {/* Text Content */}
         <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left flex-1 max-w-2xl">
           <h1 className="font-raleway font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[85.5px] text-textblue leading-tight">
@@ -32,12 +32,12 @@ const Page = () => {
 
         {/* Image Content */}
         <div className="flex-shrink-0 w-full max-w-sm lg:max-w-md xl:max-w-lg">
-          <div className="relative w-full aspect-[3/4] lg:aspect-[4/5]">
+          <div className="relative w-full aspect-[3/4] lg:aspect-[4/5] rounded-xl overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
             <Image
               src="/business/track-1.svg"
               alt="Railway bridge structure"
               fill={true}
-              className="object-contain"
+              className="object-cover"
               priority
             />
           </div>
@@ -50,7 +50,7 @@ const Page = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between mx-auto max-w-[93%] gap-8 lg:gap-12 py-16 lg:py-20">
           {/* Image Content */}
           <div className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1">
-            <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164">
+            <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
               <Image
                 className="w-full"
                 src="/business/track-2.svg"
@@ -110,7 +110,7 @@ const Page = () => {
           </div>
           <div>
             <Image
-              className="mt-2 w-full lg:mt-45"
+              className="mt-2 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
               src="/business/track-3.svg"
               alt="Side view of railway bridge"
               width={554}
@@ -126,7 +126,7 @@ const Page = () => {
         <div className="flex lg:flex-nowrap justify-center xl:justify-between mx-auto max-w-[90%] flex-wrap gap-12">
           <div className="flex items-center justify-center">
             <Image
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
               src="/business/track-4.svg"
               alt="Train crossing a river on a bridge"
               width={496}

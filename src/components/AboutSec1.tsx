@@ -6,10 +6,10 @@ const AboutSec1 = () => {
   return (
     <div className="relative">
       {/* Sec1 */}
-      <div className="flex flex-col justify-center md:flex-row bg-white min-h-screen pt-20 relative z-10">
+      <div className="flex flex-col justify-center md:flex-row bg-white min-h-screen pt-20 relative z-10 font-monte">
         {/* Left Side */}
         <div className="w-full md:w-1/2 p-4 flex flex-col">
-          <h1 className="text-4xl sm:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8">
+          <h1 className="text-4xl sm:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8 font-raleway">
             Unified in <br />
             <span className="mt-4 text-textorange">Shaping</span> <br />
             Railway&apos;s <span className="mt-4 text-textorange">Future</span>
@@ -65,7 +65,7 @@ const AboutSec1 = () => {
       </div>
 
       {/* Sec2 */}
-      <div className="bg-[#FFF8F2] min-h-screen px-6 sm:px-12 lg:px-24 font-sans text-[#1A202C] flex flex-col justify-end py-20 relative z-5 -mt-32">
+      <div className="bg-[#FFF8F2] min-h-screen px-6 sm:px-12 lg:px-24 font-sans text-[#1A202C] flex flex-col justify-end py-20 relative z-5 -mt-32 font-monte">
         <div className="pt-40">
           <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-10">
             {/* Image Section */}
@@ -133,7 +133,7 @@ function StatItem({
   return (
     <div className="flex gap-8 items-start py-4" ref={ref}>
       <div className="text-textorange font-bold text-5xl w-24 break-words text-center">
-        <div className="flex items-baseline justify-center gap-2">
+        <div className="flex items-baseline justify-center gap-2 font-raleway">
           {animatedNumber}
           <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />
         </div>

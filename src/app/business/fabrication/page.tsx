@@ -30,12 +30,12 @@ const Page = () => {
         </div>
         {/* Image Content */}
         <div className=" w-full max-w-sm lg:max-w-md xl:max-w-lg">
-                  <div className="relative w-full aspect-[3/4] lg:aspect-[4/5] xl:mt-30">
+                  <div className="relative w-full aspect-[3/4] lg:aspect-[4/5] xl:mt-30 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
                     <Image
                       src="/business/fabric-1.svg"
                       alt="Railway bridge structure"
                       fill={true}
-                      className="object-contain"
+                      className="object-cover"
                       priority
                     />
                   </div>
@@ -46,12 +46,12 @@ const Page = () => {
       <div className="bg-[#fff5ef] h-auto">
               <div className="flex lg:flex-row flex-col-reverse items-center justify-between mx-auto max-w-[93%] gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40">
                 <div className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28 xl:ml-20">
-                  <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164">
+                  <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
                     <Image
-                      className="w-full"
+                      className="w-full object-cover"
                       src="/business/fabric-2.svg"
                       alt="Train on a coastal bridge"
-                      fill={true}
+                      fill
                       priority
                     />
                   </div>
@@ -104,7 +104,7 @@ const Page = () => {
           </div>
           <div>
             <Image
-              className="mt-8 w-full lg:mt-45"
+              className="mt-8 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
               src="/business/fabric-3.svg"
               alt="Side view of railway bridge"
               width={554}
@@ -120,7 +120,7 @@ const Page = () => {
         <div className="flex lg:flex-nowrap justify-center xl:justify-between mx-auto max-w-[90%] flex-wrap gap-12">
           <div className="flex items-center justify-center">
             <Image
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
               src="/business/fabric-4.svg"
               alt="Train crossing a river on a bridge"
               width={496}

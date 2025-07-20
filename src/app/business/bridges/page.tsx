@@ -23,7 +23,7 @@ const Page = () => {
             </span>
           </h1>
 
-          <p className="text-sm md:text-base text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-montserrat font-medium tracking-normal">
+          <p className="text-sm md:text-base text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-monte font-medium tracking-normal">
             We are one of the leading Indian Railway contractors for building
             superstructures. We undertake complex projects that require
             high-level construction and engineering skills. Our expertise and
@@ -34,12 +34,12 @@ const Page = () => {
         </div>
         {/* Image Content */}
         <div className=" w-full max-w-sm lg:max-w-md xl:max-w-lg">
-          <div className="relative w-full aspect-[3/4] lg:aspect-[4/5] xl:mt-30">
+          <div className="relative w-full aspect-[3/4] lg:aspect-[4/5] xl:mt-30 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
             <Image
               src="/business/bridges-1.svg"
               alt="Railway bridge structure"
               fill={true}
-              className="object-contain"
+              className="object-cover"
               priority
             />
           </div>
@@ -50,7 +50,7 @@ const Page = () => {
       <div className="bg-[#fff5ef] h-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between mx-auto max-w-[93%] gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40">
           <div className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28 xl:ml-20">
-            <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164">
+            <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
               <Image
                 className="w-full"
                 src="/business/bridge-2.svg"
@@ -121,7 +121,7 @@ const Page = () => {
           </div>
           <div>
             <Image
-              className="mt-8 w-full lg:mt-45"
+              className="mt-8 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
               src="/business/bridge-4.svg"
               alt="Side view of railway bridge"
               width={554}
@@ -135,7 +135,7 @@ const Page = () => {
       {/* Section 5: Capabilities & Geography */}
       <div className="bg-[#fff5ef] py-16 md:py-24">
         <div className="flex lg:flex-nowrap justify-center xl:justify-between mx-auto max-w-[90%] flex-wrap gap-12">
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
             <Image
               className="rounded-lg shadow-md"
               src="/business/bridge-5.svg"
@@ -183,7 +183,7 @@ const Page = () => {
 
 export const CardComponent = ({ data }: { data: CardProps }) => {
   return (
-    <div className="w-full max-w-sm md:max-w-xs lg:max-w-sm xl:max-w-md xl:min-h-md min-h-64 md:min-h-48 lg:min-h-56 border bg-white border-[#FB7602] p-6 md:p-8 lg:p-12 lg:-mt-6 mt-8 md:mt-0 rounded-lg flex flex-col">
+    <div className="w-full max-w-sm md:max-w-xs lg:max-w-sm xl:max-w-md xl:min-h-md min-h-64 md:min-h-48 lg:min-h-56 border bg-white border-[#FB7602] p-6 md:p-8 lg:p-12 lg:-mt-6 mt-8 md:mt-0 rounded-lg flex flex-col hover:bg-[var(--bgcolour)] hover:shadow-md hover:shadow-[var(--bgcolour)] hover:border-0 transition-all duration-300">
       <div className="w-full flex justify-center items-center mb-4 flex-shrink-0">
         <div className="w-12 h-12 rounded-full bg-[#FF6A00] flex justify-center items-center">
           <Image

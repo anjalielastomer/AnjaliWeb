@@ -3,13 +3,13 @@ import Link from "next/link";
 
 export default function AboutSec5() {
   return (
-    <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+    <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20 flex flex-col md:flex-row items-center gap-10 md:gap-16 font-monte">
       {/* Left Text Content */}
-      <div className="flex-1 max-w-xl font-raleway">
-        <h2 className="text-4xl md:text-6xl font-bold text-textblue leading-tight md:mb-6 text-center md:text-left">
+      <div className="flex-1 max-w-xl">
+        <h2 className="text-4xl md:text-6xl font-bold text-textblue leading-tight md:mb-6 text-center md:text-left  font-raleway">
           Remarkable
         </h2>
-        <div className="flex flex-col md:flex-row items-center justify-between md:mb-10">
+        <div className="flex flex-col md:flex-row items-center justify-between md:mb-10 font-raleway">
           <h3 className="text-4xl md:text-6xl font-bold text-textorange">Projects</h3>
 
           <Link href={"#"} className="group text-textblue transition-colors py-3 text-3xl font-light flex items-center gap-2 font-raleway">
@@ -25,7 +25,7 @@ export default function AboutSec5() {
           <p>
             The Chenab Rail Bridge, which spans the Chenab River at a
             spectacular elevation of 359 meters, is the world&apos;s tallest
-            steel arch rail bridge, measuring <b>1315 meters</b> in length.
+            steel arch rail bridge, measuring 1315 meters in length.
           </p>
           <p>
             This unusual arch bridge is an engineering wonder and a vital
