@@ -70,6 +70,7 @@ const Page = () => {
             height={833}
             width={454}
             priority
+            loading="eager"
           />
         </div>
       </div>
@@ -85,6 +86,7 @@ const Page = () => {
               height={647}
               width={496}
               priority
+              loading="lazy"
             />
           </div>
 

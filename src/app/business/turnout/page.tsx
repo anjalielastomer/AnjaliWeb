@@ -150,6 +150,7 @@ const page: React.FC = () => {
                   height={50}
                   width={50}
                   className="rounded-full bg-textorange p-2"
+                  loading='eager'
                 />
                 <h3 className="font-raleway font-semibold text-xl text-center">
                   <span className="text-textorange">Rail</span> Expansion Joints
@@ -173,6 +174,7 @@ const page: React.FC = () => {
                   height={50}
                   width={50}
                   className="rounded-full bg-textorange p-2"
+                  loading='lazy'
                 />
                 <h3 className="font-raleway font-semibold text-lg sm:text-xl text-center">
                   <span className="text-textorange">Rail</span> Expansion Joints
@@ -192,7 +194,7 @@ const page: React.FC = () => {
                 alt="Modern train"
                 height={833}
                 width={554}
-                priority
+                loading='lazy'
               />
             </div>
           </div>
@@ -210,6 +212,7 @@ const page: React.FC = () => {
               height={651}
               width={496}
               className="w-[90%] sm:w-[80%] md:w-[400px] lg:w-[496px] h-auto object-contain hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
+              loading='lazy'
             />
           </div>
 
@@ -233,6 +236,7 @@ const page: React.FC = () => {
                   height={50}
                   width={50}
                   className="rounded-full bg-textorange p-2"
+                  loading='lazy'
                 />
                 <h3 className="font-raleway font-semibold text-lg sm:text-xl text-center">
                   <span className="text-textorange">Turn-Out</span> Solutions
@@ -284,6 +288,7 @@ const page: React.FC = () => {
                   height={50}
                   width={50}
                   className="rounded-full bg-textorange p-2"
+                  loading='lazy'
                 />
                 <h3 className="font-raleway font-semibold text-lg sm:text-xl text-center">
                   <span className="text-textorange">Glued</span> Insulated

@@ -92,6 +92,7 @@ const Page = () => {
             height={833}
             width={454}
             priority
+            loading="eager"
           />
         </div>
       </div>
@@ -107,6 +108,7 @@ const Page = () => {
               height={641}
               width={496}
               priority
+              loading="lazy"
             />
           </div>
           <div className="flex flex-col justify-center px-4 md:px-6 xl:px-10 mt-0 xl:mt-16 lg:mt-24">
@@ -166,6 +168,8 @@ const Page = () => {
               width={554}
               height={721}
               alt="Rail fastening system"
+              priority
+              loading="lazy"
             />
           </div>
         </div>
