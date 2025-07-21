@@ -60,11 +60,11 @@ const Page = () => {
 
   return (
     <div
-      className="min-h-screen pt-16 md:pt-22 max-w-[1440px] mx-auto"
+      className="min-h-screen pt-16 md:pt-22"
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
       
-      <div className="flex flex-col xl:flex-row justify-center xl:justify-between mx-auto max-w-[90%] mb-16 md:mb-20">
+      <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mb-16 md:mb-20">
         <div className="flex flex-col p-4 md:p-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20">
           <h1 className="font-raleway font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[85.5px] text-textblue w-full text-center xl:text-left leading-tight">
             <span className="block">{content.title.main}</span>
@@ -99,7 +99,7 @@ const Page = () => {
 
      
       <div className="bg-[#fff5ef] h-auto">
-        <div className="flex flex-col xl:flex-row justify-center xl:justify-between mx-auto max-w-[90%] xl:max-w-[80%] mt-0 xl:mt-[-168px] pb-16 md:pb-20">
+        <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mt-0 xl:mt-[-168px] pb-16 md:pb-20">
           <div className="flex justify-center xl:justify-start mb-8 xl:mb-0">
             <Image
               className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[496px] h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
@@ -107,7 +107,6 @@ const Page = () => {
               alt="Track system"
               height={641}
               width={496}
-              priority
               loading="lazy"
             />
           </div>
@@ -119,7 +118,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row mx-auto w-[90%] gap-6 lg:gap-10 mt-8 md:mt-10 mb-16 md:mb-20">
+      <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row mx-auto w-[90%] gap-6 lg:gap-10 mt-8 md:mt-10 mb-16 md:mb-20">
         <div className="flex-1 lg:max-w-[60%]">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-[500] text-[#193055] mb-4 md:mb-6 font-monte text-center lg:text-left leading-relaxed">
             {content.innovationTitle.split("Rail Fastening")[0]}
@@ -168,7 +167,6 @@ const Page = () => {
               width={554}
               height={721}
               alt="Rail fastening system"
-              priority
               loading="lazy"
             />
           </div>
