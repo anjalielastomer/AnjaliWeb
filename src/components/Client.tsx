@@ -6,7 +6,7 @@ import React from "react";
 const clients = [
 	{ name: "Indian Railways", logo: "/clients/Indian Railways.png" },
 	{ name: "Chennai Metro", logo: "/clients/Chennai Metro.png" },
-	{ name: "RVNL", logo: "/clients/rvnl.png" },
+	{ name: "RVNL", logo: "/clients/Rvnl.png" },
 	{ name: "Delhi Metro", logo: "/clients/Delhi Metro.png" },
 	{ name: "Ifcon", logo: "/clients/Ifcon.png" },
 	{ name: "Konkan Railway", logo: "/clients/Konkan Railway.png" },
