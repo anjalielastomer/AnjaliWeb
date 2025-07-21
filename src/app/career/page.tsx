@@ -88,6 +88,7 @@ const page = () => {
         width={500}
         height={500}
         className="w-full max-w-[500px] h-auto rounded-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
+        loading="eager"
       />
     </div>
   </div>
@@ -115,6 +116,7 @@ const page = () => {
           width={80}
           height={80}
           className="mb-4"
+          loading="lazy"
         />
         <span className="font-bold text-lg" style={{ color: 'var(--textblue)' }}>
           {card.title.split(" ")[0]}{" "}
@@ -133,8 +135,8 @@ const page = () => {
             <div className="flex flex-col items-center gap-10">
                
                 
-                <Image src="/career/75azadi.svg" alt="Career Opportunities" width={286} height={163} className="mb-5"/>
-                <Image src="/career/manwoman.svg" alt="Career Opportunities" width={500} height={867} className="-mb-2"/>
+                <Image src="/career/75azadi.svg" alt="Career Opportunities" width={286} height={163} className="mb-5" loading="lazy"/>
+                <Image src="/career/manwoman.svg" alt="Career Opportunities" width={500} height={867} className="-mb-2" loading='lazy'/>
             </div>
              {/* Submission Form */}
                 <div className="w-full h-fit max-w-md mb-10 rounded-xl shadow-[0_2px_8px_0_rgba(0,0,0,0.08)]" style={{ backgroundColor: 'var(--bgwhite)' }}>

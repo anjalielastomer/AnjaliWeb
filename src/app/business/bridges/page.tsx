@@ -40,7 +40,7 @@ const Page = () => {
               alt="Railway bridge structure"
               fill={true}
               className="object-cover"
-              priority
+              loading="eager"
             />
           </div>
         </div>
@@ -56,7 +56,7 @@ const Page = () => {
                 src="/business/bridge-2.svg"
                 alt="Train on a coastal bridge"
                 fill={true}
-                priority
+                loading="lazy"
               />
             </div>
           </div>
@@ -126,7 +126,7 @@ const Page = () => {
               alt="Side view of railway bridge"
               width={554}
               height={721}
-              priority
+              loading="lazy"
             />
           </div>
         </div>
@@ -142,6 +142,7 @@ const Page = () => {
               alt="Train crossing a river on a bridge"
               width={496}
               height={574}
+              loading="lazy"
             />
           </div>
           <div className="flex flex-col  justify-center px-4 md:px-6 md:w-[85%] lg:w-[60%] md:text-center xl:pl-42 lg:text-left lg:p-4">
@@ -191,6 +192,7 @@ export const CardComponent = ({ data }: { data: CardProps }) => {
             alt="Bridge Icon"
             width={24}
             height={24}
+            loading="lazy"
           />
         </div>
       </div>

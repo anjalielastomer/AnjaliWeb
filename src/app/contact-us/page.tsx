@@ -21,7 +21,7 @@ const page = () => {
                 {/* Card1 */}
                 <div className="w-[172px] md:w-[384px] ml-2 md:ml-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
                     <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
-                        <Image src="/whitephone.svg" alt="Phone" width={28} height={28} />
+                        <Image src="/whitephone.svg" alt="Phone" width={28} height={28} loading="eager"/>
                     </div>
                     <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Phone</h2>
                     <p className="text-textblue text-[14px] font-monte mb-1">+1 (555) 123-4567</p>
@@ -30,7 +30,7 @@ const page = () => {
                 {/* Card2 */}
                 <div className="w-[180px] md:w-[384px] px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
                     <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
-                        <Image src="/whiteemail.svg" alt="Phone" width={28} height={28} />
+                        <Image src="/whiteemail.svg" alt="Phone" width={28} height={28} loading="eager" />
                     </div>
                     <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Email</h2>
                     <p className="text-textblue text-[12px] md:text-[14px] font-monte mb-1">info@railtechmaterials.com</p>
@@ -39,7 +39,7 @@ const page = () => {
                 {/* Card3 */}
                 <div className="w-[200px] md:w-[384px] mx-28 md:mx-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
                     <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
-                        <Image src="/whitemap.svg" alt="Phone" width={28} height={28} />
+                        <Image src="/whitemap.svg" alt="Phone" width={28} height={28} loading="eager" />
                     </div>
                     <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Location</h2>
                     <p className="text-textblue text-[14px] font-monte mb-1">J8H5+MF, Bhatta Nagar, Liluah,</p>
@@ -174,7 +174,7 @@ const page = () => {
     {/* Card 1 */}
     <div className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
       <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
-        <Image src="/contactus/hand.svg" alt="Phone" width={28} height={28} />
+        <Image src="/contactus/hand.svg" alt="Phone" width={28} height={28} loading="lazy" />
       </div>
       <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Sales</h2>
       <p className="text-textblue text-[14px] font-monte mb-1">Product inquiries and quotes</p>
@@ -184,7 +184,7 @@ const page = () => {
     {/* Card 2 */}
     <div className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
       <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
-        <Image src="/contactus/headphone.svg" alt="Phone" width={28} height={28} />
+        <Image src="/contactus/headphone.svg" alt="Phone" width={28} height={28} loading="lazy" />
       </div>
       <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Technical Support</h2>
       <p className="text-textblue text-[13px] font-monte mb-1">Product specifications and guidance</p>
@@ -194,7 +194,7 @@ const page = () => {
     {/* Card 3 */}
     <div className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
       <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
-        <Image src="/contactus/truck.svg" alt="Phone" width={28} height={28} />
+        <Image src="/contactus/truck.svg" alt="Phone" width={28} height={28} loading="lazy" />
       </div>
       <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Procurement</h2>
       <p className="text-textblue text-[14px] font-monte mb-1">Large orders and contracts</p>
@@ -204,7 +204,7 @@ const page = () => {
     {/* Card 4 */}
     <div className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
       <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
-        <Image src="/contactus/quality.svg" alt="Phone" width={28} height={28} />
+        <Image src="/contactus/quality.svg" alt="Phone" width={28} height={28} loading="lazy" />
       </div>
       <h2 className="text-textblue text-lg font-raleway font-bold mb-1">Quality Assurance</h2>
       <p className="text-textblue text-[14px] font-monte mb-1">Certifications and compliance</p>
