@@ -7,50 +7,52 @@ const Production1 = () => {
         <div className="relative font-monte">
             {/* Sec1 */}
             <div className="flex flex-col justify-center lg:flex-row bg-white pt-20 relative z-10">
-                {/* Left Side */}
-                <div className="w-full lg:w-1/2 p-4 px-6 sm:px-8 lg:px-2 flex flex-col">
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8">
-                        State-of-Art<br />
-                        <span className="mt-4 text-textorange">Production</span> <br />
-                        Facilities
-                    </h1>
+                <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between">
+                    {/* Left Side */}
+                    <div className="w-full lg:w-1/2 p-4 px-6 sm:px-8 lg:px-2 flex flex-col">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8">
+                            State-of-Art<br />
+                            <span className="mt-4 text-textorange">Production</span> <br />
+                            Facilities
+                        </h1>
 
-                    <div className="mt-8 lg:mt-16 flex flex-col gap-8 lg:gap-12 mb-12">
-                        <div className="flex flex-col sm:flex-row gap-8 sm:gap-12">
-                            <StatItem
-                                number={175}
-                                unit="KMS TRACKS"
-                                description="Our Projects include critical rail link connectivity projects and several metro projects. For linking mobility with daily lives."
-                            />
-                            <StatItem
-                                number={60}
-                                unit="BRIDGES"
-                                description="Our Projects brought forward mobility and connectivity connecting lands surfaces, hilly terrains, water bodies and cities."
-                            />
+                        <div className="mt-8 lg:mt-16 flex flex-col gap-8 lg:gap-12 mb-12">
+                            <div className="flex flex-col sm:flex-row gap-8 sm:gap-12">
+                                <StatItem
+                                    number={175}
+                                    unit="KMS TRACKS"
+                                    description="Our Projects include critical rail link connectivity projects and several metro projects. For linking mobility with daily lives."
+                                />
+                                <StatItem
+                                    number={60}
+                                    unit="BRIDGES"
+                                    description="Our Projects brought forward mobility and connectivity connecting lands surfaces, hilly terrains, water bodies and cities."
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div className="w-full lg:w-fit p-4 px-6 sm:px-8 lg:px-12 flex flex-col justify-center relative">
-                    <div className="max-w-lg mx-auto lg:mx-0">
-                        <div className="flex items-center justify-start gap-2 mb-6 font-raleway">
-                            <h2 className="text-[#152f5d] font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Steel</h2>
-                            <span className="text-textorange font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Fabrication</span>
-                        </div>
+                    <div className="w-full lg:w-fit p-4 px-6 sm:px-8 lg:px-12 flex flex-col justify-center relative">
+                        <div className="max-w-lg mx-auto lg:mx-0">
+                            <div className="flex items-center justify-start gap-2 mb-6 font-raleway">
+                                <h2 className="text-[#152f5d] font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Steel</h2>
+                                <span className="text-textorange font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Fabrication</span>
+                            </div>
 
-                        <p className='text-base sm:text-lg lg:text-[20px] font-[500] font-monte md:mt-10'>Precision Steel Fabrication, <span className='text-textorange'>Engineered</span> for Elastomer Excellence</p>
+                            <p className='text-base sm:text-lg lg:text-[20px] font-[500] font-monte md:mt-10'>Precision Steel Fabrication, <span className='text-textorange'>Engineered</span> for Elastomer Excellence</p>
 
-                        <p className="text-textblue text-base sm:text-lg leading-loose my-8 lg:my-20">
-                            At the heart of every high-performance elastomer product lies a backbone of precision-engineered steel. Our in-house steel fabrication facility ensures strength, consistency, and quality you can rely on — every time.
-                        </p>
+                            <p className="text-textblue text-base sm:text-lg leading-loose my-8 lg:my-20">
+                                At the heart of every high-performance elastomer product lies a backbone of precision-engineered steel. Our in-house steel fabrication facility ensures strength, consistency, and quality you can rely on — every time.
+                            </p>
 
-                        <div className="mt-auto relative z-40 lg:-mb-32">
-                            <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
-                                <img
-                                    src="/aboutus/production-facilities/production1.jpg"
-                                    alt="Modern orange commuter train inside a spacious maintenance facility with advanced equipment and industrial lighting"
-                                    className="object-cover w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[450px]"
-                                />
+                            <div className="mt-auto relative z-40 lg:-mb-32">
+                                <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
+                                    <img
+                                        src="/aboutus/production-facilities/production1.jpg"
+                                        alt="Modern orange commuter train inside a spacious maintenance facility with advanced equipment and industrial lighting"
+                                        className="object-cover w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[450px]"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -59,7 +61,7 @@ const Production1 = () => {
 
             {/* Sec2 */}
             <div className="bg-[#FFF8F2] px-6 sm:px-12 lg:px-24 font-monte text-[#1A202C] flex flex-col justify-end py-20 relative z-5 lg:-mt-32">
-                <div className="lg:pt-40 flex flex-col gap-5">
+                <div className="lg:pt-40 flex flex-col gap-5 max-w-[1440px] mx-auto">
                     {/* Header Section */}
                     <div className="mb-8">
                         <h2 className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px] max-w-[1440px] mx-auto font-raleway">
