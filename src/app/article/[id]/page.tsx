@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useParams, useRouter } from "next/navigation";
-
+import Image from "next/image";
 export interface Section {
   heading: string;
   content: string;
@@ -46,12 +46,12 @@ const projects: Project[] = [
     ],
     conclusion:
       "The future of railroads is fast, green, smart, and integrated. Whether it’s hyperloop tubes slicing through deserts or AI-driven trains gliding on maglev tracks, innovation in rail transport holds immense potential. More than just a means of moving people and goods, railways are becoming engines of economic growth and climate action. As cities expand and global population increases, the investment toward a smarter, cleaner, and faster railway system is not just desirable but indispensable.",
-    coverImage: "/images/railroad-cover.jpg",
+    coverImage: "/railroad-cover.jpg",
     additionalImage: "/images/train.jpg"
   },
   {
     id: 2,
-    title: "The Future of Railroads: Innovation on Track and Track Systems for High Speed Transport Systems",
+    title: "Mastering CSS Grid: Advanced Layout Techniques",
     author: "Sachi Chen",
     date: "October 15, 2023",
     tags: ["Future", "Railroads", "Track Systems", "High-Speed Transport"],
@@ -74,7 +74,7 @@ const projects: Project[] = [
     ],
     conclusion:
       "The future of railroads is fast, green, smart, and integrated. Whether it’s hyperloop tubes slicing through deserts or AI-driven trains gliding on maglev tracks, innovation in rail transport holds immense potential. More than just a means of moving people and goods, railways are becoming engines of economic growth and climate action. As cities expand and global population increases, the investment toward a smarter, cleaner, and faster railway system is not just desirable but indispensable.",
-    coverImage: "/images/railroad-cover.jpg",
+    coverImage: "/images/tunnel.jpg",
     additionalImage: "/images/train.jpg"
   }
 ];
@@ -121,7 +121,7 @@ const ProjectPage: React.FC = () => {
         {project.author} • Published on {project.date}
       </p>
 
-      <img src={project.coverImage} alt="Cover" className="w-full rounded-lg my-4" />
+      <Image src={project.coverImage} alt="Cover" width={832} height={368} className="w-full rounded-lg my-4" />
 
       {project.sections.map((sec, i) => (
         <div key={i} className="mb-6">
@@ -130,7 +130,7 @@ const ProjectPage: React.FC = () => {
         </div>
       ))}
 
-      <img src={project.additionalImage} alt="Train" className="w-full rounded-lg my-4" />
+      <Image src={project.additionalImage} alt="Cover" width={832} height={368} className="w-full rounded-lg my-4" />
 
       <div className="mt-8">
         <h2 className="text-lg font-semibold text-gray-800">Conclusion: Tracks to Tomorrow</h2>

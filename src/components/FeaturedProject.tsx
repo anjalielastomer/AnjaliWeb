@@ -40,7 +40,7 @@ const projects: Project[] = [
     title: 'Mumbai Metro Line 3',
     description: 'Supply of premium rail pads for 33.5 km underground metro line.',
     status: 'Completed 2023',
-    imageUrl: '/Projects 4.png',
+    imageUrl: '/Projects4.png',
     imageNewUrl: '/projectNew4.jpg',
   },
   {
