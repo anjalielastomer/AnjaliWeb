@@ -35,7 +35,7 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 const FeaturedProducts: React.FC = () => {
   const router = useRouter();
   return (
-    <section className="bg-bgcolour 2xl:mx-7 mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
+    <section className="max-w-[1440px] bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
       <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
         Featured <span className='text-textorange'>Products</span>
       </h1>

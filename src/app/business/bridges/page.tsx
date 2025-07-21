@@ -5,7 +5,7 @@ import VideoSection from "@/components/VideoSection";
 const Page = () => {
   return (
     <div
-      className="min-h-screen pt-22"
+      className="min-h-screen pt-22 max-w-[1440px] mx-auto"
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
       {/* Section 1: Hero */}
@@ -47,12 +47,12 @@ const Page = () => {
       </div>
 
       {/* Section 2: Turnkey Projects */}
-      <div className="bg-[#fff5ef] h-auto">
+      <div className="w-full bg-[#fff5ef] h-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between mx-auto max-w-[93%] gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40">
           <div className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28 xl:ml-20">
-            <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
+            <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
               <Image
-                className="w-full"
+                className="w-full object-cover"
                 src="/business/bridge-2.svg"
                 alt="Train on a coastal bridge"
                 fill={true}
@@ -86,7 +86,7 @@ const Page = () => {
       </div>
 
       {/* Section 3: Icon Stats */}
-      <div className="min-w-full md:w-fit flex md:flex-row lg:flex lg:flex-row justify-center items-center lg:justify-around flex-col lg:mt-0 mt-8 gap-16 md:gap-4 lg:gap-16">
+      <div className="min-w-full md:w-fit flex md:flex-row lg:flex lg:flex-row justify-center items-center lg:justify-around flex-col lg:mt-0 mt-8 gap-16 md:gap-4 lg:gap-16 px-10">
         {cardData.map((data, idx) => (
           <CardComponent key={idx} data={data} />
         ))}
@@ -135,9 +135,9 @@ const Page = () => {
       {/* Section 5: Capabilities & Geography */}
       <div className="bg-[#fff5ef] py-16 md:py-24">
         <div className="flex lg:flex-nowrap justify-center xl:justify-between mx-auto max-w-[90%] flex-wrap gap-12">
-          <div className="flex items-center justify-center hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
+          <div className="flex items-center justify-center">
             <Image
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
               src="/business/bridge-5.svg"
               alt="Train crossing a river on a bridge"
               width={496}
