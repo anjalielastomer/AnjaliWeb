@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Production4 = () => {
   return (
     <section
-      className="relative h-screen bg-cover bg-center bg-no-repeat text-center"
+      className="relative min-h-[700px] md:min-h-[1000px] max-h-[1440px] bg-cover bg-center bg-no-repeat text-center"
       style={{ backgroundImage: "url('/aboutus/production-facilities/production4-bg.jpg')" }}
       aria-label="Railway infrastructure company motto and mission"
     >

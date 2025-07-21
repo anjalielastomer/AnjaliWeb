@@ -8,7 +8,7 @@ import React from 'react'
 const page = () => {
     return (
         <>
-            <div className='w-full min-h-screen relative overflow-x-hidden'>
+            <div className='max-w-[1440px] mx-auto min-h-screen relative overflow-x-hidden'>
                 <Production1 />
                 <Production2 />
                 <Production3 />

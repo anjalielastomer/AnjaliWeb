@@ -60,7 +60,7 @@ const Page = () => {
 
   return (
     <div
-      className="min-h-screen pt-16 md:pt-22"
+      className="min-h-screen pt-16 md:pt-22 max-w-[1440px] mx-auto"
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
       

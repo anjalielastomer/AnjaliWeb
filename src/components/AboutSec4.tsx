@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function AboutSec4() {
   return (
-    <section className="flex flex-col md:flex-row items-center md:items-start mx-auto px-6 py-12 bg-[#FFF4E6] relative justify-center overflow-hidden text-textblue font-monte">
+    <section className="max-w-[1440px] flex flex-col md:flex-row items-center md:items-start mx-auto px-6 py-12 bg-[#FFF4E6] relative justify-center overflow-hidden text-textblue font-monte">
       {/* Left side image */}
       <div className="w-full md:w-fit flex justify-center md:justify-start mb-6 sm:mb-8 md:mb-0">
         <div className="w-[350px] h-[350px] sm:w-[360px] sm:h-[360px] md:w-[420px] md:h-[420px] lg:w-[480px] lg:h-[480px] rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">

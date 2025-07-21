@@ -6,7 +6,7 @@ const Production1 = () => {
     return (
         <div className="relative font-monte">
             {/* Sec1 */}
-            <div className="flex flex-col justify-center lg:flex-row bg-white min-h-screen pt-20 relative z-10">
+            <div className="flex flex-col justify-center lg:flex-row bg-white pt-20 relative z-10">
                 {/* Left Side */}
                 <div className="w-full lg:w-1/2 p-4 px-6 sm:px-8 lg:px-2 flex flex-col">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8">
@@ -58,7 +58,7 @@ const Production1 = () => {
             </div>
 
             {/* Sec2 */}
-            <div className="bg-[#FFF8F2] min-h-screen px-6 sm:px-12 lg:px-24 font-monte text-[#1A202C] flex flex-col justify-end py-20 relative z-5 lg:-mt-32">
+            <div className="bg-[#FFF8F2] px-6 sm:px-12 lg:px-24 font-monte text-[#1A202C] flex flex-col justify-end py-20 relative z-5 lg:-mt-32">
                 <div className="lg:pt-40 flex flex-col gap-5">
                     {/* Header Section */}
                     <div className="mb-8">

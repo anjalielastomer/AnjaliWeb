@@ -4,9 +4,9 @@ import React, { useEffect, useState, useRef } from "react";
 
 const AboutSec1 = () => {
   return (
-    <div className="relative">
+    <div className="relative max-w-[1440px] mx-auto">
       {/* Sec1 */}
-      <div className="flex flex-col justify-center md:flex-row bg-white min-h-screen pt-20 relative z-10 font-monte">
+      <div className="flex flex-col justify-center md:flex-row bg-white pt-20 relative z-10 font-monte">
         {/* Left Side */}
         <div className="w-full md:w-1/2 p-4 flex flex-col">
           <h1 className="text-4xl sm:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8 font-raleway">
@@ -65,7 +65,7 @@ const AboutSec1 = () => {
       </div>
 
       {/* Sec2 */}
-      <div className="bg-[#FFF8F2] min-h-screen px-6 sm:px-12 lg:px-24 font-sans text-[#1A202C] flex flex-col justify-end py-20 relative z-5 -mt-32 font-monte">
+      <div className="bg-[#FFF8F2] px-6 sm:px-12 lg:px-24 font-sans text-[#1A202C] flex flex-col justify-end py-20 relative z-5 -mt-32 font-monte">
         <div className="pt-40">
           <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-10">
             {/* Image Section */}
@@ -118,34 +118,34 @@ const AboutSec1 = () => {
 export default AboutSec1;
 
 function StatItem({
-  number,
-  unit,
-  description,
+    number,
+    unit,
+    description,
 }: {
-  number: string | number;
-  unit: string;
-  description: string;
+    number: number;
+    unit: string;
+    description: string;
 }) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const isVisible = useOnScreen(ref);
-  const animatedNumber = useCountUp(Number(number), isVisible, 2000);
+    const ref = useRef<HTMLDivElement | null>(null);
+    const isVisible = useOnScreen(ref);
+    const animatedNumber = useCountUp(number, isVisible, 2000);
 
-  return (
-    <div className="flex gap-8 items-start py-4" ref={ref}>
-      <div className="text-textorange font-bold text-5xl w-24 break-words text-center">
-        <div className="flex items-baseline justify-center gap-2 font-raleway">
-          {animatedNumber}
-          <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />
+    return (
+        <div className="flex gap-4 sm:gap-8 items-start py-4" ref={ref}>
+            <div className="text-textorange font-bold text-3xl sm:text-4xl lg:text-5xl w-20 sm:w-32  text-center">
+                <div className="flex items-center justify-end gap-2">
+                    {animatedNumber}
+                    <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />
+                </div>
+                <div className="uppercase text-xs sm:text-sm font-semibold text-right text-textblue mt-2 mb-2">
+                    {unit}
+                </div>
+            </div>
+            <div className="border-l-2 border-gray-400 pl-4 sm:pl-6 flex-1">
+                <p className="text-sm sm:text-base text-textblue text-justify leading-relaxed">{description}</p>
+            </div>
         </div>
-        <div className="uppercase text-sm font-semibold text-right text-textblue mt-2 mb-2 break-words">
-          {unit}
-        </div>
-      </div>
-      <div className="border-l-2 border-gray-400 pl-6 flex-1">
-        <p className="text-base text-textblue text-justify leading-relaxed">{description}</p>
-      </div>
-    </div>
-  );
+    );
 }
 
 // 👇 Custom Hook for count-up animation
