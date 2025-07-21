@@ -110,10 +110,10 @@ const page: React.FC = () => {
   };
 
   return (
-    <section className="font-monte text-textblue max-w-[1440px] mx-auto min-h-screen pt-22">
+    <section className="font-monte text-textblue min-h-screen pt-22">
       
       <div
-        className="pt-16 md:pt-20 xl:pt-22"
+        className="pt-16 md:pt-20 xl:pt-22 max-w-[1440px] mx-auto"
         style={{ backgroundColor: "var(--bgwhite)" }}
       >
         <div className="flex flex-col xl:flex-row justify-center xl:justify-between mx-auto max-w-[95%] mb-16 md:mb-20">
