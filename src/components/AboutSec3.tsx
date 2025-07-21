@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const AboutSec3 = () => {
   return (
-    <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 flex flex-col-reverse md:flex-row items-center md:items-start gap-12">
+    <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 flex flex-col-reverse md:flex-row items-center md:items-start gap-12 font-monte">
       {/* Left Content */}
       <div className="md:flex-1 max-w-xl">
         <p className="text-sm md:text-xl font-medium text-[#142859] mb-4">

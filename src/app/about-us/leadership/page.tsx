@@ -19,7 +19,7 @@ const leaders = [
 
 const page = () => {
   return (
-    <div className='w-full min-h-screen py-[120px] md:py-[180px] flex flex-col gap-10 px-4 md:px-0'>
+    <div className='w-full min-h-screen py-[120px] md:py-[180px] flex flex-col gap-10 px-4 md:px-0 text-textblue'>
       {/* Heading */}
       <div className='w-full text-center'>
         <h1 className='text-[40px] md:text-[60px] lg:text-[84px] font-extrabold font-raleway leading-tight'>

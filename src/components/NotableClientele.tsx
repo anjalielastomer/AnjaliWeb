@@ -33,8 +33,8 @@ const logos = [
 
 const NotableClientele: React.FC = () => {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12 text-center overflow-hidden">
-      <h2 className="text-3xl font-semibold text-textblue mb-6">
+    <section className="max-w-7xl mx-auto px-6 py-12 text-center overflow-hidden font-monte">
+      <h2 className="text-3xl font-semibold text-textblue mb-6 font-raleway">
         Our Notable{' '}
         <span className="text-textorange">Clientele</span>
       </h2>
