@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
       label: "Projects",
       href: " ",
       subItems: [
-        { label: "Our Projects", href: "" },
+        { label: "Our Projects", href: "/projects" },
         { label: "Our Articles", href: "/article" },
       ]
     },

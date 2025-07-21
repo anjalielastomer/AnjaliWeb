@@ -40,7 +40,9 @@
 .font-raleway {
   font-family: var(--font-raleway), sans-serif;
 }
-
+.bg-bgblue{
+    background-color: var(--textblue);
+}
 @keyframes bgIconAnimation {
   0%, 100% {
     background-color: #142859; /* Deep Blue */
@@ -140,4 +142,21 @@
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #ff6b00;
   border-radius: 10px;
+}
+/* global.css */
+
+.state-highlight {
+  fill: orange !important;
+  animation: pulse 1.5s ease-in-out infinite;
+  stroke: #ff6600;
+  stroke-width: 2px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
