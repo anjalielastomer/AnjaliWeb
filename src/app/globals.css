@@ -160,3 +160,18 @@
     opacity: 0.5;
   }
 }
+.bgline-wrapper::before {
+  content: "";
+  position: fixed; /* stays in place */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/bgline.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1; /* stays behind everything */
+  opacity: 0.2; /* optional: tweak for visibility */
+  pointer-events: none; /* ensures clicks pass through */
+}

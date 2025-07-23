@@ -5,11 +5,12 @@ import VideoSection from "@/components/VideoSection";
 const Page = () => {
   return (
     <div
-      className="min-h-screen pt-22 max-w-[1440px] mx-auto"
-      style={{ backgroundColor: "var(--bgwhite)" }}
-    >
+  className="w-full bg-[url('/bgline.svg')] bg-cover bg-no-repeat bg-center"
+>
+    <div
+      className="min-h-screen pt-22">
       {/* Section 1: Hero */}
-      <div className="flex flex-col lg:flex-row items-center justify-between mx-auto max-w-[90%] lg:w-[100%] gap-8 lg:gap-12 mb-20 py-8 lg:py-16">
+      <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between lg:w-[100%] gap-8 lg:gap-12 mb-20 py-8 lg:py-16">
         {/* Text Content */}
         <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left flex-1 max-w-2xl lg:max-w-4xl xl:-mt-30">
           <h1 className="font-raleway font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[85.5px] text-textblue leading-tight">
@@ -48,7 +49,7 @@ const Page = () => {
 
       {/* Section 2: Turnkey Projects */}
       <div className="w-full bg-[#fff5ef] h-auto">
-        <div className="flex flex-col lg:flex-row items-center justify-between mx-auto max-w-[93%] gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40">
+        <div className=" max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40">
           <div className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28 xl:ml-20">
             <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
               <Image
@@ -86,14 +87,14 @@ const Page = () => {
       </div>
 
       {/* Section 3: Icon Stats */}
-      <div className="min-w-full md:w-fit flex md:flex-row lg:flex lg:flex-row justify-center items-center lg:justify-around flex-col lg:mt-0 mt-8 gap-16 md:gap-4 lg:gap-16 px-10">
+      <div className=" max-w-[1440px] mx-auto flex md:flex-row lg:flex lg:flex-row justify-center items-center lg:justify-around flex-col lg:mt-0 mt-8 gap-16 md:gap-4 lg:gap-16 px-10">
         {cardData.map((data, idx) => (
           <CardComponent key={idx} data={data} />
         ))}
       </div>
 
       {/* Section 4: Resources Available */}
-      <div className="bg-white h-auto">
+      <div className="max-w-[1440px] mx-auto  h-auto">
         <div className="flex lg:w-[90%] lg:flex-nowrap lg:justify-between xl:ml-34 justify-center xl:justify-between mx-auto max-w-[80%] flex-wrap-reverse mt-0  md:mt-8 xl:mt-16 pb-20">
           <div className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24">
             <h1 className="text-4xl sm:text-xl md:text-5xl font-bold text-[#193055] lg:mb-4 -mb-2 mt-4 lg:mt-0 font-monte text-center md:text-left leading-relaxed">
@@ -134,7 +135,7 @@ const Page = () => {
 
       {/* Section 5: Capabilities & Geography */}
       <div className="bg-[#fff5ef] py-16 md:py-24">
-        <div className="flex lg:flex-nowrap justify-center xl:justify-between mx-auto max-w-[90%] flex-wrap gap-12">
+        <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12">
           <div className="flex items-center justify-center">
             <Image
               className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
@@ -175,16 +176,17 @@ const Page = () => {
       </div>
 
       {/* Section 6: Video */}
-      <div className="bg-white">
-        <VideoSection bgColor="bg-white" />
+      <div className="">
+        <VideoSection bgColor="" />
       </div>
+    </div>
     </div>
   );
 };
 
 export const CardComponent = ({ data }: { data: CardProps }) => {
   return (
-    <div className="w-full max-w-sm md:max-w-xs lg:max-w-sm xl:max-w-md xl:min-h-md min-h-64 md:min-h-48 lg:min-h-56 border bg-white border-[#FB7602] p-6 md:p-8 lg:p-12 lg:-mt-6 mt-8 md:mt-0 rounded-lg flex flex-col hover:bg-[var(--bgcolour)] hover:shadow-md hover:shadow-[var(--bgcolour)] hover:border-0 transition-all duration-300">
+    <div className="w-full max-w-sm md:max-w-xs lg:max-w-sm xl:max-w-md xl:min-h-md min-h-64 md:min-h-48 lg:min-h-56 border  border-[#FB7602] p-6 md:p-8 lg:p-12 lg:-mt-6 mt-8 md:mt-0 rounded-lg flex flex-col hover:bg-[var(--bgcolour)] hover:shadow-md hover:shadow-[var(--bgcolour)] hover:border-0 transition-all duration-300">
       <div className="w-full flex justify-center items-center mb-4 flex-shrink-0">
         <div className="w-12 h-12 rounded-full bg-[#FF6A00] flex justify-center items-center">
           <Image
