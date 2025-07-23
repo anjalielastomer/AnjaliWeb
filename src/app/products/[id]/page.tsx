@@ -210,14 +210,14 @@ const SingleProductPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20" style={{ backgroundColor: 'var(--bgwhite)' }}>
+    <div className="min-h-screen pt-20 font-monte" style={{ backgroundColor: 'var(--bgwhite)' }}>
       <div className="container mx-auto px-4 py-8">
         {/* Header with "Our Products" and Back Button */}
         <div className="mb-8">
-          <div className="flex justify-between items-start mb-6">
+          <div className="flex justify-between items-start mb-6 md:px-20">
             <Link 
               href="/products" 
-              className="text-sm flex items-center transition-colors"
+              className="text-xl font-medium flex items-center transition-colors"
               style={{ color: 'var(--textcolour)' }}
               onMouseEnter={(e) => e.currentTarget.style.color = 'var(--textorange)'}
               onMouseLeave={(e) => e.currentTarget.style.color = 'var(--textcolour)'}
@@ -233,9 +233,9 @@ const SingleProductPage: React.FC = () => {
         </div>
 
         {/* Breadcrumb */}
-        <div className="mb-8">
+        <div className="mb-8 md:px-20">
           <nav className="flex" aria-label="Breadcrumb">
-            <ol className="flex items-center space-x-2 text-sm" style={{ color: 'var(--textcolour)' }}>
+            <ol className="flex items-center space-x-2 text-lg text-medium" style={{ color: 'var(--textcolour)' }}>
               <li>
                 <Link 
                   href="/products" 
@@ -270,20 +270,19 @@ const SingleProductPage: React.FC = () => {
         </div>
 
         {/* Product Details Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 md:px-20">
           {/* Product Images */}
           <div className="space-y-4">
             {/* Main Image */}
             <div 
-              className="w-full aspect-square rounded-lg overflow-hidden"
-              style={{ backgroundColor: 'var(--textorange)' }}
+              className="w-full aspect-square rounded-lg overflow-hidden border-2 border-gray-200"
             >
               <Image
                 src={fallbackProduct.images?.[selectedImageIndex] || fallbackProduct.image}
                 alt={fallbackProduct.name}
                 width={600}
                 height={600}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover p-10"
               />
             </div>
             
@@ -322,7 +321,7 @@ const SingleProductPage: React.FC = () => {
               {/* Rating and Stock */}
               <div className="flex items-center space-x-4 mb-4">
                 <div className="flex items-center space-x-2">
-                  <div className="flex">
+                  <div className="flex text-2xl">
                     {renderStars(fallbackProduct.rating)}
                   </div>
                   <span className="text-sm" style={{ color: 'var(--textcolour)' }}>
@@ -330,14 +329,14 @@ const SingleProductPage: React.FC = () => {
                   </span>
                 </div>
                 {fallbackProduct.inStock && (
-                  <span className="text-sm px-2 py-1 rounded" style={{ 
-                    backgroundColor: 'var(--bgcolour)', 
-                    color: 'var(--textorange)' 
+                  <span className="text-sm font-medium px-2 py-1 rounded" style={{ 
+                    color: '#16A34A' 
                   }}>
                     In Stock
                   </span>
                 )}
               </div>
+              <div className="w-full h-px mb-8" style={{ backgroundColor: 'var(--textblue)', opacity: '0.3' }}></div>
             </div>            {/* Key Features */}
             <div 
               className="p-4 rounded-lg"
@@ -349,8 +348,15 @@ const SingleProductPage: React.FC = () => {
               <div className="grid grid-cols-1 gap-2">
                 {fallbackProduct.keyFeatures?.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <span style={{ color: 'var(--textorange)' }}>✓</span>
-                    <span className="text-sm" style={{ color: 'var(--textcolour)' }}>
+                    <span>
+                      <Image
+                        src={'/tick.svg'}
+                        height={8}
+                        width={12}
+                        alt="Tick Icon"
+                      />
+                    </span>
+                    <span className="text-sm" style={{ color: '#4B5563' }}>
                       {feature}
                     </span>
                   </div>
@@ -391,7 +397,7 @@ const SingleProductPage: React.FC = () => {
 
         {/* Product Description Tabs */}
         <div className="mb-16">
-          <div className="flex space-x-8 border-b mb-6">
+          <div className="flex space-x-8 border-b mb-6 md:px-20">
             {['description', 'specifications', 'reviews'].map((tab) => (
               <button
                 key={tab}
@@ -411,7 +417,7 @@ const SingleProductPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="prose max-w-none">
+          <div className="prose max-w-none md:px-20">
             {activeTab === 'description' && (
               <div className="space-y-4">
                 {fallbackProduct.longDescription?.split('\n\n').map((paragraph, index) => (
@@ -533,7 +539,7 @@ const SingleProductPage: React.FC = () => {
         </div>
 
         {/* Related Products Carousel */}
-        <div>
+        <div className="md:px-20">
           <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--textblue)' }}>
             Related <span style={{ color: 'var(--textorange)' }}>Products</span>
           </h2>

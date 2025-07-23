@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
   const handleMouseLeave = () => setIsHovering(false);
 
   return (
-    <section className="relative w-full flex flex-col  md:flex-row font-raleway font-bold md:min-h-screen md:overflow-x-hidden pl-0 md:pl-10 items-center"
+    <section className="relative w-full flex flex-col  md:flex-row font-raleway font-bold md:min-h-screen overflow-x-hidden pl-0 md:pl-10 items-center"
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Hero TextContent */}
-      <div className="max-w-[50%] mx-auto -translate-x-[50%]">
+      <div className="md:max-w-[50%] mx-auto sm:-translate-x-[40%] md:-translate-x-[50%]">
         <div className="w-full h-full flex flex-col items-center justify-end p-4 pt-20 md:pt-0 z-10">
           <h1 className="font-raleway text-4xl sm:text-5xl md:text-6xl lg:text-[91px] font-extrabold text-textblue w-full text-center md:text-left">
             <span className="whitespace-nowrap text-nowrap">
@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
       {/* Hero ImageContent */}
-      <div className="absolute bottom-0 left-[50%] w-full flex justify-start overflow-hidden z-10">
+      <div className="md:absolute bottom-0  left-[50%] w-full flex justify-start overflow-hidden z-10">
         <Image
           src="/train.png"
           alt="Modern train"
