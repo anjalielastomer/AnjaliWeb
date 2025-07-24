@@ -3,7 +3,7 @@ import { Raleway, Montserrat,Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
+import { QueryProvider } from "@/providers/query-provider";
 const raleway = Raleway({
   variable: "--font-raleway",
   weight: ["800", "500", "300"],
@@ -32,12 +32,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${raleway.variable} ${montserrat.variable} ${roboto.variable} flex flex-col min-h-screen`}>
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+      <body
+        className={`${raleway.variable} ${montserrat.variable} ${roboto.variable} flex flex-col min-h-screen`}
+      >
+        <QueryProvider>
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </QueryProvider>
       </body>
     </html>
   );

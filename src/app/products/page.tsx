@@ -1,11 +1,12 @@
-"use client"
-import React, { useState, useMemo } from 'react';
-import ProductGrid from '@/components/ProductGrid';
-import ProductFilter from '@/components/ProductFilter';
-import Link from 'next/link';
+"use client";
+import React, { useState } from "react";
+import ProductGrid from "@/components/ProductGrid";
+import ProductFilter from "@/components/ProductFilter";
+import Link from "next/link";
+import { useProducts } from "@/hooks/useProducts";
 
 export interface Product {
-  id: number;
+  id: string;
   name: string;
   description: string;
   image: string;
@@ -16,37 +17,31 @@ export interface Product {
 }
 
 const ProductsPage: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedSegment, setSelectedSegment] = useState<string>('all');
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedSegment, setSelectedSegment] = useState<string>("all");
 
-  // Function to get display name for breadcrumb
+ 
+  const { data: productsData } = useProducts({
+    category: selectedCategory,
+    segment: selectedSegment,
+    pageSize: 1000, 
+  });
+
+
   const getSegmentDisplayName = (segment: string) => {
     const segmentMap: Record<string, string> = {
-      'all': 'All Products',
-      'railway-metro-coach-products': 'Railway/Metro Coach',
-      'railway-metro-track-products': 'Railway/Metro Track',
-      'brake-shoe-brake-pad-products': 'Brake Shoe/Brake Pad',
-      'steel-casting-products': 'Steel-Casting',
-      'rolling-mill-products': 'Rolling Mill',
-      'other-products': 'Other Products',
+      all: "All Products",
+      "railway-metro-coach-products": "Railway/Metro Coach",
+      "railway-metro-track-products": "Railway/Metro Track",
+      "brake-shoe-brake-pad-products": "Brake Shoe/Brake Pad",
+      "steel-casting-products": "Steel-Casting",
+      "rolling-mill-products": "Rolling Mill",
+      "other-products": "Other Products",
     };
-    return segmentMap[segment] || 'Products';
+    return segmentMap[segment] || "Products";
   };
 
-  // Get product count for selected segment
-  const getProductCount = useMemo(() => {
-    // This would normally come from your product data
-    const productCounts: Record<string, number> = {
-      'all': 12,
-      'railway-metro-coach-products': 3,
-      'railway-metro-track-products': 2,
-      'brake-shoe-brake-pad-products': 2,
-      'steel-casting-products': 2,
-      'rolling-mill-products': 2,
-      'other-products': 1,
-    };
-    return productCounts[selectedSegment] || 0;
-  }, [selectedSegment]);
+  const productCount = productsData?.meta?.pagination?.total || 0;
 
   return (
     <div
@@ -64,15 +59,15 @@ const ProductsPage: React.FC = () => {
               Our <span style={{ color: "var(--textorange)" }}>Products</span>
             </h1>
           </div>
-          {/* Horizontal Bar */}
+          
           <div
             className="w-full h-px mb-8"
             style={{ backgroundColor: "var(--textblue)", opacity: "0.1" }}
           ></div>
         </div>
 
-        {/* Breadcrumb and Product Count Section */}
-        <div className='flex justify-center gap-10 flex-wrap'>
+       
+        <div className="flex justify-center gap-10 flex-wrap">
           <ProductFilter
             selectedCategory={selectedCategory}
             selectedSegment={selectedSegment}
@@ -117,7 +112,7 @@ const ProductsPage: React.FC = () => {
                 className="text-[18px] font-[500] font-monte text-[#19305540] "
                 style={{ color: "var(--textcolour)" }}
               >
-                {getProductCount} Products
+                {productCount} Products
               </div>
             </div>
             <ProductGrid
