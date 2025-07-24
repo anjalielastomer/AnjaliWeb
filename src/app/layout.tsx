@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { QueryProvider } from "@/providers/query-provider";
+import { Toaster } from "sonner";
 const raleway = Raleway({
   variable: "--font-raleway",
   weight: ["800", "500", "300"],
@@ -36,6 +37,7 @@ export default function RootLayout({
         className={`${raleway.variable} ${montserrat.variable} ${roboto.variable} flex flex-col min-h-screen`}
       >
         <QueryProvider>
+          <Toaster />
           <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
