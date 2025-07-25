@@ -1,4 +1,3 @@
-
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { productsService } from "@/lib/productsService";
 import { StrapiResponse, StrapiProduct, Product } from "@/types/product";
@@ -25,11 +24,11 @@ export const useProducts = (
       const filters: Record<string, any> = {};
 
       if (params?.category && params.category !== "all") {
-        filters.category = params.category;
+        filters["product_categories.name"] = params.category;
       }
 
       if (params?.segment && params.segment !== "all") {
-        filters.segment = params.segment;
+        filters["product_categories.name"] = params.segment;
       }
 
       return productsService.getProducts({
@@ -42,17 +41,18 @@ export const useProducts = (
   });
 };
 
+// Updated to use documentId (string) instead of numeric id
 export const useProduct = (
-  id: string,
+  documentId: string,
   options?: Omit<
     UseQueryOptions<{ data: StrapiProduct }>,
     "queryKey" | "queryFn"
   >
 ) => {
   return useQuery<{ data: StrapiProduct }>({
-    queryKey: ["product", id],
-    queryFn: () => productsService.getProductById(id),
-    enabled: !!id,
+    queryKey: ["product", documentId],
+    queryFn: () => productsService.getProductById(documentId),
+    enabled: !!documentId,
     ...options,
   });
 };
@@ -60,14 +60,38 @@ export const useProduct = (
 export const transformStrapiProduct = (
   strapiProduct: StrapiProduct
 ): Product => {
+  const avgRating =
+    strapiProduct.customer_reviews?.length > 0
+      ? strapiProduct.customer_reviews.reduce(
+          (sum, review) => sum + review.rating,
+          0
+        ) / strapiProduct.customer_reviews.length
+      : 0;
+
+  const categories =
+    strapiProduct.product_categories?.map((cat) => cat.name) || [];
+
+  // Transform customer_reviews into ProductReview format
+  const reviews =
+    strapiProduct.customer_reviews?.map((review) => ({
+      id: review.id,
+      customerName: review.customer_name,
+      rating: review.rating,
+      message: review.review,
+      createdAt: review.createdAt,
+    })) || [];
+
   return {
-    id: strapiProduct.documentId,
+    id: strapiProduct.id,
+    documentId: strapiProduct.documentId,
     name: strapiProduct.title,
     description: strapiProduct.description,
     image: strapiProduct.images[0]?.url || "",
-    rating: 4.5, 
-    reviewCount: 0, 
-    category: "default", 
-    segment: "all", 
+    rating: avgRating,
+    reviewCount: strapiProduct.customer_reviews?.length || 0,
+    categories: categories,
+    keyFeatures:
+      strapiProduct.key_features?.map((feature) => feature.text) || [],
+    reviews: reviews, // <-- Add this line
   };
 };

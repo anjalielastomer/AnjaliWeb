@@ -5,28 +5,16 @@ import ProductFilter from "@/components/ProductFilter";
 import Link from "next/link";
 import { useProducts } from "@/hooks/useProducts";
 
-export interface Product {
-  id: string;
-  name: string;
-  description: string;
-  image: string;
-  rating: number;
-  reviewCount: number;
-  category: string;
-  segment: string;
-}
-
+// Remove the duplicate Product interface since it's already in types
 const ProductsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedSegment, setSelectedSegment] = useState<string>("all");
 
- 
+  // Updated to use segment as the primary filter
   const { data: productsData } = useProducts({
-    category: selectedCategory,
-    segment: selectedSegment,
-    pageSize: 1000, 
+    segment: selectedSegment, // Use segment instead of category
+    pageSize: 1000,
   });
-
 
   const getSegmentDisplayName = (segment: string) => {
     const segmentMap: Record<string, string> = {
@@ -59,14 +47,13 @@ const ProductsPage: React.FC = () => {
               Our <span style={{ color: "var(--textorange)" }}>Products</span>
             </h1>
           </div>
-          
+
           <div
             className="w-full h-px mb-8"
             style={{ backgroundColor: "var(--textblue)", opacity: "0.1" }}
           ></div>
         </div>
 
-       
         <div className="flex justify-center gap-10 flex-wrap">
           <ProductFilter
             selectedCategory={selectedCategory}

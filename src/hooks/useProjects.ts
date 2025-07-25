@@ -4,6 +4,7 @@ import {
   StrapiProjectsResponse,
   StrapiProject,
   Project,
+  StrapiImage
 } from "@/types/projects";
 
 interface UseProjectsParams {
@@ -54,13 +55,19 @@ export const useProject = (
 export const transformStrapiProject = (
   strapiProject: StrapiProject
 ): Project => {
+  const images = strapiProject.cover_images || [];
+
+  const getImageUrl = (img?: StrapiImage): string =>
+    img?.formats?.medium?.url || img?.formats?.small?.url || img?.url || "";
+
   return {
     id: strapiProject.documentId,
     title: strapiProject.title,
     description: strapiProject.description,
     subtext: strapiProject.subtext,
     content: strapiProject.content,
-    coverImage: strapiProject.cover_image?.url || "",
+    image1: getImageUrl(images[0]),
+    image2: getImageUrl(images[1]),
     createdAt: strapiProject.createdAt,
   };
 };

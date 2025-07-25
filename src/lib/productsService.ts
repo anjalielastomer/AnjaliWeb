@@ -1,39 +1,52 @@
-
 import { apiClient } from "@/lib/api";
-import { StrapiResponse , StrapiProduct } from "@/types/product";
+import { StrapiResponse, StrapiProduct } from "@/types/product";
+
+type Filters = Record<string, any>;
 
 export const productsService = {
   getProducts: async (params?: {
     page?: number;
     pageSize?: number;
-    filters?: Record<string, any>;
+    filters?: Filters;
   }): Promise<StrapiResponse> => {
     const queryParams: Record<string, string> = {
       populate: "*",
     };
 
     if (params?.page) {
-      queryParams["pagination[page]"] = params.page.toString();
+      queryParams["pagination[page]"] = String(params.page);
     }
-
     if (params?.pageSize) {
-      queryParams["pagination[pageSize]"] = params.pageSize.toString();
+      queryParams["pagination[pageSize]"] = String(params.pageSize);
     }
-
 
     if (params?.filters) {
-      Object.entries(params.filters).forEach(([key, value]) => {
-        if (value && value !== "all") {
-          queryParams[`filters[${key}][$eq]`] = value;
+      for (const [rawKey, rawValue] of Object.entries(params.filters)) {
+        if (
+          rawValue === undefined ||
+          rawValue === null ||
+          rawValue === "" ||
+          rawValue === "all"
+        ) {
+          continue;
         }
-      });
+        const value = String(rawValue);
+        const parts = rawKey.split(".");
+        const bracketPath = parts.reduce((acc, curr) => `${acc}[${curr}]`, "");
+        queryParams[`filters${bracketPath}[$eq]`] = value;
+      }
     }
 
     return apiClient.get<StrapiResponse>("/products", queryParams);
   },
 
-  getProductById: async (id: string): Promise<{ data: StrapiProduct }> => {
-    return apiClient.get<{ data: StrapiProduct }>(`/products/${id}`, {
+  /**
+   * Fetch a single product by its documentId (not numeric ID).
+   */
+  getProductById: async (
+    documentId: string
+  ): Promise<{ data: StrapiProduct }> => {
+    return apiClient.get<{ data: StrapiProduct }>(`/products/${documentId}`, {
       populate: "*",
     });
   },

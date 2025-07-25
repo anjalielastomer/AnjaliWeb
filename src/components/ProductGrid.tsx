@@ -16,12 +16,11 @@ const ProductGrid: React.FC<ProductGridProps> = ({
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 9;
 
- 
+  // Updated to use segment as primary filter
   const { data, isLoading, error, refetch } = useProducts({
     page: currentPage,
     pageSize: productsPerPage,
-    category: selectedCategory,
-    segment: selectedSegment,
+    segment: selectedSegment, // Use segment instead of category
   });
 
   const transformedProducts = useMemo(() => {
@@ -40,6 +39,11 @@ const ProductGrid: React.FC<ProductGridProps> = ({
     if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
   };
 
+  // Reset to page 1 when filters change
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory, selectedSegment]);
+
   // Loading state
   if (isLoading) {
     return (
@@ -57,7 +61,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
       <div className="flex-1 relative">
         <div className="text-center py-12">
           <p className="text-lg text-red-600 mb-4">
-            Error loading products: {error.message}
+            Error loading products: {(error as Error).message}
           </p>
           <button
             onClick={() => refetch()}

@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { useProjects, transformStrapiProject } from "@/hooks/useProjects";
 
@@ -21,7 +22,6 @@ export default function FeaturedProjects() {
     pageSize: 10,
   });
 
-  
   const projects: Project[] =
     projectsResponse?.data.map((strapiProject, index) => {
       const transformed = transformStrapiProject(strapiProject);
@@ -30,10 +30,11 @@ export default function FeaturedProjects() {
         title: transformed.title,
         description: transformed.description,
         status: transformed.subtext,
-        imageUrl: transformed.coverImage,
-        imageNewUrl: transformed.coverImage, 
+        imageUrl: transformed.image1 || "",
+        imageNewUrl: transformed.image2 || "",
       };
     }) || [];
+
 
   if (isLoading) {
     return (
@@ -56,7 +57,7 @@ export default function FeaturedProjects() {
           Featured <span className="text-textorange">Projects</span>
         </h2>
         <div className="flex flex-col lg:flex-row gap-3 lg:gap-4">
-          {/* Fixed Text Box */}
+          {/* Left Text Box */}
           <div className="lg:w-1/5 flex flex-col justify-between">
             <div>
               <p className="text-[28px] font-medium text-textblue mb-8 leading-13">
@@ -92,17 +93,16 @@ export default function FeaturedProjects() {
             </a>
           </div>
 
-          {/* Project Cards with Smooth Scroll */}
+          {/* Project Cards */}
           <div className="lg:w-4/5">
             <div className="relative overflow-hidden w-full">
               <div className="flex gap-6 py-2 w-max animate-scroll-infinite">
-                {/* Repeat projects twice for seamless effect */}
                 {[...projects, ...projects].map((project, idx) => (
                   <ProjectCard key={`${project.id}-${idx}`} project={project} />
                 ))}
               </div>
 
-              {/* Smooth infinite scroll animation */}
+              {/* Scroll animation */}
               <style jsx>{`
                 @keyframes scroll-infinite {
                   0% {
@@ -174,7 +174,6 @@ function ProjectCard({ project }: { project: Project }) {
           </p>
         </div>
 
-       
         <div className="absolute bottom-31 right-4 bg-[var(--textorange)] text-white font-monte text-lg font-bold rounded-full w-12 h-12 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-white group-hover:text-[var(--textorange)] transition-all duration-300 z-20">
           {`0${project.id}`}
         </div>

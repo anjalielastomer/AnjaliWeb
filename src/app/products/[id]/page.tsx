@@ -12,10 +12,23 @@ import {
   transformStrapiProduct,
 } from "@/hooks/useProducts";
 import { specifications, reviews } from "@/lib/mockData";
-import {
-  transformStrapiProductForDetails,
-  getSegmentDisplayName,
-} from "@/lib/utlis";
+import { transformStrapiProduct1, getSegmentDisplayName } from "@/lib/utlis";
+import { StrapiProduct } from "@/types/product";
+
+
+const transformStrapiProductForDetails = (strapiProduct: StrapiProduct) => {
+  const baseProduct = transformStrapiProduct1(strapiProduct);
+
+  return {
+    ...baseProduct,
+    
+    images: strapiProduct.images?.map((img) => img.url) || [baseProduct.image],
+    longDescription: strapiProduct.description,
+    inStock: true, 
+    price: "Contact for Price", 
+  };
+};
+
 const SingleProductPage: React.FC = () => {
   const params = useParams();
   const productId = params.id as string;
@@ -26,21 +39,21 @@ const SingleProductPage: React.FC = () => {
   const [isBuyNowOpen, setIsBuyNowOpen] = useState(false);
 
   const { data, isLoading, error, refetch } = useProduct(productId);
+   const product = data?.data
+     ? transformStrapiProductForDetails(data.data)
+     : null;
   const {
     data: productsData,
     isLoading: isRelatedLoading,
     error: relatedError,
-  } = useProducts();
+  } = useProducts({category : product?.categories[0]});
 
   const transformedProducts1 = useMemo(() => {
     if (!productsData?.data) return [];
-
-    return productsData.data.map(transformStrapiProduct).slice(0, 2);;
+    return productsData.data.map(transformStrapiProduct1).slice(0, 4); // Show 4 related products
   }, [productsData]);
 
-  const product = data?.data
-    ? transformStrapiProductForDetails(data.data)
-    : null;
+ 
 
   if (isLoading) {
     return (
@@ -170,7 +183,7 @@ const SingleProductPage: React.FC = () => {
                     (e.currentTarget.style.color = "var(--textcolour)")
                   }
                 >
-                  {getSegmentDisplayName(product.segment)}
+                  {getSegmentDisplayName(product.categories[0] || "")}
                 </Link>
               </li>
               <li className="flex items-center">
@@ -236,7 +249,7 @@ const SingleProductPage: React.FC = () => {
               <div className="flex items-center space-x-4 mb-4">
                 <div className="flex items-center space-x-2">
                   <div className="flex text-2xl">
-                    {renderStars(product.rating)}
+                    {renderStars(Math.round(product.rating))}
                   </div>
                   <span
                     className="text-sm"
@@ -262,7 +275,6 @@ const SingleProductPage: React.FC = () => {
               ></div>
             </div>
 
-          
             <div
               className="p-4 rounded-lg"
               style={{ backgroundColor: "var(--bgcolour)" }}
@@ -403,21 +415,22 @@ const SingleProductPage: React.FC = () => {
             )}
             {activeTab === "reviews" && (
               <div>
-                {/* Reviews content - same as before */}
                 <div className="flex items-center justify-between mb-6">
                   <h3
                     className="text-xl font-semibold"
                     style={{ color: "var(--textblue)" }}
                   >
-                    Customer Reviews ({reviews.length})
+                    Customer Reviews ({product.reviews.length})
                   </h3>
                   <div className="flex items-center space-x-2">
-                    <div className="flex">{renderStars(product.rating)}</div>
+                    <div className="flex">
+                      {renderStars(Math.round(product.rating))}
+                    </div>
                     <span
                       className="text-sm"
                       style={{ color: "var(--textcolour)" }}
                     >
-                      {product.rating} out of 5
+                      {product.rating.toFixed(1)} out of 5
                     </span>
                   </div>
                 </div>
@@ -430,66 +443,64 @@ const SingleProductPage: React.FC = () => {
                   }}
                 >
                   <div className="space-y-6">
-                    {reviews.map((review) => (
-                      <div
-                        key={review.id}
-                        className="border-b pb-6 last:border-b-0"
-                        style={{ borderColor: "var(--bgcolour)" }}
-                      >
-                        <div className="flex items-start justify-between mb-3">
-                          <div>
-                            <h4
-                              className="font-semibold"
-                              style={{ color: "var(--textblue)" }}
-                            >
-                              {review.name}
-                            </h4>
-                            <p
-                              className="text-sm"
-                              style={{
-                                color: "var(--textcolour)",
-                                opacity: "0.7",
-                              }}
-                            >
-                              {review.company}
-                            </p>
-                          </div>
-                          <div className="text-right">
-                            <div className="flex items-center space-x-1 mb-1">
-                              {renderStars(review.rating)}
-                            </div>
-                            <p
-                              className="text-xs"
-                              style={{
-                                color: "var(--textcolour)",
-                                opacity: "0.6",
-                              }}
-                            >
-                              {new Date(review.date).toLocaleDateString(
-                                "en-US",
-                                {
-                                  year: "numeric",
-                                  month: "long",
-                                  day: "numeric",
-                                }
-                              )}
-                            </p>
-                          </div>
-                        </div>
-                        <p
-                          className="text-sm leading-relaxed"
-                          style={{ color: "var(--textcolour)" }}
+                    {product.reviews.length > 0 ? (
+                      product.reviews.map((review) => (
+                        <div
+                          key={review.id}
+                          className="border-b pb-6 last:border-b-0"
+                          style={{ borderColor: "var(--bgcolour)" }}
                         >
-                          {review.comment}
-                        </p>
-                      </div>
-                    ))}
+                          <div className="flex items-start justify-between mb-3">
+                            <div>
+                              <h4
+                                className="font-semibold"
+                                style={{ color: "var(--textblue)" }}
+                              >
+                                {review.customerName}
+                              </h4>
+                            </div>
+                            <div className="text-right">
+                              <div className="flex items-center space-x-1 mb-1">
+                                {renderStars(review.rating)}
+                              </div>
+                              <p
+                                className="text-xs"
+                                style={{
+                                  color: "var(--textcolour)",
+                                  opacity: "0.6",
+                                }}
+                              >
+                                {new Date(review.createdAt).toLocaleDateString(
+                                  "en-US",
+                                  {
+                                    year: "numeric",
+                                    month: "long",
+                                    day: "numeric",
+                                  }
+                                )}
+                              </p>
+                            </div>
+                          </div>
+                          <p
+                            className="text-sm leading-relaxed"
+                            style={{ color: "var(--textcolour)" }}
+                          >
+                            {review.message}
+                          </p>
+                        </div>
+                      ))
+                    ) : (
+                      <p style={{ color: "var(--textcolour)" }}>
+                        No reviews yet for this product.
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
             )}
           </div>
         </div>
+
         <div className="md:px-20">
           <h2
             className="text-3xl font-bold mb-8"
@@ -508,11 +519,11 @@ const SingleProductPage: React.FC = () => {
           )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-              {transformedProducts1.map((product) => (
+            {transformedProducts1
+              .filter((p) => p.documentId !== product.documentId) // Don't show the current product
+              .map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
-            
           </div>
         </div>
       </div>

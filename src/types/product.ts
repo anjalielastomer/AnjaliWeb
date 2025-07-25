@@ -1,4 +1,3 @@
-
 export interface StrapiImage {
   id: number;
   documentId: string;
@@ -39,8 +38,28 @@ export interface KeyFeature {
   text: string;
 }
 
+export interface CustomerReview {
+  id: number;
+  documentId: string;
+  customer_name: string;
+  rating: number;
+  review: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+}
+
+export interface ProductCategory {
+  id: number;
+  documentId: string;
+  name: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+}
+
 export interface StrapiProduct {
-  id: string;
+  id: number;
   documentId: string;
   title: string;
   description: string;
@@ -49,6 +68,8 @@ export interface StrapiProduct {
   publishedAt: string;
   images: StrapiImage[];
   key_features: KeyFeature[];
+  customer_reviews: CustomerReview[];
+  product_categories: ProductCategory[];
 }
 
 export interface StrapiResponse {
@@ -63,14 +84,23 @@ export interface StrapiResponse {
   };
 }
 
+export interface ProductReview {
+  id: number;
+  customerName: string;
+  rating: number;
+  message: string;
+  createdAt: string;
+}
 
 export interface Product {
-  id: string;
+  id: number;
+  documentId: string; // Add this
   name: string;
   description: string;
   image: string;
   rating: number;
   reviewCount: number;
-  category: string;
-  segment: string;
+  categories: string[];
+  keyFeatures: string[];
+  reviews: ProductReview[];
 }

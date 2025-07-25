@@ -1,40 +1,41 @@
-import { StrapiProduct, Product } from "@/types/product";
-export const transformStrapiProductForDetails = (
+import { StrapiProduct, Product , ProductReview } from "@/types/product";
+export const transformStrapiProduct1 = (
   strapiProduct: StrapiProduct
-): Product & {
-  price?: string;
-  inStock?: boolean;
-  keyFeatures?: string[];
-  longDescription?: string;
-  images?: string[];
-} => {
+): Product => {
+  // 1) compute avg rating
+  const reviewCount = strapiProduct.customer_reviews?.length ?? 0;
+  const avgRating =
+    reviewCount > 0
+      ? strapiProduct.customer_reviews!.reduce((sum, r) => sum + r.rating, 0) /
+        reviewCount
+      : 0;
+
+  // 2) grab all category names
+  const categories = strapiProduct.product_categories?.map((c) => c.name) ?? [];
+
+  // 3) map Strapi’s customer_reviews into your ProductReview[]
+  const reviews: ProductReview[] =
+    strapiProduct.customer_reviews?.map((r) => ({
+      id: r.id,
+      customerName: r.customer_name,
+      rating: r.rating,
+      message: r.review,
+      createdAt: r.createdAt,
+    })) ?? [];
+
   return {
-    id: strapiProduct.id.toString(),
+    id: strapiProduct.id,
+    documentId: strapiProduct.documentId,
     name: strapiProduct.title,
     description: strapiProduct.description,
-    image: strapiProduct.images[0]?.url || "",
-    rating: 4.5,
-    reviewCount: 127,
-    category: "default",
-    segment: "railway-metro-coach-products",
-    price: "$999",
-    inStock: true,
-    keyFeatures: strapiProduct.key_features?.map((feature) => feature.text) || [
-      "High-quality construction",
-      "Durable materials",
-      "Easy installation",
-      "Cost-effective solution",
-      "Reliable performance",
-    ],
-    longDescription:
-      strapiProduct.description +
-      "\n\nThis product represents quality engineering and reliable performance. Designed to meet industry standards and provide long-lasting service in demanding environments.",
-    images: strapiProduct.images?.map((img) => img.url) || [
-      strapiProduct.images[0]?.url || "",
-    ],
+    image: strapiProduct.images[0]?.url ?? "",
+    rating: avgRating,
+    reviewCount,
+    categories,
+    keyFeatures: strapiProduct.key_features?.map((f) => f.text) ?? [],
+    reviews, // <-- NEW
   };
 };
-
 
 
 export const getSegmentDisplayName = (segment: string) => {
