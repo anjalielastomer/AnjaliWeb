@@ -1,5 +1,6 @@
 "use client"
 import Image from 'next/image';
+import { useState } from 'react'; // Import useState
 
 interface Project {
   id: number;
@@ -66,6 +67,9 @@ const projects: Project[] = [
 ];
 
 export default function FeaturedProjects() {
+  // We still use isHovering, but now it controls animation-play-state
+  const [isHovering, setIsHovering] = useState(false);
+
   return (
     <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -96,9 +100,17 @@ export default function FeaturedProjects() {
 
           {/* Project Cards with Smooth Scroll */}
           <div className="lg:w-4/5">
-            <div className="relative overflow-hidden w-full">
+            {/* onMouseEnter and onMouseLeave are now on this parent div
+                to control the animation-play-state of its child */}
+            <div
+              className="relative overflow-hidden w-full"
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+            >
               <div
+                // Apply the animation class always, and control play state with inline style
                 className="flex gap-6 py-2 w-max animate-scroll-infinite"
+                style={{ animationPlayState: isHovering ? 'paused' : 'running' }}
               >
                 {/* Repeat projects twice for seamless effect */}
                 {[...projects, ...projects].map((project, idx) => (

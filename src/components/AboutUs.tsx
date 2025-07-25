@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-10 bg-white px-5 py-10 font-raleway md:-mt-20 z-40 relative">
+    <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-10 bg-white px-5 py-10 pt-20 font-raleway md:-mt-20 z-40 relative">
       <div className="w-full max-w-md flex flex-col h-full items-center">
         <div className="flex-1 rounded-xl overflow-hidden w-full hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
           <Image

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Hero: React.FC = () => {
@@ -63,9 +64,9 @@ const Hero: React.FC = () => {
             </span>
           </h1>
           <div className="mt-10 flex flex-col md:flex-row items-center w-full gap-4 md:gap-6">
-            <button className="w-[200px] h-[50px] lg:w-[333px] lg:h-[78px] flex items-center justify-center bg-textorange text-white rounded-2xl text-lg lg:text-[32px] font-normal transition-all whitespace-nowrap  hover:font-medium">
+            <Link href="/products" className="w-[200px] h-[50px] lg:w-[333px] lg:h-[78px] flex items-center justify-center bg-textorange text-white rounded-2xl text-lg lg:text-[32px] font-normal whitespace-nowrap font-raleway hover:text-[2.05rem] hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-all duration-300">
               Explore Products
-            </button>
+            </Link>
             <button className="w-[200px] h-[50px] lg:w-[333px] lg:h-[78px] flex items-center justify-center group border border-[var(--textorange)] hover:border-2 text-textblue transition-colors rounded-2xl text-lg lg:text-[32px] font-normal gap-2 hover:font-medium">
               <span className="text-textblue">Learn</span>
               <span className="text-textorange"> more</span>

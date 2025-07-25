@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react'; // Import useState
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import products from '@/comstants/duumyProduct.json';
@@ -34,15 +34,27 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 
 const FeaturedProducts: React.FC = () => {
   const router = useRouter();
+  // State to track if any card is being hovered, for smooth animation pause
+  const [isHovering, setIsHovering] = useState(false);
+
   return (
     <section className="max-w-[1440px] bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
       <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
         Featured <span className='text-textorange'>Products</span>
       </h1>
 
-      <div className="relative overflow-hidden w-full">
-        <div className="flex gap-6 py-2 animate-scroll-infinite">
-          {/* 👇 Repeat 3x for seamless effect with proper calculation */}
+      <div
+        className="relative overflow-hidden w-full"
+        // Add onMouseEnter and onMouseLeave to the container
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        <div
+          className="flex gap-6 py-2 animate-scroll-infinite"
+          // Conditionally set animationPlayState based on hover state
+          style={{ animationPlayState: isHovering ? 'paused' : 'running' }}
+        >
+          {/* Repeat 3x for seamless effect with proper calculation */}
           {[...products, ...products, ...products].map(
             ({ id, name, image, rating, reviewCount, description }, index) => (
               <article
@@ -117,12 +129,25 @@ const FeaturedProducts: React.FC = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(calc(-100% / 3));
+            /* The width of one set of products (6 products * (width + gap)) */
+            /* For sm:w-80 (320px) and gap-6 (24px) -> (320 + 24) * 6 = 344 * 6 = 2064px */
+            /* For w-96 (384px) and gap-6 (24px) -> (384 + 24) * 6 = 408 * 6 = 2448px */
+            /* Using a static pixel value that accommodates both or calculating dynamically is key */
+            /* Let's adjust based on the sm:w-80 as the base for calculation */
+            transform: translateX(calc(-1 * (var(--card-width) + var(--card-gap)) * ${products.length}));
           }
         }
         .animate-scroll-infinite {
           animation: scroll-infinite 25s linear infinite;
-          width: calc((320px + 24px) * 18); /* 6 products × 3 repetitions × (width + gap) */
+          /* Adjusted width calculation for a more robust approach if card widths vary by breakpoint */
+          /* Using CSS variables for width and gap for better maintainability */
+          --card-width: 320px; /* Corresponds to sm:w-80 */
+          --card-gap: 24px; /* Corresponds to gap-6 */
+
+          /* If you consistently use w-96, update --card-width to 384px */
+          /* If you need more precise responsive calculation, JS might be needed,
+             but for now, assuming one fixed width for animation calculation. */
+          width: calc((var(--card-width) + var(--card-gap)) * ${products.length} * 3);
         }
       `}</style>
     </section>
