@@ -62,7 +62,6 @@ export interface Project {
   createdAt: string;
 }
 
-
 export interface StrapiProjectsResponse {
   data: StrapiProject[];
   meta: {

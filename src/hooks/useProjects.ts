@@ -4,7 +4,7 @@ import {
   StrapiProjectsResponse,
   StrapiProject,
   Project,
-  StrapiImage
+  StrapiImage,
 } from "@/types/projects";
 
 interface UseProjectsParams {
@@ -71,5 +71,3 @@ export const transformStrapiProject = (
     createdAt: strapiProject.createdAt,
   };
 };
-
-

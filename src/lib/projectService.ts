@@ -23,9 +23,7 @@ export const projectsService = {
       queryParams["pagination[pageSize]"] = params.pageSize.toString();
     }
 
-    return apiClient.get<StrapiProjectsResponse>(
-      "/projects?populate=*"
-    );
+    return apiClient.get<StrapiProjectsResponse>("/projects?populate=*");
   },
 
   async getProjectById(id: string): Promise<{ data: StrapiProject }> {

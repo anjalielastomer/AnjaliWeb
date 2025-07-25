@@ -35,7 +35,6 @@ export default function FeaturedProjects() {
       };
     }) || [];
 
-
   if (isLoading) {
     return (
       <div className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">Loading...</div>
