@@ -127,7 +127,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
       )}
 
       {/* Product count info */}
-      <div className="text-center mt-2 text-sm text-gray-600">
+      <div className="text-center mt-2 text-lg text-textblue font-monte">
         Showing {transformedProducts.length} of {totalProducts} products
       </div>
 

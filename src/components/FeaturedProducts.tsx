@@ -130,7 +130,7 @@ const FeaturedProducts: React.FC = () => {
                     </div>
 
                     <p className="px-4 text-textblue flex-grow text-sm font-medium leading-relaxed mb-5">
-                      {product.description}
+                      {description}
                     </p>
 
                     <button
@@ -140,7 +140,7 @@ const FeaturedProducts: React.FC = () => {
                         color: "var(--textorange)",
                         borderColor: "var(--textorange)",
                       }}
-                      aria-label={`Explore product ${product.title}`}
+                      aria-label={`Explore product ${title}`}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.backgroundColor =
                           "var(--textorange)";

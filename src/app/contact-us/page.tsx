@@ -67,7 +67,7 @@ const page = () => {
       {/* Section 1 */}
       <div className="w-full flex flex-col items-center pb-20">
         <div className="w-full flex flex-col ">
-          <span className="flex justify-end text-textblue text-4xl font-raleway font-bold pr-24">
+          <span className="max-w-none 2xl:max-w-[1600px] flex justify-end text-textblue text-4xl font-raleway font-bold pr-10">
             Contact <span className="text-textorange ml-2">Us</span>
           </span>
           <hr className="w-full border-t-2 border-[#E5E7EB] mt-2 mb-8" />
