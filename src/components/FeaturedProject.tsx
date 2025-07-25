@@ -1,4 +1,3 @@
-
 "use client"
 import Image from 'next/image';
 import { useState } from 'react'; // Import useState
@@ -13,12 +12,66 @@ interface Project {
   imageNewUrl: string;
 }
 
+// --- ADD THIS PROJECTS ARRAY BACK IN ---
+const projects: Project[] = [
+  {
+    id: 1,
+    title: "Mumbai-Delhi High Speed Rail",
+    description:
+      "Supply of premium rail pads for India's first high-speed rail corridor.",
+    status: "Completed 2023",
+    imageUrl: "/Projects 1.png",
+    imageNewUrl: "/projectNew1.jpg",
+  },
+  {
+    id: 2,
+    title: "Bangalore Metro Phase 3",
+    description:
+      "Comprehensive elastomeric Solutions for metro rail expansion project.",
+    status: "Ongoing",
+    imageUrl: "/Projects 2.png",
+    imageNewUrl: "/projectNew2.jpg",
+  },
+  {
+    id: 3,
+    title: "Eastern Freight Corridor",
+    description:
+      "Heavy-duty bearing pads for dedicated freight corridor infrastructure.",
+    status: "Completed 2022",
+    imageUrl: "/Projects 3.png",
+    imageNewUrl: "/projectNew3.jpg",
+  },
+  {
+    id: 4,
+    title: "Mumbai Metro Line 3",
+    description:
+      "Supply of premium rail pads for 33.5 km underground metro line.",
+    status: "Completed 2023",
+    imageUrl: "/Projects4.png",
+    imageNewUrl: "/projectnew4.jpg",
+  },
+  {
+    id: 5,
+    title: "Delhi-Meerut RRTS",
+    description: "Advanced fastening systems for rapid rail transit system.",
+    status: "Ongoing",
+    imageUrl: "/Projects 5.png",
+    imageNewUrl: "/projectNew5.jpg",
+  },
+  {
+    id: 6,
+    title: "Chennai Suburban Railway",
+    description: "Complete elastomeric solution package for 160 km network.",
+    status: "Completed 2022",
+    imageUrl: "/Projects 6.png",
+    imageNewUrl: "/projectNew6.jpg",
+  },
+];
+// --- END OF PROJECTS ARRAY ---
+
+
 export default function FeaturedProjects() {
-
-  // We still use isHovering, but now it controls animation-play-state
   const [isHovering, setIsHovering] = useState(false);
-
- 
 
   return (
     <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
@@ -65,23 +118,16 @@ export default function FeaturedProjects() {
 
           {/* Project Cards */}
           <div className="lg:w-4/5">
-            {/* onMouseEnter and onMouseLeave are now on this parent div
-                to control the animation-play-state of its child */}
             <div
               className="relative overflow-hidden w-full"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
             >
               <div
-                // Apply the animation class always, and control play state with inline style
                 className="flex gap-6 py-2 w-max animate-scroll-infinite"
                 style={{ animationPlayState: isHovering ? 'paused' : 'running' }}
               >
                 {/* Repeat projects twice for seamless effect */}
-
-
-
-
                 {[...projects, ...projects].map((project, idx) => (
                   <ProjectCard key={`${project.id}-${idx}`} project={project} />
                 ))}

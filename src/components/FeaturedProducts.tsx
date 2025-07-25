@@ -1,12 +1,23 @@
-
 "use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import products from '@/comstants/duumyProduct.json';
-import Link from 'next/link';
-const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
+import products from '@/comstants/duumyProduct.json'; // Assuming this path is correct
+import Link from 'next/link'; // Make sure Link is imported
 
+interface Product {
+  id: number;
+  name: string; // Assuming 'name' matches your JSON for product title
+  image: string;
+  rating: number;
+  reviewCount: number;
+  description: string;
+  // If your JSON has 'documentId' and 'title' for the button/link, adjust accordingly
+  // For now, assuming 'id' for link and 'name' for title/alt text
+}
+
+
+const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
   const totalStars = 5;
   return (
     <div className="flex space-x-0.5">
@@ -34,6 +45,7 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
   );
 };
 
+// --- ProductSkeleton and ErrorState are not directly part of the error, but included for completeness ---
 const ProductSkeleton: React.FC = () => (
   <div className="bg-white w-96 sm:w-80 rounded-2xl shadow-sm overflow-hidden flex-shrink-0 flex flex-col animate-pulse">
     <div className="h-80 md:h-60 bg-gray-200"></div>
@@ -72,12 +84,20 @@ const ErrorState: React.FC<{ error: Error; onRetry: () => void }> = ({
     </div>
   </div>
 );
+// --- End of ProductSkeleton and ErrorState ---
+
 
 const FeaturedProducts: React.FC = () => {
   const router = useRouter();
 
-  // State to track if any card is being hovered, for smooth animation pause
   const [isHovering, setIsHovering] = useState(false);
+
+  // Define CSS variables in JS based on your data
+  const CARD_WIDTH_SM = 320; // Corresponds to sm:w-80
+  const CARD_GAP = 24; // Corresponds to gap-6 (0.5rem * 6 = 24px if 1rem=16px)
+  const NUM_UNIQUE_PRODUCTS = products.length;
+  const SCROLL_DISTANCE = -(CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS; // Negative for left scroll
+  const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS * 3; // 3 repetitions
 
   return (
     <section className="bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
@@ -87,83 +107,77 @@ const FeaturedProducts: React.FC = () => {
 
       <div
         className="relative overflow-hidden w-full"
-        // Add onMouseEnter and onMouseLeave to the container
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
         <div
           className="flex gap-6 py-2 animate-scroll-infinite"
-          // Conditionally set animationPlayState based on hover state
-          style={{ animationPlayState: isHovering ? 'paused' : 'running' }}
+          style={{
+            animationPlayState: isHovering ? 'paused' : 'running',
+            '--scroll-distance': `${SCROLL_DISTANCE}px`, // Pass dynamic value as CSS variable
+            '--scroll-duration': '25s', // Or calculate dynamically if needed
+            width: `${TOTAL_CONTAINER_WIDTH}px` // Set dynamic width here
+          } as React.CSSProperties} // Type assertion needed for custom CSS variables
         >
-          {/* Repeat 3x for seamless effect with proper calculation */}
+          {/* Repeat products twice for seamless effect */}
           {[...products, ...products, ...products].map(
-            ({ id, name, image, rating, reviewCount, description }, index) => (
+            (product, index) => ( // Use 'product' as the item name for clarity
               <article
-                key={`${id}-${index}`}
+                key={`${product.id}-${index}`} // Use product.id for key, add index for duplicates
                 className="bg-white w-96 sm:w-80 rounded-2xl shadow-sm overflow-hidden flex-shrink-0 flex flex-col"
               >
                 <div className="flex justify-center h-80 md:h-60 flex-col items-center relative">
                   <Image
-                    src={image}
-                    alt={name}
+                    src={product.image} // Use product.image
+                    alt={product.name} // Use product.name
                     width={400}
                     height={240}
                     className="object-cover h-full"
                   />
                   <h3 className="absolute bottom-1 font-bold text-lg z-10 text-white px-4 py-1 rounded-sm w-full text-left">
-                    {name}
+                    {product.name} {/* Use product.name */}
                   </h3>
                 </div>
 
                 <div className="pt-4 flex flex-col flex-grow">
                   <div className="px-4 flex items-center space-x-1 mb-2">
-                    <StarRating rating={rating} />
-                    <span className="text-textblue text-sm">({reviewCount})</span>
-
+                    <StarRating rating={product.rating} /> {/* Use product.rating */}
+                    <span className="text-textblue text-sm">({product.reviewCount})</span> {/* Use product.reviewCount */}
                   </div>
 
-                  <div className="pt-4 flex flex-col flex-grow">
-                    <div className="px-4 flex items-center space-x-1 mb-2">
-                      <StarRating rating={5} />
-                      <span className="text-textblue text-sm">(0)</span>
-                    </div>
+                  <p className="px-4 text-textblue flex-grow text-sm font-medium leading-relaxed mb-5">
+                    {product.description} {/* Use product.description */}
+                  </p>
 
-                    <p className="px-4 text-textblue flex-grow text-sm font-medium leading-relaxed mb-5">
-                      {description}
-                    </p>
-
-                    <button
-                      type="button"
-                      className="w-full mt-auto rounded-2xl border px-4 py-3 font-bold text-lg transition-colors duration-600 hover:text-white"
-                      style={{
-                        color: "var(--textorange)",
-                        borderColor: "var(--textorange)",
-                      }}
-                      aria-label={`Explore product ${title}`}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor =
-                          "var(--textorange)";
-                        e.currentTarget.style.color = "white";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = "transparent";
-                        e.currentTarget.style.color = "var(--textorange)";
-                      }}
-                      onClick={() =>
-                        router.push(`/products/${product.documentId}`)
-                      }
-                    >
-                      Explore Product
-                    </button>
-                  </div>
-                </article>
-              );
-            }
+                  <button
+                    type="button"
+                    className="w-full mt-auto rounded-2xl border px-4 py-3 font-bold text-lg transition-colors duration-600 hover:text-white"
+                    style={{
+                      color: "var(--textorange)",
+                      borderColor: "var(--textorange)",
+                    }}
+                    aria-label={`Explore product ${product.name}`} // Use product.name
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor =
+                        "var(--textorange)";
+                      e.currentTarget.style.color = "white";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = "transparent";
+                      e.currentTarget.style.color = "var(--textorange)";
+                    }}
+                    onClick={() =>
+                      router.push(`/products/${product.id}`) // Use product.id
+                    }
+                  >
+                    Explore Product
+                  </button>
+                </div>
+              </article>
+            )
           )}
         </div>
       </div>
-
 
       <div className="w-full flex justify-center items-center mt-15 ">
         <Link href='/products' className="group transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway">
@@ -172,38 +186,21 @@ const FeaturedProducts: React.FC = () => {
           <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
           <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
         </Link>
-
       </div>
 
+      {/* The style jsx block remains for the animation keyframe and class */}
       <style jsx>{`
         @keyframes scroll-infinite {
           0% {
             transform: translateX(0);
           }
           100% {
-            /* The width of one set of products (6 products * (width + gap)) */
-            /* For sm:w-80 (320px) and gap-6 (24px) -> (320 + 24) * 6 = 344 * 6 = 2064px */
-            /* For w-96 (384px) and gap-6 (24px) -> (384 + 24) * 6 = 408 * 6 = 2448px */
-            /* Using a static pixel value that accommodates both or calculating dynamically is key */
-            /* Let's adjust based on the sm:w-80 as the base for calculation */
-            transform: translateX(calc(-1 * (var(--card-width) + var(--card-gap)) * ${products.length}));
+            transform: translateX(var(--scroll-distance)); /* Uses the CSS variable */
           }
         }
         .animate-scroll-infinite {
-          animation: scroll-infinite 25s linear infinite;
-
-          /* Adjusted width calculation for a more robust approach if card widths vary by breakpoint */
-          /* Using CSS variables for width and gap for better maintainability */
-          --card-width: 320px; /* Corresponds to sm:w-80 */
-          --card-gap: 24px; /* Corresponds to gap-6 */
-
-          /* If you consistently use w-96, update --card-width to 384px */
-          /* If you need more precise responsive calculation, JS might be needed,
-             but for now, assuming one fixed width for animation calculation. */
-          width: calc((var(--card-width) + var(--card-gap)) * ${products.length} * 3);
-
-
-
+          animation: scroll-infinite var(--scroll-duration) linear infinite;
+          width: var(--calculated-width); /* Uses the CSS variable */
         }
       `}</style>
     </section>
