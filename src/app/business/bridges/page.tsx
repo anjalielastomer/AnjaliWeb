@@ -5,7 +5,7 @@ import VideoSection from "@/components/VideoSection";
 const Page = () => {
   return (
     <div
-      className="min-h-screen pt-22 overflow-x-hidden"
+      className="w-full relative min-h-screen pt-22 overflow-x-hidden"
       style={{ backgroundColor: "var(--bgwhite)"
        }}
       
