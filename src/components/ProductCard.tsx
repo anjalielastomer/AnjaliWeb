@@ -1,14 +1,14 @@
-"use client"
-import React from 'react';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import { Product } from '@/app/products/page';
+"use client";
+import React from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { Product } from "@/types/product"; 
 
 interface ProductCardProps {
   product: Product;
 }
 
-// Helper: Generate star rating icons with SVG
+
 const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
   const totalStars = 5;
   return (
@@ -16,10 +16,10 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
       {[...Array(totalStars)].map((_, i) => {
         const fill =
           i + 1 <= rating
-            ? 'currentColor'
+            ? "currentColor"
             : i + 0.5 === rating
-              ? 'url(#half)'
-              : 'none';
+            ? "url(#half)"
+            : "none";
         const isHalfStar = i + 0.5 === rating;
         return (
           <svg
@@ -30,7 +30,7 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
             strokeWidth={1}
             viewBox="0 0 24 24"
             aria-hidden="true"
-            style={{ color: 'var(--textorange)' }}
+            style={{ color: "var(--textorange)" }}
           >
             {isHalfStar ? (
               <>
@@ -47,7 +47,7 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
               </>
             ) : (
               <path
-                fill={i + 1 <= rating ? 'currentColor' : 'none'}
+                fill={i + 1 <= rating ? "currentColor" : "none"}
                 stroke="currentColor"
                 d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 
                   8.63 12 2 9.19 8.63 2 9.24 7.45 13.97 5.82 21z"
@@ -61,12 +61,14 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const { id, name, image, rating, reviewCount, description } = product;
+  // Updated to use documentId instead of id for routing
+  const { documentId, name, image, rating, reviewCount, description } = product;
   const router = useRouter();
 
   const handleExploreProduct = () => {
-    const productId = id || 1; // Fallback to 1 if id is not available
-    router.push(`/products/${productId}`);
+    // Use documentId for routing instead of numeric id
+    const productDocumentId = documentId || "default"; // Fallback if documentId is not available
+    router.push(`/products/${productDocumentId}`);
   };
 
   return (
