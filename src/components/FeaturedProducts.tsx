@@ -1,10 +1,12 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useFeaturedProducts } from "@/hooks/use-featured-products";
 
-const StarRating: React.FC<{ rating?: number }> = ({ rating = 5 }) => {
+"use client"
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import products from '@/comstants/duumyProduct.json';
+import Link from 'next/link';
+const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
+
   const totalStars = 5;
   return (
     <div className="flex space-x-0.5">
@@ -73,74 +75,52 @@ const ErrorState: React.FC<{ error: Error; onRetry: () => void }> = ({
 
 const FeaturedProducts: React.FC = () => {
   const router = useRouter();
-  const { data, isLoading, error, refetch } = useFeaturedProducts();
 
-  if (isLoading) {
-    return (
-      <section className="max-w-[1440px] bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
-        <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
-          Featured <span className="text-textorange">Products</span>
-        </h1>
-        <div className="relative overflow-hidden w-full">
-          <div className="flex gap-6 py-2">
-            {[...Array(3)].map((_, index) => (
-              <ProductSkeleton key={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section className="max-w-[1440px] bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
-        <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
-          Featured <span className="text-textorange">Products</span>
-        </h1>
-        <ErrorState error={error} onRetry={refetch} />
-      </section>
-    );
-  }
-
-  const featuredProducts = data?.data ?? [];
+  // State to track if any card is being hovered, for smooth animation pause
+  const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <section className="max-w-[1440px] bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
-      <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
-        Featured <span className="text-textorange">Products</span>
+    <section className="bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
+      <h1 className="text-4xl pb-10 justify-center font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
+        Featured <span className='text-textorange'>Products</span>
       </h1>
 
-      <div className="relative overflow-hidden w-full">
-        <div className="flex gap-6 py-2 animate-scroll-infinite">
-          {[...featuredProducts, ...featuredProducts, ...featuredProducts].map(
-            (item, index) => {
-              const { product } = item;
-              const productImage = product.images?.[0];
+      <div
+        className="relative overflow-hidden w-full"
+        // Add onMouseEnter and onMouseLeave to the container
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        <div
+          className="flex gap-6 py-2 animate-scroll-infinite"
+          // Conditionally set animationPlayState based on hover state
+          style={{ animationPlayState: isHovering ? 'paused' : 'running' }}
+        >
+          {/* Repeat 3x for seamless effect with proper calculation */}
+          {[...products, ...products, ...products].map(
+            ({ id, name, image, rating, reviewCount, description }, index) => (
+              <article
+                key={`${id}-${index}`}
+                className="bg-white w-96 sm:w-80 rounded-2xl shadow-sm overflow-hidden flex-shrink-0 flex flex-col"
+              >
+                <div className="flex justify-center h-80 md:h-60 flex-col items-center relative">
+                  <Image
+                    src={image}
+                    alt={name}
+                    width={400}
+                    height={240}
+                    className="object-cover h-full"
+                  />
+                  <h3 className="absolute bottom-1 font-bold text-lg z-10 text-white px-4 py-1 rounded-sm w-full text-left">
+                    {name}
+                  </h3>
+                </div>
 
-              return (
-                <article
-                  key={`${item.documentId}-${index}`}
-                  className="bg-white w-96 sm:w-80 rounded-2xl shadow-sm overflow-hidden flex-shrink-0 flex flex-col"
-                >
-                  <div className="flex justify-center h-80 md:h-60 relative bg-gray-100">
-                    {productImage ? (
-                      <Image
-                        src={productImage.url}
-                        alt={productImage.name}
-                      
-                        width={400}
-                        height={240}
-                        className="object-cover h-full"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-textorange/10 to-textblue/10">
-                        <span className="text-6xl text-gray-300">📦</span>
-                      </div>
-                    )}
-                    <h3 className="absolute bottom-1 font-bold text-lg z-10 text-white px-4 py-1 rounded-sm w-full text-left bg-gradient-to-r from-black/70 to-transparent">
-                      {product.title}
-                    </h3>
+                <div className="pt-4 flex flex-col flex-grow">
+                  <div className="px-4 flex items-center space-x-1 mb-2">
+                    <StarRating rating={rating} />
+                    <span className="text-textblue text-sm">({reviewCount})</span>
+
                   </div>
 
                   <div className="pt-4 flex flex-col flex-grow">
@@ -184,25 +164,15 @@ const FeaturedProducts: React.FC = () => {
         </div>
       </div>
 
-      <div className="w-full flex justify-center items-center mt-10">
-        <button className="group text-textblue transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway">
-          <span className="text-textorange">Explore</span>
-          <span className="text-textblue"> All</span>
-          <Image
-            src="/arrow.svg"
-            alt="arrow"
-            width={27}
-            height={27}
-            className="group-hover:hidden"
-          />
-          <Image
-            src="/send.svg"
-            alt="arrow"
-            width={27}
-            height={27}
-            className="hidden group-hover:block"
-          />
-        </button>
+
+      <div className="w-full flex justify-center items-center mt-15 ">
+        <Link href='/products' className="group transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway">
+          <span className="text-textorange hover:text-blue-900">Explore</span>
+          <span className="text-textblue group-hover:text-textorange"> All</span>
+          <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
+          <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
+        </Link>
+
       </div>
 
       <style jsx>{`
@@ -211,12 +181,29 @@ const FeaturedProducts: React.FC = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(calc(-100% / 3));
+            /* The width of one set of products (6 products * (width + gap)) */
+            /* For sm:w-80 (320px) and gap-6 (24px) -> (320 + 24) * 6 = 344 * 6 = 2064px */
+            /* For w-96 (384px) and gap-6 (24px) -> (384 + 24) * 6 = 408 * 6 = 2448px */
+            /* Using a static pixel value that accommodates both or calculating dynamically is key */
+            /* Let's adjust based on the sm:w-80 as the base for calculation */
+            transform: translateX(calc(-1 * (var(--card-width) + var(--card-gap)) * ${products.length}));
           }
         }
         .animate-scroll-infinite {
           animation: scroll-infinite 25s linear infinite;
-          width: calc((320px + 24px) * ${featuredProducts.length * 3});
+
+          /* Adjusted width calculation for a more robust approach if card widths vary by breakpoint */
+          /* Using CSS variables for width and gap for better maintainability */
+          --card-width: 320px; /* Corresponds to sm:w-80 */
+          --card-gap: 24px; /* Corresponds to gap-6 */
+
+          /* If you consistently use w-96, update --card-width to 384px */
+          /* If you need more precise responsive calculation, JS might be needed,
+             but for now, assuming one fixed width for animation calculation. */
+          width: calc((var(--card-width) + var(--card-gap)) * ${products.length} * 3);
+
+
+
         }
       `}</style>
     </section>

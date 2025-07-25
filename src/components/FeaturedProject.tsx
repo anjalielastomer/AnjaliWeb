@@ -1,7 +1,8 @@
-"use client";
 
-import Image from "next/image";
-import { useProjects, transformStrapiProject } from "@/hooks/useProjects";
+"use client"
+import Image from 'next/image';
+import { useState } from 'react'; // Import useState
+
 
 interface Project {
   id: number;
@@ -13,46 +14,16 @@ interface Project {
 }
 
 export default function FeaturedProjects() {
-  const {
-    data: projectsResponse,
-    isLoading,
-    error,
-  } = useProjects({
-    page: 1,
-    pageSize: 10,
-  });
 
-  const projects: Project[] =
-    projectsResponse?.data.map((strapiProject, index) => {
-      const transformed = transformStrapiProject(strapiProject);
-      return {
-        id: index + 1,
-        title: transformed.title,
-        description: transformed.description,
-        status: transformed.subtext,
-        imageUrl: transformed.image1 || "",
-        imageNewUrl: transformed.image2 || "",
-      };
-    }) || [];
+  // We still use isHovering, but now it controls animation-play-state
+  const [isHovering, setIsHovering] = useState(false);
 
-  if (isLoading) {
-    return (
-      <div className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">Loading...</div>
-    );
-  }
-
-  if (error || projects.length === 0) {
-    return (
-      <div className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
-        No projects found
-      </div>
-    );
-  }
+ 
 
   return (
     <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold font-raleway text-textblue mb-6">
+        <h2 className="text-3xl sm:text-4xl font-bold font-raleway text-textblue mb-6 pb-8">
           Featured <span className="text-textorange">Projects</span>
         </h2>
         <div className="flex flex-col lg:flex-row gap-3 lg:gap-4">
@@ -94,8 +65,23 @@ export default function FeaturedProjects() {
 
           {/* Project Cards */}
           <div className="lg:w-4/5">
-            <div className="relative overflow-hidden w-full">
-              <div className="flex gap-6 py-2 w-max animate-scroll-infinite">
+            {/* onMouseEnter and onMouseLeave are now on this parent div
+                to control the animation-play-state of its child */}
+            <div
+              className="relative overflow-hidden w-full"
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+            >
+              <div
+                // Apply the animation class always, and control play state with inline style
+                className="flex gap-6 py-2 w-max animate-scroll-infinite"
+                style={{ animationPlayState: isHovering ? 'paused' : 'running' }}
+              >
+                {/* Repeat projects twice for seamless effect */}
+
+
+
+
                 {[...projects, ...projects].map((project, idx) => (
                   <ProjectCard key={`${project.id}-${idx}`} project={project} />
                 ))}
