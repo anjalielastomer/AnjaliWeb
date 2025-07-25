@@ -1,3 +1,4 @@
+
 "use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -5,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import products from '@/comstants/duumyProduct.json';
 import Link from 'next/link';
 const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
+
   const totalStars = 5;
   return (
     <div className="flex space-x-0.5">
@@ -14,7 +16,7 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
           <svg
             key={i}
             className="w-4 h-4 text-textorange flex-shrink-0"
-            fill={isFilled ? 'currentColor' : 'none'}
+            fill={isFilled ? "currentColor" : "none"}
             stroke="currentColor"
             strokeWidth={1}
             viewBox="0 0 24 24"
@@ -32,8 +34,48 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
   );
 };
 
+const ProductSkeleton: React.FC = () => (
+  <div className="bg-white w-96 sm:w-80 rounded-2xl shadow-sm overflow-hidden flex-shrink-0 flex flex-col animate-pulse">
+    <div className="h-80 md:h-60 bg-gray-200"></div>
+    <div className="pt-4 flex flex-col flex-grow">
+      <div className="px-4 flex items-center space-x-1 mb-2">
+        <div className="h-4 bg-gray-200 rounded w-20"></div>
+        <div className="h-4 bg-gray-200 rounded w-10"></div>
+      </div>
+      <div className="px-4 mb-5">
+        <div className="h-4 bg-gray-200 rounded mb-2"></div>
+        <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+      </div>
+      <div className="px-4 pb-4">
+        <div className="h-12 bg-gray-200 rounded-2xl"></div>
+      </div>
+    </div>
+  </div>
+);
+
+const ErrorState: React.FC<{ error: Error; onRetry: () => void }> = ({
+  error,
+  onRetry,
+}) => (
+  <div className="w-full flex flex-col items-center justify-center py-20">
+    <div className="text-center">
+      <h3 className="text-lg font-semibold text-red-600 mb-2">
+        Failed to load featured products
+      </h3>
+      <p className="text-gray-600 mb-4">{error.message}</p>
+      <button
+        onClick={onRetry}
+        className="px-6 py-2 bg-textorange text-white rounded-lg hover:bg-opacity-90 transition-colors"
+      >
+        Try Again
+      </button>
+    </div>
+  </div>
+);
+
 const FeaturedProducts: React.FC = () => {
   const router = useRouter();
+
   // State to track if any card is being hovered, for smooth animation pause
   const [isHovering, setIsHovering] = useState(false);
 
@@ -78,41 +120,50 @@ const FeaturedProducts: React.FC = () => {
                   <div className="px-4 flex items-center space-x-1 mb-2">
                     <StarRating rating={rating} />
                     <span className="text-textblue text-sm">({reviewCount})</span>
+
                   </div>
 
-                  <p className="px-4 text-textblue flex-grow text-sm font-medium leading-relaxed mb-5">
-                    {description}
-                  </p>
+                  <div className="pt-4 flex flex-col flex-grow">
+                    <div className="px-4 flex items-center space-x-1 mb-2">
+                      <StarRating rating={5} />
+                      <span className="text-textblue text-sm">(0)</span>
+                    </div>
 
-                  <button
-                    type="button"
-                    className="w-full mt-auto rounded-2xl border px-4 py-3 font-bold text-lg transition-colors duration-600 hover:text-white"
-                    style={{
-                      color: 'var(--textorange)',
-                      borderColor: 'var(--textorange)'
-                    }}
-                    aria-label={`Explore product ${name}`}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.backgroundColor = 'var(--textorange)';
-                      e.currentTarget.style.color = 'white';
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                      e.currentTarget.style.color = 'var(--textorange)';
-                    }}
-                    onClick={() => {
-                      const productId = id || 1;
-                      router.push(`/products/${productId}`);
-                    }}
-                  >
-                    Explore Product
-                  </button>
-                </div>
-              </article>
-            )
+                    <p className="px-4 text-textblue flex-grow text-sm font-medium leading-relaxed mb-5">
+                      {product.description}
+                    </p>
+
+                    <button
+                      type="button"
+                      className="w-full mt-auto rounded-2xl border px-4 py-3 font-bold text-lg transition-colors duration-600 hover:text-white"
+                      style={{
+                        color: "var(--textorange)",
+                        borderColor: "var(--textorange)",
+                      }}
+                      aria-label={`Explore product ${product.title}`}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor =
+                          "var(--textorange)";
+                        e.currentTarget.style.color = "white";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = "transparent";
+                        e.currentTarget.style.color = "var(--textorange)";
+                      }}
+                      onClick={() =>
+                        router.push(`/products/${product.documentId}`)
+                      }
+                    >
+                      Explore Product
+                    </button>
+                  </div>
+                </article>
+              );
+            }
           )}
         </div>
       </div>
+
 
       <div className="w-full flex justify-center items-center mt-15 ">
         <Link href='/products' className="group transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway">
@@ -121,6 +172,7 @@ const FeaturedProducts: React.FC = () => {
           <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
           <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
         </Link>
+
       </div>
 
       <style jsx>{`
@@ -139,6 +191,7 @@ const FeaturedProducts: React.FC = () => {
         }
         .animate-scroll-infinite {
           animation: scroll-infinite 25s linear infinite;
+
           /* Adjusted width calculation for a more robust approach if card widths vary by breakpoint */
           /* Using CSS variables for width and gap for better maintainability */
           --card-width: 320px; /* Corresponds to sm:w-80 */
@@ -148,6 +201,9 @@ const FeaturedProducts: React.FC = () => {
           /* If you need more precise responsive calculation, JS might be needed,
              but for now, assuming one fixed width for animation calculation. */
           width: calc((var(--card-width) + var(--card-gap)) * ${products.length} * 3);
+
+
+
         }
       `}</style>
     </section>
