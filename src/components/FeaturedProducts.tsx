@@ -1,9 +1,9 @@
 "use client"
-import React, { useState } from 'react'; // Import useState
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import products from '@/comstants/duumyProduct.json';
-
+import Link from 'next/link';
 const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
   const totalStars = 5;
   return (
@@ -38,8 +38,8 @@ const FeaturedProducts: React.FC = () => {
   const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <section className="max-w-[1440px] bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
-      <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
+    <section className="bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
+      <h1 className="text-4xl pb-10 justify-center font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
         Featured <span className='text-textorange'>Products</span>
       </h1>
 
@@ -114,13 +114,13 @@ const FeaturedProducts: React.FC = () => {
         </div>
       </div>
 
-      <div className="w-full flex justify-center items-center mt-10">
-        <button className="group text-textblue transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway">
-          <span className="text-textorange">Explore</span>
-          <span className="text-textblue"> All</span>
+      <div className="w-full flex justify-center items-center mt-15 ">
+        <Link href='/products' className="group transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway">
+          <span className="text-textorange hover:text-blue-900">Explore</span>
+          <span className="text-textblue group-hover:text-textorange"> All</span>
           <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
           <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
-        </button>
+        </Link>
       </div>
 
       <style jsx>{`

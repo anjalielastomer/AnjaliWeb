@@ -2,14 +2,16 @@ import React from "react";
 import Image from "next/image";
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#122957] text-gray-300 pt-8 pb-6 px-6 relative z-20 font-monte text-lg font-normal bottom-0">
+    // Base font-monte already implies default font family, text-gray-300 for color
+    <footer className="bg-[#122957] text-gray-300 pt-8 pb-6 px-6 relative z-20 font-monte bottom-0">
       <div className=" max-w-7xl 2xl:max-w-[1600px] px-4 md:px-7 py-4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-32">
         {/* Branding and Description */}
         <div>
           <h2 className="text-white text-xl font-semibold mb-3 font-raleway">
             Anjali <span className="text-[#EF6C00]">Elastomer</span>
           </h2>
-          <p className="mb-4 max-w-xs leading-relaxed">
+          {/* Default to text-base, then scale up using arbitrary breakpoint */}
+          <p className="mb-4 max-w-xs leading-relaxed text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">
             Leading manufacturer of premium elastomeric materials for railway
             construction worldwide.
           </p>
@@ -83,10 +85,10 @@ const Footer: React.FC = () => {
             Products
           </h3>
           <ul className="space-y-2">
-            <li>Rail Pads</li>
-            <li>Fastening Systems</li>
-            <li>Isolation Materials</li>
-            <li>Custom Solutions</li>
+            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Rail Pads</li>
+            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Fastening Systems</li>
+            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Isolation Materials</li>
+            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Custom Solutions</li>
           </ul>
         </div>
 
@@ -96,10 +98,10 @@ const Footer: React.FC = () => {
             Company
           </h3>
           <ul className="space-y-2">
-            <li>About Us</li>
-            <li>Careers</li>
-            <li>Projects</li>
-            <li>Business</li>
+            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">About Us</li>
+            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Careers</li>
+            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Projects</li>
+            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Business</li>
           </ul>
         </div>
 
@@ -109,15 +111,15 @@ const Footer: React.FC = () => {
             Contact Us
           </h3>
           <ul className="space-y-3">
-            <li className="flex items-center space-x-2">
+            <li className="flex items-center space-x-2 text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">
               <Image src="/phone.svg" alt="Phone" width={20} height={20} />
               <span>+91 98765 43210</span>
             </li>
-            <li className="flex items-center space-x-2 ">
+            <li className="flex items-center space-x-2 text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">
               <Image src="/email.svg" alt="Phone" width={20} height={20} />
               <span className="break-all">info@anjalielastomer.com</span>
             </li>
-            <li className="flex items-center space-x-2">
+            <li className="flex items-center space-x-2 text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">
               <Image src="/map.svg" alt="Phone" width={20} height={20} />
               <span>Howrah, West Bengal, India</span>
             </li>
@@ -125,7 +127,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <hr className="border-gray-700 my-6 max-w-7xl mx-auto" />
+      <hr className="border-gray-700 my-6 w-screen relative left-1/2 right-1/2 -translate-x-1/2" />
 
       <div className="max-w-none 2xl:max-w-[1600px] mx-auto text-center text-gray-400 text-sm ">
         © 2025 Anjali Elastomer Ltd. All rights reserved.
@@ -135,4 +137,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-

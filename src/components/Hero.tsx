@@ -49,8 +49,9 @@ const Hero: React.FC = () => {
 
       {/* Hero TextContent */}
       <div className="md:max-w-[50%] mx-auto sm:-translate-x-[40%] md:-translate-x-[50%]">
-        <div className="w-full h-full flex flex-col items-center justify-end p-4 pt-20 md:pt-0 z-10">
-          <h1 className="font-raleway text-4xl sm:text-5xl md:text-6xl lg:text-[91px] font-extrabold text-textblue w-full text-center md:text-left">
+       <div className="w-full h-full flex flex-col items-center justify-end p-4 pt-20 md:pt-0 z-10">
+     <div className="max-w-none 2xl:max-w-[1600px] mx-auto w-full px-4 md:px-10"> 
+       <h1 className="font-raleway text-4xl sm:text-5xl md:text-6xl md:text-[50px] lg:text-[80px] 3xl:text-[91px] font-extrabold text-textblue w-full text-center md:text-left z-20">
             <span className="whitespace-nowrap text-nowrap">
               Engineered <span className="text-textorange">for</span>
             </span>
@@ -62,19 +63,20 @@ const Hero: React.FC = () => {
               Rail-
               <span className="text-textblue">Roads</span>
             </span>
-          </h1>
-          <div className="mt-10 flex flex-col md:flex-row items-center w-full gap-4 md:gap-6">
-            <Link href="/products" className="w-[200px] h-[50px] lg:w-[333px] lg:h-[78px] flex items-center justify-center bg-textorange text-white rounded-2xl text-lg lg:text-[32px] font-normal whitespace-nowrap font-raleway hover:text-[2.05rem] hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-all duration-300">
+        </h1>
+        <div className="mt-10 pt-5 flex flex-col md:flex-row items-center w-full gap-4 md:gap-6">
+            <Link href="/products" className="w-[200px] h-[50px] lg:w-[333px] lg:h-[78px] flex items-center justify-center bg-textorange text-white rounded-2xl text-lg lg:text-[32px] font-normal whitespace-nowrap font-raleway lg:hover:text-[2.05rem] sm:hover:text-[1.25rem] hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-all duration-300">
               Explore Products
             </Link>
-            <button className="w-[200px] h-[50px] lg:w-[333px] lg:h-[78px] flex items-center justify-center group border border-[var(--textorange)] hover:border-2 text-textblue transition-colors rounded-2xl text-lg lg:text-[32px] font-normal gap-2 hover:font-medium">
+            <Link href="/projects" className="w-[200px] h-[50px] lg:w-[333px] lg:h-[78px] flex items-center justify-center group border border-[var(--textorange)] hover:border-2 text-textblue transition-colors rounded-2xl text-lg lg:text-[32px] font-normal gap-2 hover:font-medium">
               <span className="text-textblue">Learn</span>
               <span className="text-textorange"> more</span>
               <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
               <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
-            </button>
-          </div>
+            </Link>
         </div>
+    </div>
+</div>
       </div>
       {/* Hero ImageContent */}
       <div className="md:absolute bottom-0  left-[50%] w-full flex justify-start overflow-hidden z-10">
