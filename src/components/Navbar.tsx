@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex space-x-8 lg:space-x-12 text-xl lg:text-2xl font-normal relative">
+          <ul className="hidden lg:flex space-x-8 lg:space-x-12 text-xl lg:text-2xl font-normal relative">
             {navItems.map(({ label, href, subItems }) => (
               <li
                 key={label}
@@ -166,7 +166,7 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Hamburger */}
           <button
-            className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
+            className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
