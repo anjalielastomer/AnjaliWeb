@@ -63,8 +63,9 @@ const Page = () => {
       className="min-h-screen pt-16 md:pt-22"
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
-      
+
       <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mb-16 md:mb-20">
+        <Image className="absolute ml-94" src="/named.svg" alt="" width={2000} height={1500} />
         <div className="flex flex-col p-4 md:p-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20">
           <h1 className="font-raleway font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[85.5px] text-textblue w-full text-center xl:text-left leading-tight">
             <span className="block">{content.title.main}</span>
@@ -86,7 +87,7 @@ const Page = () => {
         </div>
         <div className="flex justify-center xl:justify-end mb-6 xl:mb-0">
           <Image
-            className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
+            className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 z-10"
             src={content.images.tunnel}
             alt="Modern train"
             height={833}
@@ -97,12 +98,13 @@ const Page = () => {
         </div>
       </div>
 
-     
+
       <div className="bg-[#fff5ef] h-auto">
         <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mt-0 xl:mt-[-168px] pb-16 md:pb-20">
+          <Image className="absolute -ml-120 mt-54 z-1" src="/named.svg" alt="" width={2000} height={1500} />
           <div className="flex justify-center xl:justify-start mb-8 xl:mb-0">
             <Image
-              className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[496px] h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
+              className="relative z-10 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[496px] h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
               src={content.images.track}
               alt="Track system"
               height={641}
@@ -118,7 +120,9 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row mx-auto w-[90%] gap-6 lg:gap-10 mt-8 md:mt-10 mb-16 md:mb-20">
+      <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row w-[90%] gap-6 lg:gap-10 mt-8 md:mt-10 mb-16 md:mb-20">
+        <Image className="absolute -ml-113 -mt-80 rotate-90" src="/named.svg" alt="" width={2000} height={1500} />
+        <Image className="absolute ml-118 mt-120 rotate-90" src="/named.svg" alt="" width={2000} height={1500} />
         <div className="flex-1 lg:max-w-[60%]">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-[500] text-[#193055] mb-4 md:mb-6 font-monte text-center lg:text-left leading-relaxed">
             {content.innovationTitle.split("Rail Fastening")[0]}
@@ -162,7 +166,7 @@ const Page = () => {
 
           <div className="w-full flex justify-center">
             <Image
-              className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[554px] h-auto hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
+              className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[554px] h-auto hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 relative z-10"
               src={content.images.railfastening}
               width={554}
               height={721}
@@ -173,7 +177,7 @@ const Page = () => {
         </div>
       </div>
 
-     
+
       <VideoSection bgColor="bg-bgcolour" />
     </div>
   );

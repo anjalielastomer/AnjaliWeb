@@ -57,7 +57,7 @@ const Page = () => {
           <div className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28 xl:ml-20">
             <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
               <Image
-                className="w-full object-cover"
+                className="relative z-10 w-full object-cover"
                 src="/business/bridge-2.svg"
                 alt="Train on a coastal bridge"
                 fill={true}
@@ -128,7 +128,7 @@ const Page = () => {
           </div>
           <div>
             <Image
-              className="mt-8 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 z-10"
+              className="relative mt-8 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 z-10"
               src="/business/bridge-4.svg"
               alt="Side view of railway bridge"
               width={554}
