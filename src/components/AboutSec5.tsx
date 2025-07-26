@@ -14,8 +14,8 @@ export default function AboutSec5() {
 
           <Link href={"#"} className="group text-textblue transition-colors py-3 text-3xl font-light flex items-center gap-2 font-raleway">
             <span>
-              <span className="text-[#FB7602] group-hover:text-[#193055] group-hover:font-medium transition-all duration-300">Explore</span>
-              <span className="text-[#193055] group-hover:text-[#FB7602] group-hover:font-medium transition-all duration-300"> All</span>
+              <span className="text-[#FB7602] group-hover:text-[#193055] transition-all duration-300">Explore</span>
+              <span className="text-[#193055] group-hover:text-[#FB7602] transition-all duration-300"> All</span>
             </span>
             <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
             <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
