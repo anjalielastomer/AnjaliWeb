@@ -7,7 +7,7 @@ const AboutSec1 = () => {
     <div className="relative">
       {/* Sec1 */}
       <div className="flex flex-col justify-center md:flex-row bg-white pt-20 relative z-10 font-monte">
-        <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between">
+        <div className="max-w-[1440px] mx-auto px-10 flex flex-col md:flex-row items-center justify-between">
           {/* Left Side */}
           <div className="w-full md:w-1/2 p-4 flex flex-col">
             <h1 className="text-4xl sm:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8 font-raleway">
@@ -16,7 +16,7 @@ const AboutSec1 = () => {
               Railway&apos;s <span className="mt-4 text-textorange">Future</span>
             </h1>
 
-            <div className="md:mt-16 flex flex-col md:flex-row gap-12 mb-12">
+            <div className="md:mt-16 flex flex-col xl:flex-row gap-12 mb-12">
               <StatItem
                 number={175}
                 unit="KMS TRACKS"

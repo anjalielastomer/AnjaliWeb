@@ -7,7 +7,7 @@ const Production1 = () => {
         <div className="relative font-monte">
             {/* Sec1 */}
             <div className="flex flex-col justify-center lg:flex-row bg-white pt-20 relative z-10">
-                <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between">
+                <div className="max-w-[1440px] px-10 mx-auto flex flex-col md:flex-row items-center justify-between">
                     {/* Left Side */}
                     <div className="w-full lg:w-1/2 p-4 px-6 sm:px-8 lg:px-2 flex flex-col">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8">
@@ -17,7 +17,7 @@ const Production1 = () => {
                         </h1>
 
                         <div className="mt-8 lg:mt-16 flex flex-col gap-8 lg:gap-12 mb-12">
-                            <div className="flex flex-col sm:flex-row gap-8 sm:gap-12">
+                            <div className="flex flex-col xl:flex-row gap-8 sm:gap-12">
                                 <StatItem
                                     number={175}
                                     unit="KMS TRACKS"
