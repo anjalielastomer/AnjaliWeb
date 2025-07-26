@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image';
 import { useState } from 'react'; // Import useState
-
+import Link from 'next/link'; // Import Link for navigation
 
 interface Project {
   id: number;
@@ -12,7 +12,6 @@ interface Project {
   imageNewUrl: string;
 }
 
-// --- ADD THIS PROJECTS ARRAY BACK IN ---
 const projects: Project[] = [
   {
     id: 1,
@@ -67,12 +66,10 @@ const projects: Project[] = [
     imageNewUrl: "/projectNew6.jpg",
   },
 ];
-// --- END OF PROJECTS ARRAY ---
-
 
 export default function FeaturedProjects() {
   const [isHovering, setIsHovering] = useState(false);
-
+const [isExploreAllHovered, setIsExploreAllHovered] = useState(false);
   return (
     <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -93,27 +90,35 @@ export default function FeaturedProjects() {
               </p>
             </div>
 
-            <a
-              href="#"
-              className="group text-textorange font-raleway text-[28px] font-normal flex items-center transition-all duration-300"
-            >
-              <span className="text-textorange">Explore</span>
-              <span className="text-textblue ml-1">All</span>
-              <Image
-                src="/arrow.svg"
-                alt="arrow"
-                width={27}
-                height={27}
-                className="group-hover:hidden"
-              />
-              <Image
-                src="/send.svg"
-                alt="arrow"
-                width={27}
-                height={27}
-                className="hidden group-hover:block"
-              />
-            </a>
+             <div className="w-full flex justify-center items-center mt-15 ">
+        <Link
+          href='/products'
+          className="group transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway"
+          onMouseEnter={() => setIsExploreAllHovered(true)} // Set state on hover
+          onMouseLeave={() => setIsExploreAllHovered(false)} // Reset state on mouse leave
+        >
+          <span
+            className="transition-colors duration-300" // Keep transition for smoothness
+            style={{
+              // If hovered, 'Explore' becomes --textblue, else --textorange
+              color: isExploreAllHovered ? 'var(--textblue)' : 'var(--textorange)'
+            } as React.CSSProperties}
+          >
+            Explore
+          </span>
+          <span
+            className="transition-colors duration-300" // Keep transition for smoothness
+            style={{
+              // If hovered, 'All' becomes --textorange, else --textblue
+              color: isExploreAllHovered ? 'var(--textorange)' : 'var(--textblue)'
+            } as React.CSSProperties}
+          >
+            All
+          </span>
+          <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
+          <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
+        </Link>
+      </div>
           </div>
 
           {/* Project Cards */}
