@@ -1,8 +1,10 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { useState } from 'react';
 const AboutUs: React.FC = () => {
+  const [isLearnMoreHovered, setIsLearnMoreHovered] = useState(false);
   return (
     <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-10 bg-white px-5 py-10 pt-20 pb-20 font-raleway md:-mt-20 z-40 relative">
       <div className="w-full max-w-md flex flex-col h-full items-center">
@@ -28,8 +30,8 @@ const AboutUs: React.FC = () => {
 
       <div className="w-full max-w-2xl flex flex-col h-full text-center md:text-left ">
         <h1 className="text-4xl font-bold text-textblue mb-2 flex gap-3 justify-center md:justify-start text-center md:text-left w-full font-raleway">
-  About <span className='text-textorange'>Us</span>
-</h1>
+          About <span className='text-textorange'>Us</span>
+        </h1>
         <span className="text-[28px] text-textblue font-medium mb-2 font-monte text-center md:text-left ">
           Unified in Shaping Railway&apos;s Future
         </span>
@@ -70,10 +72,32 @@ const AboutUs: React.FC = () => {
             </p>
           </div>
         </div>
-        <Link href={"/about-us"} className="group text-textblue transition-colors pr-7 py-3 text-[32px] font-normal flex items-center gap-2 font-raleway">
-          <span className="text-textorange">Learn</span><span className="text-textblue"> more</span>
-          <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden"/>
-          <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block"/>
+        <Link
+          href={"/about-us"}
+          className="w-[200px] h-[50px] lg:w-[333px] lg:h-[78px] flex items-center justify-center group  text-textblue transition-colors rounded-2xl text-lg lg:text-[32px] font-normal gap-2 hover:font-medium"
+          onMouseEnter={() => setIsLearnMoreHovered(true)} // When mouse enters the Link
+          onMouseLeave={() => setIsLearnMoreHovered(false)} // When mouse leaves the Link
+        >
+          <span
+            className="transition-colors duration-300"
+            style={{
+              // If hovered, 'Learn' becomes --textblue, else --textorange
+              color: isLearnMoreHovered ? 'var(--textblue)' : 'var(--textorange)'
+            } as React.CSSProperties}
+          >
+            Learn
+          </span>
+          <span
+            className="transition-colors duration-300"
+            style={{
+              // If hovered, 'more' becomes --textorange, else --textblue
+              color: isLearnMoreHovered ? 'var(--textorange)' : 'var(--textblue)'
+            } as React.CSSProperties}
+          >
+            more
+          </span>
+          <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
+          <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
         </Link>
       </div>
     </div>

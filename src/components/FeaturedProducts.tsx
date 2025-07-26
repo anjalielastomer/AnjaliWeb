@@ -90,6 +90,7 @@ const ErrorState: React.FC<{ error: Error; onRetry: () => void }> = ({
 const FeaturedProducts: React.FC = () => {
   const router = useRouter();
 
+const [isExploreAllHovered, setIsExploreAllHovered] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
 
   // Define CSS variables in JS based on your data
@@ -180,9 +181,30 @@ const FeaturedProducts: React.FC = () => {
       </div>
 
       <div className="w-full flex justify-center items-center mt-15 ">
-        <Link href='/products' className="group transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway">
-          <span className="text-textorange hover:text-blue-900">Explore</span>
-          <span className="text-textblue group-hover:text-textorange"> All</span>
+        <Link
+          href='/products'
+          className="group transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway"
+          onMouseEnter={() => setIsExploreAllHovered(true)} // Set state on hover
+          onMouseLeave={() => setIsExploreAllHovered(false)} // Reset state on mouse leave
+        >
+          <span
+            className="transition-colors duration-300" // Keep transition for smoothness
+            style={{
+              // If hovered, 'Explore' becomes --textblue, else --textorange
+              color: isExploreAllHovered ? 'var(--textblue)' : 'var(--textorange)'
+            } as React.CSSProperties}
+          >
+            Explore
+          </span>
+          <span
+            className="transition-colors duration-300" // Keep transition for smoothness
+            style={{
+              // If hovered, 'All' becomes --textorange, else --textblue
+              color: isExploreAllHovered ? 'var(--textorange)' : 'var(--textblue)'
+            } as React.CSSProperties}
+          >
+            All
+          </span>
           <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
           <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
         </Link>
