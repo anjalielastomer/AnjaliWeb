@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Hero TextContent */}
-      <div className="md:max-w-[50%] mx-auto sm:-translate-x-[40%] md:-translate-x-[64%]">
+      <div className="md:max-w-[50%] mx-auto sm:-translate-x-[40%] md:-translate-x-[64%] lg:-translate-x-[50%]">
        <div className="w-full h-full flex flex-col items-center justify-end p-4 pt-20 md:pt-0 z-10">
      <div className="max-w-none 2xl:max-w-[1600px] mx-auto w-full px-4 md:px-10"> 
        <h1 className="font-raleway text-4xl sm:text-2xl md:text-6xl md:text-[50px] lg:text-[80px] 3xl:text-[91px] font-extrabold text-textblue w-full text-center md:text-left z-20">

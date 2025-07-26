@@ -11,6 +11,8 @@ const Page = () => {
     >
       {/* Section 1: Hero - Improved Flex Layout */}
       <div className=" max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 mb-20 py-8 lg:py-16 font-monte">
+        <Image className="absolute ml-94" src="/named.svg" alt="" width={2000} height={1500} />
+
         {/* Text Content */}
         <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left flex-1 max-w-2xl">
           <h1 className="font-raleway font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[85.5px] text-textblue leading-tight">
@@ -26,7 +28,7 @@ const Page = () => {
           </h1>
 
           <p className="text-sm md:text-base text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-montserrat font-medium tracking-normal">
-            The permanent route is the foundation of railway infrastructure, and we specialize in railway track construction for a variety of projects. We specialize in ballasted and ballastless track construction, track renewals, gauge conversion, railway depots, sidings and yards, metro rail, and light rail projects. As one of India's fastest-growing ballastless track construction companies, we are now working on over 100 kilometers of mainline ballastless track. 
+            The permanent route is the foundation of railway infrastructure, and we specialize in railway track construction for a variety of projects. We specialize in ballasted and ballastless track construction, track renewals, gauge conversion, railway depots, sidings and yards, metro rail, and light rail projects. As one of India's fastest-growing ballastless track construction companies, we are now working on over 100 kilometers of mainline ballastless track.
           </p>
         </div>
 
@@ -48,6 +50,8 @@ const Page = () => {
       {/* Section 2: Turnkey Projects */}
       <div className="bg-[#fff5ef] h-auto">
         <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20">
+          <Image className="absolute -ml-113 mt-43" src="/named.svg" alt="" width={2000} height={1500} />
+          <Image className="absolute -ml-129 mt-81" src="/named.svg" alt="" width={2000} height={1500} />
           {/* Image Content */}
           <div className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1">
             <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
@@ -91,6 +95,9 @@ const Page = () => {
       {/* Section 4: Resources Available */}
       <div className="max-w-[1440px] mx-auto bg-white h-auto">
         <div className="flex lg:w-[90%] lg:flex-nowrap lg:justify-between xl:ml-34 justify-center xl:justify-between mx-auto max-w-[80%] flex-wrap-reverse mt-0  md:mt-8 pb-20">
+          <Image className="absolute -ml-113 -mt-80 rotate-90" src="/named.svg" alt="" width={2000} height={1500} />
+          <Image className="absolute ml-62   mt-71 rotate-90" src="/named.svg" alt="" width={2000} height={1500} />
+
           <div className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24">
             <h1 className="text-4xl sm:text-xl md:text-5xl font-bold text-[#193055] lg:mb-4 -mb-2 mt-4 lg:mt-0 font-monte text-center md:text-left leading-relaxed">
               <span className="text-textorange font-bold">Resources</span>{" "}
@@ -100,17 +107,17 @@ const Page = () => {
             <br />
             <br />
             <ul className="list-disc list-inside [&>li]:marker:text-textorange space-y-2 text-textblue text-base sm:text-xl md:text-xl font-medium font-monte">
-                <li>Mobile Flash Butt Welding Machine</li>
-                <li>Boom Placer Concrete Pump</li>
-                <li>Booted Block Machine</li>
-                <li>Track Master</li>
-                <li>Concrete Mixer</li>
-                <li>Batching Plant</li>
+              <li>Mobile Flash Butt Welding Machine</li>
+              <li>Boom Placer Concrete Pump</li>
+              <li>Booted Block Machine</li>
+              <li>Track Master</li>
+              <li>Concrete Mixer</li>
+              <li>Batching Plant</li>
             </ul>
           </div>
           <div>
             <Image
-              className="mt-2 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
+              className="relative mt-2 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 z-10"
               src="/business/track-3.svg"
               alt="Side view of railway bridge"
               width={554}
@@ -124,6 +131,8 @@ const Page = () => {
       {/* Section 5: Capabilities & Geography */}
       <div className="bg-[#fff5ef] py-16 md:py-24">
         <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12">
+          <Image className="absolute ml-113 -mt-108 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
+          <Image className="absolute -ml-113 mt-76 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
           <div className="flex items-center justify-center">
             <Image
               className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
@@ -139,15 +148,15 @@ const Page = () => {
               Track-Work & <span className='text-textorange'>Systems</span>
             </h2>
             <p className="lg:w-100 xl:w-120 text-sm md:text-base lg:text-sm xl:text-lg text-[#193055] leading-loose font-monte">
-                Our ability to manage large-scale, complicated projects across multiple geographic locations displays our dedication to quality and ability to deliver on difficult tasks.
-                <br /><br />
-                In addition, we execute mobile flash butt welding with four equipment capable of executing 30,000 welds each year. We want to make considerable contributions to railway station upgrading projects under the Indian Railway’s Amrit Bharat initiative, with a focus on putting Ballast-less track in platforms.
+              Our ability to manage large-scale, complicated projects across multiple geographic locations displays our dedication to quality and ability to deliver on difficult tasks.
+              <br /><br />
+              In addition, we execute mobile flash butt welding with four equipment capable of executing 30,000 welds each year. We want to make considerable contributions to railway station upgrading projects under the Indian Railway’s Amrit Bharat initiative, with a focus on putting Ballast-less track in platforms.
             </p>
             <br /><br />
             <ul className="list-disc list-inside [&>li]:marker:text-textorange space-y-2 text-textblue text-base sm:text-xl md:text-xl lg:text-lg  font-medium font-monte">
-            <li>Pandrol Booted Block System From Spain</li>
-            <li>Pandrol Fastening System for Metro Railway</li>
-          </ul>
+              <li>Pandrol Booted Block System From Spain</li>
+              <li>Pandrol Fastening System for Metro Railway</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -165,7 +174,7 @@ const Page = () => {
 interface TextEntry {
   text1: string
   text2: string
-  text3?:string
+  text3?: string
 }
 
 interface CardProps {
@@ -176,19 +185,19 @@ interface CardProps {
 
 const cardData: CardProps[] = [
   {
-    text:{
-        text1: "250",
-        text2: "+ KM Track constructed"
-      },
+    text: {
+      text1: "250",
+      text2: "+ KM Track constructed"
+    },
     description:
       "Effectively completed more than 250 kilometers of railway rails, exhibiting vast experience and capability.",
   },
   {
-    text:{
-      text1:"Ballastless",
-      text2:"Mainline sector"
+    text: {
+      text1: "Ballastless",
+      text2: "Mainline sector"
     },
-    description:"Recognized as the broadest ballastless track building company in India's mainline railway industry."
+    description: "Recognized as the broadest ballastless track building company in India's mainline railway industry."
   }
 ];
 
