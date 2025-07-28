@@ -32,35 +32,35 @@ export const cardData: CardData[] = [
     highlight: "Growth",
     description:
       "Advance your career with comprehensive training programs, mentorship opportunities, and clear advancement paths.",
-    image: "/career/career1.png",
+    image: "/career/career2.png",
   },
   {
     title: "Team",
     highlight: "Excellence",
     description:
       "Collaborate with industry experts and passionate professionals in a supportive, inclusive work environment.",
-    image: "/career/career1.png",
+    image: "/career/career3.png",
   },
   {
     title: "Comprehensive",
     highlight: "Benefits",
     description:
       "Enjoy competitive salaries, health insurance, retirement plans, and performance bonuses.",
-    image: "/career/career1.png",
+    image: "/career/career4.png",
   },
   {
     title: "Work-Life",
     highlight: "Balance",
     description:
       "Flexible schedules, remote work options, and generous PTO to maintain a healthy work-life balance.",
-    image: "/career/career1.png",
+    image: "/career/career5.png",
   },
   {
     title: "Global",
     highlight: "Impact",
     description:
       "Contribute to projects that connect cities, countries, and continents, making a real difference in the world.",
-    image: "/career/career1.png",
+    image: "/career/career6.png",
   },
 ];
 

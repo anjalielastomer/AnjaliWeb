@@ -33,6 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/png" href="/favicon.png" />
+      </head>
       <body
         className={`${raleway.variable} ${montserrat.variable} ${roboto.variable} flex flex-col min-h-screen overflow-x-hidden`}
       >
