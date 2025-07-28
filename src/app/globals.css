@@ -177,3 +177,8 @@
   animation: scroll-infinite var(--scroll-duration, 25s) linear infinite;
   /* animation-play-state will be controlled via inline style in the component */
 }
+@media (min-width: 1023px) {
+  .custom-hide-at-1024 {
+    display: none !important;
+  }
+}
