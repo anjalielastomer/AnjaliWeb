@@ -4,6 +4,7 @@ import Image from "next/image";
 import { cardData, CardData } from "@/types/career";
 import type { FormData } from "@/types/career";
 import {toast} from 'sonner'
+import Link from "next/link";
 const Page: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
   const [formData, setFormData] = useState<FormData>({
@@ -194,9 +195,9 @@ const Page: React.FC = () => {
               >
                 Drop us your{" "}
                 <span style={{ color: "var(--textorange)" }}>CV</span> at
-                <span style={{ color: "var(--textorange)" }}>
+                <Link href="mailto:careers@anjalielastomer.in" style={{ color: "var(--textorange)", textDecoration: "underline", cursor: "pointer", textDecorationThickness: "1.5px" }}>
                   careers@anjalielastomer.in
-                </span>
+                </Link>
               </span>
             </div>
           </div>
