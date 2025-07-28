@@ -116,14 +116,15 @@ const Navbar: React.FC = () => {
       <div className="max-w-none 2xl:max-w-[1600px] mx-auto">
         <div className="flex justify-between items-center px-4 md:px-10 py-4">
           {/* Logo */}
-          <div
+          <Link
+          href='/'
             className={`text-xl md:text-2xl font-bold font-raleway cursor-pointer ${getTextColor()}`}
           >
             Anjali <span className="text-[color:var(--textorange)]">Elastomer</span>
-          </div>
-
+          </Link>
+          
           {/* Desktop Navigation */}
-          <ul className="hidden lg:flex space-x-8 lg:space-x-12 text-xl lg:text-2xl font-normal relative">
+          <ul className="hidden xl:flex space-x-8 lg:space-x-12 text-xl lg:text-2xl font-normal relative">
             {navItems.map(({ label, href, subItems }) => (
               <li
                 key={label}
@@ -166,7 +167,7 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Hamburger */}
           <button
-            className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
+            className="xl:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -187,7 +188,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Dropdown Menu */}
         <div
-          className={`lg:hidden absolute top-full left-0 w-full transition-all duration-300 overflow-hidden backdrop-blur-lg ${isMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
+          className={`xl:hidden absolute top-full left-0 w-full transition-all duration-300 overflow-hidden backdrop-blur-lg ${isMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
           style={{
             backgroundColor: styles.backgroundColor,
             backdropFilter: 'blur(12px) saturate(120%)',
