@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${raleway.variable} ${montserrat.variable} ${roboto.variable} flex flex-col min-h-screen`}
+        className={`${raleway.variable} ${montserrat.variable} ${roboto.variable} flex flex-col min-h-screen overflow-x-hidden`}
       >
         <QueryProvider>
           <Toaster />

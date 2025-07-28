@@ -16,7 +16,7 @@ const App: React.FC = () => {
     <main className="bg-bgcolour max-w-screen">
       <Hero />
       <AboutUs />
-      <FeaturedProducts />
+      <FeaturedProducts/>
       <BusinessSection />
       <FeaturedProjects />
       <Client />

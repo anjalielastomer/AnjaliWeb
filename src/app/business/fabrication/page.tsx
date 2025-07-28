@@ -6,11 +6,12 @@ import CardComponent, { CardProps } from '@/components/CardComponent';
 const Page = () => {
   return (
     <div
-      className="min-h-screen pt-22"
+      className="min-h-screen pt-22 overflow-hidden"
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
       {/* Section 1: Hero */}
       <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 mb-20 py-8 lg:py-16">
+        <Image className="absolute ml-94" src="/named.svg" alt="" width={2000} height={1500} />
         {/* Text Content */}
         <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left flex-1 max-w-2xl lg:max-w-4xl xl:-mt-30">
           <h1 className="font-raleway font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[85.5px] text-textblue leading-tight">
@@ -30,57 +31,60 @@ const Page = () => {
         </div>
         {/* Image Content */}
         <div className=" w-full max-w-sm lg:max-w-md xl:max-w-lg">
-                  <div className="relative w-full aspect-[3/4] lg:aspect-[4/5] xl:mt-30 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
-                    <Image
-                      src="/business/fabric-1.svg"
-                      alt="Railway bridge structure"
-                      fill={true}
-                      className="object-cover"
-                      loading='eager'
-                    />
-                  </div>
+          <div className="relative w-full aspect-[3/4] lg:aspect-[4/5] xl:mt-30 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
+            <Image
+              src="/business/fabric-1.svg"
+              alt="Railway bridge structure"
+              fill={true}
+              className="object-cover"
+              loading='eager'
+            />
           </div>
+        </div>
       </div>
 
       {/* Section 2: Turnkey Projects */}
       <div className="bg-[#fff5ef] h-auto">
-              <div className="max-w-[1440px] mx-auto flex lg:flex-row flex-col-reverse items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40">
-                <div className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28 xl:ml-20">
-                  <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
-                    <Image
-                      className="w-full object-cover"
-                      src="/business/fabric-2.svg"
-                      alt="Train on a coastal bridge"
-                      fill
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col justify-center px-4 md:px-10 order-1 lg:order-2 flex-1 xl:pl-40">
-                  <p className="text-lg sm:text-xl md:text-xl font-medium text-[#193055] mb-4 font-montserrat text-center md:text-left leading-relaxed tracking-normal">
-                    We provide complete client satisfaction through our in-house physical and chemical structural steel fabrication testing facilities, as well as a dedicated Quality Control team. Key testing capabilities include:
-                  </p>
-      
-                  <ul
-                    role="list"
-                    className=" list-disc list-inside space-y-2 text-textblue text-base sm:text-lg md:text-lg font-medium font-montserrat"
-                  >
-                    <li>Ultrasonic Testing Machine</li>
-                    <li>Radiography Equipment</li>
-                    <li>Magnetic Particle Testing Machine</li>
-                    <li>RAM Testing Facility (1:4)</li>
-                    <li>Ultrasonic Surface Finish Tester</li>
-                    <li>Die-Penetrant Testing Facility</li>
-                    <li>Digital Hardness Tester</li>
-                    <li>Digital Height Gauge</li>
-                  </ul>
-                </div>
-              </div>
+        <div className="max-w-[1440px] mx-auto flex lg:flex-row flex-col-reverse items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40">
+          <Image className="absolute -ml-120 mt-137 z-1" src="/named.svg" alt="" width={2000} height={1500} />
+          <div className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28 xl:ml-20">
+            <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
+              <Image
+                className="relative w-full object-cover z-10"
+                src="/business/fabric-2.svg"
+                alt="Train on a coastal bridge"
+                fill
+                loading="lazy"
+              />
             </div>
+          </div>
+          <div className="flex flex-col justify-center px-4 md:px-10 order-1 lg:order-2 flex-1 xl:pl-40">
+            <p className="text-lg sm:text-xl md:text-xl font-medium text-[#193055] mb-4 font-montserrat text-center md:text-left leading-relaxed tracking-normal">
+              We provide complete client satisfaction through our in-house physical and chemical structural steel fabrication testing facilities, as well as a dedicated Quality Control team. Key testing capabilities include:
+            </p>
+
+            <ul
+              role="list"
+              className=" list-disc list-inside space-y-2 text-textblue text-base sm:text-lg md:text-lg font-medium font-montserrat"
+            >
+              <li>Ultrasonic Testing Machine</li>
+              <li>Radiography Equipment</li>
+              <li>Magnetic Particle Testing Machine</li>
+              <li>RAM Testing Facility (1:4)</li>
+              <li>Ultrasonic Surface Finish Tester</li>
+              <li>Die-Penetrant Testing Facility</li>
+              <li>Digital Hardness Tester</li>
+              <li>Digital Height Gauge</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
       {/* Section 4: Resources Available */}
       <div className="max-w-[1440px] mx-auto bg-white h-auto">
         <div className="flex lg:w-[90%] lg:flex-nowrap lg:justify-between xl:ml-34 justify-center xl:justify-between mx-auto max-w-[80%] flex-wrap-reverse mt-0  md:mt-8 xl:mt-16 pb-20">
+          <Image className="absolute -ml-113 -mt-80 rotate-90" src="/named.svg" alt="" width={2000} height={1500} />
+          <Image className="absolute ml-113 mt-120 rotate-90" src="/named.svg" alt="" width={2000} height={1500} />
           <div className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24">
             <h1 className="text-4xl sm:text-xl md:text-5xl font-bold text-[#193055] lg:mb-4 -mb-2 mt-4 lg:mt-0 font-monte text-center md:text-left leading-relaxed">
               <span className="text-textorange font-bold">Resources</span>{" "}
@@ -104,7 +108,7 @@ const Page = () => {
           </div>
           <div>
             <Image
-              className="mt-8 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
+              className="relative mt-8 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 z-10"
               src="/business/fabric-3.svg"
               alt="Side view of railway bridge"
               width={554}
@@ -118,6 +122,8 @@ const Page = () => {
       {/* Section 5: Capabilities & Geography */}
       <div className="bg-[#fff5ef] py-16 md:py-24">
         <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12">
+          <Image className="absolute ml-113 -mt-108 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
+          <Image className="absolute -ml-113 mt-76 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
           <div className="flex items-center justify-center">
             <Image
               className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
@@ -152,7 +158,7 @@ const Page = () => {
 interface TextEntry {
   text1: string
   text2: string
-  text3?:string
+  text3?: string
 }
 
 

@@ -49,7 +49,7 @@ const ProductsPage: React.FC = () => {
           </div>
 
           <div
-            className="w-full h-px mb-8"
+            className="w-screen h-px mb-8 relative left-1/2 right-1/2 -translate-x-1/2"
             style={{ backgroundColor: "var(--textblue)", opacity: "0.1" }}
           ></div>
         </div>

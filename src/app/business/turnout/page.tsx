@@ -110,7 +110,7 @@ const page: React.FC = () => {
   };
 
   return (
-    <section className="font-monte text-textblue min-h-screen pt-22">
+    <section className="font-monte text-textblue min-h-screen pt-22 overflow-hidden">
       
       <div
         className="pt-16 md:pt-20 xl:pt-22 max-w-[1440px] mx-auto"

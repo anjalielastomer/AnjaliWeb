@@ -1,7 +1,7 @@
-"use client";
-
-import Image from "next/image";
-import { useProjects, transformStrapiProject } from "@/hooks/useProjects";
+"use client"
+import Image from 'next/image';
+import { useState } from 'react'; // Import useState
+import Link from 'next/link'; // Import Link for navigation
 
 interface Project {
   id: number;
@@ -12,47 +12,68 @@ interface Project {
   imageNewUrl: string;
 }
 
+const projects: Project[] = [
+  {
+    id: 1,
+    title: "Mumbai-Delhi High Speed Rail",
+    description:
+      "Supply of premium rail pads for India's first high-speed rail corridor.",
+    status: "Completed 2023",
+    imageUrl: "/Projects 1.png",
+    imageNewUrl: "/projectNew1.jpg",
+  },
+  {
+    id: 2,
+    title: "Bangalore Metro Phase 3",
+    description:
+      "Comprehensive elastomeric Solutions for metro rail expansion project.",
+    status: "Ongoing",
+    imageUrl: "/Projects 2.png",
+    imageNewUrl: "/projectNew2.jpg",
+  },
+  {
+    id: 3,
+    title: "Eastern Freight Corridor",
+    description:
+      "Heavy-duty bearing pads for dedicated freight corridor infrastructure.",
+    status: "Completed 2022",
+    imageUrl: "/Projects 3.png",
+    imageNewUrl: "/projectNew3.jpg",
+  },
+  {
+    id: 4,
+    title: "Mumbai Metro Line 3",
+    description:
+      "Supply of premium rail pads for 33.5 km underground metro line.",
+    status: "Completed 2023",
+    imageUrl: "/Projects4.png",
+    imageNewUrl: "/projectnew4.jpg",
+  },
+  {
+    id: 5,
+    title: "Delhi-Meerut RRTS",
+    description: "Advanced fastening systems for rapid rail transit system.",
+    status: "Ongoing",
+    imageUrl: "/Projects 5.png",
+    imageNewUrl: "/projectNew5.jpg",
+  },
+  {
+    id: 6,
+    title: "Chennai Suburban Railway",
+    description: "Complete elastomeric solution package for 160 km network.",
+    status: "Completed 2022",
+    imageUrl: "/Projects 6.png",
+    imageNewUrl: "/projectNew6.jpg",
+  },
+];
+
 export default function FeaturedProjects() {
-  const {
-    data: projectsResponse,
-    isLoading,
-    error,
-  } = useProjects({
-    page: 1,
-    pageSize: 10,
-  });
-
-  const projects: Project[] =
-    projectsResponse?.data.map((strapiProject, index) => {
-      const transformed = transformStrapiProject(strapiProject);
-      return {
-        id: index + 1,
-        title: transformed.title,
-        description: transformed.description,
-        status: transformed.subtext,
-        imageUrl: transformed.image1 || "",
-        imageNewUrl: transformed.image2 || "",
-      };
-    }) || [];
-
-  if (isLoading) {
-    return (
-      <div className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">Loading...</div>
-    );
-  }
-
-  if (error || projects.length === 0) {
-    return (
-      <div className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
-        No projects found
-      </div>
-    );
-  }
-
+  const [isHovering, setIsHovering] = useState(false);
+const [isExploreAllHovered, setIsExploreAllHovered] = useState(false);
   return (
     <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold font-raleway text-textblue mb-6">
+        <h2 className="text-3xl sm:text-4xl font-bold font-raleway text-textblue mb-6 pb-8">
           Featured <span className="text-textorange">Projects</span>
         </h2>
         <div className="flex flex-col lg:flex-row gap-3 lg:gap-4">
@@ -69,33 +90,49 @@ export default function FeaturedProjects() {
               </p>
             </div>
 
-            <a
-              href="#"
-              className="group text-textorange font-raleway text-[28px] font-normal flex items-center transition-all duration-300"
-            >
-              <span className="text-textorange">Explore</span>
-              <span className="text-textblue ml-1">All</span>
-              <Image
-                src="/arrow.svg"
-                alt="arrow"
-                width={27}
-                height={27}
-                className="group-hover:hidden"
-              />
-              <Image
-                src="/send.svg"
-                alt="arrow"
-                width={27}
-                height={27}
-                className="hidden group-hover:block"
-              />
-            </a>
+             <div className="w-full flex justify-center items-center mt-15 ">
+        <Link
+          href='/products'
+          className="group transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway"
+          onMouseEnter={() => setIsExploreAllHovered(true)} // Set state on hover
+          onMouseLeave={() => setIsExploreAllHovered(false)} // Reset state on mouse leave
+        >
+          <span
+            className="transition-colors duration-300" // Keep transition for smoothness
+            style={{
+              // If hovered, 'Explore' becomes --textblue, else --textorange
+              color: isExploreAllHovered ? 'var(--textblue)' : 'var(--textorange)'
+            } as React.CSSProperties}
+          >
+            Explore
+          </span>
+          <span
+            className="transition-colors duration-300" // Keep transition for smoothness
+            style={{
+              // If hovered, 'All' becomes --textorange, else --textblue
+              color: isExploreAllHovered ? 'var(--textorange)' : 'var(--textblue)'
+            } as React.CSSProperties}
+          >
+            All
+          </span>
+          <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
+          <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
+        </Link>
+      </div>
           </div>
 
           {/* Project Cards */}
           <div className="lg:w-4/5">
-            <div className="relative overflow-hidden w-full">
-              <div className="flex gap-6 py-2 w-max animate-scroll-infinite">
+            <div
+              className="relative overflow-hidden w-full"
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+            >
+              <div
+                className="flex gap-6 py-2 w-max animate-scroll-infinite"
+                style={{ animationPlayState: isHovering ? 'paused' : 'running' }}
+              >
+                {/* Repeat projects twice for seamless effect */}
                 {[...projects, ...projects].map((project, idx) => (
                   <ProjectCard key={`${project.id}-${idx}`} project={project} />
                 ))}

@@ -5,7 +5,7 @@ import VideoSection from "@/components/VideoSection";
 const Page = () => {
   return (
     <div
-      className="min-h-screen pt-22 overflow-x-hidden"
+      className="w-full relative min-h-screen pt-22 overflow-hidden"
       style={{ backgroundColor: "var(--bgwhite)"
        }}
       
@@ -57,7 +57,7 @@ const Page = () => {
           <div className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28 xl:ml-20">
             <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
               <Image
-                className="w-full object-cover"
+                className="relative z-10 w-full object-cover"
                 src="/business/bridge-2.svg"
                 alt="Train on a coastal bridge"
                 fill={true}
@@ -100,6 +100,7 @@ const Page = () => {
       {/* Section 4: Resources Available */}
       <div className="max-w-[1440px] mx-auto bg-white h-auto">
         <Image className="absolute -ml-113 -mt-80 rotate-90" src="/named.svg" alt="" width={2000} height={1500} />
+        <Image className="absolute ml-72 mt-80 rotate-90" src="/named.svg" alt="" width={2500} height={1500} />
         <div className="flex lg:w-[90%] lg:flex-nowrap lg:justify-between xl:ml-34 justify-center xl:justify-between mx-auto max-w-[80%] flex-wrap-reverse mt-0  md:mt-8 xl:mt-16 pb-20">
           <div className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24">
             <h1 className="text-4xl sm:text-xl md:text-5xl font-bold text-[#193055] lg:mb-4 -mb-2 mt-4 lg:mt-0 font-monte text-center md:text-left leading-relaxed">
@@ -127,7 +128,7 @@ const Page = () => {
           </div>
           <div>
             <Image
-              className="mt-8 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
+              className="relative mt-8 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 z-10"
               src="/business/bridge-4.svg"
               alt="Side view of railway bridge"
               width={554}
@@ -140,10 +141,13 @@ const Page = () => {
 
       {/* Section 5: Capabilities & Geography */}
       <div className="bg-[#fff5ef] py-16 md:py-24">
-        <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12">
+        
+          <Image className="absolute ml-113 -mt-48 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
+          <Image className="absolute -ml-113 mt-136 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
           <div className="flex items-center justify-center">
+        <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12">
             <Image
-              className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
+              className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 z-50"
               src="/business/bridge-5.svg"
               alt="Train crossing a river on a bridge"
               width={496}
@@ -181,10 +185,9 @@ const Page = () => {
       </div>
 
       {/* Section 6: Video */}
-      <div className="">
-        <VideoSection bgColor="" />
+      <div className="bg-white">
+        <VideoSection bgColor="bg-white" />
       </div>
-    </div>
     </div>
   );
 };

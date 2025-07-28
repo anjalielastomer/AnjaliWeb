@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
       href: "",
       subItems: [
         { label: "Profile", href: "/about-us" },
-        { label: "Leadership", href: "/about-us/leadership" },
+        { label: "History", href: "/about-us/history" },
         { label: "Production Facilities", href: "/about-us/production-facilities" },
       ]
     },
@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex space-x-8 lg:space-x-12 text-xl lg:text-2xl font-normal relative">
+          <ul className="hidden lg:flex space-x-8 lg:space-x-12 text-xl lg:text-2xl font-normal relative">
             {navItems.map(({ label, href, subItems }) => (
               <li
                 key={label}
@@ -166,7 +166,7 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Hamburger */}
           <button
-            className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
+            className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -187,7 +187,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Dropdown Menu */}
         <div
-          className={`md:hidden absolute top-full left-0 w-full transition-all duration-300 overflow-hidden backdrop-blur-lg ${isMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
+          className={`lg:hidden absolute top-full left-0 w-full transition-all duration-300 overflow-hidden backdrop-blur-lg ${isMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
           style={{
             backgroundColor: styles.backgroundColor,
             backdropFilter: 'blur(12px) saturate(120%)',

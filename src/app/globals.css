@@ -160,18 +160,20 @@
     opacity: 0.5;
   }
 }
-.bgline-wrapper::before {
-  content: "";
-  position: fixed; /* stays in place */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('/bgline.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1; /* stays behind everything */
-  opacity: 0.2; /* optional: tweak for visibility */
-  pointer-events: none; /* ensures clicks pass through */
+
+/* Infinite Scroll Animation for Project/Product Cards */
+@keyframes scroll-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* This value will be set dynamically via CSS variables from the component */
+    transform: translateX(var(--scroll-distance));
+  }
+}
+
+.animate-scroll-infinite {
+  /* Duration will be set dynamically via CSS variables from the component */
+  animation: scroll-infinite var(--scroll-duration, 25s) linear infinite;
+  /* animation-play-state will be controlled via inline style in the component */
 }
