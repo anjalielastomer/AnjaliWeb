@@ -104,7 +104,7 @@ const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS *
 
   if (error) {
     return (
-      <section className="max-w-[1440px] bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
+      <section className="max-w-full bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
         <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
           Featured <span className="text-textorange">Products</span>
         </h1>
@@ -209,8 +209,8 @@ const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS *
 
       <div className="w-full flex justify-center items-center mt-10">
         <button className="group text-textblue transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway">
-          <span className="text-textorange">Explore</span>
-          <span className="text-textblue"> All</span>
+          <span className="text-[var(--textorange)] group-hover:text-[var(--textblue)]">Explore</span>
+          <span className="text-[var(--textblue)] group-hover:text-[var(--textorange)]"> All</span>
           <Image
             src="/arrow.svg"
             alt="arrow"

@@ -147,7 +147,7 @@ const Page = () => {
           <div className="flex items-center justify-center">
         <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12">
             <Image
-              className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 z-50"
+              className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 z-1"
               src="/business/bridge-5.svg"
               alt="Train crossing a river on a bridge"
               width={496}

@@ -2,10 +2,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
-import { useFeaturedProjects } from '@/hooks/useProjects'; // Import the hook
-
-// Remove the hardcoded interface and data since we'll use the API
-// The Project interface from your types file will be used instead
+import { useFeaturedProjects } from '@/hooks/useProjects'; 
 
 export default function FeaturedProjects() {
   const [isHovering, setIsHovering] = useState(false);
@@ -139,7 +136,7 @@ export default function FeaturedProjects() {
                   }
                 }
                 .animate-scroll-infinite {
-                  animation: scroll-infinite 30s linear infinite;
+                  animation: scroll-infinite 7s linear infinite;
                 }
               `}</style>
             </div>
