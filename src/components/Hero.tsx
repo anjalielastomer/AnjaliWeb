@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
       <div
-        className="hidden md:absolute inset-0 z-0 pointer-events-none transition-opacity duration-500 ease-out"
+        className="hidden md:block absolute inset-0 z-0 pointer-events-none transition-opacity duration-500 ease-out"
         style={{
           opacity: isHovering ? 1 : 0,
           WebkitMaskImage: `radial-gradient(ellipse 100px 80px at ${mousePos.x}px ${mousePos.y}px, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.4) 80%, rgba(255,255,255,0) 100%)`,
