@@ -73,3 +73,43 @@ export interface StrapiProjectsResponse {
     };
   };
 }
+
+
+
+
+
+export interface StrapiProject {
+  id: number;
+  documentId: string;
+  title: string;
+  description: string;
+  subtext: string;
+  content: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  cover_images: StrapiImage[];
+}
+
+
+export interface StrapiFeaturedProject {
+  id: number;
+  documentId: string;
+  index: number;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  project: StrapiProject;
+}
+
+export interface StrapiFeaturedProjectsResponse {
+  data: StrapiFeaturedProject[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      pageCount: number;
+      total: number;
+    };
+  };
+}
