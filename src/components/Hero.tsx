@@ -87,7 +87,6 @@ const Hero: React.FC = () => {
   <span className="text-[var(--textblue)] group-hover:text-[var(--textorange)] transition-colors duration-300">
     more
   </span>
-
         <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
         <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
     </Link>
@@ -96,7 +95,7 @@ const Hero: React.FC = () => {
 </div>
       </div>
       {/* Hero ImageContent */}
-      <div className="md:absolute bottom-0  left-[50%] w-full flex justify-start overflow-hidden xl:w-[1000px] xl:h-[500px] z-10">
+      <div className="md:absolute bottom-0  left-[50%] w-full flex justify-start overflow-hidden  z-10">
         <Image
           src="/train.png"
           alt="Modern train"

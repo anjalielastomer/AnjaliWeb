@@ -116,7 +116,7 @@ const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS *
   const featuredProducts = data?.data ?? [];
 
   return (
-    <section className="max-w-[1440px] bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
+    <section className="max-w-full bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
       <h1 className="text-4xl pb-10 justify-center font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
         Featured <span className='text-textorange'>Products</span>
       </h1>
@@ -238,7 +238,7 @@ const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS *
           }
         }
         .animate-scroll-infinite {
-          animation: scroll-infinite 25s linear infinite;
+          animation: scroll-infinite 7s linear infinite;
           width: calc((320px + 24px) * ${featuredProducts.length * 3});
         }
       `}</style>
