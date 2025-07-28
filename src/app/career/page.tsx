@@ -116,7 +116,8 @@ const Page: React.FC = () => {
       };
 
       const submitRes = await fetch(
-        "https://lovable-gift-31985371d0.strapiapp.com/api/career-requests",
+        `${process.env
+          .NEXT_PUBLIC_API_URL}/career-requests`,
         {
           method: "POST",
           headers: {
@@ -124,7 +125,6 @@ const Page: React.FC = () => {
           },
           body: JSON.stringify(requestBody),
         }
-        
       );
         console.log(requestBody);
 

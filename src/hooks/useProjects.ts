@@ -5,6 +5,8 @@ import {
   StrapiProject,
   Project,
   StrapiImage,
+  StrapiFeaturedProjectsResponse,
+  StrapiFeaturedProject,
 } from "@/types/projects";
 
 interface UseProjectsParams {
@@ -18,6 +20,7 @@ interface UseProjectsOptions
     "queryKey" | "queryFn"
   > {}
 
+// Original projects hook
 export const useProjects = (
   params?: UseProjectsParams,
   options?: UseProjectsOptions
@@ -37,6 +40,7 @@ export const useProjects = (
   });
 };
 
+// Original single project hook
 export const useProject = (
   id: string,
   options?: Omit<
@@ -52,6 +56,36 @@ export const useProject = (
   });
 };
 
+// New featured projects hook
+interface UseFeaturedProjectsParams {
+  page?: number;
+  pageSize?: number;
+}
+
+export const useFeaturedProjects = (
+  params?: UseFeaturedProjectsParams,
+  options?: Omit<UseQueryOptions<Project[]>, "queryKey" | "queryFn">
+) => {
+  const queryKey = ["featured-projects", params];
+
+  return useQuery<Project[]>({
+    queryKey,
+    queryFn: async () => {
+      const response = await projectsService.getFeaturedProjects({
+        page: params?.page || 1,
+        pageSize: params?.pageSize || 25,
+      });
+
+      // Transform each featured project to Project structure
+      return response.data.map((featuredProject) =>
+        transformStrapiProject(featuredProject.project)
+      );
+    },
+    ...options,
+  });
+};
+
+// Original transform function
 export const transformStrapiProject = (
   strapiProject: StrapiProject
 ): Project => {
@@ -70,4 +104,17 @@ export const transformStrapiProject = (
     image2: getImageUrl(images[1]),
     createdAt: strapiProject.createdAt,
   };
+};
+
+// Additional transform functions for featured projects
+export const transformStrapiFeaturedProject = (
+  strapiFeaturedProject: StrapiFeaturedProject
+): Project => {
+  return transformStrapiProject(strapiFeaturedProject.project);
+};
+
+export const transformStrapiFeaturedProjects = (
+  response: StrapiFeaturedProjectsResponse
+): Project[] => {
+  return response.data.map(transformStrapiFeaturedProject);
 };
