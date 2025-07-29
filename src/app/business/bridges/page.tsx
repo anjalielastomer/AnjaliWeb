@@ -1,6 +1,8 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import VideoSection from "@/components/VideoSection";
+import Screen from "@/components/Screen";
 
 const Page = () => {
   return (
@@ -10,7 +12,7 @@ const Page = () => {
        }}
       
     >
-      <Image className="absolute ml-94" src="/named.svg" alt="" width={2000} height={1500} />
+      <Screen className="ml-113 mt-96 -rotate-7" />
       {/* Section 1: Hero */}
       <div className=" max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between lg:w-[100%] gap-8 lg:gap-12 mb-20 py-8 lg:py-16 ">
         {/* Text Content */}
@@ -52,7 +54,7 @@ const Page = () => {
 
       {/* Section 2: Turnkey Projects */}
       <div className="w-full z-4 bg-[#fff5ef] h-auto">
-        <Image className="absolute -ml-113 mt-38 z-1" src="/named.svg" alt="" width={2000} height={1500} />
+        <Screen className=""  />
         <div className=" max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40">
           <div className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28 xl:ml-20">
             <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
