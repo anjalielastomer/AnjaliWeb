@@ -1,36 +1,73 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState, useRef } from "react";
+import { motion, Variants } from "framer-motion";
+
+// Animation Variants
+const slideInFromLeft: Variants = {
+  hidden: { x: -100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const slideInFromRight: Variants = {
+  hidden: { x: 100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const popUp: Variants = {
+    hidden: { scale: 0.9, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+const containerVariants: Variants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.3 } }
+};
+
 
 const AboutSec1 = () => {
   return (
-    <div className="relative">
+    // Add overflow-hidden to the root container to prevent layout shifts from animations
+    <div className="relative overflow-hidden">
       {/* Sec1 */}
       <div className="flex flex-col justify-center md:flex-row bg-white pt-20 relative z-10 font-monte">
         <div className="max-w-[1440px] mx-auto px-10 flex flex-col md:flex-row items-center justify-between">
           {/* Left Side */}
           <div className="w-full md:w-1/2 p-4 flex flex-col">
-            <h1 className="text-4xl sm:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8 font-raleway">
+            <motion.h1
+                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={slideInFromLeft}
+                className="text-4xl sm:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8 font-raleway"
+            >
               Unified in <br />
               <span className="mt-4 text-textorange">Shaping</span> <br />
               Railway&apos;s <span className="mt-4 text-textorange">Future</span>
-            </h1>
+            </motion.h1>
 
-            <div className="md:mt-16 flex flex-col xl:flex-row gap-12 mb-12">
-              <StatItem
-                number={175}
-                unit="KMS TRACKS"
-                description="Our Projects include critical rail link connectivity projects and several metro projects. For linking mobility with daily lives."
-              />
-              <StatItem
-                number={60}
-                unit="BRIDGES"
-                description="Our Projects brought forward mobility and connectivity connecting lands surfaces, hilly terrains, water bodies and cities."
-              />
-            </div>
+            <motion.div
+                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={containerVariants}
+                className="md:mt-16 flex flex-col xl:flex-row gap-12 mb-12"
+            >
+              <motion.div variants={slideInFromLeft}><StatItem number={175} unit="KMS TRACKS" description="Our Projects include critical rail link connectivity projects and several metro projects. For linking mobility with daily lives."/></motion.div>
+              <motion.div variants={slideInFromLeft}><StatItem number={60} unit="BRIDGES" description="Our Projects brought forward mobility and connectivity connecting lands surfaces, hilly terrains, water bodies and cities."/></motion.div>
+            </motion.div>
 
             {/* 75 logo positioned to extend beyond section boundary */}
-            <div className="mt-auto -mb-16 flex justify-center relative z-50">
+            <motion.div
+                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.8 }} variants={popUp}
+                className="mt-auto -mb-16 flex justify-center relative z-50"
+            >
               <Image
                 src="/aboutus/75azadi.png"
                 alt="Azadi Ka Amrit Mahotsav logo"
@@ -38,21 +75,30 @@ const AboutSec1 = () => {
                 height={40}
                 className="object-contain"
               />
-            </div>
+            </motion.div>
           </div>
 
           <div className="w-fit p-4 flex flex-col justify-center relative">
             <div className="max-w-lg mx-auto pt-8 lg:pt-0">
-              <div className="flex items-center justify-center md:justify-start gap-2 mb-6 text-2xl md:text-4xl font-raleway">
-                <h2 className="text-[#152f5d] font-bold">About</h2>
-                <span className="text-textorange font-bold">Us</span>
-              </div>
+                <motion.div
+                    initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromLeft}
+                    className="flex items-center justify-center md:justify-start gap-2 mb-6 text-2xl md:text-4xl font-raleway"
+                >
+                    <h2 className="text-[#152f5d] font-bold">About</h2>
+                    <span className="text-textorange font-bold">Us</span>
+                </motion.div>
 
-              <p className="text-textblue text-lg leading-loose my-10 lg:my-20">
+              <motion.p
+                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromRight}
+                className="text-textblue text-lg leading-loose my-10 lg:my-20"
+              >
                 Over the previous 15 years, Anjali Elastomers, which was founded in 2009, has developed from a maker of rail components to a top supplier of entire railway infrastructure.
-              </p>
+              </motion.p>
 
-              <div className="mt-auto -mb-32 relative z-40">
+              <motion.div
+                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={popUp}
+                className="mt-auto -mb-32 relative z-40"
+              >
                 <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
                   <img
                     src="/aboutus/aboutimg2.png"
@@ -60,7 +106,7 @@ const AboutSec1 = () => {
                     className="object-cover w-full h-[400px] lg:h-[500px]"
                   />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -71,7 +117,10 @@ const AboutSec1 = () => {
         <div className="pt-40 max-w-[1440px] mx-auto">
           <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-10">
             {/* Image Section */}
-            <div className="flex-shrink-0 w-full lg:w-1/2 rounded-lg overflow-hidden bg-white shadow-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
+            <motion.div
+                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.4 }} variants={popUp}
+                className="flex-shrink-0 w-full lg:w-1/2 rounded-lg overflow-hidden bg-white shadow-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
+            >
               <Image
                 src="/aboutus/aboutimg1.png"
                 alt="Modern train in plant"
@@ -80,11 +129,13 @@ const AboutSec1 = () => {
                 className="object-cover w-full h-full"
                 priority
               />
-            </div>
+            </motion.div>
 
             {/* Text and Stats Section */}
-            <div className="flex flex-col justify-center space-y-12 lg:w-1/2 py-16">
-              {/* Company Description */}
+            <motion.div
+                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={slideInFromRight}
+                className="flex flex-col justify-center space-y-12 lg:w-1/2 py-16"
+            >
               <div className="space-y-6 text-base sm:text-lg leading-relaxed">
                 <p>
                   Our company has four manufacturing plants where it produces a variety of railroad track products. Our plants are found in the eastern portion of India, near Kolkata and Howrah.
@@ -96,23 +147,18 @@ const AboutSec1 = () => {
                   We provide turnkey bridge projects that include both superstructure and substructure work. We are one of the largest railway businesses, having built over 60 important bridges and more than 175 kilometres of metro and mainline track.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Stats Section */}
           <div className="max-w-1440px flex justify-end">
-            <div className="flex flex-col max-w-2xl ml-auto sm:flex-row justify-between pt-8 space-y-8 sm:space-y-0 sm:space-x-8 text-[#595959]">
-              <StatItem
-                number={15}
-                unit="YEARS OF EXPERIENCE"
-                description="Our extensive history in manufacturing world-class items fosters security and safety as the first priority towards our GMP."
-              />
-              <StatItem
-                number={4}
-                unit="MANUFACTURING PLANTS"
-                description="We operate across 4 plants in the India. Providing us the brand-width to accommodate bespoke and turn-key solutions."
-              />
-            </div>
+            <motion.div
+                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={containerVariants}
+                className="flex flex-col max-w-2xl ml-auto sm:flex-row justify-between pt-8 space-y-8 sm:space-y-0 sm:space-x-8 text-[#595959]"
+            >
+              <motion.div variants={slideInFromLeft}><StatItem number={15} unit="YEARS OF EXPERIENCE" description="Our extensive history in manufacturing world-class items fosters security and safety as the first priority towards our GMP."/></motion.div>
+              <motion.div variants={slideInFromLeft}><StatItem number={4} unit="MANUFACTURING PLANTS" description="We operate across 4 plants in the India. Providing us the brand-width to accommodate bespoke and turn-key solutions."/></motion.div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -157,25 +203,32 @@ function useCountUp(target: number, start: boolean, duration = 2000) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!start) return;
+    if (!start) {
+        setCount(0); // Reset count when not visible
+        return;
+    }
 
     let startTime: number | null = null;
+    let animationFrameId: number;
 
     const step = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = timestamp - startTime;
       const percentage = Math.min(progress / duration, 1);
-      setCount(Math.floor(percentage * target));
-      if (progress < duration) {
-        requestAnimationFrame(step);
-      } else {
-        setCount(target);
+      
+      if(start) {
+        setCount(Math.floor(percentage * target));
+        if (progress < duration) {
+          animationFrameId = requestAnimationFrame(step);
+        } else {
+          setCount(target);
+        }
       }
     };
 
-    requestAnimationFrame(step);
+    animationFrameId = requestAnimationFrame(step);
 
-    return () => cancelAnimationFrame(step as any);
+    return () => cancelAnimationFrame(animationFrameId);
   }, [target, duration, start]);
 
   return count;
@@ -184,17 +237,17 @@ function useOnScreen(ref: React.RefObject<Element | null>, rootMargin = "0px") {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
+    const element = ref.current;
     const observer = new IntersectionObserver(
       ([entry]) => setIntersecting(entry.isIntersecting),
       { rootMargin }
     );
-    if (ref.current) observer.observe(ref.current);
+    if (element) observer.observe(element);
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      if (element) observer.unobserve(element);
     };
   }, [ref, rootMargin]);
 
   return isIntersecting;
 }
-
