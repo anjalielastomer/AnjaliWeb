@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { QueryProvider } from "@/providers/query-provider";
+import AOSInit from '@/components/AOSInit'
 import { Toaster } from "sonner";
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -42,7 +43,10 @@ export default function RootLayout({
         <QueryProvider>
           <Toaster />
           <Navbar />
-          <main className="flex-grow">{children}</main>
+          <main className="flex-grow">
+            <AOSInit />
+            {children}
+          </main>
           <Footer />
         </QueryProvider>
       </body>
