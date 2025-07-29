@@ -160,7 +160,7 @@ const Page: React.FC = () => {
       <div className="w-full min-h-fit flex justify-center py-10 px-4">
         <div className="flex flex-col md:flex-row gap-10 max-w-7xl w-full">
           {/* Left Section */}
-          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+          <div data-aos="fade-right" className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
             <h1
               className="font-raleway font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
               style={{ color: "var(--textblue)" }}
@@ -203,7 +203,7 @@ const Page: React.FC = () => {
           </div>
 
           {/* Right Section */}
-          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-5">
+          <div data-aos="fade-left" className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-5">
             <span
               className="font-monte font-medium text-base sm:text-lg text-center md:text-left max-w-2xl"
               style={{ color: "var(--textblue)" }}
@@ -230,6 +230,7 @@ const Page: React.FC = () => {
         style={{ backgroundColor: "var(--bgcolour)" }}
       >
         <span
+          data-aos="fade-down-right"
           className="font-bold text-3xl md:text-4xl font-raleway text-center"
           style={{ color: "var(--textblue)" }}
         >
@@ -238,6 +239,7 @@ const Page: React.FC = () => {
         </span>
 
         <span
+          data-aos="fade-down-left"
           className="font-monte font-medium text-sm sm:text-base md:text-lg mt-3 max-w-4xl text-center"
           style={{ color: "var(--textblue)" }}
         >
@@ -249,10 +251,12 @@ const Page: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-7 mt-8 w-full max-w-6xl">
           {cardData.map((card: CardData, index: number) => (
             <div
+              data-aos="fade-left"
               key={index}
               className="w-full flex flex-col items-center text-center max-w-sm my-3 md:mx-7 mx-3"
             >
               <Image
+                data-aos="fade-left"
                 src={card.image}
                 alt={card.title}
                 width={80}
@@ -261,6 +265,7 @@ const Page: React.FC = () => {
                 loading="lazy"
               />
               <span
+                data-aos="fade-left"
                 className="font-bold text-lg"
                 style={{ color: "var(--textblue)" }}
               >
@@ -292,6 +297,7 @@ const Page: React.FC = () => {
             loading="lazy"
           />
           <Image
+            data-aos="fade-right"
             src="/career/manwoman.svg"
             alt="Career Opportunities"
             width={500}

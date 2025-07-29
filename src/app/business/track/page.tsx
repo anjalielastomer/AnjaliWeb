@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import VideoSection from '@/components/VideoSection';
-import { CardComponent } from '../bridges/page';
+import  CardComponent  from '@/components/CardComponent';
 import { motion, Variants } from 'framer-motion';
 
 // Animation Variants
