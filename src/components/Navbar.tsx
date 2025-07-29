@@ -114,7 +114,7 @@ const Navbar: React.FC = () => {
       }}
     >
       <div className="max-w-none 2xl:max-w-[1600px] mx-auto">
-        <div className="flex justify-between items-center px-4 md:px-10 py-4">
+        <div className="w-full flex justify-between items-center px-4 md:px-10 py-4">
           {/* Logo */}
           <Link
           href='/'

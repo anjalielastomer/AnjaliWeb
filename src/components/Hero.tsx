@@ -64,7 +64,10 @@ const Hero: React.FC = () => {
                 <span className="text-textblue">Roads</span>
               </span>
             </h1>
-            <div className="mt-10 pt-5 flex flex-col md:flex-row items-center w-full gap-4 md:gap-6">
+            <div
+              data-aos="fade-up-right"
+              className="mt-10 pt-5 flex flex-col md:flex-row items-center w-full gap-4 md:gap-6"
+            >
               <Link
                 href="/products"
                 className="min-w-[180px] h-[45px] xl:min-w-[280px] lg:min-w-[250px] lg:h-[65px] 

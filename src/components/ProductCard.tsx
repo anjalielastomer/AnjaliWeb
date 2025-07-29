@@ -73,10 +73,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <article
+      data-aos="zoom-in"
       className="rounded-2xl shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-shadow duration-300"
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
-      <div className="flex justify-center h-60 flex-col items-center relative">
+      <div
+        //data-aos="zoom-in"
+        className="flex justify-center h-60 flex-col items-center relative"
+      >
         <Image
           src={image}
           alt={name}

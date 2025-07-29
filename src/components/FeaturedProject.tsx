@@ -33,10 +33,10 @@ export default function FeaturedProjects() {
   const [isHovering, setIsHovering] = useState(false);
   const [isExploreAllHovered, setIsExploreAllHovered] = useState(false);
 
-  // Use the hook to fetch featured projects
   const { data: projects, isLoading, error } = useFeaturedProjects();
-
-  // Loading state
+  console.log("Project - ",projects);
+  
+  
   if (isLoading) {
     return (
       <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">

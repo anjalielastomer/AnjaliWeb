@@ -76,14 +76,21 @@ export const useFeaturedProjects = (
         pageSize: params?.pageSize || 25,
       });
 
-      // Transform each featured project to Project structure
-      return response.data.map((featuredProject) =>
+      console.log("Res - ", response);
+
+      // 🛠 Filter out entries with null project
+      const validProjects = response.data.filter(
+        (featuredProject) => featuredProject.project !== null
+      );
+
+      return validProjects.map((featuredProject) =>
         transformStrapiProject(featuredProject.project)
       );
     },
     ...options,
   });
 };
+
 
 // Original transform function
 export const transformStrapiProject = (
