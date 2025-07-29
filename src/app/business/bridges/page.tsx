@@ -1,6 +1,8 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import VideoSection from "@/components/VideoSection";
+import CardComponent from "@/components/CardComponent";
 
 const Page = () => {
   return (
@@ -10,7 +12,7 @@ const Page = () => {
        }}
       
     >
-      <Image className="absolute ml-94" src="/named.svg" alt="" width={2000} height={1500} />
+      
       {/* Section 1: Hero */}
       <div className=" max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between lg:w-[100%] gap-8 lg:gap-12 mb-20 py-8 lg:py-16 ">
         {/* Text Content */}
@@ -52,7 +54,7 @@ const Page = () => {
 
       {/* Section 2: Turnkey Projects */}
       <div className="w-full z-4 bg-[#fff5ef] h-auto">
-        <Image className="absolute -ml-113 mt-38 z-1" src="/named.svg" alt="" width={2000} height={1500} />
+        
         <div className=" max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40">
           <div className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28 xl:ml-20">
             <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
@@ -192,38 +194,7 @@ const Page = () => {
   );
 };
 
-export const CardComponent = ({ data }: { data: CardProps }) => {
-  return (
-    <div className="w-full z-15 max-w-sm md:max-w-xs lg:max-w-sm xl:max-w-md xl:min-h-md min-h-64 md:min-h-48 lg:min-h-56 border bg-white border-[#FB7602] p-6 md:p-8 lg:p-12 lg:-mt-6 mt-8 md:mt-0 rounded-lg flex flex-col hover:bg-[var(--bgcolour)] hover:shadow-md hover:shadow-[var(--bgcolour)] hover:border-0 transition-all duration-300">
-      <div className="w-full flex justify-center items-center mb-4 flex-shrink-0">
-        <div className="w-12 h-12 rounded-full bg-[#FF6A00] flex justify-center items-center">
-          <Image
-            src="/business/bridges-3.svg"
-            alt="Bridge Icon"
-            width={24}
-            height={24}
-            loading="lazy"
-          />
-        </div>
-      </div>
 
-      <div className="flex text-center flex-col text-textblue tracking-[2%] font-raleway text-lg mb-4 flex-shrink-0">
-        <div>
-          <span className="text-textorange font-bold">{data.text.text1}</span>{" "}
-          {data.text.text2}
-        </div>
-        <div>{data.text?.text3 ? data.text.text3 : <br />}</div>
-      </div>
-
-      <div className="flex justify-center items-center flex-1">
-        <div className="max-w-xs text-center font-montserrat text-textblue font-normal text-base">
-          Fabricated and constructed nearly 750,000 metric tons of steel
-          structures, demonstrating capability and dedication to quality.
-        </div>
-      </div>
-    </div>
-  );
-};
 
 interface TextEntry {
   text1: string;
@@ -259,7 +230,7 @@ const cardData: CardProps[] = [
     text: {
       text1: "60+",
       text2: "Major Bridges",
-      text3:""
+      text3: "",
     },
     description:
       "We have completed the building of more than 60 significant bridges, demonstrating our extensive expertise and engineering brilliance.",

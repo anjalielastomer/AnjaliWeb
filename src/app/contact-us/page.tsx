@@ -75,7 +75,7 @@ const page = () => {
         <div className="w-full flex justify-center">
           <div className="w-fit grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-20 ">
             {/* Card1 */}
-            <div className="w-[172px] md:w-[384px] ml-2 md:ml-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
+            <div data-aos="fade-left" className="w-[172px] md:w-[384px] ml-2 md:ml-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
               <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
                 <Image
                   src="/whitephone.svg"
@@ -96,7 +96,7 @@ const page = () => {
               </span>
             </div>
             {/* Card2 */}
-            <div className="w-[180px] md:w-[384px] px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
+            <div data-aos="fade-left" className="w-[180px] md:w-[384px] px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
               <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
                 <Image
                   src="/whiteemail.svg"
@@ -117,7 +117,7 @@ const page = () => {
               </span>
             </div>
             {/* Card3 */}
-            <div className="w-[200px] md:w-[384px] mx-28 md:mx-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
+            <div data-aos="fade-left" className="w-[200px] md:w-[384px] mx-28 md:mx-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
               <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
                 <Image
                   src="/whitemap.svg"
@@ -143,15 +143,16 @@ const page = () => {
 
       {/* Section 2 - Updated Form with API */}
       <div className="w-full flex flex-col items-center bg-bgcolour py-20">
-        <h2 className="text-textblue text-4xl font-raleway font-bold text-center mb-2">
+        <h2 data-aos="fade-up-left" className="text-textblue text-4xl font-raleway font-bold text-center mb-2">
           Send Us a <span className="text-textorange">Message</span>
         </h2>
-        <p className="text-textblue text-base font-monte text-center mb-10 max-w-xl">
+        <p data-aos="fade-up-right" className="text-textblue text-base font-monte text-center mb-10 max-w-xl">
           Have a project in mind? Need technical specifications? Our team of
           railroad materials experts is ready to assist you.
         </p>
 
         <form
+          data-aos="fade-up"
           onSubmit={handleSubmit}
           className="group bg-white rounded-xl shadow-lg hover:shadow-[0_0_10px_rgba(255,165,0,0.4)] transition-shadow duration-300 px-10 py-8 w-full max-w-2xl flex flex-col gap-6"
         >
@@ -275,13 +276,13 @@ const page = () => {
 
       {/* Section 3 */}
       <div className="w-full flex flex-col items-center py-20 pb-40 bg-white ">
-        <h2 className="text-3xl md:text-4xl font-raleway font-bold text-center text-textblue mb-2">
+        <h2 data-aos="fade-down-right" className="text-3xl md:text-4xl font-raleway font-bold text-center text-textblue mb-2">
           Visit Our <span className="text-textorange">Manufacturing</span> Units
         </h2>
-        <p className="text-textblue text-sm sm:text-base font-monte text-center mb-10 max-w-xl">
+        <p data-aos="fade-down-right" className="text-textblue text-sm sm:text-base font-monte text-center mb-10 max-w-xl">
           Our state-of-the-art manufacturing facility and headquarters
         </p>
-        <div className="relative w-full md:w-[700px] lg:w-[1216px] h-[400px] md:h-[500px] lg:h-[428px] rounded-xl overflow-hidden">
+        <div data-aos="fade-up-left" className="relative w-full md:w-[700px] lg:w-[1216px] h-[400px] md:h-[500px] lg:h-[428px] rounded-xl overflow-hidden">
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
               <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"></div>
@@ -299,16 +300,16 @@ const page = () => {
 
       {/* Section 4 */}
       <div className="w-full flex flex-col items-center bg-bgcolour py-20 px-4 sm:px-6">
-        <span className="text-textblue font-bold text-3xl sm:text-4xl font-raleway text-center">
+        <span data-aos="fade-down-right" className="text-textblue font-bold text-3xl sm:text-4xl font-raleway text-center">
           Department <span className="text-textorange">Contacts</span>
         </span>
-        <span className="text-textblue font-monte font-medium text-base sm:text-lg mt-5 mb-10 max-w-4xl text-center">
+        <span data-aos="fade-up-left" className="text-textblue font-monte font-medium text-base sm:text-lg mt-5 mb-10 max-w-4xl text-center">
           Reach out to the right department for faster assistance
         </span>
 
         <div className="w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-8 md:gap-20">
           {/* Card 1 */}
-          <div className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
+          <div data-aos="fade-left" className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
             <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
               <Image
                 src="/contactus/hand.svg"
@@ -330,7 +331,7 @@ const page = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
+          <div data-aos="fade-left" className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
             <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
               <Image
                 src="/contactus/headphone.svg"
@@ -352,7 +353,7 @@ const page = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
+          <div data-aos="fade-left" className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
             <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
               <Image
                 src="/contactus/truck.svg"
@@ -374,7 +375,7 @@ const page = () => {
           </div>
 
           {/* Card 4 */}
-          <div className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
+          <div data-aos="fade-left" className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
             <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
               <Image
                 src="/contactus/quality.svg"

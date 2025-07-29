@@ -1,51 +1,100 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState, useRef } from "react";
+import { motion, Variants } from "framer-motion";
+
+// Animation Variants
+const slideInFromLeft: Variants = {
+  hidden: { x: -100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const slideInFromRight: Variants = {
+  hidden: { x: 100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const popUp: Variants = {
+    hidden: { scale: 0.9, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+const containerVariants: Variants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.3 } }
+};
+
 
 const Production1 = () => {
     return (
-        <div className="relative font-monte">
+        <div className="relative font-monte overflow-hidden">
             {/* Sec1 */}
             <div className="flex flex-col justify-center lg:flex-row bg-white pt-20 relative z-10">
                 <div className="max-w-[1440px] px-10 mx-auto flex flex-col md:flex-row items-center justify-between">
                     {/* Left Side */}
                     <div className="w-full lg:w-1/2 p-4 px-6 sm:px-8 lg:px-2 flex flex-col">
+                        {/* This heading is now static */}
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8">
                             State-of-Art<br />
                             <span className="mt-4 text-textorange">Production</span> <br />
                             Facilities
                         </h1>
 
-                        <div className="mt-8 lg:mt-16 flex flex-col gap-8 lg:gap-12 mb-12">
+                        <motion.div
+                            initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={containerVariants}
+                            className="mt-8 lg:mt-16 flex flex-col gap-8 lg:gap-12 mb-12"
+                        >
                             <div className="flex flex-col xl:flex-row gap-8 sm:gap-12">
-                                <StatItem
-                                    number={175}
-                                    unit="KMS TRACKS"
-                                    description="Our Projects include critical rail link connectivity projects and several metro projects. For linking mobility with daily lives."
-                                />
-                                <StatItem
-                                    number={60}
-                                    unit="BRIDGES"
-                                    description="Our Projects brought forward mobility and connectivity connecting lands surfaces, hilly terrains, water bodies and cities."
-                                />
+                                <motion.div variants={slideInFromLeft}>
+                                    <StatItem
+                                        number={175}
+                                        unit="KMS TRACKS"
+                                        description="Our Projects include critical rail link connectivity projects and several metro projects. For linking mobility with daily lives."
+                                    />
+                                </motion.div>
+                                <motion.div variants={slideInFromLeft}>
+                                    <StatItem
+                                        number={60}
+                                        unit="BRIDGES"
+                                        description="Our Projects brought forward mobility and connectivity connecting lands surfaces, hilly terrains, water bodies and cities."
+                                    />
+                                </motion.div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
 
                     <div className="w-full lg:w-fit p-4 px-6 sm:px-8 lg:px-12 flex flex-col justify-center relative">
-                        <div className="max-w-lg mx-auto lg:mx-0">
-                            <div className="flex items-center justify-start gap-2 mb-6 font-raleway">
+                        <motion.div
+                            initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={containerVariants}
+                            className="max-w-lg mx-auto lg:mx-0"
+                        >
+                            <motion.div variants={slideInFromRight} className="flex items-center justify-start gap-2 mb-6 font-raleway">
                                 <h2 className="text-[#152f5d] font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Steel</h2>
                                 <span className="text-textorange font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Fabrication</span>
-                            </div>
+                            </motion.div>
 
-                            <p className='text-base sm:text-lg lg:text-[20px] font-[500] font-monte md:mt-10'>Precision Steel Fabrication, <span className='text-textorange'>Engineered</span> for Elastomer Excellence</p>
+                            <motion.p variants={slideInFromRight} className='text-base sm:text-lg lg:text-[20px] font-[500] font-monte md:mt-10'>Precision Steel Fabrication, <span className='text-textorange'>Engineered</span> for Elastomer Excellence</motion.p>
 
-                            <p className="text-textblue text-base sm:text-lg leading-loose my-8 lg:my-20">
+                            <motion.p variants={slideInFromRight} className="text-textblue text-base sm:text-lg leading-loose my-8 lg:my-20">
                                 At the heart of every high-performance elastomer product lies a backbone of precision-engineered steel. Our in-house steel fabrication facility ensures strength, consistency, and quality you can rely on — every time.
-                            </p>
+                            </motion.p>
 
-                            <div className="mt-auto relative z-40 lg:-mb-32">
+                            <motion.div
+                                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={popUp}
+                                className="mt-auto relative z-40 lg:-mb-32"
+                            >
                                 <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
                                     <img
                                         src="/aboutus/production-facilities/production1.jpg"
@@ -53,8 +102,8 @@ const Production1 = () => {
                                         className="object-cover w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[450px]"
                                     />
                                 </div>
-                            </div>
-                        </div>
+                            </motion.div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
@@ -63,15 +112,21 @@ const Production1 = () => {
             <div className="bg-[#FFF8F2] px-6 sm:px-12 lg:px-24 font-monte text-[#1A202C] flex flex-col justify-end py-20 relative z-5 lg:-mt-32">
                 <div className="lg:pt-40 flex flex-col gap-5 max-w-[1440px] mx-auto">
                     {/* Header Section */}
-                    <div className="mb-8">
+                    <motion.div
+                        initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromLeft}
+                        className="mb-8"
+                    >
                         <h2 className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px] max-w-[1440px] mx-auto font-raleway">
                             Turnout and <span className="text-textorange font-semibold">Track Devices</span>
                         </h2>
-                    </div>
+                    </motion.div>
 
                     <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-16">
                         {/* Left Image Section */}
-                        <div className="flex-shrink-0 w-full lg:w-1/2">
+                        <motion.div
+                            initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.4 }} variants={popUp}
+                            className="flex-shrink-0 w-full lg:w-1/2"
+                        >
                             <div className="rounded-lg overflow-hidden bg-white shadow-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
                                 <Image
                                     src="/aboutus/production-facilities/production2.jpg"
@@ -82,39 +137,47 @@ const Production1 = () => {
                                     priority
                                 />
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* Right Text Section */}
-                        <div className="flex flex-col justify-start lg:w-1/2 space-y-8">
-                            {/* Subtitle */}
-                            <div>
+                        <motion.div
+                            initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={containerVariants}
+                            className="flex flex-col justify-start lg:w-1/2 space-y-8"
+                        >
+                            <motion.div variants={slideInFromRight}>
                                 <h3 className='text-base sm:text-lg lg:text-[20px] font-[600] text-[#152f5d] mb-6'>
                                     Engineering Mobility with <span className='text-textorange'>Unmatched</span> Accuracy
                                 </h3>
-                            </div>
+                            </motion.div>
 
-                            {/* Description */}
-                            <div className="space-y-4 text-base sm:text-lg leading-relaxed text-textblue">
+                            <motion.div variants={slideInFromRight} className="space-y-4 text-base sm:text-lg leading-relaxed text-textblue">
                                 <p className="text-justify">
                                     Our specialized facility for Turnout and Track Device manufacturing delivers high-performance railway components that meet global standards. Backed by advanced CNC machining, in-house forging, and precision welding capabilities, we design and manufacture turnout systems that ensure smooth switching, minimal wear, and long-term reliability in dynamic rail environments.
                                 </p>
-                            </div>
-                        </div>
+                            </motion.div>
+                        </motion.div>
                     </div>
 
                     {/* Stats Section */}
-                    <div className="flex flex-col max-w-4xl ml-auto sm:flex-row items-center justify-between pt-8 space-y-8 sm:space-y-0 sm:space-x-8 text-[#595959]">
-                        <StatItem
-                            number={15}
-                            unit="YEARS OF EXPERIENCE"
-                            description="Our extensive history in manufacturing world-class items fosters security and safety as the first priority towards our GMP."
-                        />
-                        <StatItem
-                            number={4}
-                            unit="MANUFACTURING PLANTS"
-                            description="We operate across 4 plants in the India. Providing us the brand-width to accommodate bespoke and turn-key solutions."
-                        />
-                    </div>
+                    <motion.div
+                        initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={containerVariants}
+                        className="flex flex-col max-w-4xl ml-auto sm:flex-row items-center justify-between pt-8 space-y-8 sm:space-y-0 sm:space-x-8 text-[#595959]"
+                    >
+                        <motion.div variants={slideInFromLeft}>
+                            <StatItem
+                                number={15}
+                                unit="YEARS OF EXPERIENCE"
+                                description="Our extensive history in manufacturing world-class items fosters security and safety as the first priority towards our GMP."
+                            />
+                        </motion.div>
+                        <motion.div variants={slideInFromLeft}>
+                            <StatItem
+                                number={4}
+                                unit="MANUFACTURING PLANTS"
+                                description="We operate across 4 plants in the India. Providing us the brand-width to accommodate bespoke and turn-key solutions."
+                            />
+                        </motion.div>
+                    </motion.div>
                 </div>
             </div>
         </div>
@@ -158,25 +221,31 @@ function useCountUp(target: number, start: boolean, duration = 2000) {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-        if (!start) return;
+        if (!start) {
+            setCount(0);
+            return;
+        }
 
         let startTime: number | null = null;
+        let animationFrameId: number;
 
         const step = (timestamp: number) => {
             if (!startTime) startTime = timestamp;
             const progress = timestamp - startTime;
             const percentage = Math.min(progress / duration, 1);
-            setCount(Math.floor(percentage * target));
-            if (progress < duration) {
-                requestAnimationFrame(step);
-            } else {
-                setCount(target);
+            if(start) {
+                setCount(Math.floor(percentage * target));
+                if (progress < duration) {
+                    animationFrameId = requestAnimationFrame(step);
+                } else {
+                    setCount(target);
+                }
             }
         };
 
-        requestAnimationFrame(step);
+        animationFrameId = requestAnimationFrame(step);
 
-        return () => cancelAnimationFrame(step as any);
+        return () => cancelAnimationFrame(animationFrameId);
     }, [target, duration, start]);
 
     return count;
@@ -187,13 +256,14 @@ function useOnScreen(ref: React.RefObject<Element | null>, rootMargin = "0px") {
     const [isIntersecting, setIntersecting] = useState(false);
 
     useEffect(() => {
+        const element = ref.current;
         const observer = new IntersectionObserver(
             ([entry]) => setIntersecting(entry.isIntersecting),
             { rootMargin }
         );
-        if (ref.current) observer.observe(ref.current);
+        if (element) observer.observe(element);
         return () => {
-            if (ref.current) observer.unobserve(ref.current);
+            if (element) observer.unobserve(element);
         };
     }, [ref, rootMargin]);
 
