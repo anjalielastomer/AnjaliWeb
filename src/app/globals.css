@@ -10,9 +10,7 @@
 @import 'aos/dist/aos.css';
 
 
-html, body {
-  overflow-x: hidden;
-}
+
 
 @keyframes flicker {
   0%, 100% { opacity: 1; }

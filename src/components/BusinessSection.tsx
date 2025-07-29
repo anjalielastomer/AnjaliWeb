@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
+import India1 from "./India1";
 
 const tabs = [
   { id: "bridge", label: "Bridge Projects" },
@@ -76,12 +77,12 @@ export default function IndiaBusinessSection() {
             </button>
           ))}
         </nav>
-
-        <div className="flex flex-col lg:flex-row gap-12">
+        {/* // 8 rem  */}
+        <div className="flex flex-col lg:flex-row gap-[8rem]">
           {/* Left - India Map (Fixed) */}
           <div className="flex-shrink-0 flex justify-center items-center">
-            <div className="w-[320px] sm:w-[400px] lg:w-[480px]">
-              <Image
+            <div className="w-[300px] sm:w-[400px] lg:w-[480px]">
+              {/* <Image
                 src={
                   activeTab === "bridge"
                     ? "/map1.svg"
@@ -94,7 +95,8 @@ export default function IndiaBusinessSection() {
                 height={600}
                 className="object-contain"
                 priority
-              />
+              /> */}
+              <India1/>
             </div>
           </div>
 
@@ -196,7 +198,9 @@ function StatItem({
         </div>
       </div>
       <div className="border-l-2 border-gray-400 pl-4 flex-1">
-        <p className="text-xs font-medium text-textblue text-justify leading-7">{description}</p>
+        <p className="text-xs font-medium text-textblue text-justify leading-7">
+          {description}
+        </p>
       </div>
     </div>
   );
@@ -207,10 +211,10 @@ function useCountUp(target: number, start: boolean, duration = 1000) {
 
   useEffect(() => {
     if (!start) {
-        // When not visible, reset the count if you want it to start from 0 every time
-        setCount(0);
-        return;
-    };
+      // When not visible, reset the count if you want it to start from 0 every time
+      setCount(0);
+      return;
+    }
 
     let startTime: number | null = null;
     let animationFrameId: number;
@@ -219,8 +223,9 @@ function useCountUp(target: number, start: boolean, duration = 1000) {
       if (!startTime) startTime = timestamp;
       const progress = timestamp - startTime;
       const percentage = Math.min(progress / duration, 1);
-      
-      if(start) { // check if it should still be running
+
+      if (start) {
+        // check if it should still be running
         setCount(Math.floor(percentage * target));
         if (progress < duration) {
           animationFrameId = requestAnimationFrame(step);
@@ -233,7 +238,7 @@ function useCountUp(target: number, start: boolean, duration = 1000) {
     animationFrameId = requestAnimationFrame(step);
 
     return () => {
-        cancelAnimationFrame(animationFrameId)
+      cancelAnimationFrame(animationFrameId);
     };
   }, [target, duration, start]);
 
