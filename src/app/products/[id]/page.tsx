@@ -199,7 +199,10 @@ const SingleProductPage: React.FC = () => {
           {/* Product Images */}
           <div className="space-y-4">
             {/* Main Image */}
-            <div className="w-full aspect-square rounded-lg overflow-hidden border-2 border-gray-200">
+            <div
+              data-aos="fade-right"
+              className="w-full aspect-square rounded-lg overflow-hidden border-2 border-gray-200"
+            >
               <Image
                 src={product.images?.[selectedImageIndex] || product.image}
                 alt={product.name}
@@ -236,7 +239,7 @@ const SingleProductPage: React.FC = () => {
           </div>
 
           {/* Product Info */}
-          <div className="space-y-6">
+          <div data-aos="fade-left" className="space-y-6">
             <div>
               <h2
                 className="text-3xl font-bold mb-4"
