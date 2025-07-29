@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import { motion, Variants } from "framer-motion";
 
 const tabs = [
   { id: "bridge", label: "Bridge Projects" },
@@ -12,6 +13,25 @@ export default function IndiaBusinessSection() {
   const [activeTab, setActiveTab] = useState("bridge");
   const tabIndexRef = useRef(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Animation variants
+  const slideInFromLeft: Variants = {
+    hidden: { x: -100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const fadeInScale: Variants = {
+    hidden: { scale: 0.9, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
 
   // Automatically cycle through tabs
   const changeTabAutomatically = () => {
@@ -41,14 +61,15 @@ export default function IndiaBusinessSection() {
     <section className="w-full min-h-fit py-20 flex justify-center items-center bg-white font-monte">
       <div className="w-full max-w-7xl flex flex-col mx-auto">
         <nav className="flex gap-4 mb-12 px-5 md:px-0 font-raleway font-normal">
-          {tabs.map((tab) => (
+          {tabs.map((tab, index) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => handleManualTabChange(tab.id, index)}
               className={`w-[100px] h-[30px] sm:w-[130px] sm:h-[30px] lg:w-[161px] lg:h-[42px] rounded-2xl text-xs md:text-sm lg:text-lg transition-colors duration-300
-                ${activeTab === tab.id
-                  ? "bg-textorange text-white"
-                  : "border border-[var(--textorange)] text-textorange hover:bg-orange-50"
+                ${
+                  activeTab === tab.id
+                    ? "bg-textorange text-white"
+                    : "border border-[var(--textorange)] text-textorange hover:bg-orange-50"
                 }`}
             >
               {tab.label}
@@ -57,7 +78,7 @@ export default function IndiaBusinessSection() {
         </nav>
 
         <div className="flex flex-col lg:flex-row gap-12">
-          {/* Left - India Map */}
+          {/* Left - India Map (Fixed) */}
           <div className="flex-shrink-0 flex justify-center items-center">
             <div className="w-[320px] sm:w-[400px] lg:w-[480px]">
               <Image
@@ -77,26 +98,45 @@ export default function IndiaBusinessSection() {
             </div>
           </div>
 
-          {/* Right - Content */}
+          {/* Right - Content (Animated) */}
           <div className="flex flex-col px-5 md:px-0 justify-start flex-1">
-            <h2 className="text-3xl font-semibold font-raleway text-textblue mb-3">
-              <span>Busin</span>
-              <span className="text-textorange">ess</span>
-            </h2>
-            <h3 className="text-[28px] font-monte font-medium text-textblue mb-6">
-              Building Pan-India Presence
-            </h3>
-            <p className="text-sm font-medium text-textblue max-w-3xl mb-12 leading-relaxed lg:leading-[38px]">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.5 }}
+              variants={slideInFromLeft}
+            >
+              <h2 className="text-3xl font-semibold font-raleway text-textblue mb-3">
+                <span>Busin</span>
+                <span className="text-textorange">ess</span>
+              </h2>
+              <h3 className="text-[28px] font-monte font-medium text-textblue mb-6">
+                Building Pan-India Presence
+              </h3>
+            </motion.div>
+            <motion.p
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+              variants={slideInFromLeft}
+              className="text-sm font-medium text-textblue max-w-3xl mb-12 leading-relaxed lg:leading-[38px]"
+            >
               We here at Anjali Elastomers Ltd. believe in the power of
               innovation to change the way we interact, connect, and prosper.
               Since our beginnings, we have been at the vanguard of crafting the
               future of transportation infrastructure, motivated by a rent-free
               pursuit of excellence and a dedication to create value for all
               stakeholders.
-            </p>
+            </motion.p>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+              variants={fadeInScale}
+              className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl"
+            >
               <StatItem
                 number={175}
                 unit="KMS TRACKS"
@@ -117,7 +157,7 @@ export default function IndiaBusinessSection() {
                 unit="MANUFACTURING PLANTS"
                 description="We operate across 4 plants in the India. Providing us the brand-width to accommodate bespoke and turn-key solutions."
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -162,51 +202,60 @@ function StatItem({
   );
 }
 
-
 function useCountUp(target: number, start: boolean, duration = 1000) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!start) return;
+    if (!start) {
+        // When not visible, reset the count if you want it to start from 0 every time
+        setCount(0);
+        return;
+    };
 
     let startTime: number | null = null;
+    let animationFrameId: number;
 
     const step = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = timestamp - startTime;
       const percentage = Math.min(progress / duration, 1);
-      setCount(Math.floor(percentage * target));
-      if (progress < duration) {
-        requestAnimationFrame(step);
-      } else {
-        setCount(target);
+      
+      if(start) { // check if it should still be running
+        setCount(Math.floor(percentage * target));
+        if (progress < duration) {
+          animationFrameId = requestAnimationFrame(step);
+        } else {
+          setCount(target);
+        }
       }
     };
 
-    requestAnimationFrame(step);
+    animationFrameId = requestAnimationFrame(step);
 
-    return () => cancelAnimationFrame(step as any);
+    return () => {
+        cancelAnimationFrame(animationFrameId)
+    };
   }, [target, duration, start]);
 
   return count;
 }
 
-
 function useOnScreen(ref: React.RefObject<Element | null>, rootMargin = "0px") {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
+    const element = ref.current;
     const observer = new IntersectionObserver(
       ([entry]) => setIntersecting(entry.isIntersecting),
       { rootMargin }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      if (element) observer.unobserve(element);
     };
   }, [ref, rootMargin]);
 

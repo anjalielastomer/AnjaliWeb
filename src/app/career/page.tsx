@@ -160,7 +160,7 @@ const Page: React.FC = () => {
       <div className="w-full min-h-fit flex justify-center py-10 px-4">
         <div className="flex flex-col md:flex-row gap-10 max-w-7xl w-full">
           {/* Left Section */}
-          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+          <div data-aos="fade-right" className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
             <h1
               className="font-raleway font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
               style={{ color: "var(--textblue)" }}
@@ -203,7 +203,7 @@ const Page: React.FC = () => {
           </div>
 
           {/* Right Section */}
-          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-5">
+          <div data-aos="fade-left" className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-5">
             <span
               className="font-monte font-medium text-base sm:text-lg text-center md:text-left max-w-2xl"
               style={{ color: "var(--textblue)" }}
