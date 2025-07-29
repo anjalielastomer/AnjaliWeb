@@ -17,7 +17,7 @@ const Page = () => {
       <div className=" max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between lg:w-[100%] gap-8 lg:gap-12 mb-20 py-8 lg:py-16 ">
         {/* Text Content */}
         
-        <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left flex-1 max-w-2xl lg:max-w-4xl xl:-mt-30">
+        <div  data-aos="fade-right" className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left flex-1 max-w-2xl lg:max-w-4xl xl:-mt-30">
           <h1 className="font-raleway font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[85.5px] text-textblue leading-tight">
             <span className="text-textblue block">Bridges</span>
             <span className="text-textorange block">
@@ -39,7 +39,7 @@ const Page = () => {
           </p>
         </div>
         {/* Image Content */}
-        <div className=" w-full max-w-sm lg:max-w-md xl:max-w-lg">
+        <div  data-aos="fade-left" className=" w-full max-w-sm lg:max-w-md xl:max-w-lg">
           <div className="relative w-full aspect-[3/4] lg:aspect-[4/5] xl:mt-30 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
             <Image
               src="/business/bridges-1.svg"
@@ -59,6 +59,7 @@ const Page = () => {
           <div className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28 xl:ml-20">
             <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
               <Image
+                data-aos="zoom-in-up"
                 className="relative z-10 w-full object-cover"
                 src="/business/bridge-2.svg"
                 alt="Train on a coastal bridge"
@@ -67,7 +68,7 @@ const Page = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col justify-center px-4 md:px-10 order-1 lg:order-2 flex-1 xl:pl-40">
+          <div data-aos="fade-left" className="flex flex-col justify-center px-4 md:px-10 order-1 lg:order-2 flex-1 xl:pl-40">
             <h1 className="text-lg sm:text-xl md:text-4xl font-medium text-[#193055] mb-4 font-montserrat text-center md:text-left leading-relaxed tracking-normal">
               We are experts in providing{" "}
               <div className="flex gap-2 lg:block">
@@ -93,7 +94,7 @@ const Page = () => {
       </div>
 
       {/* Section 3: Icon Stats */}
-      <div className=" max-w-[1440px] z- bg-white mx-auto flex md:flex-row lg:flex lg:flex-row justify-center items-center lg:justify-around flex-col lg:mt-0 mt-8 gap-16 md:gap-4 lg:gap-16 px-10">
+      <div data-aos="zoom-in-up" className=" max-w-[1440px] z- bg-white mx-auto flex md:flex-row lg:flex lg:flex-row justify-center items-center lg:justify-around flex-col lg:mt-0 mt-8 gap-16 md:gap-4 lg:gap-16 px-10">
         {cardData.map((data, idx) => (
           <CardComponent key={idx} data={data} />
         ))}
@@ -101,10 +102,10 @@ const Page = () => {
 
       {/* Section 4: Resources Available */}
       <div className="max-w-[1440px] mx-auto bg-white h-auto">
-        <Image className="absolute -ml-113 -mt-80 rotate-90" src="/named.svg" alt="" width={2000} height={1500} />
-        <Image className="absolute ml-72 mt-80 rotate-90" src="/named.svg" alt="" width={2500} height={1500} />
+        {/* <Image className="absolute -ml-113 -mt-80 rotate-90" src="/named.svg" alt="" width={2000} height={1500} /> */}
+        {/* <Image className="absolute ml-72 mt-80 rotate-90" src="/named.svg" alt="" width={2500} height={1500} /> */}
         <div className="flex lg:w-[90%] lg:flex-nowrap lg:justify-between xl:ml-34 justify-center xl:justify-between mx-auto max-w-[80%] flex-wrap-reverse mt-0  md:mt-8 xl:mt-16 pb-20">
-          <div className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24">
+          <div data-aos="fade-left" className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24">
             <h1 className="text-4xl sm:text-xl md:text-5xl font-bold text-[#193055] lg:mb-4 -mb-2 mt-4 lg:mt-0 font-monte text-center md:text-left leading-relaxed">
               <span className="text-textorange font-bold">Resources</span>{" "}
               Available
@@ -130,6 +131,7 @@ const Page = () => {
           </div>
           <div>
             <Image
+              data-aos="zoom-in-up"
               className="relative mt-8 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 z-10"
               src="/business/bridge-4.svg"
               alt="Side view of railway bridge"
@@ -142,12 +144,12 @@ const Page = () => {
       </div>
 
       {/* Section 5: Capabilities & Geography */}
-      <div className="bg-[#fff5ef] py-16 md:py-24">
+      <div className="bg-[#fff5ef] py-16 md:py-24  ">
         
-          <Image className="absolute ml-113 -mt-48 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
-          <Image className="absolute -ml-113 mt-136 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
-          <div className="flex items-center justify-center">
-        <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12">
+          {/* <Image className="absolute ml-113 -mt-48 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
+          <Image className="absolute -ml-113 mt-136 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} /> */}
+          <div className="max-w-[1440px] mx-auto flex items-center justify-center">
+        <div data-aos="zoom-down-right" className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12">
             <Image
               className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 z-1"
               src="/business/bridge-5.svg"
@@ -157,7 +159,7 @@ const Page = () => {
               loading="lazy"
             />
           </div>
-          <div className="flex flex-col  justify-center px-4 md:px-6 md:w-[85%] lg:w-[60%] md:text-center xl:pl-42 lg:text-left lg:p-4">
+          <div data-aos="fade-left" className=" flex flex-col  justify-center px-4 md:px-6 md:w-[85%] lg:w-[60%] md:text-center xl:pl-42 lg:text-left lg:p-4">
             <h2 className="text-4xl md:text-7xl lg:text-xl xl:text-5xl font-bold text-[#193055] mb-6 font-raleway">
               Capabilities & <span className="text-textorange">Geography</span>
             </h2>

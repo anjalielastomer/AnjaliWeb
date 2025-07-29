@@ -42,8 +42,8 @@ const Page = () => {
     >
       {/* Header Section */}
       <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mb-16 md:mb-20">
-        <Image className="absolute ml-94 -mt-40 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
-        <div className="flex flex-col p-4 md:p-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20">
+        {/* <Image className="absolute ml-94 -mt-40 rotate-10" src="/named.svg" alt="" width={2000} height={1500} /> */}
+        <div data-aos="fade-left" className="flex flex-col p-4 md:p-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20">
           <h1 className="font-raleway font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[85.5px] text-textblue w-full text-center xl:text-left leading-tight">
             <span className="block">{content.title.main}</span>
             <span className="text-textorange block mt-2 md:mt-3 lg:mt-5">
@@ -65,6 +65,7 @@ const Page = () => {
 
         <div className="flex justify-center xl:justify-end mb-6 xl:mb-0">
           <Image
+            data-aos="zoom-in-up"
             className="relative z-10 w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
             src={content.images.train1}
             alt="Modern train"
@@ -77,12 +78,12 @@ const Page = () => {
       </div>
 
       {/* Offerings Section */}
-      <div className="bg-[#fff5ef] h-auto">
+      <div  className="bg-[#fff5ef] h-auto">
         <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between flex-wrap mt-0 xl:mt-[-168px] pb-16 md:pb-20">
-          <Image className="absolute -ml-140 -mt-43 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
+          {/* <Image className="absolute -ml-140 -mt-43 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
           <Image className="absolute -ml-113 mt-10 rotate-70" src="/named.svg" alt="" width={2000} height={1500} />
-          <Image className="absolute ml-118 mt-98 rotate-70" src="/named.svg" alt="" width={2000} height={1500} />
-          <div className="flex justify-center xl:justify-start mb-8 xl:mb-0">
+          <Image className="absolute ml-118 mt-98 rotate-70" src="/named.svg" alt="" width={2000} height={1500} /> */}
+          <div data-aos="fade-left" className="flex justify-center xl:justify-start mb-8 xl:mb-0">
             <Image
               className="relative z-10 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[496px] h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
               src={content.images.train2}
@@ -93,7 +94,7 @@ const Page = () => {
             />
           </div>
 
-          <div className="flex flex-col justify-center px-4 md:px-6 xl:px-10 mt-0 xl:mt-16 lg:mt-24">
+          <div data-aos="zoom-in-up" className="flex flex-col justify-center px-4 md:px-6 xl:px-10 mt-0 xl:mt-16 lg:mt-24">
             <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-[#193055] mb-6 md:mb-8 font-monte text-center xl:text-left leading-relaxed">
               We are offering{" "}
               <span className="text-textorange font-bold">

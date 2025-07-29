@@ -31,12 +31,12 @@ const ArticlesPage: React.FC = () => {
     <div className="w-full min-h-fit bg-white justify-center font-monte flex flex-col md:flex-row gap-10 mt-20 px-7 md:px-14 pb-20">
       <div className="flex flex-col items-center md:items-start">
         {/* Header Section */}
-        <h1 className="text-3xl md:text-7xl font-bold text-textblue mb-2 leading-snug flex flex-row md:flex-col gap-5 font-raleway">
+        <h1 data-aos="fade-right" className="text-3xl md:text-7xl font-bold text-textblue mb-2 leading-snug flex flex-row md:flex-col gap-5 font-raleway">
           Our <span className="text-textorange">Articles</span>
         </h1>
 
         {/* Subscribe + Scrollable Articles Section */}
-        <div className="flex flex-col lg:flex-row gap-10 mt-6">
+        <div data-aos="zoom-in-up" className="flex flex-col lg:flex-row gap-10 mt-6">
           {/* Subscribe Box */}
           <div className="bg-[#FFF6EF] p-6 rounded-lg w-full lg:max-w-xs h-fit">
             <h3 className="font-semibold text-lg mb-2 text-[#2D3A4A]">
@@ -58,7 +58,7 @@ const ArticlesPage: React.FC = () => {
         </div>
 
         {/* Latest Insights */}
-        <div className="mt-16">
+        <div data-aos="zoom-in-up" className="mt-16">
           <h2 className="text-2xl font-bold text-textblue md:text-left text-center">
             Latest <span className="text-textorange">Insights</span>
           </h2>
@@ -69,7 +69,7 @@ const ArticlesPage: React.FC = () => {
       </div>
 
       {/* Scrollable Articles List */}
-      <div className="">
+      <div  data-aos="fade-left" className="">
         <div className="flex-1 max-h-[995px] overflow-y-auto pr-3 custom-scrollbar mt-5">
           <div className="flex flex-col gap-6">
             {articles.map((article: TransformedArticle) => (

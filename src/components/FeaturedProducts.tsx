@@ -93,7 +93,7 @@ const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS *
         </h1>
         <div className="relative overflow-hidden w-full">
           <div className="flex gap-6 py-2">
-            {[...Array(3)].map((_, index) => (
+            {[...Array(1)].map((_, index) => (
               <ProductSkeleton key={index} />
             ))}
           </div>
@@ -136,7 +136,7 @@ const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS *
           } as React.CSSProperties} // Type assertion needed for custom CSS variables
 
         >
-          {[...featuredProducts, ...featuredProducts, ...featuredProducts].map(
+          {[...featuredProducts].map(
             (item, index) => {
               const { product } = item;
               const productImage = product.images?.[0];
