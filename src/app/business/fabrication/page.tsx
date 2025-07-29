@@ -43,7 +43,6 @@ const Page = () => {
     >
       {/* Section 1: Hero */}
       <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 mb-20 py-8 lg:py-16">
-        <Image className="absolute ml-94" src="/named.svg" alt="" width={2000} height={1500} />
         {/* Text Content */}
         <motion.div
             initial="hidden"
@@ -90,7 +89,6 @@ const Page = () => {
       {/* Section 2: Turnkey Projects */}
       <div className="bg-[#fff5ef] h-auto">
         <div className="max-w-[1440px] mx-auto flex lg:flex-row flex-col-reverse items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40">
-          <Image className="absolute -ml-120 mt-137 z-1" src="/named.svg" alt="" width={2000} height={1500} />
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -140,8 +138,6 @@ const Page = () => {
       {/* Section 4: Resources Available */}
       <div className="max-w-[1440px] mx-auto bg-white h-auto">
         <div className="flex lg:w-[90%] lg:flex-nowrap lg:justify-between xl:ml-34 justify-center xl:justify-between mx-auto max-w-[80%] flex-wrap-reverse mt-0  md:mt-8 xl:mt-16 pb-20">
-          <Image className="absolute -ml-113 -mt-80 rotate-90" src="/named.svg" alt="" width={2000} height={1500} />
-          <Image className="absolute ml-113 mt-120 rotate-90" src="/named.svg" alt="" width={2000} height={1500} />
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -190,8 +186,6 @@ const Page = () => {
       {/* Section 5: Capabilities & Geography */}
       <div className="bg-[#fff5ef] py-16 md:py-24">
         <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12">
-          <Image className="absolute ml-113 -mt-108 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
-          <Image className="absolute -ml-113 mt-76 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
           <motion.div
             initial="hidden"
             whileInView="visible"
