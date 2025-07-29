@@ -74,7 +74,7 @@ const SingleProductPage: React.FC = () => {
   if (error || !product) {
     return (
       <div
-        className="min-h-screen pt-20 font-monte flex items-center justify-center"
+        className="min-h-screen pt-20 font-monte flex items-center justify-center "
         style={{ backgroundColor: "var(--bgwhite)" }}
       >
         <div className="text-center">

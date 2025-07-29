@@ -43,7 +43,7 @@ export default function RootLayout({
         <QueryProvider>
           <Toaster />
           <Navbar />
-          <main className="flex-grow">
+          <main className="flex-grow ">
             <AOSInit />
             {children}
           </main>
