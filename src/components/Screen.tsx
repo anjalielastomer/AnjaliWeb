@@ -1,6 +1,10 @@
 import React from "react";
-import BridgesMap from "./BridgesMap";
+import {BridgesMap} from "../components/BridgesMap";
 
+/**
+ * Page component generated from Phase design
+ * Screen
+ */
 export default function Screen(): React.JSX.Element {
   return (
     <>

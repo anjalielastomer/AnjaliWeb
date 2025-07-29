@@ -1,5 +1,5 @@
-import React, { useEffect, useCallback } from "react"
-import useAnimation from "../hooks/useAnimation"
+import React, { useEffect, useCallback } from "react";
+import useAnimation from "../hooks/useAnimation";
 import {
   iNASHover,
   iNBRHover,
@@ -13,113 +13,172 @@ import {
   iNORHover,
   iNUPHover,
   iNUTHover,
-  iNWBHover
-} from "../assets/tracks"
+  iNWBHover,
+} from "../assets/tracks";
 
-export type Props = {
-  onBridgesMapMouseEnter?: (e: React.UIEvent<Element>) => void,
-  onBridgesMapMouseLeave?: (e: React.UIEvent<Element>) => void
+// Type definitions and interfaces
+interface Dimensions {
+  width: number;
+  height: number;
 }
+
+interface BridgesMapProps {
+  onBridgesMapMouseEnter?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onBridgesMapMouseLeave?: (event: React.MouseEvent<HTMLDivElement>) => void;
+}
+
+interface AnimationAPI {
+  forward: () => void;
+  reverse: () => void;
+}
+
+interface MouseEventHandler {
+  (event: React.MouseEvent<SVGGElement>): void;
+}
+
+// Custom hook type definition
+type UseAnimationHook = (animationConfig: any) => AnimationAPI;
 
 /**
  * Component generated from Phase design
- * BridgesMap
+ * BridgesMap - Interactive map of India's states with hover animations
  */
-export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLeave }: Props) {
-  const apiINASHover = useAnimation(iNASHover)
-  const apiINBRHover = useAnimation(iNBRHover)
-  const apiINGJHover = useAnimation(iNGJHover)
-  const apiINHRHover = useAnimation(iNHRHover)
-  const apiINJHHover = useAnimation(iNJHHover)
-  const apiINMNHover = useAnimation(iNMNHover)
-  const apiINMPHover = useAnimation(iNMPHover)
-  const apiINMZHover = useAnimation(iNMZHover)
-  const apiINNLHover = useAnimation(iNNLHover)
-  const apiINORHover = useAnimation(iNORHover)
-  const apiINUPHover = useAnimation(iNUPHover)
-  const apiINUTHover = useAnimation(iNUTHover)
-  const apiINWBHover = useAnimation(iNWBHover)
+export const BridgesMap: React.FC<BridgesMapProps> = ({ 
+  onBridgesMapMouseEnter, 
+  onBridgesMapMouseLeave 
+}) => {
+  // Responsive style for the map container
+  const [dimensions, setDimensions] = React.useState<Dimensions>({ 
+    width: 587.86, 
+    height: 663.44 
+  });
 
-  const handleINASHover = useCallback((on: boolean) => {
-    if (on) apiINASHover.forward()
-    else apiINASHover.reverse()
-  }, [])
+  useEffect(() => {
+    const handleResize = (): void => {
+      if (window.innerWidth < 425) {
+        // 16px padding each side, keep aspect ratio
+        const width = window.innerWidth - 32;
+        const aspect = 663.44 / 587.86;
+        setDimensions({ width, height: width * aspect });
+      } else {
+        setDimensions({ width: 587.86, height: 663.44 });
+      }
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  const handleINBRHover = useCallback((on: boolean) => {
-    if (on) apiINBRHover.forward()
-    else apiINBRHover.reverse()
-  }, [])
+  // Animation hooks with proper typing
+  const apiINASHover: AnimationAPI = useAnimation(iNASHover);
+  const apiINBRHover: AnimationAPI = useAnimation(iNBRHover);
+  const apiINGJHover: AnimationAPI = useAnimation(iNGJHover);
+  const apiINHRHover: AnimationAPI = useAnimation(iNHRHover);
+  const apiINJHHover: AnimationAPI = useAnimation(iNJHHover);
+  const apiINMNHover: AnimationAPI = useAnimation(iNMNHover);
+  const apiINMPHover: AnimationAPI = useAnimation(iNMPHover);
+  const apiINMZHover: AnimationAPI = useAnimation(iNMZHover);
+  const apiINNLHover: AnimationAPI = useAnimation(iNNLHover);
+  const apiINORHover: AnimationAPI = useAnimation(iNORHover);
+  const apiINUPHover: AnimationAPI = useAnimation(iNUPHover);
+  const apiINUTHover: AnimationAPI = useAnimation(iNUTHover);
+  const apiINWBHover: AnimationAPI = useAnimation(iNWBHover);
 
-  const handleINGJHover = useCallback((on: boolean) => {
-    if (on) apiINGJHover.forward()
-    else apiINGJHover.reverse()
-  }, [])
+  // Hover handlers with proper typing
+  const handleINASHover = useCallback((on: boolean): void => {
+    if (on) apiINASHover.forward();
+    else apiINASHover.reverse();
+  }, [apiINASHover]);
 
-  const handleINHRHover = useCallback((on: boolean) => {
-    if (on) apiINHRHover.forward()
-    else apiINHRHover.reverse()
-  }, [])
+  const handleINBRHover = useCallback((on: boolean): void => {
+    if (on) apiINBRHover.forward();
+    else apiINBRHover.reverse();
+  }, [apiINBRHover]);
 
-  const handleINJHHover = useCallback((on: boolean) => {
-    if (on) apiINJHHover.forward()
-    else apiINJHHover.reverse()
-  }, [])
+  const handleINGJHover = useCallback((on: boolean): void => {
+    if (on) apiINGJHover.forward();
+    else apiINGJHover.reverse();
+  }, [apiINGJHover]);
 
-  const handleINMNHover = useCallback((on: boolean) => {
-    if (on) apiINMNHover.forward()
-    else apiINMNHover.reverse()
-  }, [])
+  const handleINHRHover = useCallback((on: boolean): void => {
+    if (on) apiINHRHover.forward();
+    else apiINHRHover.reverse();
+  }, [apiINHRHover]);
 
-  const handleINMPHover = useCallback((on: boolean) => {
-    if (on) apiINMPHover.forward()
-    else apiINMPHover.reverse()
-  }, [])
+  const handleINJHHover = useCallback((on: boolean): void => {
+    if (on) apiINJHHover.forward();
+    else apiINJHHover.reverse();
+  }, [apiINJHHover]);
 
-  const handleINMZHover = useCallback((on: boolean) => {
-    if (on) apiINMZHover.forward()
-    else apiINMZHover.reverse()
-  }, [])
+  const handleINMNHover = useCallback((on: boolean): void => {
+    if (on) apiINMNHover.forward();
+    else apiINMNHover.reverse();
+  }, [apiINMNHover]);
 
-  const handleINNLHover = useCallback((on: boolean) => {
-    if (on) apiINNLHover.forward()
-    else apiINNLHover.reverse()
-  }, [])
+  const handleINMPHover = useCallback((on: boolean): void => {
+    if (on) apiINMPHover.forward();
+    else apiINMPHover.reverse();
+  }, [apiINMPHover]);
 
-  const handleINORHover = useCallback((on: boolean) => {
-    if (on) apiINORHover.forward()
-    else apiINORHover.reverse()
-  }, [])
+  const handleINMZHover = useCallback((on: boolean): void => {
+    if (on) apiINMZHover.forward();
+    else apiINMZHover.reverse();
+  }, [apiINMZHover]);
 
-  const handleINUPHover = useCallback((on: boolean) => {
-    if (on) apiINUPHover.forward()
-    else apiINUPHover.reverse()
-  }, [])
+  const handleINNLHover = useCallback((on: boolean): void => {
+    if (on) apiINNLHover.forward();
+    else apiINNLHover.reverse();
+  }, [apiINNLHover]);
 
-  const handleINUTHover = useCallback((on: boolean) => {
-    if (on) apiINUTHover.forward()
-    else apiINUTHover.reverse()
-  }, [])
+  const handleINORHover = useCallback((on: boolean): void => {
+    if (on) apiINORHover.forward();
+    else apiINORHover.reverse();
+  }, [apiINORHover]);
 
-  const handleINWBHover = useCallback((on: boolean) => {
-    if (on) apiINWBHover.forward()
-    else apiINWBHover.reverse()
-  }, [])
+  const handleINUPHover = useCallback((on: boolean): void => {
+    if (on) apiINUPHover.forward();
+    else apiINUPHover.reverse();
+  }, [apiINUPHover]);
+
+  const handleINUTHover = useCallback((on: boolean): void => {
+    if (on) apiINUTHover.forward();
+    else apiINUTHover.reverse();
+  }, [apiINUTHover]);
+
+  const handleINWBHover = useCallback((on: boolean): void => {
+    if (on) apiINWBHover.forward();
+    else apiINWBHover.reverse();
+  }, [apiINWBHover]);
+
+
 
   return (
-    <>
+    <div
+      style={{
+        width: dimensions.width,
+        height: dimensions.height,
+        maxWidth: "100%",
+        margin: "0 auto",
+        position: "relative",
+        boxSizing: "border-box",
+      }}
+    >
       {/* Phase element: Frame 92 -- start */}
       <div
         data-ph-id="el-46-ezB3"
-        onMouseEnter={(e: React.UIEvent<Element>) => {
-          onBridgesMapMouseEnter?.(e)
+        onMouseEnter={(e) => {
+          onBridgesMapMouseEnter?.(e);
         }}
-        onMouseLeave={(e: React.UIEvent<Element>) => {
-          onBridgesMapMouseLeave?.(e)
+        onMouseLeave={(e) => {
+          onBridgesMapMouseLeave?.(e);
         }}
-        className="pointer-events-auto cursor-pointer absolute left-0 top-0 will-change-transform origin-top-left w-[36.7845rem] h-[41.5019rem] opacity-100 rounded-none"
+        className="pointer-events-auto cursor-pointer absolute left-0 top-0 will-change-transform origin-top-left w-[587.8599853515625px] h-[663.4395751953125px] opacity-100 rounded-none"
         style={{
+          width: "100%",
+          height: "100%",
           transform:
-            "translate(292.21221923828125px, 331.97174072265625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(-293.92999267578125px, -331.71978759765625px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)"
+            "translate(292.21221923828125px, 331.97174072265625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(-293.92999267578125px, -331.71978759765625px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)",
         }}
       >
         <div className="pointer-events-none absolute inset-0 origin-top-left overflow-visible z-[1] rounded-none">
@@ -129,7 +188,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(483.26318359375px, 497.513671875px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(303.26318359375px, 307.513671875px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -146,7 +205,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -155,7 +214,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -170,7 +229,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(172.43603515625px, 408.55224609375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(172.43603515625px, 408.55224609375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -187,7 +246,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -196,7 +255,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -211,7 +270,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(469.77587890625px, 181.923828125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(469.77587890625px, 181.923828125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -228,7 +287,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -237,7 +296,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -252,15 +311,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(432.58154296875px, 215.82861328125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(432.58154296875px, 215.82861328125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g
-              onMouseEnter={(e: React.UIEvent<Element>) => {
-                handleINASHover(true)
+              onMouseEnter={(e) => {
+                handleINASHover(true);
               }}
-              onMouseLeave={(e: React.UIEvent<Element>) => {
-                handleINASHover(false)
+              onMouseLeave={(e) => {
+                handleINASHover(false);
               }}
               className="pointer-events-auto cursor-pointer"
             >
@@ -277,7 +336,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fb7602",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -286,7 +345,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -301,14 +360,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="pointer-events-none absolute left-0 top-0 w-[35px] h-[36px] will-change-transform origin-top-left opacity-100 rounded-none"
             style={{
               transform:
-                "translate(494.37109375px, 251.9921875px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)"
+                "translate(494.37109375px, 251.9921875px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)",
             }}
           >
             <div
               data-ph-layer-id="el-100-1NaE-fills-0"
               className="pointer-events-none absolute inset-0 bg-clip-padding opacity-0 bg-cover bg-center rounded-none"
               style={{
-                backgroundImage: "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)"
+                backgroundImage:
+                  "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)",
               }}
             />
           </div>
@@ -319,15 +379,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(304.33056640625px, 226.23486328125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(304.33056640625px, 226.23486328125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g
-              onMouseEnter={(e: React.UIEvent<Element>) => {
-                handleINBRHover(true)
+              onMouseEnter={(e) => {
+                handleINBRHover(true);
               }}
-              onMouseLeave={(e: React.UIEvent<Element>) => {
-                handleINBRHover(false)
+              onMouseLeave={(e) => {
+                handleINBRHover(false);
               }}
               className="pointer-events-auto cursor-pointer"
             >
@@ -344,7 +404,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fb7602",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -353,7 +413,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#fb7602",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -368,14 +428,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="pointer-events-none absolute left-0 top-0 w-[35px] h-[36px] will-change-transform origin-top-left opacity-100 rounded-none"
             style={{
               transform:
-                "translate(351.2177734375px, 264.748046875px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)"
+                "translate(351.2177734375px, 264.748046875px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)",
             }}
           >
             <div
               data-ph-layer-id="el-96-1NaE-fills-0"
               className="pointer-events-none absolute inset-0 bg-clip-padding opacity-0 bg-cover bg-center rounded-none"
               style={{
-                backgroundImage: "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)"
+                backgroundImage:
+                  "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)",
               }}
             />
           </div>
@@ -386,7 +447,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(171.0419921875px, 151.017578125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(171.0419921875px, 151.017578125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -403,7 +464,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -412,7 +473,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -427,7 +488,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(242.470703125px, 302.146484375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(242.470703125px, 302.146484375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -444,7 +505,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -453,7 +514,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -468,7 +529,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(50.028564453125px, 369.5224609375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(50.028564453125px, 369.5224609375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -485,7 +546,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -494,7 +555,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -509,7 +570,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(173.945556640625px, 195.1884765625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(173.945556640625px, 195.1884765625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -526,7 +587,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -535,7 +596,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -550,7 +611,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(95.29833984375px, 382.9736328125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(95.29833984375px, 382.9736328125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -567,7 +628,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -576,7 +637,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -591,7 +652,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(110.493896484375px, 478.9638671875px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(110.493896484375px, 478.9638671875px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -608,7 +669,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -617,7 +678,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -632,15 +693,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(0px, 288.86962890625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(0px, 288.86962890625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g
-              onMouseEnter={(e: React.UIEvent<Element>) => {
-                handleINGJHover(true)
+              onMouseEnter={(e) => {
+                handleINGJHover(true);
               }}
-              onMouseLeave={(e: React.UIEvent<Element>) => {
-                handleINGJHover(false)
+              onMouseLeave={(e) => {
+                handleINGJHover(false);
               }}
               className="pointer-events-auto cursor-pointer"
             >
@@ -657,7 +718,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fb7602",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -666,7 +727,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -681,14 +742,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="pointer-events-none absolute left-0 top-0 w-[35px] h-[36px] will-change-transform origin-top-left opacity-100 rounded-none"
             style={{
               transform:
-                "translate(70.2177734375px, 327.748046875px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)"
+                "translate(70.2177734375px, 327.748046875px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)",
             }}
           >
             <div
               data-ph-layer-id="el-93-1NaE-fills-0"
               className="pointer-events-none absolute inset-0 bg-clip-padding opacity-0 bg-cover bg-center rounded-none"
               style={{
-                backgroundImage: "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)"
+                backgroundImage:
+                  "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)",
               }}
             />
           </div>
@@ -699,7 +761,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(148.678955078125px, 93.0107421875px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(148.678955078125px, 93.0107421875px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -716,7 +778,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -725,7 +787,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -740,15 +802,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(126.284423828125px, 147.95556640625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(126.284423828125px, 147.95556640625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g
-              onMouseEnter={(e: React.UIEvent<Element>) => {
-                handleINHRHover(true)
+              onMouseEnter={(e) => {
+                handleINHRHover(true);
               }}
-              onMouseLeave={(e: React.UIEvent<Element>) => {
-                handleINHRHover(false)
+              onMouseLeave={(e) => {
+                handleINHRHover(false);
               }}
               className="pointer-events-auto cursor-pointer"
             >
@@ -765,7 +827,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fb7602",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -774,7 +836,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -789,14 +851,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="pointer-events-none absolute left-0 top-0 w-[35px] h-[36px] will-change-transform origin-top-left opacity-100 rounded-none"
             style={{
               transform:
-                "translate(161.935546875px, 188.49609375px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)"
+                "translate(161.935546875px, 188.49609375px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)",
             }}
           >
             <div
               data-ph-layer-id="el-94-1NaE-fills-0"
               className="pointer-events-none absolute inset-0 bg-clip-padding opacity-0 bg-cover bg-center rounded-none"
               style={{
-                backgroundImage: "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)"
+                backgroundImage:
+                  "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)",
               }}
             />
           </div>
@@ -807,15 +870,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(304.44482421875px, 274.6865234375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(304.44482421875px, 274.6865234375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g
-              onMouseEnter={(e: React.UIEvent<Element>) => {
-                handleINJHHover(true)
+              onMouseEnter={(e) => {
+                handleINJHHover(true);
               }}
-              onMouseLeave={(e: React.UIEvent<Element>) => {
-                handleINJHHover(false)
+              onMouseLeave={(e) => {
+                handleINJHHover(false);
               }}
               className="pointer-events-auto cursor-pointer"
             >
@@ -832,7 +895,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fb7602",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -841,7 +904,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -856,14 +919,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="pointer-events-none absolute left-0 top-0 w-[35px] h-[36px] will-change-transform origin-top-left opacity-100 rounded-none"
             style={{
               transform:
-                "translate(341.6533203125px, 310.244140625px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)"
+                "translate(341.6533203125px, 310.244140625px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)",
             }}
           >
             <div
               data-ph-layer-id="el-95-1NaE-fills-0"
               className="pointer-events-none absolute inset-0 bg-clip-padding opacity-0 bg-cover bg-center rounded-none"
               style={{
-                backgroundImage: "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)"
+                backgroundImage:
+                  "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)",
               }}
             />
           </div>
@@ -874,7 +938,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(89.096435546875px, 0px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(89.096435546875px, 0px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -891,7 +955,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -900,7 +964,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -915,7 +979,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(118.84033203125px, 423.3974609375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(118.84033203125px, 423.3974609375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -932,7 +996,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -941,7 +1005,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -956,7 +1020,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(134.365478515625px, 540.98974609375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(134.365478515625px, 540.98974609375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -973,7 +1037,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -982,7 +1046,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -997,7 +1061,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(78.78173828125px, 563.19970703125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(78.78173828125px, 563.19970703125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -1014,7 +1078,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1023,7 +1087,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1038,7 +1102,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(89.789306640625px, 347.24609375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(89.789306640625px, 347.24609375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -1055,7 +1119,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1064,7 +1128,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1079,7 +1143,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(435.13720703125px, 257.580078125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(435.13720703125px, 257.580078125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -1096,7 +1160,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1105,7 +1169,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1120,15 +1184,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(498.5859375px, 266.9443359375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(498.5859375px, 266.9443359375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g
-              onMouseEnter={(e: React.UIEvent<Element>) => {
-                handleINMNHover(true)
+              onMouseEnter={(e) => {
+                handleINMNHover(true);
               }}
-              onMouseLeave={(e: React.UIEvent<Element>) => {
-                handleINMNHover(false)
+              onMouseLeave={(e) => {
+                handleINMNHover(false);
               }}
               className="pointer-events-auto cursor-pointer"
             >
@@ -1145,7 +1209,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fb7602",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1154,7 +1218,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1169,14 +1233,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="pointer-events-none absolute left-0 top-0 w-[25.835111618041992px] h-[26.573257446289062px] will-change-transform origin-top-left opacity-100 rounded-none"
             style={{
               transform:
-                "translate(517.2157592773438px, 287.8993225097656px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-12.917555809020996px, -13.286628723144531px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)"
+                "translate(517.2157592773438px, 287.8993225097656px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-12.917555809020996px, -13.286628723144531px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)",
             }}
           >
             <div
               data-ph-layer-id="el-101-1NaE-fills-0"
               className="pointer-events-none absolute inset-0 bg-clip-padding opacity-0 bg-cover bg-center rounded-none"
               style={{
-                backgroundImage: "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)"
+                backgroundImage:
+                  "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)",
               }}
             />
           </div>
@@ -1187,15 +1252,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(117.6240234375px, 240.689453125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(117.6240234375px, 240.689453125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g
-              onMouseEnter={(e: React.UIEvent<Element>) => {
-                handleINMPHover(true)
+              onMouseEnter={(e) => {
+                handleINMPHover(true);
               }}
-              onMouseLeave={(e: React.UIEvent<Element>) => {
-                handleINMPHover(false)
+              onMouseLeave={(e) => {
+                handleINMPHover(false);
               }}
               className="pointer-events-auto cursor-pointer"
             >
@@ -1212,7 +1277,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fb7602",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1221,7 +1286,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1236,14 +1301,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="pointer-events-none absolute left-0 top-0 w-[35px] h-[36px] will-change-transform origin-top-left opacity-100 rounded-none"
             style={{
               transform:
-                "translate(200.711669921875px, 320.511474609375px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)"
+                "translate(200.711669921875px, 320.511474609375px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)",
             }}
           >
             <div
               data-ph-layer-id="el-92-1NaE-fills-0"
               className="pointer-events-none absolute inset-0 bg-clip-padding opacity-0 bg-cover bg-center rounded-none"
               style={{
-                backgroundImage: "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)"
+                backgroundImage:
+                  "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)",
               }}
             />
           </div>
@@ -1254,15 +1320,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(484.16552734375px, 292.9404296875px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(484.16552734375px, 292.9404296875px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g
-              onMouseEnter={(e: React.UIEvent<Element>) => {
-                handleINMZHover(true)
+              onMouseEnter={(e) => {
+                handleINMZHover(true);
               }}
-              onMouseLeave={(e: React.UIEvent<Element>) => {
-                handleINMZHover(false)
+              onMouseLeave={(e) => {
+                handleINMZHover(false);
               }}
               className="pointer-events-auto cursor-pointer"
             >
@@ -1279,7 +1345,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fb7602",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1288,7 +1354,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1303,14 +1369,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="pointer-events-none absolute left-0 top-0 w-[25.835111618041992px] h-[26.573257446289062px] will-change-transform origin-top-left opacity-100 rounded-none"
             style={{
               transform:
-                "translate(493.65130615234375px, 315.3954162597656px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-12.917555809020996px, -13.286628723144531px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)"
+                "translate(493.65130615234375px, 315.3954162597656px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-12.917555809020996px, -13.286628723144531px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)",
             }}
           >
             <div
               data-ph-layer-id="el-103-1NaE-fills-0"
-              className="pointer-events-none absolute inset-0 bg-clip-padding opacity-[0.4] bg-cover bg-center rounded-none"
+              className="pointer-events-none absolute inset-0 bg-clip-padding opacity-0 bg-cover bg-center rounded-none"
               style={{
-                backgroundImage: "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)"
+                backgroundImage:
+                  "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)",
               }}
             />
           </div>
@@ -1321,15 +1388,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(505.73291015625px, 236.90625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(505.73291015625px, 236.90625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g
-              onMouseEnter={(e: React.UIEvent<Element>) => {
-                handleINNLHover(true)
+              onMouseEnter={(e) => {
+                handleINNLHover(true);
               }}
-              onMouseLeave={(e: React.UIEvent<Element>) => {
-                handleINNLHover(false)
+              onMouseLeave={(e) => {
+                handleINNLHover(false);
               }}
               className="pointer-events-auto cursor-pointer"
             >
@@ -1346,7 +1413,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fb7602",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1355,7 +1422,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1370,14 +1437,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="pointer-events-none absolute left-0 top-0 w-[25.835111618041992px] h-[26.573257446289062px] will-change-transform origin-top-left opacity-100 rounded-none"
             style={{
               transform:
-                "translate(528.9335327148438px, 258.6473693847656px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-12.917555809020996px, -13.286628723144531px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)"
+                "translate(528.9335327148438px, 258.6473693847656px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-12.917555809020996px, -13.286628723144531px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)",
             }}
           >
             <div
               data-ph-layer-id="el-102-1NaE-fills-0"
               className="pointer-events-none absolute inset-0 bg-clip-padding opacity-0 bg-cover bg-center rounded-none"
               style={{
-                backgroundImage: "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)"
+                backgroundImage:
+                  "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)",
               }}
             />
           </div>
@@ -1388,15 +1456,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(265.45947265625px, 335.638671875px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(265.45947265625px, 335.638671875px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g
-              onMouseEnter={(e: React.UIEvent<Element>) => {
-                handleINORHover(true)
+              onMouseEnter={(e) => {
+                handleINORHover(true);
               }}
-              onMouseLeave={(e: React.UIEvent<Element>) => {
-                handleINORHover(false)
+              onMouseLeave={(e) => {
+                handleINORHover(false);
               }}
               className="pointer-events-auto cursor-pointer"
             >
@@ -1413,7 +1481,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fb7602",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1422,7 +1490,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1437,14 +1505,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="pointer-events-none absolute left-0 top-0 w-[35px] h-[36px] will-change-transform origin-top-left opacity-100 rounded-none"
             style={{
               transform:
-                "translate(327.2177734375px, 378.748046875px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)"
+                "translate(327.2177734375px, 378.748046875px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)",
             }}
           >
             <div
               data-ph-layer-id="el-98-1NaE-fills-0"
               className="pointer-events-none absolute inset-0 bg-clip-padding opacity-0 bg-cover bg-center rounded-none"
               style={{
-                backgroundImage: "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)"
+                backgroundImage:
+                  "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)",
               }}
             />
           </div>
@@ -1455,7 +1524,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(114.337158203125px, 109.2138671875px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(114.337158203125px, 109.2138671875px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -1472,7 +1541,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1481,7 +1550,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1496,7 +1565,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(230.44970703125px, 459.09375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(230.44970703125px, 459.09375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -1513,7 +1582,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1522,7 +1591,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1537,7 +1606,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(26.09375px, 165.0458984375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(26.09375px, 165.0458984375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -1554,7 +1623,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1563,7 +1632,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1578,7 +1647,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(398.8408203125px, 212.377197265625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(398.8408203125px, 212.377197265625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -1595,7 +1664,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1604,7 +1673,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1619,7 +1688,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(181.992919921875px, 392.45458984375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(181.992919921875px, 392.45458984375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -1636,7 +1705,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1645,7 +1714,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1660,7 +1729,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(161.693603515625px, 525.65673828125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(161.693603515625px, 525.65673828125px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -1677,7 +1746,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1686,7 +1755,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1701,7 +1770,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(462.0185546875px, 292.865234375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(462.0185546875px, 292.865234375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g className="pointer-events-none">
@@ -1718,7 +1787,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fff5ef",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1727,7 +1796,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1742,15 +1811,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(178.971435546875px, 160.043212890625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(178.971435546875px, 160.043212890625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g
-              onMouseEnter={(e: React.UIEvent<Element>) => {
-                handleINUPHover(true)
+              onMouseEnter={(e) => {
+                handleINUPHover(true);
               }}
-              onMouseLeave={(e: React.UIEvent<Element>) => {
-                handleINUPHover(false)
+              onMouseLeave={(e) => {
+                handleINUPHover(false);
               }}
               className="pointer-events-auto cursor-pointer"
             >
@@ -1767,7 +1836,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fb7602",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1776,7 +1845,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1791,14 +1860,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="pointer-events-none absolute left-0 top-0 w-[35px] h-[36px] will-change-transform origin-top-left opacity-100 rounded-none"
             style={{
               transform:
-                "translate(248.2177734375px, 238.748046875px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)"
+                "translate(248.2177734375px, 238.748046875px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)",
             }}
           >
             <div
               data-ph-layer-id="el-91-ezB3-fills-0"
               className="pointer-events-none absolute inset-0 bg-clip-padding opacity-0 bg-cover bg-center rounded-none"
               style={{
-                backgroundImage: "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)"
+                backgroundImage:
+                  "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)",
               }}
             />
           </div>
@@ -1809,15 +1879,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(188.587646484375px, 135.320556640625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(188.587646484375px, 135.320556640625px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g
-              onMouseEnter={(e: React.UIEvent<Element>) => {
-                handleINUTHover(true)
+              onMouseEnter={(e) => {
+                handleINUTHover(true);
               }}
-              onMouseLeave={(e: React.UIEvent<Element>) => {
-                handleINUTHover(false)
+              onMouseLeave={(e) => {
+                handleINUTHover(false);
               }}
               className="pointer-events-auto cursor-pointer"
             >
@@ -1834,7 +1904,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fb7602",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1843,7 +1913,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1858,14 +1928,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="pointer-events-none absolute left-0 top-0 w-[35px] h-[36px] will-change-transform origin-top-left opacity-100 rounded-none"
             style={{
               transform:
-                "translate(222.935546875px, 160.49609375px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)"
+                "translate(222.935546875px, 160.49609375px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)",
             }}
           >
             <div
               data-ph-layer-id="el-97-1NaE-fills-0"
               className="pointer-events-none absolute inset-0 bg-clip-padding opacity-0 bg-cover bg-center rounded-none"
               style={{
-                backgroundImage: "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)"
+                backgroundImage:
+                  "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)",
               }}
             />
           </div>
@@ -1876,15 +1947,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="overflow-visible pointer-events-none absolute left-0 top-0 will-change-transform origin-top-left opacity-100"
             style={{
               transform:
-                "translate(354.78564453125px, 232.9521484375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)"
+                "translate(354.78564453125px, 232.9521484375px) rotate(0deg) skew(0deg, 0deg) scale(1, 1) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px) translate(0px, 0px)",
             }}
           >
             <g
-              onMouseEnter={(e: React.UIEvent<Element>) => {
-                handleINWBHover(true)
+              onMouseEnter={(e) => {
+                handleINWBHover(true);
               }}
-              onMouseLeave={(e: React.UIEvent<Element>) => {
-                handleINWBHover(false)
+              onMouseLeave={(e) => {
+                handleINWBHover(false);
               }}
               className="pointer-events-auto cursor-pointer"
             >
@@ -1901,7 +1972,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="stroke-none"
                 style={{
                   fill: "#fb7602",
-                  fillOpacity: "1"
+                  fillOpacity: "1",
                 }}
               />
               <use
@@ -1910,7 +1981,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
                 className="fill-none stroke-[0.5]"
                 style={{
                   stroke: "#3f4c60",
-                  strokeOpacity: "1"
+                  strokeOpacity: "1",
                 }}
                 strokeDasharray="none"
                 strokeLinecap="butt"
@@ -1925,14 +1996,15 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
             className="pointer-events-none absolute left-0 top-0 w-[35px] h-[36px] will-change-transform origin-top-left opacity-100 rounded-none"
             style={{
               transform:
-                "translate(394.2177734375px, 322.49609375px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)"
+                "translate(394.2177734375px, 322.49609375px) rotate(0deg) skew(0deg, 0deg) scale(0.7540838718414307, 0.7540838718414307) translate(0px, 0px) translate(-17.5px, -18px) translate(-0.5px, -0.5px) translate(0.5px, 0.5px)",
             }}
           >
             <div
               data-ph-layer-id="el-99-1NaE-fills-0"
               className="pointer-events-none absolute inset-0 bg-clip-padding opacity-0 bg-cover bg-center rounded-none"
               style={{
-                backgroundImage: "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)"
+                backgroundImage:
+                  "url(/images/5fd45935-3c4b-432f-9f97-22ea30ab8942.png)",
               }}
             />
           </div>
@@ -1940,6 +2012,7 @@ export default function BridgesMap({ onBridgesMapMouseEnter, onBridgesMapMouseLe
         </div>
       </div>
       {/* Phase element: Frame 92 -- end */}
-    </>
-  )
+      {/* End responsive container */}
+    </div>
+  );
 }

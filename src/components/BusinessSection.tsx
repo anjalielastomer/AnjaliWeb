@@ -81,7 +81,7 @@ export default function IndiaBusinessSection() {
         <div className="flex flex-col lg:flex-row gap-[8rem]">
           {/* Left - India Map (Fixed) */}
           <div className="flex-shrink-0 flex justify-center items-center">
-            <div className="w-[300px] sm:w-[400px] lg:w-[480px]">
+            <div className="w-[320px] h-[300px] lg:h-auto sm:w-[400px] lg:w-[480px]">
               {/* <Image
                 src={
                   activeTab === "bridge"
