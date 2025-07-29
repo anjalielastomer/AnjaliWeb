@@ -1,4 +1,6 @@
+"use client";
 import Image from 'next/image';
+import { motion, Variants } from 'framer-motion';
 
 const logos = [
   '/aboutus/logo1.png',
@@ -31,16 +33,36 @@ const logos = [
   '/aboutus/logo14.png',
 ];
 
+// Animation Variant
+const slideInFromTop: Variants = {
+    hidden: { y: -50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+        ease: "easeInOut",
+      },
+    },
+  };
+
 const NotableClientele: React.FC = () => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-12 text-center overflow-hidden font-monte">
-      <h2 className="text-3xl font-semibold text-textblue mb-6 font-raleway">
-        Our Notable{' '}
-        <span className="text-textorange">Clientele</span>
-      </h2>
-      <p className="max-w-3xl mx-auto text-lg text-blue-900 mb-10 leading-relaxed">
-        Our clients in India include some of the country's most distinguished organisations. We are a significant exporter of track goods to Bangladesh and Sri Lanka Railways. Using high-quality materials, we offer professional and dependable services.
-      </p>
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={slideInFromTop}
+            viewport={{ once: false, amount: 0.5 }}
+        >
+            <h2 className="text-3xl font-semibold text-textblue mb-6 font-raleway">
+                Our Notable{' '}
+                <span className="text-textorange">Clientele</span>
+            </h2>
+            <p className="max-w-3xl mx-auto text-lg text-blue-900 mb-10 leading-relaxed">
+                Our clients in India include some of the country's most distinguished organisations. We are a significant exporter of track goods to Bangladesh and Sri Lanka Railways. Using high-quality materials, we offer professional and dependable services.
+            </p>
+        </motion.div>
 
       <div className="relative w-full overflow-hidden">
         <div className="flex gap-10 animate-slideX py-10">

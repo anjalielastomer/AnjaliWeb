@@ -2,12 +2,37 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
-import { useFeaturedProjects } from '@/hooks/useProjects'; 
+import { useFeaturedProjects } from '@/hooks/useProjects';
+import { motion, Variants } from 'framer-motion';
+
+// Define variants and the Heading component outside the main component
+const slideInFromLeft: Variants = {
+  hidden: { x: -100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const Heading = () => (
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    variants={slideInFromLeft}
+    viewport={{ once: false, amount: 0.5 }}
+  >
+    <h2 className="text-3xl sm:text-4xl font-bold font-raleway text-textblue mb-6 pb-8">
+      Featured <span className="text-textorange">Projects</span>
+    </h2>
+  </motion.div>
+);
+
 
 export default function FeaturedProjects() {
   const [isHovering, setIsHovering] = useState(false);
   const [isExploreAllHovered, setIsExploreAllHovered] = useState(false);
-  
+
   // Use the hook to fetch featured projects
   const { data: projects, isLoading, error } = useFeaturedProjects();
 
@@ -16,9 +41,7 @@ export default function FeaturedProjects() {
     return (
       <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold font-raleway text-textblue mb-6 pb-8">
-            Featured <span className="text-textorange">Projects</span>
-          </h2>
+          <Heading />
           <div className="flex justify-center items-center h-64">
             <div className="text-textblue">Loading projects...</div>
           </div>
@@ -32,9 +55,7 @@ export default function FeaturedProjects() {
     return (
       <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold font-raleway text-textblue mb-6 pb-8">
-            Featured <span className="text-textorange">Projects</span>
-          </h2>
+          <Heading />
           <div className="flex justify-center items-center h-64">
             <div className="text-red-500">Error loading projects</div>
           </div>
@@ -48,9 +69,7 @@ export default function FeaturedProjects() {
     return (
       <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold font-raleway text-textblue mb-6 pb-8">
-            Featured <span className="text-textorange">Projects</span>
-          </h2>
+          <Heading />
           <div className="flex justify-center items-center h-64">
             <div className="text-textblue">No featured projects available</div>
           </div>
@@ -62,12 +81,16 @@ export default function FeaturedProjects() {
   return (
     <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold font-raleway text-textblue mb-6 pb-8">
-          Featured <span className="text-textorange">Projects</span>
-        </h2>
+        <Heading />
         <div className="flex flex-col lg:flex-row gap-3 lg:gap-4">
-          {/* Left Text Box */}
-          <div className="lg:w-1/5 flex flex-col justify-between">
+          {/* Left Text Box (Animated) */}
+          <motion.div
+            className="lg:w-1/5 flex flex-col justify-between"
+            initial="hidden"
+            whileInView="visible"
+            variants={slideInFromLeft}
+            viewport={{ once: false, amount: 0.3 }}
+          >
             <div>
               <p className="text-[28px] font-medium text-textblue mb-8 leading-13">
                 Delivering <br />
@@ -81,7 +104,7 @@ export default function FeaturedProjects() {
 
             <div className="w-full flex justify-center items-center mt-15">
               <Link
-                href='/projects' // Changed from /products to /projects
+                href='/projects'
                 className="group transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway"
                 onMouseEnter={() => setIsExploreAllHovered(true)}
                 onMouseLeave={() => setIsExploreAllHovered(false)}
@@ -106,9 +129,9 @@ export default function FeaturedProjects() {
                 <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
               </Link>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Project Cards */}
+          {/* Project Cards (Unchanged) */}
           <div className="lg:w-4/5">
             <div
               className="relative overflow-hidden w-full"
@@ -119,13 +142,11 @@ export default function FeaturedProjects() {
                 className="flex gap-6 py-2 w-max animate-scroll-infinite"
                 style={{ animationPlayState: isHovering ? 'paused' : 'running' }}
               >
-                {/* Repeat projects twice for seamless effect */}
                 {[...projects, ...projects].map((project, idx) => (
                   <ProjectCard key={`${project.id}-${idx}`} project={project} index={idx % projects.length} />
                 ))}
               </div>
 
-              {/* Scroll animation */}
               <style jsx>{`
                 @keyframes scroll-infinite {
                   0% {
@@ -136,7 +157,7 @@ export default function FeaturedProjects() {
                   }
                 }
                 .animate-scroll-infinite {
-                  animation: scroll-infinite 7s linear infinite;
+                  animation: scroll-infinite 30s linear infinite;
                 }
               `}</style>
             </div>
@@ -147,13 +168,13 @@ export default function FeaturedProjects() {
   );
 }
 
-// Update ProjectCard to work with API data
-function ProjectCard({ project, index }: { 
+// ProjectCard component remains unchanged
+function ProjectCard({ project, index }: {
   project: {
     id: string;
     title: string;
     description: string;
-    subtext: string; // This is your "status" equivalent
+    subtext: string;
     content: string;
     image1: string;
     image2: string;
@@ -166,7 +187,7 @@ function ProjectCard({ project, index }: {
       <div className="relative w-full h-[365px] overflow-hidden rounded-[12px]">
         <div className="relative w-full h-full">
           <Image
-            src={project.image1 || '/placeholder.jpg'} // Fallback image
+            src={project.image1 || '/placeholder.jpg'}
             alt={project.title}
             fill
             className="object-cover transition-opacity duration-500 ease-in-out opacity-100 group-hover:opacity-0"
@@ -192,7 +213,7 @@ function ProjectCard({ project, index }: {
             {project.description}
           </p>
           <p className="flex justify-between text-textblue font-raleway text-[#193055] opacity-75 text-[13px] group-hover:text-white transition-colors duration-300">
-            {project.subtext} {/* Using subtext as status */}
+            {project.subtext}
             <Image
               src="/send.png"
               alt="send"
@@ -211,7 +232,7 @@ function ProjectCard({ project, index }: {
         </div>
 
         <div className="absolute bottom-31 right-4 bg-[var(--textorange)] text-white font-monte text-lg font-bold rounded-full w-12 h-12 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-white group-hover:text-[var(--textorange)] transition-all duration-300 z-20">
-          {`0${index + 1}`} {/* Using index + 1 for numbering */}
+          {`0${index + 1}`}
         </div>
       </div>
     </div>
