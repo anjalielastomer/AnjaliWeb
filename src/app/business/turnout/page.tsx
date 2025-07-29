@@ -118,7 +118,7 @@ const page: React.FC = () => {
       >
         <div className="flex flex-col xl:flex-row justify-center xl:justify-between mx-auto max-w-[95%] mb-16 md:mb-20">
           
-          <div className="flex flex-col p-4 md:p-6 gap-6 md:gap-8 xl:gap-15 xl:w-[55%] xl:pt-20 order-1">
+          <div data-aos="fade-right" className="flex flex-col p-4 md:p-6 gap-6 md:gap-8 xl:gap-15 xl:w-[55%] xl:pt-20 order-1">
             <h1 className="font-raleway font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[85.5px] text-textblue w-full text-center xl:text-left leading-tight">
               <span className="text-textblue block">
                 Turnout
@@ -145,6 +145,7 @@ const page: React.FC = () => {
             <div className="hidden xl:flex items-center justify-center">
               <div className="w-[388px] aspect-[4/3] flex flex-col justify-between items-center p-8 lg:p-10 border-2 border-[var(--textorange)] rounded-md bg-white hover:bg-[var(--bgcolour)] hover:border-[var(--bgcolour)] transition-colors duration-300">
                 <Image
+                  data-aos="zoom-in-up"
                   src="/rail-track.png"
                   alt="rail track logo"
                   height={50}
@@ -166,9 +167,10 @@ const page: React.FC = () => {
          
           <div className="flex flex-col items-center xl:items-end order-2 xl:order-2">
          
-            <div className="xl:hidden flex items-center justify-center mb-6 md:mb-8 w-full">
+            <div data-aos="zoom-in-up" className="xl:hidden flex items-center justify-center mb-6 md:mb-8 w-full">
               <div className="w-[85%] sm:w-[70%] md:w-[400px] aspect-[4/3] flex flex-col justify-between items-center p-4 sm:p-6 md:p-8 border-2 border-[var(--textorange)] rounded-md bg-white">
                 <Image
+                  
                   src="/rail-track.png"
                   alt="rail track logo"
                   height={50}
@@ -189,6 +191,7 @@ const page: React.FC = () => {
           
             <div className="flex justify-center xl:justify-end w-full xl:w-auto xl:mt-52 rounded-2xl overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
               <Image
+              data-aos="zoom-in-up"
                 className="w-[85%] sm:w-[75%] md:w-[400px] lg:w-[500px] xl:w-[554px] h-auto object-cover"
                 src="/business/turnout.svg"
                 alt="Modern train"
@@ -207,6 +210,7 @@ const page: React.FC = () => {
       
           <div className="flex justify-center w-full md:w-auto">
             <Image
+              data-aos="zoom-in-right"
               src="/tracks.png"
               alt="rail tracks"
               height={651}
@@ -218,7 +222,7 @@ const page: React.FC = () => {
 
        
           <div className="flex flex-col justify-between items-center gap-6 md:gap-8 lg:gap-10 md:pt-20 lg:pt-40 w-full md:w-auto">
-            <p className="max-w-[556px] w-[90%] sm:w-[80%] mx-auto md:mx-0 text-justify text-sm md:text-base lg:text-lg font-medium leading-relaxed">
+            <p data-aos="zoom-in-left" className="max-w-[556px] w-[90%] sm:w-[80%] mx-auto md:mx-0 text-justify text-sm md:text-base lg:text-lg font-medium leading-relaxed">
               Our sophisticated turnout manufacturing facilities in West Bengal
               are outfitted with advanced CNC Plano Milling machines (8-13
               meters) with five-axis controls from Siemens and Mitsubishi. As
@@ -229,8 +233,9 @@ const page: React.FC = () => {
 
             
             <div className="flex items-center justify-center w-full">
-              <div className="w-[85%] sm:w-[70%] md:w-[350px] lg:w-[388px] aspect-[4/3] flex flex-col justify-between items-center p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-[var(--textorange)] rounded-md bg-white hover:bg-[var(--bgcolour)] hover:border-[var(--bgcolour)] hover:shadow-xs hover:shadow-gray-200 transition-colors duration-300">
+              <div data-aos="zoom-in-up" className="w-[85%] sm:w-[70%] md:w-[350px] lg:w-[388px] aspect-[4/3] flex flex-col justify-between items-center p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-[var(--textorange)] rounded-md bg-white hover:bg-[var(--bgcolour)] hover:border-[var(--bgcolour)] hover:shadow-xs hover:shadow-gray-200 transition-colors duration-300">
                 <Image
+                  data-aos="zoom-in-up"
                   src="/cross-rail.png"
                   alt="rail track logo"
                   height={50}
@@ -256,12 +261,12 @@ const page: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
         
           <div className="space-y-6 order-2 lg:order-1">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium text-textblue pb-6 md:pb-10 text-center lg:text-left">
+            <h1 data-aos="fade-right" className="text-2xl md:text-3xl lg:text-4xl font-medium text-textblue pb-6 md:pb-10 text-center lg:text-left">
               Resources <span className="text-textorange">Available</span>
             </h1>
 
           
-            <div className="space-y-3 md:space-y-4">
+            <div data-aos="fade-right" className="space-y-3 md:space-y-4">
               {[
                 "CNC Plano Milling Machine",
                 "3000 T Hydraulic Forging Press",
@@ -281,8 +286,9 @@ const page: React.FC = () => {
 
             {/* Card */}
             <div className="flex items-center justify-center pt-6 md:pt-8">
-              <div className="w-[85%] sm:w-[70%] md:w-[350px] lg:w-[388px] aspect-[4/3] flex flex-col justify-between items-center p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-[var(--textorange)] rounded-md bg-white hover:bg-[var(--bgcolour)] hover:border-white transition-colors duration-300">
+              <div data-aos="zoom-in-up" className="w-[85%] sm:w-[70%] md:w-[350px] lg:w-[388px] aspect-[4/3] flex flex-col justify-between items-center p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-[var(--textorange)] rounded-md bg-white hover:bg-[var(--bgcolour)] hover:border-white transition-colors duration-300">
                 <Image
+                  data-aos="zoom-in-up"
                   src="/glued.png"
                   alt="rail track logo"
                   height={50}
@@ -307,6 +313,7 @@ const page: React.FC = () => {
             <div className="relative w-full">
               <div className="aspect-[554/721] w-full max-w-[400px] md:max-w-[500px] lg:max-w-[554px] mx-auto lg:mx-0">
                 <img
+                  data-aos="zoom-in-up"
                   src="/resources.png"
                   alt="Railway tunnel with tracks and industrial equipment"
                   className="w-full h-full object-cover rounded-lg hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
@@ -343,6 +350,7 @@ const page: React.FC = () => {
               <div className="relative w-full">
                 <div className="aspect-[496/574] w-full max-w-[400px] md:max-w-[450px] lg:max-w-[496px] mx-auto lg:mx-0">
                   <img
+                    data-aos="zoom-in-up"
                     src={currentContent.image}
                     alt={`${currentContent.title} - Railway infrastructure`}
                     className={`w-full h-full object-cover rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-opacity duration-300 ${
@@ -366,6 +374,7 @@ const page: React.FC = () => {
 
             {/* Content */}
             <div
+              data-aos="fade-right"
               className={`order-1 lg:order-2 space-y-4 md:space-y-6 transition-opacity duration-300 ${
                 isAnimating ? "opacity-0" : "opacity-100"
               }`}
