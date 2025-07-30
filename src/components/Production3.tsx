@@ -76,11 +76,11 @@ const Production3 = () => {
       </motion.p>
 
       <motion.div variants={itemVariants} className="flex flex-col gap-4">
-        <p className="text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed max-w-2xl">
+        <p className="text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed max-w-2xl text-justify">
           Our fully integrated manufacturing facility produces high-performance rail fastening systems and concrete sleepers, forming the structural core of reliable permanent way solutions. Designed for heavy-axle loads, high-speed trains, and complex operating environments, our products meet Indian and international railway standards.
         </p>
 
-        <p className="text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed max-w-2xl">
+        <p className="text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed max-w-2xl text-justify">
           From raw material to finished assembly, we combine advanced engineering, automated production lines, and strict quality control — ensuring every sleeper and fastening component exceeds expectations.
         </p>
       </motion.div>

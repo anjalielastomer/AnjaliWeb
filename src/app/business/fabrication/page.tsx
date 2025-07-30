@@ -62,7 +62,7 @@ const Page = () => {
             </span>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-sm md:text-base text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-montserrat font-medium tracking-normal">
+          <motion.p variants={itemVariants} className="text-sm md:text-lg text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-monte font-medium tracking-normal text-justify">
             We are India's foremost steel bridge fabricators, with cutting-edge facilities at our Howrah and Salap operations.  We have an annual capability to construct 50,000 tons of structural steel and can handle single parts up to 18 MT.  Our facilities extend over 20,000 square meters and have a total area of 89,000 square meters, complete with EOT cranes and modern machining machines.
           </motion.p>
         </motion.div>
@@ -94,7 +94,7 @@ const Page = () => {
             whileInView="visible"
             variants={popUp}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28 xl:ml-20"
+            className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28"
           >
             <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
               <Image
@@ -113,14 +113,14 @@ const Page = () => {
             viewport={{ once: false, amount: 0.2 }}
             className="flex flex-col justify-center px-4 md:px-10 order-1 lg:order-2 flex-1 xl:pl-40"
           >
-            <motion.p variants={itemVariants} className="text-lg sm:text-xl md:text-xl font-medium text-[#193055] mb-4 font-montserrat text-center md:text-left leading-relaxed tracking-normal">
+            <motion.p variants={itemVariants} className="text-lg sm:text-xl md:text-xl font-medium text-[#193055] mb-4 font-monte text-center md:text-justify leading-relaxed tracking-normal">
               We provide complete client satisfaction through our in-house physical and chemical structural steel fabrication testing facilities, as well as a dedicated Quality Control team. Key testing capabilities include:
             </motion.p>
 
             <motion.ul
               variants={itemVariants}
               role="list"
-              className=" list-disc list-inside space-y-2 text-textblue text-base sm:text-lg md:text-lg font-medium font-montserrat"
+              className=" list-disc list-inside space-y-2 text-textblue text-base sm:text-lg md:text-lg font-medium font-monte"
             >
               <li>Ultrasonic Testing Machine</li>
               <li>Radiography Equipment</li>
@@ -137,7 +137,7 @@ const Page = () => {
 
       {/* Section 4: Resources Available */}
       <div className="max-w-[1440px] mx-auto bg-white h-auto">
-        <div className="flex lg:w-[90%] lg:flex-nowrap lg:justify-between xl:ml-34 justify-center xl:justify-between mx-auto max-w-[80%] flex-wrap-reverse mt-0  md:mt-8 xl:mt-16 pb-20">
+        <div className="flex lg:flex-nowrap lg:justify-between justify-center xl:justify-between flex-wrap-reverse mt-0  md:mt-8 xl:mt-16 pb-20">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -212,7 +212,7 @@ const Page = () => {
             <motion.h2 variants={itemVariants} className="text-4xl md:text-7xl lg:text-xl xl:text-5xl font-bold text-[#193055] mb-6 font-raleway">
               Certifications & <span className="text-textorange">Quality</span>
             </motion.h2>
-            <motion.p variants={itemVariants} className="list-disc list-inside [&>li]:marker:text-textorange space-y-2 text-textblue text-base sm:text-xl md:text-xl lg:text-lg  font-medium font-monte">
+            <motion.p variants={itemVariants} className="list-disc list-inside [&>li]:marker:text-textorange space-y-2 text-textblue text-base sm:text-xl md:text-xl lg:text-lg  font-medium font-monte text-justify">
               We are an RDSO-approved, ISO 9001 recognized company with strong quality systems integrated into our manufacturing processes. Our certifications include ISO 9001: 14001 and 45001. Both in-process and final inspections are performed by professional quality engineers who follow Total Quality Management concepts.
             </motion.p>
           </motion.div>

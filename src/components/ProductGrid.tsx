@@ -78,7 +78,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
     <div className="flex-1 relative">
       {/* Scrollable Container */}
       <div
-        className="h-[calc(100vh-300px)] overflow-y-auto pr-4 mr-2"
+        className="h-[calc(100vh + 600px)] overflow-y-auto pr-4 mr-2"
         style={{
           scrollbarWidth: "inherit",
           scrollbarColor: "var(--textorange) #f3f4f6",

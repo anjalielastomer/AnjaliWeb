@@ -53,10 +53,10 @@ const Production2 = () => {
           Precision Engineering for <span className="text-[var(--textorange)]">Permanent</span> Way Solutions
         </motion.p>
 
-        <motion.p variants={itemVariants} className="text-textblue text-base sm:text-lg leading-loose mt-6">
+        <motion.p variants={itemVariants} className="text-textblue text-base sm:text-lg leading-loose mt-6 text-justify">
           Our advanced facility specializes in the manufacturing of rail fastening systems compatible with Pandrol-type technologies, ensuring high clamping force, electrical insulation, and long-term track stability. Designed for mainline, metro, and industrial rail applications, our systems integrate seamlessly with concrete and wooden sleepers, providing high fatigue resistance and minimal maintenance over life cycles.
         </motion.p>
-        <motion.p variants={itemVariants} className="text-textblue text-base sm:text-lg leading-loose mt-6">
+        <motion.p variants={itemVariants} className="text-textblue text-base sm:text-lg leading-loose mt-6 text-justify">
           We ensure every fastening component is made with precision metallurgy and tight tolerances — for consistent performance on every kilometer of track.
         </motion.p>
       </motion.div>

@@ -41,7 +41,7 @@ const ProjectPage: React.FC = () => {
   }
 
   return (
-    <div className="w-full min-h-screen px-10 mt-20">
+    <div className="max-w-[1440px] mx-auto w-full min-h-screen px-10 mt-20">
       <div className="text-sm flex justify-between text-blue-500">
         <button onClick={() => goToProject(-1)} className="hover:underline">
           &lt; Previous Article
