@@ -94,7 +94,7 @@ const Page = () => {
       </div>
 
       {/* Section 3: Icon Stats */}
-      <div data-aos="zoom-in-up" className=" max-w-[1440px] z- bg-white mx-auto flex md:flex-row lg:flex lg:flex-row justify-center items-center lg:justify-around flex-col lg:mt-0 mt-8 gap-16 md:gap-4 lg:gap-16 px-10">
+      <div data-aos="zoom-in-up" className=" max-w-[1440px] z- bg-white mx-auto flex flex-col 5xl:flex-row justify-center items-center lg:justify-around  lg:mt-0 mt-8 gap-16 md:gap-4 lg:gap-16 px-10">
         {cardData.map((data, idx) => (
           <CardComponent key={idx} data={data} />
         ))}
@@ -148,10 +148,10 @@ const Page = () => {
         
           {/* <Image className="absolute ml-113 -mt-48 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
           <Image className="absolute -ml-113 mt-136 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} /> */}
-          <div className="max-w-[1440px] mx-auto flex items-center justify-center">
+          <div className="max-w-[1440px] mx-auto flex lg:flex-row flex-col items-center justify-center">
         <div data-aos="zoom-down-right" className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12">
             <Image
-              className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 z-1"
+              className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 z-1 px-5 lg:px-0"
               src="/business/bridge-5.svg"
               alt="Train crossing a river on a bridge"
               width={496}
@@ -160,7 +160,7 @@ const Page = () => {
             />
           </div>
           <div data-aos="fade-left" className=" flex flex-col  justify-center px-4 md:px-6 md:w-[85%] lg:w-[60%] md:text-center xl:pl-42 lg:text-left lg:p-4">
-            <h2 className="text-4xl md:text-7xl lg:text-xl xl:text-5xl font-bold text-[#193055] mb-6 font-raleway">
+            <h2 className="text-4xl md:text-7xl lg:text-3xl xl:text-5xl font-bold text-[#193055] mb-6 font-raleway text-center lg:text-left pt-5 lg:pt-0">
               Capabilities & <span className="text-textorange">Geography</span>
             </h2>
             <p className="list-disc list-inside [&>li]:marker:text-textorange space-y-2 text-textblue text-base sm:text-xl md:text-xl lg:text-lg  font-medium font-monte">
