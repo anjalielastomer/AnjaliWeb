@@ -87,7 +87,7 @@ const Production1 = () => {
 
                             <motion.p variants={slideInFromRight} className='text-base sm:text-lg lg:text-[20px] font-[500] font-monte md:mt-10'>Precision Steel Fabrication, <span className='text-textorange'>Engineered</span> for Elastomer Excellence</motion.p>
 
-                            <motion.p variants={slideInFromRight} className="text-textblue text-base sm:text-lg leading-loose my-8 lg:my-20">
+                            <motion.p variants={slideInFromRight} className="text-textblue text-base sm:text-lg leading-loose my-8 lg:my-20 text-justify">
                                 At the heart of every high-performance elastomer product lies a backbone of precision-engineered steel. Our in-house steel fabrication facility ensures strength, consistency, and quality you can rely on — every time.
                             </motion.p>
 

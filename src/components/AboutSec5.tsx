@@ -61,7 +61,7 @@ export default function AboutSec5() {
             <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
           </Link>
         </motion.div>
-        <motion.div variants={itemVariants} className="space-y-4 text-slate-700 text-base md:text-lg leading-relaxed">
+        <motion.div variants={itemVariants} className="space-y-4 text-slate-700 text-base md:text-lg leading-relaxed text-justify">
           <p>
             The Chenab Rail Bridge, which spans the Chenab River at a
             spectacular elevation of 359 meters, is the world&apos;s tallest

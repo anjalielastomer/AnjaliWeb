@@ -181,7 +181,7 @@ const ProjectPage: React.FC = () => {
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
             transition={transition}
-            className="text-sm text-gray-700 leading-relaxed md:w-1/2"
+            className="text-sm text-gray-700 leading-relaxed md:w-1/2 text-justify"
           >
             {paragraphs[0] || project.description}
           </motion.p>
@@ -213,7 +213,7 @@ const ProjectPage: React.FC = () => {
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
             transition={transition}
-            className="text-sm text-gray-700 leading-relaxed md:w-1/2"
+            className="text-sm text-gray-700 leading-relaxed md:w-1/2 text-justify"
           >
             {paragraphs[1] || "Additional paragraph goes here."}
           </motion.p>
@@ -245,7 +245,7 @@ const ProjectPage: React.FC = () => {
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
             transition={transition}
-            className="text-sm text-gray-700 leading-relaxed md:w-1/2"
+            className="text-sm text-gray-700 leading-relaxed md:w-1/2 text-justify"
           >
             {paragraphs[2] || project.description}
           </motion.p>

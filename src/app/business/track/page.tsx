@@ -66,7 +66,7 @@ const Page = () => {
             </span>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-sm md:text-base text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-montserrat font-medium tracking-normal">
+          <motion.p variants={itemVariants} className="text-sm md:text-lg text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-montserrat font-medium tracking-normal text-justify">
             The permanent route is the foundation of railway infrastructure, and we specialize in railway track construction for a variety of projects. We specialize in ballasted and ballastless track construction, track renewals, gauge conversion, railway depots, sidings and yards, metro rail, and light rail projects. As one of India's fastest-growing ballastless track construction companies, we are now working on over 100 kilometers of mainline ballastless track.
           </motion.p>
         </motion.div>
@@ -123,13 +123,13 @@ const Page = () => {
             viewport={{ once: false, amount: 0.2 }}
             className="flex flex-col justify-center px-4 md:px-10 order-1 lg:order-2 flex-1"
           >
-            <motion.h1 variants={itemVariants} className="text-lg sm:text-xl md:text-4xl font-medium text-[#193055] mb-4 font-montserrat text-center md:text-left leading-relaxed tracking-normal">
+            <motion.h1 variants={itemVariants} className="font-monte text-lg sm:text-xl md:text-4xl font-medium text-[#193055] mb-4 font-montserrat text-center md:text-left leading-relaxed tracking-normal">
               We specialize in executing {" "} <span className='text-textorange'>Comprehension</span>
               <br />
               <span className='text-textorange'>Track Construction</span> capabilities:
             </motion.h1>
 
-            <motion.ul variants={itemVariants} className="list-disc list-inside space-y-2 text-textblue text-base sm:text-lg md:text-lg font-medium font-montserrat">
+            <motion.ul variants={itemVariants} className="list-disc list-inside space-y-2 text-textblue text-base sm:text-lg md:text-xl font-medium font-monte">
               <li>Ballasted and Ballastless track construction</li>
               <li>Track renewals and Gauge conversion</li>
               <li>Composite Bridges</li>
@@ -158,14 +158,14 @@ const Page = () => {
 
       {/* Section 4: Resources Available */}
       <div className="max-w-[1440px] mx-auto bg-white h-auto">
-        <div className="flex lg:w-[90%] lg:flex-nowrap lg:justify-between xl:ml-34 justify-center xl:justify-between mx-auto max-w-[80%] flex-wrap-reverse mt-0  md:mt-8 pb-20">
+        <div className="flex lg:flex-nowrap lg:justify-between justify-center xl:justify-between mx-auto flex-wrap-reverse mt-0 p-2 md:mt-8 pb-20">
 
           <motion.div
             initial="hidden"
             whileInView="visible"
             variants={containerVariants}
             viewport={{ once: false, amount: 0.2 }}
-            className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24"
+            className="flex flex-col justify-center px-4 mt-10 md:mt-16 lg:mt-24"
           >
             <motion.h1 variants={itemVariants} className="text-4xl sm:text-xl md:text-5xl font-bold text-[#193055] lg:mb-4 -mb-2 mt-4 lg:mt-0 font-monte text-center md:text-left leading-relaxed">
               <span className="text-textorange font-bold">Resources</span>{" "}
@@ -231,7 +231,7 @@ const Page = () => {
             <motion.h2 variants={itemVariants} className="text-4xl md:text-7xl lg:text-xl xl:text-5xl font-bold text-[#193055] mb-6 font-raleway">
               Track-Work & <span className='text-textorange'>Systems</span>
             </motion.h2>
-            <motion.p variants={itemVariants} className="lg:w-100 xl:w-120 text-sm md:text-base lg:text-sm xl:text-lg text-[#193055] leading-loose font-monte">
+            <motion.p variants={itemVariants} className="lg:w-100 xl:w-120 text-sm md:text-base lg:text-sm xl:text-lg text-[#193055] leading-loose font-monte text-justify">
               Our ability to manage large-scale, complicated projects across multiple geographic locations displays our dedication to quality and ability to deliver on difficult tasks.
               <br /><br />
               In addition, we execute mobile flash butt welding with four equipment capable of executing 30,000 welds each year. We want to make considerable contributions to railway station upgrading projects under the Indian Railway’s Amrit Bharat initiative, with a focus on putting Ballast-less track in platforms.

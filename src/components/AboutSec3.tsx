@@ -60,7 +60,7 @@ const AboutSec3 = () => {
           <span className="text-textorange font-semibold">International</span> importance
         </motion.p>
 
-        <motion.p variants={itemVariants} className="text-sm md:text-base text-[#142859] mb-12 leading-relaxed">
+        <motion.p variants={itemVariants} className="text-sm md:text-base text-[#142859] mb-12 leading-relaxed text-justify">
           Our engagement in these crucial projects demonstrates our ability to deliver complex, large-scale
           solutions with the greatest quality and reliability, cementing our reputation as a trusted industry leader.
         </motion.p>

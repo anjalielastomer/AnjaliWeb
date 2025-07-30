@@ -25,7 +25,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
   categories, 
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 9;
+  const productsPerPage = 10;
 
   
   const { data, isLoading, error, refetch } = useProducts({
@@ -105,7 +105,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
       </div>
 
       <div
-        className="h-[calc(100vh-300px)] overflow-y-auto pr-4 mr-2"
+        className="h-[calc(100vh+250px)] overflow-y-auto pr-4 mr-2"
         style={{
           scrollbarWidth: "inherit",
           scrollbarColor: "var(--textorange) #f3f4f6",
@@ -155,7 +155,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
       )}
 
      
-      <div className="text-center mt-2 text-lg text-textblue font-monte">
+      <div className="text-center mt-7 text-lg text-textblue font-monte">
         Showing {transformedProducts.length} of {totalProducts} products
         {selectedSegment !== "all" && (
           <span

@@ -107,7 +107,7 @@ const Hero: React.FC = () => {
           <div className="max-w-none 2xl:max-w-[1600px] mx-auto w-full px-4 md:px-10 lg:px-0">
             <motion.h1
               variants={textItemVariants}
-              className="font-raleway text-4xl md:text-[50px] lg:text-[70px] xl:text-[80px] 3xl:text-[91px] font-extrabold w-full text-center md:text-left -mt-32 "
+              className="font-raleway text-4xl md:text-[50px] lg:text-[70px] xl:text-[80px] 3xl:text-[91px] font-extrabold w-full text-center md:text-left -mt-0 xl:-mt-10   "
               style={{ color: '#003366' }} 
             >
               <span className="whitespace-nowrap text-nowrap">

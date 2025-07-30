@@ -227,7 +227,7 @@ const Page: React.FC = () => {
             className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-5"
           >
             <span
-              className="font-monte font-medium text-base sm:text-lg text-center md:text-left max-w-lg mb-7"
+              className="font-monte font-medium text-base sm:text-lg text-center md:text-justify max-w-lg mb-7"
               style={{ color: "var(--textblue)" }}
             >
               Join our team of innovators creating cutting-edge rail-road

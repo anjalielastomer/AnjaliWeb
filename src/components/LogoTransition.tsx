@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 const LogoTransition = ({ onComplete }: { onComplete: () => void }) => {
   const [showLogo, setShowLogo] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
-
+  const [islaptop, setIsLaptop] = useState(false);
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768); // Tailwind's md breakpoint
@@ -37,8 +37,8 @@ const LogoTransition = ({ onComplete }: { onComplete: () => void }) => {
       initial={{ scale: 1.5, x: 0, y: 0 }}
       animate={{
         scale: isMobile ? 0.6 : 0.4,
-        x: isMobile ? '-25vw' : '-42vw',
-        y: isMobile ? '-45vh' : '-46vh',
+        x: isMobile ? '-25vw' : '-30vw',
+        y: isMobile ? '-45vh' : '-47vh',
       }}
       transition={{ duration: 2, ease: 'easeInOut' }}
       className="text-xl md:text-6xl font-bold font-raleway"
