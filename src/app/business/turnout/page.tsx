@@ -142,7 +142,7 @@ const page: React.FC = () => {
             </p>
 
            
-            <div className="hidden xl:flex items-center justify-center">
+            <div className="hidden xl:flex items-center justify-start">
               <div className="w-[388px] aspect-[4/3] flex flex-col justify-between items-center p-8 lg:p-10 border-2 border-[var(--textorange)] rounded-md bg-white hover:bg-[var(--bgcolour)] hover:border-[var(--bgcolour)] transition-colors duration-300">
                 <Image
                   data-aos="zoom-in-up"
@@ -206,7 +206,7 @@ const page: React.FC = () => {
 
 
       <div className="w-full bg-bgcolour pt-20 md:pt-40 -mt-20 md:-mt-40">
-        <div className="max-w-7xl px-4 flex flex-col md:flex-row justify-between items-center mx-auto py-8 md:py-10 gap-8">
+        <div className="max-w-[1440px] px-4 flex flex-col md:flex-row justify-between items-center mx-auto py-8 md:py-10 gap-8">
       
           <div className="flex justify-center w-full md:w-auto">
             <Image

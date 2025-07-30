@@ -130,7 +130,7 @@ const Page = () => {
               </span>
             </span>
           </motion.h1>
-          <motion.p variants={itemVariants} className="text-sm md:text-base text-[#193055] text-center xl:text-left max-w-full xl:max-w-[40rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte px-2 md:px-0">
+          <motion.p variants={itemVariants} className="text-sm md:text-base text-[#193055] text-center xl:text-justify max-w-full xl:max-w-[40rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte px-2 md:px-0">
             {content.topParagraph}
           </motion.p>
         </motion.div>
@@ -178,7 +178,7 @@ const Page = () => {
             viewport={{ once: false, amount: 0.2 }}
             className="flex flex-col justify-center px-4 md:px-6 xl:px-10 mt-0 xl:mt-16 lg:mt-24"
           >
-            <p className="text-sm md:text-base text-[#193055] text-center xl:text-left max-w-full xl:max-w-[30rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte">
+            <p className="text-sm md:text-base text-[#193055] text-center xl:text-justify max-w-full xl:max-w-[30rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte">
               {content.steelSleeperParagraph}
             </p>
           </motion.div>
@@ -204,11 +204,11 @@ const Page = () => {
                   {content.fasteningsContent.title.post}
                 </motion.h1>
                 <motion.div variants={itemVariants} className="space-y-4 md:space-y-6">
-                  <p className="text-sm md:text-base text-[#193055] text-center lg:text-left max-w-full lg:max-w-[30rem] mb-4 md:mb-7 leading-relaxed md:leading-loose font-monte font-[500]">{content.fasteningsContent.paragraph1}</p>
+                  <p className="text-sm md:text-base text-[#193055] text-center lg:text-justify max-w-full lg:max-w-[30rem] mb-4 md:mb-7 leading-relaxed md:leading-loose font-monte font-[500]">{content.fasteningsContent.paragraph1}</p>
                   <div className="space-y-3 md:space-y-4 mb-4 md:mb-7 w-full max-w-[90%] lg:max-w-none mx-auto py-3">
                     {content.fasteningsContent.items.map((item, index) => (<div key={index} className="flex items-start gap-3"><div className="w-2 h-2 bg-textorange rounded-full mt-2 flex-shrink-0" /><span className="text-textblue text-base md:text-lg">{item}</span></div>))}
                   </div>
-                  <p className="text-sm md:text-base text-[#193055] text-center lg:text-left max-w-full lg:max-w-[30rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte">{content.fasteningsContent.paragraph2}</p>
+                  <p className="text-sm md:text-base text-[#193055] text-center lg:text-justify max-w-full lg:max-w-[30rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte">{content.fasteningsContent.paragraph2}</p>
                 </motion.div>
               </motion.div>
             ) : (

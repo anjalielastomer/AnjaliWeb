@@ -74,7 +74,7 @@ export default function AboutSec4() {
             </span>
           </motion.h2>
 
-          <motion.p variants={itemVariants} className="text-lg leading-relaxed mb-6 sm:max-w-full max-w-xl">
+          <motion.p variants={itemVariants} className="text-lg leading-relaxed mb-6 sm:max-w-full max-w-xl text-justify">
             Our company, a pioneer in rail infrastructure, specializes in innovative Turnkey bridge solutions. We develop ballastless tracks using cutting-edge innovation to provide improved stability, fewer maintenance, and an extended total track lifespan.
           {/* </motion.p> */}
 

@@ -84,22 +84,22 @@ export default function IndiaBusinessSection() {
           {/* Left - India Map (Fixed) */}
           <div className="flex-shrink-0 flex justify-center items-center">
             <div className="w-[320px] h-[300px] lg:h-auto sm:w-[400px] lg:w-[480px]">
-              {activeTab === "bridge" ?
-              <India1/> : activeTab=== "track"?   <India2/>    : <India3/>}
-              {/* <Image
+              {/* {activeTab === "bridge" ?
+              <India1/> : activeTab=== "track"?   <India2/>    : <India3/>} */}
+              <Image
                 src={
                   activeTab === "bridge"
-                    ? "/map1.svg"
+                    ? "/BridgeMap.gif"
                     : activeTab === "track"
-                    ? "/map2.svg"
-                    : "/map3.svg"
+                    ? "/TrackMap.gif"
+                    : "/FactoryMap.gif"
                 }
                 alt="Map of India highlighting selected states with icons representing business locations"
                 width={480}
                 height={600}
                 className="object-contain"
                 priority
-              /> */}
+              />
             </div>
           </div>
 

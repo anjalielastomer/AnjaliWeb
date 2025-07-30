@@ -14,7 +14,7 @@ const Page = () => {
     >
       
       {/* Section 1: Hero */}
-      <div className=" max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between lg:w-[100%] gap-8 lg:gap-12 mb-20 py-8 lg:py-16 ">
+      <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between lg:w-[100%] gap-8 lg:gap-12 mb-20 py-8 lg:py-16 ">
         {/* Text Content */}
         
         <div  data-aos="fade-right" className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left flex-1 max-w-2xl lg:max-w-4xl xl:-mt-30">
@@ -29,7 +29,7 @@ const Page = () => {
             </span>
           </h1>
 
-          <p className="text-sm md:text-base text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-monte font-medium tracking-normal">
+          <p className="text-sm md:text-base text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-monte font-medium tracking-normal text-justify">
             We are one of the leading Indian Railway contractors for building
             superstructures. We undertake complex projects that require
             high-level construction and engineering skills. Our expertise and
@@ -68,7 +68,7 @@ const Page = () => {
               />
             </div>
           </div>
-          <div data-aos="fade-left" className="flex flex-col justify-center px-4 md:px-10 order-1 lg:order-2 flex-1 xl:pl-40">
+          <div data-aos="fade-left" className=" max-w-sm lg:max-w-md xl:max-w-lg flex flex-col justify-center order-1 lg:order-2 flex-1">
             <h1 className="text-lg sm:text-xl md:text-4xl font-medium text-[#193055] mb-4 font-montserrat text-center md:text-left leading-relaxed tracking-normal">
               We are experts in providing{" "}
               <div className="flex gap-2 lg:block">
@@ -104,7 +104,7 @@ const Page = () => {
       <div className="max-w-[1440px] mx-auto bg-white h-auto">
         {/* <Image className="absolute -ml-113 -mt-80 rotate-90" src="/named.svg" alt="" width={2000} height={1500} /> */}
         {/* <Image className="absolute ml-72 mt-80 rotate-90" src="/named.svg" alt="" width={2500} height={1500} /> */}
-        <div className="flex lg:w-[90%] lg:flex-nowrap lg:justify-between xl:ml-34 justify-center xl:justify-between mx-auto max-w-[80%] flex-wrap-reverse mt-0  md:mt-8 xl:mt-16 pb-20">
+        <div className="flex lg:flex-nowrap lg:justify-between justify-between xl:justify-between mx-auto max-w-[1440px] flex-wrap-reverse mt-0  md:mt-8 xl:mt-16 pb-20">
           <div data-aos="fade-left" className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24">
             <h1 className="text-4xl sm:text-xl md:text-5xl font-bold text-[#193055] lg:mb-4 -mb-2 mt-4 lg:mt-0 font-monte text-center md:text-left leading-relaxed">
               <span className="text-textorange font-bold">Resources</span>{" "}
@@ -148,7 +148,7 @@ const Page = () => {
         
           {/* <Image className="absolute ml-113 -mt-48 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
           <Image className="absolute -ml-113 mt-136 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} /> */}
-          <div className="max-w-[1440px] mx-auto flex lg:flex-row flex-col items-center justify-center">
+          <div className="max-w-[1440px] mx-auto flex lg:flex-row flex-col items-center justify-between">
         <div data-aos="zoom-down-right" className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12">
             <Image
               className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 z-1 px-5 lg:px-0"
@@ -163,7 +163,7 @@ const Page = () => {
             <h2 className="text-4xl md:text-7xl lg:text-3xl xl:text-5xl font-bold text-[#193055] mb-6 font-raleway text-center lg:text-left pt-5 lg:pt-0">
               Capabilities & <span className="text-textorange">Geography</span>
             </h2>
-            <p className="list-disc list-inside [&>li]:marker:text-textorange space-y-2 text-textblue text-base sm:text-xl md:text-xl lg:text-lg  font-medium font-monte">
+            <p className="list-disc list-inside [&>li]:marker:text-textorange space-y-2 text-textblue text-base sm:text-xl md:text-xl lg:text-lg  font-medium font-monte text-justify">
               Our bridges span the length and width of India, strengthening
               connections and facilitating the flow of life throughout the
               country. We have successfully constructed bridges in tough

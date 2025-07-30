@@ -31,7 +31,7 @@ const cardData: CardProps[] = [
   },{
     text:{
       text1:"60+",
-      text2:"Major Bridges",
+      text2:"Major Bridges Building",
     },
     description:"We have completed the building of more than 60 significant bridges, demonstrating our extensive expertise and engineering brilliance."
   }
@@ -57,7 +57,7 @@ const CardComponent = ({ data }: { data: CardProps }) => {
         <div> {data.text?.text3}</div>
       </div>
       <div className="flex justify-center items-center">
-        <div className="w-75 text-center font-montserrat text-textblue font-normal text-base">
+        <div className="w-75 font-montserrat text-textblue font-normal text-base text-justify">
           {data.description}
         </div>
       </div>

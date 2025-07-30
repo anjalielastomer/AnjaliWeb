@@ -21,11 +21,11 @@ const transformStrapiProductForDetails = (strapiProduct: StrapiProduct) => {
 
   return {
     ...baseProduct,
-    
+
     images: strapiProduct.images?.map((img) => img.url) || [baseProduct.image],
     longDescription: strapiProduct.description,
-    inStock: true, 
-    price: "Contact for Price", 
+    inStock: true,
+    price: "Contact for Price",
   };
 };
 
@@ -39,14 +39,14 @@ const SingleProductPage: React.FC = () => {
   const [isBuyNowOpen, setIsBuyNowOpen] = useState(false);
 
   const { data, isLoading, error, refetch } = useProduct(productId);
-   const product = data?.data
-     ? transformStrapiProductForDetails(data.data)
-     : null;
+  const product = data?.data
+    ? transformStrapiProductForDetails(data.data)
+    : null;
   const {
     data: productsData,
     isLoading: isRelatedLoading,
     error: relatedError,
-  } = useProducts({category : product?.categories[0]});
+  } = useProducts({ category: product?.categories[0] });
 
   const transformedProducts1 = useMemo(() => {
     if (!productsData?.data) return [];
@@ -60,14 +60,14 @@ const SingleProductPage: React.FC = () => {
       transition: { duration: 0.6, ease: "easeOut" },
     },
   };
- const slideInFromRight: Variants = {
-  hidden: { x: 100, opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
+  const slideInFromRight: Variants = {
+    hidden: { x: 100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
 
   if (isLoading) {
     return (
@@ -158,7 +158,7 @@ const SingleProductPage: React.FC = () => {
           </div>
 
           <div
-            className="w-full h-px mb-8"
+            className="w-screen h-px mb-8 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
             style={{ backgroundColor: "var(--textblue)", opacity: "0.3" }}
           ></div>
         </div>
@@ -214,37 +214,36 @@ const SingleProductPage: React.FC = () => {
           <div className="space-y-4">
             {/* Main Image */}
             <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
-          variants={slideInFromLeft}
-        >
-            <div
-              
-              className="w-full aspect-square rounded-lg overflow-hidden border-2 border-gray-200"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.5 }}
+              variants={slideInFromLeft}
             >
-              <Image
-                src={product.images?.[selectedImageIndex] || product.image}
-                alt={product.name}
-                width={600}
-                height={600}
-                className="w-full h-full object-cover p-10"
-              />
-            </div>
-</motion.div>
+              <div
+
+                className="w-full aspect-square rounded-lg overflow-hidden border-2 border-gray-200"
+              >
+                <Image
+                  src={product.images?.[selectedImageIndex] || product.image}
+                  alt={product.name}
+                  width={600}
+                  height={600}
+                  className="w-full h-full object-cover p-10"
+                />
+              </div>
+            </motion.div>
             {/* Thumbnail Images */}
             {product.images && product.images.length > 1 && (
-              
+
               <div className="flex space-x-4">
                 {product.images.map((image, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImageIndex(index)}
-                    className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors ${
-                      selectedImageIndex === index
-                        ? "border-orange-500"
-                        : "border-gray-200"
-                    }`}
+                    className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors ${selectedImageIndex === index
+                      ? "border-orange-500"
+                      : "border-gray-200"
+                      }`}
                   >
                     <Image
                       src={image}
@@ -256,7 +255,7 @@ const SingleProductPage: React.FC = () => {
                   </button>
                 ))}
               </div>
-            
+
             )}
           </div>
 
@@ -362,14 +361,13 @@ const SingleProductPage: React.FC = () => {
 
         {/* Product Description Tabs */}
         <div className="mb-16">
-          <div className="flex space-x-8 border-b mb-6 md:px-20">
+          <div className="flex space-x-8 mb-6 md:px-20">
             {["description", "specifications", "reviews"].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`pb-2 px-1 capitalize transition-colors ${
-                  activeTab === tab ? "border-b-2 font-medium" : ""
-                }`}
+                className={`pb-2 px-1 capitalize transition-colors ${activeTab === tab ? "border-b-2 font-medium" : ""
+                  }`}
                 style={{
                   color:
                     activeTab === tab
@@ -383,6 +381,12 @@ const SingleProductPage: React.FC = () => {
               </button>
             ))}
           </div>
+
+          <div
+            className="w-screen h-px mb-8 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
+            style={{ backgroundColor: "black", opacity: "1" }}
+          ></div>
+
 
           <div className="prose max-w-none md:px-20">
             {activeTab === "description" && (

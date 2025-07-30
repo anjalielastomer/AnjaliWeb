@@ -218,7 +218,7 @@ const Page: React.FC = () => {
           {/* Right Section */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromRight} className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-5">
             <span
-              className="font-monte font-medium text-base sm:text-lg text-center md:text-left max-w-2xl"
+              className="font-monte font-medium text-base sm:text-lg text-center md:text-justify max-w-2xl"
               style={{ color: "var(--textblue)" }}
             >
               Join our team of innovators creating cutting-edge rail-road
