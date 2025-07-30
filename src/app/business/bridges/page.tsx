@@ -39,7 +39,7 @@ const Page = () => {
           </p>
         </div>
         {/* Image Content */}
-        <div  data-aos="fade-left" className=" w-full max-w-sm lg:max-w-md xl:max-w-lg">
+        <div  data-aos="fade-left" className="w-full max-w-sm lg:max-w-md xl:max-w-lg p-2">
           <div className="relative w-full aspect-[3/4] lg:aspect-[4/5] xl:mt-30 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
             <Image
               src="/business/bridges-1.svg"
