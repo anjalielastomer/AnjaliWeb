@@ -87,7 +87,7 @@ export default function AboutSec4() {
           </motion.p>
 
           <motion.div variants={itemVariants}>
-            <Link href={"#"} className="group text-textblue transition-colors pr-7 py-3 text-3xl font-light flex items-center gap-2 font-raleway">
+            <Link href={"/article"} className="group text-textblue transition-colors pr-7 py-3 text-3xl font-light flex items-center gap-2 font-raleway">
               <span>
                 <span className="text-[#FB7602] group-hover:text-[#193055] transition-all duration-300">Learn</span>
                 <span className="text-[#193055] group-hover:text-[#FB7602] transition-all duration-300"> more</span>

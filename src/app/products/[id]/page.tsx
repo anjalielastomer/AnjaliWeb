@@ -461,7 +461,7 @@ const SingleProductPage: React.FC = () => {
                 </div>
 
                 <div
-                  className="max-h-96 overflow-y-auto pr-4"
+                  className="max-h-screen overflow-y-auto pr-4"
                   style={{
                     scrollbarWidth: "thin",
                     scrollbarColor: "var(--textorange) transparent",

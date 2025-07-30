@@ -104,7 +104,7 @@ export default function IndiaBusinessSection() {
           </div>
 
           {/* Right - Content (Animated) */}
-          <div className="flex flex-col px-5 md:px-0 justify-start flex-1">
+          <div className="flex flex-col px-10 md:px-0 justify-start flex-1 ml-7 -mt-24">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -124,7 +124,7 @@ export default function IndiaBusinessSection() {
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
               variants={slideInFromLeft}
-              className="text-sm font-medium text-textblue max-w-3xl mb-12 leading-relaxed lg:leading-[38px]"
+              className="text-sm font-medium text-textblue max-w-3xl mb-12 leading-relaxed lg:leading-[38px] text-justify "
             >
               We here at Anjali Elastomers Ltd. believe in the power of
               innovation to change the way we interact, connect, and prosper.

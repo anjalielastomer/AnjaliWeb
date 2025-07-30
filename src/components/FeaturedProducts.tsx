@@ -3,6 +3,7 @@ import React,{useState} from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useFeaturedProducts } from "@/hooks/use-featured-products";
+import Link from "next/link";
 
 const StarRating: React.FC<{ rating?: number }> = ({ rating = 5 }) => {
   const totalStars = 5;
@@ -208,6 +209,7 @@ const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS *
       </div>
 
       <div className="w-full flex justify-center items-center mt-10">
+        <Link href='/products'>
         <button className="group text-textblue transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway">
           <span className="text-[var(--textorange)] group-hover:text-[var(--textblue)]">Explore</span>
           <span className="text-[var(--textblue)] group-hover:text-[var(--textorange)]"> All</span>
@@ -226,6 +228,7 @@ const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS *
             className="hidden group-hover:block"
           />
         </button>
+        </Link>
       </div>
 
       <style jsx>{`

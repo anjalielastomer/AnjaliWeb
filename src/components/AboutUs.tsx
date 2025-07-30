@@ -165,7 +165,7 @@ const AboutUs: React.FC = () => {
         >
           <Link
             href={"/about-us"}
-            className="w-[200px] h-[50px] lg:w-[333px] lg:h-[78px] flex items-center justify-center group text-textblue transition-colors rounded-2xl text-lg lg:text-[32px] font-normal gap-2 hover:font-medium"
+            className="w-[200px] h-[50px] lg:w-[333px] lg:h-[78px] flex items-center justify-start group text-textblue transition-colors rounded-2xl text-lg lg:text-[32px] font-normal gap-2 hover:font-medium"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >

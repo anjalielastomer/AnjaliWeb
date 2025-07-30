@@ -47,7 +47,7 @@ const App: React.FC = () => {
           <FeaturedProjects />
           <Client />
           <LatestInsights />
-          <VideoSection bgColor="bg-white" />
+          <VideoSection bgColor="bg-bgcolor" />
         </>
       {/* )} */}
     </main>
