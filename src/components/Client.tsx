@@ -73,7 +73,7 @@ const OurClients = () => {
                         whileInView="visible"
                         variants={slideInFromTop}
                         viewport={{ once: false, amount: 0.5 }}
-                        className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-textblue mb-8 text-center font-raleway"
+                        className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-textblue mb-0 md:mb-8 text-center font-raleway mt-5 md:mt-0"
                     >
 						Our <span className="text-textorange">Clients</span>
 					</motion.h1>
