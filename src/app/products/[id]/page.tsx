@@ -14,7 +14,7 @@ import {
 import { specifications, reviews } from "@/lib/mockData";
 import { transformStrapiProduct1, getSegmentDisplayName } from "@/lib/utlis";
 import { StrapiProduct } from "@/types/product";
-
+import { motion, Variants } from "framer-motion";
 
 const transformStrapiProductForDetails = (strapiProduct: StrapiProduct) => {
   const baseProduct = transformStrapiProduct1(strapiProduct);
@@ -52,8 +52,22 @@ const SingleProductPage: React.FC = () => {
     if (!productsData?.data) return [];
     return productsData.data.map(transformStrapiProduct1).slice(0, 4); // Show 4 related products
   }, [productsData]);
-
- 
+  const slideInFromLeft: Variants = {
+    hidden: { x: -100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+ const slideInFromRight: Variants = {
+  hidden: { x: 100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
   if (isLoading) {
     return (
@@ -199,8 +213,14 @@ const SingleProductPage: React.FC = () => {
           {/* Product Images */}
           <div className="space-y-4">
             {/* Main Image */}
+            <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.5 }}
+          variants={slideInFromLeft}
+        >
             <div
-              data-aos="fade-right"
+              
               className="w-full aspect-square rounded-lg overflow-hidden border-2 border-gray-200"
             >
               <Image
@@ -211,9 +231,10 @@ const SingleProductPage: React.FC = () => {
                 className="w-full h-full object-cover p-10"
               />
             </div>
-
+</motion.div>
             {/* Thumbnail Images */}
             {product.images && product.images.length > 1 && (
+              
               <div className="flex space-x-4">
                 {product.images.map((image, index) => (
                   <button
@@ -235,11 +256,12 @@ const SingleProductPage: React.FC = () => {
                   </button>
                 ))}
               </div>
+            
             )}
           </div>
 
           {/* Product Info */}
-          <div data-aos="fade-left" className="space-y-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromRight} className="space-y-6">
             <div>
               <h2
                 className="text-3xl font-bold mb-4"
@@ -335,7 +357,7 @@ const SingleProductPage: React.FC = () => {
                 Order Now
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Product Description Tabs */}

@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
     if (styles.textColor === 'var(--bgwhite)') return 'text-[color:var(--bgwhite)]';
     if (styles.textColor === 'var(--textorange)') return 'text-[color:var(--textorange)]';
     if (styles.textColor === 'var(--textcolour)') return 'text-[color:var(--textcolour)]';
-    return 'text-[color:var(--textcolour)]';
+    return 'text-[color:var(--textblue)]';
   };
 
   const toggleMenu = () => {
@@ -119,7 +119,7 @@ const Navbar: React.FC = () => {
           <Link
           
           href='/'
-            className={`text-xl md:text-2xl font-bold font-raleway cursor-pointer ${getTextColor()}`}
+            className={`text-xl md:text-2xl font-bold font-raleway cursor-pointer  text-[color:var(--textblue)] }`}
           >
             Anjali <span className="text-[color:var(--textorange)]">Elastomer</span>
           </Link>

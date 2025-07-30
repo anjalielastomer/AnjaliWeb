@@ -25,7 +25,7 @@ const LogoTransition = ({ onComplete }: { onComplete: () => void }) => {
         >
           <motion.div
             initial={{ scale: 1.5, x: 0, y: 0 }}
-            animate={{ scale: 0.4, x: '-40vw', y: '-45vh' }} // Higher on exit
+            animate={{ scale: 0.4, x: '-42vw', y: '-46vh' }} 
             transition={{ duration: 2, ease: 'easeInOut' }}
             className="text-4xl md:text-6xl font-bold font-raleway"
           >

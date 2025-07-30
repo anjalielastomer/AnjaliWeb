@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import VideoSection from "@/components/VideoSection";
-
+import { Variants, motion } from "framer-motion";
 const Page = () => {
   const [content] = useState({
     title: {
@@ -34,7 +34,22 @@ const Page = () => {
       train2: "/business/train2.svg",
     },
   });
-
+  const slideInFromLeft: Variants = {
+    hidden: { x: -100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+ const slideInFromRight: Variants = {
+  hidden: { x: 100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
   return (
     <div
       className="pt-16 md:pt-22"
@@ -43,7 +58,11 @@ const Page = () => {
       {/* Header Section */}
       <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mb-16 md:mb-20">
         {/* <Image className="absolute ml-94 -mt-40 rotate-10" src="/named.svg" alt="" width={2000} height={1500} /> */}
-        <div data-aos="fade-left" className="flex flex-col p-4 md:p-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20">
+        <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.5 }}
+                  variants={slideInFromLeft} className="flex flex-col p-4 md:p-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20">
           <h1 className="font-raleway font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[85.5px] text-textblue w-full text-center xl:text-left leading-tight">
             <span className="block">{content.title.main}</span>
             <span className="text-textorange block mt-2 md:mt-3 lg:mt-5">
@@ -61,11 +80,11 @@ const Page = () => {
           <p className="text-sm md:text-base text-[#193055] text-center xl:text-left max-w-full xl:max-w-[40rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte px-2 md:px-0">
             {content.paragraph}
           </p>
-        </div>
+        </motion.div>
 
-        <div className="flex justify-center xl:justify-end mb-6 xl:mb-0">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromRight} className="flex justify-center xl:justify-end mb-6 xl:mb-0">
           <Image
-            data-aos="zoom-in-up"
+            
             className="relative z-10 w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
             src={content.images.train1}
             alt="Modern train"
@@ -74,7 +93,7 @@ const Page = () => {
             priority
             loading="eager"
           />
-        </div>
+        </motion.div>
       </div>
 
       {/* Offerings Section */}

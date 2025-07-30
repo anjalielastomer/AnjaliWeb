@@ -5,6 +5,7 @@ import { cardData, CardData } from "@/types/career";
 import type { FormData } from "@/types/career";
 import {toast} from 'sonner'
 import Link from "next/link";
+import { Variants, motion } from "framer-motion";
 const Page: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
   const [formData, setFormData] = useState<FormData>({
@@ -153,14 +154,33 @@ const Page: React.FC = () => {
       toast("An error occurred. Please try again later.");
     }
   };
-
+    const slideInFromLeft: Variants = {
+    hidden: { x: -100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+ const slideInFromRight: Variants = {
+  hidden: { x: 100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
   return (
     <div className="w-full min-h-screen mt-24 font-monte">
       {/* Section 1*/}
       <div className="w-full min-h-fit flex justify-center py-10 px-4">
         <div className="flex flex-col md:flex-row gap-10 max-w-7xl w-full">
           {/* Left Section */}
-          <div data-aos="fade-right" className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+          <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.5 }}
+                            variants={slideInFromLeft} className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
             <h1
               className="font-raleway font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
               style={{ color: "var(--textblue)" }}
@@ -200,10 +220,10 @@ const Page: React.FC = () => {
                 </Link>
               </span>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Section */}
-          <div data-aos="fade-left" className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-5">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromRight} className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-5">
             <span
               className="font-monte font-medium text-base sm:text-lg text-center md:text-left max-w-2xl"
               style={{ color: "var(--textblue)" }}
@@ -220,7 +240,7 @@ const Page: React.FC = () => {
               className="w-full max-w-[500px] h-auto rounded-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
               loading="eager"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
 
