@@ -48,7 +48,7 @@ const AboutSec1 = () => {
           <div className="w-full md:w-1/2 p-4 flex flex-col">
             <motion.h1
                 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={slideInFromLeft}
-                className="text-4xl sm:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8 font-raleway"
+                className="text-4xl sm:text-4xl lg:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8 font-raleway"
             >
               Unified in <br />
               <span className="mt-4 text-textorange">Shaping</span> <br />

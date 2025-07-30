@@ -52,7 +52,7 @@ export default function AboutSec5() {
         <motion.div variants={itemVariants} className="flex flex-col md:flex-row items-center justify-between md:mb-10 font-raleway">
           <h3 className="text-4xl md:text-6xl font-bold text-textorange">Projects</h3>
 
-          <Link href={"#"} className="group text-textblue transition-colors py-3 text-3xl font-light flex items-center gap-2 font-raleway">
+          <Link href={"#"} className="pl-10 lg:pl-0 group text-textblue transition-colors py-3 text-3xl font-light flex items-center gap-2 font-raleway">
             <span>
               <span className="text-[#FB7602] group-hover:text-[#193055] transition-all duration-300">Explore</span>
               <span className="text-[#193055] group-hover:text-[#FB7602] transition-all duration-300"> All</span>

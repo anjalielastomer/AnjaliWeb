@@ -36,7 +36,7 @@ const itemVariants: Variants = {
 
 const Production2 = () => {
   return (
-    <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 flex flex-col md:flex-row items-center md:items-start gap-12 font-monte overflow-hidden">
+    <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 flex flex-col lg:flex-row items-center lg:items-start gap-12 font-monte overflow-hidden">
       {/* Left Content */}
       <motion.div
         initial="hidden"

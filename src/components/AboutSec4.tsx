@@ -37,8 +37,8 @@ const itemVariants: Variants = {
 
 export default function AboutSec4() {
   return (
-    <section className="flex flex-col md:flex-row items-center md:items-start mx-auto px-6 py-12 bg-[#FFF4E6] relative justify-center overflow-hidden text-textblue font-monte">
-      <div className='max-w-[1440px] mx-auto w-full flex flex-col md:flex-row items-center justify-between'>
+    <section className="flex flex-col lg:flex-row items-center lg:items-start mx-auto px-6 py-12 bg-[#FFF4E6] relative justify-center overflow-hidden text-textblue font-monte">
+      <div className='max-w-[1440px] mx-auto w-full flex flex-col lg:flex-row items-center justify-between'>
         {/* Left side image */}
         <motion.div
             initial="hidden"
@@ -65,7 +65,7 @@ export default function AboutSec4() {
             whileInView="visible"
             variants={containerVariants}
             viewport={{ once: false, amount: 0.2 }}
-            className="w-full md:w-1/2 md:pl-16 text-gray-900"
+            className="w-full md:pl-16 text-gray-900 lg:pt-0 pt-10"
         >
           <motion.h2 variants={itemVariants} className="text-3xl font-raleway sm:text-4xl font-semibold mb-10 text-textblue">
             Elevated{' '}
@@ -74,15 +74,15 @@ export default function AboutSec4() {
             </span>
           </motion.h2>
 
-          <motion.p variants={itemVariants} className="text-lg leading-relaxed mb-6 max-w-xl">
+          <motion.p variants={itemVariants} className="text-lg leading-relaxed mb-6 sm:max-w-full max-w-xl">
             Our company, a pioneer in rail infrastructure, specializes in innovative Turnkey bridge solutions. We develop ballastless tracks using cutting-edge innovation to provide improved stability, fewer maintenance, and an extended total track lifespan.
-          </motion.p>
+          {/* </motion.p> */}
 
-          <motion.p variants={itemVariants} className="text-lg leading-relaxed mb-6 max-w-xl">
+          {/* <motion.p variants={itemVariants} className="text-lg leading-relaxed mb-6 max-w-xl"> */}
             The development of ballastless track systems has found widespread use in India's rail infrastructure, ushering in a new era of efficiency and durability.
-          </motion.p>
+          {/* </motion.p> */}
 
-          <motion.p variants={itemVariants} className="text-lg leading-relaxed mb-8 max-w-xl">
+          {/* <motion.p variants={itemVariants} className="text-lg leading-relaxed mb-8 max-w-xl"> */}
             Our competence in ballastless track construction continues to set new benchmarks and contribute to the evolution of rail systems. As India modernizes its railroads, the use of ballastless track technology demonstrates the country's dedication to innovative solutions, creating a resilient and sustainable transportation network.
           </motion.p>
 
