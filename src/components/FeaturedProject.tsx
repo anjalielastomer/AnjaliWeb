@@ -142,7 +142,7 @@ export default function FeaturedProjects() {
                 className="flex gap-6 py-2 w-max animate-scroll-infinite"
                 style={{ animationPlayState: isHovering ? 'paused' : 'running' }}
               >
-                {[...projects].map((project, idx) => (
+                {[...projects,...projects].map((project, idx) => (
                   <ProjectCard key={`${project.id}-${idx}`} project={project} index={idx % projects.length} />
                 ))}
               </div>
