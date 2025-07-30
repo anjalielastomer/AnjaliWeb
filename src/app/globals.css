@@ -10,9 +10,7 @@
 @import 'aos/dist/aos.css';
 
 
-/* html, body {
-  overflow-x: hidden;
-} */
+
 
 @keyframes flicker {
   0%, 100% { opacity: 1; }
@@ -189,3 +187,28 @@
     display: none !important;
   }
 }
+
+
+
+
+@media (max-width: 425px) {
+  [data-ph-id="el-46-ezB3"] {
+    position: relative !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) scale(0.54) !important;
+    width: 320px !important;
+    height: 360px !important;
+  }
+
+  [data-ph-id="el-6-F3ca"] {
+    position: relative !important;
+    width: 100% !important;
+    height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transform: none !important;
+  }
+}
+
