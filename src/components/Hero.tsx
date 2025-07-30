@@ -1,120 +1,195 @@
 'use client';
 
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { motion, useMotionValue, useTransform, Variants } from "framer-motion";
 
 const Hero: React.FC = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+  // Use MotionValues to track mouse position without causing re-renders
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  // Use a MotionValue for hover state to smoothly transition opacity
+  const hoverOpacity = useMotionValue(0);
+
+  // Transform mouse position into a CSS mask property for the spotlight effect
+  const maskImage = useTransform(
+    [mouseX, mouseY],
+    ([x, y]) => `radial-gradient(ellipse 100px 80px at ${x}px ${y}px, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.4) 80%, rgba(255,255,255,0) 100%)`
+  );
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
   };
 
-  const handleMouseEnter = () => setIsHovering(true);
-  const handleMouseLeave = () => setIsHovering(false);
+  const handleMouseEnter = () => {
+    hoverOpacity.set(1);
+  };
+
+  const handleMouseLeave = () => {
+    hoverOpacity.set(0);
+  };
+  
+  // Animation variants for the text container to orchestrate children animations
+  const textContainerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  // Animation variants for individual text elements
+  const textItemVariants: Variants = {
+    hidden: { opacity: 0, x: -50, y: 50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      y: 0,
+      transition: { type: "spring", stiffness: 100, damping: 12 }
+    },
+  };
+  
+  // Animation variant for the train image
+  const imageVariants: Variants = {
+      hidden: { opacity: 0, x: 100 },
+      visible: { 
+          opacity: 1, 
+          x: 0, 
+          transition: { type: "spring", stiffness: 80, delay: 0.5 } 
+      }
+  };
 
   return (
-    <section
-      className="relative w-full flex flex-col  md:flex-row font-raleway font-bold xl:min-h-screen overflow-x-hidden pl-0 md:py-40 md:pl-10 items-center"
+    <motion.section
+      className="relative w-full flex flex-col md:flex-row font-raleway font-bold xl:min-h-screen overflow-x-hidden pl-0 md:py-40 md:pl-10 items-center"
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      initial="hidden"
+      // Animate when the component enters the viewport
+      whileInView="visible"
+      // Configure viewport settings: trigger animation every time it enters/leaves the viewport
+      viewport={{ amount: 0.25 }}
     >
-      <div
-        className="hidden md:block absolute inset-0 z-0 pointer-events-none transition-opacity duration-500 ease-out"
+      {/* Background map with spotlight effect */}
+      <motion.div
+        className="hidden md:block absolute inset-0 z-0 pointer-events-none"
         style={{
-          opacity: isHovering ? 1 : 0,
-          WebkitMaskImage: `radial-gradient(ellipse 100px 80px at ${mousePos.x}px ${mousePos.y}px, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.4) 80%, rgba(255,255,255,0) 100%)`,
-          WebkitMaskRepeat: "no-repeat",
-          WebkitMaskPosition: "center",
-          WebkitMaskSize: "cover",
-          maskImage: `radial-gradient(ellipse 100px 80px at ${mousePos.x}px ${mousePos.y}px, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.4) 80%, rgba(255,255,255,0) 100%)`,
+          opacity: hoverOpacity,
+          maskImage: maskImage,
+          WebkitMaskImage: maskImage,
           maskRepeat: "no-repeat",
+          WebkitMaskRepeat: "no-repeat",
           maskPosition: "center",
+          WebkitMaskPosition: "center",
           maskSize: "cover",
+          WebkitMaskSize: "cover",
           filter: "blur(6px)",
+          transition: "opacity 0.5s ease-out", // Smooth opacity transition
         }}
       >
         <Image src="/hero-map.png" alt="Bg map" fill className="object-cover" />
-      </div>
+      </motion.div>
 
       {/* Hero TextContent */}
-      <div className="md:max-w-[50%] mx-auto md:-translate-x-[64%] lg:-translate-x-[50%]">
+      <motion.div 
+        className="md:max-w-[50%] mx-auto md:-translate-x-[64%] lg:-translate-x-[50%]"
+        variants={textContainerVariants}
+      >
         <div className="w-full h-full flex flex-col items-center justify-end p-4 pt-20 md:pt-0 z-10">
           <div className="max-w-none 2xl:max-w-[1600px] mx-auto w-full px-4 md:px-10 lg:px-0">
-            <h1
-              data-aos="fade-down-right"
-              className="font-raleway text-4xl md:text-[50px] lg:text-[70px] xl:text-[80px] 3xl:text-[91px] font-extrabold text-textblue w-full text-center md:text-left "
+            <motion.h1
+              variants={textItemVariants}
+              className="font-raleway text-4xl md:text-[50px] lg:text-[70px] xl:text-[80px] 3xl:text-[91px] font-extrabold w-full text-center md:text-left "
+              style={{ color: '#003366' }} // Example color for textblue
             >
               <span className="whitespace-nowrap text-nowrap">
-                Engineered <span className="text-textorange">for</span>
+                Engineered <span style={{ color: '#FF8C00' }}>for</span> {/* Example color for textorange */}
               </span>
               <br />
-              <span className="text-textorange block my-6 sm:my-8 md:my-5 md:text-nowrap">
+              <span className="block my-6 sm:my-8 md:my-5 md:text-nowrap" style={{ color: '#FF8C00' }}>
                 the Future of
               </span>
-              <span className="text-textorange block md:text-nowrap">
+              <span className="block md:text-nowrap" style={{ color: '#FF8C00' }}>
                 Rail-
-                <span className="text-textblue">Roads</span>
+                <span style={{ color: '#003366' }}>Roads</span>
               </span>
-            </h1>
-            <div
-              data-aos="fade-up-right"
+            </motion.h1>
+            <motion.div
+              variants={textItemVariants}
               className="mt-10 pt-5 flex flex-col md:flex-row items-center w-full gap-4 md:gap-6"
             >
-              <Link
-                href="/products"
-                className="min-w-[180px] h-[45px] xl:min-w-[280px] lg:min-w-[250px] lg:h-[65px] 
-                   flex items-center justify-center bg-textorange text-white 
-                   rounded-2xl text-base hover:text-[18px] lg:text-[28px] lg:hover:text-[30px] font-normal 
-                   whitespace-nowrap font-raleway 
-                   hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-all duration-300"
+              <motion.div
+                whileHover={{ 
+                  scale: 1.05, 
+                  boxShadow: "0px 0px 50px rgba(255,165,0,0.4)",
+                  y: -2
+                }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                Explore Products
-              </Link>
-              <Link
-                href="/projects"
-                className="min-w-[180px] h-[45px] xl:min-w-[280px] lg:min-w-[250px] lg:h-[65px] 
-                   flex items-center justify-center group 
-                   border border-[var(--textorange)] hover:border-2 
-                   text-textblue transition-colors rounded-2xl 
-                   text-base lg:text-[28px] font-normal gap-2 hover:font-medium"
+                <Link
+                  href="/products"
+                  className="min-w-[180px] h-[45px] xl:min-w-[280px] lg:min-w-[250px] lg:h-[65px] 
+                           flex items-center justify-center text-white 
+                           rounded-2xl text-base lg:text-[28px] font-normal 
+                           whitespace-nowrap font-raleway"
+                  style={{ backgroundColor: '#FF8C00' }} // Example color for textorange
+                >
+                  Explore Products
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="group"
               >
-                <span className="text-[var(--textorange)] group-hover:text-[var(--textblue)] transition-colors duration-300">
-                  Learn
-                </span>
-                <span className="text-[var(--textblue)] group-hover:text-[var(--textorange)] transition-colors duration-300">
-                  more
-                </span>
-                <Image
-                  src="/arrow.svg"
-                  alt="arrow"
-                  width={27}
-                  height={27}
-                  className="group-hover:hidden"
-                />
-                <Image
-                  src="/send.svg"
-                  alt="arrow"
-                  width={27}
-                  height={27}
-                  className="hidden group-hover:block"
-                />
-              </Link>
-            </div>
+                <Link
+                  href="/projects"
+                  className="min-w-[180px] h-[45px] xl:min-w-[280px] lg:min-w-[250px] lg:h-[65px] 
+                           flex items-center justify-center   
+                           border hover:border-2 
+                           transition-colors rounded-2xl 
+                           text-base lg:text-[28px] font-normal gap-2"
+                  style={{ borderColor: '#FF8C00', color: '#003366' }} // Example colors
+                >
+                  <span className="group-hover:text-[#003366] transition-colors duration-300" style={{ color: '#FF8C00' }}>
+                    Learn
+                  </span>
+                  <span className="group-hover:text-[#FF8C00] transition-colors duration-300" style={{ color: '#003366' }}>
+                    more
+                  </span>
+                  <Image
+                    src="/arrow.svg"
+                    alt="arrow"
+                    width={27}
+                    height={27}
+                    className="group-hover:hidden block"
+                  />
+                  <Image
+                    src="/send.svg"
+                    alt="send"
+                    width={27}
+                    height={27}
+                    className="hidden group-hover:block"
+                  />
+                </Link>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
+      
       {/* Hero ImageContent */}
-      <div
-        data-aos="fade-left"
-        className="md:absolute bottom-0  left-[50%] w-full flex justify-start overflow-hidden  z-10"
+      <motion.div
+        className="md:absolute bottom-0 left-[50%] w-full flex justify-start overflow-hidden z-10"
+        variants={imageVariants}
       >
         <Image
           src="/train.png"
@@ -124,8 +199,8 @@ const Hero: React.FC = () => {
           height={700}
           priority
         />
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

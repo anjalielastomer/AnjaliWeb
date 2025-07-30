@@ -5,11 +5,23 @@ import { useState } from "react";
 import { useContactMessage } from "@/hooks/useContact";
 import { ContactMessage } from "@/types/contact";
 import { toast } from "sonner";
-import { Variants,motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
+
 const page = () => {
   const [isLoading, setIsLoading] = useState(true);
- 
-  const slideInFromRight: Variants = {
+
+  // Variants for the staggered card animation
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Sets a 0.2s delay between each card animation
+      },
+    },
+  };
+
+  const cardVariants: Variants = {
     hidden: { x: 100, opacity: 0 },
     visible: {
       x: 0,
@@ -17,6 +29,7 @@ const page = () => {
       transition: { duration: 0.6, ease: "easeOut" },
     },
   };
+
   const [formData, setFormData] = useState<ContactMessage>({
     first_name: "",
     last_name: "",
@@ -44,7 +57,6 @@ const page = () => {
         locale: "en",
       });
       toast("Message sent successfully!");
-      
     },
     onError: (error) => {
       console.error("Error sending message:", error);
@@ -80,13 +92,19 @@ const page = () => {
           <hr className="w-full border-t-2 border-[#E5E7EB] mt-2 mb-8" />
         </div>
         <div className="w-full flex justify-center">
-          <div className="w-fit grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-20 ">
+          {/* PARENT container now orchestrates the animation */}
+          <motion.div
+            className="w-fit grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-20 "
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+          >
             {/* Card1 */}
             <motion.div
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ once: false, amount: 0.5 }}
-                                        variants={slideInFromRight}  className="w-[172px] md:w-[384px] ml-2 md:ml-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
+              variants={cardVariants} // Use card variants
+              className="w-[172px] md:w-[384px] ml-2 md:ml-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm"
+            >
               <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
                 <Image
                   src="/whitephone.svg"
@@ -106,12 +124,12 @@ const page = () => {
                 Mon-Fri 8AM-6PM EST
               </span>
             </motion.div>
+
             {/* Card2 */}
             <motion.div
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ once: false, amount: 0.5 }}
-                                        variants={slideInFromRight}  className="w-[180px] md:w-[384px] px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
+              variants={cardVariants} // Use card variants
+              className="w-[180px] md:w-[384px] px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm"
+            >
               <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
                 <Image
                   src="/whiteemail.svg"
@@ -131,12 +149,12 @@ const page = () => {
                 sales@railtechmaterials.com
               </span>
             </motion.div>
+
             {/* Card3 */}
             <motion.div
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ once: false, amount: 0.5 }}
-                                        variants={slideInFromRight}  className="w-[200px] md:w-[384px] mx-28 md:mx-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
+              variants={cardVariants} // Use card variants
+              className="w-[200px] md:w-[384px] mx-28 md:mx-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm"
+            >
               <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
                 <Image
                   src="/whitemap.svg"
@@ -156,16 +174,22 @@ const page = () => {
                 Howrah, Chakpara, West Bengal 711203
               </span>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Section 2 - Updated Form with API */}
+      {/* Section 2 - Updated Form with API (NO CHANGES HERE) */}
       <div className="w-full flex flex-col items-center bg-bgcolour py-20">
-        <h2 data-aos="fade-up-left" className="text-textblue text-4xl font-raleway font-bold text-center mb-2">
+        <h2
+          data-aos="fade-up-left"
+          className="text-textblue text-4xl font-raleway font-bold text-center mb-2"
+        >
           Send Us a <span className="text-textorange">Message</span>
         </h2>
-        <p data-aos="fade-up-right" className="text-textblue text-base font-monte text-center mb-10 max-w-xl">
+        <p
+          data-aos="fade-up-right"
+          className="text-textblue text-base font-monte text-center mb-10 max-w-xl"
+        >
           Have a project in mind? Need technical specifications? Our team of
           railroad materials experts is ready to assist you.
         </p>
@@ -293,15 +317,24 @@ const page = () => {
         </form>
       </div>
 
-      {/* Section 3 */}
+      {/* Section 3 (NO CHANGES HERE) */}
       <div className="w-full flex flex-col items-center py-20 pb-40 bg-white ">
-        <h2 data-aos="fade-down-right" className="text-3xl md:text-4xl font-raleway font-bold text-center text-textblue mb-2">
+        <h2
+          data-aos="fade-down-right"
+          className="text-3xl md:text-4xl font-raleway font-bold text-center text-textblue mb-2"
+        >
           Visit Our <span className="text-textorange">Manufacturing</span> Units
         </h2>
-        <p data-aos="fade-down-right" className="text-textblue text-sm sm:text-base font-monte text-center mb-10 max-w-xl">
+        <p
+          data-aos="fade-down-right"
+          className="text-textblue text-sm sm:text-base font-monte text-center mb-10 max-w-xl"
+        >
           Our state-of-the-art manufacturing facility and headquarters
         </p>
-        <div data-aos="fade-up-left" className="relative w-full md:w-[700px] lg:w-[1216px] h-[400px] md:h-[500px] lg:h-[428px] rounded-xl overflow-hidden">
+        <div
+          data-aos="fade-up-left"
+          className="relative w-full md:w-[700px] lg:w-[1216px] h-[400px] md:h-[500px] lg:h-[428px] rounded-xl overflow-hidden"
+        >
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
               <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"></div>
@@ -317,18 +350,27 @@ const page = () => {
         </div>
       </div>
 
-      {/* Section 4 */}
+      {/* Section 4 (NO CHANGES HERE) */}
       <div className="w-full flex flex-col items-center bg-bgcolour py-20 px-4 sm:px-6">
-        <span data-aos="fade-down-right" className="text-textblue font-bold text-3xl sm:text-4xl font-raleway text-center">
+        <span
+          data-aos="fade-down-right"
+          className="text-textblue font-bold text-3xl sm:text-4xl font-raleway text-center"
+        >
           Department <span className="text-textorange">Contacts</span>
         </span>
-        <span data-aos="fade-up-left" className="text-textblue font-monte font-medium text-base sm:text-lg mt-5 mb-10 max-w-4xl text-center">
+        <span
+          data-aos="fade-up-left"
+          className="text-textblue font-monte font-medium text-base sm:text-lg mt-5 mb-10 max-w-4xl text-center"
+        >
           Reach out to the right department for faster assistance
         </span>
 
         <div className="w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-8 md:gap-20">
           {/* Card 1 */}
-          <div data-aos="fade-left" className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
+          <div
+            data-aos="fade-left"
+            className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm"
+          >
             <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
               <Image
                 src="/contactus/hand.svg"
@@ -350,7 +392,10 @@ const page = () => {
           </div>
 
           {/* Card 2 */}
-          <div data-aos="fade-left" className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
+          <div
+            data-aos="fade-left"
+            className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm"
+          >
             <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
               <Image
                 src="/contactus/headphone.svg"
@@ -372,7 +417,10 @@ const page = () => {
           </div>
 
           {/* Card 3 */}
-          <div data-aos="fade-left" className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
+          <div
+            data-aos="fade-left"
+            className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm"
+          >
             <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
               <Image
                 src="/contactus/truck.svg"
@@ -394,7 +442,10 @@ const page = () => {
           </div>
 
           {/* Card 4 */}
-          <div data-aos="fade-left" className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm">
+          <div
+            data-aos="fade-left"
+            className="w-full sm:w-[286px] px-5 py-8 bg-white rounded-xl flex flex-col md:flex-col items-center md:items-start text-center md:text-left shadow-sm"
+          >
             <div className="w-14 h-14 rounded-2xl bg-textorange flex items-center justify-center mb-4">
               <Image
                 src="/contactus/quality.svg"
