@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useProjectData } from "@/hooks/useOurProjectData";
+import { motion, Variants } from "framer-motion";
 
 interface ProjectImage {
   src: string;
@@ -10,10 +11,42 @@ interface ProjectImage {
   height: number;
 }
 
+const fadeDownRight: Variants = {
+  hidden: { opacity: 0, x: -50, y: -50 },
+  visible: { opacity: 1, x: 0, y: 0 },
+};
+
+const fadeDownLeft: Variants = {
+  hidden: { opacity: 0, x: 50, y: -50 },
+  visible: { opacity: 1, x: 0, y: 0 },
+};
+
+const fadeLeft: Variants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const fadeRight: Variants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const zoomInUp: Variants = {
+  hidden: { opacity: 0, scale: 0.8, y: 50 },
+  visible: { opacity: 1, scale: 1, y: 0 },
+};
+
+const zoomOutDown: Variants = {
+  hidden: { opacity: 0, scale: 1.2 },
+  visible: { opacity: 1, scale: 1 },
+};
+
+
 const ProjectPage: React.FC = () => {
   const { project, loading, error } = useProjectData();
 
   const extractImagesFromHTML = (htmlString: string): ProjectImage[] => {
+    if (typeof window === "undefined") return [];
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, "text/html");
     const images = doc.querySelectorAll("img");
@@ -26,6 +59,7 @@ const ProjectPage: React.FC = () => {
   };
 
   const extractParagraphs = (htmlString: string): string[] => {
+    if (typeof window === "undefined") return [];
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, "text/html");
     const spans = doc.querySelectorAll("span");
@@ -51,6 +85,7 @@ const ProjectPage: React.FC = () => {
     return paragraphs.filter((p) => p.length > 50);
   };
 
+
   if (loading) {
     return (
       <main className="bg-white text-textblue min-h-screen px-4 md:px-12 py-10 w-full flex justify-center items-center font-monte">
@@ -70,6 +105,8 @@ const ProjectPage: React.FC = () => {
   const images = extractImagesFromHTML(project.content);
   const paragraphs = extractParagraphs(project.content);
 
+  const transition = { duration: 0.6, ease: "easeInOut" } as const;
+
   return (
     <main className="bg-white text-textblue min-h-screen px-4 md:px-12 py-10 w-full flex justify-center font-monte">
       <div className="w-full max-w-6xl flex flex-col items-center space-y-10">
@@ -80,17 +117,40 @@ const ProjectPage: React.FC = () => {
 
         <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-10">
           <div className="w-full flex flex-row md:flex-row gap-4 justify-between items-center">
-            <h1 data-aos="fade-down-right" className="text-4xl md:text-6xl font-bold text-textblue leading-snug font-raleway">
+            <motion.h1
+              variants={fadeDownRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+              transition={transition}
+              className="text-4xl md:text-6xl font-bold text-textblue leading-snug font-raleway"
+            >
               Our <br /> <span className="text-textorange">Projects</span>
-            </h1>
+            </motion.h1>
             <div className="bg-bgblue text-white font-bold text-lg px-6 py-5 rounded-full">
               {String(project.id).padStart(2, "0")}
             </div>
             <div>
-              <h2 data-aos="fade-down-left" className="text-2xl md:text-4xl font-semibold font-raleway text-textblue">
+              <motion.h2
+                variants={fadeDownLeft}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
+                transition={transition}
+                className="text-2xl md:text-4xl font-semibold font-raleway text-textblue"
+              >
                 {project.title}
-              </h2>
-              <p data-aos="fade-left" className="text-sm text-gray-500">{project.subtext}</p>
+              </motion.h2>
+              <motion.p
+                variants={fadeLeft}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
+                transition={transition}
+                className="text-sm text-gray-500"
+              >
+                {project.subtext}
+              </motion.p>
             </div>
           </div>
         </div>
@@ -98,64 +158,117 @@ const ProjectPage: React.FC = () => {
         {/* Image and Paragraph 1 */}
         <div className="w-full flex flex-col md:flex-row gap-6 items-center">
           {images[0] && (
-            <Image
-              data-aos="zoom-in-up"
-              src={images[0].src}
-              alt={images[0].alt}
-              width={images[0].width}
-              height={images[0].height}
-              className="w-full md:w-1/2 rounded-md shadow-md object-cover"
-            />
+            <motion.div
+              variants={zoomInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+              transition={transition}
+              className="w-full md:w-1/2"
+            >
+              <Image
+                src={images[0].src}
+                alt={images[0].alt}
+                width={images[0].width}
+                height={images[0].height}
+                className="rounded-md shadow-md object-cover w-full"
+              />
+            </motion.div>
           )}
-          <p data-aos="fade-left" className="text-sm text-gray-700 leading-relaxed md:w-1/2">
+          <motion.p
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            transition={transition}
+            className="text-sm text-gray-700 leading-relaxed md:w-1/2"
+          >
             {paragraphs[0] || project.description}
-          </p>
+          </motion.p>
         </div>
 
         {/* Image and Paragraph 2 */}
-        <div className="w-full flex flex-col md:flex-row gap-6 items-center">
-          <p data-aos="fade-right"  className="text-sm text-gray-700 leading-relaxed md:w-1/2">
-            {paragraphs[1] || "Additional paragraph goes here."}
-          </p>
+        <div className="w-full flex flex-col md:flex-row-reverse gap-6 items-center">
           {images[1] && (
-            <Image
-              data-aos="zoom-in-up"
-              src={images[1].src}
-              alt={images[1].alt}
-              width={images[1].width}
-              height={images[1].height}
-              className="w-full md:w-1/2 rounded-md shadow-md object-cover"
-            />
+            <motion.div
+              variants={zoomInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+              transition={transition}
+              className="w-full md:w-1/2"
+            >
+              <Image
+                src={images[1].src}
+                alt={images[1].alt}
+                width={images[1].width}
+                height={images[1].height}
+                className="rounded-md shadow-md object-cover w-full"
+              />
+            </motion.div>
           )}
+          <motion.p
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            transition={transition}
+            className="text-sm text-gray-700 leading-relaxed md:w-1/2"
+          >
+            {paragraphs[1] || "Additional paragraph goes here."}
+          </motion.p>
         </div>
 
         {/* Image and Paragraph 3 */}
         <div className="w-full flex flex-col md:flex-row gap-6 items-center">
           {images[2] && (
-            <Image
-              data-aos="zoom-in-up"
-              src={images[2].src}
-              alt={images[2].alt}
-              width={images[2].width}
-              height={images[2].height}
-              className="w-full md:w-1/2 rounded-md shadow-md object-cover"
-            />
+            <motion.div
+              variants={zoomInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+              transition={transition}
+              className="w-full md:w-1/2"
+            >
+              <Image
+                src={images[2].src}
+                alt={images[2].alt}
+                width={images[2].width}
+                height={images[2].height}
+                className="rounded-md shadow-md object-cover w-full"
+              />
+            </motion.div>
           )}
-          <p data-aos="fade-left" className="text-sm text-gray-700 leading-relaxed md:w-1/2">
+          <motion.p
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            transition={transition}
+            className="text-sm text-gray-700 leading-relaxed md:w-1/2"
+          >
             {paragraphs[2] || project.description}
-          </p>
+          </motion.p>
         </div>
 
         {/* Final Image */}
         {images[3] && (
-          <Image
-            data-aos="zoom-out-down"
-            src={images[3].src}
-            alt={images[3].alt}
-            width={images[3].width}
-            height={images[3].height}
-            className="w-full rounded-md shadow-md object-cover"
-          />
+          <motion.div
+            variants={zoomOutDown}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            transition={transition}
+            className="w-full"
+          >
+            <Image
+              src={images[3].src}
+              alt={images[3].alt}
+              width={images[3].width}
+              height={images[3].height}
+              className="rounded-md shadow-md object-cover w-full"
+            />
+          </motion.div>
         )}
       </div>
     </main>

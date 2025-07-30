@@ -33,12 +33,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
       <body
         className={`${raleway.variable} ${montserrat.variable} ${roboto.variable} flex flex-col min-h-screen overflow-x-hidden`}
+        suppressHydrationWarning
       >
         <QueryProvider>
           <Toaster />
