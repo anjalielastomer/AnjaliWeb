@@ -3,6 +3,8 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import India1 from "./India1";
+import India2 from "./India2";
+import India3 from "./India3";
 
 const tabs = [
   { id: "bridge", label: "Bridge Projects" },
@@ -82,6 +84,8 @@ export default function IndiaBusinessSection() {
           {/* Left - India Map (Fixed) */}
           <div className="flex-shrink-0 flex justify-center items-center">
             <div className="w-[320px] h-[300px] lg:h-auto sm:w-[400px] lg:w-[480px]">
+              {activeTab === "bridge" ?
+              <India1/> : activeTab=== "track"?   <India2/>    : <India3/>}
               {/* <Image
                 src={
                   activeTab === "bridge"
@@ -96,7 +100,6 @@ export default function IndiaBusinessSection() {
                 className="object-contain"
                 priority
               /> */}
-              <India1/>
             </div>
           </div>
 
