@@ -5,11 +5,18 @@ import { useState } from "react";
 import { useContactMessage } from "@/hooks/useContact";
 import { ContactMessage } from "@/types/contact";
 import { toast } from "sonner";
-
+import { Variants,motion } from "framer-motion";
 const page = () => {
   const [isLoading, setIsLoading] = useState(true);
-
-  
+ 
+  const slideInFromRight: Variants = {
+    hidden: { x: 100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
   const [formData, setFormData] = useState<ContactMessage>({
     first_name: "",
     last_name: "",
@@ -75,7 +82,11 @@ const page = () => {
         <div className="w-full flex justify-center">
           <div className="w-fit grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-20 ">
             {/* Card1 */}
-            <div data-aos="fade-left" className="w-[172px] md:w-[384px] ml-2 md:ml-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
+            <motion.div
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: false, amount: 0.5 }}
+                                        variants={slideInFromRight}  className="w-[172px] md:w-[384px] ml-2 md:ml-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
               <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
                 <Image
                   src="/whitephone.svg"
@@ -94,9 +105,13 @@ const page = () => {
               <span className="text-textblue text-xs font-monte opacity-80">
                 Mon-Fri 8AM-6PM EST
               </span>
-            </div>
+            </motion.div>
             {/* Card2 */}
-            <div data-aos="fade-left" className="w-[180px] md:w-[384px] px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
+            <motion.div
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: false, amount: 0.5 }}
+                                        variants={slideInFromRight}  className="w-[180px] md:w-[384px] px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
               <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
                 <Image
                   src="/whiteemail.svg"
@@ -115,9 +130,13 @@ const page = () => {
               <span className="text-textblue text-xs font-monte opacity-80">
                 sales@railtechmaterials.com
               </span>
-            </div>
+            </motion.div>
             {/* Card3 */}
-            <div data-aos="fade-left" className="w-[200px] md:w-[384px] mx-28 md:mx-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
+            <motion.div
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: false, amount: 0.5 }}
+                                        variants={slideInFromRight}  className="w-[200px] md:w-[384px] mx-28 md:mx-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm">
               <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
                 <Image
                   src="/whitemap.svg"
@@ -136,7 +155,7 @@ const page = () => {
               <span className="text-textblue text-xs font-monte opacity-80">
                 Howrah, Chakpara, West Bengal 711203
               </span>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -94,7 +94,7 @@ const Page = () => {
       </div>
 
       {/* Section 3: Icon Stats */}
-      <div data-aos="zoom-in-up" className=" max-w-[1440px] z- bg-white mx-auto flex flex-col 5xl:flex-row justify-center items-center lg:justify-around  lg:mt-0 mt-8 gap-16 md:gap-4 lg:gap-16 px-10">
+      <div data-aos="zoom-in-up" className=" max-w-[1440px] z- bg-white mx-auto flex flex-col 2xl:flex-row justify-center items-center lg:justify-around  lg:mt-0 mt-8 gap-16 md:gap-4 lg:gap-16 px-10">
         {cardData.map((data, idx) => (
           <CardComponent key={idx} data={data} />
         ))}
