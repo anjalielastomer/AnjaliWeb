@@ -38,7 +38,7 @@ const cardData: CardProps[] = [
 ];
 const CardComponent = ({ data }: { data: CardProps }) => {
   return (
-    <div className="min-w-96 border bg-white border-[#FB7602] min-h-62 p-12 -mt-6 rounded-lg">
+    <div className="border bg-white border-[#FB7602] min-h-62 p-2 md:p-12 -mt-6 rounded-lg">
       <div className="w-full flex justify-center items-center mb-4">
         <div className="w-12 h-12 rounded-full bg-[#FF6A00] flex justify-center items-center">
           <Image

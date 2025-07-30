@@ -186,34 +186,42 @@ const Production1 = () => {
 export default Production1;
 
 function StatItem({
-    number,
-    unit,
-    description,
+  number,
+  unit,
+  description,
 }: {
-    number: number;
-    unit: string;
-    description: string;
+  number: number;
+  unit: string;
+  description: string;
 }) {
-    const ref = useRef<HTMLDivElement | null>(null);
-    const isVisible = useOnScreen(ref);
-    const animatedNumber = useCountUp(number, isVisible, 2000);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isVisible = useOnScreen(ref);
+  const animatedNumber = useCountUp(number, isVisible, 2000);
 
-    return (
-        <div className="flex gap-4 sm:gap-8 items-start py-4" ref={ref}>
-            <div className="text-textorange font-bold text-3xl sm:text-4xl lg:text-5xl w-20 sm:w-32  text-center">
-                <div className="flex items-center justify-end gap-2">
-                    {animatedNumber}
-                    <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />
-                </div>
-                <div className="uppercase text-xs sm:text-sm font-semibold text-right text-textblue mt-2 mb-2">
-                    {unit}
-                </div>
-            </div>
-            <div className="border-l-2 border-gray-400 pl-4 sm:pl-6 flex-1">
-                <p className="text-sm sm:text-base text-textblue text-justify leading-relaxed">{description}</p>
-            </div>
+  return (
+    <div className="flex gap-2 items-start" ref={ref}>
+      <div className="text-textorange font-bold text-4xl w-36 break-words text-right">
+        <div className="flex items-baseline-last justify-end gap-2">
+          {animatedNumber}
+          <Image
+            src="/send.png"
+            alt="send"
+            width={25}
+            height={4}
+            className="animate-blink"
+          />
         </div>
-    );
+        <div className="uppercase text-sm font-semibold text-textblue mb-1">
+          {unit}
+        </div>
+      </div>
+      <div className="border-l-2 border-gray-400 pl-4 flex-1">
+        <p className="text-xs font-medium text-textblue text-justify leading-7">
+          {description}
+        </p>
+      </div>
+    </div>
+  );
 }
 
 // Custom Hook for count-up animation

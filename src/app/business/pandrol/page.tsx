@@ -52,7 +52,7 @@ const Page = () => {
 };
   return (
     <div
-      className="pt-16 md:pt-22"
+      className="pt-16 md:pt-22 overflow-hidden"
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
       {/* Header Section */}
