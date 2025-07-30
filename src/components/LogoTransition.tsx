@@ -17,7 +17,7 @@ const LogoTransition = ({ onComplete }: { onComplete: () => void }) => {
     <AnimatePresence>
       {showLogo && (
         <motion.div
-          className="fixed inset-0 z-[100] bg-[color:var(--bgwhite)] flex items-center justify-center pointer-events-none"
+          className="fixed inset-0 z-[100] bg-[color:var(--bgcolour)] flex items-center justify-center pointer-events-none"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
