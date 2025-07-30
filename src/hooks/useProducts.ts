@@ -8,7 +8,6 @@ interface UseProductsParams {
   category?: string;
   segment?: string;
 }
-
 interface UseProductsOptions
   extends Omit<UseQueryOptions<StrapiResponse>, "queryKey" | "queryFn"> {}
 
@@ -23,13 +22,14 @@ export const useProducts = (
     queryFn: () => {
       const filters: Record<string, any> = {};
 
-      if (params?.category && params.category !== "all") {
-        filters["product_categories.name"] = params.category;
-      }
-
+      // Use only ONE filter! Both segment and category are documentId's
       if (params?.segment && params.segment !== "all") {
-        filters["product_categories.name"] = params.segment;
+        filters["product_categories.documentId.$eq"] = params.segment;
       }
+      // If you actually want to filter by selectedCategory instead, swap above line to this:
+      // if (params?.category && params.category !== "all") {
+      //   filters["product_categories.documentId.$eq"] = params.category;
+      // }
 
       return productsService.getProducts({
         page: params?.page || 1,
@@ -41,7 +41,7 @@ export const useProducts = (
   });
 };
 
-// Updated to use documentId (string) instead of numeric id
+// Single product fetch (no change needed)
 export const useProduct = (
   documentId: string,
   options?: Omit<
@@ -57,6 +57,7 @@ export const useProduct = (
   });
 };
 
+// Product transformation (no change)
 export const transformStrapiProduct = (
   strapiProduct: StrapiProduct
 ): Product => {
@@ -71,7 +72,6 @@ export const transformStrapiProduct = (
   const categories =
     strapiProduct.product_categories?.map((cat) => cat.name) || [];
 
-  // Transform customer_reviews into ProductReview format
   const reviews =
     strapiProduct.customer_reviews?.map((review) => ({
       id: review.id,
@@ -92,6 +92,6 @@ export const transformStrapiProduct = (
     categories: categories,
     keyFeatures:
       strapiProduct.key_features?.map((feature) => feature.text) || [],
-    reviews: reviews, // <-- Add this line
+    reviews: reviews,
   };
 };
