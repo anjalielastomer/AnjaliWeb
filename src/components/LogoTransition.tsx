@@ -4,7 +4,17 @@ import { useEffect, useState } from 'react';
 
 const LogoTransition = ({ onComplete }: { onComplete: () => void }) => {
   const [showLogo, setShowLogo] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // Tailwind's md breakpoint
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLogo(false);
@@ -23,12 +33,16 @@ const LogoTransition = ({ onComplete }: { onComplete: () => void }) => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 1.2 }}
         >
-          <motion.div
-            initial={{ scale: 1.5, x: 0, y: 0 }}
-            animate={{ scale: 0.4, x: '-42vw', y: '-46vh' }} 
-            transition={{ duration: 2, ease: 'easeInOut' }}
-            className="text-4xl md:text-6xl font-bold font-raleway"
-          >
+           <motion.div
+      initial={{ scale: 1.5, x: 0, y: 0 }}
+      animate={{
+        scale: isMobile ? 0.6 : 0.4,
+        x: isMobile ? '-25vw' : '-42vw',
+        y: isMobile ? '-45vh' : '-46vh',
+      }}
+      transition={{ duration: 2, ease: 'easeInOut' }}
+      className="text-xl md:text-6xl font-bold font-raleway"
+    >
             <span className="text-[color:var(--textblue)]">Anjali </span>
             <span className="text-[color:var(--textorange)]">Elastomer</span>
           </motion.div>
