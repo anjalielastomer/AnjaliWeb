@@ -4,32 +4,72 @@ import ProductGrid from "@/components/ProductGrid";
 import ProductFilter from "@/components/ProductFilter";
 import Link from "next/link";
 import { useProducts } from "@/hooks/useProducts";
+import { useCategory } from "@/hooks/useCategory";
 
-// Remove the duplicate Product interface since it's already in types
+interface ProductCategory {
+  id: number;
+  documentId: string;
+  name: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+}
+
+interface ProductCategoriesResponse {
+  data: ProductCategory[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      pageCount: number;
+      total: number;
+    };
+  };
+}
+
 const ProductsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedSegment, setSelectedSegment] = useState<string>("all");
 
-  // Updated to use segment as the primary filter
+  const { categories, loading, error } = useCategory();
+
   const { data: productsData } = useProducts({
-    segment: selectedSegment, // Use segment instead of category
+    segment: selectedSegment,
     pageSize: 1000,
   });
 
   const getSegmentDisplayName = (segment: string) => {
-    const segmentMap: Record<string, string> = {
-      all: "All Products",
-      "railway-metro-coach-products": "Railway/Metro Coach",
-      "railway-metro-track-products": "Railway/Metro Track",
-      "brake-shoe-brake-pad-products": "Brake Shoe/Brake Pad",
-      "steel-casting-products": "Steel-Casting",
-      "rolling-mill-products": "Rolling Mill",
-      "other-products": "Other Products",
-    };
-    return segmentMap[segment] || "Products";
+    if (segment === "all") return "All Products";
+    const category = categories.find(
+      (cat) =>
+        cat.documentId === segment ||
+        cat.name.toLowerCase().replace(/\s+/g, "-") === segment
+    );
+    return category ? category.name : "Products";
+  };
+
+  const getCategoryOptions = () => {
+    const options = [{ value: "all", label: "All Products" }];
+    categories.forEach((category) => {
+      options.push({
+        value: category.documentId,
+        label: category.name,
+      });
+    });
+    return options;
   };
 
   const productCount = productsData?.meta?.pagination?.total || 0;
+
+  if (loading) {
+    return (
+      <div className="min-h-screen pt-20 flex items-center justify-center">
+        <div className="text-2xl" style={{ color: "var(--textblue)" }}>
+          Loading products...
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -37,7 +77,6 @@ const ProductsPage: React.FC = () => {
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
       <div className="container mx-auto px-4 py-8">
-        {/* Main Header */}
         <div className="mb-4">
           <div className="flex lg:justify-end justify-center px-15 mb-6">
             <h1
@@ -60,11 +99,11 @@ const ProductsPage: React.FC = () => {
             selectedSegment={selectedSegment}
             onCategoryChange={setSelectedCategory}
             onSegmentChange={setSelectedSegment}
+            categories={categories}
           />
           <div className="flex gap- flex-col w-auto lg:w-[65%] ">
             <div className="flex justify-between items-center mb-8">
               <div>
-                {/* Dynamic Breadcrumb */}
                 <nav className="flex" aria-label="Breadcrumb">
                   <ol
                     className="flex items-center space-x-2 text-[18px] font-[500] font-monte"
@@ -105,6 +144,7 @@ const ProductsPage: React.FC = () => {
             <ProductGrid
               selectedCategory={selectedCategory}
               selectedSegment={selectedSegment}
+              categories={categories}
             />
           </div>
         </div>

@@ -18,7 +18,36 @@ import TrackMap from "../components/TrackMap";
  * Page component generated from Phase design
  * Screen
  */
+
+interface Dimensions {
+  width: number;
+  height: number;
+}
+
 export default function India2(): React.JSX.Element {
+  const [dimensions, setDimensions] = React.useState<Dimensions>({
+    width: 587.86,
+    height: 663.44,
+  });
+
+    useEffect(() => {
+      const handleResize = (): void => {
+        if (window.innerWidth < 425) {
+          // 16px padding each side, keep aspect ratio
+          const width = window.innerWidth - 32;
+          const aspect = 663.44 / 587.86;
+          setDimensions({ width, height: width * aspect });
+        } else {
+          setDimensions({ width: 587.86, height: 663.44 });
+        }
+      };
+      
+      handleResize();
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+
   const apiINBRHover = useAnimation(iNBRHover);
   const apiINGJHover = useAnimation(iNGJHover);
   const apiINHRHover = useAnimation(iNHRHover);

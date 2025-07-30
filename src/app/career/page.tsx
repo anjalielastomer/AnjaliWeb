@@ -17,6 +17,8 @@ const Page: React.FC = () => {
       resume: "",
     },
   });
+  const [isInputHovered, setIsInputHovered] = useState(false);
+  
 
   
   const handleInputChange = (
@@ -42,17 +44,8 @@ const Page: React.FC = () => {
   };
 
   // Mouse event handlers for input styling
-  const handleMouseEnter = (
-    e: React.MouseEvent<HTMLInputElement | HTMLDivElement>
-  ) => {
-    e.currentTarget.style.borderColor = "var(--textorange)";
-  };
-
-  const handleMouseLeave = (
-    e: React.MouseEvent<HTMLInputElement | HTMLDivElement>
-  ) => {
-    e.currentTarget.style.borderColor = "#E6E6E6";
-  };
+  const handleMouseEnter = () => setIsInputHovered(true);
+  const handleMouseLeave = () => setIsInputHovered(false);
 
   const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
     e.currentTarget.style.borderColor = "var(--textorange)";
@@ -372,14 +365,14 @@ const Page: React.FC = () => {
                 placeholder=""
                 required
                 className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none text-sm transition-colors"
-                style={{
-                  backgroundColor: "var(--bgwhite)",
-                  borderColor: "#E6E6E6",
-                }}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
+               style={{
+    backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+    borderColor: "#E6E6E6",
+  }}
+  onMouseEnter={handleMouseEnter}
+  onMouseLeave={handleMouseLeave}
+  onFocus={handleFocus}
+  onBlur={handleBlur}
               />
             </div>
             <div>
@@ -399,13 +392,13 @@ const Page: React.FC = () => {
                 required
                 className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none text-sm transition-colors"
                 style={{
-                  backgroundColor: "var(--bgwhite)",
-                  borderColor: "#E6E6E6",
-                }}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
+    backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+    borderColor: "#E6E6E6",
+  }}
+  onMouseEnter={handleMouseEnter}
+  onMouseLeave={handleMouseLeave}
+  onFocus={handleFocus}
+  onBlur={handleBlur}
               />
             </div>
             <div>
@@ -425,13 +418,13 @@ const Page: React.FC = () => {
                 required
                 className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none text-sm transition-colors"
                 style={{
-                  backgroundColor: "var(--bgwhite)",
-                  borderColor: "#E6E6E6",
-                }}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
+    backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+    borderColor: "#E6E6E6",
+  }}
+  onMouseEnter={handleMouseEnter}
+  onMouseLeave={handleMouseLeave}
+  onFocus={handleFocus}
+  onBlur={handleBlur}
               />
             </div>
             <div>
@@ -450,13 +443,13 @@ const Page: React.FC = () => {
                 placeholder=""
                 className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none text-sm transition-colors"
                 style={{
-                  backgroundColor: "var(--bgwhite)",
-                  borderColor: "#E6E6E6",
-                }}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
+    backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+    borderColor: "#E6E6E6",
+  }}
+  onMouseEnter={handleMouseEnter}
+  onMouseLeave={handleMouseLeave}
+  onFocus={handleFocus}
+  onBlur={handleBlur}
               />
             </div>
             <div>
@@ -483,6 +476,14 @@ const Page: React.FC = () => {
                   }
                   required
                   className="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
+                  style={{
+    backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+    borderColor: "#E6E6E6",
+  }}
+  onMouseEnter={handleMouseEnter}
+  onMouseLeave={handleMouseLeave}
+  onFocus={handleFocus}
+  onBlur={handleBlur}
                 />
                 <svg
                   className="mx-auto mb-1"

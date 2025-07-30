@@ -4,23 +4,34 @@ import ProductCard from "@/components/ProductCard";
 import { Product } from "@/types/product";
 import { useProducts, transformStrapiProduct } from "@/hooks/useProducts";
 
+interface ProductCategory {
+  id: number;
+  documentId: string;
+  name: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+}
+
 interface ProductGridProps {
   selectedCategory: string;
   selectedSegment: string;
+  categories: ProductCategory[]; 
 }
 
 const ProductGrid: React.FC<ProductGridProps> = ({
   selectedCategory,
   selectedSegment,
+  categories, 
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 9;
 
-  // Updated to use segment as primary filter
+  
   const { data, isLoading, error, refetch } = useProducts({
     page: currentPage,
     pageSize: productsPerPage,
-    segment: selectedSegment, // Use segment instead of category
+    segment: selectedSegment, 
   });
 
   const transformedProducts = useMemo(() => {
@@ -39,12 +50,19 @@ const ProductGrid: React.FC<ProductGridProps> = ({
     if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
   };
 
-  // Reset to page 1 when filters change
   React.useEffect(() => {
     setCurrentPage(1);
   }, [selectedCategory, selectedSegment]);
 
-  // Loading state
+
+  const getCurrentCategoryName = () => {
+    if (selectedSegment === "all") return "All Products";
+    const category = categories.find(
+      (cat) => cat.documentId === selectedSegment
+    );
+    return category ? category.name : "Products";
+  };
+
   if (isLoading) {
     return (
       <div className="flex-1 relative">
@@ -55,7 +73,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
     );
   }
 
-  // Error state
+  
   if (error) {
     return (
       <div className="flex-1 relative">
@@ -76,7 +94,16 @@ const ProductGrid: React.FC<ProductGridProps> = ({
 
   return (
     <div className="flex-1 relative">
-      {/* Scrollable Container */}
+     
+      <div className="mb-6">
+        <h2
+          className="text-2xl font-semibold"
+          style={{ color: "var(--textblue)" }}
+        >
+          {getCurrentCategoryName()}
+        </h2>
+      </div>
+
       <div
         className="h-[calc(100vh + 600px)] overflow-y-auto pr-4 mr-2"
         style={{
@@ -84,28 +111,25 @@ const ProductGrid: React.FC<ProductGridProps> = ({
           scrollbarColor: "var(--textorange) #f3f4f6",
         }}
       >
-        {/* Products Grid */}
+     
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {transformedProducts.map((product) => (
-            <ProductCard
-              
-              key={product.id}
-              product={product}
-            />
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
-        {/* No Products Message */}
+   
         {transformedProducts.length === 0 && !isLoading && (
           <div className="text-center py-12">
             <p className="text-lg" style={{ color: "var(--textcolour)" }}>
-              No products found matching your criteria.
+              No products found in {getCurrentCategoryName().toLowerCase()}.
             </p>
+            
           </div>
         )}
       </div>
 
-      {/* Pagination Controls */}
+     
       {totalPages > 1 && (
         <div className="flex justify-between items-center mt-4 px-4 text-sm text-gray-700 font-monte">
           <button
@@ -130,12 +154,20 @@ const ProductGrid: React.FC<ProductGridProps> = ({
         </div>
       )}
 
-      {/* Product count info */}
+     
       <div className="text-center mt-2 text-lg text-textblue font-monte">
         Showing {transformedProducts.length} of {totalProducts} products
+        {selectedSegment !== "all" && (
+          <span
+            className="text-sm block mt-1"
+            style={{ color: "var(--textcolour)" }}
+          >
+            in {getCurrentCategoryName()}
+          </span>
+        )}
       </div>
 
-      {/* Custom Scrollbar */}
+      
       <style jsx>{`
         div::-webkit-scrollbar {
           width: 6px;

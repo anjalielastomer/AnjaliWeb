@@ -13,12 +13,9 @@ export const productsService = {
       populate: "*",
     };
 
-    if (params?.page) {
-      queryParams["pagination[page]"] = String(params.page);
-    }
-    if (params?.pageSize) {
+    if (params?.page) queryParams["pagination[page]"] = String(params.page);
+    if (params?.pageSize)
       queryParams["pagination[pageSize]"] = String(params.pageSize);
-    }
 
     if (params?.filters) {
       for (const [rawKey, rawValue] of Object.entries(params.filters)) {
@@ -32,17 +29,17 @@ export const productsService = {
         }
         const value = String(rawValue);
         const parts = rawKey.split(".");
-        const bracketPath = parts.reduce((acc, curr) => `${acc}[${curr}]`, "");
-        queryParams[`filters${bracketPath}[$eq]`] = value;
+        let bracketPath = parts.reduce((acc, curr) => `${acc}[${curr}]`, "");
+        if (!rawKey.endsWith(".$eq")) {
+          bracketPath += "[$eq]";
+        }
+        queryParams[`filters${bracketPath}`] = value;
       }
     }
 
     return apiClient.get<StrapiResponse>("/products", queryParams);
   },
 
-  /**
-   * Fetch a single product by its documentId (not numeric ID).
-   */
   getProductById: async (
     documentId: string
   ): Promise<{ data: StrapiProduct }> => {
