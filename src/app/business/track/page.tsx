@@ -79,15 +79,16 @@ const Page = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="flex-shrink-0 w-full max-w-sm lg:max-w-md xl:max-w-lg"
         >
-          <div className="relative w-full aspect-[3/4] lg:aspect-[4/5] rounded-xl overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
-            <Image
-              src="/business/track-1.svg"
-              alt="Railway bridge structure"
-              fill={true}
-              className="object-cover"
-              loading='eager'
-            />
-          </div>
+          <div className="relative w-[220px] aspect-[3/4] md:w-[300px] lg:w-full lg:aspect-[4/5] rounded-xl overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 mx-auto">
+  <Image
+    src="/business/track-1.svg"
+    alt="Railway bridge structure"
+    fill
+    className="object-cover"
+    loading="eager"
+  />
+</div>
+
         </motion.div>
       </div>
 
@@ -204,21 +205,22 @@ const Page = () => {
       <div className="bg-[#fff5ef] py-16 md:py-24">
         <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12 p-2">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={popUp}
-            viewport={{ once: false, amount: 0.3 }}
-            className="flex items-center justify-center"
-          >
-            <Image
-              className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
-              src="/business/track-4.svg"
-              alt="Train crossing a river on a bridge"
-              width={496}
-              height={574}
-              loading='lazy'
-            />
-          </motion.div>
+  initial="hidden"
+  whileInView="visible"
+  variants={popUp}
+  viewport={{ once: false, amount: 0.3 }}
+  className="flex items-center justify-center"
+>
+  <Image
+    className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 w-[220px] md:w-[320px] lg:w-[496px] h-auto"
+    src="/business/track-4.svg"
+    alt="Train crossing a river on a bridge"
+    width={496}
+    height={574}
+    loading="lazy"
+  />
+</motion.div>
+
           <motion.div
             initial="hidden"
             whileInView="visible"
