@@ -136,7 +136,7 @@ const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS *
           } as React.CSSProperties} // Type assertion needed for custom CSS variables
 
         >
-          {[...featuredProducts].map(
+          {[...featuredProducts,...featuredProducts,...featuredProducts].map(
             (item, index) => {
               const { product } = item;
               const productImage = product.images?.[0];

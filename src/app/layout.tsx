@@ -1,17 +1,16 @@
+// app/layout.tsx
 import type { Metadata } from "next";
-import { Raleway, Montserrat,Roboto } from "next/font/google";
+import { Raleway, Montserrat, Roboto } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { QueryProvider } from "@/providers/query-provider";
-import AOSInit from '@/components/AOSInit'
 import { Toaster } from "sonner";
+import LayoutWrapper from "@/components/Layoutwrapper"; // NEW
+
 const raleway = Raleway({
   variable: "--font-raleway",
   weight: ["800", "500", "300"],
   subsets: ["latin"],
 });
-
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   weight: ["400", "600", "700"],
@@ -22,6 +21,7 @@ const roboto = Roboto({
   weight: ["400", "600", "700"],
   subsets: ["latin"],
 });
+
 export const metadata: Metadata = {
   title: "Anjali Elastomer",
   description: "",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
@@ -42,12 +42,7 @@ export default function RootLayout({
       >
         <QueryProvider>
           <Toaster />
-          <Navbar />
-          <main className="flex-grow ">
-            <AOSInit />
-            {children}
-          </main>
-          <Footer />
+          <LayoutWrapper>{children}</LayoutWrapper>
         </QueryProvider>
       </body>
     </html>

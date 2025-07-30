@@ -117,6 +117,7 @@ const Navbar: React.FC = () => {
         <div className="w-full flex justify-between items-center px-4 md:px-10 py-4">
           {/* Logo */}
           <Link
+          
           href='/'
             className={`text-xl md:text-2xl font-bold font-raleway cursor-pointer ${getTextColor()}`}
           >
