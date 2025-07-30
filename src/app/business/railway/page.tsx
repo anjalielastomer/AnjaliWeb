@@ -106,7 +106,7 @@ const Page = () => {
   return (
     <div
       className="min-h-screen pt-16 md:pt-22 overflow-hidden"
-      style={{ backgroundColor: "var(--bgwhite)" }}
+      
     >
       <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mb-16 md:mb-20">
         <motion.div
@@ -264,7 +264,7 @@ const Page = () => {
           </div>
         </motion.div>
       </div>
-      <VideoSection bgColor="bg-bgcolour" />
+      <VideoSection />
     </div>
   );
 };

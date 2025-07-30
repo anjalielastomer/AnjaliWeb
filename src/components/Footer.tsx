@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
             </li>
             <li className="flex items-center space-x-2 text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">
               <Image src="/email.svg" alt="Phone" width={20} height={20} />
-              <span className="break-all">info@anjalielastomer.com</span>
+              <span className="break-all">sales@anjalielastomer.com</span>
             </li>
             <li className="flex items-center space-x-2 text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">
               <Image src="/map.svg" alt="Phone" width={20} height={20} />

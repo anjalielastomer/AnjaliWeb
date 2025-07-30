@@ -28,7 +28,7 @@ const ArticlesPage: React.FC = () => {
   }
 
   return (
-    <div className="w-full min-h-fit bg-white justify-center font-monte flex flex-col md:flex-row gap-10 mt-20 px-7 md:px-14 pb-20">
+    <div className="w-full max-w-[1440px] mx-auto min-h-fit bg-white justify-center font-monte flex flex-col md:flex-row gap-10 mt-20 px-7 md:px-14 pb-20">
       <div className="flex flex-col items-center md:items-start">
         {/* Header Section */}
         <h1 data-aos="fade-right" className="text-3xl md:text-7xl font-bold text-textblue mb-2 leading-snug flex flex-row md:flex-col gap-5 font-raleway">
@@ -49,7 +49,7 @@ const ArticlesPage: React.FC = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full p-2 bg-white rounded-md border border-gray-300 mb-3 focus:outline-none focus:ring-2 focus:ring-textorange"
+              className="w-full p-2 bg-white rounded-md border border-[#ff7f00] mb-3 focus:outline-none focus:ring-[#ff7f00]"
             />
             <button className="bg-textorange text-white px-4 py-2 rounded-md w-full hover:bg-[#ff7f00] transition">
               Subscribe

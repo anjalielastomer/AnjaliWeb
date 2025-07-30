@@ -86,15 +86,17 @@ const page = () => {
       {/* Section 1 */}
       <div className="w-full flex flex-col items-center pb-20">
         <div className="w-full flex flex-col ">
-          <span className="max-w-none 2xl:max-w-[1600px] flex justify-center md:justify-end text-textblue text-4xl font-raleway font-bold pr-10">
+          <div className="max-w-[3000px] 2xl:max-w-[1600px]">
+          <span className="w-full flex justify-center md:justify-end text-textblue text-4xl font-raleway font-bold pr-10">
             Contact <span className="text-textorange ml-2">Us</span>
           </span>
+          </div>
           <hr className="w-full border-t-2 border-[#E5E7EB] mt-2 mb-8" />
         </div>
         <div className="w-full flex justify-center">
           {/* PARENT container now orchestrates the animation */}
           <motion.div
-            className="w-fit grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-20 "
+            className="w-fit grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-20 mt-5"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -143,10 +145,10 @@ const page = () => {
                 Email
               </h2>
               <p className="text-textblue text-[12px] md:text-[14px] font-monte mb-1">
-                info@railtechmaterials.com
+                info@anjalielastomer.com
               </p>
               <span className="text-textblue text-xs font-monte opacity-80">
-                sales@railtechmaterials.com
+                sales@anjalielastomer.com
               </span>
             </motion.div>
 
@@ -286,7 +288,7 @@ const page = () => {
               <option value="highway">Highway/Bridge</option>
               <option value="railway">Railway</option>
               <option value="industrial">Industrial</option>
-              <option value="other">Other</option>
+              <option value="others">Others</option>
             </select>
           </div>
           <div className="flex flex-col gap-2">
@@ -365,7 +367,7 @@ const page = () => {
           Reach out to the right department for faster assistance
         </span>
 
-        <div className="w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-8 md:gap-20">
+        <div className="w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-8 md:gap-20 ">
           {/* Card 1 */}
           <div
             data-aos="fade-left"
@@ -387,7 +389,7 @@ const page = () => {
               Product inquiries and quotes
             </p>
             <span className="text-textblue text-xs font-monte font-medium">
-              sales@railtechmaterials.com
+              sales@anjalielastomer.com
             </span>
           </div>
 
@@ -412,7 +414,7 @@ const page = () => {
               Product specifications and guidance
             </p>
             <span className="text-textblue text-xs font-monte font-medium">
-              support@railtechmaterials.com
+              support@anjalielastomer.com
             </span>
           </div>
 
@@ -437,7 +439,7 @@ const page = () => {
               Large orders and contracts
             </p>
             <span className="text-textblue text-xs font-monte font-medium">
-              procurement@railtechmaterials.com
+              procurement@anjalielastomer.com
             </span>
           </div>
 
@@ -462,7 +464,7 @@ const page = () => {
               Certifications and compliance
             </p>
             <span className="text-textblue text-xs font-monte font-medium">
-              quality@railtechmaterials.com
+              quality@anjalielastomer.com
             </span>
           </div>
         </div>
