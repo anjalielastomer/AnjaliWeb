@@ -65,7 +65,7 @@ export default function AboutSec4() {
             whileInView="visible"
             variants={containerVariants}
             viewport={{ once: false, amount: 0.2 }}
-            className="w-full md:pl-16 text-gray-900 lg:pt-0 pt-10"
+            className="w-full max-w-[600px] md:pl-16 text-gray-900 lg:pt-0 pt-10"
         >
           <motion.h2 variants={itemVariants} className="text-3xl font-raleway sm:text-4xl font-semibold mb-10 text-textblue">
             Elevated{' '}

@@ -1,5 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
+import { AiOutlineCheckCircle, AiOutlineCloseCircle } from 'react-icons/ai';
+import { toast } from 'sonner';
 
 interface EnquiryModalProps {
   isOpen: boolean;
@@ -74,11 +76,23 @@ const EnquiryModal: React.FC<EnquiryModalProps> = ({ isOpen, onClose, productNam
       });
       
       // Show success message or close modal
-      alert('Enquiry submitted successfully!');
+      toast(
+        <div className="flex flex-col items-center text-center">
+          <AiOutlineCheckCircle size={80} className="text-[var(--textorange)] mb-4" />
+          <h2 className="text-2xl font-semibold text-gray-800">Thank you!</h2>
+          <p className="text-sm text-gray-600 mt-1">Enquiry Submitted Successfully!</p>
+        </div>
+      );;
       onClose();
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Error submitting enquiry. Please try again.');
+      toast(
+        <div className="flex flex-col items-center text-center">
+          <AiOutlineCloseCircle size={80} className="text-[var(--textorange)] mb-4" />
+          <h2 className="text-2xl font-semibold text-gray-800">Sorry!</h2>
+          <p className="text-sm text-gray-600 mt-1">Error submitting enquiry. Please try again.</p>
+        </div>
+      );
     } finally {
       setIsSubmitting(false);
     }
