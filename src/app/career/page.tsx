@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { cardData, CardData } from "@/types/career";
 import type { FormData } from "@/types/career";
-import {toast} from 'sonner'
+import { toast } from 'sonner'
 import Link from "next/link";
 import { Variants, motion } from "framer-motion";
+import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
 const Page: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
   const [formData, setFormData] = useState<FormData>({
@@ -18,9 +19,9 @@ const Page: React.FC = () => {
     },
   });
   const [isInputHovered, setIsInputHovered] = useState(false);
-  
 
-  
+
+
   const handleInputChange = (
     field: keyof FormData["data"],
     value: string
@@ -55,7 +56,7 @@ const Page: React.FC = () => {
     e.currentTarget.style.borderColor = "#E6E6E6";
   };
 
- 
+
   const handleButtonMouseEnter = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.style.backgroundColor = "var(--textorange)";
     e.currentTarget.style.color = "var(--bgwhite)";
@@ -73,12 +74,18 @@ const Page: React.FC = () => {
     e.preventDefault();
 
     if (!file) {
-      toast("Please upload your resume.");
+      toast(
+        <div className="flex flex-col items-center text-center">
+          <AiOutlineCloseCircle size={80} className="text-red-400 mb-4" />
+          <h2 className="text-2xl font-semibold text-gray-800">Nearly there!</h2>
+          <p className="text-sm text-gray-600 mt-1">Please upload your resume!</p>
+        </div>
+      );
       return;
     }
 
     try {
-     
+
       const fileFormData = new FormData();
       fileFormData.append("files", file);
 
@@ -120,18 +127,29 @@ const Page: React.FC = () => {
           body: JSON.stringify(requestBody),
         }
       );
-        console.log(requestBody);
+      console.log(requestBody);
 
       if (!submitRes.ok) {
         const errorData = await submitRes.json();
         console.error("Form submission failed:", errorData);
-        toast("Form submission failed. Please try again.");
+        toast(
+          <div className="flex flex-col items-center text-center">
+            <AiOutlineCloseCircle size={80} className="text-red-400 mb-4" />
+            <h2 className="text-2xl font-semibold text-gray-800">Nearly there!</h2>
+            <p className="text-sm text-gray-600 mt-1">Form submission failed. Please try again!</p>
+          </div>
+        );
         return;
       }
 
-      toast("CV submitted successfully!");
+      toast(
+        <div className="flex flex-col items-center text-center">
+          <AiOutlineCheckCircle size={80} className="text-green-400 mb-4" />
+          <h2 className="text-2xl font-semibold text-gray-800">Thank You!</h2>
+          <p className="text-sm text-gray-600 mt-1">CV submitted successfully!</p>
+        </div>
+      );;
 
-      
       setFormData({
         data: {
           name: "",
@@ -144,10 +162,16 @@ const Page: React.FC = () => {
       setFile(null);
     } catch (error) {
       console.error("Submission error:", error);
-      toast("An error occurred. Please try again later.");
+      toast(
+        <div className="flex flex-col items-center text-center">
+          <AiOutlineCloseCircle size={80} className="text-red-400 mb-4" />
+          <h2 className="text-2xl font-semibold text-gray-800">Sorry!</h2>
+          <p className="text-sm text-gray-600 mt-1">An error occurred. Please try again later.!</p>
+        </div>
+      );
     }
   };
-    const slideInFromLeft: Variants = {
+  const slideInFromLeft: Variants = {
     hidden: { x: -100, opacity: 0 },
     visible: {
       x: 0,
@@ -155,14 +179,14 @@ const Page: React.FC = () => {
       transition: { duration: 0.6, ease: "easeOut" },
     },
   };
- const slideInFromRight: Variants = {
-  hidden: { x: 100, opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
+  const slideInFromRight: Variants = {
+    hidden: { x: 100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
   return (
     <div className="w-full min-h-screen mt-24 font-monte">
       {/* Section 1*/}
@@ -170,10 +194,10 @@ const Page: React.FC = () => {
         <div className="flex flex-col md:flex-row gap-10 max-w-7xl w-full">
           {/* Left Section */}
           <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: false, amount: 0.5 }}
-                            variants={slideInFromLeft} className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+            variants={slideInFromLeft} className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
             <h1
               className="font-raleway font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
               style={{ color: "var(--textblue)" }}
@@ -365,14 +389,14 @@ const Page: React.FC = () => {
                 placeholder=""
                 required
                 className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none text-sm transition-colors"
-               style={{
-    backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
-    borderColor: "#E6E6E6",
-  }}
-  onMouseEnter={handleMouseEnter}
-  onMouseLeave={handleMouseLeave}
-  onFocus={handleFocus}
-  onBlur={handleBlur}
+                style={{
+                  backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+                  borderColor: "#E6E6E6",
+                }}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
               />
             </div>
             <div>
@@ -392,13 +416,13 @@ const Page: React.FC = () => {
                 required
                 className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none text-sm transition-colors"
                 style={{
-    backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
-    borderColor: "#E6E6E6",
-  }}
-  onMouseEnter={handleMouseEnter}
-  onMouseLeave={handleMouseLeave}
-  onFocus={handleFocus}
-  onBlur={handleBlur}
+                  backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+                  borderColor: "#E6E6E6",
+                }}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
               />
             </div>
             <div>
@@ -418,13 +442,13 @@ const Page: React.FC = () => {
                 required
                 className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none text-sm transition-colors"
                 style={{
-    backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
-    borderColor: "#E6E6E6",
-  }}
-  onMouseEnter={handleMouseEnter}
-  onMouseLeave={handleMouseLeave}
-  onFocus={handleFocus}
-  onBlur={handleBlur}
+                  backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+                  borderColor: "#E6E6E6",
+                }}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
               />
             </div>
             <div>
@@ -443,13 +467,13 @@ const Page: React.FC = () => {
                 placeholder=""
                 className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none text-sm transition-colors"
                 style={{
-    backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
-    borderColor: "#E6E6E6",
-  }}
-  onMouseEnter={handleMouseEnter}
-  onMouseLeave={handleMouseLeave}
-  onFocus={handleFocus}
-  onBlur={handleBlur}
+                  backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+                  borderColor: "#E6E6E6",
+                }}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
               />
             </div>
             <div>
@@ -477,13 +501,13 @@ const Page: React.FC = () => {
                   required
                   className="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
                   style={{
-    backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
-    borderColor: "#E6E6E6",
-  }}
-  onMouseEnter={handleMouseEnter}
-  onMouseLeave={handleMouseLeave}
-  onFocus={handleFocus}
-  onBlur={handleBlur}
+                    backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+                    borderColor: "#E6E6E6",
+                  }}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
                 />
                 <svg
                   className="mx-auto mb-1"

@@ -6,6 +6,7 @@ import { useContactMessage } from "@/hooks/useContact";
 import { ContactMessage } from "@/types/contact";
 import { toast } from "sonner";
 import { Variants, motion } from "framer-motion";
+import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
 
 const page = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -56,11 +57,23 @@ const page = () => {
         message: "",
         locale: "en",
       });
-      toast("Message sent successfully!");
+      toast(
+        <div className="flex flex-col items-center text-center">
+          <AiOutlineCheckCircle size={80} className="text-green-400 mb-4" />
+          <h2 className="text-2xl font-semibold text-gray-800">Thank you!</h2>
+          <p className="text-sm text-gray-600 mt-1">Message Sent Successfully!</p>
+        </div>
+      );
     },
     onError: (error) => {
       console.error("Error sending message:", error);
-      toast("Failed to send message. Please try again.");
+      toast(
+        <div className="flex flex-col items-center text-center">
+          <AiOutlineCloseCircle size={80} className="text-red-400 mb-4" />
+          <h2 className="text-2xl font-semibold text-gray-800">Sorry!</h2>
+          <p className="text-sm text-gray-600 mt-1">Failed to send message. Please try again.!</p>
+        </div>
+      );
     },
   });
 

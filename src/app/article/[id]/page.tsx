@@ -52,8 +52,8 @@ const ProjectPage: React.FC = () => {
         </button>
       </div>
 
-      <div className="w-full flex flex-col items-center">
-        <h1 className="text-3xl font-semibold mt-6">{article.title}</h1>
+      <div className="w-full max-w-[832px] mx-auto flex flex-col items-center text-justify">
+        <h1 className="text-3xl font-semibold mt-6 font-monte text-center">{article.title}</h1>
         <p className="text-sm text-gray-500 mb-4">
           {article.author} • Published on {article.date}
         </p>
@@ -63,7 +63,7 @@ const ProjectPage: React.FC = () => {
           alt="Cover"
           width={832}
           height={368}
-          className="w-full rounded-lg my-4"
+          className="rounded-lg my-4"
         />
 
         {/* Add safety check for parsedContent */}
@@ -91,7 +91,7 @@ const ProjectPage: React.FC = () => {
                     alt={item.imageAlt || "Article image"}
                     width={832}
                     height={368}
-                    className="w-full rounded-lg my-4"
+                    className="rounded-lg my-4"
                   />
                 </div>
               );
