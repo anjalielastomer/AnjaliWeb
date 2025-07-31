@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 const Footer: React.FC = () => {
   return (
     // Base font-monte already implies default font family, text-gray-300 for color
@@ -85,10 +86,9 @@ const Footer: React.FC = () => {
             Products
           </h3>
           <ul className="space-y-2">
-            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Rail Pads</li>
-            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Fastening Systems</li>
-            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Isolation Materials</li>
-            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Custom Solutions</li>
+            <li><Link href='' className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Custom Solutions</Link></li>
+            <li><Link href='' className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Fastening Systems</Link></li>
+            <li><Link href='' className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Isolation Materials</Link></li>
           </ul>
         </div>
 
@@ -98,10 +98,10 @@ const Footer: React.FC = () => {
             Company
           </h3>
           <ul className="space-y-2">
-            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">About Us</li>
-            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Careers</li>
-            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Projects</li>
-            <li className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Business</li>
+            <li><Link href='/about-us' className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">About Us</Link></li>
+            <li><Link href='/careers' className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Careers</Link></li>
+            <li><Link href='/projects' className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Projects</Link></li>
+            <li><Link href='/business/bridges' className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Business</Link></li>
           </ul>
         </div>
 
