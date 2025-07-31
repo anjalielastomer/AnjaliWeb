@@ -81,7 +81,7 @@ const Page = () => {
         >
           <div className="relative w-[220px] aspect-[3/4] md:w-[300px] lg:w-full lg:aspect-[4/5] rounded-xl overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 mx-auto">
   <Image
-    src="/business/track-1.svg"
+    src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1753946468/o9j95utpjuv1vvel8cev.png"
     alt="Railway bridge structure"
     fill
     className="object-cover"
