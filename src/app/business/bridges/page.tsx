@@ -42,7 +42,7 @@ const Page = () => {
         <div  data-aos="fade-left" className="w-full max-w-sm lg:max-w-md xl:max-w-lg p-2">
           <div className="relative w-full aspect-[3/4] lg:aspect-[4/5] xl:mt-30 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
             <Image
-              src="/business/bridges-1.svg"
+              src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1753945601/rfzj9gzhzcbpx7ljjitl.jpg"
               alt="Railway bridge structure"
               fill={true}
               className="object-cover"
