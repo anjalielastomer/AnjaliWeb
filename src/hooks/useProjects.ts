@@ -6,98 +6,13 @@ import {
   Project,
   StrapiImage,
   StrapiFeaturedProjectsResponse,
-  StrapiFeaturedProject,
 } from "@/types/projects";
 
-interface UseProjectsParams {
-  page?: number;
-  pageSize?: number;
-}
-
-interface UseProjectsOptions
-  extends Omit<
-    UseQueryOptions<StrapiProjectsResponse>,
-    "queryKey" | "queryFn"
-  > {}
-
-// Original projects hook
-export const useProjects = (
-  params?: UseProjectsParams,
-  options?: UseProjectsOptions
-) => {
-  const queryKey = ["projects", params];
-
-  return useQuery<StrapiProjectsResponse>({
-    queryKey,
-    queryFn: () => {
-      return projectsService.getProjects({
-        page: params?.page || 1,
-        pageSize: params?.pageSize || 25,
-        populate: "*",
-      });
-    },
-    ...options,
-  });
-};
-
-// Original single project hook
-export const useProject = (
-  id: string,
-  options?: Omit<
-    UseQueryOptions<{ data: StrapiProject }>,
-    "queryKey" | "queryFn"
-  >
-) => {
-  return useQuery<{ data: StrapiProject }>({
-    queryKey: ["project", id],
-    queryFn: () => projectsService.getProjectById(id),
-    enabled: !!id,
-    ...options,
-  });
-};
-
-// New featured projects hook
-interface UseFeaturedProjectsParams {
-  page?: number;
-  pageSize?: number;
-}
-
-export const useFeaturedProjects = (
-  params?: UseFeaturedProjectsParams,
-  options?: Omit<UseQueryOptions<Project[]>, "queryKey" | "queryFn">
-) => {
-  const queryKey = ["featured-projects", params];
-
-  return useQuery<Project[]>({
-    queryKey,
-    queryFn: async () => {
-      const response = await projectsService.getFeaturedProjects({
-        page: params?.page || 1,
-        pageSize: params?.pageSize || 25,
-      });
-
-      console.log("Res - ", response);
-
-      // 🛠 Filter out entries with null project
-      const validProjects = response.data.filter(
-        (featuredProject) => featuredProject.project !== null
-      );
-
-      return validProjects.map((featuredProject) =>
-        transformStrapiProject(featuredProject.project)
-      );
-    },
-    ...options,
-  });
-};
-
-
-// Original transform function
+// This transform function is correct and unchanged.
 export const transformStrapiProject = (
   strapiProject: StrapiProject
 ): Project => {
   const images = strapiProject.cover_images || [];
-
   const getImageUrl = (img?: StrapiImage): string =>
     img?.formats?.medium?.url || img?.formats?.small?.url || img?.url || "";
 
@@ -113,15 +28,70 @@ export const transformStrapiProject = (
   };
 };
 
-// Additional transform functions for featured projects
-export const transformStrapiFeaturedProject = (
-  strapiFeaturedProject: StrapiFeaturedProject
-): Project => {
-  return transformStrapiProject(strapiFeaturedProject.project);
+
+type ProjectsQueryKey = ["projects", { page?: number; pageSize?: number } | undefined];
+
+export const useProjects = (
+  params?: { page?: number; pageSize?: number },
+  // FIX: Made the options type more specific to match the hook's generics.
+  options?: Omit<UseQueryOptions<StrapiProjectsResponse, Error, Project[], ProjectsQueryKey>, "queryKey" | "queryFn">
+) => {
+  const queryKey: ProjectsQueryKey = ["projects", params];
+  return useQuery<StrapiProjectsResponse, Error, Project[], ProjectsQueryKey>({
+    queryKey,
+    queryFn: () =>
+      projectsService.getProjects({
+        page: params?.page || 1,
+        pageSize: params?.pageSize || 25,
+        populate: "*",
+      }),
+    select: (response) =>
+      response.data
+        .filter((project) => project !== null)
+        .map(transformStrapiProject),
+    ...options,
+  });
 };
 
-export const transformStrapiFeaturedProjects = (
-  response: StrapiFeaturedProjectsResponse
-): Project[] => {
-  return response.data.map(transformStrapiFeaturedProject);
+
+type ProjectQueryKey = ["project", string];
+
+export const useProject = (
+  id: string,
+  // FIX: Made the options type more specific.
+  options?: Omit<UseQueryOptions<{ data: StrapiProject }, Error, Project, ProjectQueryKey>, "queryKey" | "queryFn">
+) => {
+  const queryKey: ProjectQueryKey = ["project", id];
+  return useQuery<{ data: StrapiProject }, Error, Project, ProjectQueryKey>({
+    queryKey,
+    queryFn: () => projectsService.getProjectById(id),
+    enabled: !!id,
+    select: (response) =>
+      transformStrapiProject(response.data),
+    ...options,
+  });
+};
+
+
+type FeaturedProjectsQueryKey = ["featured-projects", { page?: number; pageSize?: number } | undefined];
+
+export const useFeaturedProjects = (
+  params?: { page?: number; pageSize?: number },
+  // FIX: Made the options type more specific.
+  options?: Omit<UseQueryOptions<StrapiFeaturedProjectsResponse, Error, Project[], FeaturedProjectsQueryKey>, "queryKey" | "queryFn">
+) => {
+  const queryKey: FeaturedProjectsQueryKey = ["featured-projects", params];
+  return useQuery<StrapiFeaturedProjectsResponse, Error, Project[], FeaturedProjectsQueryKey>({
+    queryKey,
+    queryFn: () =>
+      projectsService.getFeaturedProjects({
+        page: params?.page || 1,
+        pageSize: params?.pageSize || 25,
+      }),
+    select: (response) =>
+      response.data
+        .filter((featuredProject) => featuredProject.project !== null)
+        .map((featuredProject) => transformStrapiProject(featuredProject.project)),
+    ...options,
+  });
 };
