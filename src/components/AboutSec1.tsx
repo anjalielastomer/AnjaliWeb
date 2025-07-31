@@ -103,7 +103,7 @@ const AboutSec1 = () => {
                   <Image
                     width={554}
                     height={574}
-                    src="/aboutus/aboutimg2.png"
+                    src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1753947780/mcgtlrvmmhprujyqm9h6.png"
                     alt="Modern orange commuter train"
                     className="object-cover w-full h-[400px] lg:h-[500px]"
                   />
