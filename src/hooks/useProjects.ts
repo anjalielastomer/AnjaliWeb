@@ -1,3 +1,5 @@
+// hooks/useProjects.ts
+
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { projectsService } from "@/lib/projectService";
 import {
@@ -8,7 +10,7 @@ import {
   StrapiFeaturedProjectsResponse,
 } from "@/types/projects";
 
-// This transform function is correct and unchanged.
+// This is the single source of truth for transforming a project object.
 export const transformStrapiProject = (
   strapiProject: StrapiProject
 ): Project => {
@@ -33,7 +35,6 @@ type ProjectsQueryKey = ["projects", { page?: number; pageSize?: number } | unde
 
 export const useProjects = (
   params?: { page?: number; pageSize?: number },
-  // FIX: Made the options type more specific to match the hook's generics.
   options?: Omit<UseQueryOptions<StrapiProjectsResponse, Error, Project[], ProjectsQueryKey>, "queryKey" | "queryFn">
 ) => {
   const queryKey: ProjectsQueryKey = ["projects", params];
@@ -58,7 +59,6 @@ type ProjectQueryKey = ["project", string];
 
 export const useProject = (
   id: string,
-  // FIX: Made the options type more specific.
   options?: Omit<UseQueryOptions<{ data: StrapiProject }, Error, Project, ProjectQueryKey>, "queryKey" | "queryFn">
 ) => {
   const queryKey: ProjectQueryKey = ["project", id];
@@ -77,7 +77,6 @@ type FeaturedProjectsQueryKey = ["featured-projects", { page?: number; pageSize?
 
 export const useFeaturedProjects = (
   params?: { page?: number; pageSize?: number },
-  // FIX: Made the options type more specific.
   options?: Omit<UseQueryOptions<StrapiFeaturedProjectsResponse, Error, Project[], FeaturedProjectsQueryKey>, "queryKey" | "queryFn">
 ) => {
   const queryKey: FeaturedProjectsQueryKey = ["featured-projects", params];

@@ -1,7 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useCategory } from "@/hooks/useCategory";
+import { FaXTwitter } from "react-icons/fa6";
 const Footer: React.FC = () => {
+  const { categories } = useCategory();
+  console.log(categories);
+
   return (
     // Base font-monte already implies default font family, text-gray-300 for color
     <footer className="bg-[#122957] text-gray-300 pt-8 pb-6 px-6 relative z-20 font-monte bottom-0">
@@ -18,7 +23,7 @@ const Footer: React.FC = () => {
           </p>
           <div className="flex space-x-4">
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/company/anjali-elastomer/about/?viewAsMember=true"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -40,24 +45,17 @@ const Footer: React.FC = () => {
             </a>
 
             <a
-              href="https://twitter.com/yourusername" // <-- change this to your real Twitter handle
+              href="https://x.com/anjalielastomer" // <-- change this to your real Twitter handle
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter"
-              className="text-white hover:text-[#1DA1F2] transition-colors duration-200"
+              className="text-white hover:text-[#EF6C00] transition-colors duration-200 pt-1"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                className="w-5 h-5"
-              >
-                <path d="M23.954 4.569c-.885.392-1.83.656-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.949.564-2.003.974-3.127 1.195-.897-.959-2.178-1.559-3.594-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124-4.087-.205-7.713-2.164-10.141-5.144-.424.722-.666 1.561-.666 2.475 0 1.708.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.06c0 2.385 1.693 4.374 3.946 4.827-.413.112-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.376 4.604 3.415-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 14.002-7.496 14.002-13.986 0-.21 0-.42-.016-.63.962-.689 1.8-1.56 2.46-2.548l-.047-.02z" />
-              </svg>
+              <FaXTwitter />
             </a>
 
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/profile.php?id=61578696942118"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -86,9 +84,26 @@ const Footer: React.FC = () => {
             Products
           </h3>
           <ul className="space-y-2">
-            <li><Link href='' className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Custom Solutions</Link></li>
-            <li><Link href='' className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Fastening Systems</Link></li>
-            <li><Link href='' className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Isolation Materials</Link></li>
+            {/* Handle loading or empty states */}
+            {!categories || categories.length === 0 ? (
+              <li>
+                <span className="text-base text-gray-500">
+                  Loading products...
+                </span>
+              </li>
+            ) : (
+              // Map over the categories to create a dynamic list
+              categories.map((category) => (
+                <li key={category.documentId}>
+                  <Link
+                    href={`/products`} // Assuming a dynamic route like /products/[id]
+                    className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg"
+                  >
+                    {category.name}
+                  </Link>
+                </li>
+              ))
+            )}
           </ul>
         </div>
 
@@ -98,10 +113,38 @@ const Footer: React.FC = () => {
             Company
           </h3>
           <ul className="space-y-2">
-            <li><Link href='/about-us' className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">About Us</Link></li>
-            <li><Link href='/careers' className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Careers</Link></li>
-            <li><Link href='/projects' className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Projects</Link></li>
-            <li><Link href='/business/bridges' className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">Business</Link></li>
+            <li>
+              <Link
+                href="/about-us"
+                className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg"
+              >
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/careers"
+                className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg"
+              >
+                Careers
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/projects"
+                className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg"
+              >
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/business/bridges"
+                className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg"
+              >
+                Business
+              </Link>
+            </li>
           </ul>
         </div>
 
