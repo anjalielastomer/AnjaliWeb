@@ -65,20 +65,20 @@ const ProjectPage: React.FC = () => {
 
   return (
     <div className="max-w-[1440px] mx-auto w-full min-h-screen px-10 mt-20">
-      <div className="text-sm flex justify-between text-blue-500">
+      <div className=" flex justify-between text-textblue font-monte focus:outline-none text-xl">
         {/* 5. Update onClick handlers; the className is unchanged */}
-        <button onClick={goToPrevious} className="hover:text-blue-800">
+        <button onClick={goToPrevious} className="">
           &lt; Previous Article
         </button>
 
-        <button onClick={goToNext} className="hover:text-blue-800">
+        <button onClick={goToNext} className="">
           Next Article &gt;
         </button>
       </div>
 
       <div className="bg-gray-300 h-[1px] w-screen absolute left-0 my-5" />
 
-      <div className="w-full max-w-[832px] mx-auto flex flex-col items-center text-justify">
+      <div className="w-full max-w-[832px] mx-auto flex flex-col items-center text-justify mb-5">
         <h1 className="text-3xl font-semibold mt-6 pt-6 font-monte text-center">{article.title}</h1>
         <div className="w-full flex gap-5 mt-4 py-2 border-t border-b border-gray-200">
           <Image  src={'/ladygaga.svg'} height={35} width={35} alt="image"/>

@@ -229,3 +229,16 @@ html,body{
   animation: scaleIn 0.5s ease-out;
 }
 
+
+  @keyframes rocket-float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-float {
+    animation: rocket-float 3s ease-in-out infinite;
+  }

@@ -133,7 +133,7 @@ const page = () => {
                 Phone
               </h2>
               <p className="text-textblue text-[14px] font-monte mb-1">
-                +1 (555) 123-4567
+                9681187076 / 9038156288
               </p>
               <span className="text-textblue text-xs font-monte opacity-80">
                 Mon-Fri 8AM-6PM EST
