@@ -45,7 +45,7 @@ const itemVariants: Variants = {
 
 const AboutSec3 = () => {
   return (
-    <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 flex flex-col-reverse md:flex-row items-center md:items-start gap-12 font-monte overflow-hidden">
+    <section className="max-w-[1440px] mx-auto px-6 md:px-12 py-16 md:py-24 flex flex-col-reverse md:flex-row items-center justify-between md:items-start gap-12 font-monte overflow-hidden">
       {/* Left Content */}
       <motion.div
         initial="hidden"

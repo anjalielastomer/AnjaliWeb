@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import VideoSection from "@/components/VideoSection";
 import { Variants, motion } from "framer-motion";
+
 const Page = () => {
   const [content] = useState({
     title: {
@@ -34,22 +35,38 @@ const Page = () => {
       train2: "/business/train2.svg",
     },
   });
+
+  // Common viewport settings for re-animation on each scroll
+  const viewportSettings = { once: false, amount: 0.3 };
+
   const slideInFromLeft: Variants = {
     hidden: { x: -100, opacity: 0 },
     visible: {
       x: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: "easeInOut" },
     },
   };
- const slideInFromRight: Variants = {
-  hidden: { x: 100, opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
+
+  const slideInFromRight: Variants = {
+    hidden: { x: 100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
+  };
+
+  // New variant for a fade-in-up effect
+  const fadeInUp: Variants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
+  };
+
   return (
     <div
       className="pt-16 md:pt-22 overflow-hidden"
@@ -57,7 +74,6 @@ const Page = () => {
     >
       {/* Header Section */}
       <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mb-16 md:mb-20">
-        {/* <Image className="absolute ml-94 -mt-40 rotate-10" src="/named.svg" alt="" width={2000} height={1500} /> */}
         <motion.div
                   initial="hidden"
                   whileInView="visible"
@@ -71,20 +87,22 @@ const Page = () => {
             </span>
             <span className="text-textblue block mt-2 md:mt-3 lg:mt-5">
               {content.title.track}{" "}
-              <span className="text-textorange">
-                {content.title.trackOrange}
-              </span>
+              <span className="text-textorange">{content.title.trackOrange}</span>
             </span>
           </h1>
-
           <p className="text-sm md:text-base text-[#193055] text-center xl:text-justify max-w-full xl:max-w-[40rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte px-2 md:px-0">
             {content.paragraph}
           </p>
         </motion.div>
 
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromRight} className="flex justify-center xl:justify-end mb-6 xl:mb-0">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportSettings} // Applied viewport settings
+          variants={slideInFromRight}
+          className="flex justify-center xl:justify-end mb-6 xl:mb-0"
+        >
           <Image
-            
             className="relative z-10 w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
             src={content.images.train1}
             alt="Modern train"
@@ -97,12 +115,16 @@ const Page = () => {
       </div>
 
       {/* Offerings Section */}
-      <div  className="bg-[#fff5ef] h-auto">
+      <div className="bg-[#fff5ef] h-auto">
         <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between flex-wrap mt-0 xl:mt-[-168px] pb-16 md:pb-20">
-          {/* <Image className="absolute -ml-140 -mt-43 z-1 rotate-10" src="/named.svg" alt="" width={2000} height={1500} />
-          <Image className="absolute -ml-113 mt-10 rotate-70" src="/named.svg" alt="" width={2000} height={1500} />
-          <Image className="absolute ml-118 mt-98 rotate-70" src="/named.svg" alt="" width={2000} height={1500} /> */}
-          <div data-aos="fade-left" className="flex justify-center xl:justify-start mb-8 xl:mb-0">
+          {/* UPDATED: Replaced data-aos with framer-motion */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            variants={slideInFromLeft}
+            className="flex justify-center xl:justify-start mb-8 xl:mb-0"
+          >
             <Image
               className="relative z-10 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[496px] h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
               src={content.images.train2}
@@ -111,17 +133,14 @@ const Page = () => {
               width={496}
               loading="lazy"
             />
-          </div>
-
+          </motion.div>
+          
           <div data-aos="zoom-in-up" className="flex flex-col justify-center pl-4 md:pl-6 xl:pl-10 mt-0 xl:mt-16 lg:mt-24">
             <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-[#193055] mb-6 md:mb-8 font-monte text-center xl:text-left leading-relaxed">
               We are offering{" "}
-              <span className="text-textorange font-bold">
-                Fastening System
-              </span>{" "}
+              <span className="text-textorange font-bold">Fastening System</span>{" "}
               solutions <br className="hidden md:block" /> for:
             </h1>
-
             <div className="space-y-2 md:space-y-4 text-textblue text-sm sm:text-base md:text-lg xl:text-base font-medium font-monte text-center xl:text-left">
               {content.offerings.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -130,12 +149,21 @@ const Page = () => {
                 </div>
               ))}
             </div>
-          </div>
+         
         </div>
       </div>
 
       {/* Video Section */}
-      <VideoSection bgColor="bg-white" />
+      {/* ADDED: framer-motion wrapper for the video section */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportSettings}
+        variants={fadeInUp}
+      >
+        <VideoSection bgColor="bg-white" />
+      </motion.div>
+    </div>
     </div>
   );
 };
