@@ -108,12 +108,13 @@ const ProjectPage: React.FC = () => {
   const transition = { duration: 0.6, ease: "easeInOut" } as const;
 
   return (
-    <main className="bg-white text-textblue min-h-screen px-4 md:px-12 py-10 w-full flex justify-center font-monte">
-      <div className="w-full max-w-6xl flex flex-col items-center space-y-10">
+    <main className="bg-white text-textblue min-h-screen px-4 md:px-12 py-30 w-full flex justify-center font-monte">
+      <div className="w-full max-w-6xl flex flex-col items-center space-y-5">
         <div className="w-full flex justify-between text-sm text-textblue">
           <span>&lt; Previous Project</span>
           <span>Next Project &gt;</span>
         </div>
+        <div className="bg-gray-300 h-[1px] w-screen"></div>
 
         <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-10">
           <div className="w-full flex flex-row md:flex-row gap-4 justify-between items-center">
@@ -156,7 +157,7 @@ const ProjectPage: React.FC = () => {
         </div>
 
         {/* Image and Paragraph 1 */}
-        <div className="w-full flex flex-col md:flex-row gap-6 items-center">
+        <div className="w-full flex flex-col md:flex-row gap-6 items-start">
           {images[0] && (
             <motion.div
               variants={zoomInUp}
@@ -187,68 +188,70 @@ const ProjectPage: React.FC = () => {
           </motion.p>
         </div>
 
-        {/* Image and Paragraph 2 */}
-        <div className="w-full flex flex-col md:flex-row-reverse gap-6 items-center">
-          {images[1] && (
-            <motion.div
-              variants={zoomInUp}
+        <div className="bg-[var(--bgcolour)] w-screen">
+          {/* Image and Paragraph 2 */}
+          <div className="max-w-6xl mx-auto pt-20 px-4 flex flex-col md:flex-row-reverse gap-6 items-center">
+            {images[1] && (
+              <motion.div
+                variants={zoomInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
+                transition={transition}
+                className="w-full md:w-1/2"
+              >
+                <Image
+                  src={images[1].src}
+                  alt={images[1].alt}
+                  width={images[1].width}
+                  height={images[1].height}
+                  className="rounded-md shadow-md object-cover w-full"
+                />
+              </motion.div>
+            )}
+            <motion.p
+              variants={fadeRight}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
               transition={transition}
-              className="w-full md:w-1/2"
+              className="text-sm text-gray-700 leading-relaxed md:w-1/2 text-justify"
             >
-              <Image
-                src={images[1].src}
-                alt={images[1].alt}
-                width={images[1].width}
-                height={images[1].height}
-                className="rounded-md shadow-md object-cover w-full"
-              />
-            </motion.div>
-          )}
-          <motion.p
-            variants={fadeRight}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
-            transition={transition}
-            className="text-sm text-gray-700 leading-relaxed md:w-1/2 text-justify"
-          >
-            {paragraphs[1] || "Additional paragraph goes here."}
-          </motion.p>
-        </div>
+              {paragraphs[1] || "Additional paragraph goes here."}
+            </motion.p>
+          </div>
 
-        {/* Image and Paragraph 3 */}
-        <div className="w-full flex flex-col md:flex-row gap-6 items-center">
-          {images[2] && (
-            <motion.div
-              variants={zoomInUp}
+          {/* Image and Paragraph 3 */}
+          <div className="max-w-6xl mx-auto pb-20 px-4 flex flex-col md:flex-row gap-6 items-center">
+            {images[2] && (
+              <motion.div
+                variants={zoomInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
+                transition={transition}
+                className="w-full md:w-1/2"
+              >
+                <Image
+                  src={images[2].src}
+                  alt={images[2].alt}
+                  width={images[2].width}
+                  height={images[2].height}
+                  className="rounded-md shadow-md object-cover w-full"
+                />
+              </motion.div>
+            )}
+            <motion.p
+              variants={fadeLeft}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
               transition={transition}
-              className="w-full md:w-1/2"
+              className="text-sm text-gray-700 leading-relaxed md:w-1/2 text-justify"
             >
-              <Image
-                src={images[2].src}
-                alt={images[2].alt}
-                width={images[2].width}
-                height={images[2].height}
-                className="rounded-md shadow-md object-cover w-full"
-              />
-            </motion.div>
-          )}
-          <motion.p
-            variants={fadeLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
-            transition={transition}
-            className="text-sm text-gray-700 leading-relaxed md:w-1/2 text-justify"
-          >
-            {paragraphs[2] || project.description}
-          </motion.p>
+              {paragraphs[2] || project.description}
+            </motion.p>
+          </div>
         </div>
 
         {/* Final Image */}
