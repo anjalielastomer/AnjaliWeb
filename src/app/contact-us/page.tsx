@@ -427,7 +427,7 @@ const page = () => {
               Product specifications and guidance
             </p>
             <span className="text-textblue text-xs font-monte font-medium">
-              support@anjalielastomer.com
+              info@anjalielastomer.com
             </span>
           </div>
 
@@ -452,7 +452,7 @@ const page = () => {
               Large orders and contracts
             </p>
             <span className="text-textblue text-xs font-monte font-medium">
-              procurement@anjalielastomer.com
+              sales@anjalielastomer.com
             </span>
           </div>
 
@@ -477,7 +477,7 @@ const page = () => {
               Certifications and compliance
             </p>
             <span className="text-textblue text-xs font-monte font-medium">
-              quality@anjalielastomer.com
+              info@anjalielastomer.com
             </span>
           </div>
         </div>
