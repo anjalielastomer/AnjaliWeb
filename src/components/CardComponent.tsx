@@ -38,7 +38,7 @@ const cardData: CardProps[] = [
 ];
 const CardComponent = ({ data }: { data: CardProps }) => {
   return (
-    <div className="border bg-white border-[#FB7602] min-h-62 p-2 md:p-12 -mt-6 rounded-lg">
+    <div className="border bg-white hover:bg-[#FFF5EF] hover:border-none border-[#FB7602] shadow-lg hover:shadow-[0_0_10px_rgba(255,165,0,0.4)] transition-shadow duration-300 min-h-62 p-2 md:p-12 -mt-6 rounded-lg ">
       <div className="w-full flex justify-center items-center mb-4">
         <div className="w-12 h-12 rounded-full bg-[#FF6A00] flex justify-center items-center">
           <Image
