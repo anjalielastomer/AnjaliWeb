@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["lovable-gift-31985371d0.media.strapiapp.com","0bysse967.ufs.sh","10bysse967.ufs.sh"],
+    domains: ["lovable-gift-31985371d0.media.strapiapp.com","0bysse967.ufs.sh","10bysse967.ufs.sh","res.cloudinary.com"],
   },
   webpack(config) {
     config.module.rules.push({

@@ -193,7 +193,7 @@ const page: React.FC = () => {
               <Image
               data-aos="zoom-in-up"
                 className="w-[85%] sm:w-[75%] md:w-[400px] lg:w-[500px] xl:w-[554px] h-auto object-cover"
-                src="/business/turnout.svg"
+                src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1753946574/kdwxszfwps6rrwcfouui.jpg"
                 alt="Modern train"
                 height={833}
                 width={554}

@@ -3,26 +3,49 @@
 import React from "react";
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
-import { useArticle } from "@/hooks/useArticles";
+// 1. Make sure you are importing both hooks
+import { useArticle, useArticles } from "@/hooks/useArticles"; 
 import { ParsedContent } from "@/types/article";
 
 const ProjectPage: React.FC = () => {
   const { id } = useParams();
   const router = useRouter();
 
-  // Use the React Query hook instead of manual state management
-  const { data: article, isLoading, error, isError } = useArticle(id as string);
+  // Fetch the single article being viewed
+  const { data: article, isLoading: isArticleLoading, error, isError } = useArticle(id as string);
 
-  // Navigation functions (you can enhance these to fetch actual article IDs)
-  const goToProject = (offset: number) => {
-    const currentId = Number(id);
-    const newId = currentId + offset;
-    if (newId > 0) {
-      router.push(`/article/${newId}`);
+  // 2. Fetch the list of all articles to determine navigation
+  const { data: articles, isLoading: areArticlesLoading } = useArticles();
+
+  // 3. Find the actual previous and next articles based on the list's index
+  const currentIndex = articles?.findIndex(a => a.id.toString() === id);
+
+  // Safely find the previous and next articles
+  const prevArticle = (articles && typeof currentIndex === "number" && currentIndex > 0)
+    ? articles[currentIndex - 1]
+    : null;
+
+  // The 'articles && currentIndex != null' check solves the error.
+  const nextArticle = (articles && currentIndex != null && currentIndex < articles.length - 1)
+    ? articles[currentIndex + 1]
+  : null;
+  // 4. New navigation functions with built-in safety checks
+  const goToPrevious = () => {
+    if (prevArticle) {
+      router.push(`/article/${prevArticle.id}`);
     }
+    // If no prevArticle, do nothing.
   };
 
-  if (isLoading) {
+  const goToNext = () => {
+    if (nextArticle) {
+      router.push(`/article/${nextArticle.id}`);
+    }
+    // If no nextArticle, do nothing.
+  };
+
+  // The isLoading check now accounts for both API calls
+  if (isArticleLoading || areArticlesLoading) {
     return (
       <div className="w-full min-h-screen px-10 mt-20 flex items-center justify-center">
         <div className="text-xl text-gray-600">Loading article...</div>
@@ -43,11 +66,12 @@ const ProjectPage: React.FC = () => {
   return (
     <div className="max-w-[1440px] mx-auto w-full min-h-screen px-10 mt-20">
       <div className="text-sm flex justify-between text-blue-500">
-        <button onClick={() => goToProject(-1)} className="hover:text-blue-800">
+        {/* 5. Update onClick handlers; the className is unchanged */}
+        <button onClick={goToPrevious} className="hover:text-blue-800">
           &lt; Previous Article
         </button>
 
-        <button onClick={() => goToProject(1)} className="hover:text-blue-800">
+        <button onClick={goToNext} className="hover:text-blue-800">
           Next Article &gt;
         </button>
       </div>
@@ -71,7 +95,6 @@ const ProjectPage: React.FC = () => {
           className="rounded-lg my-4"
         />
 
-        {/* Add safety check for parsedContent */}
         {article.parsedContent && article.parsedContent.length > 0 ? (
           article.parsedContent.map((item: ParsedContent, index: number) => {
             if (item.type === "heading") {
