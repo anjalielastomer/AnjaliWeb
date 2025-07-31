@@ -102,7 +102,7 @@ export default function FeaturedProjects() {
               </p>
             </div>
 
-            <div className="w-full flex justify-center items-center mt-15">
+            <div className="w-full flex justify-start items-center mt-15">
               <Link
                 href='/projects'
                 className="group transition-colors pr-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway"
