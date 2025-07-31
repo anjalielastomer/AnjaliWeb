@@ -97,7 +97,7 @@ const LatestInsights: React.FC = () => {
           {isLoading && <p className="text-textblue text-center">Loading insights...</p>}
           {isError && <p className="text-red-500 text-center">Could not fetch insights.</p>}
           
-          {articles?.map((article: TransformedArticle) => (
+          {articles?.slice(0,3).map((article: TransformedArticle) => (
             <motion.div
               key={article.id}
               variants={gridItemVariants}
