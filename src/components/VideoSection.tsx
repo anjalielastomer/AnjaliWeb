@@ -7,7 +7,7 @@ interface VideoSectionProps {
   bgColor?: string; // optional, defaults to white
 }
 
-const VideoSection: React.FC<VideoSectionProps> = ({ bgColor = "bg-[var(--bgcolour)]" }) => {
+const VideoSection: React.FC<VideoSectionProps> = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handlePlayClick = () => {
@@ -15,7 +15,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({ bgColor = "bg-[var(--bgcolo
   };
 
   return (
-    <section data-aos="zoom-in-up" className={` var(--bgcolour) py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center`}>
+    <section data-aos="zoom-in-up" className={`var(--bgcolour) py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center`}>
       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-raleway text-center text-textblue">
         See Us in <span className="text-[var(--textorange)]">Action</span>
       </h2>

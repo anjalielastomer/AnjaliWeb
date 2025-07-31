@@ -123,7 +123,7 @@ const Page = () => {
             viewport={{ once: false, amount: 0.2 }}
             className="flex flex-col justify-center px-4 md:px-10 order-1 lg:order-2 flex-1"
           >
-            <motion.h1 variants={itemVariants} className="text-lg sm:text-xl md:text-4xl font-medium text-[#193055] mb-4 font-montserrat text-center md:text-left leading-relaxed tracking-normal">
+            <motion.h1 variants={itemVariants} className="font-monte text-lg sm:text-xl md:text-4xl font-medium text-[#193055] mb-4 font-montserrat text-center md:text-left leading-relaxed tracking-normal">
               We specialize in executing {" "} <span className='text-textorange'>Comprehension</span>
               <br />
               <span className='text-textorange'>Track Construction</span> capabilities:

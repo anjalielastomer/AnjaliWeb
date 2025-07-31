@@ -76,7 +76,7 @@ const ProductsPage: React.FC = () => {
       className="min-h-screen pt-20"
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 mb-3">
         <div className="mb-4">
           <div className="flex lg:justify-end justify-center px-15 mb-6">
             <h1

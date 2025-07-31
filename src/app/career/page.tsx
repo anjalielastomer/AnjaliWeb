@@ -20,8 +20,6 @@ const Page: React.FC = () => {
   });
   const [isInputHovered, setIsInputHovered] = useState(false);
 
-
-
   const handleInputChange = (
     field: keyof FormData["data"],
     value: string
@@ -56,7 +54,6 @@ const Page: React.FC = () => {
     e.currentTarget.style.borderColor = "#E6E6E6";
   };
 
-
   const handleButtonMouseEnter = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.style.backgroundColor = "var(--textorange)";
     e.currentTarget.style.color = "var(--bgwhite)";
@@ -66,7 +63,6 @@ const Page: React.FC = () => {
     e.currentTarget.style.backgroundColor = "var(--bgwhite)";
     e.currentTarget.style.color = "var(--textorange)";
   };
-
 
   const handleSubmit = async (
     e: React.FormEvent<HTMLFormElement>
@@ -85,7 +81,6 @@ const Page: React.FC = () => {
     }
 
     try {
-
       const fileFormData = new FormData();
       fileFormData.append("files", file);
 
@@ -117,8 +112,7 @@ const Page: React.FC = () => {
       };
 
       const submitRes = await fetch(
-        `${process.env
-          .NEXT_PUBLIC_API_URL}/career-requests`,
+        `${process.env.NEXT_PUBLIC_API_URL}/career-requests`,
         {
           method: "POST",
           headers: {
@@ -232,7 +226,15 @@ const Page: React.FC = () => {
               >
                 Drop us your{" "}
                 <span style={{ color: "var(--textorange)" }}>CV</span> at
-                <Link href="mailto:careers@anjalielastomer.in" style={{ color: "var(--textorange)", textDecoration: "underline", cursor: "pointer", textDecorationThickness: "1.5px" }}>
+                <Link
+                  href="mailto:careers@anjalielastomer.in"
+                  style={{
+                    color: "var(--textorange)",
+                    textDecoration: "underline",
+                    cursor: "pointer",
+                    textDecorationThickness: "1.5px",
+                  }}
+                >
                   careers@anjalielastomer.in
                 </Link>
               </span>
@@ -240,9 +242,15 @@ const Page: React.FC = () => {
           </motion.div>
 
           {/* Right Section */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromRight} className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-5">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+            variants={slideInFromRight}
+            className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-5"
+          >
             <span
-              className="font-monte font-medium text-base sm:text-lg text-center md:text-justify max-w-2xl"
+              className="font-monte font-medium text-base sm:text-lg text-center md:text-justify max-w-lg mb-7"
               style={{ color: "var(--textblue)" }}
             >
               Join our team of innovators creating cutting-edge rail-road
@@ -256,6 +264,7 @@ const Page: React.FC = () => {
               height={500}
               className="w-full max-w-[500px] h-auto rounded-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
               loading="eager"
+             
             />
           </motion.div>
         </div>
@@ -391,6 +400,7 @@ const Page: React.FC = () => {
                 className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none text-sm transition-colors"
                 style={{
                   backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+
                   borderColor: "#E6E6E6",
                 }}
                 onMouseEnter={handleMouseEnter}
@@ -417,6 +427,7 @@ const Page: React.FC = () => {
                 className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none text-sm transition-colors"
                 style={{
                   backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+
                   borderColor: "#E6E6E6",
                 }}
                 onMouseEnter={handleMouseEnter}
@@ -443,6 +454,7 @@ const Page: React.FC = () => {
                 className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none text-sm transition-colors"
                 style={{
                   backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+
                   borderColor: "#E6E6E6",
                 }}
                 onMouseEnter={handleMouseEnter}
@@ -468,6 +480,7 @@ const Page: React.FC = () => {
                 className="w-full border border-[#E6E6E6] rounded-full px-4 py-2 focus:outline-none text-sm transition-colors"
                 style={{
                   backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+
                   borderColor: "#E6E6E6",
                 }}
                 onMouseEnter={handleMouseEnter}
@@ -502,6 +515,7 @@ const Page: React.FC = () => {
                   className="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
                   style={{
                     backgroundColor: isInputHovered ? "var(--bgcolour)" : "var(--bgwhite)",
+
                     borderColor: "#E6E6E6",
                   }}
                   onMouseEnter={handleMouseEnter}

@@ -46,7 +46,7 @@ const Production1 = () => {
                     {/* Left Side */}
                     <div className="w-full lg:w-1/2 p-4 px-6 sm:px-8 lg:px-2 flex flex-col">
                         {/* This heading is now static */}
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-textblue leading-relaxed gap-10 mb-8">
                             State-of-Art<br />
                             <span className="mt-4 text-textorange">Production</span> <br />
                             Facilities
@@ -81,7 +81,7 @@ const Production1 = () => {
                             className="max-w-lg mx-auto lg:mx-0"
                         >
                             <motion.div variants={slideInFromRight} className="flex items-center justify-start gap-2 mb-6 font-raleway">
-                                <h2 className="text-[#152f5d] font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Steel</h2>
+                                <h2 className="text-textblue font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Steel</h2>
                                 <span className="text-textorange font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Fabrication</span>
                             </motion.div>
 
@@ -116,7 +116,7 @@ const Production1 = () => {
                         initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromLeft}
                         className="mb-8"
                     >
-                        <h2 className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px] max-w-[1440px] mx-auto font-raleway">
+                        <h2 className="text-textblue font-semibold text-2xl sm:text-3xl lg:text-[36px] max-w-[1440px] mx-auto font-raleway">
                             Turnout and <span className="text-textorange font-semibold">Track Devices</span>
                         </h2>
                     </motion.div>
@@ -142,10 +142,10 @@ const Production1 = () => {
                         {/* Right Text Section */}
                         <motion.div
                             initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={containerVariants}
-                            className="flex flex-col justify-start lg:w-1/2 space-y-8"
+                            className="flex flex-col justify-start lg:w-[500px] space-y-8 ml-14"
                         >
                             <motion.div variants={slideInFromRight}>
-                                <h3 className='text-base sm:text-lg lg:text-[20px] font-[600] text-[#152f5d] mb-6'>
+                                <h3 className='text-base sm:text-lg lg:text-[20px] font-[600] text-textblue mb-6'>
                                     Engineering Mobility with <span className='text-textorange'>Unmatched</span> Accuracy
                                 </h3>
                             </motion.div>

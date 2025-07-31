@@ -326,7 +326,7 @@ const page: React.FC = () => {
 
      
       <div className="w-full bg-bgcolour">
-        <div className="w-full max-w-7xl mx-auto px-4 py-8 md:py-12">
+        <div data-aos="fade-up" className="w-full max-w-7xl mx-auto px-4 py-8 md:py-12">
          
           <div className="flex flex-wrap justify-center lg:justify-start gap-2 md:gap-3 mb-6 md:mb-8">
             {tabs.map((tab) => (
@@ -350,7 +350,7 @@ const page: React.FC = () => {
               <div className="relative w-full">
                 <div className="aspect-[496/574] w-full max-w-[400px] md:max-w-[450px] lg:max-w-[496px] mx-auto lg:mx-0">
                   <img
-                    data-aos="zoom-in-up"
+                    
                     src={currentContent.image}
                     alt={`${currentContent.title} - Railway infrastructure`}
                     className={`w-full h-full object-cover rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-opacity duration-300 ${
@@ -374,7 +374,7 @@ const page: React.FC = () => {
 
             {/* Content */}
             <div
-              data-aos="fade-right"
+              
               className={`order-1 lg:order-2 space-y-4 md:space-y-6 transition-opacity duration-300 ${
                 isAnimating ? "opacity-0" : "opacity-100"
               }`}
