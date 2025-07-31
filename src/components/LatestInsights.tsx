@@ -14,7 +14,7 @@ interface InsightCardProps {
   readTime: string;
 }
 
-// Animation Variants (no changes needed)
+// Animation Variants
 const slideInFromTop: Variants = {
   hidden: { y: -50, opacity: 0 },
   visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
@@ -33,7 +33,7 @@ const gridItemVariants: Variants = {
   visible: { x: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-// InsightCard component (no changes needed)
+// InsightCard component
 const InsightCard: React.FC<InsightCardProps> = ({
   imgSrc,
   title,
@@ -87,7 +87,6 @@ const LatestInsights: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* This is the container div that was changed */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -99,7 +98,6 @@ const LatestInsights: React.FC = () => {
           {isError && <p className="text-red-500 text-center">Could not fetch insights.</p>}
           
           {articles?.map((article: TransformedArticle) => (
-            // This is the card div that was changed
             <motion.div
               key={article.id}
               variants={gridItemVariants}
