@@ -42,7 +42,30 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <QueryProvider>
-          <Toaster />
+          <Toaster
+            toastOptions={{
+              style: {
+                position: "fixed",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                zIndex: 9999,
+                fontSize: "18px",
+                padding: "30px 40px",
+                maxWidth: "90%",
+                width: "fit-content",
+                height: "fit-content",
+                backgroundColor: "white",
+                color: "#333",
+                borderRadius: "16px",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.2)",
+                textAlign: "center",
+              },
+            }}
+            richColors
+            closeButton
+          />
+
           <LayoutWrapper>{children}</LayoutWrapper>
         </QueryProvider>
       </body>
