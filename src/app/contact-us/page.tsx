@@ -59,7 +59,7 @@ const page = () => {
       });
       toast(
         <div className="flex flex-col items-center text-center">
-          <AiOutlineCheckCircle size={80} className="text-green-400 mb-4" />
+          <AiOutlineCheckCircle size={80} className="text-[var(--textorange)] mb-4" />
           <h2 className="text-2xl font-semibold text-gray-800">Thank you!</h2>
           <p className="text-sm text-gray-600 mt-1">Message Sent Successfully!</p>
         </div>
@@ -69,7 +69,7 @@ const page = () => {
       console.error("Error sending message:", error);
       toast(
         <div className="flex flex-col items-center text-center">
-          <AiOutlineCloseCircle size={80} className="text-red-400 mb-4" />
+          <AiOutlineCloseCircle size={80} className="text-[var(--textorange)] mb-4" />
           <h2 className="text-2xl font-semibold text-gray-800">Sorry!</h2>
           <p className="text-sm text-gray-600 mt-1">Failed to send message. Please try again.!</p>
         </div>
@@ -133,7 +133,7 @@ const page = () => {
                 Phone
               </h2>
               <p className="text-textblue text-[14px] font-monte mb-1">
-                +1 (555) 123-4567
+                9681187076 / 9038156288
               </p>
               <span className="text-textblue text-xs font-monte opacity-80">
                 Mon-Fri 8AM-6PM EST

@@ -217,6 +217,7 @@ const Page = () => {
             <motion.p variants={itemVariants} className="list-disc list-inside [&>li]:marker:text-textorange space-y-2 text-textblue text-base sm:text-xl md:text-xl lg:text-lg  font-medium font-monte text-justify">
               We are an RDSO-approved, ISO 9001 recognized company with strong quality systems integrated into our manufacturing processes. Our certifications include ISO 9001: 14001 and 45001. Both in-process and final inspections are performed by professional quality engineers who follow Total Quality Management concepts.
             </motion.p>
+            <div className=""></div>
           </motion.div>
         </div>
       </div>

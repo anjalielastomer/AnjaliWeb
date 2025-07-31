@@ -106,7 +106,7 @@ const Page = () => {
                whileInView="visible"
                variants={containerVariants}
                viewport={{ once: false, amount: 0.2 }}
-               className="flex flex-col p-4 md:p-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20"
+               className="flex flex-col py-4 pr-4 md:pr-6 md:py-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20"
              >
                <motion.h1 variants={itemVariants} className="font-raleway font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[85.5px] text-textblue w-full text-center xl:text-left leading-tight">
                  <span className="block">{content.title.main}</span>
@@ -168,9 +168,9 @@ const Page = () => {
                   whileInView="visible"
                   variants={itemVariants}
                   viewport={{ once: false, amount: 0.2 }}
-                  className="flex flex-col justify-center px-4 md:px-6 xl:px-10 mt-0 xl:mt-16 lg:mt-24"
+                  className="flex flex-col justify-center pl-4 md:pl-6 xl:pl-10 mt-0 xl:mt-16 lg:mt-24"
                 >
-                  <p className="text-sm md:text-base text-textblue text-center xl:text-justify max-w-full xl:max-w-[30rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte">
+                  <p className="text-sm md:text-base text-textblue text-center xl:text-justify max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte">
                     {content.steelSleeperParagraph}
                   </p>
                 </motion.div>
@@ -178,7 +178,7 @@ const Page = () => {
             </div>
 
       {/* TABS SECTION */}
-      <div className="max-w-[1440px] mx-auto w-[90%] my-16 flex flex-col lg:flex-row gap-10 font-monte">
+      <div className="max-w-[1440px] mx-auto w-[90%] my-16 flex flex-col lg:flex-row justify-between font-monte">
         {/* LEFT - TEXT CONTENT */}
         <div className="flex-1 lg:max-w-[60%]">
           <motion.div layout>

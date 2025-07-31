@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
             </a>
 
             <a
-              href="https://x.com/anjalielastomer" // <-- change this to your real Twitter handle
+              href="https://x.com/anjalielastomer" 
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter"
@@ -156,7 +156,7 @@ const Footer: React.FC = () => {
           <ul className="space-y-3">
             <li className="flex items-center space-x-2 text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">
               <Image src="/phone.svg" alt="Phone" width={20} height={20} />
-              <span>+91 98765 43210</span>
+              <span>+91 9681187076 / 9038156288</span>
             </li>
             <li className="flex items-center space-x-2 text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">
               <Image src="/email.svg" alt="Phone" width={20} height={20} />

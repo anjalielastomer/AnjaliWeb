@@ -72,7 +72,7 @@ const Page: React.FC = () => {
     if (!file) {
       toast(
         <div className="flex flex-col items-center text-center">
-          <AiOutlineCloseCircle size={80} className="text-red-400 mb-4" />
+          <AiOutlineCloseCircle size={80} className="text-[var(--textorange)] mb-4" />
           <h2 className="text-2xl font-semibold text-gray-800">Nearly there!</h2>
           <p className="text-sm text-gray-600 mt-1">Please upload your resume!</p>
         </div>
@@ -128,7 +128,7 @@ const Page: React.FC = () => {
         console.error("Form submission failed:", errorData);
         toast(
           <div className="flex flex-col items-center text-center">
-            <AiOutlineCloseCircle size={80} className="text-red-400 mb-4" />
+            <AiOutlineCloseCircle size={80} className="text-[var(--textorange)] mb-4" />
             <h2 className="text-2xl font-semibold text-gray-800">Nearly there!</h2>
             <p className="text-sm text-gray-600 mt-1">Form submission failed. Please try again!</p>
           </div>
@@ -138,7 +138,7 @@ const Page: React.FC = () => {
 
       toast(
         <div className="flex flex-col items-center text-center">
-          <AiOutlineCheckCircle size={80} className="text-green-400 mb-4" />
+          <AiOutlineCheckCircle size={80} className="text-[var(--textorange)] mb-4" />
           <h2 className="text-2xl font-semibold text-gray-800">Thank You!</h2>
           <p className="text-sm text-gray-600 mt-1">CV submitted successfully!</p>
         </div>
@@ -158,7 +158,7 @@ const Page: React.FC = () => {
       console.error("Submission error:", error);
       toast(
         <div className="flex flex-col items-center text-center">
-          <AiOutlineCloseCircle size={80} className="text-red-400 mb-4" />
+          <AiOutlineCloseCircle size={80} className="text-[var(--textorange)] mb-4" />
           <h2 className="text-2xl font-semibold text-gray-800">Sorry!</h2>
           <p className="text-sm text-gray-600 mt-1">An error occurred. Please try again later.!</p>
         </div>
