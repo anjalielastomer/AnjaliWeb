@@ -133,7 +133,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
       {totalPages > 1 && (
         <div className="flex justify-between items-center mt-4 px-4 text-sm text-gray-700 font-monte">
           <button
-            className="text-textblue font-semibold disabled:text-gray-700 disabled:opacity-50"
+            className="text-textblue font-semibold disabled:text-gray-700 disabled:opacity-50 text-lg"
             onClick={handlePrevPage}
             disabled={currentPage === 1 || isLoading}
           >
@@ -145,7 +145,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
           </span>
 
           <button
-            className="text-textblue font-semibold disabled:text-gray-700 disabled:opacity-50"
+            className="text-textblue font-semibold disabled:text-gray-700 disabled:opacity-50 text-lg"
             onClick={handleNextPage}
             disabled={currentPage === totalPages || isLoading}
           >

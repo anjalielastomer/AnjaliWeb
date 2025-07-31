@@ -62,7 +62,7 @@ const Page = () => {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: false, amount: 0.5 }}
-                  variants={slideInFromLeft} className="flex flex-col p-4 md:p-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20">
+                  variants={slideInFromLeft} className="flex flex-col py-4 pr-4 md:pr-6 md:py-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20">
           <h1 className="font-raleway font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[85.5px] text-textblue w-full text-center xl:text-left leading-tight">
             <span className="block">{content.title.main}</span>
             <span className="text-textorange block mt-2 md:mt-3 lg:mt-5">
@@ -113,7 +113,7 @@ const Page = () => {
             />
           </div>
 
-          <div data-aos="zoom-in-up" className="flex flex-col justify-center px-4 md:px-6 xl:px-10 mt-0 xl:mt-16 lg:mt-24">
+          <div data-aos="zoom-in-up" className="flex flex-col justify-center pl-4 md:pl-6 xl:pl-10 mt-0 xl:mt-16 lg:mt-24">
             <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-[#193055] mb-6 md:mb-8 font-monte text-center xl:text-left leading-relaxed">
               We are offering{" "}
               <span className="text-textorange font-bold">
