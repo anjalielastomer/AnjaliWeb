@@ -100,7 +100,9 @@ const AboutSec1 = () => {
                 className="mt-auto -mb-32 relative z-40"
               >
                 <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
-                  <img
+                  <Image
+                    width={554}
+                    height={574}
                     src="/aboutus/aboutimg2.png"
                     alt="Modern orange commuter train"
                     className="object-cover w-full h-[400px] lg:h-[500px]"
@@ -136,7 +138,7 @@ const AboutSec1 = () => {
                 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={slideInFromRight}
                 className="flex flex-col justify-center space-y-12 lg:w-1/2 py-16"
             >
-              <div className="space-y-6 text-base sm:text-lg leading-relaxed text-justify">
+              <div className="space-y-6 text-base sm:text-lg leading-relaxed text-justify w-[554px] ml-24">
                 <p>
                   Our company has four manufacturing plants where it produces a variety of railroad track products. Our plants are found in the eastern portion of India, near Kolkata and Howrah.
                 </p>
