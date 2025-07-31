@@ -37,7 +37,7 @@ const itemVariants: Variants = {
 
 export default function AboutSec5() {
   return (
-    <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20 flex flex-col md:flex-row items-center gap-10 md:gap-16 font-monte overflow-hidden">
+    <section className="max-w-[1440px] mx-auto px-6 md:px-12 py-12 md:py-20 flex flex-col md:flex-row items- justify-between gap-10 md:gap-16 font-monte overflow-hidden">
       {/* Left Text Content */}
       <motion.div
         initial="hidden"

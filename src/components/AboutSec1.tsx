@@ -138,7 +138,7 @@ const AboutSec1 = () => {
                 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={slideInFromRight}
                 className="flex flex-col justify-center space-y-12 lg:w-1/2 py-16"
             >
-              <div className="space-y-6 text-base sm:text-lg leading-relaxed text-justify w-[554px] ml-24">
+              <div className="space-y-6 text-base sm:text-lg leading-relaxed text-justify max-w-[554px] xl:ml-24">
                 <p>
                   Our company has four manufacturing plants where it produces a variety of railroad track products. Our plants are found in the eastern portion of India, near Kolkata and Howrah.
                 </p>
