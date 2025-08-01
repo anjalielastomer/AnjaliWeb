@@ -5,23 +5,34 @@ import { useEffect, useState } from 'react';
 const LogoTransition = ({ onComplete }: { onComplete: () => void }) => {
   const [showLogo, setShowLogo] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
-  const [islaptop, setIsLaptop] = useState(false);
+  const [isLaptop, setIsLaptop] = useState(false);
+
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768); // Tailwind's md breakpoint
+    const checkDevice = () => {
+      const width = window.innerWidth;
+      setIsMobile(width < 768);
+      setIsLaptop(width >= 1024 && width <= 1568);
     };
 
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    checkDevice();
+    window.addEventListener("resize", checkDevice);
+    return () => window.removeEventListener("resize", checkDevice);
   }, []);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLogo(false);
       onComplete(); // Notify parent when done
-    }, 1950); // You can fine-tune this
+    }, 1950);
     return () => clearTimeout(timer);
   }, [onComplete]);
+
+  // Define position & scale values based on screen type
+  const motionProps = isMobile
+    ? { scale: 0.6, x: '-25vw', y: '-45vh' }
+    : isLaptop
+    ? { scale: 0.5, x: '-42vw', y: '-46vh' }
+    : { scale: 0.4, x: '-30vw', y: '-47vh' };
 
   return (
     <AnimatePresence>
@@ -33,16 +44,12 @@ const LogoTransition = ({ onComplete }: { onComplete: () => void }) => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 1.2 }}
         >
-           <motion.div
-      initial={{ scale: 1.5, x: 0, y: 0 }}
-      animate={{
-        scale: isMobile ? 0.6 : 0.4,
-        x: isMobile ? '-25vw' : '-30vw',
-        y: isMobile ? '-45vh' : '-47vh',
-      }}
-      transition={{ duration: 2, ease: 'easeInOut' }}
-      className="text-xl md:text-6xl font-bold font-raleway"
-    >
+          <motion.div
+            initial={{ scale: 1.5, x: 0, y: 0 }}
+            animate={motionProps}
+            transition={{ duration: 2, ease: 'easeInOut' }}
+            className="text-xl md:text-6xl font-bold font-raleway"
+          >
             <span className="text-[color:var(--textblue)]">Anjali </span>
             <span className="text-[color:var(--textorange)]">Elastomer</span>
           </motion.div>
