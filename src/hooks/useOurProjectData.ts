@@ -18,6 +18,17 @@ interface CoverImage {
 }
 
 export interface ProjectData {
+  id: string; // Changed to string to match documentId
+  title: string;
+  description: string;
+  subtext: string;
+  content: string;
+  createdAt: string;
+  image1?: string;
+  image2?: string;
+}
+
+interface StrapiProjectData {
   id: number;
   documentId: string;
   title: string;
@@ -31,9 +42,27 @@ export interface ProjectData {
 }
 
 interface ApiResponse {
-  data: ProjectData[];
+  data: StrapiProjectData[];
   meta: Record<string, any>;
 }
+
+// Transform function to match the format used in useProjects
+const transformProject = (strapiProject: StrapiProjectData): ProjectData => {
+  const images = strapiProject.cover_images || [];
+  const getImageUrl = (img?: CoverImage): string =>
+    img?.formats?.medium?.url || img?.formats?.small?.url || img?.url || "";
+
+  return {
+    id: strapiProject.documentId, // Use documentId as id for consistency
+    title: strapiProject.title,
+    description: strapiProject.description,
+    subtext: strapiProject.subtext,
+    content: strapiProject.content,
+    image1: getImageUrl(images[0]),
+    image2: getImageUrl(images[1]),
+    createdAt: strapiProject.createdAt,
+  };
+};
 
 export const useProjectData = () => {
   const [project, setProject] = useState<ProjectData | null>(null);
@@ -48,7 +77,9 @@ export const useProjectData = () => {
         );
         if (!res.ok) throw new Error("Failed to fetch project data");
         const json: ApiResponse = await res.json();
-        setProject(json.data[0]); // Using only the first project
+        if (json.data.length > 0) {
+          setProject(transformProject(json.data[0])); // Transform the first project
+        }
       } catch (err: any) {
         setError(err.message);
       } finally {
