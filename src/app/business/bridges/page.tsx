@@ -42,7 +42,7 @@ const Page = () => {
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
       {/* Section 1: Hero */}
-      <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between lg:w-[100%] gap-8 lg:gap-12 mb-20 py-8 lg:py-16 ">
+      <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between lg:w-[100%] gap-8 lg:gap-12 mb-20 py-8 lg:py-16  lg:px-12">
         {/* Text Content --- Motion Wrapper Added */}
         <motion.div
           variants={slideInFromLeft}
@@ -93,7 +93,7 @@ const Page = () => {
 
       {/* Section 2: Turnkey Projects */}
       <div className="w-full z-4 bg-[#fff5ef] h-auto">
-        <div className=" max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40">
+        <div className=" max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40 lg:px-12">
           {/* --- Motion Wrapper Added --- */}
           <motion.div
             variants={slideInFromLeft}
@@ -149,7 +149,7 @@ const Page = () => {
         initial="hidden"
         whileInView="visible"
         viewport={viewportSettings}
-        className=" max-w-[1440px] z- bg-white mx-auto flex flex-col xl:flex-row justify-center items-center lg:justify-around lg:mt-0 mt-8 gap-16 md:gap-4 lg:gap-16 px-10"
+        className=" max-w-[1440px] z- bg-white mx-auto flex flex-col xl:flex-row justify-center items-center lg:justify-around lg:mt-0 mt-8 gap-16 md:gap-4 lg:gap-16 px-10 lg:px-12"
       >
         {cardData.map((data, idx) => (
           <CardComponent key={idx} data={data} />
@@ -158,7 +158,7 @@ const Page = () => {
 
       {/* Section 4: Resources Available */}
       <div className="max-w-[1440px] mx-auto bg-white h-auto">
-        <div className="flex lg:flex-nowrap lg:justify-between justify-center mx-auto max-w-[1440px] flex-wrap-reverse mt-0 md:mt-8 xl:mt-16 pb-20">
+        <div className="flex lg:flex-nowrap lg:justify-between justify-center mx-auto max-w-[1440px] flex-wrap-reverse mt-0 md:mt-8 xl:mt-16 pb-20  lg:px-12">
           {/* --- Motion Wrapper Added --- */}
           <motion.div
             variants={slideInFromLeft}
@@ -211,8 +211,8 @@ const Page = () => {
 
       {/* Section 5: Capabilities & Geography */}
       <div className="bg-[#fff5ef] py-16 md:py-24">
-        <div className="max-w-[1440px] mx-auto flex lg:flex-row flex-col items-center justify-between">
-          <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12">
+        <div className="max-w-[1440px] mx-auto flex lg:flex-row flex-col items-center justify-between lg:px-12">
+          <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12 lg:px-12">
             {/* --- Motion Wrapper Added --- */}
             <motion.div
               variants={slideInFromLeft}

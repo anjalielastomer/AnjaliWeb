@@ -100,7 +100,7 @@ const Page = () => {
 
   return (
     <div className="min-h-screen pt-16 md:pt-22 overflow-hidden">
-     <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mb-16 md:mb-20">
+     <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mb-16 md:mb-20 lg:px-12">
              <motion.div
                initial="hidden"
                whileInView="visible"
@@ -146,7 +146,7 @@ const Page = () => {
            </div>
       
             <div className="bg-[#fff5ef] h-auto">
-              <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mt-0 xl:mt-[-168px] pb-16 md:pb-20">
+              <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mt-0 xl:mt-[-168px] pb-16 md:pb-20 lg:px-12">
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
@@ -178,7 +178,7 @@ const Page = () => {
             </div>
 
       {/* TABS SECTION */}
-      <div className="max-w-[1440px] mx-auto w-[90%] my-16 flex flex-col lg:flex-row justify-between font-monte">
+      <div className="max-w-[1440px] mx-auto w-[90%] my-16 flex flex-col lg:flex-row justify-between font-monte lg:px-12">
         {/* LEFT - TEXT CONTENT */}
         <div className="flex-1 lg:max-w-[60%]">
           <motion.div layout>
