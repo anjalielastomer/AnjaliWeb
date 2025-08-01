@@ -99,10 +99,10 @@ const page = () => {
       {/* Section 1 */}
       <div className="w-full flex flex-col items-center pb-20">
         <div className="w-full flex flex-col ">
-          <div className="max-w-[3000px] 2xl:max-w-[1600px]">
-          <span className="w-full flex justify-center md:justify-end text-textblue text-4xl font-raleway font-bold pr-10">
-            Contact <span className="text-textorange ml-2">Us</span>
-          </span>
+          <div className="w-full max-w-[1600px] mx-auto flex justify-center md:justify-end px-6 lg:px-10">
+            <h1 className="text-textblue text-4xl font-raleway font-bold">
+              Contact <span className="text-textorange ml-2">Us</span>
+            </h1>
           </div>
           <hr className="w-full border-t-2 border-[#E5E7EB] mt-2 mb-8" />
         </div>
