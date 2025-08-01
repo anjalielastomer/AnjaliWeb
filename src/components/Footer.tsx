@@ -173,7 +173,7 @@ const Footer: React.FC = () => {
       <hr className="border-gray-700 my-6 w-screen relative left-1/2 right-1/2 -translate-x-1/2" />
 
       <div className="max-w-none 2xl:max-w-[1600px] mx-auto text-center text-gray-400 text-sm ">
-        Designed By <Link href={'https://www.linkedin.com/in/sayan-sarkarr-96ba64174/'} className="text-[var(--textorange)]">Sayan Sarkar</Link> <br className="md:hidden"/> <span className="hidden md:inline">|</span> © 2025 Anjali Elastomer Ltd. All rights reserved. <br className="md:hidden"/><span className="hidden md:inline">|</span> Developed By <Link href={'https://www.resourcio.in/'} className="text-[var(--textorange)]">Resourcio Pvt. Ltd.</Link>
+        Designed By <Link href={'https://www.linkedin.com/in/sayan-sarkarr-96ba64174/'} className="text-[var(--textorange)]">Sayan Sarkarr</Link> <br className="md:hidden"/> <span className="hidden md:inline">|</span> © 2025 Anjali Elastomer Ltd. All rights reserved. <br className="md:hidden"/><span className="hidden md:inline">|</span> Developed By <Link href={'https://www.resourcio.in/'} className="text-[var(--textorange)]">Resourcio Pvt. Ltd.</Link>
       </div>
     </footer>
   );
