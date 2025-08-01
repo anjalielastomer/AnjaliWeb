@@ -113,7 +113,7 @@ const page: React.FC = () => {
     <section className="font-monte text-textblue min-h-screen pt-22 overflow-hidden">
       
       <div
-        className="pt-16 md:pt-20 xl:pt-22 max-w-[1440px] mx-auto"
+        className="pt-16 md:pt-20 xl:pt-22 max-w-[1440px] mx-auto  lg:px-12"
         style={{ backgroundColor: "var(--bgwhite)" }}
       >
         <div className="flex flex-col xl:flex-row justify-center xl:justify-between mx-auto max-w-[95%] mb-16 md:mb-20">
@@ -206,7 +206,7 @@ const page: React.FC = () => {
 
 
       <div className="w-full bg-bgcolour pt-20 md:pt-40 -mt-20 md:-mt-40">
-        <div className="max-w-[1440px] px-4 flex flex-col md:flex-row justify-between items-center mx-auto py-8 md:py-10 gap-8">
+        <div className="max-w-[1440px] px-4 flex flex-col md:flex-row justify-between items-center mx-auto py-8 md:py-10 gap-8 lg:px-12">
       
           <div className="flex justify-center w-full md:w-auto">
             <Image
@@ -257,7 +257,7 @@ const page: React.FC = () => {
       </div>
 
       
-      <div className="w-full max-w-7xl mx-auto px-4 py-8 md:py-12">
+      <div className="w-full max-w-7xl mx-auto px-4 py-8 md:py-12  lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
         
           <div className="space-y-6 order-2 lg:order-1">
@@ -326,7 +326,7 @@ const page: React.FC = () => {
 
      
       <div className="w-full bg-bgcolour">
-        <div data-aos="fade-up" className="w-full max-w-7xl mx-auto px-4 py-8 md:py-12">
+        <div data-aos="fade-up" className="w-full max-w-7xl mx-auto px-4 py-8 md:py-12 lg:px-12">
          
           <div className="flex flex-wrap justify-center lg:justify-start gap-2 md:gap-3 mb-6 md:mb-8">
             {tabs.map((tab) => (

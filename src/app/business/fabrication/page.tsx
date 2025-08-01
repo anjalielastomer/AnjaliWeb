@@ -42,7 +42,7 @@ const Page = () => {
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
       {/* Section 1: Hero */}
-      <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 mb-20 py-8 lg:py-16">
+      <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 mb-20 py-8 lg:py-16  lg:px-12">
         {/* Text Content */}
         <motion.div
             initial="hidden"
@@ -89,7 +89,7 @@ const Page = () => {
 
       {/* Section 2: Turnkey Projects */}
       <div className="bg-[#fff5ef] h-auto">
-        <div className="max-w-[1440px] mx-auto flex lg:flex-row flex-col-reverse items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40">
+        <div className="max-w-[1440px] mx-auto flex lg:flex-row flex-col-reverse items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40 lg:px-12">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -139,7 +139,7 @@ const Page = () => {
 
       {/* Section 4: Resources Available */}
       <div className="max-w-[1440px] mx-auto bg-white h-auto">
-        <div className="flex lg:flex-nowrap lg:justify-between justify-center xl:justify-between flex-wrap-reverse mt-0  md:mt-8 xl:mt-16 pb-20">
+        <div className="flex lg:flex-nowrap lg:justify-between justify-center xl:justify-between flex-wrap-reverse mt-0  md:mt-8 xl:mt-16 pb-20 lg:px-12">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -187,7 +187,7 @@ const Page = () => {
 
       {/* Section 5: Capabilities & Geography */}
       <div className="bg-[#fff5ef] py-16 md:py-24">
-        <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12 p-2 items-start">
+        <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12 p-2 items-start lg:px-12">
           <motion.div
             initial="hidden"
             whileInView="visible"

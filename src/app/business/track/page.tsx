@@ -44,7 +44,7 @@ const Page = () => {
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
       {/* Section 1: Hero - Improved Flex Layout */}
-      <div className=" max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 mb-20 py-8 lg:py-16 font-monte">
+      <div className=" max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 mb-20 py-8 lg:py-16 font-monte lg:px-12">
 
         {/* Text Content */}
         <motion.div
@@ -95,7 +95,7 @@ const Page = () => {
 
       {/* Section 2: Turnkey Projects */}
       <div className="bg-[#fff5ef] h-auto">
-        <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20">
+        <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20  lg:px-12">
           {/* Image Content */}
           <motion.div
             initial="hidden"
@@ -146,7 +146,7 @@ const Page = () => {
         whileInView="visible"
         variants={containerVariants}
         viewport={{ once: false, amount: 0.2 }}
-        className=' max-w-[1440px] mx-auto md:w-fit flex md:flex-row lg:flex lg:flex-row justify-center items-center lg:justify-around flex-col lg:mt-0  mt-8 gap-16 md:gap-4 lg:gap-16'
+        className=' max-w-[1440px] mx-auto md:w-fit flex md:flex-row lg:flex lg:flex-row justify-center items-center lg:justify-around flex-col lg:mt-0  mt-8 gap-16 md:gap-4 lg:gap-16 lg:px-12'
       >
         {cardData.map((data, idx) => (
           <motion.div key={idx} variants={popUp}>
@@ -158,7 +158,7 @@ const Page = () => {
 
       {/* Section 4: Resources Available */}
       <div className="max-w-[1440px] mx-auto bg-white h-auto">
-        <div className="flex lg:flex-nowrap lg:justify-between justify-center xl:justify-between mx-auto flex-wrap-reverse mt-0 p-2 md:mt-8 pb-20">
+        <div className="flex lg:flex-nowrap lg:justify-between justify-center xl:justify-between mx-auto flex-wrap-reverse mt-0 p-2 md:mt-8 pb-20 lg:px-12">
 
           <motion.div
             initial="hidden"
@@ -203,7 +203,7 @@ const Page = () => {
 
       {/* Section 5: Capabilities & Geography */}
       <div className="bg-[#fff5ef] py-16 md:py-24">
-        <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12 p-2">
+        <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12 p-2 lg:px-12">
           <motion.div
   initial="hidden"
   whileInView="visible"

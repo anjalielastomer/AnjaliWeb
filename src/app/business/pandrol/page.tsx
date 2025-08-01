@@ -73,7 +73,7 @@ const Page = () => {
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
       {/* Header Section */}
-      <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mb-16 md:mb-20">
+      <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mb-16 md:mb-20 lg:px-12">
         <motion.div
                   initial="hidden"
                   whileInView="visible"
@@ -116,7 +116,7 @@ const Page = () => {
 
       {/* Offerings Section */}
       <div className="bg-[#fff5ef] h-auto">
-        <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between flex-wrap mt-0 xl:mt-[-168px] pb-16 md:pb-20">
+        <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between flex-wrap mt-0 xl:mt-[-168px] pb-16 md:pb-20 lg:px-12">
           {/* UPDATED: Replaced data-aos with framer-motion */}
           <motion.div
             initial="hidden"
