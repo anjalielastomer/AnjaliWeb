@@ -34,6 +34,7 @@ export const transformStrapiProduct1 = (
     categories,
     keyFeatures: strapiProduct.key_features?.map((f) => f.text) ?? [],
     reviews, // <-- NEW
+    specification: strapiProduct.specification ?? "", // <-- Added to satisfy Product interface
   };
 };
 

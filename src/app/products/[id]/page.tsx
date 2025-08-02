@@ -17,7 +17,12 @@ import { StrapiProduct } from "@/types/product";
 import { motion, Variants } from "framer-motion";
 
 const transformStrapiProductForDetails = (strapiProduct: StrapiProduct) => {
+  
+  
   const baseProduct = transformStrapiProduct1(strapiProduct);
+  console.log("Base produ",baseProduct);
+  console.log("starpi page.tsx",strapiProduct);
+  
 
   return {
     ...baseProduct,

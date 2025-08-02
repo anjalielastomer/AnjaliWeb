@@ -44,8 +44,11 @@ export const productsService = {
     documentId: string
   ): Promise<{ data: StrapiProduct }> => {
     
-    return apiClient.get<{ data: StrapiProduct }>(`/products/${documentId}`, {
+    const data=await apiClient.get<{ data: StrapiProduct }>(`/products/${documentId}`, {
       populate: "*",
     });
+    console.log("productsService",data);
+    
+    return data
   },
 };
