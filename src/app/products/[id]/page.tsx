@@ -84,7 +84,7 @@ const SingleProductPage: React.FC = () => {
       </div>
     );
   }
-
+  console.log("Product Data:", product);
   if (error || !product) {
     return (
       <div
@@ -409,9 +409,9 @@ const SingleProductPage: React.FC = () => {
                         className="text-lg font-semibold mb-4"
                         style={{ color: "var(--textblue)" }}
                       >
-                        {section.category}
+                        {product.specification}
                       </h3>
-                      <div
+                     {/* <div
                         className="rounded-lg p-4"
                         style={{ backgroundColor: "var(--bgcolour)" }}
                       >
@@ -436,7 +436,7 @@ const SingleProductPage: React.FC = () => {
                             </div>
                           ))}
                         </div>
-                      </div>
+                      </div> Add a margin to the bottom of the section for spacing */}
                     </div>
                   ))}
                 </div>
