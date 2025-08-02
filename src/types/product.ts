@@ -70,6 +70,7 @@ export interface StrapiProduct {
   key_features: KeyFeature[];
   customer_reviews: CustomerReview[];
   product_categories: ProductCategory[];
+  specification: string; 
 }
 
 export interface StrapiResponse {
@@ -103,4 +104,5 @@ export interface Product {
   categories: string[];
   keyFeatures: string[];
   reviews: ProductReview[];
+  specification: string; 
 }
