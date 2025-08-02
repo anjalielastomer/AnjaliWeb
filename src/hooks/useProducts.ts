@@ -30,11 +30,11 @@ export const useProducts = (
       // if (params?.category && params.category !== "all") {
       //   filters["product_categories.documentId.$eq"] = params.category;
       // }
+      
 
       return productsService.getProducts({
         page: params?.page || 1,
-        pageSize: params?.pageSize || 25,
-        filters: Object.keys(filters).length > 0 ? filters : undefined,
+        pageSize: params?.pageSize || 25
       });
     },
     ...options,
@@ -93,5 +93,6 @@ export const transformStrapiProduct = (
     keyFeatures:
       strapiProduct.key_features?.map((feature) => feature.text) || [],
     reviews: reviews,
+    specification : strapiProduct.specification || "", 
   };
 };

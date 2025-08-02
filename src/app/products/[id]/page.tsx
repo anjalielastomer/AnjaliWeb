@@ -17,7 +17,12 @@ import { StrapiProduct } from "@/types/product";
 import { motion, Variants } from "framer-motion";
 
 const transformStrapiProductForDetails = (strapiProduct: StrapiProduct) => {
+  
+  
   const baseProduct = transformStrapiProduct1(strapiProduct);
+  console.log("Base produ",baseProduct);
+  console.log("starpi page.tsx",strapiProduct);
+  
 
   return {
     ...baseProduct,
@@ -84,7 +89,7 @@ const SingleProductPage: React.FC = () => {
       </div>
     );
   }
-
+  console.log("Product Data:", product);
   if (error || !product) {
     return (
       <div
@@ -403,15 +408,14 @@ const SingleProductPage: React.FC = () => {
             {activeTab === "specifications" && (
               <div>
                 <div className="space-y-8">
-                  {specifications.map((section, sectionIndex) => (
-                    <div key={sectionIndex}>
-                      <h3
-                        className="text-lg font-semibold mb-4"
+                  
+                      <p
+                        className="text-base mb-4"
                         style={{ color: "var(--textblue)" }}
                       >
-                        {section.category}
-                      </h3>
-                      <div
+                        {product.specification}
+                      </p>
+                     {/* <div
                         className="rounded-lg p-4"
                         style={{ backgroundColor: "var(--bgcolour)" }}
                       >
@@ -436,10 +440,8 @@ const SingleProductPage: React.FC = () => {
                             </div>
                           ))}
                         </div>
-                      </div>
+                      </div> Add a margin to the bottom of the section for spacing */}
                     </div>
-                  ))}
-                </div>
               </div>
             )}
             {activeTab === "reviews" && (
