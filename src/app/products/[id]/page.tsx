@@ -408,14 +408,13 @@ const SingleProductPage: React.FC = () => {
             {activeTab === "specifications" && (
               <div>
                 <div className="space-y-8">
-                  {specifications.map((section, sectionIndex) => (
-                    <div key={sectionIndex}>
-                      <h3
-                        className="text-lg font-semibold mb-4"
+                  
+                      <p
+                        className="text-base mb-4"
                         style={{ color: "var(--textblue)" }}
                       >
                         {product.specification}
-                      </h3>
+                      </p>
                      {/* <div
                         className="rounded-lg p-4"
                         style={{ backgroundColor: "var(--bgcolour)" }}
@@ -443,8 +442,6 @@ const SingleProductPage: React.FC = () => {
                         </div>
                       </div> Add a margin to the bottom of the section for spacing */}
                     </div>
-                  ))}
-                </div>
               </div>
             )}
             {activeTab === "reviews" && (
