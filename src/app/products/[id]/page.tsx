@@ -22,7 +22,6 @@ const transformStrapiProductForDetails = (strapiProduct: StrapiProduct) => {
   const baseProduct = transformStrapiProduct1(strapiProduct);
   console.log("Base produ",baseProduct);
   console.log("starpi page.tsx",strapiProduct);
-  
 
   return {
     ...baseProduct,
@@ -239,8 +238,7 @@ const SingleProductPage: React.FC = () => {
             </motion.div>
             {/* Thumbnail Images */}
             {product.images && product.images.length > 1 && (
-
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 pt-4">
                 {product.images.map((image, index) => (
                   <button
                     key={index}
@@ -265,7 +263,7 @@ const SingleProductPage: React.FC = () => {
           </div>
 
           {/* Product Info */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromRight} className="space-y-6">
+          {/*<motion.div initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromRight} className="space-y-6"> */}
             <div>
               <h2
                 className="text-3xl font-bold mb-4"
@@ -361,9 +359,8 @@ const SingleProductPage: React.FC = () => {
                 Order Now
               </button>
             </div>
-          </motion.div>
+          {/*</motion.div>*/}
         </div>
-
         {/* Product Description Tabs */}
         <div className="mb-16">
           <div className="flex space-x-8 mb-6 md:px-20">
@@ -391,7 +388,6 @@ const SingleProductPage: React.FC = () => {
             className="w-screen h-px mb-8 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
             style={{ backgroundColor: "black", opacity: "1" }}
           ></div>
-
 
           <div className="prose max-w-none md:px-20">
             {activeTab === "description" && (
@@ -549,9 +545,9 @@ const SingleProductPage: React.FC = () => {
             <p className="text-red-600">Error loading related products.</p>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {transformedProducts1
-              .filter((p) => p.documentId !== product.documentId) // Don't show the current product
+              .filter((p) => p.documentId !== product.documentId) 
               .map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
