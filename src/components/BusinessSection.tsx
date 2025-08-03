@@ -104,12 +104,13 @@ export default function IndiaBusinessSection() {
           </div>
 
           {/* Right - Content (Animated) */}
-          <div className="flex flex-col px-10 md:px-0 justify-start flex-1 ml-7 -mt-24">
+          <div className="flex flex-col px-4 md:px-0 justify-start flex-1 md:ml-7 -mt-18">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.5 }}
               variants={slideInFromLeft}
+              className="text-center md:text-left mt-4"
             >
               <h2 className="text-3xl font-semibold font-raleway text-textblue mb-3">
                 <span>Busin</span>
