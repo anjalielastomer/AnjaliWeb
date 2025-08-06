@@ -93,5 +93,6 @@ export const transformStrapiProduct = (
     keyFeatures:
       strapiProduct.key_features?.map((feature) => feature.text) || [],
     reviews: reviews,
+    specification : strapiProduct.specification || "", 
   };
 };

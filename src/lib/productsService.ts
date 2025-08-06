@@ -43,6 +43,7 @@ export const productsService = {
   getProductById: async (
     documentId: string
   ): Promise<{ data: StrapiProduct }> => {
+    
     return apiClient.get<{ data: StrapiProduct }>(`/products/${documentId}`, {
       populate: "*",
     });
