@@ -241,3 +241,7 @@ html,body{
   .animate-float {
     animation: rocket-float 3s ease-in-out infinite;
   }
+
+li::marker {
+  color: #FB7602;
+}

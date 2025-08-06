@@ -61,7 +61,7 @@ export default function IndiaBusinessSection() {
   };
 
   return (
-    <section className="w-full min-h-fit py-20 flex justify-center items-center bg-white font-monte">
+    <section className="w-full min-h-fit py-20 px-4 flex justify-center items-center bg-white font-monte">
       <div className="w-full max-w-7xl flex flex-col mx-auto">
         <nav className="flex gap-4 mb-12 px-5 md:px-0 font-raleway font-normal">
           {tabs.map((tab, index) => (
@@ -80,7 +80,7 @@ export default function IndiaBusinessSection() {
           ))}
         </nav>
         {/* // 8 rem  */}
-        <div className="flex flex-col lg:flex-row gap-[8rem]">
+        <div className="flex flex-col lg:flex-row gap-[16rem] lg:gap-[4rem]">
           {/* Left - India Map (Fixed) */}
           <div className="flex-shrink-0 flex justify-center items-center">
             <div className="w-[320px] h-[300px] lg:h-auto sm:w-[400px] lg:w-[480px]">
@@ -104,7 +104,7 @@ export default function IndiaBusinessSection() {
           </div>
 
           {/* Right - Content (Animated) */}
-          <div className="flex flex-col px-10 md:px-0 justify-start flex-1 ml-7 -mt-24">
+          <div className="flex flex-col  justify-start flex-1 ml-7 -mt-24">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -140,7 +140,7 @@ export default function IndiaBusinessSection() {
               whileInView="visible"
               viewport={{ once: false, amount: 0.2 }}
               variants={fadeInScale}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-8 max-w-4xl"
             >
               <StatItem
                 number={175}

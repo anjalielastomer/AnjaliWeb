@@ -299,7 +299,7 @@ const Page: React.FC = () => {
             <div
               data-aos="fade-left"
               key={index}
-              className="w-full flex flex-col items-center text-center max-w-sm my-3 md:mx-7 mx-3"
+              className="w-full flex flex-col items-center text-center max-w-sm md:mx-7"
             >
               <Image
                 data-aos="fade-left"
@@ -358,7 +358,7 @@ const Page: React.FC = () => {
           className="w-full h-fit max-w-md mb-10 rounded-xl shadow-[0_2px_8px_0_rgba(0,0,0,0.08)]"
           style={{ backgroundColor: "var(--bgwhite)" }}
         >
-          <div className="w-full flex items-center justify-center font-raleway font-medium text-2xl shadow-xl py-5 ">
+          <div className="w-full flex items-center justify-center font-raleway font-medium text-2xl border-b border-[var(--textorange)] py-5 ">
             <span
               className="text-lg mr-2"
               style={{ color: "var(--textorange)" }}
@@ -381,7 +381,7 @@ const Page: React.FC = () => {
               Members
             </span>
           </div>
-          <form className="flex flex-col gap-10 p-7" onSubmit={handleSubmit}>
+          <form className="flex flex-col gap-4 md:gap-10 p-4 md:p-7" onSubmit={handleSubmit}>
             <div>
               <label
                 className="block text-sm font-medium mb-1"
