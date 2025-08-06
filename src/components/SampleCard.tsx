@@ -2,12 +2,28 @@
 import React,{useState} from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Product } from "@/types/product"; 
+
 
 interface ProductCardProps {
   product: Product;
 }
-
+interface Product{
+name:string;
+image:string;
+  id: number;
+  title:string;
+  description: string;
+  documentId: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  images?: {
+    url: string;
+    formats?: {
+      thumbnail?: { url: string };
+    };
+  }[];
+}
 
 const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
   const totalStars = 5;
@@ -61,11 +77,14 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+ 
   
-  
-  const { documentId, name, image, rating, reviewCount, description } = product;
+  const { documentId, title,name, images, description,image } = product;
+  const productTitle = title || name || "Untitled Product";
   const router = useRouter();
-  const [imgSrc, setImgSrc] = useState(image);
+    const initialImageSrc =
+    images?.[0]?.formats?.thumbnail?.url || images?.[0]?.url || image;
+  const [imgSrc, setImgSrc] = useState(initialImageSrc);
   const handleExploreProduct = () => {
     // Use documentId for routing instead of numeric id
     const productDocumentId = documentId || "default"; // Fallback if documentId is not available
@@ -84,24 +103,24 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       >
        <Image
       src={imgSrc}
-      alt={name}
+      alt={title}
       width={400}
       height={240}
       className="object-cover h-full w-full"
       onError={() => setImgSrc("https://lovable-gift-31985371d0.media.strapiapp.com/featuredproductsimg3_4389ae324d.png")} // 🔁 set fallback image path here
     />
         <h3 className="absolute text-sm md:text-[18px] font-[700] font-monte bottom-1 left-2 z-10 text-white px-1 md:px-2 py-1 rounded-sm w-full text-left">
-          {name }
+          {productTitle}
         </h3>
       </div>
 
       <div className="pt-2 md:pt-4 flex flex-col flex-grow min-h-0">
-        <div className="px-2 md:px-4 flex items-center space-x-1 mb-1 md:mb-2">
+        {/* <div className="px-2 md:px-4 flex items-center space-x-1 mb-1 md:mb-2">
           <StarRating rating={rating} />
           <span className="text-xs md:text-sm" style={{ color: "var(--textcolour)" }}>
             ({reviewCount})
           </span>
-        </div>
+        </div> */}
 
         <p
           className="px-2 md:px-4 flex-grow font-[500] text-[#193055] text-xs md:text-sm leading-relaxed mb-3 md:mb-5 line-clamp-2 md:line-clamp-3"

@@ -20,8 +20,6 @@ const transformStrapiProductForDetails = (strapiProduct: StrapiProduct) => {
   
   
   const baseProduct = transformStrapiProduct1(strapiProduct);
-  console.log("Base produ",baseProduct);
-  console.log("starpi page.tsx",strapiProduct);
 
   return {
     ...baseProduct,
@@ -88,7 +86,6 @@ const SingleProductPage: React.FC = () => {
       </div>
     );
   }
-  console.log("Product Data:", product);
   if (error || !product) {
     return (
       <div
