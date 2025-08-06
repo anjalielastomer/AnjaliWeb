@@ -44,7 +44,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
   return (
     <>
       {/* Mobile Filter Button */}
-      <div className="md:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-40">
+      <div className="xl:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-40">
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="rounded-lg shadow-sm p-3 flex items-center gap-2 border border-gray-200 relative z-10"
@@ -72,7 +72,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
           }}
         >
           <h3
-            className="text-lg font-semibold mb-4"
+            className="text-lg font-semibold mb-4 text-center"
             style={{ color: "var(--textorange)" }}
           >
             Our Product Categories
@@ -81,7 +81,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
             {segments.map((segment, index) => (
               <div
                 key={index}
-                className="text-base font-medium cursor-pointer transition-colors py-2 px-2 rounded-md"
+                className="text-base font-medium cursor-pointer transition-colors py-2 px-2 rounded-md text-center  "
                 style={{
                   color:
                     selectedSegment === segment.value
@@ -102,7 +102,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
       </div>
       {/* Desktop Filter Sidebar */}
       <div
-        className="hidden md:block w-72 lg:w-80 rounded-[20px] shadow-xl p-4 lg:p-6 h-fit sticky top-8"
+        className="hidden xl:block w-72 lg:w-80 rounded-[20px] shadow-xl p-4 lg:p-6 h-fit sticky top-8"
         style={{ backgroundColor: "var(--bgwhite)" }}
       >
         <h2
