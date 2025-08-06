@@ -8,6 +8,7 @@ interface UseProductsParams {
   category?: string;
   segment?: string;
 }
+
 interface UseProductsOptions
   extends Omit<UseQueryOptions<StrapiResponse>, "queryKey" | "queryFn"> {}
 
@@ -19,29 +20,40 @@ export const useProducts = (
 
   return useQuery<StrapiResponse>({
     queryKey,
-    queryFn: () => {
+    queryFn: async () => {
       const filters: Record<string, any> = {};
 
-      // Use only ONE filter! Both segment and category are documentId's
+      // ✅ Use external API if segment is "all"
+      if (params?.segment == "all") {
+        const res = await fetch(
+          "https://lovable-gift-31985371d0.strapiapp.com/api/products?populate=images"
+        );
+
+        if (!res.ok) {
+          throw new Error("Failed to fetch products from external source.");
+        }
+
+        const json = await res.json();
+        
+        return json;
+      }
+
+      // ✅ Use internal API if specific category/segment
       if (params?.segment && params.segment !== "all") {
         filters["product_categories.documentId.$eq"] = params.segment;
       }
-      // If you actually want to filter by selectedCategory instead, swap above line to this:
-      // if (params?.category && params.category !== "all") {
-      //   filters["product_categories.documentId.$eq"] = params.category;
-      // }
-      
 
       return productsService.getProducts({
         page: params?.page || 1,
-        pageSize: params?.pageSize || 25
+        pageSize: params?.pageSize || 25,
+        filters,
       });
     },
     ...options,
   });
 };
 
-// Single product fetch (no change needed)
+// ✅ Single product fetch (no changes needed)
 export const useProduct = (
   documentId: string,
   options?: Omit<
@@ -57,7 +69,7 @@ export const useProduct = (
   });
 };
 
-// Product transformation (no change)
+// ✅ Transform function (no changes needed)
 export const transformStrapiProduct = (
   strapiProduct: StrapiProduct
 ): Product => {
@@ -93,6 +105,6 @@ export const transformStrapiProduct = (
     keyFeatures:
       strapiProduct.key_features?.map((feature) => feature.text) || [],
     reviews: reviews,
-    specification : strapiProduct.specification || "", 
+    specification: strapiProduct.specification || "",
   };
 };

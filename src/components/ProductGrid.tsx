@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useMemo } from "react";
-import ProductCard from "@/components/ProductCard";
-import { Product } from "@/types/product";
+import ProductCard from "@/components/SampleCard";
 import { useProducts, transformStrapiProduct } from "@/hooks/useProducts";
 
 interface ProductCategory {
@@ -9,29 +8,45 @@ interface ProductCategory {
   documentId: string;
   name: string;
   createdAt: string;
+  products: ProductSpec[];
   updatedAt: string;
   publishedAt: string;
+}
+
+interface ProductSpec {
+  id: number;
+  title:string;
+  description: string;
+  documentId: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  images?: {
+    url: string;
+    formats?: {
+      thumbnail?: { url: string };
+    };
+  }[];
 }
 
 interface ProductGridProps {
   selectedCategory: string;
   selectedSegment: string;
-  categories: ProductCategory[]; 
+  categories: ProductCategory[];
 }
 
 const ProductGrid: React.FC<ProductGridProps> = ({
   selectedCategory,
   selectedSegment,
-  categories, 
+  categories,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 10;
 
-  
   const { data, isLoading, error, refetch } = useProducts({
     page: currentPage,
     pageSize: productsPerPage,
-    segment: selectedSegment, 
+    segment: selectedSegment,
   });
 
   const transformedProducts = useMemo(() => {
@@ -54,21 +69,35 @@ const ProductGrid: React.FC<ProductGridProps> = ({
     setCurrentPage(1);
   }, [selectedCategory, selectedSegment]);
 
+  // ✅ Get products from selected category if not "all"
+  const selectedCategoryObj = useMemo(() => {
+    return categories.find((cat) => cat.documentId === selectedSegment);
+  }, [selectedSegment, categories]);
+
+  const categoryProducts = useMemo(() => {
+  let products: any[] = [];
+
+  if (selectedSegment === "all") {
+    products = transformedProducts;
+  } else {
+    products = selectedCategoryObj?.products || [];
+  }
+
+  // ✅ Log each time categoryProducts is updated
+  console.log(
+    `Rendering ${products.length} products for segment: ${selectedSegment}`
+  );
+  console.log("Rendered Products:", products);
+
+  return products;
+}, [selectedSegment, transformedProducts, selectedCategoryObj]);
+
 
   const getCurrentCategoryName = () => {
-    console.log("selectedSegment: ",selectedSegment);
-    console.log("");
-    
-    
-    if (selectedSegment === "all"){
-      return "All Products"
-    }else{
-      const category = categories.find(
-        (cat) => cat.documentId === selectedSegment
-      );
-      console.log("Categories",category);
-      
-      return category ? category.name : "Products";
+    if (selectedSegment === "all") {
+      return "All Products";
+    } else {
+      return selectedCategoryObj?.name || "Products";
     }
   };
 
@@ -82,7 +111,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({
     );
   }
 
-  
   if (error) {
     return (
       <div className="flex-1 relative">
@@ -103,7 +131,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({
 
   return (
     <div className="flex-1 relative">
-     
       <div className="mb-6">
         <h2
           className="text-2xl font-semibold"
@@ -120,26 +147,22 @@ const ProductGrid: React.FC<ProductGridProps> = ({
           scrollbarColor: "var(--textorange) #f3f4f6",
         }}
       >
-     
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mb-8  ">
-          {transformedProducts.map((product) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mb-8">
+          {categoryProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
-   
-        {transformedProducts.length === 0 && !isLoading && (
+        {categoryProducts.length === 0 && !isLoading && (
           <div className="text-center py-12">
             <p className="text-lg" style={{ color: "var(--textcolour)" }}>
               No products found in {getCurrentCategoryName().toLowerCase()}.
             </p>
-            
           </div>
         )}
       </div>
 
-     
-      {totalPages > 1 && (
+      {selectedSegment === "all" && totalPages > 1 && (
         <div className="flex justify-between items-center mt-4 px-4 text-sm text-gray-700 font-monte">
           <button
             className="text-textblue font-semibold disabled:text-gray-700 disabled:opacity-50 text-lg"
@@ -163,9 +186,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({
         </div>
       )}
 
-     
       <div className="text-center mt-7 text-lg text-textblue font-monte">
-        Showing {transformedProducts.length} of {totalProducts} products
+        Showing {categoryProducts.length} of{" "}
+        {selectedSegment === "all" ? totalProducts : categoryProducts.length}{" "}
+        products
         {selectedSegment !== "all" && (
           <span
             className="text-sm block mt-1"
@@ -176,7 +200,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({
         )}
       </div>
 
-      
       <style jsx>{`
         div::-webkit-scrollbar {
           width: 6px;

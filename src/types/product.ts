@@ -51,13 +51,23 @@ export interface CustomerReview {
 
 export interface ProductCategory {
   id: number;
-  documentId: string;
-  name: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
+   documentId: string;
+   name: string;
+   createdAt: string;
+   products:ProductSpec[];
+   updatedAt: string;
+   publishedAt: string;
 }
-
+export interface ProductSpec {
+  id: number;
+  title: string;
+  description: string;
+  specification: string;
+  documentId: string;
+  createdAt: string; // ISO date string
+  updatedAt: string; // ISO date string
+  publishedAt: string; // ISO date string
+}
 export interface StrapiProduct {
   id: number;
   documentId: string;

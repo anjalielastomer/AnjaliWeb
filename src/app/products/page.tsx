@@ -32,7 +32,7 @@ const ProductsPage: React.FC = () => {
   const [selectedSegment, setSelectedSegment] = useState<string>("all");
 
   const { categories, loading, error } = useCategory();
-  console.log(categories);
+  // console.log(categories);
   
 
   const { data: productsData } = useProducts({

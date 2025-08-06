@@ -12,6 +12,7 @@ export interface ProductCategory {
 
 export interface ProductSpec {
   id: number;
+  image:string;
   title: string;
   description: string;
   specification: string;
@@ -36,13 +37,13 @@ interface ProductCategoriesResponse {
 
 const fetchCategories = async (): Promise<ProductCategory[]> => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/product-categories?populate=*`
+    `${process.env.NEXT_PUBLIC_API_URL}/product-categories?populate[products][populate]=*`
   );
   if (!res.ok) {
     throw new Error("Failed to fetch categories");
   }
   const data = await res.json();
-  console.log(data);
+  // console.log(data);
   
   return data.data;
 };
