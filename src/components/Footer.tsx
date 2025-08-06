@@ -5,7 +5,6 @@ import { useCategory } from "@/hooks/useCategory";
 import { FaXTwitter } from "react-icons/fa6";
 const Footer: React.FC = () => {
   const { categories } = useCategory();
-  console.log(categories);
 
   return (
     // Base font-monte already implies default font family, text-gray-300 for color

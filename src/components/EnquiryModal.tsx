@@ -65,9 +65,6 @@ const EnquiryModal: React.FC<EnquiryModalProps> = ({ isOpen, onClose, productNam
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      // Handle form submission here
-      console.log('Form submitted:', formData);
-      
       // Reset form
       setFormData({
         name: '',

@@ -45,7 +45,6 @@ const page = () => {
   // Contact API hook
   const contactMutation = useContactMessage({
     onSuccess: (data) => {
-      console.log("Message sent successfully:", data);
       // Reset form
       setFormData({
         first_name: "",
