@@ -78,7 +78,7 @@ const ProductsPage: React.FC = () => {
     >
       <div className="container mx-auto px-4 py-8 mb-3">
         <div className="mb-4">
-          <div className="flex lg:justify-end justify-center px-15 mb-6">
+          <div className="flex lg:justify-end   mb-6">
             <h1
               className="text-4xl font-bold"
               style={{ color: "var(--textblue)" }}

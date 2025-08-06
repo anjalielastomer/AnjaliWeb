@@ -61,7 +61,7 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  // Updated to use documentId instead of id for routing
+  
   const { documentId, name, image, rating, reviewCount, description } = product;
   const router = useRouter();
 
@@ -73,13 +73,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <article
-      data-aos="zoom-in"
-      className="rounded-2xl shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-shadow duration-300"
+      //data-aos="zoom-in"
+      className="rounded-xl md:rounded-2xl shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-shadow duration-300"
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
       <div
         //data-aos="zoom-in"
-        className="flex justify-center h-60 flex-col items-center relative"
+        className="flex justify-center h-40 md:h-60 flex-col items-center relative"
       >
         <Image
           src={image}
@@ -88,21 +88,21 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           height={240}
           className="object-cover h-full w-full"
         />
-        <h3 className="absolute text-[18px] font-[700] font-monte bottom-1 left-2 z-10 text-white px-2 py-1 rounded-sm w-full text-left">
+        <h3 className="absolute text-sm md:text-[18px] font-[700] font-monte bottom-1 left-2 z-10 text-white px-1 md:px-2 py-1 rounded-sm w-full text-left">
           {name}
         </h3>
       </div>
 
-      <div className="pt-4 flex flex-col flex-grow min-h-0">
-        <div className="px-4 flex items-center space-x-1 mb-2">
+      <div className="pt-2 md:pt-4 flex flex-col flex-grow min-h-0">
+        <div className="px-2 md:px-4 flex items-center space-x-1 mb-1 md:mb-2">
           <StarRating rating={rating} />
-          <span className="text-sm" style={{ color: "var(--textcolour)" }}>
+          <span className="text-xs md:text-sm" style={{ color: "var(--textcolour)" }}>
             ({reviewCount})
           </span>
         </div>
 
         <p
-          className="px-4 flex-grow font-[500] text-[#193055] text-sm leading-relaxed mb-5 line-clamp-3"
+          className="px-2 md:px-4 flex-grow font-[500] text-[#193055] text-xs md:text-sm leading-relaxed mb-3 md:mb-5 line-clamp-2 md:line-clamp-3"
           style={{ color: "var(--textcolour)" }}
         >
           {description}
@@ -110,7 +110,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
         <button
           type="button"
-          className="w-full rounded-2xl border px-4 py-3 font-[700] font-monte text-[18px] leading-[28px] transition-colors duration-600 hover:text-white"
+          className="w-full rounded-xl md:rounded-2xl border px-2 md:px-4 py-2 md:py-3 font-[700] font-monte text-sm md:text-[18px] leading-[20px] md:leading-[28px] transition-colors duration-600 hover:text-white"
           style={{
             color: "var(--textorange)",
             borderColor: "var(--textorange)",
