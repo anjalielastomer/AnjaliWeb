@@ -219,7 +219,7 @@ const Page = () => {
             </motion.p>
             <div className="flex justify-center gap-10 items-center flex-wrap">
               <Image src={'/business/iso9001.png'} height={100} width={100} alt='iso 9001'/>
-              <Image src={'/business/rdso.png'} height={100} width={100} alt='rdso'/>
+              <Image src={'/business/rdso2.png'} height={100} width={100} alt='rdso'/>
               <Image src={'/business/iso14001.png'} height={100} width={100} alt='iso 14001' className='scale-150'/>
               <Image src={'/business/iso45001.png'} height={100} width={100} alt='iso 45001'/>
             </div>

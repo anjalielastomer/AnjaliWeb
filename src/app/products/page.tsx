@@ -80,7 +80,7 @@ const ProductsPage: React.FC = () => {
         <div className="mb-4">
           <div className="flex lg:justify-end   mb-6">
             <h1
-              className="text-4xl font-bold"
+              className="text-4xl font-bold font-raleway"
               style={{ color: "var(--textblue)" }}
             >
               Our <span style={{ color: "var(--textorange)" }}>Products</span>

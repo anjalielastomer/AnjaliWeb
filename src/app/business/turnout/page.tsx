@@ -113,13 +113,13 @@ const page: React.FC = () => {
     <section className="font-monte text-textblue min-h-screen pt-22 overflow-hidden">
       
       <div
-        className="pt-16 md:pt-20 xl:pt-22 max-w-[1440px] mx-auto  lg:px-12"
+        className="pt-8 xl:pt-16 max-w-[1440px] mx-auto  lg:px-12"
         style={{ backgroundColor: "var(--bgwhite)" }}
       >
         <div className="flex flex-col xl:flex-row justify-center xl:justify-between mx-auto max-w-[95%] mb-16 md:mb-20">
           
-          <div data-aos="fade-right" className="flex flex-col p-4 md:p-6 gap-6 md:gap-8 xl:gap-15 xl:w-[55%] xl:pt-20 order-1">
-            <h1 className="font-raleway font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[85.5px] text-textblue w-full text-center xl:text-left leading-tight">
+          <div data-aos="fade-right" className="flex flex-col pb-4 md:pb-6 gap-6 md:gap-8 xl:gap-15 xl:w-[55%] order-1">
+            <h1 className="font-raleway font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[85.5px] text-textblue w-full text-center xl:text-left leading-tight">
               <span className="text-textblue block">
                 Turnout
                 <span className="text-textorange"> & </span>
