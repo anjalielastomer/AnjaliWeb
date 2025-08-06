@@ -135,8 +135,6 @@ const ProjectPage: React.FC = () => {
     );
   }
 
-  console.log("Project data being rendered:", project);
-
   // Extract images and paragraphs from project content
   const images = typeof project.content === 'string' 
     ? extractImagesFromHTML(project.content) 

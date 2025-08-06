@@ -56,11 +56,20 @@ const ProductGrid: React.FC<ProductGridProps> = ({
 
 
   const getCurrentCategoryName = () => {
-    if (selectedSegment === "all") return "All Products";
-    const category = categories.find(
-      (cat) => cat.documentId === selectedSegment
-    );
-    return category ? category.name : "Products";
+    console.log("selectedSegment: ",selectedSegment);
+    console.log("");
+    
+    
+    if (selectedSegment === "all"){
+      return "All Products"
+    }else{
+      const category = categories.find(
+        (cat) => cat.documentId === selectedSegment
+      );
+      console.log("Categories",category);
+      
+      return category ? category.name : "Products";
+    }
   };
 
   if (isLoading) {

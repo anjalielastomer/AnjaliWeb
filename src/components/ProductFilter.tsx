@@ -40,6 +40,10 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
     onSegmentChange(segmentValue);
     if (window.innerWidth < 768) setIsExpanded(false);
   };
+  const handleCategoryClick = (categoryValue: string) => {
+    onCategoryChange(categoryValue);
+    if (window.innerWidth < 768) setIsExpanded(false);
+  };
 
   return (
     <>

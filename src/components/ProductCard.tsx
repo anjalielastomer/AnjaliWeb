@@ -61,6 +61,7 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  console.log("Product",product);
   
   const { documentId, name, image, rating, reviewCount, description } = product;
   const router = useRouter();
