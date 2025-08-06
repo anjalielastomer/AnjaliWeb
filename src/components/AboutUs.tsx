@@ -99,7 +99,7 @@ const AboutUs: React.FC = () => {
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
           variants={slideInFromLeft}
-          className="flex flex-col md:flex-row w-full gap-7 mt-5 mb-10 font-monte"
+          className="flex flex-col md:flex-row w-full md:gap-7 gap-0 mt-5 mb-10 font-monte"
         >
           <div className="w-full md:w-1/2 text-justify">
             <h1 className="text-lg font-bold text-textblue mb-6 flex gap-3 font-monte">
@@ -115,7 +115,7 @@ const AboutUs: React.FC = () => {
             <h1 className="text-lg font-bold text-textblue mb-6 flex gap-3 font-monte">
               Integrated <span className="text-textorange">Capabilities</span>
             </h1>
-            <p className="text-textblue text-sm font-medium mb-4 text-justify">
+            <p className="text-textblue text-sm font-medium mb-0 md:mb-4 text-justify">
               Bridge building, track construction, rail flash butt welding, rail
               turnout systems, and rail fastening systems are just a few of the
               railway sector disciplines in which we operate.
@@ -129,7 +129,7 @@ const AboutUs: React.FC = () => {
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
           variants={slideInFromLeft}
-          className="flex flex-col md:flex-row w-full gap-7 mt-10 mb-7 font-monte"
+          className="flex flex-col md:flex-row w-full md:gap-7 gap-0 md:mt-10 mb-7 font-monte"
         >
           <div className="w-full md:w-1/2">
             <h1 className="text-lg font-bold text-textblue mb-6 flex gap-3 font-monte">
@@ -146,7 +146,7 @@ const AboutUs: React.FC = () => {
             <h1 className="text-lg font-bold text-textblue mb-6 flex gap-3 font-monte">
               Key Projects & <span className="text-textorange">Achievements</span>
             </h1>
-            <p className="text-textblue text-sm font-medium mb-4 text-justify">
+            <p className="text-textblue text-sm font-medium md:mb-4 mb-0 text-justify">
               The Jiribam-Imphal Rail Link, the Udhampur-Srinagar-Baramulla Rail
               Link, and the 4.5 km Rail Cum Road Steel Bridge across the River
               Ganga near Patna are some of our noteworthy projects that

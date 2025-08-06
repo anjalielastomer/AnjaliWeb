@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
   return (
     // Base font-monte already implies default font family, text-gray-300 for color
     <footer className="bg-[#122957] text-gray-300 pt-8 pb-6 px-6 relative z-20 font-monte bottom-0">
-      <div className=" max-w-7xl 2xl:max-w-[1600px] px-4 md:px-7 py-4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-32">
+      <div className=" max-w-7xl 2xl:max-w-[1600px] px-4 md:px-7 py-4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-32">
         {/* Branding and Description */}
         <div>
           <h2 className="text-white text-xl font-semibold mb-3 font-raleway">

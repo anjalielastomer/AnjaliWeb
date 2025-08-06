@@ -34,19 +34,19 @@ const StarRating: React.FC<{ rating?: number }> = ({ rating = 5 }) => {
 };
 
 const ProductSkeleton: React.FC = () => (
-  <div className="bg-white w-96 sm:w-80 rounded-2xl shadow-sm overflow-hidden flex-shrink-0 flex flex-col animate-pulse">
-    <div className="h-80 md:h-60 bg-gray-200"></div>
-    <div className="pt-4 flex flex-col flex-grow">
-      <div className="px-4 flex items-center space-x-1 mb-2">
+  <div className="bg-white w-48 sm:w-80 rounded-xl md:rounded-2xl shadow-sm overflow-hidden flex-shrink-0 flex flex-col animate-pulse">
+    <div className="h-40 md:h-60 bg-gray-200"></div>
+    <div className="pt-2 md:pt-4 flex flex-col flex-grow">
+      <div className="px-2 md:px-4 flex items-center space-x-1 mb-1 md:mb-2">
         <div className="h-4 bg-gray-200 rounded w-20"></div>
         <div className="h-4 bg-gray-200 rounded w-10"></div>
       </div>
-      <div className="px-4 mb-5">
+      <div className="px-2 md:px-4 mb-3 md:mb-5">
         <div className="h-4 bg-gray-200 rounded mb-2"></div>
         <div className="h-4 bg-gray-200 rounded w-3/4"></div>
       </div>
-      <div className="px-4 pb-4">
-        <div className="h-12 bg-gray-200 rounded-2xl"></div>
+      <div className="px-2 md:px-4 pb-2 md:pb-4">
+        <div className="h-8 md:h-12 bg-gray-200 rounded-xl md:rounded-2xl"></div>
       </div>
     </div>
   </div>
@@ -76,15 +76,15 @@ const FeaturedProducts: React.FC = () => {
   const router = useRouter();
   const { data, isLoading, error, refetch } = useFeaturedProducts();
   const [isHovering, setIsHovering] = useState(false);
- const CARD_WIDTH_SM = 320; // Corresponds to sm:w-80
-  const CARD_GAP = 24; // Corresponds to gap-6 (0.5rem * 6 = 24px if 1rem=16px)
- const feature = data?.data ?? [];
-const NUM_UNIQUE_PRODUCTS = feature.length;
-const SCROLL_DISTANCE = -(CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS;
-const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS * 3;
-
-
-
+  const CARD_WIDTH_MOBILE = 192; // w-48 (12rem * 16px = 192px)
+  const CARD_WIDTH_SM = 320; // sm:w-80 (20rem * 16px = 320px)
+  const CARD_GAP = 24; // gap-6 (1.5rem * 16px = 24px)
+  const feature = data?.data ?? [];
+  const NUM_UNIQUE_PRODUCTS = feature.length;
+  
+  // Use mobile card width for calculations
+  const SCROLL_DISTANCE = -(CARD_WIDTH_MOBILE + CARD_GAP) * NUM_UNIQUE_PRODUCTS;
+  const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_MOBILE + CARD_GAP) * NUM_UNIQUE_PRODUCTS * 3;
 
   if (isLoading) {
     return (
@@ -122,20 +122,17 @@ const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS *
         Featured <span className='text-textorange'>Products</span>
       </h1>
 
-
       <div className="relative overflow-hidden w-full"
        onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
-
       >
         <div className="flex gap-6 py-2 animate-scroll-infinite"
         style={{
             animationPlayState: isHovering ? 'paused' : 'running',
-            '--scroll-distance': `${SCROLL_DISTANCE}px`, // Pass dynamic value as CSS variable
-            '--scroll-duration': '25s', // Or calculate dynamically if needed
-            width: `${TOTAL_CONTAINER_WIDTH}px` // Set dynamic width here
-          } as React.CSSProperties} // Type assertion needed for custom CSS variables
-
+            '--scroll-distance': `${SCROLL_DISTANCE}px`,
+            '--scroll-duration': '25s',
+            width: `${TOTAL_CONTAINER_WIDTH}px`
+          } as React.CSSProperties}
         >
           {[...featuredProducts,...featuredProducts,...featuredProducts].map(
             (item, index) => {
@@ -145,41 +142,40 @@ const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS *
               return (
                 <article
                   key={`${item.documentId}-${index}`}
-                  className="bg-white w-96 sm:w-80 rounded-2xl shadow-sm overflow-hidden flex-shrink-0 flex flex-col"
+                  className="bg-white w-48 sm:w-80 rounded-xl md:rounded-2xl shadow-sm overflow-hidden flex-shrink-0 flex flex-col"
                 >
-                  <div className="flex justify-center h-80 md:h-60 relative bg-gray-100">
+                  <div className="flex justify-center h-40 md:h-60 relativ">
                     {productImage ? (
                       <Image
                         src={productImage.url}
                         alt={productImage.name}
-                      
                         width={400}
                         height={240}
-                        className="object-cover h-full"
+                        className="object-cover h-full w-full "
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-textorange/10 to-textblue/10">
                         <span className="text-6xl text-gray-300">📦</span>
                       </div>
                     )}
-                    <h3 className="absolute bottom-1 font-bold text-lg z-10 text-white px-4 py-1 rounded-sm w-full text-left ">
+                    <h3 className="absolute text-sm md:text-lg font-bold bottom-1 left-2 z-10 text-white px-1 md:px-2 py-1 rounded-sm w-full text-left">
                       {product.title}
                     </h3>
                   </div>
 
-                  <div className="pt-4 flex flex-col flex-grow">
-                    <div className="px-4 flex items-center space-x-1 mb-2">
+                  <div className="pt-2 md:pt-4 flex flex-col flex-grow">
+                    <div className="px-2 md:px-4 flex items-center space-x-1 mb-1 md:mb-2">
                       <StarRating rating={5} />
-                      <span className="text-textblue text-sm">(0)</span>
+                      <span className="text-textblue text-xs md:text-sm">(0)</span>
                     </div>
 
-                    <p className="px-4 text-textblue flex-grow text-sm font-medium leading-relaxed mb-5">
+                    <p className="px-2 md:px-4 text-textblue flex-grow text-xs md:text-sm font-medium leading-relaxed mb-3 md:mb-5 line-clamp-2 md:line-clamp-3">
                       {product.description}
                     </p>
 
                     <button
                       type="button"
-                      className="w-full mt-auto rounded-2xl border px-4 py-3 font-bold text-lg transition-colors duration-600 hover:text-white"
+                      className="w-full mt-auto rounded-xl md:rounded-2xl border px-2 md:px-4 py-2 md:py-3 font-bold text-sm md:text-lg transition-colors duration-600 hover:text-white"
                       style={{
                         color: "var(--textorange)",
                         borderColor: "var(--textorange)",
@@ -242,7 +238,7 @@ const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_SM + CARD_GAP) * NUM_UNIQUE_PRODUCTS *
         }
         .animate-scroll-infinite {
           animation: scroll-infinite 7s linear infinite;
-          width: calc((320px + 24px) * ${featuredProducts.length * 3});
+          width: calc((192px + 24px) * ${featuredProducts.length * 3});
         }
       `}</style>
     </section>

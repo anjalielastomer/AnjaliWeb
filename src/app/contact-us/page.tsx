@@ -133,7 +133,7 @@ const page = () => {
                 Phone
               </h2>
               <p className="text-textblue text-[14px] font-monte mb-1">
-                9681187076 / 9038156288
+                +91 9681187076 / +91 9038156288
               </p>
               <span className="text-textblue text-xs font-monte opacity-80">
                 Mon-Fri 8AM-6PM EST
@@ -212,9 +212,9 @@ const page = () => {
         <form
           data-aos="fade-up"
           onSubmit={handleSubmit}
-          className="group bg-white rounded-xl shadow-lg hover:shadow-[0_0_10px_rgba(255,165,0,0.4)] transition-shadow duration-300 px-10 py-8 w-full max-w-2xl flex flex-col gap-6"
+          className="group bg-white rounded-xl shadow-lg hover:shadow-[0_0_10px_rgba(255,165,0,0.4)] transition-shadow duration-300 px-10 py-8 w-full max-w-2xl flex flex-col gap-3 md:gap-6"
         >
-          <div className="flex flex-col md:flex-row gap-6">
+          <div className="flex flex-col md:flex-row gap-3 md:gap-6">
             <div className="flex-1 flex flex-col gap-2">
               <label className="text-sm font-semibold text-textblue">
                 First Name *
