@@ -85,7 +85,7 @@ const Page: React.FC = () => {
       fileFormData.append("files", file);
 
       const uploadRes = await fetch(
-        "https://lovable-gift-31985371d0.strapiapp.com/api/upload",
+        `${process.env.NEXT_PUBLIC_API_URL}/upload`,
         {
           method: "POST",
           body: fileFormData,
