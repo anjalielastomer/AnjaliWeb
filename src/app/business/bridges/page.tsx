@@ -61,7 +61,7 @@ const Page = () => {
               </div>
             </span>
           </h1>
-          <p className="text-sm md:text-base text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-monte font-medium tracking-normal text-justify">
+          <p className="text-sm p-4 md:text-base text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-monte font-medium tracking-normal text-justify">
             We are one of the leading Indian Railway contractors for building
             superstructures. We undertake complex projects that require
             high-level construction and engineering skills. Our expertise and

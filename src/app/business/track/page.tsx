@@ -66,7 +66,7 @@ const Page = () => {
             </span>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-sm md:text-lg text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-montserrat font-medium tracking-normal text-justify">
+          <motion.p variants={itemVariants} className="text-sm md:text-lg p-4 text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-montserrat font-medium tracking-normal text-justify">
             The permanent route is the foundation of railway infrastructure, and we specialize in railway track construction for a variety of projects. We specialize in ballasted and ballastless track construction, track renewals, gauge conversion, railway depots, sidings and yards, metro rail, and light rail projects. As one of India's fastest-growing ballastless track construction companies, we are now working on over 100 kilometers of mainline ballastless track.
           </motion.p>
         </motion.div>
