@@ -74,7 +74,7 @@ const Page = () => {
             viewport={{ once: false, amount: 0.3 }}
             className=" w-full max-w-sm lg:max-w-md xl:max-w-lg"
         >
-          <div className="relative w-full mx-auto aspect-[3/4] md:aspect-[4/5] xl:mt-30 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 max-w-[300px] md:max-w-full">
+          <div className="image-container w-full mx-auto aspect-[3/4] md:aspect-[4/5] xl:mt-30 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 max-w-[300px] md:max-w-full">
   <Image
     src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1753946692/iaubtdifzw9yivfnwqyz.jpg"
     alt="Railway bridge structure"
@@ -97,9 +97,9 @@ const Page = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1 xl:-mt-28"
           >
-           <div className="relative w-[220px] h-[220px] md:w-[380px] md:h-[380px] lg:w-[496px] lg:h-[656px] rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 mx-auto">
+           <div className="relative w-[335px] h-[387px] md:w-[380px] md:h-[380px] lg:w-[496px] lg:h-[656px] rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 mx-auto">
   <Image
-    className="w-full h-full object-cover z-10"
+    className="image-container w-full h-full object-cover z-10"
     src="/business/fabric-2.svg"
     alt="Train on a coastal bridge"
     fill
@@ -174,7 +174,7 @@ const Page = () => {
             viewport={{ once: false, amount: 0.3 }}
           >
             <Image
-              className="relative mt-8 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 z-10"
+              className="image-container mt-8 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 z-10 object-cover md:px-0"
               src="/business/fabric-3.svg"
               alt="Side view of railway bridge"
               width={554}
@@ -196,7 +196,7 @@ const Page = () => {
             className="flex items-center justify-center"
           >
             <Image
-              className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
+              className="image-container rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
               src="/business/fabric-4.svg"
               alt="Train crossing a river on a bridge"
               width={496}

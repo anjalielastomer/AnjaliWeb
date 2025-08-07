@@ -80,7 +80,7 @@ export default function IndiaBusinessSection() {
           ))}
         </nav>
         {/* // 8 rem  */}
-        <div className="flex flex-col lg:flex-row gap-[16rem] lg:gap-[4rem]">
+        <div className="flex flex-col lg:flex-row gap-[8rem] sm:gap-[16rem] lg:gap-[4rem]">
           {/* Left - India Map (Fixed) */}
           <div className="flex-shrink-0 flex justify-center items-center">
             <div className="w-[320px] h-[300px] lg:h-auto sm:w-[400px] lg:w-[480px]">
