@@ -103,7 +103,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       >
        <Image
       src={imgSrc}
-      alt={title}
+      alt={title || "Product image"}
       width={400}
       height={240}
       className="object-cover h-full w-full"
