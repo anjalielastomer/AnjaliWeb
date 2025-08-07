@@ -48,6 +48,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
       product:category.products,
     })),
   ];
+  const [isExpanded, setIsExpanded] = React.useState(true);
 // console.log("Segment Data: ",segments);
   const handleSegmentClick = (segmentValue: string) => {
     onSegmentChange(segmentValue);
