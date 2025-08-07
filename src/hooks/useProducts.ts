@@ -26,7 +26,7 @@ export const useProducts = (
       // ✅ Use external API if segment is "all"
       if (params?.segment == "all") {
         const res = await fetch(
-          "https://lovable-gift-31985371d0.strapiapp.com/api/products?populate=images"
+          `${process.env.NEXT_PUBLIC_API_URL}/products?populate=images`
         );
 
         if (!res.ok) {

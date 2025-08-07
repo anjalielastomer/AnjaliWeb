@@ -1,8 +1,7 @@
 import { ApiResponse } from "@/types/article";
 
 const BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL ||
-  "https://lovable-gift-31985371d0.strapiapp.com/api";
+  process.env.NEXT_PUBLIC_API_URL;
 
 export const articlesApi = {
   getAll: async (): Promise<ApiResponse> => {
