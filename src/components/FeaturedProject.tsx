@@ -34,7 +34,6 @@ export default function FeaturedProjects() {
   const [isExploreAllHovered, setIsExploreAllHovered] = useState(false);
 
   const { data: projects, isLoading, error } = useFeaturedProjects();
-  console.log("Project - ",projects);
   
   
   if (isLoading) {

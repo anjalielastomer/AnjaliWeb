@@ -20,7 +20,10 @@ const ProductsPage: React.FC = () => {
   const [selectedSegment, setSelectedSegment] = useState<string>("all");
   const [isMobileFilterVisible, setIsMobileFilterVisible] = useState<boolean>(false);
 
-  const { categories, loading } = useCategory();
+  const { categories, loading, error } = useCategory();
+  // console.log(categories);
+  
+
   const { data: productsData } = useProducts({
     segment: selectedSegment,
     pageSize: 1000,

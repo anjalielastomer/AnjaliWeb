@@ -121,7 +121,6 @@ const Page: React.FC = () => {
           body: JSON.stringify(requestBody),
         }
       );
-      console.log(requestBody);
 
       if (!submitRes.ok) {
         const errorData = await submitRes.json();

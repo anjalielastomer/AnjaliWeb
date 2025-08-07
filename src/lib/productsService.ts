@@ -46,9 +46,7 @@ export const productsService = {
     
     const data=await apiClient.get<{ data: StrapiProduct }>(`/products/${documentId}`, {
       populate: "*",
-    });
-    console.log("productsService",data);
-    
+    });    
     return data
   },
 };

@@ -66,9 +66,6 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ isOpen, onClose, productName,
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      // Handle form submission here
-      console.log('Purchase order submitted:', formData);
-      
       // Reset form
       setFormData({
         name: '',

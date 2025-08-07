@@ -6,10 +6,21 @@ interface ProductCategory {
   documentId: string;
   name: string;
   createdAt: string;
+  products:ProductSpec[];
   updatedAt: string;
   publishedAt: string;
+  
 }
-
+ interface ProductSpec {
+  id: number;
+  title: string;
+  description: string;
+  specification: string;
+  documentId: string;
+  createdAt: string; // ISO date string
+  updatedAt: string; // ISO date string
+  publishedAt: string; // ISO date string
+}
 interface ProductFilterProps {
   selectedCategory: string;
   selectedSegment: string;
@@ -34,11 +45,16 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
     ...categories.map((category) => ({
       name: category.name,
       value: category.documentId,
+      product:category.products,
     })),
   ];
-
+// console.log("Segment Data: ",segments);
   const handleSegmentClick = (segmentValue: string) => {
     onSegmentChange(segmentValue);
+  };
+  const handleCategoryClick = (categoryValue: string) => {
+    onCategoryChange(categoryValue);
+    if (window.innerWidth < 768) setIsExpanded(false);
   };
 
   if (mode === "mobile") {
