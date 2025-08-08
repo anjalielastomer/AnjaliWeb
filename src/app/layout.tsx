@@ -5,6 +5,8 @@ import "./globals.css";
 import { QueryProvider } from "@/providers/query-provider";
 import { Toaster } from "sonner";
 import LayoutWrapper from "@/components/Layoutwrapper"; // NEW
+import ClientOnly from "@/components/ClientOnly";
+import Chatbot from "@/components/Chatbot";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -65,8 +67,13 @@ export default function RootLayout({
             richColors
             closeButton
           />
-
+          
           <LayoutWrapper>{children}</LayoutWrapper>
+          
+          {/* Add Chatbot */}
+          <ClientOnly>
+            <Chatbot />
+          </ClientOnly>
         </QueryProvider>
       </body>
     </html>
