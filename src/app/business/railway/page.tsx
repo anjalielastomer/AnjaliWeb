@@ -100,82 +100,82 @@ const Page = () => {
 
   return (
     <div className="min-h-screen pt-16 md:pt-22 overflow-hidden">
-     <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mb-16 md:mb-20 lg:px-12">
-             <motion.div
-               initial="hidden"
-               whileInView="visible"
-               variants={containerVariants}
-               viewport={{ once: false, amount: 0.2 }}
-               className="flex flex-col md:pr-6 md:py-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20"
-             >
-               <motion.h1 variants={itemVariants} className="font-raleway font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[85.5px] text-textblue w-full text-center xl:text-left leading-tight">
-                 <span className="block">{content.title.main}</span>
-                 <span className="text-textorange block mt-2 md:mt-3 lg:mt-5">
-                   {content.title.orange}
-                   <span className="text-textblue"> {content.title.blue}</span>
-                 </span>
-                 <span className="text-textblue block mt-2 md:mt-3 lg:mt-5">
-                   {content.title.system}
-                   <span className="text-textorange">
-                     {" "}
-                     {content.title.systemOrange}
-                   </span>
-                 </span>
-               </motion.h1>
-               <motion.p variants={itemVariants} className="text-sm md:text-base text-[#193055] text-center xl:text-justify max-w-full xl:max-w-[40rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte px-2 md:px-0">
-                 {content.topParagraph}
-               </motion.p>
-             </motion.div>
-             <motion.div
-               initial="hidden"
-               whileInView="visible"
-               variants={popUp}
-               viewport={{ once: false, amount: 0.3 }}
-               className="flex justify-center xl:justify-end mb-6 xl:mb-0"
-             >
-               <Image
-                 className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 z-10"
-                 src={content.images.tunnel}
-                 alt="Modern train"
-                 height={833}
-                 width={454}
-                 priority
-                 loading="eager"
-               />
-             </motion.div>
-           </div>
-      
-            <div className="bg-[#fff5ef] h-auto">
-              <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mt-0 xl:mt-[-168px] pb-16 md:pb-20 lg:px-12">
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  variants={popUp}
-                  viewport={{ once: false, amount: 0.3 }}
-                  className="flex justify-center xl:justify-start mb-8 xl:mb-0"
-                >
-                  <Image
-                    className="relative z-10 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[496px] h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
-                    src={content.images.track}
-                    alt="Track system"
-                    height={641}
-                    width={496}
-                    loading="lazy"
-                  />
-                </motion.div>
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  variants={itemVariants}
-                  viewport={{ once: false, amount: 0.2 }}
-                  className="flex flex-col justify-center md:pl-6 xl:pl-10 mt-0 xl:mt-16 lg:mt-24"
-                >
-                  <p className="text-sm md:text-base text-textblue text-center xl:text-justify max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] mb-4 md:mb-12 leading-loose font-monte mx-auto">
-                    {content.steelSleeperParagraph}
-                  </p>
-                </motion.div>
-              </div>
-            </div>
+      <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mb-16 md:mb-20 lg:px-12">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={containerVariants}
+          viewport={{ once: false, amount: 0.2 }}
+          className="flex flex-col md:pr-6 md:py-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20"
+        >
+          <motion.h1 variants={itemVariants} className="font-raleway font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[85.5px] text-textblue w-full text-center xl:text-left leading-tight">
+            <span className="block">{content.title.main}</span>
+            <span className="text-textorange block mt-2 md:mt-3 lg:mt-5">
+              {content.title.orange}
+              <span className="text-textblue"> {content.title.blue}</span>
+            </span>
+            <span className="text-textblue block mt-2 md:mt-3 lg:mt-5">
+              {content.title.system}
+              <span className="text-textorange">
+                {" "}
+                {content.title.systemOrange}
+              </span>
+            </span>
+          </motion.h1>
+          <motion.p variants={itemVariants} className="text-sm md:text-base text-[#193055] text-center xl:text-justify max-w-full xl:max-w-[40rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte px-2 md:px-0">
+            {content.topParagraph}
+          </motion.p>
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={popUp}
+          viewport={{ once: false, amount: 0.3 }}
+          className="flex justify-center xl:justify-end mb-6 xl:mb-0"
+        >
+          <Image
+            className="relative w-full max-w-[335px] sm:max-w-[387px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-[387px] md:h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 z-10 object-cover rounded-2xl"
+            src={content.images.tunnel}
+            alt="Modern train"
+            height={833}
+            width={454}
+            priority
+            loading="eager"
+          />
+        </motion.div>
+      </div>
+
+      <div className="bg-[#fff5ef] h-auto">
+        <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mt-0 xl:mt-[-168px] pb-16 md:pb-20 lg:px-12">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={popUp}
+            viewport={{ once: false, amount: 0.3 }}
+            className="flex justify-center xl:justify-start mb-8 xl:mb-0"
+          >
+            <Image
+              className="relative w-full max-w-[335px] sm:max-w-[387px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-[387px] md:h-auto xl:mt-45 z-10 hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 object-cover rounded-2xl"
+              src={content.images.track}
+              alt="Track system"
+              width={496}
+              height={641}
+              loading="lazy"
+            />
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={itemVariants}
+            viewport={{ once: false, amount: 0.2 }}
+            className="flex flex-col justify-center md:pl-6 xl:pl-10 mt-0 xl:mt-16 lg:mt-24"
+          >
+            <p className="text-sm md:text-base text-textblue text-center xl:text-justify max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] mb-4 md:mb-12 leading-loose font-monte mx-auto">
+              {content.steelSleeperParagraph}
+            </p>
+          </motion.div>
+        </div>
+      </div>
 
       {/* TABS SECTION */}
       <div className="max-w-[1440px] mx-auto w-[90%] my-16 flex flex-col-reverse lg:flex-row justify-between font-monte lg:px-12">
@@ -232,7 +232,7 @@ const Page = () => {
           </div>
           <motion.div initial="hidden" animate="visible" exit="exit" variants={popUp}>
             <Image
-              className="w-full max-w-[400px] hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
+              className="w-[335px] h-[387px] md:h-auto md:max-w-[400px] hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 object-cover rounded-2xl"
               src={activeTab === "fastenings" ? content.images.railfastening : content.images.steelsleeper}
               width={554}
               height={721}
@@ -242,8 +242,8 @@ const Page = () => {
           </motion.div>
         </div>
       </div>
-              <div className="bg-bgcolour">
-      <VideoSection />
+      <div className="bg-bgcolour">
+        <VideoSection />
       </div>
     </div>
   );

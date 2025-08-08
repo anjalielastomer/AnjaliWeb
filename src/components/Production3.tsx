@@ -67,11 +67,11 @@ const Production3 = () => {
       viewport={{ once: false, amount: 0.2 }}
       className="w-full lg:pl-16 text-textblue flex flex-col gap-6 sm:gap-8"
     >
-      <motion.h2 variants={itemVariants} className="text-[#152f5d] font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight font-raleway">
+      <motion.h2 variants={itemVariants} className="text-[#152f5d] font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight font-raleway text-center md:text-left">
         Rail Fastening and Sleeper <span className="text-textorange">Manufacturing</span>
       </motion.h2>
 
-      <motion.p variants={itemVariants} className="text-base sm:text-lg lg:text-[20px] text-gray-700">
+      <motion.p variants={itemVariants} className="text-base sm:text-lg lg:text-[20px] text-gray-700 text-center md:text-left">
         Where Strength Meets Precision in <span className='text-textorange'>Rail</span> Infrastructure
       </motion.p>
 

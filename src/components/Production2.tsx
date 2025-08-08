@@ -45,11 +45,11 @@ const Production2 = () => {
         viewport={{ once: false, amount: 0.2 }}
         className="md:flex-1 max-w-xl"
       >
-        <motion.h2 variants={itemVariants} className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px] font-raleway">
+        <motion.h2 variants={itemVariants} className="text-[#152f5d] font-semibold text-2xl sm:text-3xl lg:text-[36px] font-raleway text-center md:text-left">
           Pandrol <span className="text-[var(--textorange)]">Fastening</span>
         </motion.h2>
 
-        <motion.p variants={itemVariants} className="text-base sm:text-lg lg:text-[20px] text-textblue mt-4">
+        <motion.p variants={itemVariants} className="text-base sm:text-lg lg:text-[20px] text-textblue mt-4 text-center md:text-left">
           Precision Engineering for <span className="text-[var(--textorange)]">Permanent</span> Way Solutions
         </motion.p>
 

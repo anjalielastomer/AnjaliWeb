@@ -14,24 +14,24 @@ const popUp: Variants = {
 };
 
 const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.2, // Stagger animation of children
-        }
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2, // Stagger animation of children
     }
+  }
 };
 
 const itemVariants: Variants = {
-    hidden: { x: -50, opacity: 0 },
-    visible: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            duration: 0.5,
-            ease: "easeOut"
-        }
+  hidden: { x: -50, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
     }
+  }
 };
 
 
@@ -46,13 +46,13 @@ export default function AboutSec5() {
         viewport={{ once: false, amount: 0.1 }}
         className="flex-1 max-w-xl"
       >
-        <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-bold text-textblue leading-tight md:mb-6 text-center md:text-left  font-raleway">
+        <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-bold text-textblue leading-tight mb-1 md:mb-6 text-center md:text-left  font-raleway">
           Remarkable
         </motion.h2>
-        <motion.div variants={itemVariants} className="flex flex-col md:flex-row items-center justify-between md:mb-10 font-raleway">
+        <motion.div variants={itemVariants} className="flex flex-col md:flex-row items-center justify-between mb-5 md:mb-10 font-raleway">
           <h3 className="text-4xl md:text-6xl font-bold text-textorange">Projects</h3>
 
-          <Link href={"/projects"} className="pl-10 lg:pl-0 group text-textblue transition-colors py-3 text-3xl font-light flex items-center gap-2 font-raleway">
+          <Link href={"/projects"} className="pl-10 lg:pl-0 group text-textblue transition-colors py-3 text-3xl font-light items-center gap-2 font-raleway hidden md:flex">
             <span>
               <span className="text-textorange group-hover:text-[#193055] transition-all duration-300">Explore</span>
               <span className="text-textblue group-hover:text-[#FB7602] transition-all duration-300"> All</span>
@@ -80,6 +80,14 @@ export default function AboutSec5() {
             accommodate the track alignment.
           </p>
         </motion.div>
+        <Link href={"/projects"} className="group text-textblue transition-colors py-5 text-3xl font-light items-center justify-center gap-2 font-raleway flex md:hidden">
+          <span>
+            <span className="text-textorange group-hover:text-[#193055] transition-all duration-300">Explore</span>
+            <span className="text-textblue group-hover:text-[#FB7602] transition-all duration-300"> All</span>
+          </span>
+          <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
+          <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
+        </Link>
       </motion.div>
 
       {/* Right Image Content */}

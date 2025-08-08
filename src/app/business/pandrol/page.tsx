@@ -78,7 +78,7 @@ const Page = () => {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: false, amount: 0.5 }}
-                  variants={slideInFromLeft} className="flex flex-col py-4 pr-4 md:pr-6 md:py-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20">
+                  variants={slideInFromLeft} className="flex flex-col py-4 md:pr-6 md:py-6 gap-6 md:gap-8 xl:gap-15 xl:w-[60%] xl:pt-20">
           <h1 className="font-raleway font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[85.5px] text-textblue w-full text-center xl:text-left leading-tight">
             <span className="block">{content.title.main}</span>
             <span className="text-textorange block mt-2 md:mt-3 lg:mt-5">
@@ -103,7 +103,7 @@ const Page = () => {
           className="flex justify-center xl:justify-end mb-6 xl:mb-0"
         >
           <Image
-            className="relative z-10 w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
+            className="relative z-10 w-full max-w-[335px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-[387px] sm:h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 object-cover rounded-xl"
             src={content.images.train1}
             alt="Modern train"
             height={833}
@@ -126,7 +126,7 @@ const Page = () => {
             className="flex justify-center xl:justify-start mb-8 xl:mb-0"
           >
             <Image
-              className="relative z-10 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[496px] h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
+              className="relative z-10 w-full max-w-[335px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[496px] h-[387px] md:h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 object-cover rounded-lg"
               src={content.images.train2}
               alt="Modern train"
               height={647}

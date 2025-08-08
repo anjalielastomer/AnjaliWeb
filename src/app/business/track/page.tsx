@@ -2,39 +2,39 @@
 import React from 'react';
 import Image from 'next/image';
 import VideoSection from '@/components/VideoSection';
-import  CardComponent  from '@/components/CardComponent';
+import CardComponent from '@/components/CardComponent';
 import { motion, Variants } from 'framer-motion';
 
 // Animation Variants
 const popUp: Variants = {
-    hidden: { scale: 0.9, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-  };
-  
+  hidden: { scale: 0.9, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
+
 const containerVariants: Variants = {
-      hidden: {},
-      visible: {
-          transition: {
-              staggerChildren: 0.2,
-          }
-      }
-  };
-  
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    }
+  }
+};
+
 const itemVariants: Variants = {
-      hidden: { x: -50, opacity: 0 },
-      visible: {
-          x: 0,
-          opacity: 1,
-          transition: {
-              duration: 0.5,
-              ease: "easeOut"
-          }
-      }
-  };
+  hidden: { x: -50, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+};
 
 
 const Page = () => {
@@ -48,11 +48,11 @@ const Page = () => {
 
         {/* Text Content */}
         <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={containerVariants}
-            viewport={{ once: false, amount: 0.2 }}
-            className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left flex-1 max-w-2xl"
+          initial="hidden"
+          whileInView="visible"
+          variants={containerVariants}
+          viewport={{ once: false, amount: 0.2 }}
+          className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left flex-1 max-w-2xl"
         >
           <motion.h1 variants={itemVariants} className="font-raleway font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[85.5px] text-textblue leading-tight">
             <span className="text-textblue block">
@@ -66,28 +66,28 @@ const Page = () => {
             </span>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-sm md:text-lg p-4 text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-montserrat font-medium tracking-normal text-justify">
+          <motion.p variants={itemVariants} className="text-sm md:text-lg text-[#193055] max-w-xl mt-6 lg:mt-8 leading-loose font-montserrat font-medium tracking-normal text-justify px-4 md:px-0">
             The permanent route is the foundation of railway infrastructure, and we specialize in railway track construction for a variety of projects. We specialize in ballasted and ballastless track construction, track renewals, gauge conversion, railway depots, sidings and yards, metro rail, and light rail projects. As one of India's fastest-growing ballastless track construction companies, we are now working on over 100 kilometers of mainline ballastless track.
           </motion.p>
         </motion.div>
 
         {/* Image Content */}
         <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={popUp}
-            viewport={{ once: false, amount: 0.3 }}
-            className="flex-shrink-0 w-full max-w-sm lg:max-w-md xl:max-w-lg"
+          initial="hidden"
+          whileInView="visible"
+          variants={popUp}
+          viewport={{ once: false, amount: 0.3 }}
+          className="flex-shrink-0 w-full max-w-sm lg:max-w-md xl:max-w-lg"
         >
-          <div className="relative w-[220px] aspect-[3/4] md:w-[300px] lg:w-full lg:aspect-[4/5] rounded-xl overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 mx-auto">
-  <Image
-    src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1753946468/o9j95utpjuv1vvel8cev.png"
-    alt="Railway bridge structure"
-    fill
-    className="object-cover"
-    loading="eager"
-  />
-</div>
+          <div className="image-container w-[220px] aspect-[3/4] md:w-[300px] lg:w-full lg:aspect-[4/5] rounded-xl overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 mx-auto">
+            <Image
+              src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1753946468/o9j95utpjuv1vvel8cev.png"
+              alt="Railway bridge structure"
+              fill
+              className="object-cover"
+              loading="eager"
+            />
+          </div>
 
         </motion.div>
       </div>
@@ -104,13 +104,13 @@ const Page = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="flex justify-center lg:justify-start flex-shrink-0 w-full lg:w-auto order-2 lg:order-1"
           >
-            <div className="relative w-92 h-92 md:w-150 md:h-150 lg:w-124 lg:h-164 hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300">
+            <div className="relative w-[335px] h-[387px] md:w-[600px] md:h-[600px] lg:w-[496px] lg:h-[641px] hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 rounded-[18px] overflow-hidden">
               <Image
-                className="w-full"
                 src="/business/track-2.svg"
                 alt="Train on a coastal bridge"
-                fill={true}
-                loading='lazy'
+                fill
+                className="object-cover"
+                loading="lazy"
               />
             </div>
           </motion.div>
@@ -189,14 +189,15 @@ const Page = () => {
             variants={popUp}
             viewport={{ once: false, amount: 0.3 }}
           >
-            <Image
-              className="relative mt-2 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 z-10"
-              src="/business/track-3.svg"
-              alt="Side view of railway bridge"
-              width={554}
-              height={721}
-              loading='lazy'
-            />
+            <div className="relative w-[335px] h-[387px] sm:w-[400px] sm:h-[500px] lg:w-[554px] lg:h-[721px] mt-2 lg:mt-[45px] z-10 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 overflow-hidden rounded-[18px]">
+              <Image
+                src="/business/track-3.svg"
+                alt="Side view of railway bridge"
+                fill
+                className="object-cover"
+                loading="lazy"
+              />
+            </div>
           </motion.div>
         </div>
       </div>
@@ -205,21 +206,21 @@ const Page = () => {
       <div className="bg-[#fff5ef] py-16 md:py-24">
         <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12 p-2 lg:px-12">
           <motion.div
-  initial="hidden"
-  whileInView="visible"
-  variants={popUp}
-  viewport={{ once: false, amount: 0.3 }}
-  className="flex items-center justify-center"
->
-  <Image
-    className="rounded-lg shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 w-[220px] md:w-[320px] lg:w-[496px] h-auto"
-    src="/business/track-4.svg"
-    alt="Train crossing a river on a bridge"
-    width={496}
-    height={574}
-    loading="lazy"
-  />
-</motion.div>
+            initial="hidden"
+            whileInView="visible"
+            variants={popUp}
+            viewport={{ once: false, amount: 0.3 }}
+            className="flex items-center justify-center"
+          >
+            <Image
+              className="rounded-2xl shadow-md hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 w-[335px] h-[387px] md:w-[320px] lg:w-[496px] md:h-auto"
+              src="/business/track-4.svg"
+              alt="Train crossing a river on a bridge"
+              width={496}
+              height={574}
+              loading="lazy"
+            />
+          </motion.div>
 
           <motion.div
             initial="hidden"

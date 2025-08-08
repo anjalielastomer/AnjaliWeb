@@ -42,9 +42,9 @@ const Production1 = () => {
         <div className="relative font-monte overflow-hidden">
             {/* Sec1 */}
             <div className="flex flex-col justify-center lg:flex-row bg-white pt-20 relative z-10">
-                <div className="max-w-[1440px] px-10 mx-auto flex flex-col md:flex-row items-center justify-between">
+                <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between">
                     {/* Left Side */}
-                    <div className="w-full lg:w-1/2 p-4 px-6 sm:px-8 lg:px-2 flex flex-col">
+                    <div className="w-full lg:w-1/2 p-4 px-6 sm:px-8 lg:px-2 flex flex-col text-center md:text-left">
                         {/* This heading is now static */}
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-textblue leading-relaxed gap-10 mb-8">
                             State-of-Art<br />
@@ -80,12 +80,12 @@ const Production1 = () => {
                             initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={containerVariants}
                             className="max-w-lg mx-auto lg:mx-0"
                         >
-                            <motion.div variants={slideInFromRight} className="flex items-center justify-start gap-2 mb-6 font-raleway">
+                            <motion.div variants={slideInFromRight} className="flex items-center justify-center md:justify-start gap-2 mb-6 font-raleway">
                                 <h2 className="text-textblue font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Steel</h2>
                                 <span className="text-textorange font-semibold md:font-bold text-2xl sm:text-3xl lg:text-[36px]">Fabrication</span>
                             </motion.div>
 
-                            <motion.p variants={slideInFromRight} className='text-base sm:text-lg lg:text-[20px] font-[500] font-monte md:mt-10'>Precision Steel Fabrication, <span className='text-textorange'>Engineered</span> for Elastomer Excellence</motion.p>
+                            <motion.p variants={slideInFromRight} className='text-base sm:text-lg lg:text-[20px] font-[500] font-monte md:mt-10 text-center md:text-left'>Precision Steel Fabrication, <span className='text-textorange'>Engineered</span> for Elastomer Excellence</motion.p>
 
                             <motion.p variants={slideInFromRight} className="text-textblue text-base sm:text-lg leading-loose my-8 lg:my-20 text-justify">
                                 At the heart of every high-performance elastomer product lies a backbone of precision-engineered steel. Our in-house steel fabrication facility ensures strength, consistency, and quality you can rely on — every time.
@@ -116,7 +116,7 @@ const Production1 = () => {
                         initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromLeft}
                         className="mb-8"
                     >
-                        <h2 className="text-textblue font-semibold text-2xl sm:text-3xl lg:text-[36px] max-w-[1440px] mx-auto font-raleway">
+                        <h2 className="text-textblue font-semibold text-2xl sm:text-3xl lg:text-[36px] max-w-[1440px] mx-auto font-raleway text-center md:text-left">
                             Turnout and <span className="text-textorange font-semibold">Track Devices</span>
                         </h2>
                     </motion.div>
@@ -142,10 +142,10 @@ const Production1 = () => {
                         {/* Right Text Section */}
                         <motion.div
                             initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={containerVariants}
-                            className="flex flex-col justify-start lg:w-[500px] space-y-8 ml-14"
+                            className="flex flex-col justify-start lg:w-[500px] space-y-8 md:ml-14"
                         >
                             <motion.div variants={slideInFromRight}>
-                                <h3 className='text-base sm:text-lg lg:text-[20px] font-[600] text-textblue mb-6'>
+                                <h3 className='text-base sm:text-lg lg:text-[20px] font-medium text-textblue mb-6 text-center md:text-left'>
                                     Engineering Mobility with <span className='text-textorange'>Unmatched</span> Accuracy
                                 </h3>
                             </motion.div>

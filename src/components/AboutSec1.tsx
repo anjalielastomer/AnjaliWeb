@@ -43,9 +43,9 @@ const AboutSec1 = () => {
     <div className="relative overflow-hidden">
       {/* Sec1 */}
       <div className="flex flex-col justify-center md:flex-row bg-white pt-20 relative z-10 font-monte">
-        <div className="max-w-[1440px] mx-auto px-10 flex flex-col md:flex-row items-center justify-between">
+        <div className="max-w-[1440px] mx-auto md:px-10 flex flex-col-reverse md:flex-row items-center justify-between">
           {/* Left Side */}
-          <div className="w-full md:w-1/2 p-4 flex flex-col">
+          <div className="w-full md:w-1/2 p-4 flex flex-col text-center md:text-left">
             <motion.h1
                 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={slideInFromLeft}
                 className="text-4xl sm:text-4xl lg:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8 font-raleway"
@@ -97,7 +97,7 @@ const AboutSec1 = () => {
 
               <motion.div
                 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={popUp}
-                className="mt-auto -mb-32 relative z-40"
+                className="mt-auto md:-mb-32 relative z-40"
               >
                 <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
                   <Image

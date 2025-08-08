@@ -91,7 +91,7 @@ export default function FeaturedProjects() {
             viewport={{ once: false, amount: 0.3 }}
           >
             <div>
-              <p className="text-[28px] font-medium text-textblue mb-8 leading-13">
+              <p className="text-[28px] font-medium text-textblue md:mb-8 leading-13">
                 Delivering <br />
                 Projects across <span className="text-textorange">
                   India
@@ -104,7 +104,7 @@ export default function FeaturedProjects() {
             <div className="w-full flex justify-start items-center mt-15">
               <Link
                 href='/projects'
-                className="group transition-colors pr-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway"
+                className="group transition-colors pr-14 py-3 rounded-2xl text-[28px] font-normal items-center gap-2 font-raleway hidden md:flex"
                 onMouseEnter={() => setIsExploreAllHovered(true)}
                 onMouseLeave={() => setIsExploreAllHovered(false)}
               >
@@ -161,6 +161,33 @@ export default function FeaturedProjects() {
               `}</style>
             </div>
           </div>
+          <div className="w-full flex justify-center items-center mt-5">
+              <Link
+                href='/projects'
+                className="group transition-colors py-3 rounded-2xl text-[28px] font-normal items-center gap-2 font-raleway flex md:hidden"
+                onMouseEnter={() => setIsExploreAllHovered(true)}
+                onMouseLeave={() => setIsExploreAllHovered(false)}
+              >
+                <span
+                  className="transition-colors duration-300"
+                  style={{
+                    color: isExploreAllHovered ? 'var(--textblue)' : 'var(--textorange)'
+                  } as React.CSSProperties}
+                >
+                  Explore
+                </span>
+                <span
+                  className="transition-colors duration-300"
+                  style={{
+                    color: isExploreAllHovered ? 'var(--textorange)' : 'var(--textblue)'
+                  } as React.CSSProperties}
+                >
+                  All
+                </span>
+                <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
+                <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
+              </Link>
+            </div>
         </div>
       </div>
     </section>

@@ -111,13 +111,13 @@ const page: React.FC = () => {
 
   return (
     <section className="font-monte text-textblue min-h-screen pt-22 overflow-hidden">
-      
+
       <div
         className="pt-8 xl:pt-16 max-w-[1440px] mx-auto  lg:px-12"
         style={{ backgroundColor: "var(--bgwhite)" }}
       >
         <div className="flex flex-col xl:flex-row justify-center xl:justify-between mx-auto max-w-[95%] mb-16 md:mb-20">
-          
+
           <div data-aos="fade-right" className="flex flex-col pb-4 md:pb-6 gap-6 md:gap-8 xl:gap-15 xl:w-[55%] order-1">
             <h1 className="font-raleway font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[85.5px] text-textblue w-full text-center xl:text-left leading-tight">
               <span className="text-textblue block">
@@ -141,7 +141,7 @@ const page: React.FC = () => {
               cutting-edge technologies.
             </p>
 
-           
+
             <div className="hidden xl:flex items-center justify-start">
               <div className="w-[388px] aspect-[4/3] flex flex-col justify-between items-center p-8 lg:p-10 border-2 border-[var(--textorange)] rounded-md bg-white hover:bg-[var(--bgcolour)] hover:border-[var(--bgcolour)] transition-colors duration-300">
                 <Image
@@ -164,13 +164,13 @@ const page: React.FC = () => {
             </div>
           </div>
 
-         
+
           <div className="flex flex-col items-center xl:items-end order-2 xl:order-2">
-         
+
             <div data-aos="zoom-in-up" className="xl:hidden flex items-center justify-center mb-6 md:mb-8 w-full">
               <div className="w-[85%] sm:w-[70%] md:w-[400px] aspect-[4/3] flex flex-col justify-between items-center p-4 sm:p-6 md:p-8 border-2 border-[var(--textorange)] rounded-md bg-white">
                 <Image
-                  
+
                   src="/rail-track.png"
                   alt="rail track logo"
                   height={50}
@@ -188,17 +188,18 @@ const page: React.FC = () => {
               </div>
             </div>
 
-          
+
             <div className="flex justify-center xl:justify-end w-full xl:w-auto xl:mt-52 rounded-2xl overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
-              <Image
-              data-aos="zoom-in-up"
-                className="w-[85%] sm:w-[75%] md:w-[400px] lg:w-[500px] xl:w-[554px] h-auto object-cover"
-                src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1753946574/kdwxszfwps6rrwcfouui.jpg"
-                alt="Modern train"
-                height={833}
-                width={554}
-                loading='lazy'
-              />
+              <div className="relative w-[335px] h-[387px] sm:w-[400px] sm:h-[460px] md:w-[400px] md:h-[600px] lg:w-[500px] lg:h-[700px] xl:w-[554px] xl:h-[833px]">
+                <Image
+                  data-aos="zoom-in-up"
+                  src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1753946574/kdwxszfwps6rrwcfouui.jpg"
+                  alt="Modern train"
+                  fill
+                  loading="lazy"
+                  className="object-cover rounded-2xl"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -207,7 +208,7 @@ const page: React.FC = () => {
 
       <div className="w-full bg-bgcolour pt-20 md:pt-40 -mt-20 md:-mt-40">
         <div className="max-w-[1440px] px-4 flex flex-col md:flex-row justify-between items-center mx-auto py-8 md:py-10 gap-8 lg:px-12">
-      
+
           <div className="flex justify-center w-full md:w-auto">
             <Image
               data-aos="zoom-in-right"
@@ -215,12 +216,12 @@ const page: React.FC = () => {
               alt="rail tracks"
               height={651}
               width={496}
-              className="w-[90%] sm:w-[80%] md:w-[400px] lg:w-[496px] h-auto object-contain hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
+              className="w-[335px] h-[387px] sm:w-[80%] md:w-[400px] lg:w-[496px] md:h-auto md:object-contain hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300 object-cover rounded-2xl"
               loading='lazy'
             />
           </div>
 
-       
+
           <div className="flex flex-col justify-between items-center gap-6 md:gap-8 lg:gap-10 md:pt-20 lg:pt-40 w-full md:w-auto">
             <p data-aos="zoom-in-left" className="max-w-[556px] w-[90%] sm:w-[80%] mx-auto md:mx-0 text-justify text-sm md:text-base lg:text-lg font-medium leading-relaxed">
               Our sophisticated turnout manufacturing facilities in West Bengal
@@ -231,7 +232,7 @@ const page: React.FC = () => {
               year using induction heating and an automated die handling system.
             </p>
 
-            
+
             <div className="flex items-center justify-center w-full">
               <div data-aos="zoom-in-up" className="w-[85%] sm:w-[70%] md:w-[350px] lg:w-[388px] aspect-[4/3] flex flex-col justify-between items-center p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-[var(--textorange)] rounded-md bg-white hover:bg-[var(--bgcolour)] hover:border-[var(--bgcolour)] hover:shadow-xs hover:shadow-gray-200 transition-colors duration-300">
                 <Image
@@ -256,16 +257,16 @@ const page: React.FC = () => {
         </div>
       </div>
 
-      
+
       <div className="w-full max-w-7xl mx-auto px-4 py-8 md:py-12  lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-        
+
           <div className="space-y-6 order-2 lg:order-1">
             <h1 data-aos="fade-right" className="text-2xl md:text-3xl lg:text-4xl font-medium text-textblue pb-6 md:pb-10 text-center lg:text-left">
               Resources <span className="text-textorange">Available</span>
             </h1>
 
-          
+
             <div data-aos="fade-right" className="space-y-3 md:space-y-4">
               {[
                 "CNC Plano Milling Machine",
@@ -324,20 +325,19 @@ const page: React.FC = () => {
         </div>
       </div>
 
-     
+
       <div className="w-full bg-bgcolour">
         <div data-aos="fade-up" className="w-full max-w-7xl mx-auto px-4 py-8 md:py-12 lg:px-12">
-         
+
           <div className="flex flex-wrap justify-center lg:justify-start gap-2 md:gap-3 mb-6 md:mb-8">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => handleTabChange(tab.id)}
-                className={`px-4 md:px-6 py-2 rounded-full font-medium transition-colors text-sm md:text-base ${
-                  activeTab === tab.id
+                className={`px-4 md:px-6 py-2 rounded-full font-medium transition-colors text-sm md:text-base ${activeTab === tab.id
                     ? "bg-textorange text-white"
                     : "bg-white border border-textorange text-textorange hover:bg-orange-50"
-                }`}
+                  }`}
               >
                 {tab.label}
               </button>
@@ -350,12 +350,11 @@ const page: React.FC = () => {
               <div className="relative w-full">
                 <div className="aspect-[496/574] w-full max-w-[400px] md:max-w-[450px] lg:max-w-[496px] mx-auto lg:mx-0">
                   <img
-                    
+
                     src={currentContent.image}
                     alt={`${currentContent.title} - Railway infrastructure`}
-                    className={`w-full h-full object-cover rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-opacity duration-300 ${
-                      isAnimating ? "opacity-0" : "opacity-100"
-                    }`}
+                    className={`w-full h-full object-cover rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-opacity duration-300 ${isAnimating ? "opacity-0" : "opacity-100"
+                      }`}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = "none";
@@ -374,10 +373,9 @@ const page: React.FC = () => {
 
             {/* Content */}
             <div
-              
-              className={`order-1 lg:order-2 space-y-4 md:space-y-6 transition-opacity duration-300 ${
-                isAnimating ? "opacity-0" : "opacity-100"
-              }`}
+
+              className={`order-1 lg:order-2 space-y-4 md:space-y-6 transition-opacity duration-300 ${isAnimating ? "opacity-0" : "opacity-100"
+                }`}
             >
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight font-raleway text-center lg:text-left">
                 {renderTitle()}

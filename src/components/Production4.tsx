@@ -31,12 +31,12 @@ const slideInFromRight: Variants = {
 const Production4 = () => {
   return (
     <section
-      className="relative min-h-[700px] md:min-h-[1000px] max-h-[1440px] bg-cover bg-center bg-no-repeat text-center overflow-hidden"
+      className="relative py-3 md:py-0 min-h-[700px] md:min-h-[1000px] max-h-[1440px] bg-cover bg-center bg-no-repeat text-center overflow-hidden"
       style={{ backgroundImage: "url('/aboutus/production-facilities/production4-bg.jpg')" }}
       aria-label="Railway infrastructure company motto and mission"
     >
       {/* Wrapper for both cards */}
-      <div className="flex flex-col md:block justify-center items-center h-full gap-6 px-4 sm:px-8">
+      <div className="max-w-[1440px] mx-auto flex flex-col md:block justify-center items-center h-full gap-6 px-8">
         {/* Left Box - Manufacturing Practices */}
         <motion.div
             initial="hidden"
@@ -44,7 +44,7 @@ const Production4 = () => {
             variants={slideInFromLeft}
             viewport={{ once: false, amount: 0.3 }}
             style={{ willChange: 'transform, opacity' }} // Optimization for smooth animation
-            className="group flex flex-col gap-6 md:gap-8 max-w-lg bg-white/20 backdrop-blur-md rounded-xl px-8 py-8 sm:px-10 sm:py-10 md:px-12 md:py-12 shadow-lg transition duration-300 hover:bg-[#FB7602] hover:shadow-2xl
+            className="group flex flex-col gap-3 md:gap-8 max-w-lg bg-white/20 backdrop-blur-md rounded-xl px-4 py-4 sm:px-10 sm:py-10 md:px-12 md:py-12 shadow-lg transition duration-300 hover:bg-[#FB7602] hover:shadow-2xl
             md:absolute md:top-[10%] md:left-[10%] xl:left-[20%]"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--textblue)] transition-colors duration-300 group-hover:text-white text-center font-raleway">
@@ -62,7 +62,7 @@ const Production4 = () => {
             variants={slideInFromRight}
             viewport={{ once: false, amount: 0.3 }}
             style={{ willChange: 'transform, opacity' }} // Optimization for smooth animation
-            className="group flex flex-col gap-6 md:gap-8 max-w-lg bg-white/20 backdrop-blur-md rounded-xl px-8 py-8 sm:px-10 sm:py-10 md:px-12 md:py-12 shadow-lg transition duration-300 hover:bg-[#FB7602] hover:shadow-2xl
+            className="group flex flex-col gap-3 md:gap-8 max-w-lg bg-white/20 backdrop-blur-md rounded-xl px-4 py-4 sm:px-10 sm:py-10 md:px-12 md:py-12 shadow-lg transition duration-300 hover:bg-[#FB7602] hover:shadow-2xl
             md:absolute md:bottom-[10%] md:right-[10%] mt-6 md:mt-0 xl:right-[20%]"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--textblue)] transition-colors duration-300 group-hover:text-white text-center font-raleway">
