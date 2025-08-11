@@ -4,6 +4,8 @@ import { FiArrowUpRight } from "react-icons/fi";
 import Link from "next/link";
 import { TransformedArticle } from "@/types/article";
 import { useArticles } from "@/hooks/useArticles";
+import { toast } from "sonner";
+import { AiOutlineCheckCircle } from "react-icons/ai";
 
 const ArticlesPage: React.FC = () => {
   const { data: articles = [], isLoading, error, isError } = useArticles();
@@ -26,6 +28,16 @@ const ArticlesPage: React.FC = () => {
       </div>
     );
   }
+
+  const handleSubscribe = () => {
+    toast(
+      <div className="flex flex-col items-center text-center">
+        <AiOutlineCheckCircle size={80} className="text-[var(--textorange)] mb-4" />
+        <h2 className="text-2xl font-semibold text-gray-800">Thank you!</h2>
+        <p className="text-sm text-gray-600 mt-1">Subscribed!</p>
+      </div>
+    );
+  };
 
   return (
     <div className="w-full max-w-[1600px] mx-auto min-h-fit bg-white justify-center font-monte flex flex-col md:flex-row gap-10 mt-20 px-7 md:px-14 pb-20">
@@ -51,7 +63,7 @@ const ArticlesPage: React.FC = () => {
               placeholder="Enter your email"
               className="w-full p-2 bg-white rounded-md border border-[#ff7f00] mb-3 focus:outline-none focus:ring-[#ff7f00]"
             />
-            <button className="bg-textorange text-white px-4 py-2 rounded-md w-full hover:bg-[#ff7f00] transition">
+            <button onClick={handleSubscribe} className="bg-textorange text-white px-4 py-2 rounded-md w-full hover:bg-[#ff7f00] transition cursor-pointer">
               Subscribe
             </button>
           </div>
@@ -69,7 +81,7 @@ const ArticlesPage: React.FC = () => {
       </div>
 
       {/* Scrollable Articles List */}
-      <div  data-aos="fade-left" className="">
+      <div data-aos="fade-left" className="">
         <div className="flex-1 max-h-[995px] overflow-y-auto pr-3 custom-scrollbar mt-5">
           <div className="flex flex-col gap-6">
             {articles.map((article: TransformedArticle) => (
