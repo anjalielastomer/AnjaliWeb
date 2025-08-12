@@ -17,12 +17,12 @@ import { StrapiProduct } from "@/types/product";
 import { motion, Variants } from "framer-motion";
 
 const transformStrapiProductForDetails = (strapiProduct: StrapiProduct) => {
-  
-  
+
+
   const baseProduct = transformStrapiProduct1(strapiProduct);
-  console.log("Base produ",baseProduct);
-  console.log("starpi page.tsx",strapiProduct);
-  
+  console.log("Base produ", baseProduct);
+  console.log("starpi page.tsx", strapiProduct);
+
 
   return {
     ...baseProduct,
@@ -143,7 +143,7 @@ const SingleProductPage: React.FC = () => {
           <div className="flex justify-between items-start mb-6 md:px-20">
             <Link
               href="/products"
-              className="text-xl font-medium flex items-center transition-colors"
+              className="text-base md:text-xl font-medium flex items-center transition-colors w-1/2"
               style={{ color: "var(--textcolour)" }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.color = "var(--textorange)")
@@ -155,7 +155,7 @@ const SingleProductPage: React.FC = () => {
               &lt;&lt; Previous Page
             </Link>
             <h1
-              className="text-4xl font-bold"
+              className="text-4xl font-bold text-right"
               style={{ color: "var(--textblue)" }}
             >
               Our <span style={{ color: "var(--textorange)" }}>Products</span>
@@ -239,15 +239,14 @@ const SingleProductPage: React.FC = () => {
             </motion.div>
             {/* Thumbnail Images */}
             {product.images && product.images.length > 1 && (
-
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
                 {product.images.map((image, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImageIndex(index)}
-                    className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors ${selectedImageIndex === index
-                      ? "border-orange-500"
-                      : "border-gray-200"
+                    className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors ${selectedImageIndex === index
+                        ? "border-orange-500"
+                        : "border-gray-200"
                       }`}
                   >
                     <Image
@@ -260,7 +259,6 @@ const SingleProductPage: React.FC = () => {
                   </button>
                 ))}
               </div>
-
             )}
           </div>
 
@@ -366,7 +364,7 @@ const SingleProductPage: React.FC = () => {
 
         {/* Product Description Tabs */}
         <div className="mb-16">
-          <div className="flex space-x-8 mb-6 md:px-20">
+          <div className="flex space-x-4 md:space-x-8 mb-6 md:px-20">
             {["description", "specifications", "reviews"].map((tab) => (
               <button
                 key={tab}
@@ -408,14 +406,14 @@ const SingleProductPage: React.FC = () => {
             {activeTab === "specifications" && (
               <div>
                 <div className="space-y-8">
-                  
-                      <p
-                        className="text-base mb-4"
-                        style={{ color: "var(--textblue)" }}
-                      >
-                        {product.specification}
-                      </p>
-                     {/* <div
+
+                  <p
+                    className="text-base mb-4"
+                    style={{ color: "var(--textblue)" }}
+                  >
+                    {product.specification}
+                  </p>
+                  {/* <div
                         className="rounded-lg p-4"
                         style={{ backgroundColor: "var(--bgcolour)" }}
                       >
@@ -441,7 +439,7 @@ const SingleProductPage: React.FC = () => {
                           ))}
                         </div>
                       </div> Add a margin to the bottom of the section for spacing */}
-                    </div>
+                </div>
               </div>
             )}
             {activeTab === "reviews" && (

@@ -65,7 +65,7 @@ const ProjectPage: React.FC = () => {
 
   return (
     <div className="max-w-[1440px] mx-auto w-full min-h-screen px-10 mt-20">
-      <div className=" flex justify-between text-textblue font-monte focus:outline-none text-xl">
+      <div className=" flex justify-between text-textblue font-monte focus:outline-none text-base md:text-xl">
         {/* 5. Update onClick handlers; the className is unchanged */}
         <button onClick={goToPrevious} className="">
           &lt; Previous Article
