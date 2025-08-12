@@ -122,7 +122,7 @@ const Page = () => {
               </span>
             </span>
           </motion.h1>
-          <motion.p variants={itemVariants} className="text-sm md:text-base text-[#193055] text-center xl:text-justify max-w-full xl:max-w-[40rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte px-2 md:px-0">
+          <motion.p variants={itemVariants} className="text-sm md:text-base text-[#193055] text-justify max-w-full xl:max-w-[40rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte px-2 md:px-0">
             {content.topParagraph}
           </motion.p>
         </motion.div>
@@ -170,7 +170,7 @@ const Page = () => {
             viewport={{ once: false, amount: 0.2 }}
             className="flex flex-col justify-center md:pl-6 xl:pl-10 mt-0 xl:mt-16 lg:mt-24"
           >
-            <p className="text-sm md:text-base text-textblue text-center xl:text-justify max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] mb-4 md:mb-12 leading-loose font-monte mx-auto">
+            <p className="text-sm md:text-base text-textblue text-justify max-w-[320px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] mb-4 md:mb-12 leading-loose font-monte mx-auto">
               {content.steelSleeperParagraph}
             </p>
           </motion.div>
@@ -190,7 +190,7 @@ const Page = () => {
                     <span className="text-textorange">{content.fasteningsContent.title.highlighted}</span>
                     {content.fasteningsContent.title.post}
                   </motion.h1>
-                  <motion.p variants={itemVariants} className="text-textblue font-medium mb-6 font-monte text-center lg:text-left mt-20">{content.fasteningsContent.paragraph1}</motion.p>
+                  <motion.p variants={itemVariants} className="text-textblue font-medium mb-6 font-monte text-justify lg:text-left mt-20">{content.fasteningsContent.paragraph1}</motion.p>
                   <motion.div variants={itemVariants} className="space-y-4 mb-6 font-monte mt-20">
                     {content.fasteningsContent.items.map((item, i) => (
                       <div key={i} className="flex gap-3 items-start">
