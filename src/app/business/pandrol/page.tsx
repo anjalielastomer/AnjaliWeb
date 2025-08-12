@@ -141,7 +141,7 @@ const Page = () => {
               <span className="text-textorange font-bold">Fastening System</span>{" "}
               solutions <br className="hidden md:block" /> for:
             </h1>
-            <div className="space-y-2 md:space-y-4 text-textblue text-sm sm:text-base md:text-lg xl:text-base font-medium font-monte text-center xl:text-left">
+            <div className="space-y-2 md:space-y-4 text-textblue text-sm sm:text-base md:text-lg xl:text-base font-medium font-monte text-left">
               {content.offerings.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-textorange rounded-full mt-2 flex-shrink-0"></div>

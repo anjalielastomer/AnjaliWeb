@@ -108,7 +108,7 @@ const page = () => {
         <div className="w-full flex justify-center">
           {/* PARENT container now orchestrates the animation */}
           <motion.div
-            className="w-fit grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-20 mt-5"
+            className="w-full md:w-fit grid grid-cols-3 gap-2 md:gap-20 mt-5 px-2"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -116,75 +116,57 @@ const page = () => {
           >
             {/* Card1 */}
             <motion.div
-              variants={cardVariants} // Use card variants
-              className="w-[172px] md:w-[384px] ml-2 md:ml-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm"
+              variants={cardVariants}
+              className="w-full px-2 py-4 md:px-8 md:py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm"
             >
-              <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
-                <Image
-                  src="/whitephone.svg"
-                  alt="Phone"
-                  width={28}
-                  height={28}
-                  loading="eager"
-                />
+              <div className="w-8 h-8 md:w-14 md:h-14 rounded-full bg-textorange flex items-center justify-center mb-2 md:mb-4">
+                <Image src="/whitephone.svg" alt="Phone" width={20} height={20} loading="eager" />
               </div>
-              <h2 className="text-textblue text-lg font-raleway font-bold mb-1">
+              <h2 className="text-textblue text-[10px] md:text-lg font-raleway font-bold mb-1">
                 Phone
               </h2>
-              <p className="text-textblue text-[14px] font-monte mb-1">
+              <p className="text-textblue text-[8px] md:text-[14px] font-monte mb-1 text-center leading-tight">
                 +91 9681187076 / +91 9038156288
               </p>
-              <span className="text-textblue text-xs font-monte opacity-80">
+              <span className="text-textblue text-[8px] md:text-xs font-monte opacity-80">
                 Mon-Fri 8AM-6PM EST
               </span>
             </motion.div>
 
             {/* Card2 */}
             <motion.div
-              variants={cardVariants} // Use card variants
-              className="w-[180px] md:w-[384px] px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm"
+              variants={cardVariants}
+              className="w-full px-2 py-4 md:px-8 md:py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm"
             >
-              <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
-                <Image
-                  src="/whiteemail.svg"
-                  alt="Phone"
-                  width={28}
-                  height={28}
-                  loading="eager"
-                />
+              <div className="w-8 h-8 md:w-14 md:h-14 rounded-full bg-textorange flex items-center justify-center mb-2 md:mb-4">
+                <Image src="/whiteemail.svg" alt="Email" width={20} height={20} loading="eager" />
               </div>
-              <h2 className="text-textblue text-lg font-raleway font-bold mb-1">
+              <h2 className="text-textblue text-[10px] md:text-lg font-raleway font-bold mb-1">
                 Email
               </h2>
-              <p className="text-textblue text-[12px] md:text-[14px] font-monte mb-1">
+              <p className="text-textblue text-[8px] md:text-[14px] font-monte mb-1 text-center leading-tight">
                 info@anjalielastomer.com
               </p>
-              <span className="text-textblue text-xs font-monte opacity-80">
+              <span className="text-textblue text-[8px] md:text-xs font-monte opacity-80">
                 sales@anjalielastomer.com
               </span>
             </motion.div>
 
             {/* Card3 */}
             <motion.div
-              variants={cardVariants} // Use card variants
-              className="w-[200px] md:w-[384px] mx-28 md:mx-0 px-5 py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm"
+              variants={cardVariants}
+              className="w-full px-2 py-4 md:px-8 md:py-8 bg-bgcolour rounded-xl flex flex-col items-center shadow-sm"
             >
-              <div className="w-14 h-14 rounded-full bg-textorange flex items-center justify-center mb-4">
-                <Image
-                  src="/whitemap.svg"
-                  alt="Phone"
-                  width={28}
-                  height={28}
-                  loading="eager"
-                />
+              <div className="w-8 h-8 md:w-14 md:h-14 rounded-full bg-textorange flex items-center justify-center mb-2 md:mb-4">
+                <Image src="/whitemap.svg" alt="Location" width={20} height={20} loading="eager" />
               </div>
-              <h2 className="text-textblue text-lg font-raleway font-bold mb-1">
+              <h2 className="text-textblue text-[10px] md:text-lg font-raleway font-bold mb-1">
                 Location
               </h2>
-              <p className="text-textblue text-[14px] font-monte mb-1">
+              <p className="text-textblue text-[8px] md:text-[14px] font-monte mb-1 text-center leading-tight">
                 J8H5+MF, Bhatta Nagar, Liluah,
               </p>
-              <span className="text-textblue text-xs font-monte opacity-80">
+              <span className="text-textblue text-[8px] md:text-xs font-monte opacity-80 text-center">
                 Howrah, Chakpara, West Bengal 711203
               </span>
             </motion.div>

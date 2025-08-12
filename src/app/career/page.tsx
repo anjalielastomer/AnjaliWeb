@@ -181,7 +181,7 @@ const Page: React.FC = () => {
     },
   };
   return (
-    <div className="w-full min-h-screen mt-24 font-monte">
+    <div className="w-full min-h-screen mt-24 font-monte overflow-x-hidden">
       {/* Section 1*/}
       <div className="w-full min-h-fit flex justify-center py-10 px-4">
         <div className="flex flex-col md:flex-row gap-10 max-w-7xl w-full">
