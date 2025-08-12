@@ -90,7 +90,7 @@ const Page = () => {
               <span className="text-textorange">{content.title.trackOrange}</span>
             </span>
           </h1>
-          <p className="text-sm md:text-base text-[#193055] text-center xl:text-justify max-w-full xl:max-w-[40rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte px-2 md:px-0">
+          <p className="text-sm md:text-base text-[#193055] text-justify max-w-full xl:max-w-[40rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte px-2 md:px-0">
             {content.paragraph}
           </p>
         </motion.div>

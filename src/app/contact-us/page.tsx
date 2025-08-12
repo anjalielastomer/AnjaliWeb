@@ -126,7 +126,7 @@ const page = () => {
                 Phone
               </h2>
               <p className="text-textblue text-[8px] md:text-[14px] font-monte mb-1 text-center leading-tight">
-                +91 9681187076 / +91 9038156288
+                +91 9681187076 <br className="md:hidden"/><span className="hidden md:inline">/</span> +91 9038156288
               </p>
               <span className="text-textblue text-[8px] md:text-xs font-monte opacity-80">
                 Mon-Fri 8AM-6PM EST
