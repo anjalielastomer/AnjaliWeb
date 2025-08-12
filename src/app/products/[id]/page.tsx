@@ -137,7 +137,7 @@ const SingleProductPage: React.FC = () => {
       className="min-h-screen pt-20 font-monte"
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 overflow-hidden">
         {/* Header with "Our Products" and Back Button */}
         <div className="mb-8">
           <div className="flex justify-between items-start mb-6 md:px-20">
@@ -448,7 +448,7 @@ const SingleProductPage: React.FC = () => {
               <div>
                 <div className="flex items-center justify-between mb-6">
                   <h3
-                    className="text-xl font-semibold"
+                    className="text-sm md:text-xl font-semibold"
                     style={{ color: "var(--textblue)" }}
                   >
                     Customer Reviews ({product.reviews.length})
