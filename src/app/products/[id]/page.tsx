@@ -143,7 +143,7 @@ const SingleProductPage: React.FC = () => {
           <div className="flex justify-between items-start mb-6 md:px-20">
             <Link
               href="/products"
-              className="text-xl font-medium flex items-center transition-colors"
+              className="text-base md:text-xl font-medium flex items-center transition-colors w-1/2"
               style={{ color: "var(--textcolour)" }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.color = "var(--textorange)")
