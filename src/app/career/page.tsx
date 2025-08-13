@@ -320,7 +320,7 @@ const Page: React.FC = () => {
                 </span>
               </span>
               <span
-                className="font-monte font-medium text-sm mt-2 text-justify"
+                className="font-monte font-medium text-sm mt-2 text-center"
                 style={{ color: "var(--textblue)" }}
               >
                 {card.description}
