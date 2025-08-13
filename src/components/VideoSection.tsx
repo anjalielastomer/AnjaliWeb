@@ -56,7 +56,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({bgColor}) => {
           <div className="relative pt-[56.25%] h-0">
             <iframe
               className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
-              src="https://www.youtube.com/embed/o04wlZ50O5c?si=CjbPgEE9f7ZaVICJ"
+              src="https://www.youtube.com/embed/0ANVP0oeHrc?si=voO5QCap9cUNrOeG"
               title="Example Railway Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
