@@ -20,9 +20,6 @@ const transformStrapiProductForDetails = (strapiProduct: StrapiProduct) => {
 
 
   const baseProduct = transformStrapiProduct1(strapiProduct);
-  console.log("Base produ", baseProduct);
-  console.log("starpi page.tsx", strapiProduct);
-
 
   return {
     ...baseProduct,
@@ -202,7 +199,7 @@ const SingleProductPage: React.FC = () => {
                     (e.currentTarget.style.color = "var(--textcolour)")
                   }
                 >
-                  {getSegmentDisplayName(product.categories[0] || "")}
+                 {product.keyFeatures[0]}
                 </Link>
               </li>
               <li className="flex items-center">
