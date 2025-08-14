@@ -199,7 +199,9 @@ const SingleProductPage: React.FC = () => {
                     (e.currentTarget.style.color = "var(--textcolour)")
                   }
                 >
-                 {product.keyFeatures[0]}
+                  {product.categories && product.categories.length > 0
+                    ? product.categories[0]
+                    : "Uncategorized"}
                 </Link>
               </li>
               <li className="flex items-center">
