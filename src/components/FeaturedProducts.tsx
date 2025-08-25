@@ -137,42 +137,35 @@ const FeaturedProducts: React.FC = () => {
           {[...featuredProducts,...featuredProducts,...featuredProducts].map(
             (item, index) => {
               const { product } = item;
-              const productImage = product.images?.[0];
-
+              if (!product) {
+                return null;
+              }
+              const productImage = product.images?.[0] || {url: './rail-track.png', name: 'dummy data'};
               return (
                 <article
                   key={`${item.documentId}-${index}`}
                   className="bg-white w-48 sm:w-80 rounded-xl md:rounded-2xl shadow-sm overflow-hidden flex-shrink-0 flex flex-col"
                 >
-                  <div className="flex justify-center h-40 md:h-60 relativ">
-                    {productImage ? (
-                      <Image
-                        src={productImage.url}
-                        alt={productImage.name}
-                        width={400}
-                        height={240}
-                        className="object-cover h-full w-full "
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-textorange/10 to-textblue/10">
-                        <span className="text-6xl text-gray-300">📦</span>
-                      </div>
-                    )}
+                  <div className="flex justify-center h-40 md:h-60 relative">
+                    <Image
+                      src={productImage.url}
+                      alt={productImage.name}
+                      width={400}
+                      height={240}
+                      className="object-cover h-full w-full"
+                    />
                     <h3 className="absolute text-sm md:text-lg font-bold bottom-1 left-2 z-10 text-white px-1 md:px-2 py-1 rounded-sm w-full text-left">
                       {product.title}
                     </h3>
                   </div>
-
                   <div className="pt-2 md:pt-4 flex flex-col flex-grow">
                     <div className="px-2 md:px-4 flex items-center space-x-1 mb-1 md:mb-2">
                       <StarRating rating={5} />
                       <span className="text-textblue text-xs md:text-sm">(0)</span>
                     </div>
-
                     <p className="px-2 md:px-4 text-textblue flex-grow text-xs md:text-sm font-medium leading-relaxed mb-3 md:mb-5 line-clamp-2 md:line-clamp-3">
                       {product.description}
                     </p>
-
                     <button
                       type="button"
                       className="w-full mt-auto rounded-xl md:rounded-2xl border px-2 md:px-4 py-2 md:py-3 font-bold text-sm md:text-lg transition-colors duration-600 hover:text-white"
@@ -200,7 +193,7 @@ const FeaturedProducts: React.FC = () => {
                 </article>
               );
             }
-          )}
+          ).filter(Boolean)}
         </div>
       </div>
 
