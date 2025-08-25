@@ -163,10 +163,10 @@ const SingleProductPage: React.FC = () => {
 
   return (
     <div
-      className="min-h-screen pt-20 font-monte"
+      className="w-full min-h-screen pt-20 font-monte"
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
-      <div className="container mx-auto px-4 py-8 overflow-hidden">
+    <div className=" container mx-auto px-4 py-8 overflow-visible">
         {/* Header with "Our Products" and Back Button */}
         <div className="mb-8">
           <div className="flex justify-between items-start mb-6 md:px-20">
@@ -192,7 +192,7 @@ const SingleProductPage: React.FC = () => {
           </div>
 
          <div
-            className="w-screen h-px mb-8 relative left-1/2 right-1/2 -translate-x-1/2"
+            className="w-screen h-px mb-8 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
             style={{ backgroundColor: "var(--textblue)", opacity: "0.1" }}
           ></div>
         </div>
