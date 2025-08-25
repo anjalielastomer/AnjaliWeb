@@ -16,6 +16,38 @@ import { transformStrapiProduct1, getSegmentDisplayName } from "@/lib/utlis";
 import { StrapiProduct } from "@/types/product";
 import { motion, Variants } from "framer-motion";
 
+
+const extractTextFromPTags = (htmlString: string): string[] => {
+  if (!htmlString) return [];
+  
+  const pTagRegex = /<p[^>]*>(.*?)<\/p>/gi;
+  const matches = [];
+  let match;
+  
+  while ((match = pTagRegex.exec(htmlString)) !== null) {
+    let content = match[1]; 
+    content = content
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'");
+    
+ 
+    content = content.replace(/<[^>]*>/g, '');
+    
+
+    content = content.trim();
+   
+    if (content) {
+      matches.push(content);
+    }
+  }
+  
+  return matches;
+};
+
 const transformStrapiProductForDetails = (strapiProduct: StrapiProduct) => {
 
 
@@ -159,9 +191,9 @@ const SingleProductPage: React.FC = () => {
             </h1>
           </div>
 
-          <div
-            className="w-screen h-px mb-8 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
-            style={{ backgroundColor: "var(--textblue)", opacity: "0.3" }}
+         <div
+            className="w-screen h-px mb-8 relative left-1/2 right-1/2 -translate-x-1/2"
+            style={{ backgroundColor: "var(--textblue)", opacity: "0.1" }}
           ></div>
         </div>
 
@@ -361,7 +393,6 @@ const SingleProductPage: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Product Description Tabs */}
         <div className="mb-16">
           <div className="flex space-x-4 md:space-x-8 mb-6 md:px-20">
             {["description", "specifications", "reviews"].map((tab) => (
@@ -386,7 +417,7 @@ const SingleProductPage: React.FC = () => {
 
           <div
             className="w-screen h-px mb-8 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
-            style={{ backgroundColor: "black", opacity: "1" }}
+            style={{ backgroundColor: "var(--textblue)", opacity: "0.1" }}
           ></div>
 
 
@@ -404,40 +435,26 @@ const SingleProductPage: React.FC = () => {
             )}
             {activeTab === "specifications" && (
               <div>
-                <div className="space-y-8">
-
-                  <p
-                    className="text-base mb-4"
-                    style={{ color: "var(--textblue)" }}
-                  >
-                    {product.specification}
-                  </p>
-                  {/* <div
-                        className="rounded-lg p-4"
-                        style={{ backgroundColor: "var(--bgcolour)" }}
+                <div className="space-y-4">
+                  {extractTextFromPTags(product.specification).map((text, index) => (
+                    <div
+                      key={index}
+                      className="rounded-lg p-4"
+                      style={{ backgroundColor: "transparent" }}
+                    >
+                      <p
+                        className="text-base leading-relaxed"
+                        style={{ color: "var(--textcolour)" }}
                       >
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          {section.items.map((spec, specIndex) => (
-                            <div
-                              key={specIndex}
-                              className="flex justify-between items-start"
-                            >
-                              <span
-                                className="font-medium text-sm"
-                                style={{ color: "var(--textblue)" }}
-                              >
-                                {spec.label}:
-                              </span>
-                              <span
-                                className="text-sm text-right ml-4"
-                                style={{ color: "var(--textcolour)" }}
-                              >
-                                {spec.value}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </div> Add a margin to the bottom of the section for spacing */}
+                        {text}
+                      </p>
+                    </div>
+                  ))}
+                  {extractTextFromPTags(product.specification).length === 0 && (
+                    <p style={{ color: "var(--textcolour)" }}>
+                      No specifications available for this product.
+                    </p>
+                  )}
                 </div>
               </div>
             )}
