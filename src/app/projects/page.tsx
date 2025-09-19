@@ -3,7 +3,7 @@
 import { redirect } from 'next/navigation';
 import { projectsService } from '@/lib/projectService'; // Adjust the import path if needed
 import { transformStrapiProject } from '@/hooks/useProjects'; // Import your transform function
-
+export const dynamic = 'force-dynamic';
 // This is a Server Component, so no "use client"
 async function ProjectsRedirectPage() {
   // Fetch the projects directly on the server
