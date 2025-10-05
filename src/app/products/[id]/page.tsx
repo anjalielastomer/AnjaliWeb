@@ -9,7 +9,6 @@ import BuyNowModal from "@/components/BuyNowModal";
 import {
   useProduct,
   useProducts,
-  transformStrapiProduct,
 } from "@/hooks/useProducts";
 import { transformStrapiProduct1, getSegmentDisplayName } from "@/lib/utlis";
 import { StrapiProduct } from "@/types/product";
@@ -444,6 +443,7 @@ const SingleProductPage: React.FC = () => {
                   ))}
               </div>
             )}
+            
             {activeTab === "specifications" && (
               <div>
                 <div className="space-y-1">
