@@ -8,7 +8,7 @@ import BusinessSection from "@/components/BusinessSection";
 import VideoSection from "@/components/VideoSection";
 import Client from "@/components/Client";
 import LatestInsights from "@/components/LatestInsights";
-
+// Changes by suman
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
