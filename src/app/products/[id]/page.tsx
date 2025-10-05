@@ -11,7 +11,6 @@ import {
   useProducts,
   transformStrapiProduct,
 } from "@/hooks/useProducts";
-import { specifications, reviews } from "@/lib/mockData";
 import { transformStrapiProduct1, getSegmentDisplayName } from "@/lib/utlis";
 import { StrapiProduct } from "@/types/product";
 import { motion, Variants } from "framer-motion";
@@ -20,32 +19,44 @@ import { motion, Variants } from "framer-motion";
 const extractTextFromPTags = (htmlString: string): string[] => {
   if (!htmlString) return [];
   
+  // Get paragraph content
   const pTagRegex = /<p[^>]*>(.*?)<\/p>/gi;
-  const matches = [];
-  let match;
+  const pMatches = [];
+  let pMatch;
   
-  while ((match = pTagRegex.exec(htmlString)) !== null) {
-    let content = match[1]; 
-    content = content
-      .replace(/&nbsp;/g, ' ')
+  while ((pMatch = pTagRegex.exec(htmlString)) !== null) {
+    let content = pMatch[1].trim(); 
+    content = content.replace(/&nbsp;/g, ' ')
       .replace(/&amp;/g, '&')
       .replace(/&lt;/g, '<')
       .replace(/&gt;/g, '>')
       .replace(/&quot;/g, '"')
-      .replace(/&#39;/g, "'");
-    
- 
-    content = content.replace(/<[^>]*>/g, '');
-    
-
-    content = content.trim();
-   
+      .replace(/&#39;/g, "'")
+      .replace(/<[^>]*>/g, '');
+      
     if (content) {
-      matches.push(content);
+      pMatches.push(content);
     }
   }
+  const liTagRegex = /<li[^>]*>(.*?)<\/li>/gi;
+  const liMatches = [];
+  let liMatch;
   
-  return matches;
+  while ((liMatch = liTagRegex.exec(htmlString)) !== null) {
+    let content = liMatch[1].trim();
+    content = content.replace(/&nbsp;/g, ' ')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/<[^>]*>/g, '');
+      
+    if (content) {
+      liMatches.push(`• ${content}`); 
+    }
+  }
+  return [...pMatches, ...liMatches];
 };
 
 const transformStrapiProductForDetails = (strapiProduct: StrapiProduct) => {
@@ -55,7 +66,6 @@ const transformStrapiProductForDetails = (strapiProduct: StrapiProduct) => {
 
   return {
     ...baseProduct,
-
     images: strapiProduct.images?.map((img) => img.url) || [baseProduct.image],
     longDescription: strapiProduct.description,
     inStock: true,
@@ -76,6 +86,7 @@ const SingleProductPage: React.FC = () => {
   const product = data?.data
     ? transformStrapiProductForDetails(data.data)
     : null;
+    console.log("Product:", product);
   const {
     data: productsData,
     isLoading: isRelatedLoading,
@@ -435,11 +446,11 @@ const SingleProductPage: React.FC = () => {
             )}
             {activeTab === "specifications" && (
               <div>
-                <div className="space-y-4">
+                <div className="space-y-1">
                   {extractTextFromPTags(product.specification).map((text, index) => (
                     <div
                       key={index}
-                      className="rounded-lg p-4"
+                      className="rounded-lg py-1"
                       style={{ backgroundColor: "transparent" }}
                     >
                       <p
