@@ -3,13 +3,11 @@ import React, { useEffect, useRef, useState } from "react";
 import Hero from "@/components/Hero";
 import AboutUs from "@/components/AboutUs";
 import FeaturedProducts from "@/components/FeaturedProducts";
-import Footer from "@/components/Footer";
 import FeaturedProjects from "@/components/FeaturedProject";
 import BusinessSection from "@/components/BusinessSection";
 import VideoSection from "@/components/VideoSection";
 import Client from "@/components/Client";
 import LatestInsights from "@/components/LatestInsights";
-import Link from "next/link";
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
