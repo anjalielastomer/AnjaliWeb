@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useFeaturedProjects } from '@/hooks/useProjects';
 import { motion, Variants } from 'framer-motion';
 
@@ -35,7 +36,7 @@ export default function FeaturedProjects() {
 
   const { data: projects, isLoading, error } = useFeaturedProjects();
   
-  
+  console.log("Data featured projects:", projects);
   if (isLoading) {
     return (
       <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
@@ -194,7 +195,7 @@ export default function FeaturedProjects() {
   );
 }
 
-// ProjectCard component remains unchanged
+// ProjectCard component with navigation
 function ProjectCard({ project, index }: {
   project: {
     id: string;
@@ -208,8 +209,17 @@ function ProjectCard({ project, index }: {
   };
   index: number;
 }) {
+  const router = useRouter();
+
+  const handleCardClick = () => {
+    router.push(`/projects/${project.id}`);
+  };
+
   return (
-    <div className="group cursor-pointer flex-shrink-0 w-80 sm:w-96">
+    <div 
+      className="group cursor-pointer flex-shrink-0 w-80 sm:w-96"
+      onClick={handleCardClick}
+    >
       <div className="relative w-full h-[365px] overflow-hidden rounded-[12px]">
         <div className="relative w-full h-full">
           <Image
