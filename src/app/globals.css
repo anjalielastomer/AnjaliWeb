@@ -1,70 +1,133 @@
 @import "tailwindcss";
-:root {
-  --textblue: #193055; 
-  --textorange:#FB7602;
-  --bgcolour:#FFF5EF;
-  --bgwhite: #FFFFFF;
-  --textcolour : #1A202C;
 
+:root {
+  --textblue: #1C4199;
+  /* Primary blue - rgb(28, 65, 153) */
+  --textorange: #0000EE;
+  /* Accent blue for CTAs/highlights */
+  --bgcolour: #E7EBEE;
+  /* Light gray-blue background */
+  --bgwhite: #FFFFFF;
+  /* White */
+  --textcolour: #111111;
+  /* Dark text - rgb(17, 17, 17) */
+
+  /* Additional colors from client palette */
+  --textgray: #767676;
+  /* Muted text */
+  --bglight: #B9C7DF;
+  /* Light blue accent background */
+  --darknavy: #010149;
+  /* Dark navy for contrast */
+  --mediumblue: #6A83BC;
+  /* Medium blue for secondary elements */
 }
+
 @import 'aos/dist/aos.css';
-html,body{
-  overflow-x:hidden;
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 
 
 @keyframes flicker {
-  0%, 100% { opacity: 1; }
-  20% { opacity: 0.3; }
-  30% { opacity: 1; }
-  35% { opacity: 0.1; }
-  40% { opacity: 1; }
-  45% { opacity: 0.5; }
-  50% { opacity: 1; }
-  55% { opacity: 0.2; }
-  60% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0.3;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  35% {
+    opacity: 0.1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 0.2;
+  }
+
+  60% {
+    opacity: 1;
+  }
 }
 
 .animate-flicker {
   animation: flicker 2s infinite;
 }
+
 .text-textorange {
   color: var(--textorange);
 }
-.text-textblue{
-    color: var(--textblue);
+
+.text-textblue {
+  color: var(--textblue);
 }
-.bg-textorange{
-    background-color: var(--textorange);
+
+.bg-textorange {
+  background-color: var(--textorange);
 }
-.bg-bgcolour{
-    background-color: var(--bgcolour);
+
+.bg-bgcolour {
+  background-color: var(--bgcolour);
 }
+
 .font-monte {
   font-family: var(--font-montserrat), sans-serif;
 }
+
 .font-raleway {
   font-family: var(--font-raleway), sans-serif;
 }
-.bg-bgblue{
-    background-color: var(--textblue);
+
+.bg-bgblue {
+  background-color: var(--textblue);
 }
+
 @keyframes bgIconAnimation {
-  0%, 100% {
-    background-color: #142859; /* Deep Blue */
+
+  0%,
+  100% {
+    background-color: #1C4199;
+    /* Primary Blue */
   }
+
   50% {
-    background-color: #FFA500; /* Orange */
+    background-color: #0000EE;
+    /* Accent Blue */
   }
 }
 
 @keyframes iconColorAnimation {
-  0%, 100% {
+
+  0%,
+  100% {
     filter: brightness(1) invert(0);
   }
+
   50% {
-    filter: brightness(0) invert(1); /* Invert color for contrast */
+    filter: brightness(0) invert(1);
+    /* Invert color for contrast */
   }
 }
 
@@ -80,9 +143,11 @@ html,body{
   0% {
     transform: translateX(0);
   }
+
   50% {
     transform: translateX(-200%);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -92,7 +157,7 @@ html,body{
   animation: slideX 50s ease-in-out infinite alternate;
 }
 
- /* Enquiry Modal Styles */
+/* Enquiry Modal Styles */
 .enquiry-input:focus {
   outline: none;
   border-color: var(--textorange);
@@ -113,6 +178,7 @@ html,body{
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -128,10 +194,15 @@ html,body{
 }
 
 @keyframes blink {
-  0%, 50%, 100% {
+
+  0%,
+  50%,
+  100% {
     opacity: 1;
   }
-  25%, 75% {
+
+  25%,
+  75% {
     opacity: 0;
   }
 }
@@ -139,30 +210,37 @@ html,body{
 .animate-blink {
   animation: blink 2s infinite;
 }
+
 /* globals.css */
 .custom-scrollbar::-webkit-scrollbar {
   width: 17px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #FFEDD5;
+  background: #E7EBEE;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #ff6b00;
+  background-color: #1C4199;
   border-radius: 10px;
 }
+
 /* global.css */
 
 .state-highlight {
-  fill: orange !important;
+  fill: #0000EE !important;
   animation: pulse 1.5s ease-in-out infinite;
-  stroke: #ff6600;
+  stroke: #1C4199;
   stroke-width: 2px;
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }
@@ -173,6 +251,7 @@ html,body{
   0% {
     transform: translateX(0);
   }
+
   100% {
     /* This value will be set dynamically via CSS variables from the component */
     transform: translateX(var(--scroll-distance));
@@ -184,6 +263,7 @@ html,body{
   animation: scroll-infinite var(--scroll-duration, 25s) linear infinite;
   /* animation-play-state will be controlled via inline style in the component */
 }
+
 @media (min-width: 1023px) {
   .custom-hide-at-1024 {
     display: none !important;
@@ -219,6 +299,7 @@ html,body{
     transform: scale(0.4);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
@@ -229,21 +310,24 @@ html,body{
   animation: scaleIn 0.5s ease-out;
 }
 
-  @keyframes rocket-float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
+@keyframes rocket-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
 
-  .animate-float {
-    animation: rocket-float 3s ease-in-out infinite;
+  50% {
+    transform: translateY(-20px);
   }
+}
+
+.animate-float {
+  animation: rocket-float 3s ease-in-out infinite;
+}
 
 li::marker {
-  color: #FB7602;
+  color: #0000EE;
 }
 
 .image-container {
@@ -264,8 +348,8 @@ li::marker {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-

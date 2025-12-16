@@ -193,7 +193,7 @@ const page = () => {
         <form
           data-aos="fade-up"
           onSubmit={handleSubmit}
-          className="group bg-white rounded-xl shadow-lg hover:shadow-[0_0_10px_rgba(255,165,0,0.4)] transition-shadow duration-300 px-10 py-8 w-full max-w-2xl flex flex-col gap-3 md:gap-6"
+          className="group bg-white rounded-xl shadow-lg hover:shadow-[0_0_10px_rgba(28,65,153,0.4)] transition-shadow duration-300 px-10 py-8 w-full max-w-2xl flex flex-col gap-3 md:gap-6"
         >
           <div className="flex flex-col md:flex-row gap-3 md:gap-6">
             <div className="flex-1 flex flex-col gap-2">

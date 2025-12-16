@@ -23,32 +23,32 @@ const slideInFromRight: Variants = {
 };
 
 const popUp: Variants = {
-    hidden: { scale: 0.9, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-  };
+  hidden: { scale: 0.9, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
 
 const containerVariants: Variants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.3 } }
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.3 } }
 };
 
 
 const AboutSec1 = () => {
   return (
     // Add overflow-hidden to the root container to prevent layout shifts from animations
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden bg-[var(--bgcolour)]">
       {/* Sec1 */}
       <div className="flex flex-col justify-center md:flex-row bg-white pt-20 relative z-10 font-monte">
         <div className="max-w-[1440px] mx-auto md:px-10 flex flex-col-reverse md:flex-row items-center justify-between">
           {/* Left Side */}
           <div className="w-full md:w-1/2 p-4 flex flex-col text-center md:text-left">
             <motion.h1
-                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={slideInFromLeft}
-                className="text-4xl sm:text-4xl lg:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8 font-raleway"
+              initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={slideInFromLeft}
+              className="text-4xl sm:text-4xl lg:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8 font-raleway"
             >
               Unified in <br />
               <span className="mt-4 text-textorange">Shaping</span> <br />
@@ -56,17 +56,17 @@ const AboutSec1 = () => {
             </motion.h1>
 
             <motion.div
-                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={containerVariants}
-                className="md:mt-16 flex flex-col xl:flex-row gap-12 mb-12"
+              initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={containerVariants}
+              className="md:mt-16 flex flex-col xl:flex-row gap-12 mb-12"
             >
-              <motion.div variants={slideInFromLeft}><StatItem number={175} unit="KMS TRACKS" description="Our Projects include critical rail link connectivity projects and several metro projects. For linking mobility with daily lives."/></motion.div>
-              <motion.div variants={slideInFromLeft}><StatItem number={60} unit="BRIDGES" description="Our Projects brought forward mobility and connectivity connecting lands surfaces, hilly terrains, water bodies and cities."/></motion.div>
+              <motion.div variants={slideInFromLeft}><StatItem number={175} unit="KMS TRACKS" description="Our Projects include critical rail link connectivity projects and several metro projects. For linking mobility with daily lives." /></motion.div>
+              <motion.div variants={slideInFromLeft}><StatItem number={60} unit="BRIDGES" description="Our Projects brought forward mobility and connectivity connecting lands surfaces, hilly terrains, water bodies and cities." /></motion.div>
             </motion.div>
 
             {/* 75 logo positioned to extend beyond section boundary */}
             <motion.div
-                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.8 }} variants={popUp}
-                className="mt-auto -mb-16 flex justify-center relative z-50"
+              initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.8 }} variants={popUp}
+              className="mt-auto -mb-16 flex justify-center relative z-50"
             >
               <Image
                 src="/aboutus/75azadi.png"
@@ -80,13 +80,13 @@ const AboutSec1 = () => {
 
           <div className="w-fit p-4 flex flex-col justify-center relative">
             <div className="max-w-lg mx-auto pt-8 lg:pt-0">
-                <motion.div
-                    initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromLeft}
-                    className="flex items-center justify-center md:justify-start gap-2 mb-6 text-2xl md:text-4xl font-raleway"
-                >
-                    <h2 className="text-[#152f5d] font-bold">About</h2>
-                    <span className="text-textorange font-bold">Us</span>
-                </motion.div>
+              <motion.div
+                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromLeft}
+                className="flex items-center justify-center md:justify-start gap-2 mb-6 text-2xl md:text-4xl font-raleway"
+              >
+                <h2 className="text-[#152f5d] font-bold">About</h2>
+                <span className="text-textorange font-bold">Us</span>
+              </motion.div>
 
               <motion.p
                 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromRight}
@@ -99,7 +99,7 @@ const AboutSec1 = () => {
                 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={popUp}
                 className="mt-auto md:-mb-32 relative z-40"
               >
-                <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
+                <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300">
                   <Image
                     width={554}
                     height={574}
@@ -120,8 +120,8 @@ const AboutSec1 = () => {
           <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-10">
             {/* Image Section */}
             <motion.div
-                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.4 }} variants={popUp}
-                className="flex-shrink-0 w-full lg:w-1/2 rounded-lg overflow-hidden bg-white shadow-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
+              initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.4 }} variants={popUp}
+              className="flex-shrink-0 w-full lg:w-1/2 rounded-lg overflow-hidden bg-white shadow-lg hover:shadow-[0_0_50px_rgba(0,165,255,0.2)] transition-shadow duration-300"
             >
               <Image
                 src="/aboutus/aboutimg1.png"
@@ -135,8 +135,8 @@ const AboutSec1 = () => {
 
             {/* Text and Stats Section */}
             <motion.div
-                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={slideInFromRight}
-                className="flex flex-col justify-center space-y-12 lg:w-1/2 py-16"
+              initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={slideInFromRight}
+              className="flex flex-col justify-center space-y-12 lg:w-1/2 py-16"
             >
               <div className="space-y-6 text-base sm:text-lg leading-relaxed text-justify max-w-[554px] xl:ml-24">
                 <p>
@@ -155,11 +155,11 @@ const AboutSec1 = () => {
           {/* Stats Section */}
           <div className="max-w-1440px flex justify-end">
             <motion.div
-                initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={containerVariants}
-                className="flex flex-col max-w-2xl ml-auto sm:flex-row justify-between pt-8 space-y-8 sm:space-y-0 sm:space-x-8 text-[#595959]"
+              initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={containerVariants}
+              className="flex flex-col max-w-2xl ml-auto sm:flex-row justify-between pt-8 space-y-8 sm:space-y-0 sm:space-x-8 text-[#595959]"
             >
-              <motion.div variants={slideInFromLeft}><StatItem number={15} unit="YEARS OF EXPERIENCE" description="Our extensive history in manufacturing world-class items fosters security and safety as the first priority towards our GMP."/></motion.div>
-              <motion.div variants={slideInFromLeft}><StatItem number={4} unit="MANUFACTURING PLANTS" description="We operate across 4 plants in the India. Providing us the brand-width to accommodate bespoke and turn-key solutions."/></motion.div>
+              <motion.div variants={slideInFromLeft}><StatItem number={15} unit="YEARS OF EXPERIENCE" description="Our extensive history in manufacturing world-class items fosters security and safety as the first priority towards our GMP." /></motion.div>
+              <motion.div variants={slideInFromLeft}><StatItem number={4} unit="MANUFACTURING PLANTS" description="We operate across 4 plants in the India. Providing us the brand-width to accommodate bespoke and turn-key solutions." /></motion.div>
             </motion.div>
           </div>
         </div>
@@ -214,8 +214,8 @@ function useCountUp(target: number, start: boolean, duration = 2000) {
 
   useEffect(() => {
     if (!start) {
-        setCount(0); // Reset count when not visible
-        return;
+      setCount(0); // Reset count when not visible
+      return;
     }
 
     let startTime: number | null = null;
@@ -225,8 +225,8 @@ function useCountUp(target: number, start: boolean, duration = 2000) {
       if (!startTime) startTime = timestamp;
       const progress = timestamp - startTime;
       const percentage = Math.min(progress / duration, 1);
-      
-      if(start) {
+
+      if (start) {
         setCount(Math.floor(percentage * target));
         if (progress < duration) {
           animationFrameId = requestAnimationFrame(step);

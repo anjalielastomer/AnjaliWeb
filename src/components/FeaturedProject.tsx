@@ -39,7 +39,7 @@ export default function FeaturedProjects() {
   console.log("Data featured projects:", projects);
   if (isLoading) {
     return (
-      <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Heading />
           <div className="flex justify-center items-center h-64">
@@ -53,7 +53,7 @@ export default function FeaturedProjects() {
   // Error state
   if (error) {
     return (
-      <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Heading />
           <div className="flex justify-center items-center h-64">
@@ -67,7 +67,7 @@ export default function FeaturedProjects() {
   // No projects state
   if (!projects || projects.length === 0) {
     return (
-      <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Heading />
           <div className="flex justify-center items-center h-64">
@@ -79,7 +79,7 @@ export default function FeaturedProjects() {
   }
 
   return (
-    <section className="bg-bgcolour py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <Heading />
         <div className="flex flex-col lg:flex-row gap-3 lg:gap-4">

@@ -91,7 +91,7 @@ const OurClients = () => {
                                 variants={gridItemVariants}
                                 className="flex flex-col items-center"
                             >
-								<div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28  bg-white rounded-2xl flex items-center justify-center shadow-md p-2 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] opacity-90 hover:opacity-100">
+								<div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28  bg-white rounded-2xl flex items-center justify-center shadow-md p-2 hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] opacity-90 hover:opacity-100">
 									<Image
 										src={client.logo}
 										alt={client.name}

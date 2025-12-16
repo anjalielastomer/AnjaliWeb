@@ -78,7 +78,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-47-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -119,7 +119,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-48-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -160,7 +160,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-49-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -201,7 +201,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-50-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -242,7 +242,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-51-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -283,7 +283,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-52-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -324,7 +324,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-53-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -365,7 +365,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-54-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -406,7 +406,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-55-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -447,7 +447,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-56-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -488,7 +488,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-57-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -529,7 +529,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-58-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -570,7 +570,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-59-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -611,7 +611,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-60-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -652,7 +652,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-61-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -693,7 +693,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-62-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -734,7 +734,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-63-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -775,7 +775,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-64-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -816,7 +816,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-65-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -857,7 +857,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-66-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -898,7 +898,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-67-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -939,7 +939,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-68-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -980,7 +980,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-69-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -1021,7 +1021,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-70-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -1062,7 +1062,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-71-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -1111,7 +1111,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-72-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fb7602",
+                      fill: "var(--textorange)",
                       fillOpacity: "1",
                     }}
                   />
@@ -1171,7 +1171,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-73-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -1212,7 +1212,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-74-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -1253,7 +1253,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-75-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -1294,7 +1294,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-76-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -1343,7 +1343,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-77-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fb7602",
+                      fill: "var(--textorange)",
                       fillOpacity: "1",
                     }}
                   />
@@ -1403,7 +1403,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-78-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -1444,7 +1444,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-79-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -1485,7 +1485,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-80-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -1526,7 +1526,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-81-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fff5ef",
+                      fill: "#E7EBEE",
                       fillOpacity: "1",
                     }}
                   />
@@ -1575,7 +1575,7 @@ export default function India3(): React.JSX.Element {
                     xlinkHref="#el-82-3Cnf-geometry"
                     className="stroke-none"
                     style={{
-                      fill: "#fb7602",
+                      fill: "var(--textorange)",
                       fillOpacity: "1",
                     }}
                   />

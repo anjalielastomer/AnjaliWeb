@@ -31,8 +31,8 @@ const Navbar: React.FC = () => {
         { label: "Steel Fabrication", href: "/business/fabrication" },
         { label: "Railway Fastening & Sleeper Systems", href: "/business/railway" },
         { label: "Pandrol Fastening & Solutions", href: "/business/pandrol" },
-        
-        
+
+
       ]
     },
     {
@@ -75,9 +75,9 @@ const Navbar: React.FC = () => {
       };
     }
     return {
-      backgroundColor: 'var(--bgcolour)',
-      textColor: 'var(--textcolour)',
-      logoColor: 'var(--bgwhite)',
+      backgroundColor: 'var(--bgwhite)',
+      textColor: 'var(--textblue)',
+      logoColor: 'var(--textblue)',
       accentColor: 'var(--textorange)'
     };
   };
@@ -117,13 +117,13 @@ const Navbar: React.FC = () => {
         <div className="w-full flex justify-between items-center px-4 md:px-10 py-4">
           {/* Logo */}
           <Link
-          
-          href='/'
+
+            href='/'
             className={`text-xl md:text-2xl font-bold font-raleway cursor-pointer  text-[color:var(--textblue)] }`}
           >
             Anjali <span className="text-[color:var(--textorange)]">Elastomer</span>
           </Link>
-          
+
           {/* Desktop Navigation */}
           <ul className="hidden xl:flex space-x-8 lg:space-x-12 text-xl lg:text-2xl font-normal relative">
             {navItems.map(({ label, href, subItems }) => (
@@ -141,7 +141,7 @@ const Navbar: React.FC = () => {
                 </Link>
 
                 {subItems && (
-                  <ul className="absolute left-0 lg:left-[-200px] xl:left-[-300px] 2xl:left-[-400px] mt-3 min-w-[900px] bg-white  shadow-xl border-t-4 border-[#FB7602] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 grid grid-rows-2 grid-flow-col gap-x-8 gap-y-4 p-6 whitespace-nowrap overflow-x-auto max-w-screen-xl">
+                  <ul className="absolute left-0 lg:left-[-200px] xl:left-[-300px] 2xl:left-[-400px] mt-3 min-w-[900px] bg-white  shadow-xl border-t-4 border-[var(--textblue)] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 grid grid-rows-2 grid-flow-col gap-x-8 gap-y-4 p-6 whitespace-nowrap overflow-x-auto max-w-screen-xl">
 
                     {subItems.map(({ label: subLabel, href: subHref }) => (
                       <li
@@ -149,7 +149,7 @@ const Navbar: React.FC = () => {
                         className="flex items-center gap-3 group/link"
                       >
                         {/* Custom bullet */}
-                        <span className="w-2.5 h-2.5 border-2 border-[#FB7602] rounded-full flex-shrink-0"></span>
+                        <span className="w-2.5 h-2.5 border-2 border-[var(--textblue)] rounded-full flex-shrink-0"></span>
 
                         {/* Link */}
                         <Link

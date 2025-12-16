@@ -61,7 +61,7 @@ export default function IndiaBusinessSection() {
   };
 
   return (
-    <section className="w-full min-h-fit py-20 px-4 flex justify-center items-center bg-white font-monte">
+    <section className="w-full min-h-fit py-20 px-4 flex justify-center items-center bg-[var(--bgcolour)] font-monte">
       <div className="w-full max-w-7xl flex flex-col mx-auto">
         <nav className="flex gap-4 mb-12 px-5 md:px-0 font-raleway font-normal">
           {tabs.map((tab, index) => (
@@ -69,10 +69,9 @@ export default function IndiaBusinessSection() {
               key={tab.id}
               onClick={() => handleManualTabChange(tab.id, index)}
               className={`w-[100px] h-[30px] sm:w-[130px] sm:h-[30px] lg:w-[161px] lg:h-[42px] rounded-2xl text-xs md:text-sm lg:text-lg transition-colors duration-300
-                ${
-                  activeTab === tab.id
-                    ? "bg-textorange text-white"
-                    : "border border-[var(--textorange)] text-textorange hover:bg-orange-50"
+                ${activeTab === tab.id
+                  ? "bg-textorange text-white"
+                  : "border border-[var(--textorange)] text-textorange hover:bg-[var(--bgcolour)]"
                 }`}
             >
               {tab.label}
@@ -91,8 +90,8 @@ export default function IndiaBusinessSection() {
                   activeTab === "bridge"
                     ? "/BridgeMap.gif"
                     : activeTab === "track"
-                    ? "/TrackMap.gif"
-                    : "/FactoryMap.gif"
+                      ? "/TrackMap.gif"
+                      : "/FactoryMap.gif"
                 }
                 alt="Map of India highlighting selected states with icons representing business locations"
                 width={480}

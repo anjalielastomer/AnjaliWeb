@@ -55,7 +55,7 @@ export default function AboutSec5() {
           <Link href={"/projects"} className="pl-10 lg:pl-0 group text-textblue transition-colors py-3 text-3xl font-light items-center gap-2 font-raleway hidden md:flex">
             <span>
               <span className="text-textorange group-hover:text-[#193055] transition-all duration-300">Explore</span>
-              <span className="text-textblue group-hover:text-[#FB7602] transition-all duration-300"> All</span>
+              <span className="text-textblue group-hover:text-[var(--textorange)] transition-all duration-300"> All</span>
             </span>
             <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
             <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
@@ -83,7 +83,7 @@ export default function AboutSec5() {
         <Link href={"/projects"} className="group text-textblue transition-colors py-5 text-3xl font-light items-center justify-center gap-2 font-raleway flex md:hidden">
           <span>
             <span className="text-textorange group-hover:text-[#193055] transition-all duration-300">Explore</span>
-            <span className="text-textblue group-hover:text-[#FB7602] transition-all duration-300"> All</span>
+            <span className="text-textblue group-hover:text-[var(--textorange)] transition-all duration-300"> All</span>
           </span>
           <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
           <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
@@ -96,7 +96,7 @@ export default function AboutSec5() {
         whileInView="visible"
         variants={popUp}
         viewport={{ once: false, amount: 0.3 }}
-        className="md:flex-1 max-w-lg w-full rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
+        className="md:flex-1 max-w-lg w-full rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300"
       >
         <Image
           src="/aboutus/bridge.png"

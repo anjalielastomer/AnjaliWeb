@@ -42,7 +42,7 @@ const InsightCard: React.FC<InsightCardProps> = ({
   readTime,
 }) => {
   return (
-    <div className="rounded-lg overflow-hidden bg-white shadow-[0_0_50px_rgba(0,165,255,0.2)] hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 flex flex-col h-full">
+    <div className="rounded-lg overflow-hidden bg-white shadow-[0_0_50px_rgba(0,165,255,0.2)] hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300 flex flex-col h-full">
       <div className="relative w-full h-48 sm:h-56">
         <Image
           src={imgSrc}
@@ -58,7 +58,7 @@ const InsightCard: React.FC<InsightCardProps> = ({
         <p className="text-textblue flex-grow leading-relaxed line-clamp-2">{description}</p>
         <div className="flex justify-between items-center mt-4 text-textblue text-sm">
           <span>{date} &bull; {readTime}</span>
-          <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink"/>
+          <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />
         </div>
       </div>
     </div>
@@ -70,7 +70,7 @@ const LatestInsights: React.FC = () => {
   const { data: articles, isLoading, isError } = useArticles();
 
   return (
-    <section className="w-full bg-white font-monte">
+    <section className="w-full bg-[var(--bgcolour)] font-monte">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div
           initial="hidden"
@@ -96,8 +96,8 @@ const LatestInsights: React.FC = () => {
         >
           {isLoading && <p className="text-textblue text-center">Loading insights...</p>}
           {isError && <p className="text-red-500 text-center">Could not fetch insights.</p>}
-          
-          {articles?.slice(0,3).map((article: TransformedArticle) => (
+
+          {articles?.slice(0, 3).map((article: TransformedArticle) => (
             <motion.div
               key={article.id}
               variants={gridItemVariants}

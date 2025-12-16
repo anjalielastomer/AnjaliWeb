@@ -15,7 +15,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000); 
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -27,26 +27,26 @@ const App: React.FC = () => {
           <span className="text-[color:var(--textorange)]">Anjali</span>{" "}
           Elastomer
         </h1>
-      
+
       </div>
     );
   };
 
   return (
-    <main className="bg-bgcolour max-w-screen">
+    <main className="bg-white max-w-screen">
       {/* {loading ? (
         <LoadingScreen />
       ) : ( */}
-        <>
-          <Hero />
-          <AboutUs />
-          <FeaturedProducts />
-          <BusinessSection />
-          <FeaturedProjects />
-          <Client />
-          <LatestInsights />
-          <VideoSection bgColor="bg-bgcolor" />
-        </>
+      <>
+        <Hero />
+        <AboutUs />
+        <FeaturedProducts />
+        <BusinessSection />
+        <FeaturedProjects />
+        <Client />
+        <LatestInsights />
+        <VideoSection bgColor="bg-white" />
+      </>
       {/* )} */}
     </main>
   );

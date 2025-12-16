@@ -134,7 +134,7 @@ const Page = () => {
           className="flex justify-center xl:justify-end mb-6 xl:mb-0"
         >
           <Image
-            className="relative w-full max-w-[335px] sm:max-w-[387px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-[387px] md:h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 z-10 object-cover rounded-2xl"
+            className="relative w-full max-w-[335px] sm:max-w-[387px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-[387px] md:h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300 z-10 object-cover rounded-2xl"
             src={content.images.tunnel}
             alt="Modern train"
             height={833}
@@ -145,7 +145,7 @@ const Page = () => {
         </motion.div>
       </div>
 
-      <div className="bg-[#fff5ef] h-auto">
+      <div className="bg-[var(--bgcolour)] h-auto">
         <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between mt-0 xl:mt-[-168px] pb-16 md:pb-20 lg:px-12">
           <motion.div
             initial="hidden"
@@ -227,12 +227,12 @@ const Page = () => {
         {/* RIGHT - IMAGE & TABS */}
         <div className="flex flex-col items-center lg:max-w-[40%]">
           <div className="w-full flex justify-between mb-8">
-            <button onClick={() => setActiveTab("fastenings")} className={`px-6 py-2 rounded-[16px] font-medium transition-colors ${activeTab === 'fastenings' ? 'bg-textorange text-white' : 'bg-white border border-textorange text-textorange hover:bg-orange-50'}`}>Fastenings</button>
-            <button onClick={() => setActiveTab("sleepers")} className={`px-6 py-2 rounded-[16px] font-medium transition-colors ${activeTab === 'sleepers' ? 'bg-textorange text-white' : 'bg-white border border-textorange text-textorange hover:bg-orange-50'}`}>Steel Sleepers</button>
+            <button onClick={() => setActiveTab("fastenings")} className={`px-6 py-2 rounded-[16px] font-medium transition-colors ${activeTab === 'fastenings' ? 'bg-textorange text-white' : 'bg-white border border-textorange text-textorange hover:bg-[var(--bgcolour)]'}`}>Fastenings</button>
+            <button onClick={() => setActiveTab("sleepers")} className={`px-6 py-2 rounded-[16px] font-medium transition-colors ${activeTab === 'sleepers' ? 'bg-textorange text-white' : 'bg-white border border-textorange text-textorange hover:bg-[var(--bgcolour)]'}`}>Steel Sleepers</button>
           </div>
           <motion.div initial="hidden" animate="visible" exit="exit" variants={popUp}>
             <Image
-              className="w-[335px] h-[387px] md:h-auto md:max-w-[400px] hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 object-cover rounded-2xl"
+              className="w-[335px] h-[387px] md:h-auto md:max-w-[400px] hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300 object-cover rounded-2xl"
               src={activeTab === "fastenings" ? content.images.railfastening : content.images.steelsleeper}
               width={554}
               height={721}

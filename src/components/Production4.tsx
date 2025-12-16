@@ -44,7 +44,7 @@ const Production4 = () => {
             variants={slideInFromLeft}
             viewport={{ once: false, amount: 0.3 }}
             style={{ willChange: 'transform, opacity' }} // Optimization for smooth animation
-            className="group flex flex-col gap-3 md:gap-8 max-w-lg bg-white/20 backdrop-blur-md rounded-xl px-4 py-4 sm:px-10 sm:py-10 md:px-12 md:py-12 shadow-lg transition duration-300 hover:bg-[#FB7602] hover:shadow-2xl
+            className="group flex flex-col gap-3 md:gap-8 max-w-lg bg-white/20 backdrop-blur-md rounded-xl px-4 py-4 sm:px-10 sm:py-10 md:px-12 md:py-12 shadow-lg transition duration-300 hover:bg-[var(--textorange)] hover:shadow-2xl
             md:absolute md:top-[10%] md:left-[10%] xl:left-[20%]"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--textblue)] transition-colors duration-300 group-hover:text-white text-center font-raleway">
@@ -62,7 +62,7 @@ const Production4 = () => {
             variants={slideInFromRight}
             viewport={{ once: false, amount: 0.3 }}
             style={{ willChange: 'transform, opacity' }} // Optimization for smooth animation
-            className="group flex flex-col gap-3 md:gap-8 max-w-lg bg-white/20 backdrop-blur-md rounded-xl px-4 py-4 sm:px-10 sm:py-10 md:px-12 md:py-12 shadow-lg transition duration-300 hover:bg-[#FB7602] hover:shadow-2xl
+            className="group flex flex-col gap-3 md:gap-8 max-w-lg bg-white/20 backdrop-blur-md rounded-xl px-4 py-4 sm:px-10 sm:py-10 md:px-12 md:py-12 shadow-lg transition duration-300 hover:bg-[var(--textorange)] hover:shadow-2xl
             md:absolute md:bottom-[10%] md:right-[10%] mt-6 md:mt-0 xl:right-[20%]"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--textblue)] transition-colors duration-300 group-hover:text-white text-center font-raleway">

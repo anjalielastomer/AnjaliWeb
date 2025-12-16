@@ -109,7 +109,7 @@ const AboutSec3 = () => {
         whileInView="visible"
         variants={popUp}
         viewport={{ once: false, amount: 0.4 }}
-        className="md:flex-1 max-w-lg w-full rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
+        className="md:flex-1 max-w-lg w-full rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300"
       >
         <Image
           src="/aboutus/aboutimg3.png"

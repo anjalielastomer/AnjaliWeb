@@ -64,7 +64,7 @@ const AboutUs: React.FC = () => {
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
           variants={fadeInScale}
-          className="flex-1 rounded-xl overflow-hidden mt-12 w-full hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
+          className="flex-1 rounded-xl overflow-hidden mt-12 w-full hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300"
         >
           <Image
             src="/aboutus/aboutimg2.png"

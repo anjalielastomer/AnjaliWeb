@@ -7,7 +7,7 @@ interface VideoSectionProps {
   bgColor?: string; // optional, defaults to white
 }
 
-const VideoSection: React.FC<VideoSectionProps> = ({bgColor}) => {
+const VideoSection: React.FC<VideoSectionProps> = ({ bgColor }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handlePlayClick = () => {
@@ -37,7 +37,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({bgColor}) => {
             <button
               aria-label="Play video"
               onClick={handlePlayClick}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--textorange)] hover:bg-orange-600 focus:outline-none focus:ring-4 focus:ring-orange-400 rounded-full p-5 shadow-lg transition cursor-pointer"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--textblue)] hover:bg-[var(--textorange)] focus:outline-none focus:ring-4 focus:ring-[var(--mediumblue)] rounded-full p-5 shadow-lg transition cursor-pointer"
             >
               <svg
                 className="w-8 h-8 text-white"

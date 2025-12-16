@@ -17,14 +17,14 @@ import { motion, Variants } from "framer-motion";
 
 const extractTextFromPTags = (htmlString: string): string[] => {
   if (!htmlString) return [];
-  
+
   // Get paragraph content
   const pTagRegex = /<p[^>]*>(.*?)<\/p>/gi;
   const pMatches = [];
   let pMatch;
-  
+
   while ((pMatch = pTagRegex.exec(htmlString)) !== null) {
-    let content = pMatch[1].trim(); 
+    let content = pMatch[1].trim();
     content = content.replace(/&nbsp;/g, ' ')
       .replace(/&amp;/g, '&')
       .replace(/&lt;/g, '<')
@@ -32,7 +32,7 @@ const extractTextFromPTags = (htmlString: string): string[] => {
       .replace(/&quot;/g, '"')
       .replace(/&#39;/g, "'")
       .replace(/<[^>]*>/g, '');
-      
+
     if (content) {
       pMatches.push(content);
     }
@@ -40,7 +40,7 @@ const extractTextFromPTags = (htmlString: string): string[] => {
   const liTagRegex = /<li[^>]*>(.*?)<\/li>/gi;
   const liMatches = [];
   let liMatch;
-  
+
   while ((liMatch = liTagRegex.exec(htmlString)) !== null) {
     let content = liMatch[1].trim();
     content = content.replace(/&nbsp;/g, ' ')
@@ -50,9 +50,9 @@ const extractTextFromPTags = (htmlString: string): string[] => {
       .replace(/&quot;/g, '"')
       .replace(/&#39;/g, "'")
       .replace(/<[^>]*>/g, '');
-      
+
     if (content) {
-      liMatches.push(`• ${content}`); 
+      liMatches.push(`• ${content}`);
     }
   }
   return [...pMatches, ...liMatches];
@@ -85,7 +85,7 @@ const SingleProductPage: React.FC = () => {
   const product = data?.data
     ? transformStrapiProductForDetails(data.data)
     : null;
-    console.log("Product:", product);
+  console.log("Product:", product);
   const {
     data: productsData,
     isLoading: isRelatedLoading,
@@ -120,7 +120,7 @@ const SingleProductPage: React.FC = () => {
         style={{ backgroundColor: "var(--bgwhite)" }}
       >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-orange-500 mx-auto"></div>
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[var(--textblue)] mx-auto"></div>
           <p className="mt-4 text-lg" style={{ color: "var(--textcolour)" }}>
             Loading product...
           </p>
@@ -144,13 +144,13 @@ const SingleProductPage: React.FC = () => {
           <div className="space-x-4">
             <button
               onClick={() => refetch()}
-              className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600"
+              className="px-4 py-2 bg-[var(--textblue)] text-white rounded hover:bg-[var(--textorange)]"
             >
               Try Again
             </button>
             <Link
               href="/products"
-              className="px-4 py-2 border border-orange-500 text-orange-500 rounded hover:bg-orange-50"
+              className="px-4 py-2 border border-[var(--textblue)] text-[var(--textblue)] rounded hover:bg-[var(--bgcolour)]"
             >
               Back to Products
             </Link>
@@ -176,7 +176,7 @@ const SingleProductPage: React.FC = () => {
       className="w-full min-h-screen pt-20 font-monte"
       style={{ backgroundColor: "var(--bgwhite)" }}
     >
-    <div className=" container mx-auto px-4 py-8 overflow-visible">
+      <div className=" container mx-auto px-4 py-8 overflow-visible">
         {/* Header with "Our Products" and Back Button */}
         <div className="mb-8">
           <div className="flex justify-between items-start mb-6 md:px-20">
@@ -201,7 +201,7 @@ const SingleProductPage: React.FC = () => {
             </h1>
           </div>
 
-         <div
+          <div
             className="w-screen h-px mb-8 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
             style={{ backgroundColor: "var(--textblue)", opacity: "0.1" }}
           ></div>
@@ -286,8 +286,8 @@ const SingleProductPage: React.FC = () => {
                     key={index}
                     onClick={() => setSelectedImageIndex(index)}
                     className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors ${selectedImageIndex === index
-                        ? "border-orange-500"
-                        : "border-gray-200"
+                      ? "border-[var(--textblue)]"
+                      : "border-gray-200"
                       }`}
                   >
                     <Image
@@ -443,7 +443,7 @@ const SingleProductPage: React.FC = () => {
                   ))}
               </div>
             )}
-            
+
             {activeTab === "specifications" && (
               <div>
                 <div className="space-y-1">

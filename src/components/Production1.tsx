@@ -95,7 +95,7 @@ const Production1 = () => {
                                 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={popUp}
                                 className="mt-auto relative z-40 lg:-mb-32"
                             >
-                                <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
+                                <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300">
                                     <img
                                         src="/aboutus/production-facilities/production1.jpg"
                                         alt="Modern orange commuter train inside a spacious maintenance facility with advanced equipment and industrial lighting"

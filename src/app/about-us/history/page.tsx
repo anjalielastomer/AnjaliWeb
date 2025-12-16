@@ -8,13 +8,13 @@ const ComingSoon: React.FC = () => {
       <Head>
         <title className="font-raleway text-3xl">Coming Soon | Anjali Elastomer</title>
       </Head>
-      <div className="bg-[#fff4e6] min-h-screen flex flex-col justify-center items-center px-4 text-center font-sans relative overflow-hidden">
-        
+      <div className="bg-[var(--bgcolour)] min-h-screen flex flex-col justify-center items-center px-4 text-center font-sans relative overflow-hidden">
+
 
         {/* Rocket Animation */}
         <div className="w-[180px] h-[180px] animate-float mb-6">
           <Image
-            src="/career/career1.png" 
+            src="/career/career1.png"
             alt="Rocket"
             width={180}
             height={180}
@@ -32,7 +32,7 @@ const ComingSoon: React.FC = () => {
 
         {/* Buttons
         <div className="flex flex-col sm:flex-row gap-4">
-          <button className="bg-[#FB7602] text-white px-6 py-3 rounded-full transition">
+          <button className="bg-[var(--textorange)] text-white px-6 py-3 rounded-full transition">
             Explore Products
           </button>
           <button className="border border-orange-500 text-textorange hover:bg-orange-100 px-6 py-3 rounded-full transition">

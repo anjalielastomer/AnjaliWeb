@@ -1,5 +1,5 @@
 "use client";
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useFeaturedProducts } from "@/hooks/use-featured-products";
@@ -81,14 +81,14 @@ const FeaturedProducts: React.FC = () => {
   const CARD_GAP = 24; // gap-6 (1.5rem * 16px = 24px)
   const feature = data?.data ?? [];
   const NUM_UNIQUE_PRODUCTS = feature.length;
-  
+
   // Use mobile card width for calculations
   const SCROLL_DISTANCE = -(CARD_WIDTH_MOBILE + CARD_GAP) * NUM_UNIQUE_PRODUCTS;
   const TOTAL_CONTAINER_WIDTH = (CARD_WIDTH_MOBILE + CARD_GAP) * NUM_UNIQUE_PRODUCTS * 3;
 
   if (isLoading) {
     return (
-      <section className="max-w-[1440px] bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
+      <section className="max-w-[1440px] bg-white mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
         <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
           Featured <span className="text-textorange">Products</span>
         </h1>
@@ -105,7 +105,7 @@ const FeaturedProducts: React.FC = () => {
 
   if (error) {
     return (
-      <section className="max-w-full bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
+      <section className="max-w-full bg-white mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
         <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
           Featured <span className="text-textorange">Products</span>
         </h1>
@@ -117,30 +117,30 @@ const FeaturedProducts: React.FC = () => {
   const featuredProducts = data?.data ?? [];
 
   return (
-    <section className="max-w-full bg-bgcolour mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
+    <section className="max-w-full bg-white mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
       <h1 className="text-4xl pb-10 justify-center font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
         Featured <span className='text-textorange'>Products</span>
       </h1>
 
       <div className="relative overflow-hidden w-full"
-       onMouseEnter={() => setIsHovering(true)}
+        onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
         <div className="flex gap-6 py-2 animate-scroll-infinite"
-        style={{
+          style={{
             animationPlayState: isHovering ? 'paused' : 'running',
             '--scroll-distance': `${SCROLL_DISTANCE}px`,
             '--scroll-duration': '25s',
             width: `${TOTAL_CONTAINER_WIDTH}px`
           } as React.CSSProperties}
         >
-          {[...featuredProducts,...featuredProducts,...featuredProducts].map(
+          {[...featuredProducts, ...featuredProducts, ...featuredProducts].map(
             (item, index) => {
               const { product } = item;
               if (!product) {
                 return null;
               }
-              const productImage = product.images?.[0] || {url: './rail-track.png', name: 'dummy data'};
+              const productImage = product.images?.[0] || { url: './rail-track.png', name: 'dummy data' };
               return (
                 <article
                   key={`${item.documentId}-${index}`}
@@ -199,24 +199,24 @@ const FeaturedProducts: React.FC = () => {
 
       <div className="w-full flex justify-center items-center mt-10">
         <Link href='/products'>
-        <button className="group text-textblue transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway">
-          <span className="text-[var(--textorange)] group-hover:text-[var(--textblue)]">Explore</span>
-          <span className="text-[var(--textblue)] group-hover:text-[var(--textorange)]"> All</span>
-          <Image
-            src="/arrow.svg"
-            alt="arrow"
-            width={27}
-            height={27}
-            className="group-hover:hidden"
-          />
-          <Image
-            src="/send.svg"
-            alt="arrow"
-            width={27}
-            height={27}
-            className="hidden group-hover:block"
-          />
-        </button>
+          <button className="group text-textblue transition-colors px-14 py-3 rounded-2xl text-[28px] font-normal flex items-center gap-2 font-raleway">
+            <span className="text-[var(--textorange)] group-hover:text-[var(--textblue)]">Explore</span>
+            <span className="text-[var(--textblue)] group-hover:text-[var(--textorange)]"> All</span>
+            <Image
+              src="/arrow.svg"
+              alt="arrow"
+              width={27}
+              height={27}
+              className="group-hover:hidden"
+            />
+            <Image
+              src="/send.svg"
+              alt="arrow"
+              width={27}
+              height={27}
+              className="hidden group-hover:block"
+            />
+          </button>
         </Link>
       </div>
 

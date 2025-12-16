@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
   const handleMouseLeave = () => {
     hoverOpacity.set(0);
   };
-  
+
   // Animation variants for the text container to orchestrate children animations
   const textContainerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -48,27 +48,27 @@ const Hero: React.FC = () => {
   // Animation variants for individual text elements
   const textItemVariants: Variants = {
     hidden: { opacity: 0, x: -50, y: 50 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
       y: 0,
       transition: { type: "spring", stiffness: 100, damping: 12 }
     },
   };
-  
+
   // Animation variant for the train image
   const imageVariants: Variants = {
-      hidden: { opacity: 0, x: 100 },
-      visible: { 
-          opacity: 1, 
-          x: 0, 
-          transition: { type: "spring", stiffness: 80, delay: 0.5 } 
-      }
+    hidden: { opacity: 0, x: 100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { type: "spring", stiffness: 80, delay: 0.5 }
+    }
   };
 
   return (
     <motion.section
-      className="relative w-full flex flex-col md:flex-row font-raleway font-bold xl:min-h-screen overflow-x-hidden pl-0 md:py-40 md:pl-10 items-center"
+      className="relative w-full flex flex-col md:flex-row font-raleway font-bold xl:min-h-screen overflow-x-hidden pl-0 md:py-40 md:pl-10 items-center bg-[var(--bgcolour)]"
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -99,7 +99,7 @@ const Hero: React.FC = () => {
       </motion.div>
 
       {/* Hero TextContent */}
-      <motion.div 
+      <motion.div
         className="md:max-w-[50%] mx-auto md:-translate-x-[64%] lg:-translate-x-[50%]"
         variants={textContainerVariants}
       >
@@ -108,18 +108,18 @@ const Hero: React.FC = () => {
             <motion.h1
               variants={textItemVariants}
               className="font-raleway text-4xl md:text-[50px] lg:text-[70px] xl:text-[80px] 3xl:text-[91px] font-extrabold w-full text-center md:text-left -mt-0 xl:-mt-10   "
-              style={{ color: '#003366' }} 
+              style={{ color: 'var(--textblue)' }}
             >
               <span className="whitespace-nowrap text-nowrap">
-                Engineered <span style={{ color: '#FF8C00' }}>for</span> {/* Example color for textorange */}
+                Engineered <span style={{ color: 'var(--textorange)' }}>for</span>
               </span>
               <br />
-              <span className="block my-6 sm:my-8 md:my-10 md:text-nowrap" style={{ color: '#FF8C00' }}>
+              <span className="block my-6 sm:my-8 md:my-10 md:text-nowrap" style={{ color: 'var(--textorange)' }}>
                 the Future of
               </span>
-              <span className="block md:text-nowrap" style={{ color: '#FF8C00' }}>
+              <span className="block md:text-nowrap" style={{ color: 'var(--textorange)' }}>
                 Rail-
-                <span style={{ color: '#003366' }}>Roads</span>
+                <span style={{ color: 'var(--textblue)' }}>Roads</span>
               </span>
             </motion.h1>
             <motion.div
@@ -127,9 +127,9 @@ const Hero: React.FC = () => {
               className="mt-10 pt-5 flex flex-col md:flex-row items-center w-full gap-4 md:gap-6"
             >
               <motion.div
-                whileHover={{ 
-                  scale: 1.05, 
-                  boxShadow: "0px 0px 50px rgba(255,165,0,0.4)",
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0px 0px 50px rgba(28,65,153,0.4)",
                   y: -2
                 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -140,7 +140,7 @@ const Hero: React.FC = () => {
                            flex items-center justify-center text-white 
                            rounded-2xl text-base lg:text-[28px] font-normal 
                            whitespace-nowrap font-raleway"
-                  style={{ backgroundColor: '#FF8C00' }} // Example color for textorange
+                  style={{ backgroundColor: 'var(--textblue)' }}
                 >
                   Explore Products
                 </Link>
@@ -157,12 +157,12 @@ const Hero: React.FC = () => {
                            border hover:border-2 
                            transition-colors rounded-2xl 
                            text-base lg:text-[28px] font-normal gap-2"
-                  style={{ borderColor: '#FF8C00', color: '#003366' }} // Example colors
+                  style={{ borderColor: 'var(--textblue)', color: 'var(--textblue)' }}
                 >
-                  <span className="group-hover:text-[#003366] transition-colors duration-300" style={{ color: '#FF8C00' }}>
+                  <span className="group-hover:text-[var(--textorange)] transition-colors duration-300" style={{ color: 'var(--textblue)' }}>
                     Learn
                   </span>
-                  <span className="group-hover:text-[#FF8C00] transition-colors duration-300" style={{ color: '#003366' }}>
+                  <span className="group-hover:text-[var(--textblue)] transition-colors duration-300" style={{ color: 'var(--textorange)' }}>
                     more
                   </span>
                   <Image
@@ -185,7 +185,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </motion.div>
-      
+
       {/* Hero ImageContent */}
       <motion.div
         className="md:absolute bottom-0 left-[50%] w-full flex justify-start overflow-hidden z-10"

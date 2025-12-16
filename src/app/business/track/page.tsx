@@ -79,7 +79,7 @@ const Page = () => {
           viewport={{ once: false, amount: 0.3 }}
           className="flex-shrink-0 w-full max-w-sm lg:max-w-md xl:max-w-lg"
         >
-          <div className="image-container w-[220px] aspect-[3/4] md:w-[300px] lg:w-full lg:aspect-[4/5] rounded-xl overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 mx-auto">
+          <div className="image-container w-[220px] aspect-[3/4] md:w-[300px] lg:w-full lg:aspect-[4/5] rounded-xl overflow-hidden hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300 mx-auto">
             <Image
               src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1753946468/o9j95utpjuv1vvel8cev.png"
               alt="Railway bridge structure"
@@ -94,7 +94,7 @@ const Page = () => {
 
 
       {/* Section 2: Turnkey Projects */}
-      <div className="bg-[#fff5ef] h-auto">
+      <div className="bg-[#E7EBEE] h-auto">
         <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20  lg:px-12">
           {/* Image Content */}
           <motion.div
@@ -189,7 +189,7 @@ const Page = () => {
             variants={popUp}
             viewport={{ once: false, amount: 0.3 }}
           >
-            <div className="relative w-[335px] h-[387px] sm:w-[400px] sm:h-[500px] lg:w-[554px] lg:h-[721px] mt-2 lg:mt-[45px] z-10 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 overflow-hidden rounded-[18px]">
+            <div className="relative w-[335px] h-[387px] sm:w-[400px] sm:h-[500px] lg:w-[554px] lg:h-[721px] mt-2 lg:mt-[45px] z-10 hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300 overflow-hidden rounded-[18px]">
               <Image
                 src="/business/track-3.svg"
                 alt="Side view of railway bridge"
@@ -203,7 +203,7 @@ const Page = () => {
       </div>
 
       {/* Section 5: Capabilities & Geography */}
-      <div className="bg-[#fff5ef] py-16 md:py-24">
+      <div className="bg-[#E7EBEE] py-16 md:py-24">
         <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12 p-2 lg:px-12">
           <motion.div
             initial="hidden"

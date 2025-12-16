@@ -3,20 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCategory } from "@/hooks/useCategory";
 import { FaXTwitter } from "react-icons/fa6";
+
 const Footer: React.FC = () => {
   const { categories } = useCategory();
 
   return (
-    // Base font-monte already implies default font family, text-gray-300 for color
-    <footer className="bg-[#122957] text-gray-300 pt-8 pb-6 px-6 relative z-20 font-monte bottom-0">
-      <div className=" max-w-7xl 2xl:max-w-[1600px] px-4 md:px-7 py-4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-32">
+    // Light background with dark text for better visibility
+    <footer className="bg-[var(--bgcolour)] text-[var(--textblue)] pt-8 pb-6 px-6 relative z-20 font-monte bottom-0 border-t border-[var(--mediumblue)]/20">
+      <div className="max-w-7xl 2xl:max-w-[1600px] px-4 md:px-7 py-4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-32">
         {/* Branding and Description */}
         <div>
-          <h2 className="text-white text-xl font-semibold mb-3 font-raleway">
-            Anjali <span className="text-[#EF6C00]">Elastomer</span>
+          <h2 className="text-[var(--textblue)] text-xl font-semibold mb-3 font-raleway">
+            Anjali <span className="text-[var(--textorange)]">Elastomer</span>
           </h2>
           {/* Default to text-base, then scale up using arbitrary breakpoint */}
-          <p className="mb-4 max-w-xs leading-relaxed text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">
+          <p className="mb-4 max-w-xs leading-relaxed text-base [&_@media_screen_and_(min-width:1401px)]:text-lg text-[var(--textcolour)]">
             Leading manufacturer of premium elastomeric materials for railway
             construction worldwide.
           </p>
@@ -26,7 +27,7 @@ const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-white hover:text-[#EF6C00] transition-colors duration-200"
+              className="text-[var(--textblue)] hover:text-[var(--textorange)] transition-colors duration-200"
             >
               <svg
                 fill="currentColor"
@@ -44,11 +45,11 @@ const Footer: React.FC = () => {
             </a>
 
             <a
-              href="https://x.com/anjalielastomer" 
+              href="https://x.com/anjalielastomer"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter"
-              className="text-white hover:text-[#EF6C00] transition-colors duration-200 pt-1"
+              className="text-[var(--textblue)] hover:text-[var(--textorange)] transition-colors duration-200 pt-1"
             >
               <FaXTwitter />
             </a>
@@ -58,7 +59,7 @@ const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="text-white hover:text-[#EF6C00] transition-colors duration-200"
+              className="text-[var(--textblue)] hover:text-[var(--textorange)] transition-colors duration-200"
             >
               <svg
                 fill="currentColor"
@@ -79,14 +80,14 @@ const Footer: React.FC = () => {
 
         {/* Products */}
         <div>
-          <h3 className="text-[#EF6C00] underline mb-3 font-medium cursor-default font-raleway">
+          <h3 className="text-[var(--textblue)] font-semibold underline decoration-[var(--textorange)] underline-offset-4 mb-3 cursor-default font-raleway">
             Products
           </h3>
           <ul className="space-y-2">
             {/* Handle loading or empty states */}
             {!categories || categories.length === 0 ? (
               <li>
-                <span className="text-base text-gray-500">
+                <span className="text-base text-[var(--textgray)]">
                   Loading products...
                 </span>
               </li>
@@ -95,8 +96,8 @@ const Footer: React.FC = () => {
               categories.map((category) => (
                 <li key={category.documentId}>
                   <Link
-                    href={`/products`} // Assuming a dynamic route like /products/[id]
-                    className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg"
+                    href={`/products`}
+                    className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg text-[var(--textcolour)] hover:text-[var(--textorange)] transition-colors"
                   >
                     {category.name}
                   </Link>
@@ -108,14 +109,14 @@ const Footer: React.FC = () => {
 
         {/* Company */}
         <div>
-          <h3 className="text-[#EF6C00] underline mb-3 font-medium cursor-default font-raleway">
+          <h3 className="text-[var(--textblue)] font-semibold underline decoration-[var(--textorange)] underline-offset-4 mb-3 cursor-default font-raleway">
             Company
           </h3>
           <ul className="space-y-2">
             <li>
               <Link
                 href="/about-us"
-                className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg"
+                className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg text-[var(--textcolour)] hover:text-[var(--textorange)] transition-colors"
               >
                 About Us
               </Link>
@@ -123,7 +124,7 @@ const Footer: React.FC = () => {
             <li>
               <Link
                 href="/careers"
-                className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg"
+                className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg text-[var(--textcolour)] hover:text-[var(--textorange)] transition-colors"
               >
                 Careers
               </Link>
@@ -131,7 +132,7 @@ const Footer: React.FC = () => {
             <li>
               <Link
                 href="/projects"
-                className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg"
+                className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg text-[var(--textcolour)] hover:text-[var(--textorange)] transition-colors"
               >
                 Projects
               </Link>
@@ -139,7 +140,7 @@ const Footer: React.FC = () => {
             <li>
               <Link
                 href="/business/bridges"
-                className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg"
+                className="text-base [&_@media_screen_and_(min-width:1401px)]:text-lg text-[var(--textcolour)] hover:text-[var(--textorange)] transition-colors"
               >
                 Business
               </Link>
@@ -149,30 +150,30 @@ const Footer: React.FC = () => {
 
         {/* Contact Us */}
         <div>
-          <h3 className="text-[#EF6C00] underline mb-3 font-medium cursor-default font-raleway">
+          <h3 className="text-[var(--textblue)] font-semibold underline decoration-[var(--textorange)] underline-offset-4 mb-3 cursor-default font-raleway">
             Contact Us
           </h3>
           <ul className="space-y-3">
-            <li className="flex items-center space-x-2 text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">
+            <li className="flex items-center space-x-2 text-base [&_@media_screen_and_(min-width:1401px)]:text-lg text-[var(--textcolour)]">
               <Image src="/phone.svg" alt="Phone" width={20} height={20} />
               <span>+91 9681187076 / 9038156288</span>
             </li>
-            <li className="flex items-center space-x-2 text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">
-              <Image src="/email.svg" alt="Phone" width={20} height={20} />
+            <li className="flex items-center space-x-2 text-base [&_@media_screen_and_(min-width:1401px)]:text-lg text-[var(--textcolour)]">
+              <Image src="/email.svg" alt="Email" width={20} height={20} />
               <span className="break-all">sales@anjalielastomer.com</span>
             </li>
-            <li className="flex items-center space-x-2 text-base [&_@media_screen_and_(min-width:1401px)]:text-lg">
-              <Image src="/map.svg" alt="Phone" width={20} height={20} />
+            <li className="flex items-center space-x-2 text-base [&_@media_screen_and_(min-width:1401px)]:text-lg text-[var(--textcolour)]">
+              <Image src="/map.svg" alt="Location" width={20} height={20} />
               <span>Howrah, West Bengal, India</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <hr className="border-gray-700 my-6 w-screen relative left-1/2 right-1/2 -translate-x-1/2" />
+      <hr className="border-[var(--mediumblue)]/30 my-6 w-screen relative left-1/2 right-1/2 -translate-x-1/2" />
 
-      <div className="max-w-none 2xl:max-w-[1600px] mx-auto text-center text-gray-400 text-sm ">
-        Designed By <Link href={'https://www.linkedin.com/in/sayan-sarkarr-96ba64174/'} className="text-[var(--textorange)]">Sayan Sarkarr</Link> <br className="md:hidden"/> <span className="hidden md:inline">|</span> © 2025 Anjali Elastomer Ltd. All rights reserved. <br className="md:hidden"/><span className="hidden md:inline">|</span> Developed By <Link href={'https://www.resourcio.in/'} className="text-[var(--textorange)]">Resourcio Pvt. Ltd.</Link>
+      <div className="max-w-none 2xl:max-w-[1600px] mx-auto text-center text-[var(--textgray)] text-sm">
+        Designed By <Link href={'https://www.linkedin.com/in/sayan-sarkarr-96ba64174/'} className="text-[var(--textorange)] hover:underline">Sayan Sarkarr</Link> <br className="md:hidden" /> <span className="hidden md:inline">|</span> © 2025 Anjali Elastomer Ltd. All rights reserved. <br className="md:hidden" /><span className="hidden md:inline">|</span> Developed By <Link href={'https://www.resourcio.in/'} className="text-[var(--textorange)] hover:underline">Resourcio Pvt. Ltd.</Link>
       </div>
     </footer>
   );

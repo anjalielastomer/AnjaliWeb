@@ -15,7 +15,7 @@ interface ProductCategory {
 
 interface ProductSpec {
   id: number;
-  title:string;
+  title: string;
   description: string;
   documentId: string;
   createdAt: string;
@@ -75,22 +75,22 @@ const ProductGrid: React.FC<ProductGridProps> = ({
   }, [selectedSegment, categories]);
 
   const categoryProducts = useMemo(() => {
-  let products: any[] = [];
+    let products: any[] = [];
 
-  if (selectedSegment === "all") {
-    products = transformedProducts;
-  } else {
-    products = selectedCategoryObj?.products || [];
-  }
+    if (selectedSegment === "all") {
+      products = transformedProducts;
+    } else {
+      products = selectedCategoryObj?.products || [];
+    }
 
-  // ✅ Log each time categoryProducts is updated
-  console.log(
-    `Rendering ${products.length} products for segment: ${selectedSegment}`
-  );
-  console.log("Rendered Products:", products);
+    // ✅ Log each time categoryProducts is updated
+    console.log(
+      `Rendering ${products.length} products for segment: ${selectedSegment}`
+    );
+    console.log("Rendered Products:", products);
 
-  return products;
-}, [selectedSegment, transformedProducts, selectedCategoryObj]);
+    return products;
+  }, [selectedSegment, transformedProducts, selectedCategoryObj]);
 
 
   const getCurrentCategoryName = () => {
@@ -105,7 +105,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
     return (
       <div className="flex-1 relative">
         <div className="flex justify-center items-center h-64">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-orange-500"></div>
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[var(--textblue)]"></div>
         </div>
       </div>
     );
@@ -120,7 +120,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
           </p>
           <button
             onClick={() => refetch()}
-            className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600"
+            className="px-4 py-2 bg-[var(--textblue)] text-white rounded hover:bg-[var(--textorange)]"
           >
             Try Again
           </button>

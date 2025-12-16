@@ -103,7 +103,7 @@ const Page = () => {
           className="flex justify-center xl:justify-end mb-6 xl:mb-0"
         >
           <Image
-            className="relative z-10 w-full max-w-[335px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-[387px] sm:h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 object-cover rounded-xl"
+            className="relative z-10 w-full max-w-[335px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] h-[387px] sm:h-auto xl:mt-45 hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300 object-cover rounded-xl"
             src={content.images.train1}
             alt="Modern train"
             height={833}
@@ -115,7 +115,7 @@ const Page = () => {
       </div>
 
       {/* Offerings Section */}
-      <div className="bg-[#fff5ef] h-auto">
+      <div className="bg-[#E7EBEE] h-auto">
         <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row justify-center xl:justify-between flex-wrap mt-0 xl:mt-[-168px] pb-16 md:pb-20 lg:px-12">
           {/* UPDATED: Replaced data-aos with framer-motion */}
           <motion.div

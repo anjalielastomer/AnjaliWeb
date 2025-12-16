@@ -76,7 +76,7 @@ const NotableClientele: React.FC = () => {
                 alt={`Logo ${idx + 1} of notable clientele`}
                 width={96}
                 height={96}
-                className="object-contain hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
+                className="object-contain hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300"
                 priority={idx < 3}
               />
             </div>

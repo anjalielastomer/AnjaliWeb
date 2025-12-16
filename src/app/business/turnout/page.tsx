@@ -189,7 +189,7 @@ const page: React.FC = () => {
             </div>
 
 
-            <div className="flex justify-center xl:justify-end w-full xl:w-auto xl:mt-52 rounded-2xl overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300">
+            <div className="flex justify-center xl:justify-end w-full xl:w-auto xl:mt-52 rounded-2xl overflow-hidden hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300">
               <div className="relative w-[335px] h-[387px] sm:w-[400px] sm:h-[460px] md:w-[400px] md:h-[600px] lg:w-[500px] lg:h-[700px] xl:w-[554px] xl:h-[833px]">
                 <Image
                   data-aos="zoom-in-up"
@@ -317,7 +317,7 @@ const page: React.FC = () => {
                   data-aos="zoom-in-up"
                   src="/resources.png"
                   alt="Railway tunnel with tracks and industrial equipment"
-                  className="w-full h-full object-cover rounded-lg hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300"
+                  className="w-full h-full object-cover rounded-lg hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300"
                 />
               </div>
             </div>
@@ -335,8 +335,8 @@ const page: React.FC = () => {
                 key={tab.id}
                 onClick={() => handleTabChange(tab.id)}
                 className={`px-4 md:px-6 py-2 rounded-full font-medium transition-colors text-sm md:text-base ${activeTab === tab.id
-                    ? "bg-textorange text-white"
-                    : "bg-white border border-textorange text-textorange hover:bg-orange-50"
+                  ? "bg-textorange text-white"
+                  : "bg-white border border-textorange text-textorange hover:bg-[var(--bgcolour)]"
                   }`}
               >
                 {tab.label}

@@ -89,8 +89,8 @@ export default function AboutSec4() {
           <motion.div variants={itemVariants}>
             <Link href={"/article"} className="group text-textblue transition-colors pr-7 py-3 text-3xl font-light flex items-center gap-2 font-raleway">
               <span>
-                <span className="text-[#FB7602] group-hover:text-[#193055] transition-all duration-300">Learn</span>
-                <span className="text-[#193055] group-hover:text-[#FB7602] transition-all duration-300"> more</span>
+                <span className="text-[var(--textorange)] group-hover:text-[#193055] transition-all duration-300">Learn</span>
+                <span className="text-[#193055] group-hover:text-[var(--textorange)] transition-all duration-300"> more</span>
               </span>
               <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
               <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />

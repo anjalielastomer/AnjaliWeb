@@ -74,7 +74,7 @@ const Page = () => {
             viewport={{ once: false, amount: 0.3 }}
             className=" w-full max-w-sm lg:max-w-md xl:max-w-lg"
         >
-          <div className="image-container w-full mx-auto aspect-[3/4] md:aspect-[4/5] xl:mt-30 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 max-w-[300px] md:max-w-full">
+          <div className="image-container w-full mx-auto aspect-[3/4] md:aspect-[4/5] xl:mt-30 rounded-lg overflow-hidden hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300 max-w-[300px] md:max-w-full">
   <Image
     src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1753946692/iaubtdifzw9yivfnwqyz.jpg"
     alt="Railway bridge structure"
@@ -88,7 +88,7 @@ const Page = () => {
       </div>
 
       {/* Section 2: Turnkey Projects */}
-      <div className="bg-[#fff5ef] h-auto">
+      <div className="bg-[#E7EBEE] h-auto">
         <div className="max-w-[1440px] mx-auto flex lg:flex-row flex-col-reverse items-center justify-between gap-8 lg:gap-12 py-16 lg:py-20 xl:-mt-40 lg:px-12">
           <motion.div
             initial="hidden"
@@ -174,7 +174,7 @@ const Page = () => {
             viewport={{ once: false, amount: 0.3 }}
           >
             <Image
-              className="image-container mt-8 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(255,165,0,0.4)] transition-shadow duration-300 z-10 object-cover md:px-0"
+              className="image-container mt-8 w-full lg:mt-45 hover:shadow-[0_0_50px_rgba(28,65,153,0.4)] transition-shadow duration-300 z-10 object-cover md:px-0"
               src="/business/fabric-3.svg"
               alt="Side view of railway bridge"
               width={554}
@@ -186,7 +186,7 @@ const Page = () => {
       </div>
 
       {/* Section 5: Capabilities & Geography */}
-      <div className="bg-[#fff5ef] py-16 md:py-24">
+      <div className="bg-[#E7EBEE] py-16 md:py-24">
         <div className="max-w-[1440px] mx-auto flex lg:flex-nowrap justify-center xl:justify-between flex-wrap gap-12 p-2 items-start lg:px-12">
           <motion.div
             initial="hidden"

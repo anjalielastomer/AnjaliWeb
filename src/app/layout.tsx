@@ -4,7 +4,7 @@ import { Raleway, Montserrat, Roboto } from "next/font/google";
 import "./globals.css";
 import { QueryProvider } from "@/providers/query-provider";
 import { Toaster } from "sonner";
-import LayoutWrapper from "@/components/Layoutwrapper"; // NEW
+import LayoutWrapper from "@/components/Layoutwrapper";
 import ClientOnly from "@/components/ClientOnly";
 import Chatbot from "@/components/Chatbot";
 
@@ -67,9 +67,9 @@ export default function RootLayout({
             richColors
             closeButton
           />
-          
+
           <LayoutWrapper>{children}</LayoutWrapper>
-          
+
           {/* Add Chatbot */}
           <ClientOnly>
             <Chatbot />
