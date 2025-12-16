@@ -204,7 +204,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-47-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -245,7 +245,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-48-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -286,7 +286,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-49-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -463,7 +463,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-52-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -504,7 +504,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-53-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -545,7 +545,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-54-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -586,7 +586,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-55-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -627,7 +627,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-56-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -668,7 +668,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-57-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -777,7 +777,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-59-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -954,7 +954,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-62-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -995,7 +995,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-63-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -1036,7 +1036,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-64-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -1077,7 +1077,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-65-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -1118,7 +1118,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-66-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -1159,7 +1159,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-67-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -1540,7 +1540,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-73-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -1581,7 +1581,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-74-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -1622,7 +1622,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-75-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -1663,7 +1663,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-76-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -1704,7 +1704,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-77-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -1745,7 +1745,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-78-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />
@@ -1786,7 +1786,7 @@ export const BridgesMap: React.FC<BridgesMapProps> = ({
                 xlinkHref="#el-79-ezB3-geometry"
                 className="stroke-none"
                 style={{
-                  fill: "#E7EBEE",
+                  fill: "var(--textorange)",
                   fillOpacity: "1",
                 }}
               />

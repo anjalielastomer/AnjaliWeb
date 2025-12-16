@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "tasteful-fellowship-85303df149.media.strapiapp.com",
+      },
+      {
+        protocol: "https",
         hostname: "0bysse967.ufs.sh",
       },
       {
