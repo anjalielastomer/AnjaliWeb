@@ -20,17 +20,7 @@ const App: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const LoadingScreen = () => {
-    return (
-      <div className="fixed inset-0 bg-green-100 text-white z-50 flex flex-col justify-center items-center ">
-        <h1 className="text-5xl md:text-7xl font-extrabold font-raleway tracking-widest ">
-          <span className="text-[color:var(--textorange)]">Anjali</span>{" "}
-          Elastomer
-        </h1>
-
-      </div>
-    );
-  };
+  
 
   return (
     <main className="bg-white max-w-screen">

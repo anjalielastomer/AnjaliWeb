@@ -166,11 +166,11 @@ const Hero: React.FC = () => {
                     more
                   </span>
                   <Image
-                    src="/arrow.svg"
+                    src="/Arrow.svg"
                     alt="arrow"
                     width={27}
                     height={27}
-                    className="group-hover:hidden block"
+                    className="group-hover:hidden block "
                   />
                   <Image
                     src="/send.svg"
@@ -192,7 +192,7 @@ const Hero: React.FC = () => {
         variants={imageVariants}
       >
         <Image
-          src="/train.png"
+          src="/trainEl.png"
           alt="Modern train"
           className="w-full object-cover object-bottom"
           width={1200}
