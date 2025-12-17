@@ -129,7 +129,7 @@ const Navbar: React.FC = () => {
             {navItems.map(({ label, href, subItems }) => (
               <li
                 key={label}
-                className={`relative text-base text-nowrap uppercase lg:text-lg font-normal ${subItems ? 'group' : ''}`}
+                className={`relative text-base text-nowrap  lg:text-lg font-normal ${subItems ? 'group' : ''}`}
               >
                 <Link
                   href={href}

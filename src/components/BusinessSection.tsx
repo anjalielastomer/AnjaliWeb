@@ -189,7 +189,7 @@ function StatItem({
         <div className="flex items-baseline-last justify-end gap-2">
           {animatedNumber}
           <Image
-            src="/send.png"
+            src="/send.svg"
             alt="send"
             width={25}
             height={4}
