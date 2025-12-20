@@ -86,7 +86,7 @@ const AboutUs: React.FC = () => {
           variants={slideInFromLeft}
         >
           <h1 className="text-4xl font-bold text-textblue mb-2 flex gap-3 justify-center md:justify-start text-center md:text-left w-full font-raleway">
-            About <span className="text-textorange">Us</span>
+            About <span className="text-textorange ">Us</span>
           </h1>
           <span className="text-[28px] text-textblue font-medium mb-2 font-monte text-center md:text-left">
             Unified in Shaping Railway&apos;s Future
@@ -105,7 +105,7 @@ const AboutUs: React.FC = () => {
             <h1 className="text-lg font-bold text-textblue mb-6 flex gap-3 font-monte">
               Our <span className="text-textorange">Story</span>
             </h1>
-            <p className="text-textblue text-sm font-medium mb-4 text-justify">
+            <p className="text-textcolour text-sm font-medium mb-4 text-justify">
               Over the previous 15 years, Anjali Elastomers, which was founded in
               2009, has developed from a maker of rail components to a top
               supplier of entire railway infrastructure.
@@ -115,7 +115,7 @@ const AboutUs: React.FC = () => {
             <h1 className="text-lg font-bold text-textblue mb-6 flex gap-3 font-monte">
               Integrated <span className="text-textorange">Capabilities</span>
             </h1>
-            <p className="text-textblue text-sm font-medium mb-0 md:mb-4 text-justify">
+            <p className="text-textcolour text-sm font-medium mb-0 md:mb-4 text-justify">
               Bridge building, track construction, rail flash butt welding, rail
               turnout systems, and rail fastening systems are just a few of the
               railway sector disciplines in which we operate.
@@ -135,7 +135,7 @@ const AboutUs: React.FC = () => {
             <h1 className="text-lg font-bold text-textblue mb-6 flex gap-3 font-monte">
               Manufacturing <span className="text-textorange">Excellence</span>
             </h1>
-            <p className="text-textblue text-sm font-medium mb-4 text-justify">
+            <p className="text-textcolour text-sm font-medium mb-4 text-justify">
               We manufacture a variety of railway track goods at our four
               cutting-edge production plants in Eastern India. Our plants
               incorporate state-of-art Technology to mobilise Good
@@ -146,7 +146,7 @@ const AboutUs: React.FC = () => {
             <h1 className="text-lg font-bold text-textblue mb-6 flex gap-3 font-monte">
               Key Projects & <span className="text-textorange">Achievements</span>
             </h1>
-            <p className="text-textblue text-sm font-medium md:mb-4 mb-0 text-justify">
+            <p className="text-textcolour text-sm font-medium md:mb-4 mb-0 text-justify">
               The Jiribam-Imphal Rail Link, the Udhampur-Srinagar-Baramulla Rail
               Link, and the 4.5 km Rail Cum Road Steel Bridge across the River
               Ganga near Patna are some of our noteworthy projects that

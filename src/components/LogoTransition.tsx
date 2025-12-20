@@ -51,7 +51,7 @@ const LogoTransition = ({ onComplete }: { onComplete: () => void }) => {
             className="text-xl md:text-6xl font-bold font-raleway"
           >
             <span className="text-[color:var(--textblue)]">Anjali </span>
-            <span className="text-[color:var(--textorange)]">Elastomer</span>
+            <span className="text-[color:var(--anotherblue)]">Elastomer</span>
           </motion.div>
         </motion.div>
       )}
