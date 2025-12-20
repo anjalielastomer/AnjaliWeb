@@ -12,8 +12,37 @@ export default function Chatbot() {
       
       // Second script
       const script2 = document.createElement('script');
-      script2.src = 'https://files.bpcontent.cloud/2025/08/08/14/20250808142043-OTQFFOVW.js';
-      script2.defer = true;
+      script2.textContent = `
+        window.botpress.init({
+          "botId": "17fdca85-a697-419b-a38f-6fb8b11ec8f8",
+          "configuration": {
+            "version": "v1",
+            "botName": "Anjali Support Agent",
+            "botAvatar": "https://files.bpcontent.cloud/2025/08/08/14/20250808142458-UEXPTK9V.png",
+            "botDescription": "I can assist you with Anjali Elastomer product information, order support, documentation requests, and general enquiries related to our railway infrastructure solutions.",
+            "website": {
+              "title": "Website",
+              "link": "https://www.anjalielastomer.com"
+            },
+            "email": {
+              "title": "Email",
+              "link": "sales@anjalielastomer.com"
+            },
+            "phone": {},
+            "termsOfService": {},
+            "privacyPolicy": {},
+            "color": "#1C4199",
+            "variant": "solid",
+            "headerVariant": "glass",
+            "themeMode": "light",
+            "fontFamily": "inter",
+            "radius": 2,
+            "feedbackEnabled": true,
+            "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)"
+          },
+          "clientId": "ad0529f2-7a85-4857-b786-419661add9dc"
+        });
+      `;
 
       // Ensure proper loading order
       script1.onload = () => {
