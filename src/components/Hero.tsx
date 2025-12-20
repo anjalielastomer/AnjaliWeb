@@ -166,7 +166,7 @@ const Hero: React.FC = () => {
                     more
                   </span>
                   <Image
-                    src="/Arrow.svg"
+                    src="/A.png"
                     alt="arrow"
                     width={27}
                     height={27}
