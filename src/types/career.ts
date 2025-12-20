@@ -25,42 +25,42 @@ export const cardData: CardData[] = [
     highlight: "Driven",
     description:
       "Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.",
-    image: "/career/career1.png",
+    image: "/career/div (1).png",
   },
   {
     title: "Career",
     highlight: "Growth",
     description:
       "Advance your career with comprehensive training programs, mentorship opportunities, and clear advancement paths.",
-    image: "/career/career2.png",
+    image: "/career/div (2).png",
   },
   {
     title: "Team",
     highlight: "Excellence",
     description:
       "Collaborate with industry experts and passionate professionals in a supportive, inclusive work environment.",
-    image: "/career/career3.png",
+    image: "/career/div (3).png",
   },
   {
     title: "Comprehensive",
     highlight: "Benefits",
     description:
       "Enjoy competitive salaries, health insurance, retirement plans, and performance bonuses.",
-    image: "/career/career4.png",
+    image: "/career/div (1).svg",
   },
   {
     title: "Work-Life",
     highlight: "Balance",
     description:
       "Flexible schedules, remote work options, and generous PTO to maintain a healthy work-life balance.",
-    image: "/career/career5.png",
+    image: "/career/div (4).png",
   },
   {
     title: "Global",
     highlight: "Impact",
     description:
       "Contribute to projects that connect cities, countries, and continents, making a real difference in the world.",
-    image: "/career/career6.png",
+    image: "/career/div (5).png",
   },
 ];
 
