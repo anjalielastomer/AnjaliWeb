@@ -85,7 +85,7 @@ export default function IndiaBusinessSection() {
             <div className="w-[320px] h-[300px] lg:h-auto sm:w-[400px] lg:w-[480px]">
               {/* {activeTab === "bridge" ?
               <India1/> : activeTab=== "track"?   <India2/>    : <India3/>} */}
-              <Image
+              <Image 
                 src={
                   activeTab === "bridge"
                     ? "/BridgeMap.gif"
