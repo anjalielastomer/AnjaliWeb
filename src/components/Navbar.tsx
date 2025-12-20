@@ -121,7 +121,7 @@ const Navbar: React.FC = () => {
             href='/'
             className={`text-xl md:text-2xl font-bold font-raleway cursor-pointer  text-[color:var(--textblue)] }`}
           >
-            Anjali <span className="text-[color:var(--textorange)]">Elastomer</span>
+            Anjali <span className="text-[color:var(--anotherblue)]">Elastomer</span>
           </Link>
 
           {/* Desktop Navigation */}

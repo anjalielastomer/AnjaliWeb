@@ -3,7 +3,7 @@
 :root {
   --textblue: #1C4199;
   /* Primary blue - rgb(28, 65, 153) */
-  --textorange: #0000EE;
+  --textorange: #010149;
   /* Accent blue for CTAs/highlights */
   --bgcolour: #E7EBEE;
   /* Light gray-blue background */
@@ -11,7 +11,7 @@
   /* White */
   --textcolour: #111111;
   /* Dark text - rgb(17, 17, 17) */
-
+  --anotherblue: #010149;
   /* Additional colors from client palette */
   --textgray: #767676;
   /* Muted text */

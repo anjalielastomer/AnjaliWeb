@@ -124,7 +124,7 @@ export default function IndiaBusinessSection() {
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
               variants={slideInFromLeft}
-              className="text-sm font-medium text-textblue max-w-3xl mb-12 leading-relaxed lg:leading-[38px] text-justify "
+              className="text-sm font-medium text-textcolour max-w-3xl mb-12 leading-relaxed lg:leading-[38px] text-justify "
             >
               We here at Anjali Elastomers Ltd. believe in the power of
               innovation to change the way we interact, connect, and prosper.
@@ -201,7 +201,7 @@ function StatItem({
         </div>
       </div>
       <div className="border-l-2 border-gray-400 pl-4 flex-1">
-        <p className="text-xs font-medium text-textblue text-justify leading-7">
+        <p className="text-xs font-medium text-textcolour text-justify leading-7">
           {description}
         </p>
       </div>

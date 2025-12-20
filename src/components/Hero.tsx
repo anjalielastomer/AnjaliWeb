@@ -111,13 +111,13 @@ const Hero: React.FC = () => {
               style={{ color: 'var(--textblue)' }}
             >
               <span className="whitespace-nowrap text-nowrap">
-                Engineered <span style={{ color: 'var(--textorange)' }}>for</span>
+                Engineered <span style={{ color: 'var(--anotherblue)' }}>for</span>
               </span>
               <br />
-              <span className="block my-6 sm:my-8 md:my-10 md:text-nowrap" style={{ color: 'var(--textorange)' }}>
+              <span className="block my-6 sm:my-8 md:my-10 md:text-nowrap" style={{ color: 'var(--anotherblue)' }}>
                 the Future of
               </span>
-              <span className="block md:text-nowrap" style={{ color: 'var(--textorange)' }}>
+              <span className="block md:text-nowrap" style={{ color: 'var(--anotherblue)' }}>
                 Rail-
                 <span style={{ color: 'var(--textblue)' }}>Roads</span>
               </span>
@@ -139,8 +139,8 @@ const Hero: React.FC = () => {
                   className="min-w-[180px] h-[45px] xl:min-w-[280px] lg:min-w-[250px] lg:h-[65px] 
                            flex items-center justify-center text-white 
                            rounded-2xl text-base lg:text-[28px] font-normal 
-                           whitespace-nowrap font-raleway"
-                  style={{ backgroundColor: 'var(--textblue)' }}
+                           whitespace-wrap font-raleway"
+                  style={{ backgroundColor: 'var(--anotherblue)' }}
                 >
                   Explore Products
                 </Link>

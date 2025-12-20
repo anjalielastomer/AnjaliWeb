@@ -286,7 +286,7 @@ const Page: React.FC = () => {
         <span
           data-aos="fade-down-left"
           className="font-monte font-medium text-sm sm:text-base md:text-lg mt-3 max-w-4xl text-center"
-          style={{ color: "var(--textblue)" }}
+          style={{ color: "var(--textcolour)" }}
         >
           We&apos;re not just building railway infrastructure — we&apos;re
           building careers, communities, and the future of Rail-Road
@@ -321,7 +321,7 @@ const Page: React.FC = () => {
               </span>
               <span
                 className="font-monte font-medium text-sm mt-2 text-center"
-                style={{ color: "var(--textblue)" }}
+                style={{ color: "var(--textcolour)" }}
               >
                 {card.description}
               </span>
