@@ -250,7 +250,7 @@ const Page: React.FC = () => {
           >
             <span
               className="font-monte font-medium text-base sm:text-lg text-center md:text-justify max-w-lg mb-7"
-              style={{ color: "var(--textblue)" }}
+              style={{ color: "var(--textcolour)" }}
             >
               Join our team of innovators creating cutting-edge rail-road
               solutions for the future of Logistics & Transportation Industry;

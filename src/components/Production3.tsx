@@ -36,7 +36,7 @@ const itemVariants: Variants = {
 
 const Production3 = () => {
     return (
-       <section className="w-full flex flex-col lg:flex-row items-center lg:items-start mx-auto px-4 sm:px-6 md:px-12 lg:px-24 py-8 sm:py-12 lg:py-20 bg-[#FFF4E6] relative justify-center overflow-hidden font-monte">
+       <section className="w-full flex flex-col lg:flex-row items-center lg:items-start mx-auto px-4 sm:px-6 md:px-12 lg:px-24 py-8 sm:py-12 lg:py-20 bg-gray-200 relative justify-center overflow-hidden font-monte">
   <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between w-full">
     
     {/* Left side image */}
@@ -67,20 +67,20 @@ const Production3 = () => {
       viewport={{ once: false, amount: 0.2 }}
       className="w-full lg:pl-16 text-textblue flex flex-col gap-6 sm:gap-8"
     >
-      <motion.h2 variants={itemVariants} className="text-[#152f5d] font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight font-raleway text-center md:text-left">
+      <motion.h2 variants={itemVariants} className="text-textblue font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight font-raleway text-center md:text-left">
         Rail Fastening and Sleeper <span className="text-textorange">Manufacturing</span>
       </motion.h2>
 
-      <motion.p variants={itemVariants} className="text-base sm:text-lg lg:text-[20px] text-gray-700 text-center md:text-left">
+      <motion.p variants={itemVariants} className="text-base sm:text-lg lg:text-[20px] text-textcolour text-center md:text-left">
         Where Strength Meets Precision in <span className='text-textorange'>Rail</span> Infrastructure
       </motion.p>
 
       <motion.div variants={itemVariants} className="flex flex-col gap-4">
-        <p className="text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed max-w-2xl text-justify">
+        <p className="text-black text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed max-w-2xl  text-justify ">
           Our fully integrated manufacturing facility produces high-performance rail fastening systems and concrete sleepers, forming the structural core of reliable permanent way solutions. Designed for heavy-axle loads, high-speed trains, and complex operating environments, our products meet Indian and international railway standards.
         </p>
 
-        <p className="text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed max-w-2xl text-justify">
+        <p className=" text-black text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed max-w-2xl  text-justify">
           From raw material to finished assembly, we combine advanced engineering, automated production lines, and strict quality control — ensuring every sleeper and fastening component exceeds expectations.
         </p>
       </motion.div>

@@ -168,13 +168,13 @@ const Page = () => {
             className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24"
           >
             <h1 className="text-4xl sm:text-xl md:text-5xl font-bold text-[#193055] lg:mb-4 -mb-2 mt-4 lg:mt-0 font-monte text-center md:text-left leading-relaxed">
-              <span className="text-textorange font-bold">Resources</span>{" "}
+              <span className="text-textblue font-bold">Resources</span>{" "}
               Available
             </h1>
             <br />
             <br />
             <br />
-            <ul className="list-disc list-inside space-y-2 text-textblue text-base sm:text-xl md:text-xl font-medium font-monte">
+            <ul className="list-disc list-inside space-y-2 text-textcolour text-base sm:text-xl md:text-xl font-medium font-monte">
               <li>Cantelever Erection Crawler Cranes</li>
               <li>Mobile Heavy Lift Cranes up to 130 Tons</li>
               <li>Transit Mixer</li>
@@ -239,9 +239,9 @@ const Page = () => {
             className=" flex flex-col justify-center px-4 md:px-6 md:w-[85%] lg:w-[60%] md:text-center xl:pl-42 lg:text-left lg:p-4"
           >
             <h2 className="text-4xl md:text-7xl lg:text-3xl xl:text-5xl font-bold text-[#193055] mb-6 font-raleway text-center lg:text-left pt-5 lg:pt-0">
-              Capabilities & <span className="text-textorange">Geography</span>
+              Capabilities & <span className="text-textblue">Geography</span>
             </h2>
-            <p className="list-disc list-inside [&>li]:marker:text-textorange space-y-2 text-textblue text-base sm:text-xl md:text-xl lg:text-lg font-medium font-monte text-justify">
+            <p className="list-disc list-inside [&>li]:marker:text-textcolour space-y-2 text-textcolour text-base sm:text-xl md:text-xl lg:text-lg font-medium font-monte text-justify">
               Our bridges span the length and width of India, strengthening
               connections and facilitating the flow of life throughout the
               country. We have successfully constructed bridges in tough

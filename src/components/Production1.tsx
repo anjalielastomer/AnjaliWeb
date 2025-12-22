@@ -87,7 +87,7 @@ const Production1 = () => {
 
                             <motion.p variants={slideInFromRight} className='text-base sm:text-lg lg:text-[20px] font-[500] font-monte md:mt-10 text-center md:text-left'>Precision Steel Fabrication, <span className='text-textorange'>Engineered</span> for Elastomer Excellence</motion.p>
 
-                            <motion.p variants={slideInFromRight} className="text-textblue text-base sm:text-lg leading-loose my-8 lg:my-20 text-justify">
+                            <motion.p variants={slideInFromRight} className="text-textcolour  text-base sm:text-lg leading-loose my-8 lg:my-20 text-justify">
                                 At the heart of every high-performance elastomer product lies a backbone of precision-engineered steel. Our in-house steel fabrication facility ensures strength, consistency, and quality you can rely on — every time.
                             </motion.p>
 
@@ -109,7 +109,7 @@ const Production1 = () => {
             </div>
 
             {/* Sec2 */}
-            <div className="bg-[#FFF8F2] px-6 sm:px-12 lg:px-24 font-monte text-[#1A202C] flex flex-col justify-end py-20 relative z-5 lg:-mt-32">
+            <div className="bg-gray-200 px-6 sm:px-12 lg:px-24 font-monte text-[#1A202C] flex flex-col justify-end py-20 relative z-5 lg:-mt-32">
                 <div className="lg:pt-40 flex flex-col gap-5 max-w-[1440px] mx-auto">
                     {/* Header Section */}
                     <motion.div
@@ -150,7 +150,7 @@ const Production1 = () => {
                                 </h3>
                             </motion.div>
 
-                            <motion.div variants={slideInFromRight} className="space-y-4 text-base sm:text-lg leading-relaxed text-textblue">
+                            <motion.div variants={slideInFromRight} className="space-y-4 text-base sm:text-lg leading-relaxed text-textcolour ">
                                 <p className="text-justify">
                                     Our specialized facility for Turnout and Track Device manufacturing delivers high-performance railway components that meet global standards. Backed by advanced CNC machining, in-house forging, and precision welding capabilities, we design and manufacture turnout systems that ensure smooth switching, minimal wear, and long-term reliability in dynamic rail environments.
                                 </p>
@@ -204,19 +204,19 @@ function StatItem({
         <div className="flex items-baseline-last justify-end gap-2">
           {animatedNumber}
           <Image
-            src="/send.png"
+            src="/send.svg"
             alt="send"
             width={25}
             height={4}
             className="animate-blink"
           />
         </div>
-        <div className="uppercase text-sm font-semibold text-textblue mb-1">
+        <div className="uppercase text-sm font-semibold text-textcolour mb-1">
           {unit}
         </div>
       </div>
       <div className="border-l-2 border-gray-400 pl-4 flex-1">
-        <p className="text-xs font-medium text-textblue text-justify leading-7">
+        <p className="text-xs font-medium text-textcolour text-justify leading-7">
           {description}
         </p>
       </div>

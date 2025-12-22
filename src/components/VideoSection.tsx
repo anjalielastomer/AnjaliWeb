@@ -17,9 +17,9 @@ const VideoSection: React.FC<VideoSectionProps> = ({ bgColor }) => {
   return (
     <section data-aos="zoom-in-up" className={`${bgColor} py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center`}>
       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-raleway text-center text-textblue">
-        See Us in <span className="text-[var(--textorange)]">Action</span>
+        See Us in <span className="text-textorange">Action</span>
       </h2>
-      <p className="mt-3 max-w-xl text-center text-textblue text-base sm:text-lg tracking-wide font-monte md:text-nowrap text-wrap">
+      <p className="mt-3 max-w-xl text-center text-textcolour text-base sm:text-lg tracking-wide font-monte md:text-nowrap text-wrap">
         Discover how we're shaping the future of railway infrastructure
       </p>
 

@@ -114,15 +114,15 @@ const Page = () => {
               {content.title.orange}
               <span className="text-textblue"> {content.title.blue}</span>
             </span>
-            <span className="text-textblue block mt-2 md:mt-3 lg:mt-5">
+            <span className="text-textcolour block mt-2 md:mt-3 lg:mt-5">
               {content.title.system}
-              <span className="text-textorange">
+              <span className="text-textblue">
                 {" "}
                 {content.title.systemOrange}
               </span>
             </span>
           </motion.h1>
-          <motion.p variants={itemVariants} className="text-sm md:text-base text-[#193055] text-justify max-w-full xl:max-w-[40rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte px-2 md:px-0">
+          <motion.p variants={itemVariants} className="text-sm md:text-base text-textcolour text-justify max-w-full xl:max-w-[40rem] mb-4 md:mb-12 leading-relaxed md:leading-loose font-monte px-2 md:px-0">
             {content.topParagraph}
           </motion.p>
         </motion.div>
@@ -170,7 +170,7 @@ const Page = () => {
             viewport={{ once: false, amount: 0.2 }}
             className="flex flex-col justify-center md:pl-6 xl:pl-10 mt-0 xl:mt-16 lg:mt-24"
           >
-            <p className="text-sm md:text-base text-textblue text-justify max-w-[320px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] mb-4 md:mb-12 leading-loose font-monte mx-auto">
+            <p className="text-sm md:text-base text-textcolour text-justify max-w-[320px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[454px] mb-4 md:mb-12 leading-loose font-monte mx-auto">
               {content.steelSleeperParagraph}
             </p>
           </motion.div>
@@ -190,16 +190,16 @@ const Page = () => {
                     <span className="text-textorange">{content.fasteningsContent.title.highlighted}</span>
                     {content.fasteningsContent.title.post}
                   </motion.h1>
-                  <motion.p variants={itemVariants} className="text-textblue font-medium mb-6 font-monte text-justify lg:text-left mt-20">{content.fasteningsContent.paragraph1}</motion.p>
+                  <motion.p variants={itemVariants} className="text-textcolour font-medium mb-6 font-monte text-justify lg:text-left mt-20">{content.fasteningsContent.paragraph1}</motion.p>
                   <motion.div variants={itemVariants} className="space-y-4 mb-6 font-monte mt-20">
                     {content.fasteningsContent.items.map((item, i) => (
                       <div key={i} className="flex gap-3 items-start">
                         <div className="w-2 h-2 bg-textorange rounded-full mt-2" />
-                        <span className="text-textblue text-base md:text-lg">{item}</span>
+                        <span className="text-textcolour text-base md:text-lg">{item}</span>
                       </div>
                     ))}
                   </motion.div>
-                  <motion.p variants={itemVariants} className="text-textblue font-monte text-center lg:text-left">{content.fasteningsContent.paragraph2}</motion.p>
+                  <motion.p variants={itemVariants} className="text-textcolour font-monte text-center lg:text-left">{content.fasteningsContent.paragraph2}</motion.p>
                 </motion.div>
               ) : (
                 <motion.div key="sleepers" variants={containerVariants} initial="hidden" animate="visible" exit="exit">
@@ -208,16 +208,16 @@ const Page = () => {
                     <span className="text-textorange">{content.sleepersContent.title.highlighted}</span>
                     {content.sleepersContent.title.post}
                   </motion.h1>
-                  <motion.p variants={itemVariants} className="text-textblue font-[500] mb-6 font-monte text-center lg:text-left mt-20">{content.sleepersContent.paragraph1}</motion.p>
+                  <motion.p variants={itemVariants} className="text-textcolour font-[500] mb-6 font-monte text-center lg:text-left mt-20">{content.sleepersContent.paragraph1}</motion.p>
                   <motion.div variants={itemVariants} className="space-y-4 mb-6 font-monte mt-32 ">
                     {content.sleepersContent.items.map((item, i) => (
                       <div key={i} className="flex gap-3 items-start">
                         <div className="w-2 h-2 bg-textorange rounded-full mt-2" />
-                        <span className="text-textblue text-base md:text-lg font-monte">{item}</span>
+                        <span className="text-textcolour text-base md:text-lg font-monte">{item}</span>
                       </div>
                     ))}
                   </motion.div>
-                  <motion.p variants={itemVariants} className="text-textblue font-monte text-center lg:text-left">{content.sleepersContent.paragraph2}</motion.p>
+                  <motion.p variants={itemVariants} className="text-textcolour font-monte text-center lg:text-left">{content.sleepersContent.paragraph2}</motion.p>
                 </motion.div>
               )}
             </AnimatePresence>

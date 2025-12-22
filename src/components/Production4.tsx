@@ -50,7 +50,7 @@ const Production4 = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--textblue)] transition-colors duration-300 group-hover:text-white text-center font-raleway">
             Manufacturing <span className="text-[var(--textorange)] transition-colors duration-300 group-hover:text-[var(--textblue)]">Practices</span>
           </h2>
-          <p className="text-textblue text-base md:text-lg lg:text-[20px] leading-relaxed transition-colors duration-300 group-hover:text-white text-center">
+          <p className="text-[var(--textblue)] text-base md:text-lg lg:text-[20px] md:leading-relaxed transition-colors duration-300 group-hover:text-white text-center">
             Our Manufacturing practice involves standardized procedures and quality controls to ensure consistent and efficient production of goods.
           </p>
         </motion.div>
@@ -68,7 +68,7 @@ const Production4 = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--textblue)] transition-colors duration-300 group-hover:text-white text-center font-raleway">
             Quality <span className="text-[var(--textorange)] transition-colors duration-300 group-hover:text-[var(--textblue)]">Assurance</span>
           </h2>
-          <p className="text-textblue text-base md:text-lg lg:text-[20px] leading-relaxed transition-colors duration-300 group-hover:text-white text-center">
+          <p className="text-[var(--textblue)] text-base md:text-lg lg:text-[20px] md:leading-relaxed transition-colors duration-300 group-hover:text-white text-center">
             We emphasize safety, precision, and compliance with industry regulations to maintain product integrity and customer satisfaction.
           </p>
         </motion.div>

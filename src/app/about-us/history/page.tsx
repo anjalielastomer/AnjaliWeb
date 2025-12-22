@@ -14,7 +14,7 @@ const ComingSoon: React.FC = () => {
         {/* Rocket Animation */}
         <div className="w-[180px] h-[180px] animate-float mb-6">
           <Image
-            src="/career/career1.png"
+            src="/career/div (1).png"
             alt="Rocket"
             width={180}
             height={180}
