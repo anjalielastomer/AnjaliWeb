@@ -131,7 +131,7 @@ const page: React.FC = () => {
               </span>
             </h1>
 
-            <p className="text-sm md:text-base lg:text-lg text-justify font-medium text-textblue w-full max-w-[33.5rem] mx-auto xl:mx-0 mb-4 md:mb-8 xl:mb-12 leading-relaxed md:leading-loose px-2 md:px-0">
+            <p className="text-sm md:text-base lg:text-lg text-justify font-medium text-black w-full max-w-[33.5rem] mx-auto xl:mx-0 mb-4 md:mb-8 xl:mb-12 leading-relaxed md:leading-loose px-2 md:px-0">
               We are one of India's leading Turnout manufacturers, specializing
               in high-quality turnouts, rail expansion joints, and glued
               insulated joints. With more than 15 years of experience and
@@ -156,7 +156,7 @@ const page: React.FC = () => {
                 <h3 className="font-raleway font-semibold text-xl text-center">
                   <span className="text-textorange">Rail</span> Expansion Joints
                 </h3>
-                <p className="text-justify text-sm sm:text-base">
+                <p className="text-justify text-sm sm:text-base text-textcolour">
                   Providing sophisticated turnout solutions for heavy haul, high
                   speed, ballasted, and ballastless tracks.
                 </p>
@@ -181,7 +181,7 @@ const page: React.FC = () => {
                 <h3 className="font-raleway font-semibold text-lg sm:text-xl text-center">
                   <span className="text-textorange">Rail</span> Expansion Joints
                 </h3>
-                <p className="text-justify text-sm sm:text-base">
+                <p className="text-justify text-sm sm:text-base text-textcolour">
                   Providing sophisticated turnout solutions for heavy haul, high
                   speed, ballasted, and ballastless tracks.
                 </p>
@@ -223,7 +223,7 @@ const page: React.FC = () => {
 
 
           <div className="flex flex-col justify-between items-center gap-6 md:gap-8 lg:gap-10 md:pt-20 lg:pt-40 w-full md:w-auto">
-            <p data-aos="zoom-in-left" className="max-w-[556px] w-[90%] sm:w-[80%] mx-auto md:mx-0 text-justify text-sm md:text-base lg:text-lg font-medium leading-relaxed">
+            <p data-aos="zoom-in-left" className="max-w-[556px] w-[90%] sm:w-[80%] mx-auto md:mx-0 text-justify text-sm md:text-base lg:text-lg font-medium leading-relaxed text-black">
               Our sophisticated turnout manufacturing facilities in West Bengal
               are outfitted with advanced CNC Plano Milling machines (8-13
               meters) with five-axis controls from Siemens and Mitsubishi. As
@@ -234,7 +234,7 @@ const page: React.FC = () => {
 
 
             <div className="flex items-center justify-center w-full">
-              <div data-aos="zoom-in-up" className="w-[85%] sm:w-[70%] md:w-[350px] lg:w-[388px] aspect-[4/3] flex flex-col justify-between items-center p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-[var(--textorange)] rounded-md bg-white hover:bg-[var(--bgcolour)] hover:border-[var(--bgcolour)] hover:shadow-xs hover:shadow-gray-200 transition-colors duration-300">
+              <div data-aos="zoom-in-up" className="w-[85%] sm:w-[70%] md:w-[350px] lg:w-[388px] aspect-[4/3] flex flex-col justify-between items-center p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-[var(--textorange)] rounded-md bg-white hover:bg-gray-100 hover:border-[var(--bgcolour)] hover:shadow-xs hover:shadow-gray-200 transition-colors duration-300">
                 <Image
                   data-aos="zoom-in-up"
                   src="/cross-rail.png"
@@ -247,7 +247,7 @@ const page: React.FC = () => {
                 <h3 className="font-raleway font-semibold text-lg sm:text-xl text-center">
                   <span className="text-textorange">Turn-Out</span> Solutions
                 </h3>
-                <p className="text-justify text-sm sm:text-base">
+                <p className="text-justify text-sm sm:text-base text-textcolour">
                   Indian Railways has approved it for widespread use, as it
                   improves riding comfort and durability.
                 </p>
@@ -278,7 +278,7 @@ const page: React.FC = () => {
               ].map((resource, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-textorange rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-textblue text-base md:text-lg">
+                  <span className="text-textcolour text-base md:text-lg">
                     {resource}
                   </span>
                 </div>
@@ -301,7 +301,7 @@ const page: React.FC = () => {
                   <span className="text-textorange">Glued</span> Insulated
                   Joints
                 </h3>
-                <p className="text-justify text-sm sm:text-base">
+                <p className="text-justify text-sm sm:text-base text-textcolour">
                   Providing improved insulation, lower maintenance costs, and
                   increased riding comfort for railway rails.
                 </p>
@@ -381,7 +381,7 @@ const page: React.FC = () => {
                 {renderTitle()}
               </h1>
 
-              <p className="text-sm md:text-base lg:text-lg leading-relaxed text-justify">
+              <p className="text-sm md:text-base lg:text-lg leading-relaxed text-justify text-black">
                 {currentContent.description}
               </p>
 
@@ -390,7 +390,7 @@ const page: React.FC = () => {
                 {currentContent.bullets.map((bullet, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-textorange rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-sm md:text-base lg:text-lg">
+                    <span className="text-sm md:text-base lg:text-lg text-black">
                       {bullet}
                     </span>
                   </div>
@@ -398,7 +398,7 @@ const page: React.FC = () => {
               </div>
 
               {currentContent.additionalText && (
-                <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-4 md:mt-6 text-justify">
+                <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-4 md:mt-6 text-justify text-textblack">
                   {currentContent.additionalText}
                 </p>
               )}

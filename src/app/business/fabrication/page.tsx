@@ -148,13 +148,13 @@ const Page = () => {
             className="flex flex-col justify-center px-4 md:px-10 mt-10 md:mt-16 lg:mt-24"
           >
             <motion.h1 variants={itemVariants} className="text-4xl sm:text-xl md:text-5xl font-bold text-[#193055] lg:mb-4 -mb-2 mt-4 lg:mt-0 font-monte text-center md:text-left leading-relaxed">
-              <span className="text-textorange font-bold">Resources</span>{" "}
+              <span className="text-textblue font-bold">Resources</span>{" "}
               Available
             </motion.h1>
             <br />
             <br />
             <br />
-            <motion.ul variants={itemVariants} className="list-disc list-inside space-y-2 text-textblue text-base sm:text-xl md:text-xl font-medium font-monte">
+            <motion.ul variants={itemVariants} className="list-disc list-inside space-y-2 text-textcolour text-base sm:text-xl md:text-xl font-medium font-monte">
               <li>Plate Bending Machine</li>
               <li>H/I Beam Straightening Line</li>
               <li>CNC Profile Cutting Machine</li>
@@ -211,10 +211,10 @@ const Page = () => {
             viewport={{ once: false, amount: 0.2 }}
             className="flex flex-col  justify-center gap-10 px-4 md:px-6 md:w-[85%] lg:w-[60%] md:text-center xl:pl-42 lg:text-left lg:p-4"
           >
-            <motion.h2 variants={itemVariants} className="text-4xl md:text-7xl lg:text-xl xl:text-5xl font-bold text-[#193055] mb-6 font-raleway">
+            <motion.h2 variants={itemVariants} className="text-4xl md:text-7xl lg:text-xl xl:text-5xl font-bold text-textblue mb-6 font-raleway">
               Certifications & <span className="text-textorange">Quality</span>
             </motion.h2>
-            <motion.p variants={itemVariants} className="list-disc list-inside [&>li]:marker:text-textorange space-y-2 text-textblue text-base sm:text-xl md:text-xl lg:text-lg  font-medium font-monte text-justify">
+            <motion.p variants={itemVariants} className="list-disc list-inside [&>li]:marker:text-textorange space-y-2 text-textcolour text-base sm:text-xl md:text-xl lg:text-lg  font-medium font-monte text-justify">
               We are an RDSO-approved, ISO 9001 recognized company with strong quality systems integrated into our manufacturing processes. Our certifications include ISO 9001: 14001 and 45001. Both in-process and final inspections are performed by professional quality engineers who follow Total Quality Management concepts.
             </motion.p>
             <div className="flex justify-center gap-10 items-center flex-wrap">

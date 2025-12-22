@@ -37,7 +37,7 @@ const itemVariants: Variants = {
 
 export default function AboutSec4() {
   return (
-    <section className="flex flex-col lg:flex-row items-center lg:items-start mx-auto px-6 py-12 bg-[#FFF4E6] relative justify-center overflow-hidden text-textblue font-monte">
+    <div className="flex flex-col lg:flex-row items-center lg:items-start mx-auto px-6 py-12 bg-gray-200 relative justify-center overflow-hidden text-textblue font-monte">
       <div className='max-w-[1440px] mx-auto w-full flex flex-col lg:flex-row items-center justify-between'>
         {/* Left side image */}
         <motion.div
@@ -98,6 +98,6 @@ export default function AboutSec4() {
           </motion.div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 }

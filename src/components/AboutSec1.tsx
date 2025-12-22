@@ -48,7 +48,7 @@ const AboutSec1 = () => {
           <div className="w-full md:w-1/2 p-4 flex flex-col text-center md:text-left">
             <motion.h1
               initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={slideInFromLeft}
-              className="text-4xl sm:text-4xl lg:text-7xl font-bold text-[#152f5d] leading-relaxed gap-10 mb-8 font-raleway"
+              className="text-4xl sm:text-4xl lg:text-7xl font-bold text-textblue leading-relaxed gap-10 mb-8 font-raleway"
             >
               Unified in <br />
               <span className="mt-4 text-textorange">Shaping</span> <br />
@@ -90,7 +90,7 @@ const AboutSec1 = () => {
 
               <motion.p
                 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.5 }} variants={slideInFromRight}
-                className="text-textblue text-lg leading-loose my-10 lg:my-20 text-justify"
+                className="text-textcolour  text-lg leading-loose my-10 lg:my-20 text-justify"
               >
                 Over the previous 15 years, Anjali Elastomers, which was founded in 2009, has developed from a maker of rail components to a top supplier of entire railway infrastructure.
               </motion.p>
@@ -115,7 +115,7 @@ const AboutSec1 = () => {
       </div>
 
       {/* Sec2 */}
-      <div className="bg-[#FFF8F2] px-6 sm:px-12 lg:px-24 font-sans text-[#1A202C] flex flex-col justify-end py-20 relative z-5 -mt-32 font-monte">
+      <div className="bg-gray px-6 sm:px-12 lg:px-24 font-sans text-[#1A202C] flex flex-col justify-end py-20 relative z-5 -mt-32 font-monte">
         <div className="pt-40 max-w-[1440px] mx-auto">
           <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-10">
             {/* Image Section */}
@@ -138,7 +138,7 @@ const AboutSec1 = () => {
               initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={slideInFromRight}
               className="flex flex-col justify-center space-y-12 lg:w-1/2 py-16"
             >
-              <div className="space-y-6 text-base sm:text-lg leading-relaxed text-justify max-w-[554px] xl:ml-24">
+              <div className="space-y-6 text-base sm:text-lg leading-relaxed text-justify max-w-[554px] xl:ml-24 text-textcolour">
                 <p>
                   Our company has four manufacturing plants where it produces a variety of railroad track products. Our plants are found in the eastern portion of India, near Kolkata and Howrah.
                 </p>
@@ -188,7 +188,7 @@ function StatItem({
         <div className="flex items-baseline-last justify-end gap-2">
           {animatedNumber}
           <Image
-            src="/send.png"
+            src="/send.svg"
             alt="send"
             width={25}
             height={4}
@@ -200,7 +200,7 @@ function StatItem({
         </div>
       </div>
       <div className="border-l-2 border-gray-400 pl-4 flex-1">
-        <p className="text-xs font-medium text-textblue text-justify leading-7">
+        <p className="text-xs font-medium text-textcolour text-justify leading-7">
           {description}
         </p>
       </div>

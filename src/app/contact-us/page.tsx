@@ -184,7 +184,7 @@ const page = () => {
         </h2>
         <p
           data-aos="fade-up-right"
-          className="text-textblue text-base font-monte text-center mb-10 max-w-xl"
+          className="text-textcolour text-base font-monte text-center mb-10 max-w-xl"
         >
           Have a project in mind? Need technical specifications? Our team of
           railroad materials experts is ready to assist you.
@@ -356,7 +356,7 @@ const page = () => {
         </span>
         <span
           data-aos="fade-up-left"
-          className="text-textblue font-monte font-medium text-base sm:text-lg mt-5 mb-10 max-w-4xl text-center"
+          className="text-textcolour font-monte font-medium text-base sm:text-lg mt-5 mb-10 max-w-4xl text-center"
         >
           Reach out to the right department for faster assistance
         </span>
