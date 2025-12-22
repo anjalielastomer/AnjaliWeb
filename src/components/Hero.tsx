@@ -133,6 +133,7 @@ const Hero: React.FC = () => {
                   y: -2
                 }}
                 transition={{ type: "spring", stiffness: 300 }}
+                className="rounded-2xl"
               >
                 <Link
                   href="/products"
