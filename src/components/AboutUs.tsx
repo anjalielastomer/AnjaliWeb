@@ -190,14 +190,14 @@ const AboutUs: React.FC = () => {
               alt="arrow"
               width={27}
               height={27}
-              className="group-hover:hidden"
+              className="group-hover:hidden w-4 h-4 lg:w-[27px] lg:h-[27px]"
             />
             <Image
               src="/send.svg"
               alt="arrow"
               width={27}
               height={27}
-              className="hidden group-hover:block"
+              className="hidden group-hover:block w-4 h-4 lg:w-[27px] lg:h-[27px]"
             />
           </Link>
         </motion.div>

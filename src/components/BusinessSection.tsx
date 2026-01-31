@@ -85,7 +85,7 @@ export default function IndiaBusinessSection() {
             <div className="w-[320px] h-[300px] lg:h-auto sm:w-[400px] lg:w-[480px]">
               {/* {activeTab === "bridge" ?
               <India1/> : activeTab=== "track"?   <India2/>    : <India3/>} */}
-              <Image 
+              <Image
                 src={
                   activeTab === "bridge"
                     ? "/BridgeMap.gif"
@@ -112,8 +112,8 @@ export default function IndiaBusinessSection() {
               className="text-center md:text-left mt-4"
             >
               <h2 className="text-3xl font-semibold font-raleway text-textblue mb-3">
-                <span>Busin</span>
-                <span className="text-textorange">ess</span>
+                <span>Busi</span>
+                <span className="text-textorange">ness</span>
               </h2>
               <h3 className="text-[28px] font-monte font-medium text-textblue mb-6">
                 Building Pan-India Presence

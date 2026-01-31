@@ -160,10 +160,10 @@ const Hero: React.FC = () => {
                            text-base lg:text-[28px] font-normal gap-2"
                   style={{ borderColor: 'var(--textblue)', color: 'var(--textblue)' }}
                 >
-                  <span className="group-hover:text-[var(--textorange)] transition-colors duration-300" style={{ color: 'var(--textblue)' }}>
+                  <span className="text-[var(--textblue)] group-hover:text-[var(--textorange)] transition-colors duration-300">
                     Learn
                   </span>
-                  <span className="group-hover:text-[var(--textblue)] transition-colors duration-300" style={{ color: 'var(--textorange)' }}>
+                  <span className="text-[var(--textorange)] group-hover:text-[var(--textblue)] transition-colors duration-300">
                     more
                   </span>
                   <Image
@@ -171,14 +171,14 @@ const Hero: React.FC = () => {
                     alt="arrow"
                     width={27}
                     height={27}
-                    className="group-hover:hidden block "
+                    className="group-hover:hidden block w-4 h-4 lg:w-[27px] lg:h-[27px]"
                   />
                   <Image
                     src="/send.svg"
                     alt="send"
                     width={27}
                     height={27}
-                    className="hidden group-hover:block"
+                    className="hidden group-hover:block w-4 h-4 lg:w-[27px] lg:h-[27px]"
                   />
                 </Link>
               </motion.div>
