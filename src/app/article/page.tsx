@@ -50,7 +50,7 @@ const ArticlesPage: React.FC = () => {
         {/* Subscribe + Scrollable Articles Section */}
         <div data-aos="zoom-in-up" className="flex flex-col lg:flex-row gap-10 mt-6">
           {/* Subscribe Box */}
-          <div className="bg-[#FFF6EF] p-6 rounded-lg w-full lg:max-w-xs h-fit">
+          <div className="bg-[var(--bgcolour)] p-6 rounded-lg w-full lg:max-w-xs h-fit">
             <h3 className="font-semibold text-lg mb-2 text-[#2D3A4A]">
               Stay Updated
             </h3>
@@ -61,9 +61,9 @@ const ArticlesPage: React.FC = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full p-2 bg-white rounded-md border border-[#ff7f00] mb-3 focus:outline-none focus:ring-[#ff7f00]"
+              className="w-full p-2 bg-white rounded-md border border-[var(--anotherblue)] mb-3 focus:outline-none focus:ring-[var(--anotherblue)]"
             />
-            <button onClick={handleSubscribe} className="bg-textorange text-white px-4 py-2 rounded-md w-full hover:bg-[#ff7f00] transition cursor-pointer">
+            <button onClick={handleSubscribe} className="bg-textorange text-white px-4 py-2 rounded-md w-full hover:bg-[var(--anotherblue)] transition cursor-pointer">
               Subscribe
             </button>
           </div>
@@ -114,7 +114,7 @@ const ArticlesPage: React.FC = () => {
                       {article.author}
                     </p>
                     <Link href={`/article/${article.id}`}>
-                      <FiArrowUpRight className="text-textorange text-xl" />
+                      <Image src="/send.svg" alt="send" width={25} height={4} className="animate-blink" />
                     </Link>
                   </div>
                 </div>

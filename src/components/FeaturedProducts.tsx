@@ -88,7 +88,7 @@ const FeaturedProducts: React.FC = () => {
 
   if (isLoading) {
     return (
-      <section className="max-w-[1440px] bg-white mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
+      <section className="max-w-[1440px] bg-[var(--bgcolour)] mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
         <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
           Featured <span className="text-textorange">Products</span>
         </h1>
@@ -105,7 +105,7 @@ const FeaturedProducts: React.FC = () => {
 
   if (error) {
     return (
-      <section className="max-w-full bg-white mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
+      <section className="max-w-full bg-[var(--bgcolour)] mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
         <h1 className="text-4xl font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
           Featured <span className="text-textorange">Products</span>
         </h1>
@@ -117,7 +117,7 @@ const FeaturedProducts: React.FC = () => {
   const featuredProducts = data?.data ?? [];
 
   return (
-    <section className="max-w-full bg-white mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte">
+    <section className="max-w-full bg-[var(--bgcolour)] mx-auto my-20 px-5 md:px-0 flex flex-col items-center font-monte pt-20 pb-20">
       <h1 className="text-4xl pb-10 justify-center font-bold text-textblue mb-6 flex gap-3 w-full font-raleway">
         Featured <span className='text-textorange'>Products</span>
       </h1>
