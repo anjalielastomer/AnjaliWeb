@@ -35,11 +35,11 @@ export default function FeaturedProjects() {
   const [isExploreAllHovered, setIsExploreAllHovered] = useState(false);
 
   const { data: projects, isLoading, error } = useFeaturedProjects();
-  
+
   console.log("Data featured projects:", projects);
   if (isLoading) {
     return (
-      <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-[var(--bgcolour)] py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Heading />
           <div className="flex justify-center items-center h-64">
@@ -53,7 +53,7 @@ export default function FeaturedProjects() {
   // Error state
   if (error) {
     return (
-      <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-[var(--bgcolour)] py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Heading />
           <div className="flex justify-center items-center h-64">
@@ -67,7 +67,7 @@ export default function FeaturedProjects() {
   // No projects state
   if (!projects || projects.length === 0) {
     return (
-      <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-[var(--bgcolour)] py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Heading />
           <div className="flex justify-center items-center h-64">
@@ -79,7 +79,7 @@ export default function FeaturedProjects() {
   }
 
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[var(--bgcolour)] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <Heading />
         <div className="flex flex-col lg:flex-row gap-3 lg:gap-4">
@@ -139,10 +139,10 @@ export default function FeaturedProjects() {
               onMouseLeave={() => setIsHovering(false)}
             >
               <div
-                className="flex gap-6 py-2 w-max animate-scroll-infinite"
+                className="flex gap-6 py-6 w-max animate-scroll-infinite"
                 style={{ animationPlayState: isHovering ? 'paused' : 'running' }}
               >
-                {[...projects,...projects].map((project, idx) => (
+                {[...projects, ...projects].map((project, idx) => (
                   <ProjectCard key={`${project.id}-${idx}`} project={project} index={idx % projects.length} />
                 ))}
               </div>
@@ -163,32 +163,32 @@ export default function FeaturedProjects() {
             </div>
           </div>
           <div className="w-full flex justify-center items-center mt-5">
-              <Link
-                href='/projects'
-                className="group transition-colors py-3 rounded-2xl text-[28px] font-normal items-center gap-2 font-raleway flex md:hidden"
-                onMouseEnter={() => setIsExploreAllHovered(true)}
-                onMouseLeave={() => setIsExploreAllHovered(false)}
+            <Link
+              href='/projects'
+              className="group transition-colors py-3 rounded-2xl text-[28px] font-normal items-center gap-2 font-raleway flex md:hidden"
+              onMouseEnter={() => setIsExploreAllHovered(true)}
+              onMouseLeave={() => setIsExploreAllHovered(false)}
+            >
+              <span
+                className="transition-colors duration-300"
+                style={{
+                  color: isExploreAllHovered ? 'var(--textblue)' : 'var(--textorange)'
+                } as React.CSSProperties}
               >
-                <span
-                  className="transition-colors duration-300"
-                  style={{
-                    color: isExploreAllHovered ? 'var(--textblue)' : 'var(--textorange)'
-                  } as React.CSSProperties}
-                >
-                  Explore
-                </span>
-                <span
-                  className="transition-colors duration-300"
-                  style={{
-                    color: isExploreAllHovered ? 'var(--textorange)' : 'var(--textblue)'
-                  } as React.CSSProperties}
-                >
-                  All
-                </span>
-                <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
-                <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
-              </Link>
-            </div>
+                Explore
+              </span>
+              <span
+                className="transition-colors duration-300"
+                style={{
+                  color: isExploreAllHovered ? 'var(--textorange)' : 'var(--textblue)'
+                } as React.CSSProperties}
+              >
+                All
+              </span>
+              <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
+              <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
@@ -216,11 +216,11 @@ function ProjectCard({ project, index }: {
   };
 
   return (
-    <div 
-      className="group cursor-pointer flex-shrink-0 w-80 sm:w-96"
+    <div
+      className="group cursor-pointer flex-shrink-0 w-80 sm:w-96 background-color: var(--textorange)"
       onClick={handleCardClick}
     >
-      <div className="relative w-full h-[365px] overflow-hidden rounded-[12px]">
+      <div className="relative w-full h-[368px] overflow-hidden rounded-[12px]">
         <div className="relative w-full h-full">
           <Image
             src={project.image1 || '/placeholder.jpg'}
@@ -241,7 +241,7 @@ function ProjectCard({ project, index }: {
           )}
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-95 backdrop-blur-sm p-4 group-hover:bg-[var(--textorange)] transition-colors duration-300">
+        <div className="absolute bottom-0 left-0 right-0 bg-white  bg-opacity-95 backdrop-blur-sm p-4 group-hover:bg-[var(--textorange)] transition-colors duration-300">
           <h3 className="text-[var(--textorange)] font-monte font-medium text-lg mb-2 leading-snug group-hover:text-white transition-colors duration-300">
             {project.title}
           </h3>
@@ -251,14 +251,14 @@ function ProjectCard({ project, index }: {
           <p className="flex justify-between text-textblue font-raleway text-[#193055] opacity-75 text-[13px] group-hover:text-white transition-colors duration-300">
             {project.subtext}
             <Image
-              src="/send.png"
+              src="/send.svg"
               alt="send"
               width={25}
               height={4}
               className="animate-blink group-hover:hidden"
             />
             <Image
-              src="/send-white.png"
+              src="/arrow.svg"
               alt="send"
               width={25}
               height={4}

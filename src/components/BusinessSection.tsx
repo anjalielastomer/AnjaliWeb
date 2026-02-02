@@ -61,7 +61,7 @@ export default function IndiaBusinessSection() {
   };
 
   return (
-    <section className="w-full min-h-fit py-20 px-4 flex justify-center items-center bg-[var(--bgcolour)] font-monte">
+    <section className="w-full min-h-fit py-20 px-4 flex justify-center items-center bg-[var(--white)] font-monte">
       <div className="w-full max-w-7xl flex flex-col mx-auto">
         <nav className="flex gap-4 mb-12 px-5 md:px-0 font-raleway font-normal">
           {tabs.map((tab, index) => (

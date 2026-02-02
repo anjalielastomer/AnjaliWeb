@@ -103,7 +103,7 @@ const ProjectPage: React.FC = () => {
 
   // Fix the currentIndex logic
   const currentIndex = allProjects?.findIndex(p => p.id === id) ?? -1;
-  
+
   // Early return should check for valid index
   if (currentIndex === -1 && !projectLoading && !listLoading && allProjects) {
     return (
@@ -136,13 +136,13 @@ const ProjectPage: React.FC = () => {
   }
 
   // Extract images and paragraphs from project content
-  const images = typeof project.content === 'string' 
-    ? extractImagesFromHTML(project.content) 
+  const images = typeof project.content === 'string'
+    ? extractImagesFromHTML(project.content)
     : [];
-  const paragraphs = typeof project.content === 'string' 
-    ? extractParagraphs(project.content) 
+  const paragraphs = typeof project.content === 'string'
+    ? extractParagraphs(project.content)
     : [];
-  
+
   const transition = { duration: 0.6, ease: "easeInOut" } as const;
 
   return (
@@ -165,7 +165,7 @@ const ProjectPage: React.FC = () => {
             <span className="text-gray-400 cursor-not-allowed">Next Project &gt;</span>
           )}
         </div>
-        
+
         <div className="bg-gray-300 h-[1px] w-screen"></div>
 
         {/* Header Section */}
@@ -181,11 +181,11 @@ const ProjectPage: React.FC = () => {
             >
               Our <br /> <span className="text-textorange">Projects</span>
             </motion.h1>
-            
+
             <div className="bg-bgblue text-white font-bold text-lg px-6 py-5 rounded-full">
               {String(currentIndex + 1).padStart(2, "0")}
             </div>
-            
+
             <div>
               <motion.h2
                 variants={fadeDownLeft}
@@ -239,7 +239,7 @@ const ProjectPage: React.FC = () => {
             transition={transition}
             className="text-sm text-gray-700 leading-relaxed md:w-1/2 text-justify"
           >
-            {paragraphs[0] || project.description || "Project description goes here."}
+            {project.description || "Project description goes here."}
           </motion.p>
         </div>
 
@@ -340,7 +340,7 @@ const ProjectPage: React.FC = () => {
             className="w-full"
           >
             {typeof project.content === 'string' ? (
-              <div 
+              <div
                 dangerouslySetInnerHTML={{ __html: project.content }}
                 className="prose prose-lg max-w-none"
               />

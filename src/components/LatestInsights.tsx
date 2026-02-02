@@ -58,7 +58,7 @@ const InsightCard: React.FC<InsightCardProps> = ({
         <p className="text-textblue flex-grow leading-relaxed line-clamp-2">{description}</p>
         <div className="flex justify-between items-center mt-4 text-textblue text-sm">
           <span>{date} &bull; {readTime}</span>
-          <Image src="/send.png" alt="send" width={25} height={4} className="animate-blink" />
+          <Image src="/send.svg" alt="send" width={25} height={4} className="animate-blink" />
         </div>
       </div>
     </div>

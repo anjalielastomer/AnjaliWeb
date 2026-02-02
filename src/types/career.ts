@@ -13,7 +13,7 @@ export interface FormData {
     email: string;
     position: string;
     resume: string;
-    
+
   };
 }
 
@@ -25,42 +25,42 @@ export const cardData: CardData[] = [
     highlight: "Driven",
     description:
       "Work with cutting-edge technology and be part of revolutionary railway solutions that shape the future of transportation.",
-    image: "/career/div (1).png",
+    image: "/career/rocket.svg",
   },
   {
     title: "Career",
     highlight: "Growth",
     description:
       "Advance your career with comprehensive training programs, mentorship opportunities, and clear advancement paths.",
-    image: "/career/div (2).png",
+    image: "/career/growth.svg",
   },
   {
     title: "Team",
     highlight: "Excellence",
     description:
       "Collaborate with industry experts and passionate professionals in a supportive, inclusive work environment.",
-    image: "/career/div (3).png",
+    image: "/career/excellence.svg",
   },
   {
     title: "Comprehensive",
     highlight: "Benefits",
     description:
       "Enjoy competitive salaries, health insurance, retirement plans, and performance bonuses.",
-    image: "/career/div (1).svg",
+    image: "/career/benifits.svg",
   },
   {
     title: "Work-Life",
     highlight: "Balance",
     description:
       "Flexible schedules, remote work options, and generous PTO to maintain a healthy work-life balance.",
-    image: "/career/div (4).png",
+    image: "/career/balance.svg",
   },
   {
     title: "Global",
     highlight: "Impact",
     description:
       "Contribute to projects that connect cities, countries, and continents, making a real difference in the world.",
-    image: "/career/div (5).png",
+    image: "/career/impact.svg",
   },
 ];
 
