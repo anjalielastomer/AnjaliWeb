@@ -57,8 +57,8 @@ export default function AboutSec5() {
               <span className="text-textorange group-hover:text-[#193055] transition-all duration-300">Explore</span>
               <span className="text-textblue group-hover:text-[var(--textorange)] transition-all duration-300"> All</span>
             </span>
-            <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden" />
-            <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block" />
+            <Image src='/arrow.svg' alt='arrow' width={27} height={27} className="group-hover:hidden w-4 h-4 lg:w-[27px] lg:h-[27px]" />
+            <Image src='/send.svg' alt='arrow' width={27} height={27} className="hidden group-hover:block w-4 h-4 lg:w-[27px] lg:h-[27px]" />
           </Link>
         </motion.div>
         <motion.div variants={itemVariants} className="space-y-10 text-slate-700 text-base md:text-lg leading-relaxed text-justify">
