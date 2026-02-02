@@ -88,10 +88,10 @@ export default function IndiaBusinessSection() {
               <Image
                 src={
                   activeTab === "bridge"
-                    ? "/BridgeMap.gif"
+                    ? "/business/BridgeMap.gif"
                     : activeTab === "track"
-                      ? "/TrackMap.gif"
-                      : "/FactoryMap.gif"
+                      ? "/business/TrackMap.gif"
+                      : "/business/FactoryMap.gif"
                 }
                 alt="Map of India highlighting selected states with icons representing business locations"
                 width={480}
