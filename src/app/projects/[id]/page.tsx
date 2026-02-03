@@ -169,8 +169,8 @@ const ProjectPage: React.FC = () => {
         <div className="bg-gray-300 h-[1px] w-screen"></div>
 
         {/* Header Section */}
-        <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-10">
-          <div className="w-full flex flex-row md:flex-row gap-4 justify-between items-center">
+        <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-10 py-8 md:py-12">
+          <div className="w-full flex flex-row md:flex-row gap-6 md:gap-8 justify-between items-center">
             <motion.h1
               variants={fadeDownRight}
               initial="hidden"
@@ -182,18 +182,18 @@ const ProjectPage: React.FC = () => {
               Our <br /> <span className="text-textorange">Projects</span>
             </motion.h1>
 
-            <div className="bg-bgblue text-white font-bold text-lg px-6 py-5 rounded-full">
+            <div className="bg-bgblue text-white font-bold text-lg px-6 py-5 rounded-full shrink-0">
               {String(currentIndex + 1).padStart(2, "0")}
             </div>
 
-            <div>
+            <div className="max-w-md">
               <motion.h2
                 variants={fadeDownLeft}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false, amount: 0.3 }}
                 transition={transition}
-                className="text-2xl md:text-4xl font-semibold font-raleway text-textblue"
+                className="text-2xl md:text-4xl font-semibold font-raleway text-textblue leading-tight"
               >
                 {project.title}
               </motion.h2>
@@ -203,7 +203,7 @@ const ProjectPage: React.FC = () => {
                 whileInView="visible"
                 viewport={{ once: false, amount: 0.3 }}
                 transition={transition}
-                className="text-sm text-gray-500"
+                className="text-sm text-gray-500 mt-2"
               >
                 {project.subtext}
               </motion.p>
@@ -211,7 +211,7 @@ const ProjectPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Image and Paragraph 1 */}
+        {/* Image and Paragraph 1 
         <div className="w-full flex flex-col md:flex-row gap-6 items-start">
           {images[0] && (
             <motion.div
@@ -241,10 +241,10 @@ const ProjectPage: React.FC = () => {
           >
             {project.description || "Project description goes here."}
           </motion.p>
-        </div>
+        </div>*/}
 
         <div className="bg-[var(--bgcolour)] w-screen">
-          {/* Image and Paragraph 2 */}
+          {/* Image and Paragraph 2 
           <div className="max-w-6xl mx-auto pt-20 px-4 flex flex-col md:flex-row-reverse gap-6 items-center">
             {images[1] && (
               <motion.div
@@ -264,48 +264,34 @@ const ProjectPage: React.FC = () => {
                 />
               </motion.div>
             )}
-            <motion.p
-              variants={fadeRight}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
-              transition={transition}
-              className="text-sm text-gray-700 leading-relaxed md:w-1/2 text-justify"
-            >
-              {paragraphs[1] || "Additional paragraph goes here."}
-            </motion.p>
-          </div>
+          </div>*/}
 
-          {/* Image and Paragraph 3 */}
-          <div className="max-w-6xl mx-auto pb-20 px-4 flex flex-col md:flex-row gap-6 items-center">
-            {images[2] && (
-              <motion.div
-                variants={zoomInUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.3 }}
-                transition={transition}
-                className="w-full md:w-1/2"
-              >
-                <Image
-                  src={images[2].src}
-                  alt={images[2].alt}
-                  width={images[2].width}
-                  height={images[2].height}
-                  className="rounded-md shadow-md object-cover w-full"
-                />
-              </motion.div>
+          {/* Full Content Section with proper HTML rendering */}
+          <div className="max-w-6xl mx-auto py-12 px-4">
+            {typeof project.content === 'string' && (
+              <div
+                dangerouslySetInnerHTML={{ __html: project.content }}
+                className="
+                  max-w-none
+
+                  [&>h3]:text-xl [&>h3]:md:text-2xl [&>h3]:font-bold [&>h3]:text-textblue [&>h3]:font-raleway
+                  [&>h3]:mt-10 [&>h3]:mb-4 [&>h3]:border-l-4 [&>h3]:border-textorange [&>h3]:pl-4
+                  first:[&>h3]:mt-0
+
+                  [&>p]:text-gray-700 [&>p]:text-sm [&>p]:md:text-base [&>p]:leading-relaxed [&>p]:mb-4
+
+                  [&>ul]:list-disc [&>ul]:ml-6 [&>ul]:my-4 [&>ul]:space-y-2
+                  [&>ul>li]:text-gray-700 [&>ul>li]:text-sm [&>ul>li]:md:text-base [&>ul>li]:leading-relaxed
+                  [&>ul>li]:marker:text-textorange
+                  [&>ul>li>p]:mb-0
+
+                  [&_strong]:font-semibold [&_strong]:text-gray-900
+
+                  [&>figure]:my-8 [&>figure]:rounded-lg [&>figure]:overflow-hidden [&>figure]:shadow-md
+                  [&>figure>img]:w-full [&>figure>img]:h-auto [&>figure>img]:object-cover
+                "
+              />
             )}
-            <motion.p
-              variants={fadeLeft}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
-              transition={transition}
-              className="text-sm text-gray-700 leading-relaxed md:w-1/2 text-justify"
-            >
-              {paragraphs[2] || project.description || "Additional project details go here."}
-            </motion.p>
           </div>
         </div>
 
@@ -329,28 +315,6 @@ const ProjectPage: React.FC = () => {
           </motion.div>
         )}
 
-        {/* Fallback content if no images/paragraphs extracted */}
-        {images.length === 0 && (
-          <motion.div
-            variants={zoomInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
-            transition={transition}
-            className="w-full"
-          >
-            {typeof project.content === 'string' ? (
-              <div
-                dangerouslySetInnerHTML={{ __html: project.content }}
-                className="prose prose-lg max-w-none"
-              />
-            ) : (
-              <div className="w-full">
-                {project.content}
-              </div>
-            )}
-          </motion.div>
-        )}
       </div>
     </main>
   );
