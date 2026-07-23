@@ -184,6 +184,16 @@ export const parseHTMLContent = (htmlContent: string): ParsedContent[] => {
           });
         }
       }
+    } else if (/^H[1-6]$/.test(element.tagName)) {
+      // Headings authored in the CMS (e.g. <h2>, <h3>) — previously dropped.
+      const text = element.textContent?.trim();
+      if (text) parsedContent.push({ type: "heading", content: text });
+    } else if (element.tagName === "UL" || element.tagName === "OL") {
+      // List items render as bulleted paragraphs — previously dropped.
+      element.querySelectorAll("li").forEach((li) => {
+        const text = li.textContent?.trim();
+        if (text) parsedContent.push({ type: "paragraph", content: `• ${text}` });
+      });
     } else if (element.tagName === "FIGURE") {
       const img = element.querySelector("img");
       if (img) {

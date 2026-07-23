@@ -446,27 +446,22 @@ const SingleProductPage: React.FC = () => {
 
             {activeTab === "specifications" && (
               <div>
-                <div className="space-y-1">
-                  {extractTextFromPTags(product.specification).map((text, index) => (
-                    <div
-                      key={index}
-                      className="rounded-lg py-1"
-                      style={{ backgroundColor: "transparent" }}
-                    >
-                      <p
-                        className="text-base leading-relaxed"
-                        style={{ color: "var(--textcolour)" }}
-                      >
-                        {text}
-                      </p>
-                    </div>
-                  ))}
-                  {extractTextFromPTags(product.specification).length === 0 && (
-                    <p style={{ color: "var(--textcolour)" }}>
-                      No specifications available for this product.
-                    </p>
-                  )}
-                </div>
+                {product.specification && product.specification.trim() ? (
+                  // Render the specification HTML as-authored in the CMS so
+                  // tables, lists and paragraphs all display. `prose` + the
+                  // table styles below keep spec tables readable. The previous
+                  // approach only parsed <p>/<li> text and silently dropped
+                  // <table> content.
+                  <div
+                    className="prose max-w-none [&_table]:w-full [&_table]:border-collapse [&_td]:border [&_td]:border-gray-200 [&_td]:px-4 [&_td]:py-2 [&_th]:border [&_th]:border-gray-200 [&_th]:px-4 [&_th]:py-2 [&_th]:text-left"
+                    style={{ color: "var(--textcolour)" }}
+                    dangerouslySetInnerHTML={{ __html: product.specification }}
+                  />
+                ) : (
+                  <p style={{ color: "var(--textcolour)" }}>
+                    No specifications available for this product.
+                  </p>
+                )}
               </div>
             )}
             {activeTab === "reviews" && (

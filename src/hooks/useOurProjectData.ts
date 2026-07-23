@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { payloadGet } from "@/lib/payload";
 
 interface ProjectImageFormat {
   url: string;
@@ -72,11 +73,7 @@ export const useProjectData = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/projects?populate=*`
-        );
-        if (!res.ok) throw new Error("Failed to fetch project data");
-        const json: ApiResponse = await res.json();
+        const json = await payloadGet<ApiResponse>("/projects?populate=*");
         if (json.data.length > 0) {
           setProject(transformProject(json.data[0])); // Transform the first project
         }

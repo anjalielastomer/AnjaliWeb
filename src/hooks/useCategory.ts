@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { payloadGet } from "@/lib/payload";
 
 export interface ProductCategory {
   id: number;
@@ -36,15 +37,10 @@ interface ProductCategoriesResponse {
 }
 
 const fetchCategories = async (): Promise<ProductCategory[]> => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/product-categories?populate[products][populate]=*`
+  const data = await payloadGet<ProductCategoriesResponse>(
+    "/product-categories?populate[products][populate]=*"
   );
-  if (!res.ok) {
-    throw new Error("Failed to fetch categories");
-  }
-  const data = await res.json();
-  // console.log(data);
-  
+
   return data.data;
 };
 

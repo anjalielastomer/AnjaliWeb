@@ -9,7 +9,11 @@ export function QueryProvider({ children }: { children: React.ReactNode }) {
       new QueryClient({
         defaultOptions: {
           queries: {
-            staleTime: 24 * 60 * 60 * 1000,
+            // 60s, not 24h. The old 24h default meant an admin edit could take
+            // a full day to appear for a visitor whose cache was still warm.
+            // The server-side cache (see /cached route) absorbs the DB cost, so
+            // a short client staleTime is cheap and keeps content fresh.
+            staleTime: 60 * 1000,
             gcTime: 24 * 60 * 60 * 1000,
             retry: 1,
             refetchOnWindowFocus: false,

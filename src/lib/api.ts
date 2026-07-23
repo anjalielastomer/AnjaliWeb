@@ -1,6 +1,6 @@
+import { buildUrl, PAYLOAD_API, toStrapiResponse } from "@/lib/payload";
 
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL!;
+const API_BASE_URL = PAYLOAD_API;
 
 
 export class ApiError extends Error {
@@ -71,25 +71,37 @@ export const apiClient = {
   },
 
 
-  get<T>(endpoint: string, params?: Record<string, string>): Promise<T> {
-    let url = endpoint
-    
-   
-    if (params) {
-      const searchParams = new URLSearchParams(params)
-      url += `?${searchParams.toString()}`
+  // Reads go through the Strapi->Payload translator, so callers keep using
+  // Strapi query syntax and receive the Strapi `{ data, meta }` envelope.
+  async get<T>(endpoint: string, params?: Record<string, string>): Promise<T> {
+    const url = buildUrl(endpoint, params)
+
+    const response = await fetch(url, {
+      headers: { 'Content-Type': 'application/json' },
+    })
+
+    if (!response.ok) {
+      throw new ApiError(
+        `HTTP ${response.status}: ${response.statusText}`,
+        response.status,
+      )
     }
 
-    return this.request<T>(url, {
-      method: 'GET',
-    })
+    return toStrapiResponse(await response.json()) as T
   },
 
 
   post<T>(endpoint: string, data?: unknown): Promise<T> {
+    // Strapi wrapped write payloads in `{ data: ... }`; Payload takes the
+    // fields at the top level.
+    const body =
+      data && typeof data === 'object' && 'data' in (data as object)
+        ? (data as { data: unknown }).data
+        : data
+
     return this.request<T>(endpoint, {
       method: 'POST',
-      body: data ? JSON.stringify(data) : undefined,
+      body: body ? JSON.stringify(body) : undefined,
     })
   },
 

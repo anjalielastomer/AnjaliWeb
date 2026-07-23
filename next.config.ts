@@ -1,8 +1,17 @@
 import type { NextConfig } from "next";
+import { withPayload } from "@payloadcms/next/withPayload";
 
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
+      // Vercel Blob — where Payload stores media from Phase 4 onward.
+      {
+        protocol: "https",
+        hostname: "*.public.blob.vercel-storage.com",
+      },
+      // Legacy Strapi / Cloudinary / UploadThing hosts. Keep these until the
+      // Phase 8 content migration completes — existing content still points at
+      // them.
       {
         protocol: "https",
         hostname: "luminous-badge-fa64222c36.media.strapiapp.com",
@@ -44,4 +53,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withPayload(nextConfig);

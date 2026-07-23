@@ -1,6 +1,5 @@
-import axios from "axios";
+import { payloadGet } from "@/lib/payload";
 
-export default async function Article(){
-    const res=await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/articles`);
-    return res.data;
+export default async function Article() {
+  return payloadGet("/articles");
 }

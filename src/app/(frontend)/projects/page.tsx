@@ -3,6 +3,10 @@
 import { redirect } from 'next/navigation';
 import { projectsService } from '@/lib/projectService'; // Adjust the import path if needed
 import { transformStrapiProject } from '@/hooks/useProjects'; // Import your transform function
+// Rendered per request: this is a redirect page that resolves to whatever the
+// first project currently is. It stays dynamic (so it is not prerendered at
+// build time, when no server exists to fetch from), but the DB cost is absorbed
+// by the /cached route it reads through — that layer does the caching now.
 export const dynamic = 'force-dynamic';
 // This is a Server Component, so no "use client"
 async function ProjectsRedirectPage() {

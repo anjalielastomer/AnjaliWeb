@@ -7,6 +7,7 @@ import { toast } from 'sonner'
 import Link from "next/link";
 import { Variants, motion } from "framer-motion";
 import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
+import { PAYLOAD_API } from "@/lib/payload";
 const Page: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
   const [formData, setFormData] = useState<FormData>({
@@ -81,46 +82,40 @@ const Page: React.FC = () => {
     }
 
     try {
+      // 1. Upload the resume. Payload takes a single `file` field and returns
+      // the created document under `doc`.
       const fileFormData = new FormData();
-      fileFormData.append("files", file);
+      fileFormData.append("file", file);
 
-      const uploadRes = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/upload`,
-        {
-          method: "POST",
-          body: fileFormData,
-        }
-      );
+      const uploadRes = await fetch(`${PAYLOAD_API}/resumes`, {
+        method: "POST",
+        body: fileFormData,
+      });
 
       const uploadResult = await uploadRes.json();
 
-      if (!uploadRes.ok || !uploadResult[0]?.id) {
+      if (!uploadRes.ok || !uploadResult?.doc?.id) {
         throw new Error("File upload failed");
       }
 
-      const uploadedFileId = uploadResult[0].id;
+      const uploadedFileId = uploadResult.doc.id;
 
       // 2. Submit the form data with uploaded file ID
       const requestBody = {
-        data: {
-          name: formData.data.name,
-          contact: formData.data.contact,
-          email: formData.data.email,
-          position: formData.data.position,
-          resume: uploadedFileId,
-        },
+        name: formData.data.name,
+        contact: formData.data.contact,
+        email: formData.data.email,
+        position: formData.data.position,
+        resume: uploadedFileId,
       };
 
-      const submitRes = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/career-requests`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(requestBody),
-        }
-      );
+      const submitRes = await fetch(`${PAYLOAD_API}/career-requests`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
 
       if (!submitRes.ok) {
         const errorData = await submitRes.json();

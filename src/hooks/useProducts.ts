@@ -1,5 +1,6 @@
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { productsService } from "@/lib/productsService";
+import { payloadGet } from "@/lib/payload";
 import { StrapiResponse, StrapiProduct, Product } from "@/types/product";
 
 interface UseProductsParams {
@@ -23,19 +24,9 @@ export const useProducts = (
     queryFn: async () => {
       const filters: Record<string, any> = {};
 
-      // ✅ Use external API if segment is "all"
+      // ✅ All products, images only
       if (params?.segment == "all") {
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/products?populate=images`
-        );
-
-        if (!res.ok) {
-          throw new Error("Failed to fetch products from external source.");
-        }
-
-        const json = await res.json();
-        
-        return json;
+        return payloadGet<StrapiResponse>("/products?populate=images");
       }
 
       // ✅ Use internal API if specific category/segment

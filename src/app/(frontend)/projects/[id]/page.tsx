@@ -224,7 +224,7 @@ const ProjectPage: React.FC = () => {
             >
               <Image
                 src={images[0].src}
-                alt={images[0].alt}
+                alt={images[0].alt || project.title || "Project image"}
                 width={images[0].width}
                 height={images[0].height}
                 className="rounded-md shadow-md object-cover w-full"
@@ -257,7 +257,7 @@ const ProjectPage: React.FC = () => {
               >
                 <Image
                   src={images[1].src}
-                  alt={images[1].alt}
+                  alt={images[1].alt || project.title || "Project image"}
                   width={images[1].width}
                   height={images[1].height}
                   className="rounded-md shadow-md object-cover w-full"
@@ -307,7 +307,7 @@ const ProjectPage: React.FC = () => {
           >
             <Image
               src={images[3].src}
-              alt={images[3].alt}
+              alt={images[3].alt || project.title || "Project image"}
               width={images[3].width}
               height={images[3].height}
               className="rounded-md shadow-md object-cover w-full"

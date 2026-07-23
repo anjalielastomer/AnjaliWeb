@@ -149,7 +149,7 @@ const FeaturedProducts: React.FC = () => {
                   <div className="flex justify-center h-40 md:h-60 relative">
                     <Image
                       src={productImage.url}
-                      alt={productImage.name}
+                      alt={product.title || "Product image"}
                       width={400}
                       height={240}
                       className="object-cover h-full w-full"

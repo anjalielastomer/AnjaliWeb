@@ -74,23 +74,16 @@ const ProductGrid: React.FC<ProductGridProps> = ({
     return categories.find((cat) => cat.documentId === selectedSegment);
   }, [selectedSegment, categories]);
 
-  const categoryProducts = useMemo(() => {
-    let products: any[] = [];
-
-    if (selectedSegment === "all") {
-      products = transformedProducts;
-    } else {
-      products = selectedCategoryObj?.products || [];
-    }
-
-    // ✅ Log each time categoryProducts is updated
-    console.log(
-      `Rendering ${products.length} products for segment: ${selectedSegment}`
-    );
-    console.log("Rendered Products:", products);
-
-    return products;
-  }, [selectedSegment, transformedProducts, selectedCategoryObj]);
+  // `useProducts` already filters by `selectedSegment` server-side and returns
+  // fully-transformed products (with a resolved `image` url). The old branch
+  // used `selectedCategoryObj.products` from the category join instead — but
+  // that join returns each product's `images` as bare numeric IDs, not
+  // populated objects, so ProductCard received an empty image src. Always use
+  // the transformed, segment-filtered products.
+  const categoryProducts = useMemo<any[]>(
+    () => transformedProducts,
+    [transformedProducts]
+  );
 
 
   const getCurrentCategoryName = () => {
