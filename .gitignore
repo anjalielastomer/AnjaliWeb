@@ -46,3 +46,6 @@ pnpm-lock.yaml
 # payload
 !.env.example
 /media
+
+# db migration dumps (contain data)
+scripts/.db-dumps/
