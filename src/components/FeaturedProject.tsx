@@ -139,10 +139,14 @@ export default function FeaturedProjects() {
               onMouseLeave={() => setIsHovering(false)}
             >
               <div
-                className="flex gap-6 py-6 w-max animate-scroll-infinite"
+                className={`flex gap-6 py-6 ${projects.length > 1 ? 'w-max animate-scroll-infinite' : 'w-full justify-center'}`}
                 style={{ animationPlayState: isHovering ? 'paused' : 'running' }}
               >
-                {[...projects, ...projects].map((project, idx) => (
+                {/* Duplicate the list only when there is more than one project —
+                    the duplication is what makes the marquee loop seamlessly.
+                    With a single project it would otherwise show the same card
+                    twice, so render it once and centered. */}
+                {(projects.length > 1 ? [...projects, ...projects] : projects).map((project, idx) => (
                   <ProjectCard key={`${project.id}-${idx}`} project={project} index={idx % projects.length} />
                 ))}
               </div>
@@ -242,10 +246,10 @@ function ProjectCard({ project, index }: {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 bg-white  bg-opacity-95 backdrop-blur-sm p-4 group-hover:bg-[var(--textorange)] transition-colors duration-300">
-          <h3 className="text-[var(--textorange)] font-monte font-medium text-lg mb-2 leading-snug group-hover:text-white transition-colors duration-300">
+          <h3 className="text-[var(--textorange)] font-monte font-medium text-lg mb-2 leading-snug line-clamp-2 group-hover:text-white transition-colors duration-300">
             {project.title}
           </h3>
-          <p className="text-[#334155] text-base leading-snug mb-3 group-hover:text-white transition-colors duration-300">
+          <p className="text-[#334155] text-base leading-snug mb-3 line-clamp-2 group-hover:text-white transition-colors duration-300">
             {project.description}
           </p>
           <p className="flex justify-between text-textblue font-raleway text-[#193055] opacity-75 text-[13px] group-hover:text-white transition-colors duration-300">

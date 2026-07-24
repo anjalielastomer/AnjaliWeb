@@ -5,7 +5,13 @@ import { publicContent } from '../access'
 export const Media: CollectionConfig = {
   slug: 'media',
   access: publicContent,
-  admin: { useAsTitle: 'filename' },
+  admin: {
+    useAsTitle: 'filename',
+    // Make the list/relationship search bar actually search these fields.
+    // Without this, typing an image number (e.g. "77") in the "choose from
+    // existing" media search returned nothing.
+    listSearchableFields: ['filename', 'alt'],
+  },
   upload: {
     mimeTypes: ['image/*', 'video/*'],
     // Mirrors the breakpoints Strapi generated, so existing frontend markup
