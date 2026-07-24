@@ -167,3 +167,8 @@ env changes to make afterward. Media files stay in Vercel Blob (keep the same
 - Accounts are created only by an existing admin (no public signup).
 - Forgot a password? Use the login page's **Forgot password** link (email-based).
 - Login lockout (5 attempts → 10 min) and 2-hour sessions are enabled.
+
+---
+
+Developed and maintained by **[Suman Jain](https://github.com/itz-snj)**.
+
