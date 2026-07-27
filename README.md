@@ -8,6 +8,7 @@ One repo, one deploy, one database — the site and its content management run i
 the same application. This replaced a previous split of a standalone Next.js
 frontend and a separate Strapi 5 backend.
 
+
 ---
 
 ## Stack
