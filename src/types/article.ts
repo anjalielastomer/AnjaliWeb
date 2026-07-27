@@ -200,7 +200,12 @@ export const parseHTMLContent = (htmlContent: string): ParsedContent[] => {
         parsedContent.push({
           type: "image",
           content: "",
-          imageUrl: img.src,
+          // Use the raw attribute, NOT `img.src`: the DOM property resolves a
+          // relative path (e.g. "/api/media/file/x.jpg") to an absolute
+          // same-origin URL, which Next's image optimizer then rejects with 400
+          // because our own domain isn't in `remotePatterns`. Keeping it
+          // relative lets Next treat it as a local image (same as the cover).
+          imageUrl: img.getAttribute("src") || img.src,
           imageAlt: img.alt || "Article image",
         });
       }

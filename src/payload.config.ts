@@ -98,6 +98,11 @@ export default buildConfig({
             collections: { media: true, resumes: { prefix: 'resumes' } },
             token: blobToken,
             addRandomSuffix: false,
+            // Upload the file straight from the browser to Blob, bypassing the
+            // Next.js/Vercel serverless request-body limit (~4.5 MB). Without
+            // this, admin uploads of large (DSLR-sized) images fail in
+            // production with a generic "Something went wrong".
+            clientUploads: true,
           }),
         ]
       : []),
