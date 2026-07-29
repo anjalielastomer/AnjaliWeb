@@ -7,8 +7,6 @@ as a single **Next.js 16** app with **Payload CMS 3** embedded at `/admin`.
 One repo, one deploy, one database — the site and its content management run in
 the same application. This replaced a previous split of a standalone Next.js
 frontend and a separate Strapi 5 backend.
-
-
 ---
 
 ## Stack
