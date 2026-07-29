@@ -62,7 +62,24 @@ export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: { outputFile: path.resolve(dirname, 'payload-types.ts') },
   db: postgresAdapter({
-    pool: { connectionString: process.env.DATABASE_URI || '' },
+    pool: {
+      connectionString: process.env.DATABASE_URI || '',
+      // The Azure server allows only ~26 usable connections (max_connections
+      // 50, minus 15 reserved and Azure's own backends). Every warm Vercel
+      // instance holds its own pool, and each one used to squat up to 10 slots
+      // for minutes after its last request — a burst of parallel requests then
+      // exhausted the server and Payload failed to boot entirely
+      // (`FATAL 53300: remaining connection slots are reserved...` → 500s
+      // across /admin).
+      //
+      // Do NOT drop this to 1: Payload's schema introspection (and any code
+      // path that queries while holding a transaction client) needs a second
+      // connection and deadlocks on a pool of one — verified, `payload run`
+      // hangs forever at "Pulling schema from database".
+      max: 3,
+      idleTimeoutMillis: 10_000,
+      allowExitOnIdle: true,
+    },
     // Isolate this app's tables in a dedicated schema when set (Azure server
     // shared with another project). Unset → default `public` schema.
     // NOTE: Payload's custom-schema support is experimental and breaks on a
@@ -80,10 +97,17 @@ export default buildConfig({
     // Local disk is not writable on Vercel, so blob storage is required there.
     // Without a token we fall back to local storage for development.
     //
-    // Files are served through Payload's own /api/<collection>/file/<name>
-    // route, which enforces collection access control, and streamed from the
-    // blob store behind it. Resume downloads therefore 403 for anonymous
-    // callers (verified).
+    // Resumes are served through Payload's own /api/resumes/file/<name> route,
+    // which enforces collection access control and streams from the blob store
+    // behind it, so resume downloads 403 for anonymous callers (verified).
+    //
+    // Media is NOT: `disablePayloadAccessControl` points media URLs straight at
+    // the public blob CDN. Routing them through Payload meant every single
+    // image — including the dozens of 156x156 admin thumbnails a collection
+    // screen paints — was a separate serverless invocation that booted Payload
+    // and opened a DB connection just to proxy a file. That is what exhausted
+    // the Postgres connection limit and 500'd the admin. Media is public
+    // content, so there is no access control to lose.
     //
     // `addRandomSuffix` must stay OFF: it rewrites `filename` after `url` has
     // been generated, so every file 404s.
@@ -95,7 +119,10 @@ export default buildConfig({
     ...(blobToken
       ? [
           vercelBlobStorage({
-            collections: { media: true, resumes: { prefix: 'resumes' } },
+            collections: {
+              media: { disablePayloadAccessControl: true },
+              resumes: { prefix: 'resumes' },
+            },
             token: blobToken,
             addRandomSuffix: false,
             // Upload the file straight from the browser to Blob, bypassing the
