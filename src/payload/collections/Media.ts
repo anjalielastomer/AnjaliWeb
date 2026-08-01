@@ -1,10 +1,12 @@
 import type { CollectionConfig } from 'payload'
 
 import { publicContent } from '../access'
+import { copySharedImageBuffers } from '../hooks/copySharedImageBuffers'
 
 export const Media: CollectionConfig = {
   slug: 'media',
   access: publicContent,
+  hooks: { beforeChange: [copySharedImageBuffers] },
   admin: {
     useAsTitle: 'filename',
     // Make the list/relationship search bar actually search these fields.

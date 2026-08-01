@@ -2,6 +2,14 @@ import type { NextConfig } from "next";
 import { withPayload } from "@payloadcms/next/withPayload";
 
 const nextConfig: NextConfig = {
+  // Keep sharp out of the server bundle so Vercel traces its native Linux
+  // binary into the function. When bundled, `require('@img/sharp-linux-x64')`
+  // fails at runtime and sharp silently falls back to its WebAssembly build,
+  // whose output Buffers live in a SharedArrayBuffer — which `fetch` refuses to
+  // send, so every media upload 500'd with
+  // "TypeError: ArrayBuffer: SharedArrayBuffer is not allowed."
+  // See src/payload/hooks/copySharedImageBuffers.ts.
+  serverExternalPackages: ["sharp"],
   images: {
     remotePatterns: [
       // Vercel Blob — where Payload stores media from Phase 4 onward.
