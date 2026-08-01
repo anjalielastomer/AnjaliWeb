@@ -8,6 +8,7 @@ import { buildConfig, type Plugin } from 'payload'
 import sharp from 'sharp'
 
 import { emailAdapter } from './payload/email'
+import { revealErrorToAdmins } from './payload/hooks/revealErrorToAdmins'
 import { Articles } from './payload/collections/Articles'
 import { CustomerReviews } from './payload/collections/CustomerReviews'
 import {
@@ -124,6 +125,7 @@ export default buildConfig({
       : {}),
   }),
   sharp,
+  hooks: { afterError: [revealErrorToAdmins] },
   ...(emailAdapter ? { email: emailAdapter } : {}),
   cors: ['http://localhost:3000', 'https://www.anjalielastomer.com'],
   csrf: ['http://localhost:3000', 'https://www.anjalielastomer.com'],
