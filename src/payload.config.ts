@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
-import { buildConfig } from 'payload'
+import { buildConfig, type Plugin } from 'payload'
 import sharp from 'sharp'
 
 import { emailAdapter } from './payload/email'
@@ -33,6 +33,40 @@ import { HomeScreenActionVideo } from './payload/globals/HomeScreenActionVideo'
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const blobToken = process.env.BLOB_READ_WRITE_TOKEN
+
+const STOCK_BLOB_UPLOAD_HANDLER =
+  '@payloadcms/storage-vercel-blob/client#VercelBlobClientUploadHandler'
+
+/**
+ * Swap the storage plugin's client-upload handler for ours, which appends a
+ * unique suffix to every uploaded filename.
+ *
+ * Must run AFTER vercelBlobStorage, which is what registers the stock provider.
+ * See UniqueFilenameBlobUploadHandler.tsx for why the stock one cannot replace
+ * an existing file.
+ */
+const useUniqueBlobFilenames: Plugin = (incoming) => {
+  const providers = incoming.admin?.components?.providers
+  if (!providers) return incoming
+
+  return {
+    ...incoming,
+    admin: {
+      ...incoming.admin,
+      components: {
+        ...incoming.admin?.components,
+        providers: providers.map((provider) =>
+          typeof provider === 'object' && provider.path === STOCK_BLOB_UPLOAD_HANDLER
+            ? {
+                ...provider,
+                path: '/payload/uploads/UniqueFilenameBlobUploadHandler#UniqueFilenameBlobUploadHandler',
+              }
+            : provider,
+        ),
+      },
+    },
+  }
+}
 
 export default buildConfig({
   admin: {
@@ -109,8 +143,11 @@ export default buildConfig({
     // the Postgres connection limit and 500'd the admin. Media is public
     // content, so there is no access control to lose.
     //
-    // `addRandomSuffix` must stay OFF: it rewrites `filename` after `url` has
-    // been generated, so every file 404s.
+    // `addRandomSuffix` must stay OFF: `adapter.handleUpload` mutates one shared
+    // `data` object per file (original + every generated size), so the last
+    // write wins and `filename` ends up holding a size's suffixed name while
+    // `sizes[*].filename` keep the unsuffixed ones — every URL 404s. Uniqueness
+    // is handled by `useUniqueBlobFilenames` below instead.
     //
     // The blob store is public, so the underlying object URL bypasses access
     // control for anyone who knows it. Media is public anyway; resumes get an
@@ -131,6 +168,7 @@ export default buildConfig({
             // production with a generic "Something went wrong".
             clientUploads: true,
           }),
+          useUniqueBlobFilenames,
         ]
       : []),
   ],
