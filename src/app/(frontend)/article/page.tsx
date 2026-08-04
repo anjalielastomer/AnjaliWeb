@@ -94,6 +94,9 @@ const ArticlesPage: React.FC = () => {
                     src={article.image}
                     alt={article.title}
                     fill
+                    // Without this Next assumes the image spans the viewport and
+                    // serves a far larger file than this third-width card needs.
+                    sizes="(max-width: 640px) 100vw, 33vw"
                     className="object-cover"
                   />
                 </div>

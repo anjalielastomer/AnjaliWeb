@@ -21,6 +21,8 @@ image:string;
     url: string;
     formats?: {
       thumbnail?: { url: string };
+      small?: { url: string };
+      medium?: { url: string };
     };
   }[];
 }
@@ -82,8 +84,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { documentId, title,name, images, description,image } = product;
   const productTitle = title || name || "Untitled Product";
   const router = useRouter();
+    // Not `thumbnail` — that is the 156px admin thumbnail (Media.ts `xsmall`)
+    // and this card renders at 400px, so it came out pixelated. `medium` is
+    // 750px, about 2x the card width for retina displays.
     const initialImageSrc =
-    images?.[0]?.formats?.thumbnail?.url || images?.[0]?.url || image;
+    images?.[0]?.formats?.medium?.url ||
+    images?.[0]?.formats?.small?.url ||
+    images?.[0]?.url ||
+    image;
   const [imgSrc, setImgSrc] = useState(initialImageSrc);
   const handleExploreProduct = () => {
     // Use documentId for routing instead of numeric id

@@ -27,8 +27,13 @@ const transformArticleData = (apiData: ApiResponse): TransformedArticle[] => {
       date: publishDate,
       time: article.read_time_text + " read",
       author: article.author,
+      // `thumbnail` is the 156px admin thumbnail (see Media.ts `xsmall`) — it was
+      // being stretched ~5x into the ~384px article cards and looked pixelated.
+      // `medium` is 750px, roughly 2x the card width, which is what a retina
+      // display needs.
       image:
-        article.cover_image?.formats?.thumbnail?.url ||
+        article.cover_image?.formats?.medium?.url ||
+        article.cover_image?.formats?.small?.url ||
         article.cover_image?.url ||
         "/placeholder.jpg",
       short_description: article.short_description,
