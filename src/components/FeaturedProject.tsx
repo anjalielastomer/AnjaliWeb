@@ -245,34 +245,39 @@ function ProjectCard({ project, index }: {
           )}
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 bg-white  bg-opacity-95 backdrop-blur-sm p-4 group-hover:bg-[var(--textorange)] transition-colors duration-300">
-          <h3 className="text-[var(--textorange)] font-monte font-medium text-lg mb-2 leading-snug line-clamp-2 group-hover:text-white transition-colors duration-300">
-            {project.title}
-          </h3>
-          <p className="text-[#334155] text-base leading-snug mb-3 line-clamp-2 group-hover:text-white transition-colors duration-300">
-            {project.description}
-          </p>
-          <p className="flex justify-between text-textblue font-raleway text-[#193055] opacity-75 text-[13px] group-hover:text-white transition-colors duration-300">
-            {project.subtext}
-            <Image
-              src="/send.svg"
-              alt="send"
-              width={25}
-              height={4}
-              className="animate-blink group-hover:hidden"
-            />
-            <Image
-              src="/arrow.svg"
-              alt="send"
-              width={25}
-              height={4}
-              className="animate-blink hidden group-hover:block"
-            />
-          </p>
-        </div>
+        {/* The panel anchors the index badge: `bottom-full` keeps the circle
+            entirely above the white box, over the image, so a two-line title
+            can never run underneath it. */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <div className="absolute bottom-full right-4 mb-3 bg-[var(--textorange)] text-white font-monte text-2xl font-bold rounded-full w-16 h-16 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-white group-hover:text-[var(--textorange)] transition-all duration-300 z-20">
+            {`0${index + 1}`}
+          </div>
 
-        <div className="absolute bottom-31 right-4 bg-[var(--textorange)] text-white font-monte text-lg font-bold rounded-full w-12 h-12 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-white group-hover:text-[var(--textorange)] transition-all duration-300 z-20">
-          {`0${index + 1}`}
+          <div className="bg-white bg-opacity-95 backdrop-blur-sm p-4 group-hover:bg-[var(--textorange)] transition-colors duration-300">
+            <h3 className="text-[var(--textorange)] font-monte font-medium text-lg mb-2 leading-snug line-clamp-2 group-hover:text-white transition-colors duration-300">
+              {project.title}
+            </h3>
+            <p className="text-[#334155] text-base leading-snug mb-3 line-clamp-2 group-hover:text-white transition-colors duration-300">
+              {project.description}
+            </p>
+            <p className="flex justify-between text-textblue font-raleway text-[#193055] opacity-75 text-[13px] group-hover:text-white transition-colors duration-300">
+              {project.subtext}
+              <Image
+                src="/send.svg"
+                alt="send"
+                width={25}
+                height={4}
+                className="animate-blink group-hover:hidden"
+              />
+              <Image
+                src="/arrow.svg"
+                alt="send"
+                width={25}
+                height={4}
+                className="animate-blink hidden group-hover:block"
+              />
+            </p>
+          </div>
         </div>
       </div>
     </div>

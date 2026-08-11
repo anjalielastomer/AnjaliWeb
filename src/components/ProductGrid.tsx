@@ -2,6 +2,7 @@
 import React, { useState, useMemo } from "react";
 import ProductCard from "@/components/SampleCard";
 import { useProducts, transformStrapiProduct } from "@/hooks/useProducts";
+import { DEFAULT_LIMIT } from "@/lib/payload";
 
 interface ProductCategory {
   id: number;
@@ -43,7 +44,12 @@ const ProductGrid: React.FC<ProductGridProps> = ({
   categories,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 10;
+  // The grid renders a whole page inside its own scroll container, so the page
+  // size only has to match the ceiling the "All products" view already gets.
+  // At 10 a category holding 20 products showed half of them and — because the
+  // pager below used to be hidden for anything but "all" — there was no way to
+  // reach the rest.
+  const productsPerPage = DEFAULT_LIMIT;
 
   const { data, isLoading, error, refetch } = useProducts({
     page: currentPage,
@@ -157,7 +163,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
         )}
       </div>
 
-      {selectedSegment === "all" && totalPages > 1 && (
+      {totalPages > 1 && (
         <div className="flex justify-between items-center mt-4 px-4 text-sm text-gray-700 font-monte">
           <button
             className="text-textblue font-semibold disabled:text-gray-700 disabled:opacity-50 text-lg"
@@ -182,9 +188,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
       )}
 
       <div className="text-center mt-7 text-lg text-textblue font-monte">
-        Showing {categoryProducts.length} of{" "}
-        {selectedSegment === "all" ? totalProducts : categoryProducts.length}{" "}
-        products
+        Showing {categoryProducts.length} of {totalProducts} products
         {selectedSegment !== "all" && (
           <span
             className="text-sm block mt-1"

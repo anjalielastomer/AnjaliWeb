@@ -1,6 +1,6 @@
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { productsService } from "@/lib/productsService";
-import { payloadGet } from "@/lib/payload";
+import { DEFAULT_LIMIT, payloadGet } from "@/lib/payload";
 import { StrapiResponse, StrapiProduct, Product } from "@/types/product";
 
 interface UseProductsParams {
@@ -24,9 +24,20 @@ export const useProducts = (
     queryFn: async () => {
       const filters: Record<string, any> = {};
 
+      // Page size must be the same on both branches. The unfiltered branch
+      // used to ignore it entirely and fall back to DEFAULT_LIMIT, so "All
+      // products" listed everything while a category silently truncated to
+      // whatever the caller asked for.
+      const page = params?.page || 1;
+      const pageSize = params?.pageSize || DEFAULT_LIMIT;
+
       // ✅ All products, images only
       if (params?.segment == "all") {
-        return payloadGet<StrapiResponse>("/products?populate=images");
+        return payloadGet<StrapiResponse>("/products", {
+          populate: "images",
+          "pagination[page]": String(page),
+          "pagination[pageSize]": String(pageSize),
+        });
       }
 
       // ✅ Use internal API if specific category/segment
@@ -35,8 +46,8 @@ export const useProducts = (
       }
 
       return productsService.getProducts({
-        page: params?.page || 1,
-        pageSize: params?.pageSize || 25,
+        page,
+        pageSize,
         filters,
       });
     },
